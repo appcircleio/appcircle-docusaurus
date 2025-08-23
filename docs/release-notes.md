@@ -16,12 +16,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.29.2 - 2025-08-22 Yearly License Renewal, Auto Re-sign on Testing Distribution, Improvements and more
+## 3.29.2 - 2025-08-22 Auto Re-sign on Testing Distribution, Build History Improvements, Bug Fixes and more
 
 ### 🆕 New Features
 
 - The [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign) feature was added to the Testing Distribution module. <DistributionBadge/> <CloudBadge/>
-- The yearly license renewal option was introduced, allowing users to use their module usage limits on a yearly instead of a monthly basis. <AccountBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
