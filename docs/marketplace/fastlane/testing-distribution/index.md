@@ -141,6 +141,6 @@ Utilize environment variables seamlessly by substituting the parameters with `EN
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/account/my-organization/security/personal-api-token).
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile).
