@@ -48,6 +48,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
+- We’ve removed the automatic conversion of uploaded AAB files to APK using the Appcircle keystore. This change is not backward compatible: AAB files can no longer be shared with testers or submitted to the Enterprise App Store. Please upload APK files directly or use the new “Convert AAB to APK” option available in manual resign operations. For detailed guidance, check out the [resigning documentation](/testing-distribution/resigning-binaries#auto-re-sign). <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - The [Get Approval via Email](/publish-integrations/common-publish-integrations/get-approval-via-email) publish step now requires approvers to log in to Appcircle and make their decision within the Appcircle interface. Previously, decisions could be made directly from the received email without an Appcircle account. This change ensures consistency with the Metadata Approval publish step but requires approvers to have Appcircle user access. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
