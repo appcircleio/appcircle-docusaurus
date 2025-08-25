@@ -28,7 +28,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The “Create from existing SSO settings” option was disabled for SAML-type SSO configurations. <AccountBadge/> <CloudBadge/>
 - The exact renewal time is now shown next to the expiry date on the billing page. <AccountBadge/> <CloudBadge/>
 - Auto Re-sign operations will now be specifically mentioned as Auto Re-sign within notifications sent via Email, Teams, and Slack. <AccountBadge/> <CloudBadge/>
-- The Get Approval via Email publish step was improved to be identical to the Metadata Approval publish step, where users are now directed to a separate approval window within Appcircle instead of deciding within the received email. <PublishBadge/> <CloudBadge/>
 - Displayed certificates in Auto Re-sign options will now be shown according to the selected signing method. <PublishBadge/> <CloudBadge/>
 - Users can now directly navigate to the relevant build logs by clicking on the build status within the build history. <BuildBadge/> <CloudBadge/>
 
@@ -46,6 +45,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where deleting the SSO configuration for Testing Distribution profiles caused UI issues on the Testing Distribution authentication settings. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where using the ESC button on the “Share with Testers” step in Testing Distribution profiles caused UI issues. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where expiration notifications for Apple profiles, certificates and Android keystores were sent simultaneously instead of periodically. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- The [Get Approval via Email](/publish-integrations/common-publish-integrations/get-approval-via-email) publish step now requires approvers to log in to Appcircle and make their decision within the Appcircle interface. Previously, decisions could be made directly from the received email without an Appcircle account. This change ensures consistency with the Metadata Approval publish step but requires approvers to have Appcircle user access. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
 
