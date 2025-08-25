@@ -64,7 +64,7 @@ When visiting the installation guide, ensure you select the correct version of A
 
 For this extension to authenticate to your Appcircle, you need to create a Personal API Token, and use it in your task configuration.
 
-You can follow the [Generating and Managing Personal API Tokens](https://docs.appcircle.io/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) page to create a PAT.
+You can follow the [Generating and Managing Personal API Tokens](/account/my-organization/security/personal-api-token) page to create a PAT.
 
 #### 2. Add Task to Your Pipeline
 
@@ -141,6 +141,6 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
+- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/account/my-organization/security/personal-api-token)
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).
