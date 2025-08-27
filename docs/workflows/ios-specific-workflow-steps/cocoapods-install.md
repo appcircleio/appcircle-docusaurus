@@ -153,3 +153,19 @@ After these changes;
 
 - Trigger your build through Appcircle. The workflow will fetch dependencies from the Sonatype Nexus repository as configured and compile the project with them.
 - Logs will show dependency resolution status to confirm successful integration with Sonatype Nexus.
+
+
+### How do I troubleshoot CocoaPods Install step errors, such as builds getting stuck, failing with exit code ***37, or working intermittently?
+
+#### Option 1: Using Cache Push and Pull in Build Pipelines (Recommended)
+
+CocoaPods caches are compatible with Appcircle's [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push) and [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull) steps.
+
+When you add the **Cache Push** step to the pipeline, it stores CocoaPods dependencies so they can be restored in future builds with **Cache Pull**, avoiding potential network access issues.
+
+This also reduces the duration of the **CocoaPods Install** step, since dependencies no longer need to be fetched from the internet.
+
+#### Option 2: Using Appcircle's Nexus Server for Specific Dependencies
+
+For dependencies that cause issues (for example, `Mapbox-iOS-SDK`), you can [configure your Podfile](/workflows/ios-specific-workflow-steps/cocoapods-install#example-2-how-can-i-fetch-some-dependencies-from-different-repositories) to fetch them from the Appcircle Nexus server instead of the default source.
+
