@@ -49,7 +49,33 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
-- We’ve removed the automatic conversion of uploaded AAB files to APK using the Appcircle keystore. This change is not backward compatible: AAB files can no longer be shared with testers or submitted to the Enterprise App Store. Please upload APK files directly or use the new “Convert AAB to APK” option available in manual resign operations. For detailed guidance, check out the [resigning documentation](/testing-distribution/resigning-binaries#auto-re-sign). <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- We’ve removed the automatic conversion of uploaded AAB files to APK using the Appcircle keystore. This change is not backward compatible: AAB files can no longer be shared with testers. Please upload APK files directly or use the new “Convert AAB to APK” option available in resign operations. For detailed guidance, check out the [resigning documentation](/testing-distribution/resigning-binaries#auto-re-sign). <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+
+<details>
+  <summary><strong>Migration Steps</strong></summary>
+
+## [Auto Re-sign](https://docs.appcircle.io/testing-distribution/resigning-binaries#android-auto-re-sign-configurations)
+
+1. If a keystore is not yet uploaded, [upload it](https://docs.appcircle.io/signing-identities/android-keystores#2-upload-android-keystore-file).
+2. Open the **Testing Distribution profile** → click the three dots **𐄛** → **Settings**.
+3. Under the **Info** tab, enable **Auto Re-sign** and click **Save**.
+4. From the same menu (**𐄛**), open **Auto Re-sign Configurations for Android**.
+5. In the **Signing** tab, select your uploaded keystore.
+6. Enable **Convert AAB to APK**.
+7. Click **Save**. From now on, uploaded AABs will automatically be converted to APKs.
+
+  ---
+
+## [Manual Re-sign](https://docs.appcircle.io/testing-distribution/resigning-binaries#re-signing-android-binaries)
+
+1. If a keystore is not yet uploaded, [upload it](https://docs.appcircle.io/signing-identities/android-keystores#2-upload-android-keystore-file).
+2. In the **Testing Distribution profile**, click the three dots **...** next to the binary.
+3. Select **Re-sign Binary**.
+4. Choose your uploaded keystore.
+5. Enable **Convert AAB to APK**.
+6. Click **Sign**. The binary will be re-signed and converted within a few minutes.
+</details>
+
 
 ## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
 
