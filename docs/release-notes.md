@@ -49,7 +49,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
-- We’ve removed the automatic conversion of uploaded AAB files to APK using the Appcircle keystore. This change is not backward compatible: AAB files can no longer be shared with testers. Please upload APK files directly or use the new “Convert AAB to APK” option available in resign operations. For detailed guidance, check out the [resigning documentation](/testing-distribution/resigning-binaries#auto-re-sign). <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- We’ve removed the automatic conversion of uploaded AAB files to APK using the Appcircle keystore. This change is not backward compatible: AAB files can no longer be shared with testers. Please upload APK files directly or use the new “Convert AAB to APK” option available in resign operations. For detailed guidance, check out the [re-signing documentation](/testing-distribution/resigning-binaries#auto-re-sign). <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 
 <details>
   <summary><strong>Migration Steps</strong></summary>
