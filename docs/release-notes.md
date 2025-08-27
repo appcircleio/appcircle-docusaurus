@@ -28,7 +28,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The “Create from existing SSO settings” option was disabled for SAML-type SSO configurations. <AccountBadge/> <CloudBadge/>
 - The exact renewal time is now shown next to the expiry date on the billing page. <AccountBadge/> <CloudBadge/>
 - Auto Re-sign operations will now be specifically mentioned as Auto Re-sign within notifications sent via Email, Teams, and Slack. <AccountBadge/> <CloudBadge/>
-- The Get Approval via Email publish step was improved to be identical to the Metadata Approval publish step, where users are now directed to a separate approval window within Appcircle instead of deciding within the received email. <PublishBadge/> <CloudBadge/>
 - Displayed certificates in Auto Re-sign options will now be shown according to the selected signing method. <PublishBadge/> <CloudBadge/>
 - Users can now directly navigate to the relevant build logs by clicking on the build status within the build history. <BuildBadge/> <CloudBadge/>
 
@@ -49,6 +48,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
+- The [Get Approval via Email](/publish-integrations/common-publish-integrations/get-approval-via-email) publish step now requires approvers to log in to Appcircle and make their decision within the Appcircle interface. Previously, decisions could be made directly from the received email without an Appcircle account. This change ensures consistency with the Metadata Approval publish step but requires approvers to have Appcircle user access. <PublishBadge/> <CloudBadge/>
 - We’ve removed the automatic conversion of uploaded AAB files to APK using the Appcircle keystore. This change is not backward compatible: AAB files can no longer be shared with testers. Please upload APK files directly or use the new “Convert AAB to APK” option available in resign operations. For detailed guidance, check out the [re-signing documentation](/testing-distribution/resigning-binaries#auto-re-sign). <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 
 <details>
@@ -75,7 +75,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 5. Enable **Convert AAB to APK**.
 6. Click **Sign**. The binary will be re-signed and converted within a few minutes.
 </details>
-
 
 ## 3.29.1 - 2025-08-15 Custom Script from Git Component, Account Module Improvements and IAM Upgrade
 

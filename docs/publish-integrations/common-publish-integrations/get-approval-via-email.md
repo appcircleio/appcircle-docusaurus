@@ -40,9 +40,17 @@ For example, imagine you need approval from at least two people to keep the flow
 
 ### Email Template
 
-With the Email Approval step provided by the Appcircle Publish module, release processes become more manageable and controlled. The email content delivered through this step provides users with all necessary information without needing to access the Appcircle interface. Through this email, users can easily access binary details, release notes, and any other essential information.
+With the Email Approval step provided by the Appcircle Publish module, release processes are managed in a structured and controlled way. The email includes all key information, such as binary details, release notes, and other relevant data, so users can review the release context without needing to search within the Appcircle interface.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-emailTemplate.png' />
+To proceed with the approval, users can click the link in the email, which opens the binary details window in Appcircle. From this view, they can examine version information, build details, and commit history before making a decision by selecting **Approve** or **Reject**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss2.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6891-ss1.png' />
+
+:::info Rejection
+Users who decide to reject the binary, must provide an explanation. This explanation message will be displayed on the Publish Flow window under the desicion of that user.
+:::
 
 ### Prerequisites
 
