@@ -159,7 +159,7 @@ After these changes;
 
 #### Option 1: Using Cache Push and Pull in Build Pipelines (Recommended)
 
-Cocoapod caches are compatible with Appcircle's [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push) and [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull) steps.
+CocoaPods caches are compatible with Appcircle's [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push) and [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull) steps.
 
 When you add the **Cache Push** step to the pipeline, it stores CocoaPods dependencies so they can be restored in future builds with **Cache Pull**, avoiding potential network access issues.
 
