@@ -15,6 +15,8 @@ tags:
 sidebar_position: 2
 ---
 
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
+
 The Appcircle Enterprise App Store action allows users to publish their apps to appcircle app store.
 
 ## System Requirements
@@ -70,6 +72,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/account/my-organization/security/personal-api-token).
+<PersonalApiTokenRef />
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

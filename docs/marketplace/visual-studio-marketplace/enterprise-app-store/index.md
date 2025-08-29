@@ -16,6 +16,7 @@ sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 
 <!-- ATTENTION: Documentation at README of this extension's repository
 has table of contents that references to the titles in this document. -->
@@ -141,6 +142,6 @@ Utilize environment variables seamlessly by substituting the parameters with `$(
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/account/my-organization/security/personal-api-token)
+<PersonalApiTokenRef />
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

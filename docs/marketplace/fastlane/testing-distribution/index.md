@@ -13,6 +13,8 @@ tags:
 sidebar_position: 1
 ---
 
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
+
 <!-- ATTENTION: Documentation at rubydoc (or README in the repository)
 has table of contents that references to the titles in this document. -->
 
@@ -141,6 +143,6 @@ Utilize environment variables seamlessly by substituting the parameters with `EN
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/account/my-organization/security/personal-api-token).
+<PersonalApiTokenRef />
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile).
