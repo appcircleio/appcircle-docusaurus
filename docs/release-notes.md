@@ -38,6 +38,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the “Leave Organization” confirmation button was displayed as “Delete” instead of “Leave.” <AccountBadge/> <CloudBadge/>
 - An issue was fixed where users were able to create a sub-organization with a duplicated name. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where certain uploaded binaries were displayed with an incorrect icon on Publish profiles. <PublishBadge/> <CloudBadge/>
+- The Marketing URL field in the Metadata details has been marked as mandatory in Appcircle as it is now enforced by Apple. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where, on certain error messages, the information link did not redirect the user to the relevant documentation. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where workflow and configuration names containing the ‘_’ character were being duplicated with an incorrect name. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where refreshing certain branches took too long. <BuildBadge/> <CloudBadge/>
