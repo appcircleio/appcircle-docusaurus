@@ -1298,3 +1298,8 @@ status = 301
 from = "/account/my-account/account-management/authentication-logs"
 to = "/account/my-account/account-management/device-activity"
 status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
+to = "/account/my-organization/security/personal-api-token"
+status = 301
