@@ -20,3 +20,11 @@ yarn-debug.log*
 yarn-error.log*
 
 .yarn*
+env
+__pycache__
+*.pyc
+.idea
+.vscode
+flattened_docs
+json_docs
+structured_docs
