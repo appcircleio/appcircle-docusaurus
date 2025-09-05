@@ -26,11 +26,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - Machine Plans are now displayed in the Build History for each build. <BuildBadge/> <CloudBadge/>
-- The refetch button is now disabled when the build profile does not have any selected branch. <BuildBadge/> <CloudBadge/>
+- The re-fetch button is now disabled when the build profile does not have any selected branch. <BuildBadge/> <CloudBadge/>
 - The Custom Script step within the Build module has been updated to support additional languages. In addition to Ruby and Bash, scripts written in Python and NodeJS can now be run. <BuildBadge/> <CloudBadge/>
 - The Bundle ID/Package ID fields have been added to the iOS and Android auto re-sign options for the Testing Distribution module, where this information can be updated to be used in auto re-sign processes. <DistributionBadge/> <CloudBadge/>
 - Testing Distribution Auto Re-sign options have been separated into ‘iOS Auto Re-sign options’ and ‘Android Auto Re-sign options’. <DistributionBadge/> <CloudBadge/>
 - Newly created API Keys are now displayed with a default expiration date of 6 months, which can be edited by the user to up to 1 year. <AccountBadge/> <CloudBadge/>
+- A warning email is now sent a week before an organization’s API key expires. <AccountBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
