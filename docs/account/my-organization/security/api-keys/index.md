@@ -21,6 +21,10 @@ To generate a new API key:
 **2.** Enter a name for your API key and select an expiry date.  
 *Note: The expiry date and API key name cannot be modified after creation.*
 
+:::info Expiry Date
+Appcircle will set a default expiry date of 6 months from the time you created the API Key. This can be edited to last up to 1 year or lower than 6 months.
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api1.png' />
 
 **3.** Select the **Organization** and the **Roles** that the API key should have access to.
@@ -30,6 +34,10 @@ To generate a new API key:
 **4.** Once the key is created, the **API key secret** will be shown **only once**. Copy and store it securely. After this, it will be encrypted and hidden. However, users can create a new key with the **same expiry date** if needed.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api3.png' />
+
+:::tip Expiry Notification
+Appcircle will send your organization e-mail a reminder if one of your API Keys will expire within a week.
+:::
 
 ## Managing API Keys
 
