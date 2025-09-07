@@ -125,11 +125,11 @@ In addition to manual resigning, the **Testing Distribution** module supports **
 
 The **Auto Re-sign** feature allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
-You can enable the **Auto Re-sign** feature by navigating to Settings option and enabling Auto-resign toggle.
+You can enable the **Auto Re-sign** feature by navigating to Settings option and enabling Auto-resign toggle for iOS and/or Android.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-1.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss1.png' />
 
 Once it's enabled, you will need to configure the Auto Re-sign feature for iOS and Android. **Auto Re-sign Configurations** options can be found by clicking **...**.
 
@@ -139,13 +139,24 @@ Once it's enabled, you will need to configure the Auto Re-sign feature for iOS a
 
 For iOS, you can configure:
 
-- **Information**: With the Display Name parameter, you can change the visible name of the binary that will be re-signed. The re-signing process starts with the specified display name, and once completed, the `CFBundleDisplayName` value inside the binary is updated accordingly.
+- **Information**: Configure your binary's Bundle ID and update display name.
+
+#### Bundle ID
+
+Appcircle Testing Distribution profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss3.png' />
+
+
+#### Update Display Name
+
+With the Display Name parameter, you can change the visible name of the binary that will be re-signed. The re-signing process starts with the specified display name, and once completed, the `CFBundleDisplayName` value inside the binary is updated accordingly.
   
 :::info
 If `CFBundleDisplayName` is not present in the `info.plist`, changing the display name will not take effect.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss2.png' />
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
@@ -185,13 +196,21 @@ If you **do not** want to create the provisioning profile for signing, Appcircle
 
 For Android, you can configure:
 
+- **Information**: Configure your binary's package ID.
+
+#### Package ID
+
+Appcircle Testing Distribution profiles can accept binaries with different package ID. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different package ID is uploaded, it is re-signed according to the package ID of the profile. The package ID of the resulting re-signed binary is updated to match the one associated with the profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss4.png' />
+
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss5.png' />
 
 - **Signing**: Select the keystore for signing your `.APK` or `.AAB` files.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss6.png' />
 
 #### Keystores
 
@@ -207,6 +226,9 @@ For more information, please visit the [Signing Identity](/signing-identities) M
 
 The **Convert AAB to APK** option allows you to automatically convert an Android App Bundle (AAB) file into an APK during the re-signing process. This is especially useful when your distribution channel requires an `.APK` instead of an `.AAB`. When enabled, Appcircle will handle the conversion and signing of the resulting APK seamlessly.
 
+:::warning Sharing AAB
+Testing Distribution profiles will not allow `.AAB` binaries to be shared with testers. It is recommended to keep this convert option enabled.
+:::
 
 :::info Auto Re-sign Behaviour
 - Once Auto Re-sign is configured, every new binary uploaded to the Testing Distribution profile will automatically be re-signed.
