@@ -36,7 +36,7 @@ Appcircle will set a default expiry date of 6 months from the time you created t
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6601-api3.png' />
 
 :::tip Expiry Notification
-Appcircle will send your organization e-mail a reminder if one of your API Keys will expire within a week.
+Appcircle will send a reminder to the organization owners if any API key is due to expire within a week; for sub-organizations, notifications are sent to their owners, and if no owner exists, they are forwarded to the root organization’s owners.
 :::
 
 ## Managing API Keys
