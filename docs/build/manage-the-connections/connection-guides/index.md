@@ -7,7 +7,7 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Connect your repository
+# Connection Guides
 
 You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, you can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible Git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh#how-to-connect-to-aws-codecommit-repositories-through-ssh-1))
 
