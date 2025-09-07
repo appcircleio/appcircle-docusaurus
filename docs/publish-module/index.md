@@ -73,4 +73,20 @@ The Publish Variables section within the Publish module is a feature that allows
 
 ## [Publish Walkthrough for App Store](/publish-module/publish-walkthrough-for-app-store)
 
-The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release.
+The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release via App Store Connect.
+
+## [Publish Walkthrough for Google Play](/publish-module/publish-walkthrough-for-google-play)
+
+The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play, and Huawei AppGallery. This module streamlines the complex process of app release via Google Play.
+
+## [Publish Report](/publish-module/publish-report)
+
+The Publish Report provides a detailed overview of all actions performed within the Publish Module. It allows users to monitor, filter, and export publish-related activities across different platforms, trigger types, and stores.
+
+## [Publish Re-sign Report](/publish-module/publish-resign-report)
+
+The Publish Re-sign Report provides detailed visibility into the manual and automatic re-sign operations performed within the publish module. This report helps you monitor and analyze re-sign activities across your organization over a selected time period.
+
+## [Publish Activity Log](/publish-module/publish-activity-log)
+
+You can view Publish module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
