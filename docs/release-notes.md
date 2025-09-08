@@ -26,9 +26,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - Machine Plans are now displayed in the Build History for each build. <BuildBadge/> <CloudBadge/>
-- The re-fetch button is now disabled when the build profile does not have any selected branch. <BuildBadge/> <CloudBadge/>
+- The autofill button is now disabled when the build profile does not have any selected branch. <BuildBadge/> <CloudBadge/>
 - The Custom Script step within the Build module has been updated to support additional languages. In addition to Ruby and Bash, scripts written in Python and NodeJS can now be run. <BuildBadge/> <CloudBadge/>
 - The required permission level has been downgraded to API only for GitLab OAUTH connections. <BuildBadge/> <CloudBadge/>
+- Improvements were made to GitLab PAT and OAuth connection speed for repositories with a high number of branches. <BuildBadge/> <CloudBadge/>
 - The Bundle ID/Package ID fields have been added to the iOS and Android auto re-sign options for the Testing Distribution module, where this information can be updated to be used in auto re-sign processes. <DistributionBadge/> <CloudBadge/>
 - Testing Distribution [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign) options have been separated into ‘iOS Auto Re-sign options’ and ‘Android Auto Re-sign options’. <DistributionBadge/> <CloudBadge/>
 - Users can no longer share `.AAB` binaries to the Testing Portal via Testing Distribution profiles. The ‘Convert `.AAB` to `.APK`’ feature can be used to automatically convert them to `.APK` format. <DistributionBadge/> <CloudBadge/>

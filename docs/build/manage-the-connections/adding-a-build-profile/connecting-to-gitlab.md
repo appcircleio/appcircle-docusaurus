@@ -49,7 +49,6 @@ The following table details the OAuth permissions required for Appcircle to conn
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | api              | Grants complete read and write access to the scoped project API, including the container registry, the dependency proxy, and the package registry.                                                           |
 | read_api         | Grants read access to the scoped project API, including the package registry.                                                                                                                                |
-| read_repository  | Grants read-only access to repositories on private projects using Git-over-HTTP.                                                                                                                             |
 
 ## Connecting to GitLab Self Hosted Repository
 
