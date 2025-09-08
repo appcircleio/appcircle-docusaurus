@@ -22,6 +22,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - A [Publish Report](/publish-module/publish-report) section has been added to the Publish module, where an organization’s publish actions can be tracked with various filters such as trigger type, user, app name, and more. <PublishBadge/> <CloudBadge/>
 - A [Re-sign Report](/publish-module/publish-resign-report) section has been added to the Publish module, where an organization’s re-sign processes can be tracked. <PublishBadge/> <CloudBadge/>
+- Introducing Machine Plans – Users can now choose between Standard, Velocity, and Ultra machine plans based on their license, with higher plans offering increased processing power in the Cloud. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
