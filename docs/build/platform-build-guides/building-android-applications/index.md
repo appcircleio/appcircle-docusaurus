@@ -14,7 +14,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 Before starting your first Android app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Adding a Build Profile</ContentRef>
 
 After connecting your repository, please add or create your Android Keystore. You can refer to the page below for this step:
 
@@ -30,7 +30,7 @@ First, we need to set up a build configuration. Select the configuration from th
 
 If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 

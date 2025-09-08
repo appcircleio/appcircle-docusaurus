@@ -27,7 +27,7 @@ Additionally, **official .NET MAUI support is on our roadmap**, and we are activ
 
 In order to build a .NET MAUI iOS app on Appcircle follow the steps below.
 
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+**1.** [Create](/build/manage-the-connections/connection-guides) a new build profile for your app.
 
 - `iOS` should be selected as the **Target Operating System**, and `Objective-C / Swift` should be selected as the **Target Platform**.
 
@@ -155,7 +155,7 @@ You can find more information in the following resources for customizing and tro
 
 In order to build a .NET MAUI Android app on Appcircle follow the steps below.
 
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+**1.** [Create](/build/manage-the-connections/connection-guides) a new build profile for your app.
 
 - `Android` should be selected as the **Target Operating System**, and `Java / Kotlin` should be selected as the **Target Platform**.
 
