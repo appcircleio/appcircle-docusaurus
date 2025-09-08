@@ -16,6 +16,37 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.3 - 2025-09-08 Publish and Re-sign Reports, Auto Re-sign Improvements, Bug fixes and more
+
+### 🆕 New Features
+
+- A [Publish Report](/publish-module/publish-report) section has been added to the Publish module, where an organization’s publish actions can be tracked with various filters such as trigger type, user, app name, and more. <PublishBadge/> <CloudBadge/>
+- A [Re-sign Report](/publish-module/publish-resign-report) section has been added to the Publish module, where an organization’s re-sign processes can be tracked. <PublishBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Machine Plans are now displayed in the Build History for each build. <BuildBadge/> <CloudBadge/>
+- The re-fetch button is now disabled when the build profile does not have any selected branch. <BuildBadge/> <CloudBadge/>
+- The Custom Script step within the Build module has been updated to support additional languages. In addition to Ruby and Bash, scripts written in Python and NodeJS can now be run. <BuildBadge/> <CloudBadge/>
+- The required permission level has been downgraded to API only for GitLab OAUTH connections. <BuildBadge/> <CloudBadge/>
+- The Bundle ID/Package ID fields have been added to the iOS and Android auto re-sign options for the Testing Distribution module, where this information can be updated to be used in auto re-sign processes. <DistributionBadge/> <CloudBadge/>
+- Testing Distribution [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign) options have been separated into ‘iOS Auto Re-sign options’ and ‘Android Auto Re-sign options’. <DistributionBadge/> <CloudBadge/>
+- Users can no longer share `.AAB` binaries to the Testing Portal via Testing Distribution profiles. The ‘Convert `.AAB` to `.APK`’ feature can be used to automatically convert them to `.APK` format. <DistributionBadge/> <CloudBadge/>
+- Newly created [API Keys](/account/my-organization/security/api-keys) are now displayed with a default expiration date of 6 months, which can be edited by the user to up to 1 year. <AccountBadge/> <CloudBadge/>
+- A warning email is now sent a week before an organization’s [API Key](/account/my-organization/security/api-keys) expires. <AccountBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where not all fields within the metadata details were being flagged as mandatory according to the Google Play rule set. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where Enterprise App Store profile headers were not displaying the beta and live publish tags when an app version was published to these channels. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where auto re-signed app versions were not being displayed in the app version list without refreshing the browser within the Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where clicking on “Share with Testers” caused UI issues after an Android app version was uploaded. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where some users occasionally experienced login issues with the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where the configuration tabs within the build profile were not redirecting users to the specific documentation link. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where refreshing the browser window while editing the connection settings caused UI issues. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where organizations with special characters in their name were not being deleted. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where new notifications were not being displayed in the Notification Center when it was already open. <AccountBadge/> <CloudBadge/>
+
 ## 3.29.2 - 2025-08-22 Auto Re-sign on Testing Distribution, Build History Improvements, Bug Fixes and more
 
 ### 🆕 New Features
