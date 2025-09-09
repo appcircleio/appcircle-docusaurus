@@ -24,7 +24,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Adding a Build Profile</ContentRef>
 
 To test drive the Appcircle platform for Flutter app builds, you can also use our sample Flutter App by forking it or adding it as a public repository: [https://github.com/appcircleio/appcircle-sample-flutter](https://github.com/appcircleio/appcircle-sample-flutter)
 
@@ -36,7 +36,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
