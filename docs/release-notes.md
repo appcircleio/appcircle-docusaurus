@@ -52,6 +52,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :warning: Breaking Changes
 
 - As [Microsoft announced](https://learn.microsoft.com/en-gb/appcenter/retirement) that the remaining App Center features will be retired after March 31, 2025, the App Center CodePush step in Appcircle will also be deprecated. <BuildBadge/> <CloudBadge/>
+- All fields that are mandatory on App Store Connect when saving metadata and submitting the app version for review are now also mandatory in Appcircle Metadata, meaning the Metadata Details form cannot be saved unless all required fields are completed. <PublishBadge/> <CloudBadge/>
+- To prevent issues with the license registration process caused by regional time formats, license registrations and expiries are now recorded in UTC format at 12 PM. <AccountBadge/> <CloudBadge/>
 
 ## 3.29.2 - 2025-08-22 Auto Re-sign on Testing Distribution, Build History Improvements, Bug Fixes and more
 
