@@ -22,7 +22,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - A [Publish Report](/publish-module/publish-report) section has been added to the Publish module, where an organization’s publish actions can be tracked with various filters such as trigger type, user, app name, and more. <PublishBadge/> <CloudBadge/>
 - A [Re-sign Report](/publish-module/publish-resign-report) section has been added to the Publish module, where an organization’s re-sign processes can be tracked. <PublishBadge/> <CloudBadge/>
-- Introducing Machine Plans – Users can now upgrade to higher-tier machine plans (Velocity and Ultra in addition to Standard) depending on their license. This gives you access to more powerful build resources in the Cloud, helping you achieve faster and more consistent build times. <BuildBadge/> <CloudBadge/>
+- Introducing Machine Plans – Users can now upgrade to higher-tier machine plans (Velocity and Ultra in addition to Standard) depending on their license. This gives you access to more powerful build resources in the Cloud, helping you achieve faster and more consistent build times. <InfrastructureBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -48,6 +48,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where refreshing the browser window while editing the connection settings caused UI issues. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where organizations with special characters in their name were not being deleted. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where new notifications were not being displayed in the Notification Center when it was already open. <AccountBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- As [Microsoft announced](https://learn.microsoft.com/en-gb/appcenter/retirement) that the remaining App Center features will be retired after March 31, 2025, the App Center CodePush step in Appcircle will also be deprecated. <BuildBadge/> <CloudBadge/>
 
 ## 3.29.2 - 2025-08-22 Auto Re-sign on Testing Distribution, Build History Improvements, Bug Fixes and more
 
