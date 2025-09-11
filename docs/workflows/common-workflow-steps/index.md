@@ -40,6 +40,10 @@ Learn to streamline your workflows by pushing data to cache with our easy-to-fol
 
 Discover the essentials of cache retrieval in our cache-pull guide. Speed up your build processes by mastering the art of efficiently pulling cached data.
 
+## [Check Network Accessibility](/workflows/common-workflow-steps/check-network-accessibility)
+
+This component checks network access to common build endpoints used in Appcircle workflows. It validates connectivity to package managers, build services, APIs, and custom-defined URLs during build time.
+
 ## [Custom Script](/workflows/common-workflow-steps/custom-script)
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
