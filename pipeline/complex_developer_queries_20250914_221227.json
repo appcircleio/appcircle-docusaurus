@@ -1,0 +1,1210 @@
+{
+  "timestamp": "2025-09-14T22:12:27.115543",
+  "test_type": "complex_developer_queries",
+  "total_queries": 46,
+  "scenario_summaries": [
+    {
+      "scenario": "Getting Started Scenarios",
+      "total_queries": 4,
+      "successful_queries": 4,
+      "success_rate": 100.0,
+      "high_quality_results": 4,
+      "quality_rate": 100.0,
+      "excellent_term_coverage": 4,
+      "term_coverage_rate": 100.0
+    },
+    {
+      "scenario": "Build & Configuration",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 6,
+      "quality_rate": 100.0,
+      "excellent_term_coverage": 3,
+      "term_coverage_rate": 50.0
+    },
+    {
+      "scenario": "Testing Integration",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 6,
+      "quality_rate": 100.0,
+      "excellent_term_coverage": 5,
+      "term_coverage_rate": 83.33333333333334
+    },
+    {
+      "scenario": "Code Signing & Security",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 6,
+      "quality_rate": 100.0,
+      "excellent_term_coverage": 6,
+      "term_coverage_rate": 100.0
+    },
+    {
+      "scenario": "Deployment & Distribution",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 6,
+      "quality_rate": 100.0,
+      "excellent_term_coverage": 3,
+      "term_coverage_rate": 50.0
+    },
+    {
+      "scenario": "Advanced Workflows",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 4,
+      "quality_rate": 66.66666666666666,
+      "excellent_term_coverage": 2,
+      "term_coverage_rate": 33.33333333333333
+    },
+    {
+      "scenario": "Team & Enterprise",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 3,
+      "quality_rate": 50.0,
+      "excellent_term_coverage": 2,
+      "term_coverage_rate": 33.33333333333333
+    },
+    {
+      "scenario": "Troubleshooting & Monitoring",
+      "total_queries": 6,
+      "successful_queries": 6,
+      "success_rate": 100.0,
+      "high_quality_results": 4,
+      "quality_rate": 66.66666666666666,
+      "excellent_term_coverage": 1,
+      "term_coverage_rate": 16.666666666666664
+    }
+  ],
+  "detailed_results": [
+    {
+      "query": "How to setup automated CI/CD pipeline for my React Native app",
+      "user_terms": [
+        "setup",
+        "automated",
+        "CI",
+        "CD",
+        "pipeline",
+        "my",
+        "React",
+        "Native",
+        "app"
+      ],
+      "success": true,
+      "top_score": 2.105362399419149,
+      "term_coverage": 0.7777777777777778,
+      "exact_matches": [
+        "automated",
+        "CI",
+        "CD",
+        "pipeline",
+        "React",
+        "Native",
+        "app"
+      ],
+      "top_result_title": "CodePush via Build Module"
+    },
+    {
+      "query": "I want to migrate from GitHub Actions to Appcircle",
+      "user_terms": [
+        "I",
+        "want",
+        "migrate",
+        "from",
+        "GitHub",
+        "Actions",
+        "Appcircle"
+      ],
+      "success": true,
+      "top_score": 1.5225292750767299,
+      "term_coverage": 0.7142857142857143,
+      "exact_matches": [
+        "I",
+        "from",
+        "GitHub",
+        "Actions",
+        "Appcircle"
+      ],
+      "top_result_title": "Setting Up Appcircle Enterprise App Store Action"
+    },
+    {
+      "query": "How to configure build environment for Flutter project with custom dependencies",
+      "user_terms": [
+        "configure",
+        "build",
+        "environment",
+        "Flutter",
+        "project",
+        "custom",
+        "dependencies"
+      ],
+      "success": true,
+      "top_score": 1.7959909353937422,
+      "term_coverage": 0.8571428571428571,
+      "exact_matches": [
+        "configure",
+        "build",
+        "environment",
+        "Flutter",
+        "project",
+        "dependencies"
+      ],
+      "top_result_title": "Flutter Mobile Applications"
+    },
+    {
+      "query": "I want to setup parallel builds for iOS and Android from same repository",
+      "user_terms": [
+        "I",
+        "want",
+        "setup",
+        "parallel",
+        "builds",
+        "iOS",
+        "Android",
+        "from",
+        "same",
+        "repository"
+      ],
+      "success": true,
+      "top_score": 1.9521416282653807,
+      "term_coverage": 0.7,
+      "exact_matches": [
+        "I",
+        "want",
+        "setup",
+        "builds",
+        "iOS",
+        "from",
+        "repository"
+      ],
+      "top_result_title": "iOS Applications"
+    },
+    {
+      "query": "How to setup environment variables for different deployment stages",
+      "user_terms": [
+        "setup",
+        "environment",
+        "variables",
+        "different",
+        "deployment",
+        "stages"
+      ],
+      "success": true,
+      "top_score": 1.192732071876526,
+      "term_coverage": 0.6666666666666666,
+      "exact_matches": [
+        "environment",
+        "variables",
+        "different",
+        "deployment"
+      ],
+      "top_result_title": "Configurations"
+    },
+    {
+      "query": "I want to use custom Docker images for my build environment",
+      "user_terms": [
+        "I",
+        "want",
+        "use",
+        "custom",
+        "Docker",
+        "images",
+        "my",
+        "build",
+        "environment"
+      ],
+      "success": true,
+      "top_score": 1.6802245378494263,
+      "term_coverage": 0.6666666666666666,
+      "exact_matches": [
+        "I",
+        "use",
+        "Docker",
+        "images",
+        "build",
+        "environment"
+      ],
+      "top_result_title": "External Image Registries for Helm Chart"
+    },
+    {
+      "query": "How to configure build triggers when someone pushes to specific branches",
+      "user_terms": [
+        "configure",
+        "build",
+        "triggers",
+        "someone",
+        "pushes",
+        "specific",
+        "branches"
+      ],
+      "success": true,
+      "top_score": 1.8901399050440106,
+      "term_coverage": 0.8571428571428571,
+      "exact_matches": [
+        "configure",
+        "build",
+        "triggers",
+        "pushes",
+        "specific",
+        "branches"
+      ],
+      "top_result_title": "Triggers"
+    },
+    {
+      "query": "I want to cache node_modules to speed up React Native builds",
+      "user_terms": [
+        "I",
+        "want",
+        "cache",
+        "node_modules",
+        "speed",
+        "up",
+        "React",
+        "Native",
+        "builds"
+      ],
+      "success": true,
+      "top_score": 1.6491777896881104,
+      "term_coverage": 0.6666666666666666,
+      "exact_matches": [
+        "I",
+        "want",
+        "node_modules",
+        "up",
+        "React",
+        "Native"
+      ],
+      "top_result_title": "CodePush SDK"
+    },
+    {
+      "query": "How to setup custom build scripts that run before compilation",
+      "user_terms": [
+        "setup",
+        "custom",
+        "build",
+        "scripts",
+        "that",
+        "run",
+        "before",
+        "compilation"
+      ],
+      "success": true,
+      "top_score": 1.6856883645057676,
+      "term_coverage": 0.75,
+      "exact_matches": [
+        "setup",
+        "custom",
+        "build",
+        "that",
+        "run",
+        "before"
+      ],
+      "top_result_title": "Triggers"
+    },
+    {
+      "query": "I want to build different app variants (debug, staging, production) automatically",
+      "user_terms": [
+        "I",
+        "want",
+        "build",
+        "different",
+        "app",
+        "variants",
+        "debug",
+        "staging",
+        "production",
+        "automatically"
+      ],
+      "success": true,
+      "top_score": 1.9574862337112426,
+      "term_coverage": 0.7,
+      "exact_matches": [
+        "I",
+        "want",
+        "build",
+        "different",
+        "app",
+        "production",
+        "automatically"
+      ],
+      "top_result_title": "Publish Walkthrough for Google Play Console"
+    },
+    {
+      "query": "How to integrate automated testing with Espresso for Android UI tests",
+      "user_terms": [
+        "integrate",
+        "automated",
+        "testing",
+        "Espresso",
+        "Android",
+        "UI",
+        "tests"
+      ],
+      "success": true,
+      "top_score": 1.9228122328008923,
+      "term_coverage": 0.8571428571428571,
+      "exact_matches": [
+        "automated",
+        "testing",
+        "Espresso",
+        "Android",
+        "UI",
+        "tests"
+      ],
+      "top_result_title": "BrowserStack App Automate - Espresso"
+    },
+    {
+      "query": "I want to run unit tests and UI tests in parallel during builds",
+      "user_terms": [
+        "I",
+        "want",
+        "run",
+        "unit",
+        "tests",
+        "UI",
+        "tests",
+        "parallel",
+        "during",
+        "builds"
+      ],
+      "success": true,
+      "top_score": 2.3436764621734616,
+      "term_coverage": 0.8,
+      "exact_matches": [
+        "I",
+        "run",
+        "unit",
+        "tests",
+        "UI",
+        "tests",
+        "during",
+        "builds"
+      ],
+      "top_result_title": "Continuous Testing"
+    },
+    {
+      "query": "How to setup code coverage reporting with Istanbul for React Native",
+      "user_terms": [
+        "setup",
+        "code",
+        "coverage",
+        "reporting",
+        "Istanbul",
+        "React",
+        "Native"
+      ],
+      "success": true,
+      "top_score": 1.534570104735238,
+      "term_coverage": 0.7142857142857143,
+      "exact_matches": [
+        "code",
+        "coverage",
+        "reporting",
+        "React",
+        "Native"
+      ],
+      "top_result_title": "Test Reports for React Native"
+    },
+    {
+      "query": "I want to automatically run tests before deploying to app stores",
+      "user_terms": [
+        "I",
+        "want",
+        "automatically",
+        "run",
+        "tests",
+        "before",
+        "deploying",
+        "app",
+        "stores"
+      ],
+      "success": true,
+      "top_score": 1.421689889828364,
+      "term_coverage": 0.5555555555555556,
+      "exact_matches": [
+        "I",
+        "run",
+        "tests",
+        "before",
+        "app"
+      ],
+      "top_result_title": "LambdaTest App Automate - Espresso"
+    },
+    {
+      "query": "How to configure Firebase Test Lab integration for automated device testing",
+      "user_terms": [
+        "configure",
+        "Firebase",
+        "Test",
+        "Lab",
+        "integration",
+        "automated",
+        "device",
+        "testing"
+      ],
+      "success": true,
+      "top_score": 1.6778387904167174,
+      "term_coverage": 0.75,
+      "exact_matches": [
+        "Firebase",
+        "Test",
+        "Lab",
+        "integration",
+        "automated",
+        "testing"
+      ],
+      "top_result_title": "Appcircle Documentation"
+    },
+    {
+      "query": "I want to fail builds if test coverage drops below 80%",
+      "user_terms": [
+        "I",
+        "want",
+        "fail",
+        "builds",
+        "if",
+        "test",
+        "coverage",
+        "drops",
+        "below",
+        "80"
+      ],
+      "success": true,
+      "top_score": 1.848674521446228,
+      "term_coverage": 0.7,
+      "exact_matches": [
+        "I",
+        "fail",
+        "builds",
+        "if",
+        "test",
+        "coverage",
+        "below"
+      ],
+      "top_result_title": "Running Unit & UI Tests"
+    },
+    {
+      "query": "How to setup iOS code signing with multiple developer certificates",
+      "user_terms": [
+        "setup",
+        "iOS",
+        "code",
+        "signing",
+        "multiple",
+        "developer",
+        "certificates"
+      ],
+      "success": true,
+      "top_score": 1.851367554494313,
+      "term_coverage": 0.8571428571428571,
+      "exact_matches": [
+        "iOS",
+        "code",
+        "signing",
+        "multiple",
+        "developer",
+        "certificates"
+      ],
+      "top_result_title": "Apple Certificates"
+    },
+    {
+      "query": "I want to automate certificate management without manual intervention",
+      "user_terms": [
+        "I",
+        "want",
+        "automate",
+        "certificate",
+        "management",
+        "without",
+        "manual",
+        "intervention"
+      ],
+      "success": true,
+      "top_score": 1.9148136973381042,
+      "term_coverage": 0.875,
+      "exact_matches": [
+        "I",
+        "want",
+        "automate",
+        "certificate",
+        "management",
+        "manual",
+        "intervention"
+      ],
+      "top_result_title": "Publish Walkthrough for Google Play Console"
+    },
+    {
+      "query": "How to configure Android signing for Google Play Store distribution",
+      "user_terms": [
+        "configure",
+        "Android",
+        "signing",
+        "Google",
+        "Play",
+        "Store",
+        "distribution"
+      ],
+      "success": true,
+      "top_score": 2.277084875106812,
+      "term_coverage": 1.0,
+      "exact_matches": [
+        "configure",
+        "Android",
+        "signing",
+        "Google",
+        "Play",
+        "Store",
+        "distribution"
+      ],
+      "top_result_title": "Auto Re-sign"
+    },
+    {
+      "query": "I want to securely store API keys and certificates in build environment",
+      "user_terms": [
+        "I",
+        "want",
+        "securely",
+        "store",
+        "API",
+        "keys",
+        "certificates",
+        "build",
+        "environment"
+      ],
+      "success": true,
+      "top_score": 2.2505621115366616,
+      "term_coverage": 0.8888888888888888,
+      "exact_matches": [
+        "I",
+        "want",
+        "securely",
+        "store",
+        "API",
+        "certificates",
+        "build",
+        "environment"
+      ],
+      "top_result_title": "Apple Certificates"
+    },
+    {
+      "query": "How to setup different signing configurations for debug and release builds",
+      "user_terms": [
+        "setup",
+        "different",
+        "signing",
+        "configurations",
+        "debug",
+        "release",
+        "builds"
+      ],
+      "success": true,
+      "top_score": 1.5133059092930383,
+      "term_coverage": 0.7142857142857143,
+      "exact_matches": [
+        "setup",
+        "signing",
+        "debug",
+        "release",
+        "builds"
+      ],
+      "top_result_title": "Android Keystores"
+    },
+    {
+      "query": "I want to rotate certificates automatically before they expire",
+      "user_terms": [
+        "I",
+        "want",
+        "rotate",
+        "certificates",
+        "automatically",
+        "before",
+        "they",
+        "expire"
+      ],
+      "success": true,
+      "top_score": 1.897044599056244,
+      "term_coverage": 0.875,
+      "exact_matches": [
+        "I",
+        "rotate",
+        "certificates",
+        "automatically",
+        "before",
+        "they",
+        "expire"
+      ],
+      "top_result_title": "Enterprise Portal SSO Authentication"
+    },
+    {
+      "query": "How to automatically deploy to TestFlight after successful builds",
+      "user_terms": [
+        "automatically",
+        "deploy",
+        "TestFlight",
+        "after",
+        "successful",
+        "builds"
+      ],
+      "success": true,
+      "top_score": 1.4740370392799378,
+      "term_coverage": 0.8333333333333334,
+      "exact_matches": [
+        "automatically",
+        "deploy",
+        "TestFlight",
+        "after",
+        "successful"
+      ],
+      "top_result_title": "Publish Walkthrough for App Store"
+    },
+    {
+      "query": "I want to deploy to multiple app stores (Apple, Google, Huawei) simultaneously",
+      "user_terms": [
+        "I",
+        "want",
+        "deploy",
+        "multiple",
+        "app",
+        "stores",
+        "Apple",
+        "Google",
+        "Huawei",
+        "simultaneously"
+      ],
+      "success": true,
+      "top_score": 2.528868134021759,
+      "term_coverage": 0.9,
+      "exact_matches": [
+        "I",
+        "want",
+        "deploy",
+        "multiple",
+        "app",
+        "stores",
+        "Apple",
+        "Google",
+        "Huawei"
+      ],
+      "top_result_title": "Publish Walkthrough for Google Play Console"
+    },
+    {
+      "query": "How to setup internal app distribution for beta testing team",
+      "user_terms": [
+        "setup",
+        "internal",
+        "app",
+        "distribution",
+        "beta",
+        "testing",
+        "team"
+      ],
+      "success": true,
+      "top_score": 1.5032663115433282,
+      "term_coverage": 0.7142857142857143,
+      "exact_matches": [
+        "internal",
+        "app",
+        "distribution",
+        "beta",
+        "testing"
+      ],
+      "top_result_title": "Marketplace Overview"
+    },
+    {
+      "query": "I want to automatically increment version numbers based on Git commits",
+      "user_terms": [
+        "I",
+        "want",
+        "automatically",
+        "increment",
+        "version",
+        "numbers",
+        "based",
+        "Git",
+        "commits"
+      ],
+      "success": true,
+      "top_score": 1.6833254933357238,
+      "term_coverage": 0.6666666666666666,
+      "exact_matches": [
+        "I",
+        "want",
+        "increment",
+        "version",
+        "numbers",
+        "Git"
+      ],
+      "top_result_title": "iOS Versioning"
+    },
+    {
+      "query": "How to configure webhook notifications when deployment completes",
+      "user_terms": [
+        "configure",
+        "webhook",
+        "notifications",
+        "deployment",
+        "completes"
+      ],
+      "success": true,
+      "top_score": 0.9520152854919433,
+      "term_coverage": 0.6,
+      "exact_matches": [
+        "configure",
+        "webhook",
+        "notifications"
+      ],
+      "top_result_title": "Microsoft Teams Notifications"
+    },
+    {
+      "query": "I want to setup staged rollout with automatic rollback on errors",
+      "user_terms": [
+        "I",
+        "want",
+        "setup",
+        "staged",
+        "rollout",
+        "automatic",
+        "rollback",
+        "errors"
+      ],
+      "success": true,
+      "top_score": 1.2691380262374878,
+      "term_coverage": 0.625,
+      "exact_matches": [
+        "I",
+        "want",
+        "rollout",
+        "automatic",
+        "errors"
+      ],
+      "top_result_title": "Publish Walkthrough for Google Play Console"
+    },
+    {
+      "query": "How to setup custom workflow with dependency injection for microservices architecture",
+      "user_terms": [
+        "setup",
+        "custom",
+        "workflow",
+        "dependency",
+        "injection",
+        "microservices",
+        "architecture"
+      ],
+      "success": true,
+      "top_score": 0.7545372145516531,
+      "term_coverage": 0.42857142857142855,
+      "exact_matches": [
+        "setup",
+        "custom",
+        "workflow"
+      ],
+      "top_result_title": "Publish Flow"
+    },
+    {
+      "query": "I want to trigger builds across multiple repositories when core library changes",
+      "user_terms": [
+        "I",
+        "want",
+        "trigger",
+        "builds",
+        "across",
+        "multiple",
+        "repositories",
+        "core",
+        "library",
+        "changes"
+      ],
+      "success": true,
+      "top_score": 1.9952800786495208,
+      "term_coverage": 0.7,
+      "exact_matches": [
+        "I",
+        "trigger",
+        "builds",
+        "across",
+        "multiple",
+        "repositories",
+        "changes"
+      ],
+      "top_result_title": "Triggers"
+    },
+    {
+      "query": "How to configure matrix builds for different OS versions and device configurations",
+      "user_terms": [
+        "configure",
+        "matrix",
+        "builds",
+        "different",
+        "OS",
+        "versions",
+        "device",
+        "configurations"
+      ],
+      "success": true,
+      "top_score": 1.6707545042037966,
+      "term_coverage": 0.75,
+      "exact_matches": [
+        "configure",
+        "builds",
+        "different",
+        "OS",
+        "device",
+        "configurations"
+      ],
+      "top_result_title": "Configurations"
+    },
+    {
+      "query": "I want to implement GitOps workflow with automatic environment promotion",
+      "user_terms": [
+        "I",
+        "want",
+        "implement",
+        "GitOps",
+        "workflow",
+        "automatic",
+        "environment",
+        "promotion"
+      ],
+      "success": true,
+      "top_score": 1.3751771926879883,
+      "term_coverage": 0.625,
+      "exact_matches": [
+        "I",
+        "want",
+        "workflow",
+        "automatic",
+        "environment"
+      ],
+      "top_result_title": "Workflows"
+    },
+    {
+      "query": "How to setup canary deployments with A/B testing integration",
+      "user_terms": [
+        "setup",
+        "canary",
+        "deployments",
+        "B",
+        "testing",
+        "integration"
+      ],
+      "success": true,
+      "top_score": 0.8654846906661987,
+      "term_coverage": 0.5,
+      "exact_matches": [
+        "B",
+        "testing",
+        "integration"
+      ],
+      "top_result_title": "Publish Walkthrough for Google Play Console"
+    },
+    {
+      "query": "I want to orchestrate complex multi-stage pipelines with manual approval gates",
+      "user_terms": [
+        "I",
+        "want",
+        "orchestrate",
+        "complex",
+        "multi",
+        "stage",
+        "pipelines",
+        "manual",
+        "approval",
+        "gates"
+      ],
+      "success": true,
+      "top_score": 1.5829639720916748,
+      "term_coverage": 0.6,
+      "exact_matches": [
+        "I",
+        "want",
+        "multi",
+        "stage",
+        "manual",
+        "approval"
+      ],
+      "top_result_title": "Publish Walkthrough for Google Play Console"
+    },
+    {
+      "query": "How to setup team access control with different permission levels",
+      "user_terms": [
+        "setup",
+        "team",
+        "access",
+        "control",
+        "different",
+        "permission",
+        "levels"
+      ],
+      "success": true,
+      "top_score": 1.4775148698261804,
+      "term_coverage": 0.7142857142857143,
+      "exact_matches": [
+        "team",
+        "access",
+        "control",
+        "permission",
+        "levels"
+      ],
+      "top_result_title": "Profile and Team"
+    },
+    {
+      "query": "I want to integrate with company LDAP for single sign-on authentication",
+      "user_terms": [
+        "I",
+        "want",
+        "integrate",
+        "company",
+        "LDAP",
+        "single",
+        "sign",
+        "authentication"
+      ],
+      "success": true,
+      "top_score": 1.7471077680587768,
+      "term_coverage": 0.75,
+      "exact_matches": [
+        "I",
+        "want",
+        "integrate",
+        "LDAP",
+        "sign",
+        "authentication"
+      ],
+      "top_result_title": "LDAP Settings"
+    },
+    {
+      "query": "How to configure audit logging for compliance requirements",
+      "user_terms": [
+        "configure",
+        "audit",
+        "logging",
+        "compliance",
+        "requirements"
+      ],
+      "success": true,
+      "top_score": 0.5003791284561157,
+      "term_coverage": 0.4,
+      "exact_matches": [
+        "audit",
+        "compliance"
+      ],
+      "top_result_title": "History"
+    },
+    {
+      "query": "I want to setup quota management for different teams and projects",
+      "user_terms": [
+        "I",
+        "want",
+        "setup",
+        "quota",
+        "management",
+        "different",
+        "teams",
+        "projects"
+      ],
+      "success": true,
+      "top_score": 1.0430658340454102,
+      "term_coverage": 0.5,
+      "exact_matches": [
+        "I",
+        "want",
+        "different",
+        "projects"
+      ],
+      "top_result_title": "Overview"
+    },
+    {
+      "query": "How to implement approval workflows for production deployments",
+      "user_terms": [
+        "implement",
+        "approval",
+        "workflows",
+        "production",
+        "deployments"
+      ],
+      "success": true,
+      "top_score": 0.8856530356407166,
+      "term_coverage": 0.6,
+      "exact_matches": [
+        "approval",
+        "workflows",
+        "production"
+      ],
+      "top_result_title": "Triggers"
+    },
+    {
+      "query": "I want to setup cost allocation tracking per team and project",
+      "user_terms": [
+        "I",
+        "want",
+        "setup",
+        "cost",
+        "allocation",
+        "tracking",
+        "per",
+        "team",
+        "project"
+      ],
+      "success": true,
+      "top_score": 1.0659543832143148,
+      "term_coverage": 0.4444444444444444,
+      "exact_matches": [
+        "I",
+        "per",
+        "team",
+        "project"
+      ],
+      "top_result_title": "Profile and Team"
+    },
+    {
+      "query": "How to debug build failures with detailed logging and artifacts",
+      "user_terms": [
+        "debug",
+        "build",
+        "failures",
+        "detailed",
+        "logging",
+        "artifacts"
+      ],
+      "success": true,
+      "top_score": 1.2504350423812867,
+      "term_coverage": 0.6666666666666666,
+      "exact_matches": [
+        "build",
+        "failures",
+        "detailed",
+        "artifacts"
+      ],
+      "top_result_title": "Manual Builds"
+    },
+    {
+      "query": "I want to setup monitoring alerts when build success rate drops",
+      "user_terms": [
+        "I",
+        "want",
+        "setup",
+        "monitoring",
+        "alerts",
+        "build",
+        "success",
+        "rate",
+        "drops"
+      ],
+      "success": true,
+      "top_score": 1.380249027411143,
+      "term_coverage": 0.5555555555555556,
+      "exact_matches": [
+        "I",
+        "want",
+        "build",
+        "success",
+        "rate"
+      ],
+      "top_result_title": "Custom Script (Publish Flow)"
+    },
+    {
+      "query": "How to configure automatic retry logic for flaky network-dependent tests",
+      "user_terms": [
+        "configure",
+        "automatic",
+        "retry",
+        "logic",
+        "flaky",
+        "network",
+        "dependent",
+        "tests"
+      ],
+      "success": true,
+      "top_score": 0.7142129302024842,
+      "term_coverage": 0.375,
+      "exact_matches": [
+        "automatic",
+        "retry",
+        "tests"
+      ],
+      "top_result_title": "Marathon Cloud"
+    },
+    {
+      "query": "I want to analyze build performance metrics and optimize pipeline speed",
+      "user_terms": [
+        "I",
+        "want",
+        "analyze",
+        "build",
+        "performance",
+        "metrics",
+        "optimize",
+        "pipeline",
+        "speed"
+      ],
+      "success": true,
+      "top_score": 1.4524128953615825,
+      "term_coverage": 0.5555555555555556,
+      "exact_matches": [
+        "I",
+        "build",
+        "performance",
+        "pipeline",
+        "speed"
+      ],
+      "top_result_title": "Build Cache"
+    },
+    {
+      "query": "How to setup centralized logging with integration to Elasticsearch",
+      "user_terms": [
+        "setup",
+        "centralized",
+        "logging",
+        "integration",
+        "Elasticsearch"
+      ],
+      "success": true,
+      "top_score": 0.789905469417572,
+      "term_coverage": 0.6,
+      "exact_matches": [
+        "centralized",
+        "logging",
+        "integration"
+      ],
+      "top_result_title": "Integrations and Access"
+    },
+    {
+      "query": "I want to create custom dashboards for build and deployment metrics",
+      "user_terms": [
+        "I",
+        "want",
+        "create",
+        "custom",
+        "dashboards",
+        "build",
+        "deployment",
+        "metrics"
+      ],
+      "success": true,
+      "top_score": 1.6739997625350953,
+      "term_coverage": 0.75,
+      "exact_matches": [
+        "I",
+        "want",
+        "create",
+        "custom",
+        "build",
+        "deployment"
+      ],
+      "top_result_title": "Configurations"
+    }
+  ],
+  "performance_metrics": {
+    "avg_priority_score": 1.554796782138431,
+    "avg_term_coverage": 0.6912612146307799,
+    "overall_success_rate": 100.0
+  }
+}

@@ -53,12 +53,10 @@ def main():
             if '--full' in query:
                 show_full = True
                 query = query.replace('--full', '').strip()
-            elif '--preview' in query:
+            else:
                 show_preview = True
                 query = query.replace('--preview', '').strip()
-            else:
-                show_full = True  # Default to full content
-            
+
             # Process query
             print(f"\n🔄 Searching for: '{query}'")
             results = vm.search_similar(query, n_results=3)
