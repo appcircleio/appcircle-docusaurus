@@ -21,6 +21,7 @@ yarn-error.log*
 
 .yarn*
 env
+.venv
 __pycache__
 *.pyc
 .idea
@@ -28,3 +29,5 @@ __pycache__
 flattened_docs
 json_docs
 structured_docs
+
+vector_db
