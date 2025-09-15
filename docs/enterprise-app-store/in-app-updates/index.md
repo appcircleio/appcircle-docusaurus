@@ -135,15 +135,16 @@ appcircle enterprise-app-store profile list
 
 ### Authentication for Updates
 
-#### Retrieving Access Token Using Personal API Token
+#### Retrieving Access Token Using In-App Update Secret
 
-To fetch app versions and download the binary, you first need to obtain an access token using a Personal API Token (PAT).
+To fetch app versions and download the binary, you first need to obtain an access token using your In-App Update Secret.
 
-<Tabs defaultValue="swift" values={[
+<Tabs defaultValue="curl" values={[
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
-{ label: 'MAUI', value: 'maui' }
+{ label: 'MAUI', value: 'maui' },
+{ label: 'cURL', value: 'curl' }
 ]}>
 
   <TabItem value="android">
@@ -253,6 +254,18 @@ To fetch app versions and download the binary, you first need to obtain an acces
     ```
 
   </TabItem>
+
+<TabItem value="curl">
+```bash
+curl -X POST "https://auth.appcircle.io/auth/v1/in-app-update/token" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "ProfileId": "YOUR_PROFILE_ID",
+    "Secret": "YOUR_PROFILE_IN_APP_UPDATE_SECRET"
+  }'
+```
+
+</TabItem>
 
   <TabItem value="react-native">
     ```js
@@ -396,11 +409,12 @@ For Android, omit https and provide only your enterprise store domain, such as a
 
 Fetch all available versions and compare them with the current version to determine if an update is required.
 
-<Tabs defaultValue="swift" values={[
+<Tabs defaultValue="curl" values={[
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
-{ label: 'MAUI', value: 'maui' }
+{ label: 'MAUI', value: 'maui' },
+{ label: 'cURL', value: 'curl' }
 ]}>
 
   <TabItem value="android">
@@ -510,6 +524,14 @@ Fetch all available versions and compare them with the current version to determ
     }
     ```
 
+  </TabItem>
+
+  <TabItem value="curl">
+```bash
+ curl -X GET "https://STORE_URL/api/app-versions" \
+  -H "Authorization: Bearer ACCESS_TOKEN" \
+  -H "Accept: */*"
+```
   </TabItem>
 
   <TabItem value="react-native">
@@ -1228,11 +1250,23 @@ For example;
 
 :::caution User Email and Enterprise App Store Report
 
-Please note that the user email parameter is used for the reporting feature of the Enterprise App Store module. If the user email parameter is not provided, the **User** field in the report will appear as **`No Name`**.
+Please note that the user email parameter is used for the reporting feature of the Enterprise App Store module. If the user email parameter is not provided, the **User** field in the report will appear as **`In-App Update User`**.
 
 For more detailed information about Enterprise App Store Reporting, please visit [**Enterprise Portal Reports documentation**](/enterprise-app-store/enterprise-reports).
 
 :::
+
+#### Downloading the App
+
+Generate an app-version specific URL to download app versions.
+
+```bash
+ curl -X GET "https://STORE_URL/api/app-versions/{AppVersionId}/download-version"
+  -H "Authorization: Bearer ACCESS_TOKEN" \
+  -H "user-id: USER_EMAIL" \
+  -H "Accept: */*"
+```
+
 
 ### How to Prompt an Alert and Install the Latest Release
 
