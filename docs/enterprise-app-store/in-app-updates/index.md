@@ -95,7 +95,7 @@ appcircle enterprise-app-store profile list
 
 To fetch app versions and download the binary, you first need to obtain an access token using your In-App Update Secret.
 
-<Tabs defaultValue="curl" values={[
+<Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
@@ -211,17 +211,17 @@ To fetch app versions and download the binary, you first need to obtain an acces
 
   </TabItem>
 
-<TabItem value="curl">
-```bash
-curl -X POST "https://auth.appcircle.io/auth/v1/in-app-update/token" \
-  -H "Content-Type: application/json" \
-  -d '{
-    "ProfileId": "YOUR_PROFILE_ID",
-    "Secret": "YOUR_PROFILE_IN_APP_UPDATE_SECRET"
-  }'
-```
+  <TabItem value="curl">
+    ```bash
+    curl --location '{STORE_URL}/api/auth/token' \
+    --header 'Content-Type: application/json' \
+    --data '{
+    "ProfileId": "PROFILE_ID",
+    "Secret": "PROFILE_IN_APP_UPDATE_SECRET"
+   }'
+    ```
 
-</TabItem>
+  </TabItem>
 
   <TabItem value="react-native">
     ```js
@@ -365,7 +365,7 @@ For Android, omit https and provide only your enterprise store domain, such as a
 
 Fetch all available versions and compare them with the current version to determine if an update is required.
 
-<Tabs defaultValue="curl" values={[
+<Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
@@ -902,7 +902,7 @@ The code above compares major versions. For instance, if the current app version
 
 If a newer version is available, generate the platform-specific download URL and return it for background opening later.
 
-<Tabs defaultValue="curl" values={[
+<Tabs defaultValue="swift" values={[
 { label: 'Swift', value: 'swift' },
 { label: 'Android', value: 'android' },
 { label: 'React Native', value: 'react-native' },
