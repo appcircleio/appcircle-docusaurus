@@ -485,7 +485,7 @@ Fetch all available versions and compare them with the current version to determ
 
   <TabItem value="curl">
 ```bash
- curl -X GET "https://STORE_URL/api/app-versions" \
+ curl -X GET "https://{STORE_URL}/api/app-versions" \
   -H "Authorization: Bearer ACCESS_TOKEN" \
   -H "Accept: */*"
 ```
@@ -1014,7 +1014,7 @@ If a newer version is available, generate the platform-specific download URL and
   <TabItem value="curl">
 
 ```bash
- curl -X GET "https://STORE_URL/api/app-versions/{AppVersionId}/download-version"
+ curl -X GET "https://{STORE_URL}/api/app-versions/{AppVersionId}/download-version"
   -H "Authorization: Bearer ACCESS_TOKEN" \
   -H "user-id: USER_EMAIL" \
   -H "Accept: */*"
