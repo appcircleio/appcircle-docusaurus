@@ -213,9 +213,10 @@ To fetch app versions and download the binary, you first need to obtain an acces
 
   <TabItem value="curl">
     ```bash
-    curl --location '{STORE_URL}/api/auth/token' \
-    --header 'Content-Type: application/json' \
-    --data '{
+    curl --X POST '{STORE_URL}/api/auth/token' \
+    --H 'Content-Type: application/json' \
+    --D 
+   '{
     "ProfileId": "PROFILE_ID",
     "Secret": "PROFILE_IN_APP_UPDATE_SECRET"
    }'
