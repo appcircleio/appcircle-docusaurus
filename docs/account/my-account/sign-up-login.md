@@ -17,11 +17,11 @@ To log into Appcircle, you only need to provide your registered email address an
 
 For registration, click on the **Sign up with Company E-mail** button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-user-login.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7106-1.png' />
 
 Fill in the required information and verify your email address. Follow the instructions sent to your email address to complete the registration.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/appcircle-sign-up.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7106-2.png' />
 
 :::caution
 
