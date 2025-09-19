@@ -1336,5 +1336,10 @@ status = 301
 
 [[redirects]]
 from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository"
-to = "/build/manage-the-connections/connection-guides/connecting-to-public repository"
+to = "/build/manage-the-connections/connection-guides/connecting-to-public-repository"
+status = 301
+
+[[redirects]]
+from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
+to = "/build/manage-the-connections/connection-guides/connecting-to-gitlab"
 status = 301
