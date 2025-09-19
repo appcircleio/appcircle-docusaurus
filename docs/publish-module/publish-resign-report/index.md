@@ -7,6 +7,7 @@ description: Understand the Report for Publish Re-sign in Appcircle, providing v
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
 
 # Publish Re-sign Report
 
@@ -25,7 +26,7 @@ These are the displayed fields within the Publish Report:
 - Start Date
 - Duration
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6970-ss4.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-9.png" />
 
 ## Filtering Options
 
@@ -39,7 +40,7 @@ Users can refine the report data using multiple filters:
 - **App Name:** Filter by the application name that was used in the Publish action.
 - **Status:** Filter by Status of the Publish such as Success, Failed or Canceled.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6970-ss5.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-8.png" />
 
 :::info
 In the filter options, you can only view and select the organization and sub-organization you belong to.
@@ -49,8 +50,4 @@ In the filter options, you can only view and select the organization and sub-org
 Please note that the Publish Re-sign Report displays only the re-sign operations that were triggered in the Publish module.
 :::
 
-## Exporting the Publish Report
-
-The Publish Re-sign Report supports exporting filtered data into CSV format, enabling offline analysis and sharing with stakeholders.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6970-ss6.png" />
+<CSVExport />

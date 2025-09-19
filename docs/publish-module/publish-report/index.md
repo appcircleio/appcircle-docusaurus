@@ -7,6 +7,7 @@ description: Understand the Report for Publish in Appcircle, providing visibilit
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
 
 # Publish Report
 
@@ -26,7 +27,7 @@ These are the displayed fields within the Publish Report:
 - Start Date
 - Duration
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6970-ss1.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-7.png" />
 
 ## Filtering Options
 
@@ -41,14 +42,10 @@ Users can refine the report data using multiple filters:
 - **App Name:** Filter by the application name that was used in the Publish action.
 - **Status:** Filter by Status of the Publish such as Success, Failed or Canceled.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6970-ss2.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-5.png" />
 
 :::info
 In the filter options, you can only view and select the organization and sub-organization you belong to.
 :::
 
-## Exporting the Publish Report
-
-The Publish Report supports exporting filtered data into CSV format, enabling offline analysis and sharing with stakeholders.
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE6970-ss3.png" />
+<CSVExport />
