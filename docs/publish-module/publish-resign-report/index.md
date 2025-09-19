@@ -13,6 +13,8 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 The Publish Re-sign Report provides detailed visibility into the manual and automatic re-sign operations performed within the publish module. This report helps you monitor and analyze re-sign activities across your organization over a selected time period.
 
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-9.png" />
+
 These are the displayed fields within the Publish Report:
 
 - Org Name
@@ -25,8 +27,6 @@ These are the displayed fields within the Publish Report:
 - Trigger Type
 - Start Date
 - Duration
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-9.png" />
 
 ## Filtering Options
 

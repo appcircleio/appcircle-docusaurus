@@ -13,6 +13,8 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 The Publish Report provides a detailed overview of all actions performed within the Publish Module. It allows users to monitor, filter, and export publish-related activities across different platforms, trigger types, and stores.
 
+<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-7.png" />
+
 These are the displayed fields within the Publish Report:
 
 - Org Name
@@ -26,8 +28,6 @@ These are the displayed fields within the Publish Report:
 - Store
 - Start Date
 - Duration
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/7112-7.png" />
 
 ## Filtering Options
 
