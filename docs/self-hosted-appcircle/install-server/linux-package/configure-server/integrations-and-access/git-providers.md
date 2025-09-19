@@ -148,6 +148,61 @@ To apply the changes, please follow the [Applying Git Provider Changes](#applyin
 GitHub Enterprise Server option is available in version `3.28.2` or later.
 :::
 
+### GitHub App Cloud
+
+The [GitHub App](https://docs.github.com/en/apps/using-github-apps/about-using-github-apps) option is `disabled` by default since it needs further custom configuration for your setup.
+
+If you want to connect to GitHub Cloud using the GitHub App, you need to **[create your own GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps)** for your organization. Below are the key points that you should follow while creating a GitHub App for your Appcircle server.
+
+1. TODO
+
+In order to activate it, you should fill in the below settings in your `global.yaml` using your GitHub App properties.
+
+```yaml
+build:
+  oauths:
+    githubAppOauth:
+      enabled: true
+      clientId: 
+      clientSecret: 
+      authorizeUrl: 
+```
+
+You can find all the required values in the "About" page under the "General" tab at the GitHub App configuration page.
+
+- **`clientId`**: It's the "Client ID" of your GitHub App.
+  - For example, `Iv2***qEI***x8H***ys`
+- **`clientSecret`**: "Create a new client secret" for your GitHub App.
+  - For example, `222***a8f***2a1***4a0***5f3***b8a***b8a8`
+- **`authorizeUrl`**: Use "Public link", appending `/installations/new` to the end.
+  - For example, if your "GitHub App name" is "MyAwesomeApp" it should be `https://github.com/apps/myawesomeapp/installations/new`
+
+According to the sample GitHub App properties above, your `global.yaml` settings should be like below.
+
+```yaml
+build:
+  oauths:
+    githubAppOauth:
+      enabled: true
+      clientId: "Iv2***qEI***x8H***ys"
+      clientSecret: "222***a8f***2a1***4a0***5f3***b8a***b8a8"
+      authorizeUrl: "https://github.com/apps/myawesomeapp/installations/new"
+```
+
+To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
+
+After successfully applying, the "GitHub App Cloud `OAuth2`" option will be visible under "GitHub Cloud Connection" options when you create a new connection for a build profile.
+
+:::info
+"GitHub App Cloud `OAuth2`" connection option is available in version `3.29.3` or later.
+:::
+
+:::caution
+Currently, GitHub App connection is **supported for only GitHub Cloud** (github.com) connections.
+
+You cannot use the GitHub App for a GitHub Enterprise Server connection.
+:::
+
 ## Connect via SSH
 
 To disable the "Connect via SSH" option, add the below configuration to `global.yaml`.
