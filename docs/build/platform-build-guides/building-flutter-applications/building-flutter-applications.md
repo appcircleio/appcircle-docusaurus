@@ -24,7 +24,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="/build/manage-the-connections/connection-guides">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Connection Guides</ContentRef>
 
 To test drive the Appcircle platform for Flutter app builds, you can also use our sample Flutter App by forking it or adding it as a public repository: [https://github.com/appcircleio/appcircle-sample-flutter](https://github.com/appcircleio/appcircle-sample-flutter)
 

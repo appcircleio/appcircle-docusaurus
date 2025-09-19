@@ -16,7 +16,7 @@ Building iOS applications may be complex and confusing. Appcircle will help you 
 
 Before starting your first iOS app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="/build/manage-the-connections/connection-guides">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Connection Guides</ContentRef>
 
 After connecting your repository, please add or create your iOS certificate and provisioning profile. You can refer to the page below for this step:
 

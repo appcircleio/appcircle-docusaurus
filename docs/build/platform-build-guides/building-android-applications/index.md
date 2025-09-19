@@ -14,7 +14,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 Before starting your first Android app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="/build/manage-the-connections/connection-guides">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Connection Guides</ContentRef>
 
 After connecting your repository, please add or create your Android Keystore. You can refer to the page below for this step:
 
