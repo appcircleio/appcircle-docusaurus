@@ -16,7 +16,7 @@ Building iOS applications may be complex and confusing. Appcircle will help you 
 
 Before starting your first iOS app build, please make sure you first create a build profile and connect your Git repository to your build profile. You can refer to the page below for this step:
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Connection Guides</ContentRef>
 
 After connecting your repository, please add or create your iOS certificate and provisioning profile. You can refer to the page below for this step:
 
@@ -50,7 +50,7 @@ Please don't forget to add additional scheme files to your version control.
 
 If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 

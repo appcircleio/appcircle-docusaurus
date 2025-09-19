@@ -47,7 +47,7 @@ You can also connect to public repositories directly or use SSH for custom repos
 
 Appcircle will fetch all your branches and commits in your repository and lets you build any commit you want to test your application.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Connection Guides</ContentRef>
 
 Configure your build profile and select project parameters, signing options, distribution profiles and environment variables. Your project will be built using these settings and options.
 

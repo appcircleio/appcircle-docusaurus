@@ -306,7 +306,7 @@ The first thing you should check is **PAT** permissions.
 
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
-For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/connection-guides/connecting-to-gitlab#outbound-requests) section.
 
 ### What should be done after upgrading the hardware resources (CPU & memory) of the Appcircle server?
 
