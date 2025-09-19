@@ -31,11 +31,17 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The Custom Script step within the Build module has been updated to support additional languages. In addition to Ruby and Bash, scripts written in Python and NodeJS can now be run. <BuildBadge/> <CloudBadge/>
 - The required permission level has been downgraded to API only for GitLab OAUTH connections. <BuildBadge/> <CloudBadge/>
 - Improvements were made to GitLab PAT and OAuth connection speed for repositories with a high number of branches. <BuildBadge/> <CloudBadge/>
+- The active machine plan is now displayed on build configuration screens. <BuildBadge/> <CloudBadge/>
+- UI improvements were made to the Microsoft Intune Release Candidate selection screen on Publish profiles, such as disabling the Mark as RC button when no changes were made and hiding the available apps when a new app was selected. <PublishBadge/> <CloudBadge/>
+- Support was added for defining multiple bundle ID and provisioning profile matches during auto re-signing. <PublishBadge/> <CloudBadge/>
+- The publish status is now displayed as a tag next to each publish entry in the publish history. <PublishBadge/> <CloudBadge/>
 - The Bundle ID/Package ID fields have been added to the iOS and Android auto re-sign options for the Testing Distribution module, where this information can be updated to be used in auto re-sign processes. <DistributionBadge/> <CloudBadge/>
 - Testing Distribution [Auto Re-sign](/testing-distribution/resigning-binaries#auto-re-sign) options have been separated into ‘iOS Auto Re-sign options’ and ‘Android Auto Re-sign options’. <DistributionBadge/> <CloudBadge/>
 - Users can no longer share `.AAB` binaries to the Testing Portal via Testing Distribution profiles. The ‘Convert `.AAB` to `.APK`’ feature can be used to automatically convert them to `.APK` format. <DistributionBadge/> <CloudBadge/>
 - Newly created [API Keys](/account/my-organization/security/api-keys) are now displayed with a default expiration date of 6 months, which can be edited by the user to up to 1 year. <AccountBadge/> <CloudBadge/>
 - A warning email is now sent a week before an organization’s [API Key](/account/my-organization/security/api-keys) expires. <AccountBadge/> <CloudBadge/>
+- The billing page UI was updated with spacing adjustments and color enhancements. <AccountBadge/> <CloudBadge/>
+- A new filtering header system, similar to the Notification Center, was implemented in the Build, Publish, Signing Identity, and Testing Distribution module reports. <ReportsBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -44,8 +50,11 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where auto re-signed app versions were not being displayed in the app version list without refreshing the browser within the Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where clicking on “Share with Testers” caused UI issues after an Android app version was uploaded. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where some users occasionally experienced login issues with the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where changing the Testing Distribution profile name caused saved auto re-sign settings to revert. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where signed AAB binaries were incorrectly shown as unsigned after conversion to APK in Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where the configuration tabs within the build profile were not redirecting users to the specific documentation link. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where refreshing the browser window while editing the connection settings caused UI issues. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where using an in-app-update secret from a sub-organization caused problems with the app version download URL due to custom domain usage. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed where organizations with special characters in their name were not being deleted. <AccountBadge/> <CloudBadge/>
 - An issue was fixed where new notifications were not being displayed in the Notification Center when it was already open. <AccountBadge/> <CloudBadge/>
 
