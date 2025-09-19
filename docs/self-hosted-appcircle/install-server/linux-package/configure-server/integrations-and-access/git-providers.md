@@ -68,7 +68,7 @@ You can configure only the self-hosted or cloud "Bitbucket" options using the re
 - The `bitbucket` key is used to manage **Bitbucket (Cloud)**.
 - The `bitbucketServer` key is used to manage **Bitbucket Server**.
 
-For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
+For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/connection-guides/connecting-to-bitbucket) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
@@ -92,7 +92,7 @@ You can configure only the self-hosted or cloud "Azure DevOps" options using the
 - The `azureDevopsServices` key is used to manage **Azure DevOps Services (Cloud)**.
 - The `azureDevopsServer` key is used to manage **Azure DevOps Server**.
 
-For more details about "Azure DevOps" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
+For more details about "Azure DevOps" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/connection-guides/connecting-to-azure) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
@@ -116,7 +116,7 @@ You can configure only the self-hosted or cloud "GitLab" options using the relev
 - The `gitlab` key is used to manage **GitLab (Cloud)**.
 - The `gitlabSelfHosted` key is used to manage **GitLab Self-Managed**.
 
-For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) page.
+For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/connection-guides/connecting-to-gitlab) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
@@ -140,7 +140,7 @@ You can configure only the self-hosted or cloud "GitHub" options using the relev
 - The `githubApp` key is used to manage **GitHub (Cloud)**.
 - The `githubEnterpriseServer` key is used to manage **GitHub Enterprise Server**.
 
-For more details about "GitHub" usage, see related docs in the [Connecting to GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github) page.
+For more details about "GitHub" usage, see related docs in the [Connecting to GitHub](/build/manage-the-connections/connection-guides/connecting-to-github) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
@@ -161,7 +161,7 @@ build:
 
 If you want to re-enable "Connect via SSH" again, you can set the `enabled` to `true`.
 
-For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) page.
+For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 
@@ -178,7 +178,7 @@ build:
 
 If you want to re-enable "Connect via URL" again, you can set the `enabled` to `true`.
 
-For more details about "Connect via URL" usage, see related docs in the [Connect via URL](/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository) page.
+For more details about "Connect via URL" usage, see related docs in the [Connect via URL](/build/manage-the-connections/connection-guides/connecting-to-public-repository) page.
 
 To apply the changes, please follow the [Applying Git Provider Changes](#applying-git-provider-changes) section at the end.
 

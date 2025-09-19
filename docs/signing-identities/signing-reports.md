@@ -5,6 +5,9 @@ tags: [reports, signing reports, signing identities, testing]
 sidebar_position: 6
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
+
 # Signing Reports
 
 This report is accessible from the Signing Identities module.
@@ -17,7 +20,7 @@ Since the primary objective of this report is to provide visibility on who used 
 
 The date and time are displayed in the current timezone.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4746-report1.png' alt="Signing Reports" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-10.png' alt="Signing Reports" />
 
 You can filter the report pages according to the organization.
 
@@ -25,4 +28,4 @@ You can filter the report pages according to the organization.
 In the filtering options, you can only view and select the organization and sub-organization you belong to.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4746-report2.png' alt="Signing Reports Filter" />
+<CSVExport />

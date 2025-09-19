@@ -31,7 +31,7 @@ Build.<br/>Test.<br/>Distribute.
             <p><strong>New to Appcircle?</strong> Get started by adding your Obj-C/Swift, Java/Kotlin, React Native, Flutter app first.</p>
       </div>
       <div class="intro-card">
-            <h3><a href="/build/manage-the-connections/adding-a-build-profile">Building Your Apps</a></h3>
+            <h3><a href="/build/manage-the-connections/connection-guides">Building Your Apps</a></h3>
             <p>Learn about setting up your repository, creating workflows and how to automatically trigger a build.</p>
       </div>
       <div class="intro-card">
