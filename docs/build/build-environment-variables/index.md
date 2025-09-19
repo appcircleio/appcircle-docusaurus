@@ -183,6 +183,6 @@ $VariableGroup:Key
 If your SSH public key is not defined on the Git provider, Appcircle will not be able to connect to your repository. First, you will need to add your public key to the Git provider.
 :::
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh">Connecting to Repository via SSH</ContentRef>
 
 For platform specific environment variables and more detailed information, please refer to the related [documentation](/environment-variables/platform-specific-usage).

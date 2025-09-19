@@ -25,7 +25,7 @@ In this case, do not hesitate to [contact us](https://appcircle.io/support/) for
 
 In order to build a Xamarin iOS app on Appcircle, follow the steps below.
 
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+**1.** [Create](/build/manage-the-connections/connection-guides) a new build profile for your app.
 
 - `iOS` should be selected as the **Target Operating System**, and `Objective-C/Swift` should be selected as the **Target Platform**.
 
@@ -160,7 +160,7 @@ When the build pipeline is completed successfully, you will see the signed `.ipa
 
 In order to build a Xamarin Android app on Appcircle, follow the steps below.
 
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+**1.** [Create](/build/manage-the-connections/connection-guides) a new build profile for your app.
 
 - `Android` should be selected as the **Target Operating System**, and `Java/Kotlin` should be selected as the **Target Platform**.
 

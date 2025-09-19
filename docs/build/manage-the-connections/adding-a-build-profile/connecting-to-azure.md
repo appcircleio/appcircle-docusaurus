@@ -3,6 +3,7 @@ title: Connecting to Azure DevOps
 description: Learn how to connect to Azure DevOps in Appcircle
 tags: [build profile, connection]
 sidebar_position: 4
+slug: /build/manage-the-connections/connection-guides/connecting-to-azure
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
