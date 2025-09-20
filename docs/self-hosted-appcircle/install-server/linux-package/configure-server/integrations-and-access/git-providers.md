@@ -203,7 +203,39 @@ yq '.apiGateway.external.url' ./projects/spacetech/export/.global.yaml
 
 For example, `https://api.appcircle.spacetech.com`
 
-In order to activate it, you should fill in the below settings in your `global.yaml` using your GitHub App properties.
+#### Configuration
+
+Below are the configuration steps you should follow for setting up the GitHub App.
+
+1. Give a name to your GitHub App using the "GitHub App name" field.
+   1. For example, `MyAwesomeApp`
+2. Enter the **dashboard** URL in the "Homepage URL" field.
+   1. For example, `https://my.appcircle.spacetech.com`
+3. Add "Callback URL" using the **API** URL and appending `/build/v1/callback?gitProvider=GithubApp` to the end of the URL.
+   1. For example, `https://api.appcircle.spacetech.com/build/v1/callback?gitProvider=GithubApp`
+4. Add "Callback URL" using the **IAM** URL and appending `/auth/realms/appcircle/broker/githubapp/endpoint?gitProvider=GithubApp` to the end of the URL.
+   1. For example, `https://auth.appcircle.spacetech.com/auth/realms/appcircle/broker/githubapp/endpoint?gitProvider=GithubApp`
+5. The "Request user authorization (OAuth) during installation" option in the "Identifying and authorizing users" section should be in the `checked` state.
+6. The "Redirect on update" option in the "Post installation" section should be in the `checked` state.
+7. Webhook should be "Active", and enter the **API** URL as "Webhook URL" by appending `/build/v1/hooks/github` at the end.
+   1. For example, `https://api.appcircle.spacetech.com/build/v1/hooks/github`
+8. Select the "Enable SSL verification" option in the "SSL Verification" for better security practices if your SSL certificates can be trusted by GitHub.
+9. Select required "Repository" permissions using [permissions for the GitHub integration](https://docs.appcircle.io/build/manage-the-connections/adding-a-build-profile/connecting-to-github#oauth2-and-personal-access-token-permissions-for-github-integration) guide.
+10. Select "Webhooks" as "Read and Write" in the "Organization" permissions.
+11. Select the below events in the "Subscribe to events" to be triggered from GitHub:
+    1. `Create`
+    2. `Commit comment`
+    3. `Delete`
+    4. `Pull request`
+    5. `Push`
+    6. `Repository`
+    7. `Status`
+
+When you complete your GitHub App configuration on GitHub, you are ready to move on to using it in the Appcircle.
+
+---
+
+In order to **activate your GitHub app on the Appcircle server**, you should fill in the below settings in your `global.yaml` using your GitHub App properties.
 
 ```yaml
 build:
@@ -222,7 +254,7 @@ You can find all the required values in the "About" page under the "General" tab
 - **`clientSecret`**: "Create a new client secret" for your GitHub App.
   - For example, `222***a8f***2a1***4a0***5f3***b8a***b8a8`
 - **`authorizeUrl`**: Use "Public link", appending `/installations/new` to the end.
-  - For example, if your "GitHub App name" is "MyAwesomeApp" it should be `https://github.com/apps/myawesomeapp/installations/new`
+  - For example, `https://github.com/apps/myawesomeapp/installations/new`
 
 According to the sample GitHub App properties above, your `global.yaml` settings should be like below.
 
