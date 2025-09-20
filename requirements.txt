@@ -5,6 +5,9 @@ sentence-transformers>=2.2.2
 chromadb>=0.4.15
 numpy>=1.24.0
 
+# Search Dependencies
+algoliasearch>=3.0.0
+
 # Document Processing
 python-frontmatter>=1.0.0
 
