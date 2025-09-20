@@ -7,6 +7,7 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 import NeedHelp from '@site/docs/\_need-help.mdx';
+import SpacetechExampleInfo from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/_spacetech-example-info.mdx';
 
 With default installation, self-hosted Appcircle comes with the connection options below:
 
@@ -154,7 +155,53 @@ The [GitHub App](https://docs.github.com/en/apps/using-github-apps/about-using-g
 
 If you want to connect to GitHub Cloud using the GitHub App, you need to **[create your own GitHub App](https://docs.github.com/en/apps/creating-github-apps/about-creating-github-apps/about-creating-github-apps)** for your organization. Below are the key points that you should follow while creating a GitHub App for your Appcircle server.
 
-1. TODO
+#### Requirements
+
+While creating your own GitHub App, you will need some domains from the Appcircle server for URLs. Therefore, before beginning, you should have been gotten the below domains ready for your GitHub App configuration.
+
+- Log in to the Appcircle server with SSH or a remote connection.
+
+- Go to the `appcircle-server` directory.
+
+```bash
+cd appcircle-server
+```
+
+<SpacetechExampleInfo />
+
+- Update the environment variable `PATH` with the required dependencies.
+
+```bash
+export PATH=$PATH:$(pwd)/deps/bin
+```
+
+:::info
+URL samples in the following steps are based on sample [DNS settings](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings) from the Appcircle server installation.
+:::
+
+**1.** Get **dashboard** URL.
+
+```bash
+yq '.webApp.external.url' ./projects/spacetech/export/.global.yaml
+```
+
+For example, `https://my.appcircle.spacetech.com`
+
+**2.** Get **IAM** URL.
+
+```bash
+yq '.keycloak.external.url' ./projects/spacetech/export/.global.yaml
+```
+
+For example, `https://auth.appcircle.spacetech.com`
+
+**3.** Get **API** URL.
+
+```bash
+yq '.apiGateway.external.url' ./projects/spacetech/export/.global.yaml
+```
+
+For example, `https://api.appcircle.spacetech.com`
 
 In order to activate it, you should fill in the below settings in your `global.yaml` using your GitHub App properties.
 
