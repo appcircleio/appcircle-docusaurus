@@ -7,6 +7,8 @@ sidebar_position: 30
 
 import Screenshot from '@site/src/components/Screenshot';
 
+import HttpsOnlySupportedFeatures from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_https-only-supported-features.mdx';  
+
 # Overview
 
 Following sections give you detailed information about system requirements, installation and configuration steps. After following directives successfully, you will get a running Appcircle instance on your infrastructure.
@@ -347,11 +349,13 @@ storeWeb:
 
 For our example, we configured below values:
 
-- `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
+- `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for [SSL configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) details.
 - `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings) for more details.
 - `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. Recommended methods will be explained in the next section. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
+
+<HttpsOnlySupportedFeatures />
 
 :::caution
 Starting from the version `3.28.2`, SMTP settings can be configured directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings. To use this method, you can remove the `smtpServer` part from your `global.yaml` file, and configure SMTP settings on the Dashboard after installation.
