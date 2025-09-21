@@ -7,7 +7,7 @@ sidebar_position: 30
 
 import Screenshot from '@site/src/components/Screenshot';
 
-import HttpsOnlySupportedFeatures from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_https-only-supported-features.mdx';  
+import HttpsOnlySupportedFeatures from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_https-only-supported-features.mdx';
 
 # Overview
 
