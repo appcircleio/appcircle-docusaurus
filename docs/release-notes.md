@@ -68,7 +68,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 #### Upgrading from `3.28.3` or older versions <SelfHostedBadge/>
 
-Recently Appcircle made an upgrade for its IAM services, which has an important data migration related to the IAM upgrade. See the "breaking changes" note [here](https://docs.appcircle.io/release-notes#3-29-1) for the details.
+Recently Appcircle made an upgrade for its IAM services, which has an important data migration related to the IAM upgrade. See the "breaking changes" note **[here](https://docs.appcircle.io/release-notes#3-29-1)** for the details.
 
 If you have a Docker/Podman Appcircle server deployment ([standalone](https://docs.appcircle.io/self-hosted-appcircle#dockerpodman-standalone-architecture) or [DMZ-supported](https://docs.appcircle.io/self-hosted-appcircle#dockerpodman-architecture-with-dmz-support) architecture) that is `3.28.3` or an older version, as a **first step**, you must **upgrade to version `3.29.0`** successfully, take the recommended backup, and then go on with version `3.29.3` or later.
 
