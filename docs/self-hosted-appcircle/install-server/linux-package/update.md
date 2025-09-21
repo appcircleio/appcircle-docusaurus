@@ -205,11 +205,11 @@ In order to migrate to single-node single drive MinIO configuration or stay with
 
 :::caution
 
-#### ⚠️ Upgrade Path for `3.29.3` or later
+#### Upgrade path for `3.29.3` or later
 
-If you are using `3.28.3` or an older version and planning to upgrade to `3.29.3` or a later version, you must have an intermediate upgrade step with version `3.29.0`.
+If you are using `3.28.3` or an older version and planning to upgrade to `3.29.3` or a later version, you must have an **intermediate upgrade step** with version `3.29.0`.
 
-See [here](/release-notes#upgrading-from-3283-or-older-versions-) for further details, and follow the guide there for a healthy upgrade path.
+See **[here](/release-notes#upgrading-from-3283-or-older-versions-)** for further details, and follow the guide for a healthy upgrade path.
 
 :::
 
