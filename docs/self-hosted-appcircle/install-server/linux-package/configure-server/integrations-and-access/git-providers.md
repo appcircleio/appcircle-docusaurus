@@ -239,7 +239,7 @@ When you complete your GitHub App configuration on GitHub, you are ready to move
 
 ---
 
-In order to **activate your GitHub app on the Appcircle server**, you should fill in the below settings in your `global.yaml` using your GitHub App properties.
+In order to **activate your GitHub App on the Appcircle server**, you should fill in the below settings in your `global.yaml` using your GitHub App properties.
 
 ```yaml
 build:
@@ -262,7 +262,7 @@ You can find all the required values in the "About" page under the "General" tab
 
 :::caution
 
-As in the example above, replace the `{app_name}` with your actual GitHub application name;  
+As in the example above, replace the `{app_name}` with your actual GitHub App name;  
 - `https://github.com/apps/{app_name}/installations/new`
 
 :::
