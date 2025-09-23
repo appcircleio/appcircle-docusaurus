@@ -106,7 +106,7 @@ Below is the version history of the self-hosted Appcircle server. This table hel
         
         | Version   | Release Date |
         |-----------|--------------|
-        | [3.29.3]  | 22/09/2025   |
+        | [3.29.3]  | 23/09/2025   |
         | [3.28.2]  |     -        |
         | [3.29.1]  |     -        |
         | [3.29.0]  | 15/08/2025   |
