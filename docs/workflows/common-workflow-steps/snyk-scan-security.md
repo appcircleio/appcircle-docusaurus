@@ -44,7 +44,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | `$AC_SYK_CLI_COMMAND`         | The [Snyk CLI command](https://docs.snyk.io/snyk-cli/cli-commands-and-options-summary) to execute. The default value is `test`.                                             | Optional  |
 | `$AC_SNYK_SEVERITY_THRESHOLD` | Specifies the minimum [severity level of vulnerabilities](https://docs.snyk.io/manage-risk/prioritize-your-issues/severity-levels) to report. Options: `low`, `medium`, `high`.      | Optional  |
 | `$AC_SNYK_FAIL_ON_ISSUES`     | Specifies whether the build should fail based on the Snyk test results. Options: `yes`, `no`.             | Optional  |
-| `$AC_SNYK_CREATE_REPORT`      | Specifies whether to generate an [HTML report](https://docs.snyk.io/manage-risk/reporting/getting-started-with-snyk-reports). Options: `yes`, `no`.                                       | Optional  |
+| `$AC_SNYK_CREATE_REPORT`      | Specifies whether to generate an [HTML report](https://docs.snyk.io/manage-risk/reporting/available-snyk-reports). Options: `yes`, `no`.                                       | Optional  |
 | `$AC_SNYK_MONITOR`            | If enabled, imports the snapshot of dependencies to [Snyk for continuous monitoring](https://docs.snyk.io/snyk-cli/commands/monitor). Options: `yes`, `no`. | Optional  |
 | `$AC_SNYK_ADD_ARG`            | Additional arguments for the Snyk CLI command.                                                             | Optional  |                                                         | Optional  |
 
