@@ -262,7 +262,7 @@ You can find all the required values in the "About" page under the "General" tab
 
 :::caution
 
-As in the example, replace {app_name} with your actual application name in  
+As in the example, replace `{app_name}` with your actual application name in  
 `https://github.com/apps/{app_name}/installations/new`
 
 :::
