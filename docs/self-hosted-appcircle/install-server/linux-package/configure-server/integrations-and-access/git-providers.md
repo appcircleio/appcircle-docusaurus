@@ -157,6 +157,10 @@ If you want to connect to GitHub Cloud using the GitHub App, you need to **[crea
 
 #### Requirements
 
+:::info
+"GitHub App Cloud `OAuth2`" connection option is available in version `3.29.3` Appcircle or later.
+:::
+
 While creating your own GitHub App, you will need some domains from the Appcircle server for URLs. Therefore, before beginning, you should have been gotten the below domains ready for your GitHub App configuration.
 
 - Log in to the Appcircle server with SSH or a remote connection.
@@ -255,6 +259,13 @@ You can find all the required values in the "About" page under the "General" tab
   - For example, `222***a8f***2a1***4a0***5f3***b8a***b8a8`
 - **`authorizeUrl`**: Use "Public link", appending `/installations/new` to the end.
   - For example, `https://github.com/apps/myawesomeapp/installations/new`
+
+:::caution
+
+As in the example, replace {app_name} with your actual application name in  
+`https://github.com/apps/{app_name}/installations/new`
+
+:::
 
 According to the sample GitHub App properties above, your `global.yaml` settings should be like below.
 
