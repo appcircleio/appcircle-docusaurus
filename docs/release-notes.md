@@ -64,6 +64,18 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - All fields that are mandatory on App Store Connect when saving metadata and submitting the app version for review are now also mandatory in Appcircle Metadata, meaning the Metadata Details form cannot be saved unless all required fields are completed. <PublishBadge/> <CloudBadge/>
 - To prevent issues with the license registration process caused by regional time formats, license registrations and expiries are now recorded in UTC format at 12 PM. <AccountBadge/> <CloudBadge/>
 
+:::danger
+
+#### Upgrading from `3.28.3` or older versions <SelfHostedBadge/>
+
+Recently Appcircle made an upgrade for its IAM services, which has an important data migration related to the IAM upgrade. See the "breaking changes" note **[here](https://docs.appcircle.io/release-notes#3-29-1)** for the details.
+
+If you have a Docker/Podman Appcircle server deployment ([standalone](https://docs.appcircle.io/self-hosted-appcircle#dockerpodman-standalone-architecture) or [DMZ-supported](https://docs.appcircle.io/self-hosted-appcircle#dockerpodman-architecture-with-dmz-support) architecture) that is `3.28.3` or an older version, as a **first step**, you must **upgrade to version `3.29.0`** successfully, take the recommended backup, and then go on with version `3.29.3` or later.
+
+You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or later. You must have an intermediate upgrade step with version `3.29.0` in order to be sure that all previously released data migrations have been applied before the IAM upgrade.
+
+:::
+
 ## 3.29.2 - 2025-08-22 Auto Re-sign on Testing Distribution, Build History Improvements, Bug Fixes and more
 
 ### 🆕 New Features
@@ -135,6 +147,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Upgraded IAM to the latest version to enhance security and reliability. <AccountBadge/> <CloudBadge/>
 - Improved the Account page UI and added a remote disconnect option. <AccountBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- IAM upgrade in this release makes a **data migration that cannot be reverted**. For this reason, it's **strongly recommended** that the customers who have Docker/Podman Appcircle server deployments ([standalone](https://docs.appcircle.io/self-hosted-appcircle#dockerpodman-standalone-architecture) or [DMZ-supported](https://docs.appcircle.io/self-hosted-appcircle#dockerpodman-architecture-with-dmz-support) architecture) should **take a snapshot backup** of their systems before upgrading. There is no expected incident for the IAM data migration, but in case of an incident, you must restore the backup you took before for the downgrade. <SelfHostedBadge/>
 
 ## 3.29.0 - 2025-08-08 API Keys, Webhook Improvements, Bug Fixes and more
 
