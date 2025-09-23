@@ -67,6 +67,15 @@ For more information about supported frameworks, please visit [**Sonatype Sonaty
 
 :::
 
+:::tip Artifactory Management for SPM
+
+Since Sonatype Nexus does not yet support **SPM**, it is **not** possible to manage SPM packages using Nexus.
+For users with a Nexus infrastructure, an alternative approach to centralize and fetch SPM packages is to collect all SPM packages in a private Git repository. This way, all SPM packages are pulled only from a repository accessible to the user and included in the build process.
+
+**Note**: With this method, the **SPM** packages collected in a single repository must be regularly checked and updated to ensure they remain up to date.
+
+:::
+
 :::caution Configure Sonatype Nexus Repository Authentication
 
 If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash script given below.
