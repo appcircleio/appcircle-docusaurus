@@ -262,7 +262,7 @@ You can find all the required values in the "About" page under the "General" tab
 
 :::caution
 
-As in the example above, replace the `{app_name}` with your actual GitHub app name;  
+As in the example above, replace the `{app_name}` with your actual GitHub application name;  
 - `https://github.com/apps/{app_name}/installations/new`
 
 :::
