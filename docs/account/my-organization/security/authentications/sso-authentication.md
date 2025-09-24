@@ -760,6 +760,27 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 
 If the test is successful, your integration is complete, and you can start using Okta (SAML) as your identity provider for Appcircle.
 
+#### Starting the SAML SSO Flow from Okta (Optional)
+If you want to initiate the SAML SSO flow from the Okta side, you need to complete an additional configuration step:
+
+1. In Okta, open your application settings by navigating to:
+**Applications > Your Application > Sign On tab > Edit Settings.**
+2. Set the **Default Relay State** to:
+
+```
+rd=https://my.appcircle.io/sso/your_sso_alias
+```
+Replace `your_sso_alias` with your actual SSO alias.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-defualt-relay-state.png" />
+
+3. Go to the ***Okta End-User Dashboard**.
+4. Click the application you just configured.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-end-user-dashboard.png" />
+
+By doing this, you will be able to start the SSO login process directly from the Okta dashboard.
+
 </details>
 
 <details>
