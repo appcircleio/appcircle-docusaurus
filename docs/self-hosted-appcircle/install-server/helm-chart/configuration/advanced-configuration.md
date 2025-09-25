@@ -125,6 +125,567 @@ webhook:
   replicaCount: 2
 ```
 
+## Configure Toleration and Node Selector
+
+To run the Appcircle server on specific nodes, you can configure tolerations and node selectors for the Appcircle server services. By default, the Helm chart does not configure any tolerations or node selectors.
+
+To configure tolerations and node selectors, refer to the sample `values.yaml` file below:
+
+:::info
+The node selector labels and tolerations in the `values.yaml` file below are examples. You can configure them according to your specific requirements.
+:::
+
+:::caution
+Some keys might already exists in your `values.yaml` file, make sure to update the existing keys instead of adding new ones.
+
+If you are using external services (such as MongoDB or PostgreSQL) instead of the ones provided by the Appcircle Server Helm chart, you can omit the corresponding service configurations from your `values.yaml` file.
+:::
+
+<details>
+    <summary>Click to see the sample `values.yaml` file.</summary>
+
+      ```yaml
+
+      # General
+      nodeSelector:
+        environment: "production"
+      tolerations:
+        - key: "app"
+          operator: "Equal"
+          value: "appcircle"
+          effect: "NoSchedule"
+
+      # Service Specific
+      auth:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        auth-keycloak:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        auth-postgresql:
+          primary:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+
+      agentcache:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        agentcache-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      apigateway:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        apigateway-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      appparser:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        agentcache-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      build:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        build-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      distribution:
+        distribution-server:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        distribution-server-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+        distribution-testeradmin:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        distribution-testerapi:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        distribution-testerapi-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+        distribution-testerweb:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        distribution-web:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        distribution-testerweb-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+        distribution-web-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      license:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        license-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      notification:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+      otp:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        otp-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      publish:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        publish-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      reporting:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+      resign:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+      resource:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        resource-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      schedulemanager:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        schedulemanager-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      signingidentity:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        signingidentity-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      store:
+        store-web:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+          extraEnvVars: 
+            - name: TR_STORE_TITLE
+              value: "Uygulama Mağazası"
+            - name: EN_STORE_TITLE
+              value: "App Store"
+        store-web-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+        store-admin:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        store-api:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        store-api-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+        store-profile:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        store-report:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+      storesubmit:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        storesubmit-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      taskserver:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        taskserver-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+      webhook:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+      webeventredis:
+        master:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        replica:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        tls:
+          enabled: true
+        ingress:
+          tls: true
+          enabled: true
+      web:
+        web-app:
+          
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        web-event:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+        web-redis:
+          master:
+            nodeSelector:
+              environment: "production"
+            tolerations:
+              - key: "app"
+                operator: "Equal"
+                value: "appcircle"
+                effect: "NoSchedule"
+
+      # Third party services
+      vault:
+        server:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+      ingress-nginx:
+        controller:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+          admissionWebhooks:
+            patch:
+              nodeSelector:
+                environment: "production"
+              tolerations:
+                - key: "app"
+                  operator: "Equal"
+                  value: "appcircle"
+                  effect: "NoSchedule"
+        defaultBackend:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+      kafka:
+        controller:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+      mongodb:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+        arbiter:
+          nodeSelector:
+            environment: "production"
+          tolerations:
+            - key: "app"
+              operator: "Equal"
+              value: "appcircle"
+              effect: "NoSchedule"
+      minio:
+        nodeSelector:
+          environment: "production"
+        tolerations:
+          - key: "app"
+            operator: "Equal"
+            value: "appcircle"
+            effect: "NoSchedule"
+
+      ```
+</details>
+
+
+
+
+
 ## Applying Configuration Changes
 
 <ApplyHelmConfigurationChanges />
