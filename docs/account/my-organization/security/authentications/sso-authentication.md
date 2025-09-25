@@ -778,12 +778,12 @@ rd=https://my.appcircle.io/sso/your_sso_alias
 ```
 Replace `your_sso_alias` with your actual SSO alias.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-defualt-relay-state.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-default-relay-state.png" />
 
 3. Go to the ***Okta End-User Dashboard**.
 4. Click the application you just configured.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-end-user-dashboard.png" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-end-user-dashbord.png" />
 
 By doing this, you will be able to start the SSO login process directly from the Okta dashboard.
 
