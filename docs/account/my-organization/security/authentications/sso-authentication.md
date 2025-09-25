@@ -21,6 +21,12 @@ The SSO setup described in this document integrates the selected identity provid
 
 This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okta, OneLogin and Keycloak. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
 
+:::caution
+
+When Single Sign-On (SSO) is enabled for an organization, all users must log in through SSO to access it. Attempting to sign in with traditional email and password will switch the user to a separate organization with a starter license. If needed, SSO can be disabled, allowing users to access the organization again using their email and password credentials.
+
+:::
+
 ### Supported Identity Providers
 
 - Auth0:
