@@ -25,7 +25,7 @@ In this case, do not hesitate to [contact us](https://appcircle.io/support/) for
 
 In order to build a Xamarin iOS app on Appcircle, follow the steps below.
 
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+**1.** [Create](/build/manage-the-connections/connection-guides) a new build profile for your app.
 
 - `iOS` should be selected as the **Target Operating System**, and `Objective-C/Swift` should be selected as the **Target Platform**.
 
@@ -146,7 +146,7 @@ The custom script above does the following operations in order to build a Xamari
 The custom script has some **variables that should be changed or customized** for your pipeline.
 
 - **`MONO_VERSION`**: You can select a Mono version that's compatible with your project or solution. See [here](https://www.mono-project.com/) for details.
-- **`DOTNET_VERSION`**: You can select a .NET SDK version that's compatible with your project or solution. See [here](https://versionsof.net/) for details.
+- **`DOTNET_VERSION`**: You can select a .NET SDK version that's compatible with your project or solution. See [here](https://versionsof.net) for details.
 - **`XAMARIN_IOS_SDK_DOWNLOAD_URL`**: The download link for the Xamarin iOS SDK version you want to install. Copy the link for the version from [here](https://github.com/xamarin/xamarin-macios/blob/main/DOWNLOADS.md).
 - **`PROJECT_ROOT_DIR`**: The location of your `<YourProject>.sln` file. Your Git repository is typically saved within the `$AC_REPOSITORY_DIR` inside the runner. However, your .sln file may be located in a subdirectory of this folder. Please specify this. For instance, `$AC_REPOSITORY_DIR/src`
 - **`IOS_PROJECT_DIR`**: The location of the `<YOUR_IOS_PROJECT>.csproj` file is required for performing iOS-specific builds. In this script, it is `AppcircleXamarin.iOS/AppcircleXamarin.iOS.csproj`.
@@ -160,7 +160,7 @@ When the build pipeline is completed successfully, you will see the signed `.ipa
 
 In order to build a Xamarin Android app on Appcircle, follow the steps below.
 
-**1.** [Create](/build/manage-the-connections/adding-a-build-profile) a new build profile for your app.
+**1.** [Create](/build/manage-the-connections/connection-guides) a new build profile for your app.
 
 - `Android` should be selected as the **Target Operating System**, and `Java/Kotlin` should be selected as the **Target Platform**.
 
