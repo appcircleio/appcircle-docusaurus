@@ -1,12 +1,12 @@
 ---
 title: Check Network Accessibility
-description: Check the network access with necessary tools for Appcircle build module using pre-determined curl commands on runner.
-tags: [network, build tools, curl, network access, proxy, ssl]
+description: Check network access to external services for the Appcircle build module.
+tags: [network, build tools, external services, curl, network access, proxy, ssl]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Check Network Accessibility
+# Check Network Access
 
 This component checks network access to common build endpoints used in Appcircle workflows. It validates connectivity to package managers, build services, APIs, and custom-defined URLs during build time.
 
