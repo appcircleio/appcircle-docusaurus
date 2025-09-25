@@ -103,7 +103,7 @@ In Organization A's build profile workflow, after the build step, we can add a [
 ```bash
 #Bash script
 sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle login personal-access-key --secret $ORG_B_PERSONAL_ACCESS_KEY
 # If an IPA or AAB is required, change *.apk to *.ipa or *.aab
 appcircle publish profile version upload \
   --platform <string> \
@@ -131,11 +131,11 @@ Ensure that, uploading a binary to a Publish profile will require exact same **P
 <NewerVersionCodeCaution />
 
 The key point here is that we need two essential parameters to make this work.
-- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_PERSONAL_ACCESS_KEY` => Personal Access Key from Organization B.
 - `ORG_B_PUBLISH_PROFILE_ID` => Publish profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal Access Key, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
 To obtain the Publish profile ID, follow the steps below: 
 1. Log in to organization B.
@@ -145,7 +145,7 @@ To obtain the Publish profile ID, follow the steps below:
 5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
 After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
-- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_PERSONAL_ACCESS_KEY`
 - `ORG_B_PUBLISH_PROFILE_ID`
 
 <PatDanger />

@@ -33,23 +33,31 @@ https://github.com/appcircleio/appcircle-cli
 
 The Appcircle CLI supports two authentication methods:
 
-1. **Personal Access Token (PAT)** - Recommended for individual users
+1. **Personal Access Key** - Recommended for individual users
 2. **API Key** - Suitable for organization-level access
 
-### Login with Personal Access Token (PAT)
+### Login with Personal Access Key
 
-Personal Access Tokens provide a secure way to authenticate with Appcircle CLI without exposing your account credentials. 
+Personal Access Keys provide a secure way to authenticate with Appcircle CLI without exposing your account credentials. 
 
-To authenticate using a Personal Access Token:
+To authenticate using a Personal Access Key:
 
 ```bash
-appcircle login pat --token "your-personal-access-token-here"
+appcircle login personal-access-key --secret "your-personal-access-key-here"
 ```
 
 :::tip
 
-For generating Personal API Token, please refer to [Personal API Token](/account/my-organization/security/personal-api-token) documentation.
+For generating Personal Access Key, please refer to [Personal Access Key](/account/my-organization/security/personal-access-key) documentation.
 
+:::
+
+:::warning Personal API Token Renamed
+The Personal Access Key was previously referred to as the Personal API Token. The old login method is still available, but it is recommended to migrate to the new version.
+For reference, the old login method was:
+```bash
+appcircle login pat --token "your-personal-access-token-here"
+```
 :::
 
 ### Login with API Key

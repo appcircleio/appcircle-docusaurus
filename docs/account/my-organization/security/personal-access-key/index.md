@@ -10,6 +10,13 @@ import Screenshot from '@site/src/components/Screenshot';
 
 A Personal Access Key is a secure credential used for obtaining a Personal Access Token (PAT) which is used for authentication when using Appcircle’s APIs. It inherits the permissions of your user account within the organization and is organization-specific—meaning you must generate a separate Personal Access Key for each organization you access.
 
+:::warning Personal API Token Renamed
+
+The **Personal Access Key** was previously referred to as the **Personal API Token**.
+Only the name has changed, and all functionality remains the same.
+
+:::
+
 ## Generating/Managing the Personal Access Keys
 
 To generate a Personal Access Key, go to the [My Organization](/account/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. After that, find the Security section from the left side menu. The Personal Access Key section is located on the bottom right.
