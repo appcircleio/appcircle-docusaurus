@@ -20,21 +20,21 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Build Activity Log introduced – Actions such as creating, deleting, and adding Build profiles or updating configurations performed in your Organization or Sub-Organizations can now be viewed in the Build Activity Log section. <BuildBadge/> <CloudBadge/>
+- Introducing [Build Activity Log](/build/build-activity-log) – Actions such as creating, deleting, and adding Build profiles or updating configurations performed in your Organization or Sub-Organizations can now be viewed in the Build Activity Log section. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
-- All organization owners will now receive an email notification when a domain verification status is changed. <AccountBadge/> <CloudBadge/>
-- Improvements were made to the Notification Center to display and store system-related errors across Appcircle. <AccountBadge/> <CloudBadge/>
+- All organization owners will now receive an email notification when a [Domain Verification](/account/my-organization/security/domain-verification) status is changed. <AccountBadge/> <CloudBadge/>
+- Improvements were made to the [In-app Notifications](/account/my-account/in-app-notifications) to display and store system-related errors across Appcircle. <AccountBadge/> <CloudBadge/>
 - Users can now navigate to a specific module via a shared URL using their SSO Alias when accessing organizations with SSO authorization. The shared URL will need manual editing as shown in the example: `my.appcircle.io/sso/ssoAlias?redirectURL=...` <AccountBadge/> <CloudBadge/>
-- Personal API Tokens have been renamed to Personal Access Keys. Refer to the API documentation for the latest supported endpoints and models. <AccountBadge/> <CloudBadge/>
-- The Machine Plan of the organization will now be displayed in the build logs. <BuildBadge/> <CloudBadge/>
-- Improvements were made to the branch search functionality within build profiles. <BuildBadge/> <CloudBadge/>
+- Personal API Tokens have been renamed to [Personal Access Keys](/account/my-organization/security/personal-access-key). Refer to the [API documentation](/appcircle-api-and-cli/api-authentication) for the latest supported endpoints and models. <AccountBadge/> <CloudBadge/>
+- The Machine Plan of the organization will now be displayed in the Build logs. <BuildBadge/> <CloudBadge/>
+- Improvements were made to the branch search functionality within Build profiles. <BuildBadge/> <CloudBadge/>
 - Overall API optimizations were made to improve the performance of all endpoints. <APICLIBadge/> <CloudBadge/>
 - Re-signed app versions will now display a Re-Sign label for easier identification within the Testing Portal. <DistributionBadge/> <CloudBadge/>
 - A password visibility toggle has been added to the Testing Portal login screen for Static and LDAP authentication types. <DistributionBadge/> <CloudBadge/>
 - The Upload Binary button for Testing Distribution profiles is now located at the top-right corner, consistent with other modules. <DistributionBadge/> <CloudBadge/>
-- Non-existing provisioning profiles used in the auto re-sign process (auto-downloaded or generated) in Publish module, will now be added to the Appcircle Signing Identity module. <PublishBadge/> <CloudBadge/>
+- Non-existing provisioning profiles used in the auto re-sign process (auto-downloaded or generated) in Publish module, will now be added to the Signing Identity module. <PublishBadge/> <CloudBadge/>
 - UI improvements were made to the Publish module, including updated action icons, settings, and upload binary buttons. <PublishBadge/> <CloudBadge/>
 - Publish profiles will now show a progress information on the app version list during binary uploads and re-sign operations, similar to the Testing Distribution module. <PublishBadge/> <CloudBadge/>
 - Improvements were made to CSV reports to enhance the display of column headers and data values. <ReportsBadge/> <CloudBadge/>
@@ -49,7 +49,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
-- Following Apple’s update, 6.9” screenshot sizes are now optional, and 6.5” sizes are required. Appcircle [Metadata Details](/publish-module/publish-information/meta-data-information) have been updated accordingly, while still supporting 6.9” screenshots as optional. <PublishBadge/> <CloudBadge/>
+- Following Apple’s update, 6.9” screenshot sizes are now optional, and 6.5” sizes are required. Appcircle [Metadata Details](/publish-module/publish-information/meta-data-information) UI has been updated accordingly, while still supporting 6.9” screenshots as optional. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.3 - 2025-09-08 Publish and Re-sign Reports, Auto Re-sign Improvements, Bug fixes and more
 
