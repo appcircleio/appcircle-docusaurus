@@ -16,7 +16,7 @@ This feature streamlines the process of updating app distribution and security s
 
 <RunnerUsage />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-24.png' />
 
 ## Re-sign iOS Binary
 

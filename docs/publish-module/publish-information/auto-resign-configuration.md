@@ -19,6 +19,8 @@ Appcircle supports both **Auto Publish** and **Auto Re-sign** features. If both 
 
 :::
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png' />
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-autoResignSettingss.png' />
 
 ## Auto Re-sign Configuration
@@ -37,8 +39,8 @@ If the configuration is **not defined correctly**, the re-signing flow **may fai
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-settings1.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-settings2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-28.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-29.png' />
 
 
 ### Versioning
