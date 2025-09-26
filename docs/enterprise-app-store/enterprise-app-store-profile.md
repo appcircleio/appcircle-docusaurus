@@ -404,7 +404,7 @@ In Organization A's build profile workflow, after the build step, we can add a [
 ```bash
 #Bash script
 sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle login personal-access-key --secret $ORG_B_PERSONAL_ACCESS_KEY
 # If an IPA or AAB is required, change *.apk to *.ipa or *.aab
 appcircle enterprise-app-store version upload-for-profile \
   --entProfileId "$ORG_B_ENT_APP_STORE_PROFILE_ID" \
@@ -416,7 +416,7 @@ appcircle enterprise-app-store version upload-for-profile \
 ```bash
 #Bash script
 sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle login personal-access-key --secret $ORG_B_PERSONAL_ACCESS_KEY
 # If an IPA or AAB is required, change *.apk to *.ipa or *.aab
 appcircle enterprise-app-store version upload-without-profile \
   --app "$AC_OUTPUT_DIR"/*.apk
@@ -427,11 +427,11 @@ This will also generate a new Enterprise App Store profile and application will 
 <NewerVersionCodeCaution />
 
 The key point here is that we need two essential parameters to make this work.
-- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `$ORG_B_PERSONAL_ACCESS_KEY` => Personal Access Key from Organization B.
 - `ORG_B_ENT_APP_STORE_PROFILE_ID` => Enterprise App Store profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal Access Key, follow this [documentation](/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
 
 To obtain the Enterprise App Store profile ID, follow the steps below: 
 1. Log in to organization B.
@@ -441,7 +441,7 @@ To obtain the Enterprise App Store profile ID, follow the steps below:
 5. Then the Enterprise App Store profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
 After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
-- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_PERSONAL_ACCESS_KEY`
 - `ORG_B_ENT_APP_STORE_PROFILE_ID`
 
 <PatDanger />

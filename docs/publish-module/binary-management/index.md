@@ -14,15 +14,15 @@ import NewerVersionCodeCaution from '@site/docs/\_newer-version-code-caution.mdx
 
 Appcircle supports publishing the application to the stores without using the Build module. To add an application version manually, you need to add a publish profile beforehand and then **Open** its details.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-manuel.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-12.png' />
 
-You can then upload the application by clicking on the **Add Version** button on the right.
+You can then upload the application by clicking on the **Upload Binary** button on the right.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-upload.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-13.png' />
 
 When the upload is completed successfully, the relevant application versions will appear in the list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3923-publishBinaryList.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-14.png' />
 
 :::caution BUNDLE ID AND PACKAGE NAME MUST BE UNIQUE
 You can install iOS app versions with different BundleIDs under the same Publishing Profile. However, you can only initiate the Publish process with the binary that matches the BundleID specified when creating the profile or within the profile itself.
@@ -36,7 +36,7 @@ You can view the Bundle ID (iOS) and Package Name (Android) beneath the Publish 
 
 When a binary BundleID uploaded to the Publish profile does not match the master BundleID specified for the profile, a warning icon will appear next to the binary. This icon indicates that the BundleID of the related binary does not match. For this reason, you **cannot start the Publish process** with the mismatched binary and send your application to the stores.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3923-binaryMatch.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-15.png' />
 
 :::caution BundleID Matching
 
@@ -48,7 +48,7 @@ For BundleID change, you can use the [**Resign Binary**](/publish-module/publish
 
 Afterwards, you can start submitting your application to the stores with the publish flow that you have configured.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-version-list.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-14.png' />
 
 For this, click on the **Actions** button for the relevant version and go to **Details**. From there, you can manually **Start Flow** for the uploaded application version.
 
@@ -56,7 +56,7 @@ For this, click on the **Actions** button for the relevant version and go to **D
 
 Appcircle now allows you to track the App Store status of your applications directly within the Publish module. This powerful feature is tailored for **Enterprise License** holders, ensuring continuous monitoring of your application's deployment status.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3681-publish-store-status.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-16.png' />
 
 ### How It Works
 
@@ -103,7 +103,7 @@ In Organization A's build profile workflow, after the build step, we can add a [
 ```bash
 #Bash script
 sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle login personal-access-key --secret $ORG_B_PERSONAL_ACCESS_KEY
 # If an IPA or AAB is required, change *.apk to *.ipa or *.aab
 appcircle publish profile version upload \
   --platform <string> \
@@ -131,11 +131,11 @@ Ensure that, uploading a binary to a Publish profile will require exact same **P
 <NewerVersionCodeCaution />
 
 The key point here is that we need two essential parameters to make this work.
-- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `ORG_B_PERSONAL_ACCESS_KEY` => Personal Access Key from Organization B.
 - `ORG_B_PUBLISH_PROFILE_ID` => Publish profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal Access Key, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
 
 To obtain the Publish profile ID, follow the steps below: 
 1. Log in to organization B.
@@ -145,7 +145,7 @@ To obtain the Publish profile ID, follow the steps below:
 5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
 After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
-- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_PERSONAL_ACCESS_KEY`
 - `ORG_B_PUBLISH_PROFILE_ID`
 
 <PatDanger />

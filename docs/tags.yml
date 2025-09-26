@@ -1907,6 +1907,11 @@ permissions:
   description: "Description for permissions"
   permalink: /permissions
 
+"personal access key":
+  label: "personal access key"
+  description: "Description for personal access key"
+  permalink: /personal-access-key
+
 "personal access token":
   label: "personal access token"
   description: "Description for personal access token"

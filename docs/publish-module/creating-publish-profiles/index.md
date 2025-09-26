@@ -20,7 +20,7 @@ In order to create a publish profile, click on the "Add New" button in the Publi
 
 There are 2 different options for creating a Publish Profile. One of them is manual creation and the other is to import your existing Store profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createPublisModal.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-1.png' />
 
 :::caution Creating a Publish Profile
 
@@ -44,7 +44,7 @@ The Bundle ID set during manual creation cannot be changed later and is assigned
 
 When manual creation is selected, the name and BundleID fields required for the Publish profile must be filled in.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-createManually.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-2.png' />
 
 - **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
 - **BundleID**: BundleID is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
@@ -66,7 +66,7 @@ Once a main Bundle ID is set, this Bundle ID is assigned to the created profile.
 
 An exclamation mark appears next to the binary that does not match the main Bundle ID of the profile. This means that the current Bundle ID of the binary does not match the specified Bundle ID.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-bundleMatch1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-3.png' />
 
 :::
 
@@ -82,7 +82,9 @@ If an **Apple Enterprise API** key has been added in your organization, it **can
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3954-importAppList1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-4.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-6.png' />
 
 Profiles on App Store Connect are listed with API key connection. In this list, the profile is imported by selecting either multiple or single profiles.
 
@@ -108,7 +110,7 @@ The Package Name set during manual creation **cannot** be changed later and is a
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-7.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-2.png' />
 
@@ -117,7 +119,7 @@ When manual creation is selected, the name and Package Name fields required for 
 - **Publish Profile Name**: The name Publish profile is the name given to distinguish your profile from other profiles and appears on the profile card.
 - **Package Name**: Package Name is the unique identifier of your application. It is hard-coded when the profile is created and cannot be changed afterwards.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-238-3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-8.png' />
 
 After manually creating your profile, you will see your profile card displayed on the Publish screen.
 
