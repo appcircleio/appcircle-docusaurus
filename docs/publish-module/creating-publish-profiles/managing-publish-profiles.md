@@ -17,7 +17,7 @@ Appcircle allows previously created Publish profiles to be renamed.
 
 To do this, click on the three dots at the top right of the relevant publish profile in the profiles list and select **Rename**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-rename.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-10.png' />
 
 :::caution
 Publish profile names must be unique for both **`iOS`** and **`Android`**.
@@ -31,7 +31,7 @@ Also, you cannot rename a Publish profile to an existing name on the same platfo
 
 To delete the Publish profile, click on the three dots at the top right of the relevant Publish profile in the profiles list and select **Delete**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-10.png' />
 
 :::caution
 Appcircle **does not delete** the application that has been submitted to the stores.
@@ -39,4 +39,4 @@ Appcircle **does not delete** the application that has been submitted to the sto
 By deleting the Publish profile, all the application versions and Publish action logs related to that publish profile will be removed on the Appcircle side.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-remove-confirm.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-11.png' />

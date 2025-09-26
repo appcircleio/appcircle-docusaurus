@@ -78,6 +78,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
 | Build Cache         | View Build Cache Usage                     | ✅     | ✅       | ✅        | ✅      |
 | Build Cache         | Delete Build Cache                         | ✅     | ✅       | ⛔        | ⛔      |
+| Build History       | View Build History                         | ✅     | ✅       | ✅        | ✅      |
+| Build Activity Log  | View Build Activity Log                    | ✅     | ✅       | ✅        | ✅      |
 
 :::caution Distribution Binary and Runner Details
 

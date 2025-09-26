@@ -396,6 +396,36 @@ from = "/appcircle-api/api-authentication#generatingmanaging-the-personal-api-to
 to = "/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens"
 status = 301
 
+[[redirects]]
+from = "/account/my-organization/security/personal-api-token"
+to = "/account/my-organization/security/personal-access-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/personal-api-token#generatingmanaging-the-personal-api-tokens"
+to = "/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/api-authentication#using-the-token-for-api-authentication"
+to = "/appcircle-api-and-cli/api-authentication#using-the-personal-access-key-for-api-authentication"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/api-authentication#using-the-token-for-api-authentication"
+to = "/appcircle-api-and-cli/api-authentication#using-the-personal-access-key-for-api-authentication"
+status = 301
+
+[[redirects]]
+from = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli#1-create-a-personal-api-token"
+to = "/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli#1-create-a-personal-access-key"
+status = 301
+
+[[redirects]]
+from = "/appcircle-api-and-cli/cli-authentication#login-with-personal-access-token-pat"
+to = "/appcircle-api-and-cli/cli-authentication#login-with-personal-access-key"
+status = 301
+
 # Best Practice related redirects
 [[redirects]]
 from = "/building-multiple-apps-in-one-profile"
