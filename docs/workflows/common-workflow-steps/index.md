@@ -40,7 +40,7 @@ Learn to streamline your workflows by pushing data to cache with our easy-to-fol
 
 Discover the essentials of cache retrieval in our cache-pull guide. Speed up your build processes by mastering the art of efficiently pulling cached data.
 
-## [Check Network Access](/workflows/common-workflow-steps/check-network-accessibility)
+## [Check Network Access](/workflows/common-workflow-steps/check-network-access)
 
 This component checks network access to external services commonly used in Appcircle build workflows. It validates connectivity to package managers, build services, APIs, and custom-defined URLs during build time.
 
