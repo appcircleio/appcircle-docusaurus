@@ -431,7 +431,7 @@ The key point here is that we need two essential parameters to make this work.
 - `ORG_B_ENT_APP_STORE_PROFILE_ID` => Enterprise App Store profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal Access Key, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal Access Key, follow this [documentation](/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
 
 To obtain the Enterprise App Store profile ID, follow the steps below: 
 1. Log in to organization B.
