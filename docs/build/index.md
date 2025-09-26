@@ -28,3 +28,7 @@ Find detailed instructions for building applications across various platforms, i
 ## [Build History](/build/build-history)
 
 The Build History Report provides a comprehensive list of build sessions initiated within a selected time period. Users can filter their search based on date and organization for more precise tracking. Additionally, the report can be exported in CSV format for further analysis and record-keeping.
+
+## [Build Activity Log](/build/build-activity-log)
+
+Build Activity Log allows you to monitor Build module related actions such as creating, deleting, and adding Build profiles or updating configurations performed on Build profiles in your Organization or Sub-Organizations.
