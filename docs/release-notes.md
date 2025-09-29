@@ -28,7 +28,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Improvements were made to the [In-app Notifications](/account/my-account/in-app-notifications) to display and store system-related errors across Appcircle. <AccountBadge/> <CloudBadge/>
 - Users can now navigate to a specific module via a shared URL using their SSO Alias when accessing organizations with SSO authorization. The shared URL will need manual editing as shown in the example: `my.appcircle.io/sso/ssoAlias?redirectURL=...` <AccountBadge/> <CloudBadge/>
 - Personal API Tokens have been renamed to [Personal Access Keys](/account/my-organization/security/personal-access-key). Refer to the [API documentation](/appcircle-api-and-cli/api-authentication) for the latest supported endpoints and models. <AccountBadge/> <CloudBadge/>
-- The Machine Plan of the organization will now be displayed in the Build logs. <BuildBadge/> <CloudBadge/>
+- The [Machine Plan](/infrastructure/machine-plans) of the organization will now be displayed in the Build logs. <BuildBadge/> <CloudBadge/>
 - Improvements were made to the branch search functionality within Build profiles. <BuildBadge/> <CloudBadge/>
 - Overall API optimizations were made to improve the performance of all endpoints. <APICLIBadge/> <CloudBadge/>
 - Re-signed app versions will now display a Re-Sign label for easier identification within the Testing Portal. <DistributionBadge/> <CloudBadge/>
@@ -57,12 +57,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - A [Publish Report](/publish-module/publish-report) section has been added to the Publish module, where an organization’s publish actions can be tracked with various filters such as trigger type, user, app name, and more. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A [Re-sign Report](/publish-module/publish-resign-report) section has been added to the Publish module, where an organization’s re-sign processes can be tracked. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Introducing Machine Plans – Users can now upgrade to higher-tier machine plans (Velocity and Ultra in addition to Standard) depending on their license. This gives you access to more powerful build resources in the Cloud, helping you achieve faster and more consistent build times. <InfrastructureBadge/> <CloudBadge/>
+- Introducing [Machine Plans](/infrastructure/machine-plans) – Users can now upgrade to higher-tier machine plans (Velocity and Ultra in addition to Standard) depending on their license. This gives you access to more powerful build resources in the Cloud, helping you achieve faster and more consistent build times. <InfrastructureBadge/> <CloudBadge/>
 - Now self-hosted Appcircle users can use the "GitHub App Cloud Oauth2" option while connecting to the GitHub Cloud from their self-hosted Appcircle server, similar to the cloud users. See the [guide](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/git-providers#github-app-cloud) for a detailed how-to. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- Machine Plans are now displayed in the Build History for each build. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Machine Plans](/infrastructure/machine-plans) are now displayed in the Build History for each build. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The autofill button is now disabled when the Build profile does not have any selected branch. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Custom Script step within the Build module has been updated to support additional languages. In addition to Ruby and Bash, scripts written in Python and NodeJS can now be run. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The required permission level has been downgraded to API only for GitLab OAuth connections. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
