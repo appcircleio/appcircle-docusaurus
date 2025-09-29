@@ -3062,3 +3062,8 @@ quay:
   label: "device activity"
   description: "device activity related documentations"
   permalink: "/device-activity"
+
+"machine plan":
+  label: "machine plan"
+  description: "machine plan related documentations"
+  permalink: "/machine-plan"
