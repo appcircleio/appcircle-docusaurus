@@ -18,11 +18,9 @@ The code checks predefined or custom URLs using `curl`, allows adding extra URLs
 
 - `2xx` responses indicate successful requests.
 
-- `3xx`/`4xx` responses except fail list (407, 408) are logged as WARN (network is reachable, but the client request may be invalid).
+- `3xx` responses are logged as WARN (network is reachable, but the service may not respond as expected).
 
-- `5xx` responses except fail list (502, 503, 504) are logged as WARN (network is reachable, but the server responded with an error).
-
-Fail list responses (`407`, `408`, `421`, `425`, `429`, `502`, `503`, `504`, `511`) and curl transport errors (000 codes, exit codes, timeouts, DNS issues, SSL errors) are treated as FAIL and stop the build.
+- `4xx`/`5xx`  responses and curl transport errors (exit codes, timeouts, DNS issues, SSL errors) are treated as FAIL and stop the build.
 
 The curl exit code is also used to determine whether the connection was established. If HTTP responses are received, their headers and bodies are logged (truncated) for further details.
 
