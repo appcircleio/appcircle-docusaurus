@@ -21,6 +21,12 @@ The SSO setup described in this document integrates the selected identity provid
 
 This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okta, OneLogin and Keycloak. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
 
+:::caution
+
+When Single Sign-On (SSO) is enabled for an organization, all users must log in through SSO to access it. Attempting to sign in with traditional email and password will switch the user to a separate organization with a starter license. If needed, SSO can be disabled, allowing users to access the organization again using their email and password credentials.
+
+:::
+
 ### Supported Identity Providers
 
 - Auth0:
@@ -759,6 +765,27 @@ After configuring the settings, it’s crucial to test the OpenID Connect SSO in
 <Screenshot url="https://cdn.appcircle.io/docs/assets/empty-appcircle-dashboard.png" />
 
 If the test is successful, your integration is complete, and you can start using Okta (SAML) as your identity provider for Appcircle.
+
+#### Starting the SAML SSO Flow from Okta (Optional)
+If you want to initiate the SAML SSO flow from the Okta side, you need to complete an additional configuration step:
+
+1. In Okta, open your application settings by navigating to:
+**Applications > Your Application > Sign On tab > Edit Settings.**
+2. Set the **Default Relay State** to:
+
+```
+rd=https://my.appcircle.io/sso/your_sso_alias
+```
+Replace `your_sso_alias` with your actual SSO alias.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-default-relay-state.png" />
+
+3. Go to the ***Okta End-User Dashboard**.
+4. Click the application you just configured.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/okta-end-user-dashbord.png" />
+
+By doing this, you will be able to start the SSO login process directly from the Okta dashboard.
 
 </details>
 

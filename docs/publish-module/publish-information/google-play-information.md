@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-236.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-20.png' />
 
 ### Contact Information
 

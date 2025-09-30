@@ -128,7 +128,7 @@ const config = {
               {
                 label: "Getting Started",
                 type: "doc",
-                to: "/build/manage-the-connections/adding-a-build-profile",
+                to: "/build/manage-the-connections/connection-guides",
               },
               {
                 label: "Best Practices",

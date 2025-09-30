@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Publish module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-18.png' />
 
 ## [App Store Connect Information](/publish-module/publish-information/app-information)
 

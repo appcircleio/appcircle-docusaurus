@@ -10,27 +10,12 @@ tags:
 sidebar_position: 5
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
+
 # App Reports
 
 Optimize your application management with detailed reports. Utilize the App Sharing Report and App Versions Report to gain insights and make informed decisions about your app's distribution and evolution.
-
-## App Sharing Report
-
-This report is accessible from the Testing Distribution.
-
-The App Sharing Report lists the app versions that have been sent to testers within a given time period.
-
-Each line indicates an individual share operation conducted using the "Share with Testers" feature, either manually or automatically, along with the number of testers with whom the app was shared. The number of testers is not unique and specifies the number of recipients for that specific share operation.
-
-The date and time are displayed in the current timezone.
-
-The report pages can be filtered according to the organization.
-
-:::info
-In the filtering options, only the organization and sub-organization to which you belong can be viewed and selected.
-:::
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/app-sharing-new.png' />
 
 ## App Versions Report
 
@@ -52,4 +37,24 @@ The report pages can be filtered according to the organization.
 In the filtering options, only the organization and sub-organization to which you belong can be viewed and selected.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/app-version-new.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-3.png' />
+
+## App Sharing Report
+
+This report is accessible from the Testing Distribution.
+
+The App Sharing Report lists the app versions that have been sent to testers within a given time period.
+
+Each line indicates an individual share operation conducted using the "Share with Testers" feature, either manually or automatically, along with the number of testers with whom the app was shared. The number of testers is not unique and specifies the number of recipients for that specific share operation.
+
+The date and time are displayed in the current timezone.
+
+The report pages can be filtered according to the organization.
+
+:::info
+In the filtering options, only the organization and sub-organization to which you belong can be viewed and selected.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-2.png' />
+
+<CSVExport />
