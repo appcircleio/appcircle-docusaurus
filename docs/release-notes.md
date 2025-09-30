@@ -44,6 +44,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - An issue was fixed where the trigger user email address was incorrectly displayed for some Bitbucket-connected repositories after build actions. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where changes saved for the Auto Send for Review setting were reverted after the settings window was closed. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where users did not receive proper notifications when uploading duplicate provisioning profiles or when provisioning profiles were added through auto re-sign. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where the pop-up message for certain type-certified app versions appeared off-screen after selecting the install button on the Testing Portal. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where organizations containing special characters could not be deleted. <AccountBadge/> <CloudBadge/>
 
