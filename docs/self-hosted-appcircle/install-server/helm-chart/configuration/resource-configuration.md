@@ -8,11 +8,11 @@ sidebar_position: 120
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
 
-It's important that the Appcircle server services have enough resources to actually run in a Kubernetes or OpenShift cluster. Although the Appcircle server might work fine without setting any resource requests and limits using the default values, as a best practice, it's recommended to configure them for **production** workload and fine-tune the resources to fit your cluster resources when you need them.
+It's important that the Appcircle services have enough resources to actually run in a Kubernetes or OpenShift cluster. Although the Appcircle server might work fine without setting any resource "requests" and "limits" using the default values, as a best practice, it's recommended to configure them for **production** workload and fine-tune the resources to fit your cluster resources when you need them.
 
-Setting the `resources.requests` and `resources.limits` for each service will allow Kubernetes or OpenShift to better dispatch the pods across the nodes.
+Setting the `resources.requests` and `resources.limits` for each Appcircle service will allow Kubernetes or OpenShift to better dispatch the pods across the nodes.
 
-Following the guide here, you will learn how to configure "requests" and "limits" for the Appcircle server services to guarantee minimum resources for them in the **production** environment while preventing overconsumption with maximum thresholds.
+Following the guide here, you will learn how to configure "requests" and "limits" for the Appcircle server to guarantee minimum resources for the services in the **production** environment while preventing overconsumption with maximum thresholds.
 
 :::tip
 If you are not familiar with the resource configuration concepts, you can get a quick overview from [here](https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-resource-requests-and-limits).
@@ -20,16 +20,16 @@ If you are not familiar with the resource configuration concepts, you can get a 
 
 ## Resource Requests and Limits
 
-The "requests" and "limits" define how much CPU and memory an Appcircle server service is guaranteed and allowed to use.
+The "requests" and "limits" define how much CPU and memory an Appcircle service is guaranteed and allowed to use.
 
 - The "requests" ensures that the service always gets the minimum resources it needs.
 - The "limits" covers the maximum usage to prevent overconsumption.
 
-Below is the table of services with their recommended "requests" and "limits" for **production** environments.
+Below is the table of Appcircle services with their recommended "requests" and "limits" for **production** environments.
 
 Setting these, as guided below, improves the stability of production workloads while avoiding resource contention and keeping resource costs optimized, especially for shared clusters.
 
-| Service | Requests CPU | Requests Memory | Limits CPU | Limits memory |
+|  | Requests CPU | Requests Memory | Limits CPU | Limits Memory |
 | ------- | -------------- | ----------------- | ------------ | --------------- |
 | `agentcache` | 20m | 512Mi | 100m | 1000Mi |
 | `agentcache-redis` | 10m | 25Mi | 50m | 100Mi |
@@ -41,7 +41,7 @@ Setting these, as guided below, improves the stability of production workloads w
 :::tip
 Using the table above, you can also find out the total resource requirements of the Appcircle server for the **production** environment.
 
-Keep in mind that the "requests" and "limits" here are for one replica. When you have more than one replica, you need to **multiply them by the replica count** to see the whole picture.
+Keep in mind that the "requests" and "limits" here are for **one replica**. When you have more than one replica, you need to **multiply them by the replica count** to see the whole picture.
 
 For the recommended replica counts, please refer to the details in the [Increase the Replica Counts](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration#increase-the-replica-counts) section.
 :::
