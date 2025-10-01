@@ -1,12 +1,12 @@
 ---
-title: How to Create New Workflow Step
+title: How to Create a New Workflow Step
 description: A guide to defining, configuring, and integrating a new step into a workflow.
 tags: [create, new step, workflow, development]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# How to Create New Workflow Step
+# How to Create a New Workflow Step
 
 This guide outlines the process for creating a new workflow step in Appcircle.
 
@@ -46,7 +46,7 @@ When the Appcircle team creates a repository, it will include an **MIT license**
 
 :::
 
-### 2.1 Main Code File Standats
+### 2.1 Main Code File Standards
 
 Each workflow step must include a main execution file. Currently, Appcircle supports two languages: **Ruby** and **Bash**.
 Therefore, the main file must be named either `main.rb` or `main.sh`.
@@ -405,4 +405,3 @@ After completing your step implementation and documentation, inform the Appcircl
 **🎖️ Thank you for your contribution to the Appcircle community!**
 
 We appreciate your effort in expanding our platform's capabilities and helping fellow developers succeed.
-

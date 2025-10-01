@@ -78,7 +78,7 @@ Please note that modifying workflow steps may cause your builds to fail, so utmo
 
 :::
 
-## [How to Create New Workflow Step](/workflows/how-to-create-new-workflow-step)
+## [How to Create a New Workflow Step](/workflows/how-to-create-a-new-workflow-step)
 
 This guide explains the process of creating a new workflow step, including defining its purpose, configuring inputs and outputs, writing the necessary scripts or code, and integrating it into existing workflows for automation.
 
