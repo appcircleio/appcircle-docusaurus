@@ -9,6 +9,16 @@ tags:
 
 The Build Module in Appcircle streamlines your Continuous Integration and Continuous Deployment (CI/CD) workflows for mobile app development. It covers everything from code integration to managing your build profiles and post-build artifacts.
 
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/apCpRHKXQCI?si=SAhkN2bjPGEJEs5H" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 ## [Build Profiles](/build/build-process-management)
 
 Follow our getting started guide to build your iOS and Android apps in the cloud. This guide will walk you through creating a build profile, managing profiles, branches, configurations, triggers, and more.
