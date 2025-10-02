@@ -60,7 +60,7 @@ You can download your **Configuration** in YAML format to perform actions like s
 - Open the **Configuration** you've created.
 - Locate the download button positioned at the bottom left of the Configuration interface. Click on the download button.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-download.png' alt="Download Configuration" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-5.png' alt="Download Configuration" />
 
 Your _configuration.yaml_ file will be downloaded to your local system.
 
@@ -76,6 +76,12 @@ The downloaded YAML file is specific to the project type and can only be used fo
 
 Every build profile needs to know project details regardless of whether the project is an iOS or Android project. Project details can be entered manually or can be fetched from your project automatically by Appcircle if you click on **Autofill** button.
 
+Config details will show you your current Machine Plan. It's Standard by default but can be upgraded depending on your build requirements.
+
+<ContentRef url="/infrastructure/machine-plans">
+  Machine Plans
+</ContentRef>
+
 You can also select your self-hosted runner from the **SELECT A POOL** dropdown.
 
 <ContentRef url="/self-hosted-appcircle/self-hosted-runner">
@@ -90,7 +96,7 @@ values={[
 ]}
 >
   <TabItem value="ios">
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-pool.png' alt="Pool Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-2.png' alt="Pool Selection" />
   </TabItem>
   <TabItem value="android">
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-androidconfig.png' />
@@ -107,7 +113,7 @@ For example, if a high-priority build is added to the queue after a low-priority
 
 This feature allows for better management of build processes, enabling teams to prioritize critical updates and improvements efficiently.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4818-priority.png' alt="Build Priority" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7131-6.png' alt="Build Priority" />
 
 :::info
 This feature is only available for organizations with Enterprise license.

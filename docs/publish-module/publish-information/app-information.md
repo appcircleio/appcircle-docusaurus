@@ -11,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-appInfoNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-19.png' />
 
 ### Localizable Informations
 

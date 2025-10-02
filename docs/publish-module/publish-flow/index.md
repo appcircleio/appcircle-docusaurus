@@ -18,7 +18,7 @@ Appcircle's Publish module requires a **runner** to operate. The runner dependen
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/publish-flow-button.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
 
 When you click on the **Publish Flow** button, the list of steps included in the publish flow will appear.
 

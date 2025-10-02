@@ -37,13 +37,13 @@ Click **Save** to proceed.
 
 Choose from the available repository connection options to link your project source code:
 
-* [GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github)
-* [Azure](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure)
-* [Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket)
-* [GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab)
-* [Connect via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh)
+* [GitHub](/build/manage-the-connections/connection-guides/connecting-to-github)
+* [Azure](/build/manage-the-connections/connection-guides/connecting-to-azure)
+* [Bitbucket](/build/manage-the-connections/connection-guides/connecting-to-bitbucket)
+* [GitLab](/build/manage-the-connections/connection-guides/connecting-to-gitlab)
+* [Connect via SSH](/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh)
 * Connect via URL
-* [Connecting to Multiple Instances](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance)
+* [Connecting to Multiple Instances](/build/manage-the-connections/connection-guides/connecting-multiple-instance)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-build3.png' alt="Repository connection" />
 
@@ -55,7 +55,7 @@ For more information on creating repository connections, please refer to the [co
 
 To test drive Appcircle, you can find various sample projects on the [Appcircle GitHub page](https://github.com/appcircleio?q=sample) or you can just press the **Quick Start Using the Sample Repository** button to populate the repository with a compatible project based on the selected framework.
 
-For detailed instructions on connecting to each repository, refer to the [Connection Guides](/build/manage-the-connections/adding-a-build-profile).
+For detailed instructions on connecting to each repository, refer to the [Connection Guides](/build/manage-the-connections/connection-guides).
 
 Once the repository connection is established, the build profile will be created successfully. Appcircle will then pull your branches, commits, and other information from your repository. You can now use the build profile to manage and deploy your projects.
 
@@ -99,5 +99,5 @@ You can click on the "Connection Settings" button under the build profile name a
 :::caution
 If you added your repository via **multiple instances** using PAT (Personal Access Token), the "Connection Settings" will look different.
 
-You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance#connection-settings-for-multiple-instances) page to learn how to use "Connection Settings" for multiple instances.
+You can review the [**Connecting Multiple Instances**](/build/manage-the-connections/connection-guides/connecting-multiple-instance#connection-settings-for-multiple-instances) page to learn how to use "Connection Settings" for multiple instances.
 :::

@@ -1907,6 +1907,11 @@ permissions:
   description: "Description for permissions"
   permalink: /permissions
 
+"personal access key":
+  label: "personal access key"
+  description: "Description for personal access key"
+  permalink: /personal-access-key
+
 "personal access token":
   label: "personal access token"
   description: "Description for personal access token"
@@ -3057,3 +3062,18 @@ quay:
   label: "device activity"
   description: "device activity related documentations"
   permalink: "/device-activity"
+  
+"machine plan":
+  label: "machine plan"
+  description: "machine plan related documentations"
+  permalink: "/machine-plan"
+
+"create":
+  label: "create"
+  description: "Documentation about creating new components, steps, or configurations"
+  permalink: "/create"
+
+"new step":
+  label: "new step"
+  description: "Documentation related to developing and implementing new workflow steps"
+  permalink: "/new-step"
