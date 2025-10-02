@@ -18,6 +18,22 @@ Following the guide here, you will learn how to configure "requests" and "limits
 If you are not familiar with the resource configuration concepts, you can get a quick overview from [here](https://cloud.google.com/blog/products/containers-kubernetes/kubernetes-best-practices-resource-requests-and-limits).
 :::
 
+:::info
+
+This document contains the Appcircle services, which are included in the "**Appcircle Server**" box in the [Kubernetes/OpenShift Architecture Using Helm Chart](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) diagram, and it is based on a **[production readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness)** setup.
+
+Therefore, it does not include resource requirements for the **[external services](/self-hosted-appcircle#kubernetesopenshift-architecture-using-helm-chart)** since they are documented in their own sections in detail considering the **production** requirements.
+
+When you install the Appcircle Helm chart with the default configuration and deploy all the required services to the cluster for testing or trial purposes, there will be some other services that are not within the scope of this document. These are recommended to be outside of the "**Appcircle Server**" box.
+
+- `auth-postgresql`
+- `minio`
+- `mongodb`
+
+One exception for that is the [HashiCorp Vault](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#hashicorp-vault) service. Since it has a recommended **production** option as [External Data Store](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#external-data-store-eg-mssql), you have an option to deploy the `vault` service to the cluster within the "**Appcircle Server**" box. You can find its resource requirements for this kind of setup in the following sections.
+
+:::
+
 ## Resource Requests and Limits
 
 The "requests" and "limits" define how much CPU and memory an Appcircle service is guaranteed and allowed to use.
@@ -80,10 +96,6 @@ Setting these, as guided below, improves the stability of production workloads w
 | `webeventredis-master` | 100m | 1000Mi | 500m | 2000Mi |
 | `webeventredis-replica` | 100m | 1000Mi | 500m | 2000Mi |
 | `webhook` | 50m | 210Mi | 200m | 350Mi |
-
-<!-- Table is based on production setup. @TODO: -->
-
-<!-- @TODO: Table should be complete. -->
 
 <!-- @TODO: Add exception fro vault -->
 
