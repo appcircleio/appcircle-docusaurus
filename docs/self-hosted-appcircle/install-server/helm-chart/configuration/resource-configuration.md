@@ -20,9 +20,9 @@ If you are not familiar with the resource configuration concepts, you can get a 
 
 :::info
 
-This document contains the Appcircle services, which are included in the "**Appcircle Server**" box in the [Kubernetes/OpenShift Architecture Using Helm Chart](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) diagram, and it is based on a **[production readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness)** setup.
+This document contains the Appcircle services, which are included in the "**Appcircle Server**" box in the [Kubernetes/OpenShift Architecture Using Helm Chart](/self-hosted-appcircle#kubernetesopenshift-architecture-using-helm-chart) diagram, and it is based on a **production** setup.
 
-Therefore, it does not include resource requirements for the **[external services](/self-hosted-appcircle#kubernetesopenshift-architecture-using-helm-chart)** since they are documented in their own sections in detail considering the **production** requirements.
+Therefore, it does not include resource requirements for the **[external services](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness)** since they are documented in their own sections in detail considering the **production** requirements.
 
 When you install the Appcircle Helm chart with the default configuration and deploy all the required services to the cluster for testing or trial purposes, there will be some other services that are not within the scope of this document. These are recommended to be outside of the "**Appcircle Server**" box.
 
@@ -30,7 +30,7 @@ When you install the Appcircle Helm chart with the default configuration and dep
 - `minio`
 - `mongodb`
 
-One exception for that is the [HashiCorp Vault](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#hashicorp-vault) service. Since it has a recommended **production** option as [External Data Store](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#external-data-store-eg-mssql), you have an option to deploy the `vault` service to the cluster within the "**Appcircle Server**" box. You can find its resource requirements for this kind of setup in the following sections.
+One exception for that is the [HashiCorp Vault](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#hashicorp-vault) service. Since it has a recommended **production** option as [External Data Store](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#external-data-store-eg-mssql), you have an option to deploy the `vault` service to the cluster within the "**Appcircle Server**" box. You can find its resource requirements for this kind of setup in the following sections. You should ignore it if you are using the `vault` as an [External Vault Service](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault#external-vault-service).
 
 :::
 
