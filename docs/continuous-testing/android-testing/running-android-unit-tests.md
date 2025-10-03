@@ -112,9 +112,9 @@ There's one important setting that you should change. If any workflow steps fail
 
 - Continue with the next step even if this step fails to **ON**
 
-:::
-
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-steps-on.png" />
+
+:::
 
 :::caution
 
