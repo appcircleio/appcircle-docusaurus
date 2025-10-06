@@ -60,7 +60,7 @@ Use the Login command to authenticate with App Center and Appcircle using your t
 | Login Subcommands  | Command Name | Command Options | Explanation                                                                                                                                                 |
 | ------------------ | ------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | App Center Account | appcenter    | appcenterToken  | Use your App Center token to authenticate and authorize access.                                                                                             |
-| Appcircle Account  | appcircle    | appcircleToken  | Use your Appcircle [Personal Access Key](/account/my-organization/security/personal-access-key) to authenticate and authorize access. |
+| Appcircle Account  | appcircle    | appcircleToken  | Use your Appcircle [Personal Access Key](/account-and-organization/my-organization/security/personal-access-key) to authenticate and authorize access. |
 
 To run the command directly instead of starting an interactive session, simply execute the command as shown below:
 
@@ -164,7 +164,7 @@ appcenter-migration-tool organizations migrate-collaborators --organizationUsers
 
 ### Migrate Organization Collaborators
 
-The tool invites specified collaborators from App Center to the corresponding organization in Appcircle. As a major difference from App Center, Appcircle offers comprehensive [role management](/account/my-organization/profile-and-team/role-management) based on modules. During the invitation process, the roles of the collaborators from App Center are mapped to the Distribution Profile Roles and Testing Group Roles modules in Appcircle as follows:
+The tool invites specified collaborators from App Center to the corresponding organization in Appcircle. As a major difference from App Center, Appcircle offers comprehensive [role management](/account-and-organization/my-organization/profile-and-team/role-management) based on modules. During the invitation process, the roles of the collaborators from App Center are mapped to the Distribution Profile Roles and Testing Group Roles modules in Appcircle as follows:
 
 | App Center Role | Appcircle Role | Module                                           |
 | --------------- | -------------- | ------------------------------------------------ |

@@ -3,6 +3,7 @@ title: Organization Management
 description: Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
 tags: [organization, team, settings]
 sidebar_position: 1
+slug: /account-and-organization/my-organization/profile-and-team/organization-management
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

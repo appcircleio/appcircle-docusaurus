@@ -4,6 +4,7 @@ description: Set up Slack notifications for major events in Appcircle. Enhance y
 tags:
   [notifications, communication, slack, slack notifications, slack integration]
 sidebar_position: 3
+slug: /account-and-organization/my-organization/notifications/slack-notifications
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -21,7 +22,7 @@ There is currently no Slack integration available on the self-hosted Appcircle. 
 
 ### Connecting Appcircle to Slack
 
-An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account/my-organization) > Notifications screen and press the **Connect** button next to Slack under the **Notification Providers** section.
+An Appcircle organization can be associated with a single Slack workspace. To start, go to [My Organization](/account-and-organization/my-organization) > Notifications screen and press the **Connect** button next to Slack under the **Notification Providers** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/notifications-slack1.png' />
 

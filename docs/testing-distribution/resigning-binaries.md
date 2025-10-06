@@ -170,7 +170,7 @@ If `CFBundleDisplayName` is not present in the `info.plist`, changing the displa
 
 Appcircle’s Auto Re-sign feature requires an **App Store Connect** credential. Therefore, selecting a credential is mandatory for both versioning and signing processes. This credential is used to download the necessary signing assets and retrieve version-related information when versioning is configured to use App Store data.
 
-For more information, please visit the [App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
+For more information, please visit the [App Store Connect API Key](/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
 
 #### Signing Method
 

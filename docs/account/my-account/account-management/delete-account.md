@@ -3,6 +3,7 @@ title: Delete Account
 description: Learn how to delete your account in Appcircle
 tags: [account, account management, delete account]
 sidebar_position: 5
+slug: /account-and-organization/my-account/account-management/delete-account
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

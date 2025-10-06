@@ -2,6 +2,7 @@
 title: Domain Verification
 description: Verify your domains for Appcircle organizations.
 tags: [security, domain, verify]
+slug: /account-and-organization/my-organization/security/domain-verification
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

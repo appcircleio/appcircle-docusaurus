@@ -48,7 +48,7 @@ appcircle login personal-access-key --secret "your-personal-access-key-here"
 
 :::tip
 
-For generating Personal Access Key, please refer to [Personal Access Key](/account/my-organization/security/personal-access-key) documentation.
+For generating Personal Access Key, please refer to [Personal Access Key](/account-and-organization/my-organization/security/personal-access-key) documentation.
 
 :::
 
@@ -78,7 +78,7 @@ appcircle login api-key --name "my-api-key" --secret "my-secret" --organization-
 
 :::tip
 
-For creating and managing API keys, please refer to [API Keys](/account/my-organization/security/api-keys).
+For creating and managing API keys, please refer to [API Keys](/account-and-organization/my-organization/security/api-keys).
 
 :::
 

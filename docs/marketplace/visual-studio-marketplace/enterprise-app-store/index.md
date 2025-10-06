@@ -65,7 +65,7 @@ When visiting the installation guide, ensure you select the correct version of A
 
 For this extension to authenticate to your Appcircle, you need to create a Personal API Token, and use it in your task configuration.
 
-You can follow the [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key) page to create a Personal Access Key for a PAT.
+You can follow the [Generating and Managing Personal Access Keys](/account-and-organization/my-organization/security/personal-access-key) page to create a Personal Access Key for a PAT.
 
 #### 2. Add Task to Your Pipeline
 

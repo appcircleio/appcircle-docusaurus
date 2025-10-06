@@ -3,6 +3,7 @@ title: Artifacts
 description: Learn how to manage the logs and artifacts of your build profiles in Appcircle
 tags: [account, my organization, artifacts]
 sidebar_position: 4
+slug: /account-and-organization/my-organization/artifacts
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -47,7 +48,7 @@ Clearing the cache only removes temporary build data. It does not affect build a
 
 :::info Permission Required
 
-Only users with **Manager** or **Owner** roles in the build can use the Clean Build Caches feature. For more information, please refer to the [Role Management](/account/my-organization/profile-and-team/role-management#build-permissions) documentation.
+Only users with **Manager** or **Owner** roles in the build can use the Clean Build Caches feature. For more information, please refer to the [Role Management](/account-and-organization/my-organization/profile-and-team/role-management#build-permissions) documentation.
 
 :::
 

@@ -3,6 +3,7 @@ title: Enterprise App Store SSO Authorization
 description: Establish SSO authorization your Enterprise App Store. Enhance security and simplify access across Appcircle's platform.
 tags: [account, organization, configuration]
 sidebar_position: 3
+slug: /account-and-organization/my-organization/security/authorization/store-sso-authorization
 ---
 
 ### Introduction

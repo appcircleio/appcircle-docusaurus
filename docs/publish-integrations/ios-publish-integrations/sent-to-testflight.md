@@ -20,7 +20,7 @@ Note: If you attempt to upload a version that already exists on **TestFlight**, 
 :::
 
 :::caution
-Ensure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is configured in Appcircle and selected under [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
+Ensure the [**App Store Connect API Key**](/account-and-organization/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is configured in Appcircle and selected under [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
 :::
 
 ### Prerequisites

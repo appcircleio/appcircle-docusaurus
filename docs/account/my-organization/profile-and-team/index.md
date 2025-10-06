@@ -12,6 +12,7 @@ tags:
     team management,
     role management,
   ]
+slug: /account-and-organization/my-organization/profile-and-team
 ---
 
 # Profile and Team
@@ -20,8 +21,8 @@ The Organization and Team Management section provides comprehensive tools to str
 
 Current headlines and the actions you can complete are listed below:
 
-- [**Organization Management**](/account/my-organization/profile-and-team/organization-management)
-- [**Team Management**](/account/my-organization/profile-and-team/team-management)
-- [**Role Management**](/account/my-organization/profile-and-team/role-management)
+- [**Organization Management**](/account-and-organization/my-organization/profile-and-team/organization-management)
+- [**Team Management**](/account-and-organization/my-organization/profile-and-team/team-management)
+- [**Role Management**](/account-and-organization/my-organization/profile-and-team/role-management)
 
 In order to see the details, check the submenu of this documentation page.

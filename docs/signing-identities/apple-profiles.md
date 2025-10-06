@@ -75,7 +75,7 @@ To register, upload or fetch your Apple Profiles, select **Apple Profiles** from
 
 **Prerequisite**: To register a new provision profile in your Apple Developer Account, you need to add an App Store Connect API Key. Visit the link below for instructions.
 
-<ContentRef url="/account/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 With Appcircle's register provisionn feature, you can easily create a new provision profile on the Apple Developer portal using the App ID of your choice. 
 
@@ -109,7 +109,7 @@ If you have selected Ad-hoc or Development as distribution method, you need to s
 
 **Prerequisite**: To list all the signing identities saved in your Apple Developer Account, you need to add an App Store Connect API Key. Visit the link below for instructions.
 
-<ContentRef url="/account/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
+<ContentRef url="/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key">Adding an App Store Connect API Key</ContentRef>
 
 When you go to add a new Provisioning Profile, you'll see the option **Get Provisioning Profiles from App Store Connect**. Select it to see the list of identities fetched from Apple.
 
@@ -149,7 +149,7 @@ You can also see the matching application ID and expiration date of the profiles
 
 :::info Apple Profile Expiration Notifications
 
-You will be notified when a provisioning profile is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+You will be notified when a provisioning profile is about to expire. You can see the expiration notification in the [in-app notification window](/account-and-organization/my-account/in-app-notifications) and optionally enable expiration [notifications](/account-and-organization/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
 
 **Standard Schedule**: Profiles already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
 

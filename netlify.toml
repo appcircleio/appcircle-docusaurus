@@ -1373,3 +1373,203 @@ status = 301
 from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
 to = "/build/manage-the-connections/connection-guides/connecting-to-gitlab"
 status = 301
+
+[[redirects]]
+from = "/account"
+to = "/account-and-organization"
+status = 301
+
+[[redirects]]
+from = "/account"
+to = "/account-and-organization"
+status = 301
+
+[[redirects]]
+from = "/account/my-account"
+to = "/account-and-organization/my-account"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/in-app-notifications"
+to = "/account-and-organization/my-account/in-app-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/sign-up-login"
+to = "/account-and-organization/my-account/sign-up-login"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/sign-up-login/account-management"
+to = "/account-and-organization/my-account/sign-up-login/account-management"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/sign-up-login/account-management/delete-account"
+to = "/account-and-organization/my-account/sign-up-login/account-management/delete-account"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/sign-up-login/account-management/device-activity"
+to = "/account-and-organization/my-account/sign-up-login/account-management/device-activity"
+status = 301
+
+[[redirects]]
+from = "/account/my-account/sign-up-login/account-management/signing-in"
+to = "/account-and-organization/my-account/sign-up-login/account-management/signing-in"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization"
+to = "/account-and-organization/my-organization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/billing"
+to = "/account-and-organization/my-organization/billing"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications"
+to = "/account-and-organization/my-organization/notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/email-connection"
+to = "/account-and-organization/my-organization/notifications/email-connection"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/slack-notifications"
+to = "/account-and-organization/my-organization/notifications/slack-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/teams-notifications"
+to = "/account-and-organization/my-organization/notifications/teams-notifications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/notifications/webhooks"
+to = "/account-and-organization/my-organization/notifications/webhooks"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team"
+to = "/account-and-organization/my-organization/profile-and-team"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team/organization-management"
+to = "/account-and-organization/my-organization/profile-and-team/organization-management"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team/role-management"
+to = "/account-and-organization/my-organization/profile-and-team/role-management"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team/team-activity-log"
+to = "/account-and-organization/my-organization/profile-and-team/team-activity-log"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team/team-management"
+to = "/account-and-organization/my-organization/profile-and-team/team-managament"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security"
+to = "/account-and-organization/my-organization/security"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/api-keys"
+to = "/account-and-organization/my-organization/security/api-keys"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authentications"
+to = "/account-and-organization/my-organization/security/authentications"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authentications/distribution-ldap-authentication"
+to = "/account-and-organization/my-organization/security/authentications/distribute-ldap-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authentications/distribution-sso-authentication"
+to = "/account-and-organization/my-organization/security/authentications/distribute-sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authentications/sso-authentication"
+to = "/account-and-organization/my-organization/security/authentications/sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authentications/store-ldap-authentication"
+to = "/account-and-organization/my-organization/security/authentications/store-ldap-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authentications/store-sso-authentication"
+to = "/account-and-organization/my-organization/security/authentications/store-sso-authentication"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authorization"
+to = "/account-and-organization/my-organization/security/authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authorization/rbac-authorization"
+to = "/account-and-organization/my-organization/security/authorization/rbac-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authorization/sso-authorization"
+to = "/account-and-organization/my-organization/security/authorization/sso-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/authorization/store-sso-authorization"
+to = "/account-and-organization/my-organization/security/authorization/store-sso-authorization"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/credentials"
+to = "/account-and-organization/my-organization/security/credentials"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/credentials/adding-an-app-store-connect-api-key"
+to = "/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/credentials/adding-google-play-service-account"
+to = "/account-and-organization/my-organization/security/credentials/adding-google-play-service-account"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/credentials/adding-huawei-api-key"
+to = "/account-and-organization/my-organization/security/credentials/adding-huawei-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/credentials/adding-microsoft-intune-api-key"
+to = "/account-and-organization/my-organization/security/credentials/adding-microsoft-intune-api-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/personal-access-key"
+to = "/account-and-organization/my-organization/security/personal-access-key"
+status = 301
+
+[[redirects]]
+from = "/account/my-organization/security/domain-verification"
+to = "/account-and-organization/my-organization/security/domain-verification"
+status = 301

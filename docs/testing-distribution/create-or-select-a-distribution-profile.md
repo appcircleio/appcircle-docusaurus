@@ -290,10 +290,10 @@ Under the Authentication tab in the settings, you can select a preferred authent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6472-hide.png' />
 
-To add your SSO and LDAP details, go to [My Organization](/account/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
+To add your SSO and LDAP details, go to [My Organization](/account-and-organization/my-organization) Security screen and press the "Connect" button next to SSO Login or LDAP Login under the "Authentications" section.
 
-<ContentRef url="/account/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
-<ContentRef url="/account/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>
+<ContentRef url="/account-and-organization/my-organization/security/authentications/distribution-sso-authentication">SSO Login</ContentRef>
+<ContentRef url="/account-and-organization/my-organization/security/authentications/distribution-ldap-authentication">LDAP Login</ContentRef>
 
 :::info
 
@@ -538,7 +538,7 @@ The key point here is that we need two essential parameters to make this work.
 - `ORG_B_TEST_DIST_PROFILE_ID` => Testing Distribution profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal Access Key, follow this [documentation](/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
+To generate Personal Access Key, follow this [documentation](/account-and-organization/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
 
 To obtain the Testing Distribution profile ID, follow the steps below: 
 1. Log in to organization B.

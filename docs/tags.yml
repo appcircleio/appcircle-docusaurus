@@ -41,7 +41,7 @@ access:
 account:
   label: "account"
   description: "Description for account"
-  permalink: /account
+  permalink: /account-and-organization
 
 "account management":
   label: "account management"

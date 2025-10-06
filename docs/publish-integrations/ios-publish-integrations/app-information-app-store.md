@@ -31,7 +31,7 @@ Below are brief descriptions of the information provided on the App Information 
 | **Processing State** | This indicates the status of your application; it will appear as **`Valid`** when there are no issues. For instance, if your application has expired in the TestFlight environment, the state will be **`Expire`**. If the application is rejected, the state will be **`Reject`**. |                                                                                                         |
 
 :::caution
-Make sure the [**App Store Connect API Key**](https://docs.appcircle.io/account/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected in [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
+Make sure the [**App Store Connect API Key**](/account-and-organization/adding-an-app-store-connect-api-key#linking-appcircle-with-app-store-connect) is added to Appcircle and selected in [**Publish Settings**](https://docs.appcircle.io/publish-module/#publish-settings).
 :::
 
 :::tip App Information from App Store

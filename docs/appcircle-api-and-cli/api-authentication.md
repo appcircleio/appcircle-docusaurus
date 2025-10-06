@@ -15,8 +15,8 @@ Alternatively, the Appcircle API also supports authentication with an _API Key_.
 
 :::tip Generating Personal Access Key and API Key
 You can generate your Personal Access Key or API Key within the security section of the Organization module.
-- For detailed information on Personal Access Keys, please refer to [Personal Access Key](/account/my-organization/security/personal-access-key) documentation.
-- For API Keys, please refer to [API Keys](/account/my-organization/security/api-keys) documentation.
+- For detailed information on Personal Access Keys, please refer to [Personal Access Key](/account-and-organization/my-organization/security/personal-access-key) documentation.
+- For API Keys, please refer to [API Keys](/account-and-organization/my-organization/security/api-keys) documentation.
 :::
 
 ### Using the Personal Access Key for API Authentication

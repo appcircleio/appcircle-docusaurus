@@ -3,13 +3,14 @@ title: SSO Authorization
 description: Establish SSO authorization your organization. Enhance security and simplify access across Appcircle's platform.
 tags: [account, organization, configuration]
 sidebar_position: 2
+slug: /account-and-organization/my-organization/security/authorization/sso-authorization
 ---
 
 ## 1. Introduction
 
 In Appcircle, authorization for SSO users can be managed by mapping user groups and roles from your identity provider (IdP) to specific module permissions and organizations within Appcircle. This ensures seamless Role-Based Access Control (RBAC) across the platform.
 
-Before configuring SSO-based authorization, you must first complete the SSO integration setup. You can refer to the [SSO Integration Documentation](/account/my-organization/security/authentications/sso-authentication) for detailed instructions on how to configure SSO with your chosen provider, such as Azure AD, Okta, or Auth0.
+Before configuring SSO-based authorization, you must first complete the SSO integration setup. You can refer to the [SSO Integration Documentation](/account-and-organization/my-organization/security/authentications/sso-authentication) for detailed instructions on how to configure SSO with your chosen provider, such as Azure AD, Okta, or Auth0.
 Once SSO integration is complete, you can configure authorization by mapping IdP groups and roles to Appcircle organizations and module permissions.  
 
 ### Prerequisites

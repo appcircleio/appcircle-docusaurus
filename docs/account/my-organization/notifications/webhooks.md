@@ -14,6 +14,7 @@ tags:
     webhook deleting,
   ]
 sidebar_position: 4
+slug: /account-and-organization/my-organization/notifications/webhooks
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -25,7 +26,7 @@ provide.
 
 ### Creating Webhook
 
-Multiple webhooks can be created for different events and build profiles. To start, go to [My Organization](/account/my-organization) Notifications screen and press the **Manage** button next to Webhook under the **Notification Providers** section.
+Multiple webhooks can be created for different events and build profiles. To start, go to [My Organization](/account-and-organization/my-organization) Notifications screen and press the **Manage** button next to Webhook under the **Notification Providers** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/myaccount-integration-webhook.png' />
 

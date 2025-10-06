@@ -2,6 +2,7 @@
 title: Notification Integrations
 description: Enhance communication with Appcircle's Notification Integrations. Set up and manage notifications across tools like Slack, email, and more to stay informed.
 tags: [notifications, integrations, slack, email, teams]
+slug: /account-and-organization/my-organization/notifications
 ---
 
 # Notification Integrations
@@ -10,7 +11,7 @@ The "Notification Integrations" section lets you connect Appcircle with your pre
 
 Current headlines and the actions you can complete are listed below:
 
-- [**Email Notifications**](/account/my-organization/notifications/email-connection)
-- [**Microsoft Teams Notifications**](/account/my-organization/notifications/teams-notifications)
-- [**Slack Notifications**](/account/my-organization/notifications/slack-notifications)
-- [**Webhook Configurations**](/account/my-organization/notifications/webhooks)
+- [**Email Notifications**](/account-and-organization/my-organization/notifications/email-connection)
+- [**Microsoft Teams Notifications**](/account-and-organization/my-organization/notifications/teams-notifications)
+- [**Slack Notifications**](/account-and-organization/my-organization/notifications/slack-notifications)
+- [**Webhook Configurations**](/account-and-organization/my-organization/notifications/webhooks)

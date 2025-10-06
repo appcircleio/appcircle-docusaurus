@@ -3,6 +3,7 @@ title: Google Play Service Account
 description: Learn how to add a Google Play Service Account to your Appcircle account
 tags: [account, my organization, api integrations, google play service account]
 sidebar_position: 3
+slug: /account-and-organization/my-organization/security/credentials/adding-google-play-service-account
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -79,7 +80,7 @@ Then click **Invite User**. Your account key is ready. 🎉
 
 14. To add the key on Appcircle, follow these steps:
 
-    a. Navigate to [My Organization](/account/my-organization).
+    a. Navigate to [My Organization](/account-and-organization/my-organization).
 
     b. Locate the `Google Play Developer API Keys` under the `Credentials` section.
   

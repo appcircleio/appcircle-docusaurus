@@ -48,9 +48,9 @@ Currently, plugins are only compatible to use with **Appcircle Cloud**. **Self-h
 
 To perform operations such as generating a Personal API Token, creating a testing distribution profile, and managing testing groups, your user role must have the necessary permissions in the target organization. For more information about user roles and permissions, please refer to the relevant sections of the Role Management documentation below.
 
-- Access to organization or sub-organization and generating PAT: [Organization Management Permissions](/account/my-organization/profile-and-team/role-management#organization-management-permissions).
-- Testing distribution operations and profile management: [Testing Distribution Permissions](/account/my-organization/profile-and-team/role-management#testing-distribution-permissions).
-- Testing group management: [Testing Group Permissions](/account/my-organization/profile-and-team/role-management#testing-group-permissions).
+- Access to organization or sub-organization and generating PAT: [Organization Management Permissions](/account-and-organization/my-organization/profile-and-team/role-management#organization-management-permissions).
+- Testing distribution operations and profile management: [Testing Distribution Permissions](/account-and-organization/my-organization/profile-and-team/role-management#testing-distribution-permissions).
+- Testing group management: [Testing Group Permissions](/account-and-organization/my-organization/profile-and-team/role-management#testing-group-permissions).
 
 ### How to Add the Appcircle Distribute Action to Your Pipeline
 

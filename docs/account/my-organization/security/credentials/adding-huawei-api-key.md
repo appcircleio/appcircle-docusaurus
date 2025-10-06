@@ -3,6 +3,7 @@ title: Huawei AppGallery API Key
 description: Learn how to add a Huawei AppGallery API Key to your account in Appcircle
 tags: [account, my organization, api integrations, huawei appgallery, api key]
 sidebar_position: 4
+slug: /account-and-organization/my-organization/security/credentials/adding-huawei-api-key
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -23,7 +24,7 @@ Huawei AppGallery API Key is required to upload your binary to Huawei AppGallery
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/huaweiaccount-3downloadkey.png' />
 
-Your account key is ready. To add a key, go to [My Organization](/account/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Huawei AppGallery API Keys" item under the Credentials section.
+Your account key is ready. To add a key, go to [My Organization](/account-and-organization/my-organization) and press the "Add New" button (or the "Manage" button first if you have saved keys) next to the "Huawei AppGallery API Keys" item under the Credentials section.
 
 ## Sharing Huawei AppGallery Credentials
 

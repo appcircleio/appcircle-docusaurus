@@ -24,7 +24,7 @@ Appcircle's Publish module requires a **runner** to operate. The runner dependen
 To access the Publish module:
 
 1. Click on the **Publish** icon in the left menu.
-2. If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
+2. If it's your first time, set up connections to the app stores under [API Integrations](/account-and-organization/my-organization).
 
 ## Key Features
 
@@ -40,10 +40,10 @@ To access the Publish module:
 
 Before publishing:
 
-- **App Store**: [Configure your App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key.md)
-- **Google Play**: [Set up your Google Play Service Account](/account/my-organization/security/credentials/adding-google-play-service-account.md)
-- **Huawei AppGallery**: [Add your Huawei API Key](/account/my-organization/security/credentials/adding-huawei-api-key)
-- **Microsoft Intune**: [Add Microsoft Intune API Credentials](/account/my-organization/security/credentials/adding-microsoft-intune-api-key)
+- **App Store**: [Configure your App Store Connect API Key](/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key.md)
+- **Google Play**: [Set up your Google Play Service Account](/account-and-organization/my-organization/security/credentials/adding-google-play-service-account.md)
+- **Huawei AppGallery**: [Add your Huawei API Key](/account-and-organization/my-organization/security/credentials/adding-huawei-api-key)
+- **Microsoft Intune**: [Add Microsoft Intune API Credentials](/account-and-organization/my-organization/security/credentials/adding-microsoft-intune-api-key)
 
 By following these steps, you can ensure a smooth publishing experience for your mobile applications.
 

@@ -2,6 +2,7 @@
 title: In-app Notifications
 description: Learn how to view and filter your in-app notifications.
 tags: [account, in-app notifications]
+slug: /account-and-organization/my-account/in-app-notifications
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

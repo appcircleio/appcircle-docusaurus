@@ -3,6 +3,7 @@ title: Enterprise Portal SSO Authentication
 description: Set up single sign-on (SSO) for your applications in Enterprise store, enhancing security and simplifying the login process.
 tags: [sso, distribution, okta, auth0, entraid, azure, saml, openid]
 sidebar_position: 4
+slug: /account-and-organization/my-organization/security/authentications/store-sso-authentication
 ---
 
 # Enterprise Portal Single Sign-On (SSO) Providers Configuration
@@ -11,7 +12,7 @@ sidebar_position: 4
 
 Single Sign-On (SSO) allows users to log in to Appcircle using their existing credentials from an Identity Provider (IdP). By integrating SSO, organizations can streamline user access management, enhance security, and provide a seamless login experience across multiple platforms.
 
-This document specifically covers the SSO configuration for the Enterprise Portal (Enterprise App Store module). Please note that a separate SSO configurations exists for the [Appcircle Login](/account/my-organization/security/authentications/sso-authentication) and [Testing Portal](/account/my-organization/security/authentications/distribution-sso-authentication). This document does not cover those configurations.
+This document specifically covers the SSO configuration for the Enterprise Portal (Enterprise App Store module). Please note that a separate SSO configurations exists for the [Appcircle Login](/account-and-organization/my-organization/security/authentications/sso-authentication) and [Testing Portal](/account-and-organization/my-organization/security/authentications/distribution-sso-authentication). This document does not cover those configurations.
 
 Currently, this configuration supports enabling SSO with only one identity provider at a time. Adding multiple SSO providers is not supported at this moment but may be available in the future.
 

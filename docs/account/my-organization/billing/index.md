@@ -7,6 +7,7 @@ tags:
     usage,
     billing
   ]
+slug: /account-and-organization/my-organization/billing
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -26,8 +27,8 @@ The Billing section allows you to monitor your usage summary, including builds, 
 - **[Testing Distribution](/testing-distribution/testing-portal)** : Number of app downloads from the Testing Portal in a single billing cycle.
 - **[Publishes](/publish-module)** : Number of publishes initiated from the Publish module in a single billing cycle.
 - **[Enterprise App Store](/enterprise-app-store/enterprise-portal)** : Number of app downloads from the Enterprise App Store in a single billing cycle.
-- **[Team Members](/account/my-organization/profile-and-team/team-management)** : Number of team members allowed in a single organization.
-- **[Artifact Storage](/account/my-organization/artifacts)** : Total storage size for all the build and distribution artifacts across the platform.
+- **[Team Members](/account-and-organization/my-organization/profile-and-team/team-management)** : Number of team members allowed in a single organization.
+- **[Artifact Storage](/account-and-organization/my-organization/artifacts)** : Total storage size for all the build and distribution artifacts across the platform.
 - **[Build Concurrency](/build/build-process-management/manual-builds)** : Number of builds that can run simultaneously.
 - **[Build Time Limit](/build/build-process-management/manual-builds)** : Number of minutes allowed per build and publish before it is automatically cancelled with a timeout status.
 - **[Machine Plan](/infrastructure/machine-plans)** : Indicates the Machine Plan assigned to the organization.

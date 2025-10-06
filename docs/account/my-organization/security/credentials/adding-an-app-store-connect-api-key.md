@@ -3,6 +3,7 @@ title: App Store Connect API Key
 description: Learn how to generate an App Store Connect API Key for linking your Apple Developer account to Appcircle
 tags: [account, my organization, api integrations, app store connect, app store connect api key]
 sidebar_position: 2
+slug: /account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

@@ -3,6 +3,7 @@ title: Testing Portal SSO Authentication
 description: Set up single sign-on (SSO) for distributing your applications via Testing Portal, enhancing security and simplifying the login process.
 tags: [sso, distribution, okta, auth0, entraid, azure, saml, openid]
 sidebar_position: 3
+slug: /account-and-organization/my-organization/security/authentications/distribution-sso-authentication
 ---
 
 # Testing Portal Single Sign-On (SSO) Providers Configuration
@@ -11,7 +12,7 @@ sidebar_position: 3
 
 Single Sign-On (SSO) allows users to log in to Appcircle using their existing credentials from an Identity Provider (IdP). By integrating SSO, organizations can streamline user access management, enhance security, and provide a seamless login experience across multiple platforms.
 
-This document specifically covers the SSO configuration for the Testing Portal (Testing Distribution module). Please note that a separate SSO configurations exists for the [Appcircle Login](/account/my-organization/security/authentications/sso-authentication) and [Enterprise Portal](/account/my-organization/security/authentications/store-sso-authentication). This document does not cover those configurations.
+This document specifically covers the SSO configuration for the Testing Portal (Testing Distribution module). Please note that a separate SSO configurations exists for the [Appcircle Login](/account-and-organization/my-organization/security/authentications/sso-authentication) and [Enterprise Portal](/account-and-organization/my-organization/security/authentications/store-sso-authentication). This document does not cover those configurations.
 
 Currently, this configuration supports enabling SSO with only one identity provider at a time. Adding multiple SSO providers is not supported at this moment but may be available in the future.
 
@@ -43,7 +44,7 @@ Each section will provide detailed instructions for configuring your chosen iden
 Before you begin configuring SSO for Appcircle, ensure that you have the following prerequisites:
 
 - An active account with one of the supported Identity Providers (IdPs).
-- Administrative access to both the Identity Provider and Appcircle's platform. For more details, refer to the [Appcircle Role Management Documentation](/account/my-organization/profile-and-team/role-management#organization-management-permissions).
+- Administrative access to both the Identity Provider and Appcircle's platform. For more details, refer to the [Appcircle Role Management Documentation](/account-and-organization/my-organization/profile-and-team/role-management#organization-management-permissions).
 - Access to SAML tracing tools or other relevant debugging resources.
 - SSL certificates (if required by your IdP).
 

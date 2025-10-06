@@ -18,6 +18,7 @@ tags:
     artifacts,
     activity logs
   ]
+slug: /account-and-organization/my-organization
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -28,10 +29,10 @@ The "My Organization" section is your central hub for managing everything relate
 
 Current headlines and the actions you can complete are listed below:
 
-- [**Profile and Team**](/account/my-organization/profile-and-team)
-- [**Security**](/account/my-organization/security)
-- [**Notifications**](/account/my-organization/notifications)
-- [**Artifacts**](/account/my-organization/artifacts)
-- [**Team Activity Log**](/account/my-organization/profile-and-team/team-activity-log)
+- [**Profile and Team**](/account-and-organization/my-organization/profile-and-team)
+- [**Security**](/account-and-organization/my-organization/security)
+- [**Notifications**](/account-and-organization/my-organization/notifications)
+- [**Artifacts**](/account-and-organization/my-organization/artifacts)
+- [**Team Activity Log**](/account-and-organization/my-organization/profile-and-team/team-activity-log)
 
 In order to see the details, check the submenu of this documentation page.

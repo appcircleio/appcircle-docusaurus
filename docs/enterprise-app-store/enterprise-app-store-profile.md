@@ -193,7 +193,7 @@ If a sub-organization is being worked for, visibility will be limited to the app
 
 User permissions within the Enterprise App Store can be managed using **Okta SAML**. By configuring authorization groups through **Okta** and subsequently applying these group names to **Alpha** or **Beta** channels via Appcircle, access will be restricted to only the relevant users.
 
-For further details, please refer to the document: [Okta Managing User Groups](/account/my-organization/security/authorization/store-sso-authorization).
+For further details, please refer to the document: [Okta Managing User Groups](/account-and-organization/my-organization/security/authorization/store-sso-authorization).
 :::
 
 :::info
@@ -431,7 +431,7 @@ The key point here is that we need two essential parameters to make this work.
 - `ORG_B_ENT_APP_STORE_PROFILE_ID` => Enterprise App Store profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal Access Key, follow this [documentation](/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
+To generate Personal Access Key, follow this [documentation](/account-and-organization/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
 
 To obtain the Enterprise App Store profile ID, follow the steps below: 
 1. Log in to organization B.

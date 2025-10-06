@@ -3,6 +3,7 @@ title: Team Management
 description: Manage team members and roles within Appcircle organizations, including ownership, adding/removing members, and assigning module-based roles to ensure effective collaboration.
 tags: [team, management, roles, permissions, organization]
 sidebar_position: 4
+slug: /account-and-organization/my-organization/profile-and-team/team-management
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
@@ -79,6 +80,6 @@ The "None" is a special type of permission that denotes that a user has no defin
 
 For more information on the roles and permissions, please refer to the:
 
-<ContentRef url="/account/my-organization/profile-and-team/role-management"> 
+<ContentRef url="/account-and-organization/my-organization/profile-and-team/role-management"> 
     Role Management
 </ContentRef>

@@ -2,6 +2,7 @@
 title: Personal Access Key
 description: Learn how to create personal API token in Appcircle
 tags: [api, token, personal access key, personal api token, personal access token, pat]
+slug: /account-and-organization/my-organization/security/personal-access-key
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -19,7 +20,7 @@ Only the name has changed, and all functionality remains the same.
 
 ## Generating/Managing the Personal Access Keys
 
-To generate a Personal Access Key, go to the [My Organization](/account/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. After that, find the Security section from the left side menu. The Personal Access Key section is located on the bottom right.
+To generate a Personal Access Key, go to the [My Organization](/account-and-organization/my-organization/profile-and-team/organization-management) screen in the Appcircle dashboard. After that, find the Security section from the left side menu. The Personal Access Key section is located on the bottom right.
 
 Press the "Generate Key" button to generate your first key.
 
@@ -36,7 +37,7 @@ If you want to delete a previously generated key, press "Delete Key" and confirm
 <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM91-4.png'/>
 
 :::caution Personal Access Key for Sub-Organizations
-To generate a Personal Access Key for a sub-organization, you must be added as a **member** of that sub-organization. Users **inherited** from a parent organization cannot generate a Personal Access Key. For additional details on [Organization](/account/my-organization/profile-and-team/organization-management#working-with-multiple-organizations) and [Team management](/account/my-organization/profile-and-team/team-management#managing-team-members), refer to the relevant documentation.
+To generate a Personal Access Key for a sub-organization, you must be added as a **member** of that sub-organization. Users **inherited** from a parent organization cannot generate a Personal Access Key. For additional details on [Organization](/account-and-organization/my-organization/profile-and-team/organization-management#working-with-multiple-organizations) and [Team management](/account/my-organization/profile-and-team/team-management#managing-team-members), refer to the relevant documentation.
 :::
 
 :::info

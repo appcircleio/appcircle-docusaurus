@@ -10,7 +10,7 @@ tags:
     role management,
     activity log,
   ]
-
+slug: /account-and-organization/my-organization/profile-and-team/team-activity-log
 ---
 
 You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in the Team Activity Log section within the My Organization area.

@@ -3,6 +3,7 @@ title: Sign Up / Login
 description: Getting started with Appcircle is easy. To sign up for or log into Appcircle, go to my.appcircle.io.
 tags: [account, sign up, login]
 sidebar_position: 1
+slug: /account-and-organization/my-account/sign-up-login
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

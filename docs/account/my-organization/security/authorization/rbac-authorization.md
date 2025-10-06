@@ -3,6 +3,7 @@ title: RBAC Authorization
 description: Establish manuel authorization your organization. Enhance security and simplify access across Appcircle's platform.
 tags: [account, organization, configuration]
 sidebar_position: 1
+slug: /account-and-organization/my-organization/security/authorization/rbac-authorization
 ---
 
 ## 1. Introduction

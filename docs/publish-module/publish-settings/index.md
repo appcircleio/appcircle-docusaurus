@@ -90,10 +90,10 @@ The Apple Enterprise Program is intended solely for in‑house distribution with
 
 | Store             | Connection                                                                                                                  |
 | ----------------- |-----------------------------------------------------------------------------------------------------------------------------|
-| App Store         | [Adding an App Store Connect API Key](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key.md) |
-| Google Play       | [Adding Google Play Service Account](/account/my-organization/security/credentials/adding-google-play-service-account.md)   |
-| Huawei AppGallery | [Adding Huawei API Key](/account/my-organization/security/credentials/adding-huawei-api-key)                                |
-| Microsoft Intune  | [Adding Microsoft Intune API Credentials](/account/my-organization/security/credentials/adding-microsoft-intune-api-key)    |
+| App Store         | [Adding an App Store Connect API Key](/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key) |
+| Google Play       | [Adding Google Play Service Account](/account-and-organization/my-organization/security/credentials/adding-google-play-service-account)  |
+| Huawei AppGallery | [Adding Huawei API Key](/account-and-organization/my-organization/security/credentials/adding-huawei-api-key)                            |
+| Microsoft Intune  | [Adding Microsoft Intune API Credentials](/account-and-organization/my-organization/security/credentials/adding-microsoft-intune-api-key) |
 
 #### Publish Priority
 

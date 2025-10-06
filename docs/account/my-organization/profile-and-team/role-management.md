@@ -18,11 +18,12 @@ tags:
     third-party connections,
   ]
 sidebar_position: 5
+slug: /account-and-organization/my-organization/profile-and-team/role-management
 ---
 
 # Role Management
 
-With Appcircle's [Advanced Role Management](/account/my-organization/profile-and-team/team-management#advanced-role-management) structure, you can assign specific roles to organization members for each module, allowing you to manage and restrict their permissions effectively. Appcircle provides various role types for each module, with a brief description of each role provided in the table below. For more detailed information on role management for each module, please refer to the respective module titles.
+With Appcircle's [Advanced Role Management](/account-and-organization/my-organization/profile-and-team/team-management#advanced-role-management) structure, you can assign specific roles to organization members for each module, allowing you to manage and restrict their permissions effectively. Appcircle provides various role types for each module, with a brief description of each role provided in the table below. For more detailed information on role management for each module, please refer to the respective module titles.
 
 - **Owner**: The user is authorized for unlimited access to all modules.
 - **Manager**: The user becomes the administrator of the relevant module with no restrictions.
@@ -392,7 +393,7 @@ If you want to assign a role in a sub-organization, please do so within the resp
 
 LDAP/SSO integrations under Integration are only for setting authentication for logins to the Testing Distribution [**Testing Portal**](/testing-distribution/testing-portal) and [**Enterprise App Store**](/enterprise-app-store).
 
-Please use [**Appcircle Login**](/account/my-organization/security/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
+Please use [**Appcircle Login**](/account-and-organization/my-organization/security/authentications) for **LDAP** and **SSO** integration when logging into Appcircle.
 
 :::
 
@@ -419,16 +420,16 @@ Connect or disconnect from third-party service providers such as notification to
 
 #### Notification Tools
 
-- [**Slack Notifications**](/account/my-organization/notifications/slack-notifications) 
-- [**Microsoft Teams Notifications**](/account/my-organization/notifications/teams-notifications)
-- [**Email Notifications**](/account/my-organization/notifications/email-connection) 
+- [**Slack Notifications**](/account-and-organization/my-organization/notifications/slack-notifications) 
+- [**Microsoft Teams Notifications**](/account-and-organization/my-organization/notifications/teams-notifications)
+- [**Email Notifications**](/account-and-organization/my-organization/notifications/email-connection) 
  
 #### Store Connections
 
-- [**App Store Connect API Keys**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) 
-- [**Google Play Developer API Keys**](/account/my-organization/security/credentials/adding-google-play-service-account) 
-- [**Huawei AppGallery Developer API Keys**](/account/my-organization/security/credentials/adding-huawei-api-key)
-- [**Microsoft Intune API Keys**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) 
+- [**App Store Connect API Keys**](/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key) 
+- [**Google Play Developer API Keys**](/account-and-organization/my-organization/security/credentials/adding-google-play-service-account) 
+- [**Huawei AppGallery Developer API Keys**](/account-and-organization/my-organization/security/credentials/adding-huawei-api-key)
+- [**Microsoft Intune API Keys**](/account-and-organization/my-organization/security/credentials/adding-microsoft-intune-api-key) 
 
 | Integrations and Connections | Scopes                        | Owner | Manager | Viewer |
 |------------------------------|-------------------------------|-------|---------|--------|

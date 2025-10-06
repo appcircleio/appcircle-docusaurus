@@ -2,6 +2,7 @@
 title: API Keys
 description: Learn how to generate and manage your API Keys.
 tags: [security, api key, token]
+slug: /account-and-organization/my-organization/security/api-keys
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

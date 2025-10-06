@@ -3,6 +3,7 @@ title: Device Activity
 description: Learn how to manage your device activity in Appcircle
 tags: [account, account management, active sessions, device activity]
 sidebar_position: 1
+slug: /account-and-organization/my-account/account-management/device-activity
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

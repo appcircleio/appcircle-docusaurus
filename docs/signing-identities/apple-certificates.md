@@ -51,7 +51,7 @@ With Appcircle’s advanced Signing Identity module, you can easily generate cer
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertModal.png' />
 
-- Appcircle **requires** an **App Store Connect API Key** associated with your account to create a certificate. If the API Key is **not** added to your Appcircle organization, you **cannot** proceed with the certificate creation process. For more information, please refer to the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
+- Appcircle **requires** an **App Store Connect API Key** associated with your account to create a certificate. If the API Key is **not** added to your Appcircle organization, you **cannot** proceed with the certificate creation process. For more information, please refer to the [**App Store Connect API Key**](/account-and-organization/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5771-addCertAPIKeySelect.png' />
 
@@ -139,7 +139,7 @@ If your password contains special characters such as `$` and `#`, your workflow 
 
 :::info Apple Certificate Expiration Notifications
 
-You will be notified when an Apple Certificate is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+You will be notified when an Apple Certificate is about to expire. You can see the expiration notification in the [in-app notification window](/account-and-organization/my-account/in-app-notifications) and optionally enable expiration [notifications](/account-and-organization/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
 
 **Standard Schedule**: Certificates already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
 

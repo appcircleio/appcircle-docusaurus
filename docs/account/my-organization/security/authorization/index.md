@@ -3,6 +3,7 @@ title: Authorization
 description: Establish authorization your organization. Enhance security and simplify access across Appcircle's platform.
 tags: [account, organization, configuration]
 sidebar_position: 4
+slug: /account-and-organization/my-organization/security/authorization
 ---
 import Screenshot from '@site/src/components/Screenshot';
 
@@ -12,8 +13,8 @@ The **Authorization** section allows you to manage user permissions and control 
 
 We support RBAC authorization and SSO-based authorization methods. Current headlines and the actions you can complete are listed below:
 
-- [**RBAC (Role-Based Access Control) Authorization**](/account/my-organization/security/authorization/rbac-authorization)
-- [**SSO Authorization**](/account/my-organization/security/authorization/sso-authorization)
-- [**Enterprise App Store SSO Authorization**](/account/my-organization/security/authorization/store-sso-authorization)
+- [**RBAC (Role-Based Access Control) Authorization**](/account-and-organization/my-organization/security/authorization/rbac-authorization)
+- [**SSO Authorization**](/account-and-organization/my-organization/security/authorization/sso-authorization)
+- [**Enterprise App Store SSO Authorization**](/account-and-organization/my-organization/security/authorization/store-sso-authorization)
 
 In order to see the details, check the submenu of this documentation page.

@@ -3,6 +3,7 @@ title: Enterprise Portal LDAP Authentication
 description: Learn how to set up and manage LDAP login integration for the Enterprise Portal of your organization in Appcircle
 tags: [account, my organization, ldap login, distribution, distribution profile, authentication, 2FA]
 sidebar_position: 6
+slug: /account-and-organization/my-organization/security/authentications/store-ldap-authentication
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -30,7 +31,7 @@ This means you can tailor access permissions according to your organization's sp
 
 If you ever need to remove LDAP Login integration, the document also provides clear instructions for doing so, ensuring that your system remains secure and up-to-date.
 
-To start, go to [My Organization](/account/my-organization) > Security screen and press the **Add New** button next to LDAP Login under the **Authentications** section.
+To start, go to [My Organization](/account-and-organization/my-organization) > Security screen and press the **Add New** button next to LDAP Login under the **Authentications** section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-add-new.png' />
 
@@ -40,7 +41,7 @@ To start, go to [My Organization](/account/my-organization) > Security screen 
     - **Create New Authentication**
     - **Create From Existing Authentication**
 You can create a new configuration or create one from an existing configuration. Click on the **Create New Authentication** section to create new configuration.
-Please refer the [**Create From Existing LDAP Configuration**](/account/my-organization/security/authentications/store-ldap-authentication#create-from-existing-ldap-configuration).
+Please refer the [**Create From Existing LDAP Configuration**](/account-and-organization/my-organization/security/authentications/store-ldap-authentication#create-from-existing-ldap-configuration).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/store-ldap-create-options.png' />
 
@@ -121,7 +122,7 @@ The LDAP authentication configuration for Enterprise Portal can be enabled or di
 
 ## Deleting LDAP Login
 
-- To delete, go to the [My Organization](/account/my-organization) > Security screen and press the Manage button next to LDAP Login under the Authentications section.
+- To delete, go to the [My Organization](/account-and-organization/my-organization) > Security screen and press the Manage button next to LDAP Login under the Authentications section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-login10.png' />
 

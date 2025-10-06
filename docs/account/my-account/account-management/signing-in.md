@@ -3,6 +3,7 @@ title: Signing In
 description: Learn how to change your password and setup two factor authenticator in Appcircle
 tags: [account, account management, change password, two-factor authentication, 2FA, authenticator]
 sidebar_position: 2
+slug: /account-and-organization/my-account/account-management/signing-in
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
