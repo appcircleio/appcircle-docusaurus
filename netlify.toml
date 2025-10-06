@@ -1373,3 +1373,28 @@ status = 301
 from = "/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab"
 to = "/build/manage-the-connections/connection-guides/connecting-to-gitlab"
 status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-azure"
+to = "/build/manage-the-connections/connection-guides/connecting-to-azure"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides"
+to = "/build/manage-the-connections/connection-guides"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-gitlab"
+to = "/build/manage-the-connections/connection-guides/connecting-to-gitlab"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-bitbucket"
+to = "/build/manage-the-connections/connection-guides/connecting-to-bitbucket"
+status = 301
+
+[[redirects]]
+from = "/build/connection-guides/connecting-to-github"
+to = "/build/manage-the-connections/connection-guides/connecting-to-github"
+status = 301
