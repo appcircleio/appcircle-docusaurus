@@ -106,16 +106,6 @@ You must configure the component to parse those folders.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-workflow.png" />
 
-:::danger
-
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggle so that Test Report Component always runs whether your tests fail or pass.
-
-- Continue with the next step even if this step fails to **ON**
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-steps-on.png" />
-
-:::
-
 :::caution
 
 If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization. Unit tests can work for both pools.

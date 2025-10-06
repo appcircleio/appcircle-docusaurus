@@ -77,6 +77,8 @@ The first three items are common for all steps, and they are set individually fo
 
 - **Always run this step even if the previous step fails:** If this option is enabled, getting a failed result on a previous workflow step will not directly terminate the build process so this specific workflow step can run.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/toggle-always-run-this-step.png' />
+
 - **Continue with the next step even if this step fails:** If a step is optional or its result should not cause a build error, you can select this option to continue the workflow if this particular step fails. In default workflows, this option is `on` for specific steps. Since this step is active, the build status will appear as "Warning" if other steps in the build are successful.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-fail.png' />

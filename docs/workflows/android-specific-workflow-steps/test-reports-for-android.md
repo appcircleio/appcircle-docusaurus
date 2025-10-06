@@ -5,6 +5,7 @@ tags: [test, test report, test result, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Test Reports for Android
 
@@ -30,6 +31,7 @@ Before running the **Test Reports for Android** step, you must complete certain 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_1.png'/>
 
+<AlwaysRunToggleDanger />
 
 ### Input Variables
 

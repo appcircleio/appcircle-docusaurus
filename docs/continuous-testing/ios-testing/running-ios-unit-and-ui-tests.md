@@ -71,14 +71,6 @@ You must add this component **after** the `Xcodebuild for Unit and UI Tests` so 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports4.png' />
 
-:::danger
-
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggle so that Test Report Component always runs whether your tests fail or pass.
-
-- Continue with the next step even if this step fails to **ON**
-
-:::
-
 <Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
 
 ### Showing Test Reports

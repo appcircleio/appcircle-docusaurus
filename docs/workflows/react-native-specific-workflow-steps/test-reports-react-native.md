@@ -5,6 +5,7 @@ tags: [test, test report, test result, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Test Reports for React Native
 
@@ -30,6 +31,8 @@ Before running the **Test Reports for React Native** step, you must complete cer
 To able to use the **Test Report** component, not necessary to use both test step **React Native UI Test** and **React Native Unit Test** at the same time. But if these test steps are included in the flow, they must be used before the **Test Report** component.
 
 :::
+
+<AlwaysRunToggleDanger />
 
 ### Input Variables
 
