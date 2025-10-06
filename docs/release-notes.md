@@ -1327,7 +1327,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Dynamic title changes based on the selected language have been implemented to elevate the user experience, ensuring that users receive content in their preferred language seamlessly. <CloudBadge/> <SelfHostedBadge/>
 - A new "Provision Profile Type" section has been incorporated into the "App Information" section within the App version, providing users with essential details regarding provisioning profile types associated with the application. <CloudBadge/> <SelfHostedBadge/>
 - A validation has been introduced to the Email field within the "Approval via Email" section, ensuring that accurate and properly formatted email addresses are provided for submission. <CloudBadge/> <SelfHostedBadge/>
-- In the "select repository" section while connecting to [Bitbucket](https://docs.appcircle.io/build/connection-guides/connecting-to-bitbucket), [GitLab](https://docs.appcircle.io/build/connection-guides/connecting-to-gitlab), [GitHub](https://docs.appcircle.io/build/connection-guides/connecting-to-github), or [Azure DevOps](https://docs.appcircle.io/build/connection-guides/connecting-to-azure), teams are now listed in alphabetical order, streamlining the process of selecting repositories and enhancing user navigation within the system. <CloudBadge/> <SelfHostedBadge/>
+- In the "select repository" section while connecting to [Bitbucket](/build/manage-the-connections/connection-guides/connecting-to-bitbucket), [GitLab](/build/manage-the-connections/connection-guides/connecting-to-gitlab), [GitHub](/build/manage-the-connections/connection-guides/connecting-to-github), or [Azure DevOps](/build/manage-the-connections/connection-guides/connecting-to-azure), teams are now listed in alphabetical order, streamlining the process of selecting repositories and enhancing user navigation within the system. <CloudBadge/> <SelfHostedBadge/>
 - A new "Connection Pool" field has been introduced in the LDAP Configuration settings, providing users with the ability to configure connection pooling for LDAP connections. <CloudBadge/> <SelfHostedBadge/>
 - An "Order" field has been incorporated into the LDAP Configuration settings, enabling users to specify the order of LDAP configurations. <CloudBadge/> <SelfHostedBadge/>
 - Sub-organizations can now access and manage the connection settings, allowing for more comprehensive control and customization within the system. <CloudBadge/> <SelfHostedBadge/>
@@ -2219,8 +2219,8 @@ After adding an API Key, you can add new signing identities from the Signing Ide
 
 Within this release, we bring fully built-in Appcircle support for your Self Hosted (Enterprise) for:
 
-- [Bitbucket Self Hosted](https://docs.appcircle.io/build/connection-guides/connecting-to-bitbucket#connecting-to-bitbucket-self-hosted-repository)
-- [GitLab Self Hosted](https://docs.appcircle.io/build/connection-guides/connecting-to-gitlab#connecting-to-gitlab-self-hosted-repository)
+- [Bitbucket Self Hosted](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#connecting-to-bitbucket-server-self-hosted-repository)
+- [GitLab Self Hosted](/build/manage-the-connections/connection-guides/connecting-to-gitlab#connecting-to-gitlab-self-hosted-repository)
 
 solutions. Click on them to see how to connect your self hosted repository within Appcircle!
 
@@ -2254,7 +2254,7 @@ https://docs.appcircle.io/build/building-android-applications/android-signing-fo
 
 ### :muscle:Improvement
 
-- Repository Connection now has a new look and feel! Refer to [this documentation](https://docs.appcircle.io/build/connection-guides#connect-your-repository) to see the new connection screens or dive right into the connection module to check our new simplified experience!
+- Repository Connection now has a new look and feel! Refer to [this documentation](/build/manage-the-connections/connection-guides) to see the new connection screens or dive right into the connection module to check our new simplified experience!
 
 ### 📑 Documentation
 
