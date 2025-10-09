@@ -7,6 +7,7 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Running Android Unit Tests
 
@@ -83,6 +84,8 @@ This simple Bash script will trigger your unit test and output the test results 
 ## Generating Test Report
 
 Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
+
+<AlwaysRunToggleDanger />
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-overview.png" />
 

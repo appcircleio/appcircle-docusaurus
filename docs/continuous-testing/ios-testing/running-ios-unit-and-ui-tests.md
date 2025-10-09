@@ -8,6 +8,7 @@ sidebar_position: 1
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Running iOS Unit & UI Tests
 
@@ -60,6 +61,8 @@ Optionally, you can use 3rd party tools like :link: [**XCParse**](https://github
 ### Generating Test Report
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
+
+<AlwaysRunToggleDanger />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-report-overview.png' />
 

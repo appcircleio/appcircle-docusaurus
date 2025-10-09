@@ -4,6 +4,8 @@ description: Learn effectively run unit tests with Jest to ensure quality of Rea
 tags: [unit test, jest, quality assurance]
 ---
 
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
+
 # React Native Unit Test on Appcircle
 
 Introduction to **React Native Unit Test** on Appcircle focuses on enhancing code quality and reliability by automating the testing of individual components and functionalities, ensuring seamless performance across different devices and environments.
@@ -75,6 +77,8 @@ For more information, please visit the **React Native Unit Test** workflow step 
 ## Generating Test Report
 
 If you add [Test Report Component](/workflows/react-native-specific-workflow-steps/test-reports-react-native) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
+
+<AlwaysRunToggleDanger />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
 
