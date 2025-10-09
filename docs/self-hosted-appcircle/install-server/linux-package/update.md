@@ -63,6 +63,7 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 
 <!-- Version anchor links to release notes -->
+[3.29.4]: https://docs.appcircle.io/release-notes#3-29-4
 [3.29.3]: https://docs.appcircle.io/release-notes#3-29-3
 [3.29.2]: https://docs.appcircle.io/release-notes#3-29-2
 [3.29.1]: https://docs.appcircle.io/release-notes#3-29-1
@@ -103,9 +104,14 @@ Below is the version history of the self-hosted Appcircle server. This table hel
     <summary>Click to view version history.</summary>
 
         Since the cloud and self-hosted versions are released asynchronously, the release dates listed in the table may differ from those on the **[Release Notes](https://docs.appcircle.io/release-notes)** page.
+
+        :::tip
+        Release dates in the table below are listed in `dd/mm/yyyy` date format.
+        :::
         
         | Version   | Release Date |
         |-----------|--------------|
+        | [3.29.4]  | 09/10/2025   |
         | [3.29.3]  | 23/09/2025   |
         | [3.29.2]  |     -        |
         | [3.29.1]  |     -        |
