@@ -85,8 +85,6 @@ This simple Bash script will trigger your unit test and output the test results 
 
 Appcircle has [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) which can show the result of your tests and code coverage in a beautiful UI.
 
-<AlwaysRunToggleDanger />
-
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-overview.png" />
 
 You must add this component **after** running your tests so that it can parse test results. Your workflow should look like the below.
@@ -99,6 +97,8 @@ You must add this component **after** running your tests so that it can parse te
 - [**JaCoCo**](https://www.jacoco.org)
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
+
+<AlwaysRunToggleDanger />
 
 You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
 

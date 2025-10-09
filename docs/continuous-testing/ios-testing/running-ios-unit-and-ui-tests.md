@@ -62,8 +62,6 @@ Optionally, you can use 3rd party tools like :link: [**XCParse**](https://github
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-<AlwaysRunToggleDanger />
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ios-unit-test-report-overview.png' />
 
 You must add this component **after** the `Xcodebuild for Unit and UI Tests` so that it can parse test results. Your workflow should look like the below.
@@ -72,9 +70,9 @@ You must add this component **after** the `Xcodebuild for Unit and UI Tests` so 
 
 [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) shows both test and coverage results. To show coverage results, you must enable **Code Coverage** in Xcode's scheme settings.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports4.png' />
+<AlwaysRunToggleDanger />
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/ios-unit-test-report-steps-on.png" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports4.png' />
 
 ### Showing Test Reports
 

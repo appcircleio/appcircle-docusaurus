@@ -103,14 +103,13 @@ For more information, please visit the **React Native UI Test** workflow step [d
 
 If you add [Test Report Component](https://github.com/appcircleio/appcircle-test-report-component) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
-<AlwaysRunToggleDanger />
-
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
 
 You must add this step **after** the `React Native UI Test` so that it can parse test results. Your workflow should look like the below.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-testReport.png' />
 
+<AlwaysRunToggleDanger />
 
 ## Showing Test Reports
 
