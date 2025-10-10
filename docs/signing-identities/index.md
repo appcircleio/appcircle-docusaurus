@@ -12,6 +12,16 @@ import ContentRef from '@site/src/components/ContentRef';
 
 The Signing Identities section is essential for configuring the credentials required to sign your iOS and Android applications. It's where you can manage and store your signing certificates for iOS and your keystores for Android.
 
+<iframe 
+  width="560" 
+  height="315" 
+  src="https://www.youtube.com/embed/Wcqh_BUrodM?si=cYNcFl3uSafD34js" 
+  title="YouTube video player" 
+  frameborder="0" 
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+  allowfullscreen>
+</iframe>
+
 :::tip Learn More
 For a complete overview of the Signing Identities module capabilities, check out the [Appcircle's Signing Identities Section](https://appcircle.io/signing-identities).
 :::

@@ -14,7 +14,15 @@ The Testing Distribution module in Appcircle is designed to simplify and secure 
 For a complete overview of the Appcircle Testing Distribution module capabilities, check out the [Appcircle's Testing Distribution Section](https://appcircle.io/testing-distribution).
 :::
 
-<iframe width="600" height="315" src="https://www.youtube.com/embed/vZ3p5uZZcmk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/HLWiTGhAosw?si=727RjL6PRI-GA7HO" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
 
 ## [Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)
 
