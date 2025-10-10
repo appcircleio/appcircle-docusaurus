@@ -40,9 +40,17 @@ Learn to streamline your workflows by pushing data to cache with our easy-to-fol
 
 Discover the essentials of cache retrieval in our cache-pull guide. Speed up your build processes by mastering the art of efficiently pulling cached data.
 
+## [Check Network Access](/workflows/common-workflow-steps/check-network-access)
+
+This component checks network access to external services commonly used in Appcircle build workflows. It validates connectivity to package managers, build services, APIs, and custom-defined URLs during build time.
+
 ## [Custom Script](/workflows/common-workflow-steps/custom-script)
 
 You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
+
+## [Custom Script from Git](/workflows/common-workflow-steps/custom-script-from-git)
+
+You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT).
 
 ## [Code Reviews with Danger](/workflows/common-workflow-steps/danger)
 

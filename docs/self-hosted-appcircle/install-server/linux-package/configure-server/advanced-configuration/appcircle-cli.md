@@ -15,13 +15,13 @@ For detailed usage, you can head over to the [Appcircle CLI](https://github.com/
 
 ## Pre-Requirements
 
-To configure Appcircle CLI to use your self-hosted Appcircle, you need a **Personal API Token** for authentication. Also, you need the `api` and the `auth` URLs of the Appcircle server.
+To configure Appcircle CLI to use your self-hosted Appcircle, you need a **Personal Access Key** for authentication. Also, you need the `api` and the `auth` URLs of the Appcircle server.
 
-### 1. Create a Personal API Token
+### 1. Create a Personal Access Key
 
-For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a **Personal API Token** and configure the Appcircle CLI to use it.
+For the Appcircle CLI to authenticate to your self-hosted Appcircle, you need to create a **Personal Access Key** and configure the Appcircle CLI to use it.
 
-You can follow the [Generating and Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens) page to create one.
+You can follow the [Generating and Managing Personal Access Keys](/account/my-organization/security/personal-access-key) page to create one.
 
 ### 2. Find out the Appcircle server URLs
 
@@ -136,17 +136,25 @@ appcircle config set API_HOSTNAME 'https://api.appcircle.spacetech.com'
 appcircle config set AUTH_HOSTNAME 'https://auth.appcircle.spacetech.com'
 ```
 
-**3.** Set the [Personal API Token](#1-create-a-personal-api-token) for authentication on the server.
+**3.** Set the [Personal Access Key](#1-create-a-personal-access-key) for authentication on the server.
 
 ```bash
-appcircle login --pat "${PERSONAL_API_TOKEN}"
+appcircle login personal-access-key --secret "${PERSONAL_ACCESS_KEY}"
 ```
 
 For example;
 
 ```bash
-appcircle login --pat "TTk0...RhNw=="
+appcircle login personal-access-key --secret "TTk0...RhNw=="
 ```
+
+:::warning Personal API Token Renamed
+The Personal Access Key was previously referred to as the Personal API Token. The old login method is still available, but it is recommended to migrate to the new version.
+For reference, the old login method was:
+```bash
+appcircle login --pat "${PERSONAL_API_TOKEN}"
+```
+:::
 
 :::caution
 If you face any self-signed certificate error, for example, "self-signed certificate in certificate chain", check the [Trusting Certificate](#trusting-the-ssl-certificate-recommended) section for troubleshooting.

@@ -119,7 +119,7 @@ To use this profile creation method, you must have an API key integration in pla
 
 Once the required integrations are set up, you can access these platforms from your profile within the Publish module. To initiate a release process, you need to select the credentials for the related store from the `Settings` screen under the Publish profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishSetting.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png' />
 
 - All available integrations will be shown in the `Settings` screen.
 
@@ -129,7 +129,7 @@ Once the required integrations are set up, you can access these platforms from y
 
 - Within the Publish module, you can update and review your app's information directly. This includes updating app name, subtitle, categories, and other store-related information such as privacy URLs, primary languages, etc. Please visit the [**App Store Connect Information**](/publish-module/publish-information/app-information) documentation for detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoButton.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-19.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-appInfoDetails.png' />
 
@@ -137,7 +137,7 @@ Once the required integrations are set up, you can access these platforms from y
 
 - Within the Publish module, you can update and review your **TestFlight Beta Information** directly. This includes editing the description, feedback email, beta app review details, and other store-related information such as privacy URLs, etc.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaButton.png' />  
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-34.png' />  
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6293-testFlightBetaDetails.png' />  
 
@@ -145,7 +145,7 @@ Once the required integrations are set up, you can access these platforms from y
 
 Publish flow is used to automate multiple tasks and introduce automation checkpoints for application publishing to stores. You can create and manage flows within the Publish module as outlined below:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
 
 - **Update the Publish Flow**: Update the flow based on your needs in the `Publish Flow` section.
 
@@ -248,15 +248,15 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 - Designate the current build as the Release Candidate, signaling that it is ready for final testing and potential release. You can refer to the [**Marking as Release Candidate**](/publish-module/publish-information/marking-release-candidates) document for detailed information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-markRc.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-31.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rcTag.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-32.png' />
 
 ### Updating Metadata
 
 - Within the Publish module, you can manage your app's metadata directly. This includes updating app descriptions, keywords, and other store-related information. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information) documentation for more information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadata.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23.png' />
 
 - Regularly review and update your app's metadata to ensure it is current and relevant, as outdated information can negatively impact your app's visibility and user experience.
 
@@ -269,7 +269,7 @@ step to get approval before submitting the metadata to App Store Connect.
 
 - You can start the Publish flow manually by clicking on the `Publish Details` or you can run it to automate the entire publishing process. The flow will handle everything from submitting the binary to obtaining approvals and completing the release actions for the selected app stores.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-startPublish.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-publishLog.png' />
 
@@ -295,7 +295,7 @@ If needed, you can rollback to a previous version of your app or pause a release
 
 - The binary can be rejected to be excluded from the publish process, and the rejection reason is displayed as a tag on binary
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejection.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-rejectionMessage.png' />
 
@@ -331,7 +331,7 @@ While the Publish module is designed for reliability, you may occasionally encou
 
 To update your app's metadata, navigate to the Publish module, select the relevant profile, click the Actions button for the binary, and go to Metadata details. You can now update the metadata fields such as the app name, description, and screenshots. After saving your changes, submit the updated metadata for review if required.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadata.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-actionMetadataDetails.png' />
 
 #### How do I send my app's metadata for review before publishing?
@@ -378,7 +378,7 @@ Yes, the Publish module allows you to manage multiple app store accounts within 
 
 To create a custom flow, navigate to the Publish module and select the "Publish Flow" option. From there, you can choose and arrange the steps needed for your release process, configure each step according to your requirements, and save the flow for future use. Custom flow allows you to tailor the release process to fit your specific needs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-flows.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-17.png' />
 
 #### Why can't I edit the Publish Flow?
 

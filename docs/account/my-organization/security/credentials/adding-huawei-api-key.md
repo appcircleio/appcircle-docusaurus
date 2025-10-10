@@ -76,7 +76,7 @@ This error may occur if the [Huawei Supported Countries ](https://developer.huaw
 
 ### Why am I getting the error **[AppGalleryConnectPublishService]input aab size is too large?**
 
-[AppGallery Connect server](https://www.huaweicloud.com/intl/en-us/product/AppGallery_Connect.html) imposes size limits on app submissions. For AAB files, the size limit is 150MB. This error occurs because your AAB file exceeds this limit. For more details, please refer to the following documentation:
+AppGallery Connect server imposes size limits on app submissions. For AAB files, the size limit is 150MB. This error occurs because your AAB file exceeds this limit. For more details, please refer to the following documentation:
 
 - [Submitting an App Package in Download Mode](https://developer.huawei.com/consumer/en/doc/AppGallery-connect-References/agcapi-add-packageurl-0000001158245065#section15344132481910)
 

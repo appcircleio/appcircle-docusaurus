@@ -3,6 +3,7 @@ title: Connecting to Bitbucket
 description: Learn how to connect to Bitbucket in Appcircle
 tags: [source code management, bitbucket, bitbucket self-hosted]
 sidebar_position: 3
+slug: /build/manage-the-connections/connection-guides/connecting-to-bitbucket
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

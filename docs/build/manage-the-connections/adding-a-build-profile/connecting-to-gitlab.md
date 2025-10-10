@@ -3,6 +3,7 @@ title: Connecting to GitLab
 description: Learn how to connect to GitLab repositories in Appcircle
 tags: [gitlab, connection, repository, self-hosted, token, access, firewall, ip, port]
 sidebar_position: 2
+slug: /build/manage-the-connections/connection-guides/connecting-to-gitlab
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -48,8 +49,6 @@ The following table details the OAuth permissions required for Appcircle to conn
 | Scope            | Description                                                                                                                                                                                                  |
 |------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | api              | Grants complete read and write access to the scoped project API, including the container registry, the dependency proxy, and the package registry.                                                           |
-| read_api         | Grants read access to the scoped project API, including the package registry.                                                                                                                                |
-| read_repository  | Grants read-only access to repositories on private projects using Git-over-HTTP.                                                                                                                             |
 
 ## Connecting to GitLab Self Hosted Repository
 

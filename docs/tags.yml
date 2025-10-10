@@ -548,6 +548,11 @@ browserstack:
   description: "Description for browserstack"
   permalink: /browserstack
 
+lambdatest:
+  label: "lambdatest"
+  description: "Description for LambdaTest"
+  permalink: /lambdatest
+
 "brute-force":
   label: "brute-force"
   description: "Description for brute-force"
@@ -1328,6 +1333,11 @@ gitlab:
   description: "Description for gitlab"
   permalink: /gitlab
 
+"git scripts":
+  label: "git scripts"
+  description: "Description for git scripts"
+  permalink: /git scripts
+
 "google play":
   label: "google play"
   description: "Description for google play"
@@ -1897,6 +1907,11 @@ permissions:
   description: "Description for permissions"
   permalink: /permissions
 
+"personal access key":
+  label: "personal access key"
+  description: "Description for personal access key"
+  permalink: /personal-access-key
+
 "personal access token":
   label: "personal access token"
   description: "Description for personal access token"
@@ -2157,6 +2172,11 @@ restart:
   label: "restart"
   description: "Description for restart"
   permalink: /restart
+
+reuse:
+  label: "reuse"
+  description: "Description for reuse"
+  permalink: /reuse
 
 review:
   label: "review"
@@ -3037,3 +3057,23 @@ quay:
   label: "license"
   description: "Self-hosted Appcircle server license configuration related documentations"
   permalink: "/license"
+
+"device activity":
+  label: "device activity"
+  description: "device activity related documentations"
+  permalink: "/device-activity"
+  
+"machine plan":
+  label: "machine plan"
+  description: "machine plan related documentations"
+  permalink: "/machine-plan"
+
+"create":
+  label: "create"
+  description: "Documentation about creating new components, steps, or configurations"
+  permalink: "/create"
+
+"new step":
+  label: "new step"
+  description: "Documentation related to developing and implementing new workflow steps"
+  permalink: "/new-step"

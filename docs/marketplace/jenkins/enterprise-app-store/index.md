@@ -15,6 +15,7 @@ tags:
 sidebar_position: 2
 ---
 
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
 ### Discover Plugin
@@ -94,6 +95,6 @@ If two workflows start simultaneously, the last workflow to reach the publish st
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
+<PersonalApiTokenRef />
 
 - For more detailed instructions and support, visit the [Appcircle Enterprise App Store documentation](/enterprise-app-store).

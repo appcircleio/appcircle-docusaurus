@@ -3,6 +3,7 @@ title: Connecting to GitHub
 description: Learn how to connect your GitHub repositories to Appcircle
 tags: [build profile, connection, github]
 sidebar_position: 1
+slug: /build/manage-the-connections/connection-guides/connecting-to-github
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
