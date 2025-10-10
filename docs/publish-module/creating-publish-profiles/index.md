@@ -15,6 +15,10 @@ For this, it is necessary to first create a publish profile within the Publish m
 
 In order to create a publish profile, click on the "Add New" button in the Publish module.
 
+:::info 
+If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
+:::
+
 ### Adding a New Publish Profile
 
 
