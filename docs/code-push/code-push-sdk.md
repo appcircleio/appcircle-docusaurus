@@ -321,3 +321,7 @@ Alternatively, you can use the [**Appcircle CodePush SDK**](https://www.npmjs.co
 ### Does Appcircle CodePush support Expo projects?
 
 No, Appcircle CodePush currently supports only bare React Native projects. Managed Expo apps are not supported at this time.
+
+### Does Appcircle CodePush SDK support Codegen?
+
+No. The Appcircle CodePush SDK currently does not support React Native projects that rely on Codegen. Support for Codegen-based projects is planned for a future release.
