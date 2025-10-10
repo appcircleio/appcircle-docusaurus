@@ -21,6 +21,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - Introducing [Build Activity Log](/build/build-activity-log) – Actions such as creating, deleting, and adding Build profiles or updating configurations performed in your Organization or Sub-Organizations can now be viewed in the Build Activity Log section. <BuildBadge/> <CloudBadge/>
+- Added a new [Check Network Access component](/workflows/common-workflow-steps/check-network-access) to the Build Module to validate connectivity to common endpoints and custom URLs, ensuring early detection of network issues during workflows. <BuildIntegrationsBadge/> <CloudBadge/>
+- Publish flows can now be initiated with a single click using the new Start Publish Process button located next to the action list button for each app version. <PublishBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -37,6 +39,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Non-existing provisioning profiles used in the auto re-sign process (auto-downloaded or generated) in Publish module, will now be added to the Signing Identity module. <PublishBadge/> <CloudBadge/>
 - UI improvements were made to the Publish module, including updated action icons, settings, and upload binary buttons. <PublishBadge/> <CloudBadge/>
 - Publish profiles will now show a progress information on the app version list during binary uploads and re-sign operations, similar to the Testing Distribution module. <PublishBadge/> <CloudBadge/>
+- “Last Step” has been replaced with Publish Status, displaying store status based on track metadata along with status options (Not Started, Waiting, Running, Stopped, Warning, Failed, Succeeded, Timeout) for improved profile visibility. <PublishBadge/> <CloudBadge/>
+- Overall UI and Text description improvements were applied to Auto Re-sign related configuration areas. <PublishBadge/> <CloudBadge/>
 - Improvements were made to CSV reports to enhance the display of column headers and data values. <ReportsBadge/> <CloudBadge/>
 - All reports across Appcircle now support caching, allowing users to save their last-used search filters for future use. <ReportsBadge/> <CloudBadge/>
 
@@ -45,6 +49,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where the trigger user email address was incorrectly displayed for some Bitbucket-connected repositories after build actions. <BuildBadge/> <CloudBadge/>
 - An issue was fixed where changes saved for the Auto Send for Review setting were reverted after the settings window was closed. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where users did not receive proper notifications when uploading duplicate provisioning profiles or when provisioning profiles were added through auto re-sign. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where users faced parsing error during Send to Microsoft Intune Publish step. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where newly imported provisions were not immediately displayed in the manual provision selection screen of the auto re-sign feature in the Publish module until the page was refreshed. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where provision profiles created or downloaded during auto re-sign were not properly imported to the Signing Identity module when using credentials shared from the root organization. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where provision profiles generated or downloaded through the Publish module were not correctly recognized and displayed as existing within the Get Provision Profile from App Store Connect feature in Signing Identity. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where the pop-up message for certain type-certified app versions appeared off-screen after selecting the install button on the Testing Portal. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where organizations containing special characters could not be deleted. <AccountBadge/> <CloudBadge/>
 
