@@ -62,11 +62,32 @@ After adding the plugin to your project, configure your Fastfile as follows:
   end
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
-- `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
-- `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
-- `summary`: Used to provide a brief overview of the version of the app that is about to be published.
-- `publishType`: Specifies the publishing status as either none, beta, or live, and must be assigned the values "0", "1", or "2" accordingly.
+**Parameter Details:**
+
+- `personalAPIToken` (required): The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform. This token must be generated from your Appcircle account with appropriate permissions.
+
+- `appPath` (required): Indicates the file path to the application package that will be uploaded to Appcircle Enterprise App Store. The path can be specified in two ways:
+
+  **When Build and Enterprise App Store tasks are in the same pipeline:**
+  Assuming you are using Enterprise App Store action after a build step, you can use the output directory of the build step. For example:
+  - iOS: `"./output/app.ipa"` or `"$(pwd)/output/app.ipa"`
+  - Android: `"./app/build/outputs/apk/release/app-release.apk"` or `"$(pwd)/app/build/outputs/apk/release/app-release.apk"`
+
+  **When Enterprise App Store task is a separate pipeline:**
+  Assuming you have published a build artifact in your build pipeline, you can get the artifact and use it in the distribution pipeline. For example:
+  - `"./artifacts/app.ipa"`
+  - `"./artifacts/app.apk"`
+
+  Make sure the path points to a valid application package file (`.ipa` for iOS, `.apk` for Android).
+
+- `summary` (required, string): Used to provide a brief overview of the version of the app that is about to be published. This should be a concise description of what's new in this version (e.g., "Bug fixes and performance improvements", "New user interface design", "Added payment integration").
+
+- `releaseNotes` (required, string): Contains the details of changes, updates, and improvements made in the current version of the app being published. This can include detailed information about new features, bug fixes, and any breaking changes (e.g., "• Fixed login authentication issue\n• Added dark mode support\n• Improved app performance\n• Updated UI components").
+
+- `publishType` (required, string): Specifies the publishing status for the app in the Enterprise App Store. Must be assigned one of the following values:
+  - `"0"`: None - App is uploaded but not published (draft status)
+  - `"1"`: Beta - App is published for beta testing
+  - `"2"`: Live - App is published and available to all users
 
 ### Leveraging Environment Variables
 
