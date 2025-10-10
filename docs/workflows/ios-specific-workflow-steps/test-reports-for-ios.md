@@ -5,6 +5,7 @@ tags: [test, test report, test result, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Test Reports for iOS
 
@@ -28,6 +29,7 @@ Before running the **Test Reports for iOS** step, you must complete certain prer
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
 | [**Xcodebuild for Unit and UI Test**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | Run unit and UI tests in your project to generate an `.xcresult` file containing the test outcomes. |
 
+<AlwaysRunToggleDanger />
 
 ### Input Variables
 
