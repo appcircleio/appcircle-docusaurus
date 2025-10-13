@@ -95,8 +95,9 @@ To manually configure a webhook for an Azure DevOps repository:
 3. Choose Web Hooks as the service.
 4. Select your repository and choose the required trigger events (e.g., code push, pull request).
 5. In the “Action” step, paste the webhook URL.
-6. Paste your Webhook Key/Secret to HTTP Headers.
-   `X-Appcircle-Webhook-Key: {YOUR_WEBHOOK_KEY}`
+6. “Accept untrusted SSL certificates“ option can stay disabled.
+7. Enter `appcircle` as username.
+8. Paste `{YOUR_WEBHOOK_SECRET}` as password.
 :::
 
 #### Binding Existing Manual Webhooks to Other Build Profiles
