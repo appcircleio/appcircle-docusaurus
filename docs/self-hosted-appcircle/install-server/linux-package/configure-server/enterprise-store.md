@@ -180,6 +180,12 @@ You just need to add the `lang` key and other sub-keys to that section.
 The `global.yaml` should have only one `storeWeb` key for proper working.
 :::
 
+- Add the placeholder texts to the `lang` parameter.
+
+:::tip
+You can specify only for the languages you want to customize.
+:::
+
 ```yaml
 storeWeb:
   external:
