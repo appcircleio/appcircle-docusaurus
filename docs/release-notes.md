@@ -20,45 +20,46 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Introducing [Build Activity Log](/build/build-activity-log) – Actions such as creating, deleting, and adding Build profiles or updating configurations performed in your Organization or Sub-Organizations can now be viewed in the Build Activity Log section. <BuildBadge/> <CloudBadge/>
-- Added a new [Check Network Access component](/workflows/common-workflow-steps/check-network-access) to the Build Module to validate connectivity to common endpoints and custom URLs, ensuring early detection of network issues during workflows. <BuildIntegrationsBadge/> <CloudBadge/>
-- Publish flows can now be initiated with a single click using the new Start Publish Process button located next to the action list button for each app version. <PublishBadge/> <CloudBadge/>
+- Introducing [Build Activity Log](/build/build-activity-log) – Actions such as creating, deleting, and adding Build profiles or updating configurations performed in your Organization or Sub-Organizations can now be viewed in the Build Activity Log section. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Added a new [Check Network Access component](/workflows/common-workflow-steps/check-network-access) to the Build Module to validate connectivity to common endpoints and custom URLs, ensuring early detection of network issues during workflows. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publish flows can now be initiated with a single click using the new Start Publish Process button located next to the action list button for each app version. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- All organization owners will now receive an email notification when a [Domain Verification](/account/my-organization/security/domain-verification) status is changed. <AccountBadge/> <CloudBadge/>
-- Improvements were made to the [In-app Notifications](/account/my-account/in-app-notifications) to display and store system-related errors across Appcircle. <AccountBadge/> <CloudBadge/>
-- Users can now navigate to a specific module via a shared URL using their SSO Alias when accessing organizations with SSO authorization. The shared URL will need manual editing as shown in the example: `my.appcircle.io/sso/ssoAlias?redirectURL=...` <AccountBadge/> <CloudBadge/>
-- Personal API Tokens have been renamed to [Personal Access Keys](/account/my-organization/security/personal-access-key). Refer to the [API documentation](/appcircle-api-and-cli/api-authentication) for the latest supported endpoints and models. <AccountBadge/> <CloudBadge/>
-- The [Machine Plan](/infrastructure/machine-plans) of the organization will now be displayed in the Build logs. <BuildBadge/> <CloudBadge/>
-- Improvements were made to the branch search functionality within Build profiles. <BuildBadge/> <CloudBadge/>
-- Overall API optimizations were made to improve the performance of all endpoints. <APICLIBadge/> <CloudBadge/>
-- Re-signed app versions will now display a Re-Sign label for easier identification within the Testing Portal. <DistributionBadge/> <CloudBadge/>
-- A password visibility toggle has been added to the Testing Portal login screen for Static and LDAP authentication types. <DistributionBadge/> <CloudBadge/>
-- The Upload Binary button for Testing Distribution profiles is now located at the top-right corner, consistent with other modules. <DistributionBadge/> <CloudBadge/>
-- Non-existing provisioning profiles used in the auto re-sign process (auto-downloaded or generated) in Publish module, will now be added to the Signing Identity module. <PublishBadge/> <CloudBadge/>
-- UI improvements were made to the Publish module, including updated action icons, settings, and upload binary buttons. <PublishBadge/> <CloudBadge/>
-- Publish profiles will now show a progress information on the app version list during binary uploads and re-sign operations, similar to the Testing Distribution module. <PublishBadge/> <CloudBadge/>
-- “Last Step” has been replaced with Publish Status, displaying store status based on track metadata along with status options (Not Started, Waiting, Running, Stopped, Warning, Failed, Succeeded, Timeout) for improved profile visibility. <PublishBadge/> <CloudBadge/>
-- Overall UI and Text description improvements were applied to Auto Re-sign related configuration areas. <PublishBadge/> <CloudBadge/>
-- Improvements were made to CSV reports to enhance the display of column headers and data values. <ReportsBadge/> <CloudBadge/>
-- All reports across Appcircle now support caching, allowing users to save their last-used search filters for future use. <ReportsBadge/> <CloudBadge/>
+- All organization owners will now receive an email notification when a [Domain Verification](/account/my-organization/security/domain-verification) status is changed. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements were made to the [In-app Notifications](/account/my-account/in-app-notifications) to display and store system-related errors across Appcircle. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users can now navigate to a specific module via a shared URL using their SSO Alias when accessing organizations with SSO authorization. The shared URL will need manual editing as shown in the example: `my.appcircle.io/sso/ssoAlias?redirectURL=...` <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Personal API Tokens have been renamed to [Personal Access Keys](/account/my-organization/security/personal-access-key). Refer to the [API documentation](/appcircle-api-and-cli/api-authentication) for the latest supported endpoints and models. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Machine Plan](/infrastructure/machine-plans) of the organization will now be displayed in the Build logs. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements were made to the branch search functionality within Build profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Overall API optimizations were made to improve the performance of all endpoints. <APICLIBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Re-signed app versions will now display a Re-Sign label for easier identification within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A password visibility toggle has been added to the Testing Portal login screen for Static and LDAP authentication types. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Upload Binary button for Testing Distribution profiles is now located at the top-right corner, consistent with other modules. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Non-existing provisioning profiles used in the auto re-sign process (auto-downloaded or generated) in Publish module, will now be added to the Signing Identity module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- UI improvements were made to the Publish module, including updated action icons, settings, and upload binary buttons. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publish profiles will now show a progress information on the app version list during binary uploads and re-sign operations, similar to the Testing Distribution module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- “Last Step” has been replaced with Publish Status, displaying store status based on track metadata along with status options (Not Started, Waiting, Running, Stopped, Warning, Failed, Succeeded, Timeout) for improved profile visibility. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Overall UI and Text description improvements were applied to Auto Re-sign related configuration areas. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements were made to CSV reports to enhance the display of column headers and data values. <ReportsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- All reports across Appcircle now support caching, allowing users to save their last-used search filters for future use. <ReportsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
-- An issue was fixed where the trigger user email address was incorrectly displayed for some Bitbucket-connected repositories after build actions. <BuildBadge/> <CloudBadge/>
-- An issue was fixed where changes saved for the Auto Send for Review setting were reverted after the settings window was closed. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where users did not receive proper notifications when uploading duplicate provisioning profiles or when provisioning profiles were added through auto re-sign. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where users faced parsing error during Send to Microsoft Intune Publish step. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where newly imported provisions were not immediately displayed in the manual provision selection screen of the auto re-sign feature in the Publish module until the page was refreshed. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where provision profiles created or downloaded during auto re-sign were not properly imported to the Signing Identity module when using credentials shared from the root organization. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where provision profiles generated or downloaded through the Publish module were not correctly recognized and displayed as existing within the Get Provision Profile from App Store Connect feature in Signing Identity. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue was fixed where the pop-up message for certain type-certified app versions appeared off-screen after selecting the install button on the Testing Portal. <DistributionBadge/> <CloudBadge/>
-- An issue was fixed where organizations containing special characters could not be deleted. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the trigger user email address was incorrectly displayed for some Bitbucket-connected repositories after build actions. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where changes saved for the Auto Send for Review setting were reverted after the settings window was closed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users did not receive proper notifications when uploading duplicate provisioning profiles or when provisioning profiles were added through auto re-sign. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users faced parsing error during Send to Microsoft Intune Publish step. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where newly imported provisions were not immediately displayed in the manual provision selection screen of the auto re-sign feature in the Publish module until the page was refreshed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where provision profiles created or downloaded during auto re-sign were not properly imported to the Signing Identity module when using credentials shared from the root organization. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where provision profiles generated or downloaded through the Publish module were not correctly recognized and displayed as existing within the Get Provision Profile from App Store Connect feature in Signing Identity. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where the pop-up message for certain type-certified app versions appeared off-screen after selecting the install button on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where organizations containing special characters could not be deleted. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where users of the self-hosted version `3.29.3` experienced problems while saving SMTP settings. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
-- Following Apple’s update, 6.9” screenshot sizes are now optional, and 6.5” sizes are required. Appcircle [Metadata Details](/publish-module/publish-information/meta-data-information) UI has been updated accordingly, while still supporting 6.9” screenshots as optional. <PublishBadge/> <CloudBadge/>
+- Following Apple’s update, 6.9” screenshot sizes are now optional, and 6.5” sizes are required. Appcircle [Metadata Details](/publish-module/publish-information/meta-data-information) UI has been updated accordingly, while still supporting 6.9” screenshots as optional. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.29.3 - 2025-09-08 Publish and Re-sign Reports, Auto Re-sign Improvements, Bug fixes and more
 
