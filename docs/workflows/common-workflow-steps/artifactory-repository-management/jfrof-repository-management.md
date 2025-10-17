@@ -129,3 +129,189 @@ let package = Package(
 
 
 ## JFrog Integration for Android
+
+Integrating JFrog Artifactory into Android projects centralizes the management of Maven and Gradle dependencies and build artifacts. By configuring a module’s `build.gradle` or `settings.gradle` files to point to artifactory repositories, engineers enable reliable retrieval, caching, versioning, and distribution of libraries and modules. This integration accelerates build times, enforces consistent build environments, and enhances traceability across CI/CD workflows. Artifactory’s vulnerability scanning and license‑compliance checks further help maintain the integrity and security of the Android supply chain.
+
+
+### Gradle Dependencies
+
+Integrating JFrog Artifactory with Gradle enables centralized dependency management, artifact publishing, and version control within your Android build system. This setup helps development teams ensure reproducible builds, optimize caching, and maintain full traceability of artifacts across CI/CD pipelines.
+
+#### 1. Configure Repositories in `build.gradle`
+To integrate JFrog Artifactory into an Android project, you need to define your repository endpoints inside the project’s `build.gradle` or `settings.gradle` file.
+
+**Example (Project-level `build.gradle`):**
+```gradle
+buildscript {
+    repositories {
+        maven {
+            url "https://[JFrogPlatformURL]/artifactory/[REPO_NAME]"
+            credentials {
+                username = project.findProperty("artifactory_user") ?: System.getenv("ARTIFACTORY_USER")
+                password = project.findProperty("artifactory_password") ?: System.getenv("ARTIFACTORY_PASSWORD")
+            }
+        }
+        google()
+        mavenCentral()
+    }
+
+    dependencies {
+        classpath "com.android.tools.build:gradle:8.1.0"
+    }
+}
+```
+
+**Example (Module-level `build.gradle`):**
+```gradle
+repositories {
+    maven {
+        url "https://[JFrogPlatformURL]/artifactory/[REPO_NAME]"
+        credentials {
+            username = project.findProperty("artifactory_user") ?: System.getenv("ARTIFACTORY_USER")
+            password = project.findProperty("artifactory_password") ?: System.getenv("ARTIFACTORY_PASSWORD")
+        }
+    }
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "com.squareup.retrofit2:retrofit:2.9.0"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3"
+}
+```
+
+**Key Parameters:**
+- `JFrogPlatformURL` → Your Artifactory domain (e.g. `https://company.jfrog.io`)
+- `[REPO_NAME]` → The target repository (e.g. `gradle-release-local`)
+- `credentials` → Authentication credentials from environment variables or Gradle properties
+
+#### 2. Authentication with Artifactory
+If authentication is required, use either:
+- The **Authenticate with Netrc** step in Appcircle *(recommended for security and automation)*, or
+- Store credentials in environment variables or encrypted Gradle properties (`gradle.properties`):
+
+```properties
+artifactory_user=yourUsername
+artifactory_password=yourPassword
+```
+
+#### 3. Publishing Artifacts to Artifactory
+You can also publish your own libraries or build outputs to Artifactory using the official **Gradle Artifactory Plugin**.
+
+Add the plugin to your root `build.gradle`:
+```gradle
+plugins {
+    id "com.jfrog.artifactory" version "4.33.2"
+}
+```
+
+Configure publishing settings:
+```gradle
+artifactory {
+    contextUrl = "https://[JFrogPlatformURL]/artifactory"
+    publish {
+        repository {
+            repoKey = "gradle-release-local"
+            username = project.findProperty("artifactory_user")
+            password = project.findProperty("artifactory_password")
+        }
+        defaults {
+            publications("release")
+            publishArtifacts = true
+        }
+    }
+}
+```
+
+This allows the CI/CD pipeline (e.g. Appcircle) to automatically push your `.aar` or `.apk` artifacts to JFrog Artifactory after successful builds.
+
+
+### Maven Dependencies
+
+Integrating JFrog Artifactory with Maven allows you to manage dependencies, plugins, and project artifacts through a secure, centralized repository. This integration ensures reproducible builds, consistent dependency resolution, and full control over versioning and artifact promotion within your Android CI/CD workflows.
+
+#### 1. Configure Repositories in `pom.xml`
+To use Artifactory with Maven, define your repository endpoints inside your project’s `pom.xml` file under the `<repositories>` and `<pluginRepositories>` sections:
+
+```xml
+<repositories>
+  <repository>
+    <id>jfrog-release</id>
+    <name>JFrog Release Repository</name>
+    <url>https://[JFrogPlatformURL]/artifactory/[REPO_NAME]</url>
+  </repository>
+</repositories>
+
+<pluginRepositories>
+  <pluginRepository>
+    <id>jfrog-plugins</id>
+    <url>https://[JFrogPlatformURL]/artifactory/[PLUGIN_REPO_NAME]</url>
+  </pluginRepository>
+</pluginRepositories>
+```
+
+#### 2. Authentication Configuration
+To authenticate with Artifactory, add your credentials to the global Maven configuration file (`~/.m2/settings.xml`):
+
+```xml
+<servers>
+  <server>
+    <id>jfrog-release</id>
+    <username>${env.ARTIFACTORY_USER}</username>
+    <password>${env.ARTIFACTORY_PASSWORD}</password>
+  </server>
+</servers>
+```
+
+- `JFrogPlatformURL` → Artifactory domain (e.g. `https://company.jfrog.io`)
+- `[REPO_NAME]` → Target Maven repository (e.g. `libs-release-local`)
+- `[PLUGIN_REPO_NAME]` → Repository for Maven plugins
+
+This approach allows secure integration within Appcircle pipelines using environment variables or the **Authenticate with Netrc** step.
+
+#### 3. Deploy Artifacts to Artifactory
+To publish build artifacts (e.g., `.jar`, `.aar`) to Artifactory, use the Maven Deploy plugin or the **Artifactory Maven Plugin**.
+
+**Example `distributionManagement` configuration:**
+```xml
+<distributionManagement>
+  <repository>
+    <id>jfrog-release</id>
+    <url>https://[JFrogPlatformURL]/artifactory/libs-release-local</url>
+  </repository>
+  <snapshotRepository>
+    <id>jfrog-snapshot</id>
+    <url>https://[JFrogPlatformURL]/artifactory/libs-snapshot-local</url>
+  </snapshotRepository>
+</distributionManagement>
+```
+
+#### 4. Using the JFrog Maven Plugin
+Add the plugin to your `pom.xml` to automate uploads:
+
+```xml
+<build>
+  <plugins>
+    <plugin>
+      <groupId>org.jfrog.buildinfo</groupId>
+      <artifactId>artifactory-maven-plugin</artifactId>
+      <version>3.5.4</version>
+      <executions>
+        <execution>
+          <id>build-info</id>
+          <goals>
+            <goal>publish</goal>
+          </goals>
+        </execution>
+      </executions>
+      <configuration>
+        <url>https://[JFrogPlatformURL]/artifactory</url>
+        <username>${env.ARTIFACTORY_USER}</username>
+        <password>${env.ARTIFACTORY_PASSWORD}</password>
+        <repoKey>libs-release-local</repoKey>
+      </configuration>
+    </plugin>
+  </plugins>
+</build>
+```
