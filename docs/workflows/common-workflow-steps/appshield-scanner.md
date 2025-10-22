@@ -1,7 +1,7 @@
 ---
 title: Appshield Scanner for Android/iOS
 description: Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
-tags: [android, ios, mobile, security, scan, appshield]
+tags: [android, ios, mobile, security, scan, appshield-scanner]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
