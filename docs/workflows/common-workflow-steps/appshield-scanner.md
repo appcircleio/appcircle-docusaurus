@@ -1,7 +1,6 @@
 ---
 title: Appshield Scanner for Android/iOS
-description: Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an 
-app is secure or not.
+description: Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
 tags: [android, ios, mobile, security, scan, appshield]
 ---
 
@@ -10,20 +9,20 @@ import Screenshot from '@site/src/components/Screenshot';
 # Appshield App Scanner for Android / iOS
 
 Appshield Scanner starts its analysis by accepting the application file (AAB/APK for Android, IPA for iOS) and starting dynamic runtime tests after initial file and format validations. 
-It is important to note that while many scanning solutions use ARM/x86_64 based emulators and sandbox environments, Appshield performs all these dynamic tests in **real/physical Android and/or iOS devices**
+It is important to note that while many scanning solutions use ARM/x86_64 based emulators and sandbox environments, Appshield performs all these dynamic tests in **real/physical Android and/or iOS devices.**
 At the end of the dynamic test session, Appshield indicates which security measures/hardenings are present and implemented in the app. If some testcases were failed due to unforeseen errors or cannot be tested various bypass mechanisms 
-implemented by the app itself, Appshield then starts a static, AI-powered analysis for mentioned testcases to gather additional findings and then reaches a verdict.
+implemented by the app itself, Appshield then starts a static, AI-powered analysis for mentioned testcases to gather additional findings and then reaches a final verdict.
 
-**Security measures/hardenings Appshield checks for in an application includes (but not limited to)**:
+**Security measures/hardenings Appshield Scanner checks for in an application includes (but not limited to)**:
 
-* Root/Jailbreak Detection: Detects whether the device has been rooted or jailbroken, which increases the risk of unauthorized system access and tampering.
-* Frida / Anti-Hooking Detection: Identifies runtime instrumentation frameworks (like Frida) or hooks that intercept and modify function calls to prevent dynamic analysis and tampering.
-* Anti Code Injection Detection: Detects attempts to inject or load unsigned/native code or libraries into the app’s process to prevent unauthorized code execution.
-* Anti Debugging Detection: Detects debuggers or debugger-like behaviors (ptrace, debug flags, wait loops) to prevent runtime inspection and breakpoints.
-* Screenshot / Screen Recording Detection: Detects and blocks or flags attempts to capture the app’s UI via screenshots or screen recording to protect sensitive UI content.
-* Screen Mirroring Detection: Detects when the app’s display is being mirrored to another device (e.g., via AirPlay or casting) to prevent remote observation of sensitive data.
-* Keylogger Detection: Detects behaviors or hooks that capture keystrokes or input events to prevent credential or data exfiltration.
-* Tapjacking Detection: Detects overlay or UI manipulation attacks that trick users into tapping hidden controls or approving actions they didn’t intend.
+* **Root/Jailbreak Detection**: Detects whether the device has been rooted or jailbroken, which increases the risk of unauthorized system access and tampering.
+* **Frida / Anti-Hooking Detection:** Identifies runtime instrumentation frameworks (like Frida) or hooks that intercept and modify function calls to prevent dynamic analysis and tampering.
+* **Anti Code Injection Detection:** Detects attempts to inject or load unsigned/native code or libraries into the app’s process to prevent unauthorized code execution.
+* **Anti Debugging Detection:** Detects debuggers or debugger-like behaviors (ptrace, debug flags, wait loops) to prevent runtime inspection and breakpoints.
+* **Screenshot / Screen Recording Detection:** Detects and blocks or flags attempts to capture the app’s UI via screenshots or screen recording to protect sensitive UI content.
+* **Screen Mirroring Detection:** Detects when the app’s display is being mirrored to another device (e.g., via AirPlay or casting) to prevent remote observation of sensitive data.
+* **Keylogger Detection:** Detects behaviors or hooks that capture keystrokes or input events to prevent credential or data exfiltration.
+* **Tapjacking Detection:** Detects overlay or UI manipulation attacks that trick users into tapping hidden controls or approving actions they didn’t intend.
 
 ### Prerequisites
 
@@ -56,7 +55,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 
 :::
 
-| Variable Name               | Description                                                                                                                                                                                                                                                                                                                                                 
+| Variable Name               | Description                                                                                          | Status |                                                                                                                                                                                                                                                                                                                                          
 | --------------------------- | ---------------------------------------------------------------------------------------------------- | -------- |
 | `AC_APPSHIELD_APP_FILE_PATH`| Specifies the URL or path of the AAB/APK/IPA app file accessible from Appcircle.                     | Required |                                                                                                                                                        
 | `AC_APPSHIELD_USER_MAIL`    | Specifies the user e-mail if user wants to receive a detailed PDF report regading the analysis.      | Optional |
