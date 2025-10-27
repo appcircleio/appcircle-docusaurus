@@ -16,6 +16,43 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.5 - 2025-10-27 New Retention Period Settings, Activity Log Improvements, Bug Fixes and more
+
+### 🆕 New Features
+
+- The new and upgraded artifact retention period settings have been introduced, allowing specific retention rules to be set for each module instead of being controlled from a single place. For more information, please visit the Artifact Retention documentation. <AccountBadge/> <CloudBadge/>
+- The new Artifact Report has been introduced, allowing users to monitor deletion operations, including manual artifact deletions and automatic system retention deletions, with filtering capabilities. <ReportsBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- A warning is now displayed in the testing group creation input area when a duplicate email address is entered. <DistributionBadge/> <CloudBadge/>
+- CodePush activities are now displayed in the Build Activity Log. <ReportsBadge/> <CloudBadge/>
+- Overall UI and stability improvements have been made to the Account page. <AccountBadge/> <CloudBadge/>
+- Re-sign notifications are now displayed under the corresponding module’s notifications. <AccountBadge/> <CloudBadge/>
+- The Publish module has been renamed to Publish to Stores. <PublishBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue causing display problems with live publish flow logs in some Edge browsers was fixed. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the start date was not displayed correctly at the beginning of the re-sign process but appeared properly after completion. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where publish results for some app versions were incorrectly reflected in the Publish Report. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where starting a publish flow after marking another app version as a Release Candidate did not reflect updated changes. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where build profile configurations required a branch to be selected for access. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where sub-organization builds were incorrectly displayed in the root organization's dashboard. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where build profiles using the Azure DevOps OAuth connection failed to connect and could not be updated with an alternative connection. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where long repository names caused UI issues during repository selection when connecting a build profile. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where users with insufficient OAuth Azure permissions were blocked from changing or disconnecting the repository connection in the UI. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where the build status for some profile branches was getting stuck in the running state. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where CodePush app name validation allowed names shorter than three characters, as well as special characters and spaces. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where some users experienced freezing when deleting an .APK binary from their testing distribution profile. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where some users were unable to switch Android app versions within the Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where some app versions were displayed as unsigned in the Testing Distribution profile despite being signed. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where long passwords caused login failures on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue has been fixed where multiple notifications appeared in various areas of Appcircle. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where some users were unintentionally navigated back to a previously used section after switching browser tabs. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where some users received notifications from other sub-organizations. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where users experienced incorrect navigation when switching between Appcircle authentication types. <AccountBadge/> <CloudBadge/>
+
 ## 3.29.4 - 2025-09-26 Build Activity Log, Report Improvements, Bug Fixes and more 
 
 ### 🆕 New Features
