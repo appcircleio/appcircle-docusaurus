@@ -20,8 +20,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- The new and upgraded artifact retention period settings have been introduced, allowing specific retention rules to be set for each module instead of being controlled from a single place. For more information, please visit the Artifact Retention documentation. <AccountBadge/> <CloudBadge/>
-- The new Artifact Report has been introduced, allowing users to monitor deletion operations, including manual artifact deletions and automatic system retention deletions, with filtering capabilities. <ReportsBadge/> <CloudBadge/>
+- The new and upgraded artifact retention period settings have been introduced, allowing specific retention rules to be set for each module instead of being controlled from a single place. For more information, please visit the [Retention Period](/account/my-organization/artifacts/retention-period) documentation. <AccountBadge/> <CloudBadge/>
+- The new [Artifact Report](/account/my-organization/artifacts/retention-period#artifacts-reports) has been introduced, allowing users to monitor deletion operations, including manual artifact deletions and automatic system retention deletions, with filtering capabilities. <ReportsBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
