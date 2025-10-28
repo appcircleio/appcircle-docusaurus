@@ -56,6 +56,10 @@ Example: Keep all `.ipa` files while deleting other formats.
 - Only **Keep Artifacts Matching the Keyword** can be empty if you would like to delete all build artifacts or just some specific file types.
 :::
 
+:::tip Build Activity Log
+Artifacts that were deleted by the Retention Period actions will also be displayed within the Build Activity Log.
+:::
+
 ## Testing Distribution
 
 The **Testing Distribution** module retention rules include:
@@ -70,10 +74,10 @@ Automatically deletes **undistributed artifacts** that exceed the defined retent
 
 ## Publish to Stores
 
-**Publish to Stores** module includes specific rules for published artifacts:
+**Publish to Stores** module includes specific rules for artifacts:
 
 #### Delete Publish Module Artifacts
-Automatically deletes artifacts that have been **published** and are older than the retention period.
+Automatically deletes artifacts within the Publish to Store module profiles that are older than the retention period.
 
 #### Keep if Marked as RC
 When enabled, preserves artifacts marked as **Release Candidate (RC)** even if they exceed the retention period.
@@ -106,7 +110,7 @@ If an app version with an upload date that exceeds the allowed retention period 
 
 ## Artifacts Reports
 
-The **Artifacts Reports** section provides a detailed overview of artifacts that were **automatically or manually deleted** based on your configured **Retention Period** rules.
+The **Artifacts Reports** section provides a detailed overview of artifacts that were **automatically** deleted based on your configured **Retention Period** rules. It will also display the artifacts that were manually deleted by the users.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-13.png' />
 
@@ -126,18 +130,18 @@ Each row in the report represents a deleted artifact and includes key details su
 | **Days** | Indicates the configured retention period for that rule (e.g., 1 month, 6 months).                                                           |
 | **Description** | Provides the name or description of the deleted artifact for easy identification.                                                            |
 | **Physically Delete** | Shows whether the artifact was permanently deleted from storage.                                                                             |
-| **Triggered By** | Indicates whether the deletion was triggered by the **System** (automatic retention) or a **manual cleanup** action.                         |
-| **Job Triggered By** | Specifies the retention job type — for example, *Manual Retention* or *Scheduled Retention*.                                                 |
+| **Triggered By** | Shows the user email address that deleted the artifact. If it was an automatic process, it would display 'System' .                          |
+| **Job Triggered By** | Specifies the retention job type —                                                                                                           |
 | **Delete At** | Displays the exact timestamp when the deletion occurred.                                                                                     |
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7512-2.png' />
 
 ### Filtering Options
 
 You can use the filtering tools at the top of the report to narrow down results:
 
-- **Filter by Date** — View deleted artifacts within a specific time frame (e.g., *Last 7 Days*, *Last 30 Days*).
-- **Filter by Module** — Focus on deletions from a particular module such as *Build*, *Publish*, or *Enterprise App Store*.
-- **Filter by Organization** — Display deleted artifacts for a specific organization or sub-organization.
+- **Filter by Date** — View deleted artifacts within a specific time frame (e.g., *Last 7 Days*, *Last Month*).
+- **Filter by Module** — Focus on deletions from a particular module such as *Build*, *Publish to Stores*, or *Enterprise App Store*.
+- **Filter by Organization** — Display deleted artifacts for your root organization or sub-organizations.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7512-1.png' />
