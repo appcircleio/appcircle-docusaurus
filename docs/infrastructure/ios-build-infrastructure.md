@@ -11,7 +11,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 Depending on which Xcode version you select, Appcircle creates a brand new virtual machine running.
 
-If your selected pool from config is "Appcircle Standard macOS Pool (arm64)", there are several options for the virtual machine as listed below:
+If your selected pool from config is "Appcircle macOS Pool (arm64)", there are several options for the virtual machine as listed below:
 
 | Xcode Selection | macOS Version |
 | ------- | ----- |
@@ -34,7 +34,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 Our macOS build agents have Xcode versions 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
-The "Appcircle Standard macOS Pool (arm64)" macOS **Sequoia** (`15.4.1`) stack has the Xcode versions below:
+The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.4.1`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
@@ -45,7 +45,7 @@ The "Appcircle Standard macOS Pool (arm64)" macOS **Sequoia** (`15.4.1`) stack h
 | 16.1 | `16B40` |
 | 16.0 | `16A242d` |
 
-The "Appcircle Standard macOS Pool (arm64)" macOS **Sonoma** (`14.5`) stack has the Xcode versions below:
+The "Appcircle macOS Pool (arm64)" macOS **Sonoma** (`14.5`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
@@ -59,7 +59,7 @@ The "Appcircle Standard macOS Pool (arm64)" macOS **Sonoma** (`14.5`) stack has 
 | 15.0.1 | `15A507` |
 | 14.3.1 | `14E300c` |
 
-The "Appcircle Standard macOS Pool (arm64)" macOS **Monterey** (`12.6`) stack has the Xcode versions below:
+The "Appcircle macOS Pool (arm64)" macOS **Monterey** (`12.6`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |

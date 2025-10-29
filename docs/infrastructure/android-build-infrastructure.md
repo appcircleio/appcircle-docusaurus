@@ -12,11 +12,11 @@ import ContentRef from '@site/src/components/ContentRef';
 For each Android build, Appcircle creates a brand new virtual machine;
 
 - If you select "Appcircle Linux Pool (x86_64)", virtual machine will be Debian 11 Bullseye.
-- If you select "Appcircle Standard macOS Pool (arm64)", the virtual machine will be macOS Sonoma `14.5`, macOS Monterey `12.6`, or macOS Sequoia `15.4.1`.
+- If you select "Appcircle macOS Pool (arm64)", the virtual machine will be macOS Sonoma `14.5`, macOS Monterey `12.6`, or macOS Sequoia `15.4.1`.
 
 :::info
 
-If you select Appcircle Standard macOS Pool (arm64), you can not choose macOS version. It will be automatically selected by Appcircle.
+If you select Appcircle macOS Pool (arm64), you can not choose macOS version. It will be automatically selected by Appcircle.
 
 The chance is equal for all runners for your Android build because it does not affect your build.
 
@@ -48,10 +48,10 @@ When you select "Appcircle Linux Pool (x86_64)" for Android builds, the followin
 :::tip
 We're deprecating Intel-based runners and transitioning our customers to Apple silicon-based (M-series) build machines.
 
-Although Intel-based runners are actively maintained, if your app does not specifically require an Intel-based build machine, we suggest using the "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates as well.
+Although Intel-based runners are actively maintained, if your app does not specifically require an Intel-based build machine, we suggest using the "Appcircle macOS Pool (arm64)", since it has much more build capacity and the latest updates as well.
 :::
 
-When you select "Appcircle Standard macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
+When you select "Appcircle macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
 
 - **JAVA_HOME_8_X64**: `/Users/appcircle/.sdkman/candidates/java/8.0.392-zulu`
 - **JAVA_HOME_11_X64**: `/Users/appcircle/.sdkman/candidates/java/11.0.21-zulu`
@@ -94,7 +94,7 @@ Based on: Android 11.0 (R)
 ```
 
 :::caution
-If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle macOS Pool (arm64)**) don't support nested virtualization.
 :::
 
 ## Android Build Agent Stacks
