@@ -32,7 +32,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS build agents have Xcode versions 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
+Our macOS runners have Xcode versions 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x, 14.2.x, 14.1.x, 14.0.x, 13.4.x, 13.3.x, 13.2.x, 13.1.x, 13.0.x, 12.5.x available.
 
 The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xcode versions below:
 
@@ -83,11 +83,11 @@ The "Appcircle macOS Pool (arm64)" macOS **Monterey** (`12.6`) stack has the Xco
 | 13.0 | `13A233` |
 | 12.5.1 | `12E507` |
 
-## iOS Build Agent Stacks
+## iOS Build Stacks
 
 There are many pre-installed packages on virtual machines. You can get a full list of pre-installed packages by running Bash commands in the [custom script](/workflows/common-workflow-steps/custom-script) steps.
 
-Here are some of the most important packages installed in our iOS build agents used for iOS builds:
+Here are some of the most important packages installed in our iOS build runners used for iOS builds:
 
 | Package            | macOS Monterey | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` |
 | ------------------ | ---------------- | -------------- | -------------- | -------------- |
