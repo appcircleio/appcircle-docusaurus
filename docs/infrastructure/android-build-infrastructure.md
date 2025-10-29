@@ -34,7 +34,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Java Version
 
-Build agents have Java 8, 11, 17 and 21 installed. Java 17 is set as the default version.
+Appcircle runners have Java 8, 11, 17, and 21 installed. Java 17 is set as the default version.
 
 If you want to use a different Java version, please add the [Select Java Version](/workflows/common-workflow-steps/select-java-version) component to your workflow.
 
@@ -60,7 +60,7 @@ When you select "Appcircle macOS Pool (arm64)" for Android builds, the following
 
 ## Emulator
 
-Build agents have Pixel_3a Android 9.0 emulator pre-installed. You may add or remove other emulators by using `sdkmanager`.
+Appcircle runners have Pixel_3a Android 9.0 emulator pre-installed. You may add or remove other emulators by using `sdkmanager`.
 For example, in order to install Android 11 (API 30) emulator to x86_64 Linux, you can take the below steps:
 
 **1.** Install emulator system image if not exists. (If it exists, the command will return quickly with success.)
@@ -97,7 +97,7 @@ Based on: Android 11.0 (R)
 If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle macOS Pool (arm64)**) don't support nested virtualization.
 :::
 
-## Android Build Agent Stacks
+## Android Build Stacks
 
 There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.
 
