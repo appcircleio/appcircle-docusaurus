@@ -102,7 +102,7 @@ Based on: Android 11.0 (R)
 If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle macOS Pool (arm64)**) don't support nested virtualization.
 :::
 
-## Android Build Stacks
+## Android Build Environment
 
 There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.
 

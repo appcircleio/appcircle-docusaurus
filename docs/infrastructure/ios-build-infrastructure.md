@@ -83,7 +83,7 @@ The "Appcircle macOS Pool (arm64)" macOS **Monterey** (`12.6`) stack has the Xco
 | 13.0 | `13A233` |
 | 12.5.1 | `12E507` |
 
-## iOS Build Stacks
+## iOS Build Environment
 
 There are many pre-installed packages on virtual machines. You can get a full list of pre-installed packages by running Bash commands in the [custom script](/workflows/common-workflow-steps/custom-script) steps.
 
