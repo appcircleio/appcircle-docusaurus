@@ -26,6 +26,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :muscle: Improvements
 
 - The [Appcircle macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 26](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes) (`26.0.1` `17A400`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Sequoia 15.6.1) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes) (`26.0.1` `17A400`) installed along with Xcode 16.x versions and up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 - A warning is now displayed in the testing group creation input area when a duplicate email address is entered. <DistributionBadge/> <CloudBadge/>
 - CodePush activities are now displayed in the Build Activity Log. <ReportsBadge/> <CloudBadge/>
 - Overall UI and stability improvements have been made to the Account page. <AccountBadge/> <CloudBadge/>
