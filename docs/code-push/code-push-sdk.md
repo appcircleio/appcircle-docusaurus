@@ -156,19 +156,13 @@ include ':app', ':appcircle_react-native-code-push'
 project(':appcircle_react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/@appcircle/react-native-code-push/android/app')
 ```
 
-2. In your android/app/build.gradle file, add the `codepush.gradle` file as an additional build task definition to the end of the file:
+2. In your `android/app/build.gradle` file, add the `codepush.gradle` file as an additional build task definition to the end of the file:
 
 ```java
 apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepush.gradle"
 ```
 
 3. Update the MainApplication file to use CodePush via the following changes:
-
-:::caution If New Architecture Is Enabled
-
-This `MainApplication.kt` may not work properly if you are using the new architecture.
-
-:::
 
 Update the `MainApplication.kt`.
 
