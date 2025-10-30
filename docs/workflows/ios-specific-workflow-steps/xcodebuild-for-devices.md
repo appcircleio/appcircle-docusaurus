@@ -193,7 +193,7 @@ C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetc
 
 :::info Cloud Customers
 
-All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentation.
+All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-environment) documentation.
 
 However, issues may still occur depending on how the environment is used. If you are working in the cloud environment and the [**Custom Scripts**](/workflows/common-workflow-steps/custom-script) you use can **change** or **update** the packages in our environments. If cloud users encounter such **signing errors**, it is recommended to check the **Custom Scripts** used. You can use the example `bash` script below.
 
