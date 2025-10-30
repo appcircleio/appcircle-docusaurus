@@ -185,7 +185,7 @@ Enabling "Automatically Distribute to Publish" will display the available [Publi
 
 Simply select your relevant publish profiles, and Appcircle will automatically send your builds to the selected publish profiles.
 
-Please note that the publish profiles should be created within the publish module prior to configuring the distribution settings in the build profile.
+Please note that the publish profiles should be created within the Publish to Stores prior to configuring the distribution settings in the build profile.
 
 #### Send to Enterprise App Store
 

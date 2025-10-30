@@ -471,7 +471,7 @@ You can send your application from your Testing Distribution profile to a design
 
 :::caution
 
-You must have already created the designated Publish profile within the Publish Module, and it should correspond to the operating system of your application (Android or iOS) listed in your Testing Distribution Profile.
+You must have already created the designated Publish profile within the Publish to Stores module, and it should correspond to the operating system of your application (Android or iOS) listed in your Testing Distribution Profile.
 
 :::
 

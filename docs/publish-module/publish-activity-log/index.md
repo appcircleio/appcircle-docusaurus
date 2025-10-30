@@ -2,7 +2,7 @@
 title: Publish Activity Log
 sidebar_position: 1
 tags: [publish, activity log, search]
-description: Understand the Activity Log for Publish in Appcircle, providing visibility on the usage of publish module over a given time period.
+description: Understand the Activity Log for Publish in Appcircle, providing visibility on the usage of Publish to Stores module over a given time period.
 
 ---
 
@@ -11,7 +11,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 # Activity Log
 
-You can view Publish module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
+You can view Publish to Stores module actions such as Publish Flow and Publish Step statutes, along with resign binary operations within the Organizations or Sub Organizations in the Activity Log section.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7112-11.png' alt="Activity Log for Publish" />
 

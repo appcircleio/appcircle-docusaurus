@@ -14,7 +14,7 @@ The History section has two parts: The Publish History and The Resign History.
 
 The Publish History section is a record of all the publishing actions that have been performed for different versions of an application. It serves as a log for tracking the deployment lifecycle of each release.
 
-The Resign History section is a record of all the resign actions that have been performed within the Publish module for a specific app version.
+The Resign History section is a record of all the resign actions that have been performed within the Publish to Stores module for a specific app version.
 
 ## Overview
 
@@ -28,7 +28,7 @@ You can also access the Resign History for an app version by navigating to it's 
 
 ### Accessing Publish History
 
-To view the Publish History, navigate to the History section in the Publish module. Once History is selected, The Publish History tab will be displayed by default. This section lists all versions of the app along with the dates and times their publishing actions started along with their publish status.
+To view the Publish History, navigate to the History section in the Publish to Stores module. Once History is selected, The Publish History tab will be displayed by default. This section lists all versions of the app along with the dates and times their publishing actions started along with their publish status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7115-1.png' alt="Publish History" />
 
@@ -67,7 +67,7 @@ The Publish History is a key feature that provides transparency and traceability
 
 ### Accessing Build History
 
-To view the Build History, go to the History section for an app version in the Publish module, and then navigate to the Build History tab.
+To view the Build History, go to the History section for an app version in the Publish to Stores module, and then navigate to the Build History tab.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5239-history2.png' alt="Publish Build History"/>
 
@@ -79,7 +79,7 @@ Please note that to access the build logs from this tab, the selected binary mus
 
 ### Accessing Resign History
 
-To view the Resign History, navigate to the History section in the Publish module, then simply select the Resign History tab.
+To view the Resign History, navigate to the History section in the Publish to Stores module, then simply select the Resign History tab.
 
 ### Viewing Logs
 

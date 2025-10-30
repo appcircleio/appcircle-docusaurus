@@ -1,6 +1,6 @@
 ---
 title: Publish Information Overview
-description: Overview of the Publish module in Appcircle
+description: Overview of the Publish to Stores module in Appcircle
 tags: [publish, publish module, publish information]
 sidebar_position: 1
 ---
@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Publish Information Overview
 
-The Publish module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
+The Publish to Stores module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-18.png' />
 
@@ -28,7 +28,7 @@ This option provides an in-depth view of the selected version's publish process.
 
 ## [Auto Re-sign](/publish-module/publish-information/auto-resign-configuration)
 
-The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
+The **Auto Re-sign** feature in Appcircle’s Publish to Stores module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
 ## [Google Play Console Information](/publish-module/publish-information/google-play-information)
 
@@ -56,11 +56,11 @@ The History has two sections: The Publish History and The Resign History.
 
 The Publish History gives users a chronological log of all publish actions taken for a specific version. It allows users to track and audit the deployment process over time, which can be crucial for compliance, troubleshooting, and historical analysis.
 
-The Resign History gives users a chronological log of all resign actions that was done within the Publish Module for a specific app version.
+The Resign History gives users a chronological log of all resign actions that was done within the Publish to Stores Module for a specific app version.
 
 ## [Downloading Binaries](/publish-module/publish-information/download)
 
-This functionality enables users to download the binary directly from the Publish module. This is useful for offline review, storage, or distribution purposes. The download feature ensures that users can access and disseminate the application's build even outside the publish platform.
+This functionality enables users to download the binary directly from the Publish to Stores module. This is useful for offline review, storage, or distribution purposes. The download feature ensures that users can access and disseminate the application's build even outside the publish platform.
 
 ## [Cancel Submission](/publish-module/publish-information/cancel-submission)
 
@@ -72,10 +72,10 @@ Binary rejection on Appcircle can delay your app's launch. Discover the top reas
 
 ## [Delete](/publish-module/publish-information/delete)
 
-The Delete option provides a way to remove a version from the system. It should be used with caution as it will permanently eliminate the selected version and all associated data from the Publish module. This feature helps in maintaining a clean and organized workspace by removing obsolete or unnecessary versions.
+The Delete option provides a way to remove a version from the system. It should be used with caution as it will permanently eliminate the selected version and all associated data from the Publish to Stores module. This feature helps in maintaining a clean and organized workspace by removing obsolete or unnecessary versions.
 
 ---
 
-Each menu item is an integral part of the Publish module, providing comprehensive tools for managing application versions from creation to deployment. Users should familiarize themselves with these options to fully leverage the capabilities of the Publish system.
+Each menu item is an integral part of the Publish to Stores module, providing comprehensive tools for managing application versions from creation to deployment. Users should familiarize themselves with these options to fully leverage the capabilities of the Publish system.
 
 For further details on each menu item, refer to the corresponding section in this documentation.

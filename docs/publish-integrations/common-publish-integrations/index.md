@@ -39,7 +39,7 @@ Appcircle's integration tools are designed to simplify and automate the publishi
 
 ## [Send to Testing Distribution](/publish-integrations/common-publish-integrations/send-to-testing-distribution)
 
-With Appcircle's Publish module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Testing Distribution module.
+With Appcircle's Publish to Stores module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Testing Distribution module.
 
 Testing Distribution module allows you to distribute your application without the need for any external tools.
 
