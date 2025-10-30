@@ -72,7 +72,7 @@ Automatically deletes **undistributed artifacts** that exceed the defined retent
 
 **Publish to Stores** module includes specific rules for published artifacts:
 
-#### Delete Publish Module Artifacts
+#### Delete Publish to Stores Artifacts
 Automatically deletes artifacts that have been **published** and are older than the retention period.
 
 #### Keep if Marked as RC

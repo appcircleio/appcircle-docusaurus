@@ -2,7 +2,7 @@
 title: Publish Re-sign Report
 sidebar_position: 1
 tags: [publish, report, re-sign]
-description: Understand the Report for Publish Re-sign in Appcircle, providing visibility on the usage of re-sign operations within the publish module over a given time period.
+description: Understand the Report for Publish Re-sign in Appcircle, providing visibility on the usage of re-sign operations within the Publish to Stores module over a given time period.
 
 ---
 
@@ -11,7 +11,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 # Publish Re-sign Report
 
-The Publish Re-sign Report provides detailed visibility into the manual and automatic re-sign operations performed within the publish module. This report helps you monitor and analyze re-sign activities across your organization over a selected time period.
+The Publish Re-sign Report provides detailed visibility into the manual and automatic re-sign operations performed within the Publish to Stores module. This report helps you monitor and analyze re-sign activities across your organization over a selected time period.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/7112-9.png" />
 
@@ -47,7 +47,7 @@ In the filter options, you can only view and select the organization and sub-org
 :::
 
 :::warning
-Please note that the Publish Re-sign Report displays only the re-sign operations that were triggered in the Publish module.
+Please note that the Publish Re-sign Report displays only the re-sign operations that were triggered in the Publish to Stores module.
 :::
 
 <CSVExport />

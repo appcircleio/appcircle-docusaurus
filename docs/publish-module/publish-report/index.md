@@ -2,7 +2,7 @@
 title: Publish Report
 sidebar_position: 1
 tags: [publish, report]
-description: Understand the Report for Publish in Appcircle, providing visibility on the usage of publish module over a given time period.
+description: Understand the Report for Publish in Appcircle, providing visibility on the usage of Publish to Stores module over a given time period.
 
 ---
 
@@ -11,7 +11,7 @@ import CSVExport from '@site/docs/\_csv-export.mdx';
 
 # Publish Report
 
-The Publish Report provides a detailed overview of all actions performed within the Publish Module. It allows users to monitor, filter, and export publish-related activities across different platforms, trigger types, and stores.
+The Publish Report provides a detailed overview of all actions performed within the Publish to Stores Module. It allows users to monitor, filter, and export publish-related activities across different platforms, trigger types, and stores.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/7112-7.png" />
 

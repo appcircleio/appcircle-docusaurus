@@ -23,7 +23,7 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 
 :::caution Metadata Approval Panel
 
-Access to the Metadata Approval Panel is **exclusively** available via the link sent in the approval email; it is **not** accessible through the standard Publish module UI.
+Access to the Metadata Approval Panel is **exclusively** available via the link sent in the approval email; it is **not** accessible through the standard Publish to Stores module UI.
 
 :::
 

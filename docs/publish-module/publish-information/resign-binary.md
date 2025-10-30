@@ -64,7 +64,7 @@ Please note that if the project `info.plist` file does **not** have a `CFBundleD
 - **Description**: Original Bundle ID.
 
 :::caution BundleID
-Please note that changing the **BundleID** is allowed while the related version is being re-signed in the **Publish module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-module/creating-publish-profiles#create-profile-manually).
+Please note that changing the **BundleID** is allowed while the related version is being re-signed in the **Publish to Stores module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-module/creating-publish-profiles#create-profile-manually).
 :::
 
 #### Provisioning Profiles
@@ -73,7 +73,7 @@ Please note that changing the **BundleID** is allowed while the related version 
 
 ### Edit Entitlements
 
-With the entitlement editing feature of the Re-sign Binary feature in the Publish module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
+With the entitlement editing feature of the Re-sign Binary feature in the Publish to Stores module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-entitlementEdit.png' />
 
@@ -93,7 +93,7 @@ If you want to change, add or remove Entitlement. The **Provision Profile** and 
 
 To re-sign a binary, follow these steps:
 
-1. **Select the Version**: Choose the version of your app you wish to resign from the **Version List** in the Publish module.
+1. **Select the Version**: Choose the version of your app you wish to resign from the **Version List** in the Publish to Stores module.
 2. **Configure Re-signing Options**: Navigate to the **Re-sign Binary** action and configure the necessary fields such as the provisioning profile, entitlements, and other settings.
 3. **Sign the Binary**: After configuring, click the **Sign** button to re-sign the binary. This process will create a new package with the updated provisioning profile and entitlements.
 
@@ -118,7 +118,7 @@ Re-signing an Android binary allows you to apply a new keystore to your applicat
 - **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the re-signing process.
 
 :::caution Package ID
-Please note that changing the **Package ID** is not allowed while the related version is being re-signed in the **Publish module**. If you need to change the **Package ID value** of your package, please use the **Re-sign Binary** feature in [Testing Distribution](/testing-distribution/resigning-binaries).
+Please note that changing the **Package ID** is not allowed while the related version is being re-signed in the **Publish to Stores module**. If you need to change the **Package ID value** of your package, please use the **Re-sign Binary** feature in [Testing Distribution](/testing-distribution/resigning-binaries).
 :::
 
 - **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the re-signing process.

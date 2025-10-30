@@ -15,7 +15,7 @@ The Enterprise App Store provides a centralized platform for managing an organiz
 
 ## Creating a Profile
 
-An Enterprise build profile can be created in several ways. IPA or APK files can either be manually uploaded or sent from Appcircle’s Distribution, Build, or Publish modules.
+An Enterprise build profile can be created in several ways. IPA or APK files can either be manually uploaded or sent from Appcircle’s Distribution, Build, or Publish to Storess.
 
 ## Uploading Binary
 
@@ -49,7 +49,7 @@ Binaries can also be uploaded via the Build module. For more information, please
 
 Binaries can also be uploaded via the Testing Distribution module. For more information, please visit the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#send-your-application-to-enterprise-app-store) documentation.
 
-### Upload via Publish Module
+### Upload via Publish to Stores module
 
 The Publish Flow steps can be customized to send the binary to the Enterprise App Store. For more information, please visit the [Publish Integrations](/publish-integrations/common-publish-integrations/send-to-enterprise-app-store) documentation.
 

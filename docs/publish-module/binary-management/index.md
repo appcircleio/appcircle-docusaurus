@@ -54,7 +54,7 @@ For this, click on the **Actions** button for the relevant version and go to **D
 
 ## Store Status
 
-Appcircle now allows you to track the App Store status of your applications directly within the Publish module. This powerful feature is tailored for **Enterprise License** holders, ensuring continuous monitoring of your application's deployment status.
+Appcircle now allows you to track the App Store status of your applications directly within the Publish to Stores module. This powerful feature is tailored for **Enterprise License** holders, ensuring continuous monitoring of your application's deployment status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-16.png' />
 
@@ -74,7 +74,7 @@ This streamlined approach ensures that you are always informed of your applicati
 
 ### Filter By Status
 
-In the Publish module, where your Publish profiles are listed, you can use the filter option to display specific Publish profiles based on their latest store status.
+In the Publish to Stores module, where your Publish profiles are listed, you can use the filter option to display specific Publish profiles based on their latest store status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter1.png' />
 
@@ -92,7 +92,7 @@ The iOS Publish filter options will only display the available statuses from the
 
 ## FAQ
 
-### How can I get a binary from another organization to use in the Publish Module ?
+### How can I get a binary from another organization to use in the Publish to Stores module ?
 
 Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA, APK, or AAB.
@@ -139,8 +139,8 @@ To generate Personal Access Key, follow this documentation [API authentication](
 
 To obtain the Publish profile ID, follow the steps below: 
 1. Log in to organization B.
-2. Go to Publish module.
-3. Select the desired Publish profile
+2. Go to Publish to Stores module.
+3. Select the desired Publish profile.
 4. Copy it from the URL. `https://my.appcircle.io/publish/android/123456f-7d89-4545-5454-123456789abc`
 5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
 

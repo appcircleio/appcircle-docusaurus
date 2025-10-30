@@ -1,6 +1,6 @@
 ---
 title: App Store Connect Information
-description: Learn how to update App Information in the Publish module of Appcircle
+description: Learn how to update App Information in the Publish to Stores module of Appcircle
 tags: [publish, publish module, app information, app store connect, review]
 sidebar_position: 1
 ---

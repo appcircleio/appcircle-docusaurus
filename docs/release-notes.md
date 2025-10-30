@@ -29,7 +29,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - CodePush activities are now displayed in the Build Activity Log. <ReportsBadge/> <CloudBadge/>
 - Overall UI and stability improvements have been made to the Account page. <AccountBadge/> <CloudBadge/>
 - Re-sign notifications are now displayed under the corresponding module’s notifications. <AccountBadge/> <CloudBadge/>
-- The Publish module has been renamed to Publish to Stores. <PublishBadge/> <CloudBadge/>
+- The Publish to Stores module has been renamed to Publish to Stores. <PublishBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
