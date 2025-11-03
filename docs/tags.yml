@@ -333,6 +333,11 @@ appdome:
   description: "Description for appdome"
   permalink: /appdome
 
+appshield-scanner:
+  label: "appshield-scanner"
+  description: "Description for appshield-scanner"
+  permalink: /appshield-scanner
+
 appearance:
   label: "appearance"
   description: "Description for appearance"
@@ -2428,6 +2433,11 @@ slack:
   description: "Description for snyk scan"
   permalink: /snyk-scan
 
+"scan":
+  label: "sscan"
+  description: "Description for scan"
+  permalink: /scan
+  
 sonarqube:
   label: "sonarqube"
   description: "Description for sonarqube"
