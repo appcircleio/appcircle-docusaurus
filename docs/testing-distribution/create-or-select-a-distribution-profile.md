@@ -215,6 +215,15 @@ When either validation is active, binaries with mismatching identifiers will be 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6423-ss2.png' />
 
+:::info Locked Identifier Behavior
+When **Bundle/Package Identifier Validation** is enabled, the profile header will display a **Locked** tag next to the configured bundle or package identifier. This indicates that the profile is now restricted and will only accept binaries that match the identifier defined in the profile settings.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7406-1.png' />
+
+This validation does **not** apply retroactively to existing binaries already uploaded to the profile. Previously uploaded binaries with a different bundle or package identifier will remain accessible and can still be shared with testers. However, all **new uploads must match the locked identifier**, otherwise they will be rejected during upload.
+:::
+
+
 #### Binary Tags
 
 The Binary Tags feature allows you to label your application binaries with meaningful metadata, which is displayed on the Testing Portal for easy identification by testers. 
