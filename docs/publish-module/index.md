@@ -16,6 +16,16 @@ The Publish module is a powerful feature in Appcircle that allows you to distrib
 For a complete overview of the Appcircle Publish module capabilities, check out the [Appcircle's Profile Section](https://appcircle.io/publish-to-stores).
 :::
 
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/4XDYGF6K4Jw?si=90sqkH_Um7SqAXti" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 ## [Creating Publish Profiles](/publish-module/creating-publish-profiles)
 
 After building the application, in order to start the publishing process, you will need to create a Publish profile.
