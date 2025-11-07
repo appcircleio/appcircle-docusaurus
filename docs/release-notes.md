@@ -32,6 +32,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Re-sign notifications are now displayed under the corresponding module’s notifications. <AccountBadge/> <CloudBadge/>
 - The Publish module has been renamed to Publish to Stores. <PublishBadge/> <CloudBadge/>
 - The workflow editor UX was improved: Delete icons now provide proper cursor feedback and hover states, making it clearer which elements are draggable versus deletable. <PublishBadge/> <CloudBadge/>
+- The URL structure now includes the organization ID. Users who have access to multiple organizations can directly switch to another organization and access shared resources (profiles, modules, etc.) via shared links. If they don’t have permission for the target organization, they’ll receive a permission error. When the organization ID is not present in the URL, users will automatically access the corresponding resource within their own organization. <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -66,6 +67,10 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where selecting the in-between time filter option caused UI issues when the user attempted to select another type of filter on report pages. <ReportsBadge/> <CloudBadge/>
 - An issue was fixed where successful Microsoft Intune flow steps displayed incorrect API errors after the publish flow was completed. <PublishIntegrationsBadge/> <CloudBadge/>
 - An issue was fixed where clicking the full-size button on the custom script screen did not fully expand the view. <BuildIntegrationsBadge/> <CloudBadge/>
+- An issue was fixed where landscape-oriented images could not be added when uploading screenshots in the iOS Metadata screen. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where users could not view both organization and sub-organization data by default in the Publish Report without applying filters. <ReportsBadge/> <CloudBadge/>
+- An issue was fixed where the “Package Identifier Validation for Android” feature was incorrectly applied to iOS apps as well. The validation is now properly isolated and only affects Android apps. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where special characters (such as Turkish letters) in app names were replaced with URL-encoded values after refreshing the page in the Publish flow. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.4 - 2025-09-26 Build Activity Log, Report Improvements, Bug Fixes and more 
 
