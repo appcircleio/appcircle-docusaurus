@@ -124,9 +124,9 @@ To see the new configuration updates on the store, follow the steps below:
 
 ## Placeholder Text Customization
 
-You can change the Enterprise App Store username and password placeholder texts according to the language selected on the self-hosted Appcircle server.
+You can change the placeholder texts for the [Enterprise Portal](/enterprise-app-store/enterprise-portal#login) username and password based on the language selected in the language options.
 
-For example, you can set a placeholder text for **TR** and a different placeholder text for **EN** and **DE** language selection on browsers.
+For example, you can set a placeholder text for **TR** and a different placeholder text for the **EN** and **DE** language selections on browsers.
 
 :::info
 Appcircle server version `3.12.1` or later is required for this feature.
