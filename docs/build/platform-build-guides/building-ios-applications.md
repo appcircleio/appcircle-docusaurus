@@ -301,7 +301,7 @@ You can update the `xcodeproj` library using the following Bash script in your w
 gem update xcodeproj
 ```
 
-For more information about our infrastructure, please visit the [**iOS Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documents.
+For more information about our infrastructure, please visit the [**iOS Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-environment) documents.
 
 :::
 
