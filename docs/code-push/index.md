@@ -21,6 +21,16 @@ The Appcircle CodePush feature is specifically designed for **React Native** pro
 For a complete overview of the Appcircle CodePush feature's capabilities, check out the [Appcircle's CodePush Section](https://appcircle.io/codepush).
 :::
 
+<iframe 
+    width="560" 
+    height="315" 
+    src="https://www.youtube.com/embed/3bKjdIlMjk0?si=Y3vWQvQUgc7CVQi1" 
+    title="YouTube video player" 
+    frameborder="0" 
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" 
+    allowfullscreen>
+</iframe>
+
 ## [Appcircle CodePush Profile](/code-push/code-push-profile/appcircle-code-push-profile)
 
 To start using CodePush in your React Native project, you first need to create a CodePush profile in Appcircle.
