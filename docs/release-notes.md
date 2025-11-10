@@ -186,7 +186,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 
 ### :muscle: Improvements
 
-- An update was made for [Publish iOS](/account/my-organization/profile-and-team/role-management#publish-module-ios-permissions) and [Publish Android](/account/my-organization/profile-and-team/role-management#publish-module-android-permissions) operator roles, and access to Publish Flow settings was removed for them. <AccountBadge/> <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An update was made for [Publish iOS](/account/my-organization/profile-and-team/role-management#publish-to-stores-ios-permissions) and [Publish Android](/account/my-organization/profile-and-team/role-management#publish-to-stores-android-permissions) operator roles, and access to Publish Flow settings was removed for them. <AccountBadge/> <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The “Create from existing SSO settings” option was disabled for SAML-type SSO configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The exact renewal time is now shown next to the expiry date on the billing page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Auto Re-sign operations will now be specifically mentioned as Auto Re-sign within notifications sent via Email, Teams, and Slack. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
