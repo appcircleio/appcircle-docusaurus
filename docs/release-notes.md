@@ -70,7 +70,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where landscape-oriented images could not be added when uploading screenshots in the iOS Metadata screen. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where users could not view both organization and sub-organization data by default in the Publish Report without applying filters. <ReportsBadge/> <CloudBadge/>
 - An issue was fixed where the “Package Identifier Validation for Android” feature was incorrectly applied to iOS apps as well. The validation is now properly isolated and only affects Android apps. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where special characters (such as Turkish letters) in app names were replaced with URL-encoded values after refreshing the page in the Publish flow. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where special characters in app names were replaced with URL-encoded values after refreshing the page in the Publish flow. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.4 - 2025-09-26 Build Activity Log, Report Improvements, Bug Fixes and more 
 
@@ -1652,7 +1652,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🐞 Fixed
 
-- The confusion regarding the use of Turkish characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/configurations) has been resolved. Turkish characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
+- The confusion regarding the use of foreign characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/configurations) has been resolved. foreign characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
 - The error in [permission management](/account/my-organization) in the environment variables section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem with the build transaction texts above the branch name in the "Branch" section being mixed up has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The error in permission management in the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
