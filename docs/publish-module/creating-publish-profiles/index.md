@@ -9,11 +9,11 @@ sidebar_position: 1
 
 import Screenshot from '@site/src/components/Screenshot';
 
-After building the application, we can start the publishing process by sending it to the Publish module.
+After building the application, we can start the publishing process by sending it to the Publish to Stores module.
 
-For this, it is necessary to first create a publish profile within the Publish module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
+For this, it is necessary to first create a publish profile within the Publish to Stores module. Afterwards, the relevant publish profile must be selected from the **Distribution** tab in the configuration of the relevant profile in the Build module.
 
-In order to create a publish profile, click on the "Add New" button in the Publish module.
+In order to create a publish profile, click on the "Add New" button in the Publish to Stores module.
 
 :::info 
 If it's your first time, set up connections to the app stores under [API Integrations](/account/my-organization).
@@ -80,9 +80,9 @@ Another option to create a profile is to import it. With this feature, a Publish
 
 :::caution Apple Enterprise API Key
 
-The **Create from App Store Connect** feature requires an **Apple API** key to create a profile. However, since the **Apple Enterprise Program** does not include **TestFlight** or **App Store Connect** features, **Apple Enterprise API Keys** are **not** listed anywhere in the **Publish module**.
+The **Create from App Store Connect** feature requires an **Apple API** key to create a profile. However, since the **Apple Enterprise Program** does not include **TestFlight** or **App Store Connect** features, **Apple Enterprise API Keys** are **not** listed anywhere in the **Publish to Stores module**.
 
-If an **Apple Enterprise API** key has been added in your organization, it **cannot** be used in the Publish Module. For more information, please visit the [**Enterprise API Key Credential**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#enterprise-api-key-option-for-app-store-connect) documentation.
+If an **Apple Enterprise API** key has been added in your organization, it **cannot** be used in the Publish to Stores Module. For more information, please visit the [**Enterprise API Key Credential**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#enterprise-api-key-option-for-app-store-connect) documentation.
 
 :::
 

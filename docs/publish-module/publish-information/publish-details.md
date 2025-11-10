@@ -10,7 +10,7 @@ sidebar_position: 2
 This option provides an in-depth view of the selected version's publish process. Users can review the steps taken, configurations used, and outcomes of the publish sequence. It's an essential resource for understanding the specific details of a version's journey through the publish workflow.
 
 <!--
-The "Publish Details" feature in the Publish module provides a comprehensive view of the publish flow for both Android and iOS builds. It is where you can see the progress and logs of your publishing process to different platforms like Google Play Store and TestFlight. -->
+The "Publish Details" feature in the Publish to Stores module provides a comprehensive view of the publish flow for both Android and iOS builds. It is where you can see the progress and logs of your publishing process to different platforms like Google Play Store and TestFlight. -->
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22.png' />
 
@@ -20,7 +20,7 @@ To view the details of your publish flow:
 
 1. **Select the Version:**
 
-   - Locate and select the build version you want to review in the Publish module.
+   - Locate and select the build version you want to review in the Publish to Stores module.
 
 2. **Open Publish Details:**
 

@@ -1,6 +1,6 @@
 ---
 title: Delete
-description: Learn how to delete a build version in the Publish module of Appcircle
+description: Learn how to delete a build version in the Publish to Stores module of Appcircle
 tags: [publish, publish module, delete]
 sidebar_position: 11
 ---
@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Deleting a Build Version
 
-The "Delete" function in the Publish module allows users to remove specific versions of an app from the module. This action does not affect any versions of the app that have been submitted to app stores; it only removes the version from Appcircle's Publish module.
+The "Delete" function in the Publish to Stores module allows users to remove specific versions of an app from the module. This action does not affect any versions of the app that have been submitted to app stores; it only removes the version from Appcircle's Publish to Stores module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-27.png' />
 
@@ -17,7 +17,7 @@ The "Delete" function in the Publish module allows users to remove specific vers
 
 1. **Locate the Version:**
 
-   - Find the app version you wish to delete in the Publish module.
+   - Find the app version you wish to delete in the Publish to Stores module.
 
 2. **Access Delete Option:**
 
@@ -36,15 +36,15 @@ The "Delete" function in the Publish module allows users to remove specific vers
 
 - **Check Before Deleting:** Always double-check which version you are deleting to prevent removing the wrong one.
 - **Irreversible Action:** Deletion is permanent. Once a version is deleted, it cannot be recovered through Appcircle.
-- **Does Not Affect Store Submissions:** Deleting a version from Appcircle's Publish module does not remove it from any app stores where it has been published.
+- **Does Not Affect Store Submissions:** Deleting a version from Appcircle's Publish to Stores module does not remove it from any app stores where it has been published.
 
 ## Use Cases for Deleting a Build Version
 
-- **Cleaning Up:** Remove outdated or unnecessary builds to keep your Publish module organized.
-- **Storage Management:** Free up space in your Publish module by deleting old or superseded versions.
+- **Cleaning Up:** Remove outdated or unnecessary builds to keep your Publish to Stores module organized.
+- **Storage Management:** Free up space in your Publish to Stores module by deleting old or superseded versions.
 
 Remember to use this feature judiciously to maintain the integrity of your build history and avoid accidental loss of important build versions.
 
 :::caution
-Appcircle does not delete the application that has been submitted to the stores. This deletion will only delete the version of the application in the Publish module.
+Appcircle does not delete the application that has been submitted to the stores. This deletion will only delete the version of the application in the Publish to Stores module.
 :::

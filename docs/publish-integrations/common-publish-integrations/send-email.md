@@ -66,7 +66,7 @@ You can dynamically populate subject and content using environment variables. Th
 
 ### Creating Environment Variables
 
-First, you need to define the environment variables. To do this, go to the Publish module and select Publish Variables. From there, you can start creating the variables for your email settings.
+First, you need to define the environment variables. To do this, go to the Publish to Stores module and select Publish Variables. From there, you can start creating the variables for your email settings.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email6.png' />
 

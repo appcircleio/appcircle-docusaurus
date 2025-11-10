@@ -1,6 +1,6 @@
 ---
 title: Google Play Console Information
-description: Learn how to update App Information in the Publish module of Appcircle for Google Play Console
+description: Learn how to update App Information in the Publish to Stores module of Appcircle for Google Play Console
 tags: [publish, publish module, app information, google play console, review]
 sidebar_position: 1
 ---

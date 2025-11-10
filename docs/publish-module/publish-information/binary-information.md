@@ -7,7 +7,7 @@ sidebar_position: 4
 
 # Binary Information
 
-The "Binary Information" feature in the Publish module provides essential details about the app's binary file. This information is critical for understanding the specifics of each build.
+The "Binary Information" feature in the Publish to Stores module provides essential details about the app's binary file. This information is critical for understanding the specifics of each build.
 
 ## Viewing Binary Information
 
@@ -15,7 +15,7 @@ To access the binary details for a specific version of your app:
 
 1. **Navigate to the Appropriate Version:**
 
-   - Within the Publish module, locate and select the version you want to examine.
+   - Within the Publish to Stores module, locate and select the version you want to examine.
 
 2. **Open Binary Information:**
    - Click on the "Binary Information" option to display the binary details.
@@ -61,11 +61,11 @@ Release Notes are an important part of the binary information, providing context
 
 ### Adding Release Notes
 
-Before publishing your binary to the app stores, you can add Release Notes in the Publish module:
+Before publishing your binary to the app stores, you can add Release Notes in the Publish to Stores module:
 
 1. **Access Binary Information:**
 
-   - Navigate to the 'Binary Information' section for the selected app version in the Publish module.
+   - Navigate to the 'Binary Information' section for the selected app version in the Publish to Stores module.
 
 2. **Input Release Notes:**
 

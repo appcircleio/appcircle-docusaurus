@@ -7,7 +7,7 @@ tags: [publish variables, publish, variables]
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-The **Publish Variables** section within the Publish module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
+The **Publish Variables** section within the Publish to Stores module is a feature that allows you to set up and manage key-value pairs that are essential for the app publishing process.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5631-Publish-Variables-annotated.png' />
 
@@ -49,7 +49,7 @@ Remember to handle these variables with care, especially if they contain sensiti
 
 :::info
 
-Please note that Publish Variables can only be used within the Publish module.
+Please note that Publish Variables can only be used within the Publish to Stores module.
 
 :::
 
@@ -259,7 +259,7 @@ User can use `AC_RELEASE_NOTES` environment variable, if the `apk`, `aab` or `ip
 
 ### How to change environment variable and exchange it between steps?
 
-In the Appcircle Publish module, the steps within a Publish flow operate independently. This means that each step is executed in a separate, clean runner environment. This feature allows steps to run independently and individually. Therefore, to exchange environment variables between steps, the modified ENV value needs to be saved as an output variable.
+In the Appcircle Publish to Stores module, the steps within a Publish flow operate independently. This means that each step is executed in a separate, clean runner environment. This feature allows steps to run independently and individually. Therefore, to exchange environment variables between steps, the modified ENV value needs to be saved as an output variable.
 
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 

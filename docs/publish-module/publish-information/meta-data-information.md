@@ -113,7 +113,7 @@ If there is existing metadata associated with your app on the Google Play Consol
 
 **Updating Android Metadata:** You can easily update your Google Play Console metadata for your app via Appcircle by following these steps:
 
-- Update your app's metadata on Appcircle within the Publish module.
+- Update your app's metadata on Appcircle within the Publish to Stores module.
 - Add the **Update Metadata on Google Play Console** Publish flow step to your workflow.
 - Run your Publish Flow of your app by selecting the Publish Details under actions menu.
 

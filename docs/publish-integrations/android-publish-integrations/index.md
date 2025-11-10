@@ -8,7 +8,7 @@ tags: [android, android integrations, android publish integrations]
 
 Appcircle's Android Integrations facilitate the distribution of your Android applications to major app stores with minimal effort.
 
-To use the Android Integration, click on the **Android Publish** button on the left in the Publish module.
+To use the Android Integration, click on the **Android Publish** button on the left in the Publish to Stores module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/publish-leftbar-android.png' />
 

@@ -1,6 +1,6 @@
 ---
 title: Publish Walkthrough for Google Play Console
-description: Learn how to automate app publishing to Google Play Console using the Publish module.
+description: Learn how to automate app publishing to Google Play Console using the Publish to Stores module.
 tags: [publish, google play console, android, metadata, walkthrough, android app release]
 ---
 
@@ -8,28 +8,28 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import NeedHelp from '@site/docs/\_need-help.mdx';
 
-## Why Use the Publish Module: Features and Benefits
+## Why Use the Publish to Stores module: Features and Benefits
 
-The Publish module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play Console, and Huawei AppGallery. This module streamlines the complex process of app release, enabling users to:
+The Publish to Stores module in Appcircle is a powerful tool designed for managing the release process of mobile applications to various app stores, including the Apple App Store, Google Play Console, and Huawei AppGallery. This module streamlines the complex process of app release, enabling users to:
 
 - **Centralized Release Management**: Monitor, manage, and audit releases from a single platform, making the release process more efficient and organized.
 - **Automate Releases**: Automate the submission of applications to multiple stores, reducing the manual workload and minimizing the risk of errors.
 - **Flexibility in Publishing**: Appcircle provides the flexibility to publish your applications to various platforms, including app stores and internal app distribution systems. This ensures that your applications reaches the right audience through the most suitable channels.
 - **Isolation from Complex Interactions**: Eliminate the need for direct interaction with individual app stores like the Apple App Store, Google Play Console, and Huawei AppGallery. Appcircle acts as a central hub, isolating you from the complexities and variances of each store’s submission processes. 
 
-By using the Publish module, you can ensure a smooth, reliable, and scalable release process for your mobile applications, enhancing the overall efficiency and effectiveness of your app release strategy. 
+By using the Publish to Stores module, you can ensure a smooth, reliable, and scalable release process for your mobile applications, enhancing the overall efficiency and effectiveness of your app release strategy. 
 
 https://appcircle.io/publish-to-stores
 
 ## Getting Started
 
-The Publish module in Appcircle is a versatile tool that simplifies the app release process. To make the most of this module, it's important to ensure that you meet all prerequisites and properly configure the necessary settings. The following sections outline the initial steps to start a release process using the Publish module.
+The Publish to Stores module in Appcircle is a versatile tool that simplifies the app release process. To make the most of this module, it's important to ensure that you meet all prerequisites and properly configure the necessary settings. The following sections outline the initial steps to start a release process using the Publish to Stores module.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishstart2.png' />
 
-## Prerequisites for Using the Publish Module
+## Prerequisites for Using the Publish to Stores module
 
-Before you can start using the Publish module, there are several key prerequisites to address:
+Before you can start using the Publish to Stores module, there are several key prerequisites to address:
 
 ### Creating and Adding a Google Play Developer API Key
 
@@ -52,7 +52,7 @@ Before starting the release process, make sure your AAB or APK binary is properl
 
 :::info Binary Upload Methods
 
-The binary file can be uploaded to the Publish module either manually or through the Build or Testing Distribution modules. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-google-play#uploading-a-binary) section.
+The binary file can be uploaded to the Publish to Stores module either manually or through the Build or Testing Distribution modules. For more detailed instructions, please refer to the [**Upload Binary**](/publish-module/publish-walkthrough-for-google-play#uploading-a-binary) section.
 
 :::
 
@@ -82,7 +82,7 @@ To use this profile creation method, you must have a Google Play API key integra
 
 ### Selecting a Google Play Developer API Key
 
-If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish module after the profile is created. To initiate the release process, select the credentials for the relevant store from the `Settings` screen under the selected Publish profile.
+If you choose to create the profile manually, you must select the required Google Play Developer API key integration from your profile in the Publish to Stores module after the profile is created. To initiate the release process, select the credentials for the relevant store from the `Settings` screen under the selected Publish profile.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-publishSetting.png' />
 
@@ -92,7 +92,7 @@ If you choose to create the profile manually, you must select the required Googl
 
 ### Updating Google Play Console App Information
 
-- Within the Publish module, you can update and review your app's information directly. This includes updating email address, phone number, website URL, primary languages, and auto-send for review options. Please visit the [**Google Play Console Information**](/publish-module/publish-information/google-play-information) documentation for detailed information.
+- Within the Publish to Stores module, you can update and review your app's information directly. This includes updating email address, phone number, website URL, primary languages, and auto-send for review options. Please visit the [**Google Play Console Information**](/publish-module/publish-information/google-play-information) documentation for detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-appInfoButton.png' />
 
@@ -100,7 +100,7 @@ If you choose to create the profile manually, you must select the required Googl
 
 ### Customizing the Publish Flow
 
-Publish flow is used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flow within the Publish module as outlined below:
+Publish flow is used to automate multiple tasks and introduce automation checkpoints for application deployments to stores. You can manage flow within the Publish to Stores module as outlined below:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-flows.png' />
 
@@ -148,7 +148,7 @@ You can select one of the following options:
 
 ### Setting Up Notifications
 
-- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
+- Keeping your team informed about the release progress is essential for a coordinated effort. The Publish to Stores module can be integrated with collaboration tools like [**Slack**](/account/my-organization/notifications/slack-notifications) or [**Microsoft Teams**](/account/my-organization/notifications/teams-notifications) for notifications. By setting up these integrations, you can automatically send notifications about key events in the release process—such as successful deployments or issues that need attention—ensuring that everyone stays in the loop and can act swiftly when needed. Please visit the related [**Notifications Integration**](/account/my-organization/notifications) documentation for more detailed information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-notificationInteg.png' />
 
@@ -156,21 +156,21 @@ You can select one of the following options:
 
 ## Managing Releases
 
-Effective release management is crucial for ensuring the success of your app updates. The Publish module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real time, manage approvals, and address any issues that arise during the process. Also, the Publish module offers customizable flow to provide more detailed management of the release process.
+Effective release management is crucial for ensuring the success of your app updates. The Publish to Stores module provides you with the tools to monitor, control, and optimize the release process. You can track the status of your releases in real time, manage approvals, and address any issues that arise during the process. Also, the Publish to Stores module offers customizable flow to provide more detailed management of the release process.
 
 ### Uploading a Binary 
 
-Easily upload your binary file to the Publish module **manually**, via the **Build** or **Testing Distribution** modules, or through **Appcircle CLI and API** to begin the release process.
+Easily upload your binary file to the Publish to Stores module **manually**, via the **Build** or **Testing Distribution** modules, or through **Appcircle CLI and API** to begin the release process.
 
 #### Manual Binary Upload
 
-You can upload your binary file directly to the Publish module using the manual upload option.
+You can upload your binary file directly to the Publish to Stores module using the manual upload option.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-manuelUpload.png' />
 
 #### Upload via Build Module 
 
-You can automatically deploy your binary file to the Publish module directly from the Build module. This method streamlines the binary deployment process by transferring your binary immediately after the build pipeline completes, making it ready for release. It simplifies the flow and reduces the risk of manual errors.
+You can automatically deploy your binary file to the Publish to Stores module directly from the Build module. This method streamlines the binary deployment process by transferring your binary immediately after the build pipeline completes, making it ready for release. It simplifies the flow and reduces the risk of manual errors.
 
 :::info Upload via Build Module
 
@@ -188,7 +188,7 @@ You can send your application from a testing distribution profile to a designate
 
 If you have your own CI environment or need to integrate Appcircle into a specific process or job, you can use the Appcircle API & CLI to upload binaries to the related Publish profile.
 
-- **Other CI/CD Tools**: You can integrate the Publish module with CI/CD tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
+- **Other CI/CD Tools**: You can integrate the Publish to Stores module with CI/CD tools like Jenkins and GitHub Actions to automate your build and release pipeline. With the Appcircle [**API & CLI**](/appcircle-api-and-cli), you can seamlessly connect these tools, allowing for automated triggers that initiate a release as soon as a new build is ready. This integration ensures a consistent and efficient deployment process, reducing manual intervention and the risk of errors. You can check out [**Appcircle Marketplace**](/marketplace) for more integrations.
 
 To get more information, please refer to our [**API & CLI**](/appcircle-api-and-cli) documentation.
 
@@ -202,7 +202,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 ### Updating Metadata
 
-- Within the Publish module, you can directly manage your app’s metadata. This includes editing the screenshots, video, app name, and descriptions. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
+- Within the Publish to Stores module, you can directly manage your app’s metadata. This includes editing the screenshots, video, app name, and descriptions. Please visit the [**Metadata Details**](/publish-module/publish-information/meta-data-information#android-metadata-information) documentation for more information.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-actionMetadata.png' />
 
@@ -220,7 +220,7 @@ To get more information, please refer to our [**API & CLI**](/appcircle-api-and-
 
 ### Managing Release Status 
 
-After initiating a release, the Publish module provides tools to monitor and manage the process.
+After initiating a release, the Publish to Stores module provides tools to monitor and manage the process.
 
 #### Release Dashboard 
 
@@ -240,15 +240,15 @@ View the real time status of your release.
 
 ### Auditing Releases
 
-The Publish module provides comprehensive auditing and reporting features that give you full visibility into your release process.
+The Publish to Stores module provides comprehensive auditing and reporting features that give you full visibility into your release process.
 
 - **Activity Log**: The activity log keeps a detailed record of every action taken during the release process, including who performed each action and when it occurred. This log is invaluable for tracking changes, identifying issues, and ensuring accountability within your team.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6003-logActivity3.png' />
 
-## Publish Module Troubleshooting
+## Publish to Stores module Troubleshooting
 
-When using the Publish module, it's essential to know how to troubleshoot potential issues that may arise during the release process. Whether you're dealing with failed submissions, integration errors, or flow execution problems, having a clear understanding of common issues and their solutions can save you time and ensure a smooth release. 
+When using the Publish to Stores module, it's essential to know how to troubleshoot potential issues that may arise during the release process. Whether you're dealing with failed submissions, integration errors, or flow execution problems, having a clear understanding of common issues and their solutions can save you time and ensure a smooth release. 
 
 ### Frequently Asked Questions About the Publish Module
 
