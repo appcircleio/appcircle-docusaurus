@@ -2067,6 +2067,100 @@ ssh -o StrictHostKeyChecking=no appcircle@$(tart ip vm02)
 - Shutdown `vm02`.
 - Start offline runners as explained in [Start VM](#start-vm) section.
 
+## Increasing Disk Size for Appcircle runner VM 
+
+If you want to increase the disk size of the Appcircle runner VM, you can follow the instructions below. 
+
+The Appcircle runner VM's default disk size is 200GB. If you need more space, follow the steps below to install Packer and edit the VM configuration.
+
+### Network Requirements
+To download and install the necessary files, your network should allow access to the Appcircle CDN URL:
+
+-  `https://cdn.appcircle.io`
+
+### Increasing the Disk Size Using Packer
+
+- Download and unzip Packer using the following commands:
+
+```bash
+curl -L -O https://cdn.appcircle.io/self-hosted/runner/packer/1.11.2/packer-darwin-arm64.zip && \
+unzip packer-darwin-arm64.zip
+```
+
+- Download and unzip the Packer Tart plugin:
+
+```bash
+mkdir -p ~/.config/packer/plugins/github.com/cirruslabs/tart && \
+curl -L -O https://cdn.appcircle.io/self-hosted/runner/packer-plugin-tart/1.14.0/packer-plugin-tart-darwin-arm64.zip && \
+unzip packer-plugin-tart-darwin-arm64.zip -d ~/.config/packer/plugins/github.com/cirruslabs/tart
+```
+
+- Create a Packer file named `appcircle-vm.pkr.hcl` with the following content to configure the Appcircle runner VM:
+
+```bash
+vim appcircle-vm.pkr.hcl
+```
+
+```hcl
+packer {
+  required_plugins {
+    tart = {
+      version = ">= 1.12.0"
+      source  = "github.com/cirruslabs/tart"
+    }
+  }
+}
+
+source "tart-cli" "tart" {
+  vm_base_name = "vm01"
+  vm_name      = "vm01x"
+  cpu_count    = 4
+  memory_gb    = 8
+  disk_size_gb = 250
+  ssh_password = "cicd"
+  ssh_username = "appcircle"
+  ssh_timeout  = "120s"
+  create_grace_time = "30s"
+}
+
+build {
+  sources = ["source.tart-cli.tart"]
+
+  provisioner "shell" {
+    inline = [
+      "echo 'Disabling spotlight indexing...'", "sudo mdutil -a -i off"
+    ]
+  }
+}
+```
+
+:::info
+Please update the values below in the `appcircle-vm.pkr.hcl` file: 
+
+- `vm_base_name`: This is a placeholder name for the base VM image you are using.
+- `vm_name`: This is a placeholder name for the new VM with the increased disk size.
+- `disk_size_gb`: Update According to your requirements. You might need more or less depending on your specific needs.
+
+:::
+
+- Build the new VM:
+
+```bash
+./packer build appcircle-vm.pkr.hcl
+```
+
+- Start the new VM, connect via SSH, and verify the new disk size with the provided command.
+
+:::tip
+The command for starting the Appcircle runner VM may vary depending on the Appcircle VM version you are using. For a quick reference, you can check the [configure base runner vm](#configure-base-runner-vms) section.
+:::
+
+```bash
+df -h
+```
+
+By following these steps, you can increase the disk size of your Appcircle runner VMs. 
+
 ## Troubleshooting
 
 ### Tart list has runner instance in list but I can not SSH into the runner
