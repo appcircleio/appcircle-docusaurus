@@ -83,6 +83,14 @@ webeventredis:
     tls: true
 ```
 
+:::danger **CA Certificate Caution**  
+Certain SSL providers, such as Let's Encrypt, may not include the root CA certificate in their `fullchain` certificate files. In such cases, the `fullchain` file will be incomplete, as the bottom-most certificate in the chain will not be the root certificate. This can lead to compatibility issues or crashes when the certificate is used.  
+
+To avoid such problems:  
+1. **Verify the Certificate Chain**: Ensure that the `fullchain` file includes all necessary certificates, starting from the server certificate up to the root certificate.  
+2. **Manually Append Missing Certificates**: If the root CA certificate is not included, download it from the CA's official website and append it to the `fullchain` file.  
+:::
+
 ### Updating the Certificate
 
 To update the SSL certificate used on Appcircle server, perform the following steps to update the Helm chart and restart the required services:

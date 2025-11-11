@@ -44,10 +44,11 @@ After updating the `values.yaml` file, create a TLS secret for the custom domain
 
 - The certificate (`cert`) should be in **PEM format** and it's recommended to include the leaf (app), intermediate, and root (CA) certificates to form a **full-chain** certificate.
 - The private key (`key`) **should not be password-protected**.
-  :::
+:::
 
 ```bash
 kubectl create secret tls k8s-dist-spacetech-com-tls \
+-n appcircle \
 --cert=fullchain.crt \
 --key=private.key
 ```
