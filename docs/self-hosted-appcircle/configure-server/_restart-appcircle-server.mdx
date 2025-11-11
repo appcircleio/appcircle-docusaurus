@@ -1,0 +1,38 @@
+:::info
+
+The `spacetech` in the example codes below are an example project name.
+
+Please find your own project name by listing the `projects` directory and replace `spacetech` with your project name.
+
+```bash
+ls -l ./projects
+```
+
+:::
+
+- Shutdown Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" down
+```
+
+- Apply configuration changes.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" export
+```
+
+- Boot Appcircle server.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" up
+```
+
+:::tip
+You should check the status of the Appcircle server after boot for any possible errors.
+
+```bash
+./ac-self-hosted.sh -n "spacetech" check
+```
+
+:::
