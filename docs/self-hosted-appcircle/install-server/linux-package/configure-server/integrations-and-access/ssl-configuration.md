@@ -108,7 +108,13 @@ Refer to [reset configuration](/self-hosted-appcircle/install-server/linux-packa
 
 Ensure that each [required domain name](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist.md#configure-the-dns-settings) is included in the Subject Alternative Name (SAN) extension of your SSL certificate, either listed individually or using a wildcard (e.g., `*.appcircle.spacetech.com`).
 
-- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+- :warning: **Do not use** wildcard domains in the Common Name (CN). Wildcards must be specified only in the SAN extension as per SSL best practices.
+
+- If you saved the SSL certificate as a file, you can check the Subject Alternative Name (SAN) extension of the certificate by running the following command. If the output does not contain the required domain names, you need to update the SSL certificate.
+  
+  ```bash
+  openssl x509 -in appcircle-tls.crt -text -noout | grep -A 1 "X509v3 Subject Alternative Name"
+  ``` 
 
 :::
 
@@ -381,6 +387,20 @@ Let's assume we want to use `apps.spacetech.com` as custom domain for our sample
 
 Custom domain HTTPS settings are similar to the main domain conceptually. After enabling HTTPS for the main domain, it won't be hard to enable HTTPS for the Enterprise App Store custom domain.
 
+:::warning
+
+Ensure that the Enterprise App Store custom domain (`apps.spacetech.com` in our sample scenario) is included in the Subject Alternative Name (SAN) extension of your SSL certificate.
+
+- :warning: **Do not use** wildcard domains in the Common Name (CN). Wildcards must be specified only in the SAN extension as per SSL best practices.
+
+- If you saved the SSL certificate as a file, you can check the Subject Alternative Name (SAN) extension of the certificate by running the following command. If the output does not contain the required domain names, you need to update the SSL certificate.
+  
+  ```bash
+  openssl x509 -in appcircle-tls.crt -text -noout | grep -A 1 "X509v3 Subject Alternative Name"
+  ```
+
+:::
+
 Configure the `storeWeb` section in your `global.yaml` as follows:
 
 <Tabs
@@ -432,14 +452,6 @@ storeWeb:
 
 :::caution
 The `storeWeb.customDomain.port` must be `443` if the `enabledTls` option is set to `true`.
-:::
-
-:::warning
-
-Ensure that the Enterprise App Store custom domain (`apps.spacetech.com` in our sample scenario) is included in the Subject Alternative Name (SAN) extension of your SSL certificate.
-
-- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
-
 :::
 
 </TabItem>
@@ -598,7 +610,13 @@ If you have a `testerWeb` section previously defined in the `global.yaml` file f
 
 Ensure that the custom Testing Distribution domain (`dist.spacetech.com` in our sample scenario) is included in the Subject Alternative Name (SAN) extension of your SSL certificate.
 
-- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+- :warning: **Do not use** wildcard domains in the Common Name (CN). Wildcards must be specified only in the SAN extension as per SSL best practices.
+
+- If you saved the SSL certificate as a file, you can check the Subject Alternative Name (SAN) extension of the certificate by running the following command. If the output does not contain the required domain names, you need to update the SSL certificate.
+  
+  ```bash
+  openssl x509 -in appcircle-tls.crt -text -noout | grep -A 1 "X509v3 Subject Alternative Name"
+  ```
 
 :::
 

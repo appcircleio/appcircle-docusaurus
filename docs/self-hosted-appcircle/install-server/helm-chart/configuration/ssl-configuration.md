@@ -21,7 +21,7 @@ Appcircle must be installed with HTTPS from the initial installation. If you ini
 :::warning
 Ensure that each [required domain name](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes#1-domain-name) is included in the Subject Alternative Name (SAN) extension of your SSL certificate, either listed individually or using a wildcard (e.g., `*.appcircle.spacetech.com`).
 
-- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+- :warning: **Do not use** wildcard domains in the Common Name (CN). Wildcards must be specified only in the SAN extension as per SSL best practices.
 
 :::
 

@@ -138,7 +138,12 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 - [ ] Obtain the root CA certificate of your company.
 - [ ] Obtain the intermediate CA certificate of your company if it exists.
 - [ ] Ensure that each [required domain name](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist.md#configure-the-dns-settings) is included in the Subject Alternative Name (SAN) extension of your SSL certificate, either listed individually or using a wildcard (e.g., `*.appcircle.spacetech.com`).  
-  - :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+  - :warning: **Do not use** wildcard domains in the Common Name (CN). Wildcards must be specified only in the SAN extension as per SSL best practices.
+  - If you saved the SSL certificate as a file, you can check the Subject Alternative Name (SAN) extension of the certificate by running the following command. If the output does not contain the required domain names, you need to update the SSL certificate.
+    
+    ```bash
+    openssl x509 -in appcircle-tls.crt -text -noout | grep -A 1 "X509v3 Subject Alternative Name"
+    ``` 
 
 ### Obtain the SMTP Settings
 
