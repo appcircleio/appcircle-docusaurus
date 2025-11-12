@@ -137,6 +137,8 @@ You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/
 - [ ] The SSL certificate private key must not have a passphrase.
 - [ ] Obtain the root CA certificate of your company.
 - [ ] Obtain the intermediate CA certificate of your company if it exists.
+- [ ] Ensure that each [required domain name](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist.md#configure-the-dns-settings) is included in the Subject Alternative Name (SAN) extension of your SSL certificate, either listed individually or using a wildcard (e.g., `*.appcircle.spacetech.com`).  
+  - :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
 
 ### Obtain the SMTP Settings
 

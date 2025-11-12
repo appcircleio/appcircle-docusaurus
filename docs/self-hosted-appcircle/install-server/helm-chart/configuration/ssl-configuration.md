@@ -18,6 +18,13 @@ By default, the Helm chart is configured for HTTP without an SSL certificate. If
 Appcircle must be installed with HTTPS from the initial installation. If you initially installed Appcircle with HTTP, you will need to [uninstall](/self-hosted-appcircle/install-server/helm-chart/uninstallation) it and then reinstall it with HTTPS.
 :::
 
+:::warning
+Ensure that each [required domain name](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes#1-domain-name) is included in the Subject Alternative Name (SAN) extension of your SSL certificate, either listed individually or using a wildcard (e.g., `*.appcircle.spacetech.com`).
+
+- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+
+:::
+
 You have two options for configuring SSL certificates:
 
 1. **Trial Purposes**: Define the SSL certificate directly in the `values.yaml` by following [this section](#define-the-ssl-certificate-in-valuesyaml).

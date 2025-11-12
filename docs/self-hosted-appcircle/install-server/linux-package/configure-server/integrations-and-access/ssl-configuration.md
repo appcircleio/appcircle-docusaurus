@@ -104,6 +104,14 @@ Refer to [reset configuration](/self-hosted-appcircle/install-server/linux-packa
 
 :::
 
+:::warning
+
+Ensure that each [required domain name](/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist.md#configure-the-dns-settings) is included in the Subject Alternative Name (SAN) extension of your SSL certificate, either listed individually or using a wildcard (e.g., `*.appcircle.spacetech.com`).
+
+- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+
+:::
+
 Set your private key and public certificate to `nginx` environment variables in `global.yaml` as below.
 
 ```yaml
@@ -426,6 +434,14 @@ storeWeb:
 The `storeWeb.customDomain.port` must be `443` if the `enabledTls` option is set to `true`.
 :::
 
+:::warning
+
+Ensure that the Enterprise App Store custom domain (`apps.spacetech.com` in our sample scenario) is included in the Subject Alternative Name (SAN) extension of your SSL certificate.
+
+- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+
+:::
+
 </TabItem>
 
 <TabItem value="podman">
@@ -577,6 +593,15 @@ If you don't have the `testerWeb` section defined in the `global.yaml` file, yo
 
 If you have a `testerWeb` section previously defined in the `global.yaml` file for some reason, you should update that section with the `customDomain` settings below instead of adding a new one.
 :::
+
+:::warning
+
+Ensure that the custom Testing Distribution domain (`dist.spacetech.com` in our sample scenario) is included in the Subject Alternative Name (SAN) extension of your SSL certificate.
+
+- :warning: **Do not use** wildcard domains in the Common Name (CN); wildcards must be specified only in the SAN extension as per SSL best practices.
+
+:::
+
 
 <Tabs
 defaultValue="docker"
