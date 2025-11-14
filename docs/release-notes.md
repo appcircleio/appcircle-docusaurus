@@ -16,6 +16,31 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.6 - 2025-11-14 Testing Distribution Improvements, Bug Fixes and more
+
+### :muscle: Improvements
+
+- A confirmation prompt was added for deleting testing group users. <DistributionBadge/> <CloudBadge/>
+- The organization filter option in testing distribution reports is now displayed in alphabetical order. <ReportsBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- Workflow editor save failures that occurred when the editor was left open for extended periods were fixed, and session state is now properly handled to prevent errors. <BuildBadge/> <CloudBadge/>
+- An issue was fixed with the build profile search filters, where accurate results were not being returned. <BuildBadge/> <CloudBadge/>
+- An issue was fixed in which completing a build for a branch located at the end of the branch list resulted in no branch being selected after the build was completed. <BuildBadge/> <CloudBadge/>
+- Overall typos, URL issues, and text errors were fixed in the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed in which the Apple device filter malfunctioned when only one device was registered. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where some events in the signing identity module did not generate notification messages. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the copy button did not work for the Profile ID option in the publish settings. <PublishBadge/> <CloudBadge/>
+- An issue was fixed in which the profile icon update screen for the Enterprise App Store profile did not display the active icon. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed in which background colors of the Enterprise Portal affected transparent logos. <EnterpriseStoreBadge/> <CloudBadge/>
+- Multiple bugs in the team management combobox component were fixed, including the size shrinking issue, improper filtering behavior. The combobox filtering option is now removed for sub-organizations. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users with the Viewer Organization Management role received incorrect access denied errors when viewing the team member list. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where testing group CSV imports incorrectly displayed duplicated values as imported. <DistributionBadge/> <CloudBadge/>
+- Minor fixes and improves were applied for profile search was improved in the testing distribution module. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where source profiles were not displayed in the app version reports. <ReportsBadge/> <CloudBadge/>
+- An issue was fixed where the total message count was incorrect in the app sharing reports. <ReportsBadge/> <CloudBadge/>
+
 ## 3.29.5 - 2025-10-27 New Retention Period Settings, Activity Log Improvements, Bug Fixes and more
 
 ### 🆕 New Features
