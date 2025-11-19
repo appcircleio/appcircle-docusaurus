@@ -3077,3 +3077,28 @@ quay:
   label: "new step"
   description: "Documentation related to developing and implementing new workflow steps"
   permalink: "/new-step"
+
+"cache":
+  label: "cache"
+  description: "Documentation related to cache"
+  permalink: "/cache"
+
+"build cache":
+  label: "build cache"
+  description: "Documentation related to build cache"
+  permalink: "/build-cache"
+
+"retention period":
+  label: "retention period"
+  description: "Documentation related to retention period"
+  permalink: "/retention-period"
+
+"retention":
+  label: "retention"
+  description: "Documentation related to retention"
+  permalink: "/retention"
+
+"artifacts report":
+  label: "artifacts report"
+  description: "Documentation related to artifacts report"
+  permalink: "/artifacts-report"

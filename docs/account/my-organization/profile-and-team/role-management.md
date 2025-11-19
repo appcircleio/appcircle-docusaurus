@@ -371,6 +371,7 @@ Also, the user can view self-hosted runners and change configuration.
 | Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
 | Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
 | Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
+| Artifacts                                            | View Artifacts Report                   | ✅     | ✅       | ✅      |
 | Domain Verification                                  | View Domain List                        | ✅     | ✅       | ✅     |
 | Domain Verification                                  | View Domain Verification Details        | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Add New Domain Verification             | ✅     | ✅       | ⛔      |
