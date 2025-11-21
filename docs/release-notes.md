@@ -42,6 +42,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed in which the Apple device filter malfunctioned when only one device was registered. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where some events in the signing identity module did not generate notification messages. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where the copy button did not work for the Profile ID option in the publish settings. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where notification channels, such as email, displayed an incorrect version when a binary was uploaded while a Release Candidate binary was present in the Publish profile. <PublishBadge/> <CloudBadge/>
 - An issue was fixed in which the profile icon update screen for the Enterprise App Store profile did not display the active icon. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed in which background colors of the Enterprise Portal affected transparent logos. <EnterpriseStoreBadge/> <CloudBadge/>
 - Multiple bugs in the team management combobox component were fixed, including the size shrinking issue, improper filtering behavior. The combobox filtering option is now removed for sub-organizations. <AccountBadge/> <CloudBadge/>
