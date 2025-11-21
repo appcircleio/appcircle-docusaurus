@@ -18,6 +18,16 @@ Once SSO integration is complete, you can configure authorization by mapping IdP
 -   Knowledge of groups and roles in your IdP that you want to map to Appcircle organizations and permissions.
 -   Administrative access to Appcircle and your IdP.
 
+### Quick Access
+
+Jump directly to your provider configurations:
+
+- [Auth0 - Open ID Connect](/account/my-organization/security/authorization/sso-authorization#step-1-create-roles)
+- [Auth0 - SAML](/account/my-organization/security/authorization/sso-authorization#step-1-create-roles-1)
+- [Microsoft Entra ID / Azure AD Configuration](/account/my-organization/security/authorization/sso-authorization#step-1-create-groups-in-microsoft-entra-id)
+- [Okta - Open ID Connect](/account/my-organization/security/authorization/sso-authorization#step-1-create-groups-and-define-group-claim)
+- [Okta - SAML](/account/my-organization/security/authorization/sso-authorization#step-1-create-groups-and-assign-to-the-application)
+
 ### Overview of Configuring SSO Authorization
 
 In Appcircle, user access is managed through organizations and organization-specific roles. You can add users to any organization and assign them roles in that organization.
@@ -115,6 +125,8 @@ You can refer to the [Overview of Configuring SSO Authorization](#overview-of-co
 </details>
 
 ## 3. Specific Provider Configuration
+
+### Auth0
 
 <details>
     <summary>Auth0</summary>
