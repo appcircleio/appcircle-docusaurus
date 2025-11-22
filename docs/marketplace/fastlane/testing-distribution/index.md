@@ -81,7 +81,7 @@ fastlane add_plugin appcircle_testing_distribution
 
 The plugin supports two authentication methods. You can use either `personalAccessKey` (recommended) or `personalAPIToken` (legacy), but not both at the same time.
 
-- `personalAccessKey` (recommended): The Appcircle Personal Access Key used to authenticate and authorize access to Appcircle services. This is the recommended authentication method. The plugin will automatically generate a Personal Access Token (PAT) from your Personal Access Key using the Auth API. For more information about Personal Access Keys, please refer to the [API Authentication](/appcircle-api-and-cli/api-authentication) documentation.
+- `personalAccessKey` (recommended): The Appcircle Personal Access Key used to authenticate and authorize access to Appcircle services. This is the recommended authentication method. The plugin will automatically generate a Personal Access Token (PAT) from your Personal Access Key using the Auth API.
 
 - `personalAPIToken` (legacy, optional): The legacy Personal API Token used for authentication. This parameter is maintained for backward compatibility. It is recommended to migrate to `personalAccessKey` for better security and future compatibility. If you use this parameter, the plugin will use it directly without generating a PAT.
 - `subOrganizationName` (optional): Required when the Root Organization's `personalAccessKey` or `personalAPIToken` is used, and you want to create the profile under a sub-organization. In this case, provide the name of the sub-organization in this field. If you directly used the sub-organization's `personalAccessKey` or `personalAPIToken`, this parameter is not needed.
