@@ -28,6 +28,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Users with the Build Environment Group Viewer role can no longer upload environment variables via JSON file. Additionally, users with the Publish Environment Group Viewer role can now download environment variables for the Publish module. <EnvironmentVariablesBadge/> <CloudBadge/>
 - A warning is now displayed in the UI when users enter a duplicated variable name. <EnvironmentVariablesBadge/> <CloudBadge/>
 - The Environment Variable Export action is now displayed in the Build Activity Log for better traceability. <EnvironmentVariablesBadge/> <CloudBadge/>
+- The [Appcircle macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 26.1.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_1-release-notes) (`17B100`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
