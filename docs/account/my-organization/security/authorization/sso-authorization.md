@@ -22,11 +22,11 @@ Once SSO integration is complete, you can configure authorization by mapping IdP
 
 Jump directly to your provider configurations:
 
-- [Auth0 - Open ID Connect](/account/my-organization/security/authorization/sso-authorization#step-1-create-roles)
-- [Auth0 - SAML](/account/my-organization/security/authorization/sso-authorization#step-1-create-roles-1)
-- [Microsoft Entra ID / Azure AD Configuration](/account/my-organization/security/authorization/sso-authorization#step-1-create-groups-in-microsoft-entra-id)
-- [Okta - Open ID Connect](/account/my-organization/security/authorization/sso-authorization#step-1-create-groups-and-define-group-claim)
-- [Okta - SAML](/account/my-organization/security/authorization/sso-authorization#step-1-create-groups-and-assign-to-the-application)
+- [Auth0 - Open ID Connect](/account/my-organization/security/authorization/sso-authorization#auth0-openid-connect)
+- [Auth0 - SAML](/account/my-organization/security/authorization/sso-authorization#auth0-saml)
+- [Microsoft Entra ID / Azure AD Configuration](/account/my-organization/security/authorization/sso-authorization#microsoft-entra-id-saml)
+- [Okta - Open ID Connect](/account/my-organization/security/authorization/sso-authorization#okta-openid-connect)
+- [Okta - SAML](/account/my-organization/security/authorization/sso-authorization#okta-saml)
 
 ### Overview of Configuring SSO Authorization
 
@@ -126,11 +126,7 @@ You can refer to the [Overview of Configuring SSO Authorization](#overview-of-co
 
 ## 3. Specific Provider Configuration
 
-### Auth0
-
-<details>
-    <summary>Auth0</summary>
-
+#### Auth0 (OpenID Connect)
 <details>
     <summary>Auth0 (OpenID Connect)</summary>
 
@@ -234,6 +230,7 @@ exports.onExecutePostLogin = async (event, api) => {
 
 </details>
 
+#### Auth0 (SAML)
 <details>
     <summary>Auth0 (SAML)</summary>
 
@@ -337,11 +334,7 @@ exports.onExecutePostLogin = async (event, api) => {
 
 </details>
 
-</details>
-
-<details>
-    <summary>Microsoft Entra ID (formerly Azure Active Directory) </summary>
-
+#### Microsoft Entra ID (SAML)
 <details>
     <summary>Microsoft Entra ID (SAML)</summary>
 
@@ -418,11 +411,7 @@ We use EntraID groups to manage user groups and roles. Both are sent to Appcircl
 
 </details>
 
-</details>
-
-<details>
-    <summary>Okta</summary>
-
+#### Okta (OpenID Connect)
 <details>
     <summary>Okta (OpenID Connect)</summary>
 
@@ -486,6 +475,7 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 
 </details>
 
+#### Okta (SAML)
 <details>
     <summary>Okta (SAML)</summary>
 
@@ -541,8 +531,6 @@ We use Okta groups to manage user groups and roles. Both are sent to Appcircle i
 <Screenshot url='https://cdn.appcircle.io/docs/assets/sso-mapping-okta-saml-ac-group-role-attribute-name-v2.png' />
 
 </details> 
-
-</details>
 
 ## 4. Testing and Verification
 
