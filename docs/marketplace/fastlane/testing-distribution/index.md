@@ -124,7 +124,7 @@ To distribute your app to a sub-organization, you can use one of the following m
 With this configuration, the profile will be created and the app will be distributed within the sub-organization.
 
 :::tip Authentication Method
-We recommend using `personalAccessKey` instead of the legacy `personalAPIToken` parameter. The Personal Access Key provides better security and automatically generates a Personal Access Token (PAT) through the Auth API.
+We recommend using `personalAccessKey` instead of the legacy `personalAPIToken` parameter. The Personal Access Key provides better security and automatically generates a Personal Access Token (PAT) through the Auth API. For more details, check out the **[release notes](https://docs.appcircle.io/release-notes#3-29-4)**.
 
 ### CLI Usage
 
