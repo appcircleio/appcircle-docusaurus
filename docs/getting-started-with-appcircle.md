@@ -94,3 +94,66 @@ Send a binary to Google Play.
 Send a binary to Huawei AppGallery.
 
 <ContentRef url="/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery">Send Apps to Huawei AppGallery</ContentRef>
+
+### Dashboard Overview
+
+The Appcircle Dashboard provides a centralized view of your organization’s activity, usage, and resources. It is designed to give you a quick snapshot of your builds, distribution progress, store publishing status, and Enterprise App Store assets, along with fast access to your most frequently used modules.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7498-1.png' />
+
+:::info Organization Display
+Please note that the displayed data belongs to the currently logged-in root organization. It does not include usage information or binary names from sub-organizations.
+:::
+
+#### Usage Summary
+
+At the top of the Dashboard, you will find usage indicators summarizing the current limits and consumption of your plan:
+- **Builds** – Total number of builds used within the current billing period.
+- **Testing Distribution** – Number of downloaded distributed builds for testing.
+- **Publishes** – Number of binaries published to external app stores.
+- **Members** – The number of users currently active in the organization.
+- **Concurrency** – The total number of concurrent build slots available to your plan.
+
+#### Build Profiles
+
+The Build Profiles section lists all configured profiles in the organization. Each profile displays:
+- Platform badge (iOS or Android)
+- Profile name
+- Connected repository
+- Quick navigation arrow to open the corresponding build profile
+
+#### Last Builds
+
+This section shows the most recent build activities across all profiles. Each row includes:
+- Repository source (GitHub, GitLab, Bitbucket, SSH, Public, etc.)
+- Build status (Running, Success, Failed, Canceled)
+- The email of the user who triggered the build
+- Quick access to build logs and details
+
+#### Testing Distributions
+
+All distributions created for internal testing are listed here. Each item displays:
+- The distribution binary name
+- The associated build artifact (IPA/APK file)
+- A quick navigation link to open distribution details, testers, and installation access
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7498-2.png' />
+
+#### Publish to Stores
+
+The Publish to Stores section displays binaries that are prepared or sent to app distribution services, such as:
+- App Store Connect / TestFlight (iOS)
+- Google Play Console (Android)
+- Huawei AppGallery
+- Microsoft Intune
+
+:::tip 
+Only RC (Release Candidate) marked binaries will be listed here.
+:::
+
+#### Enterprise App Store
+
+If you use the Enterprise App Store module, this section lists your enterprise-distributed apps. Each enterprise app entry shows:
+- The application name
+- The binary version
+- A link to the Enterprise App Store detail page
