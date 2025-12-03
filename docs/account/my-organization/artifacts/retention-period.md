@@ -72,6 +72,10 @@ Automatically deletes **undistributed artifacts** that exceed the defined retent
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7404-5.png' />
 
+:::info Profiles with Distribution Links
+Please note that if a Testing Distribution profile has **Distribution Link** option enabled, all binaries within the profile will be considered as 'Distributed artifacts'.
+:::
+
 ## Publish to Stores
 
 **Publish to Stores** module includes specific rules for artifacts:

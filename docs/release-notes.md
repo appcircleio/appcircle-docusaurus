@@ -22,16 +22,29 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - A confirmation prompt was added for deleting testing group users. <DistributionBadge/> <CloudBadge/>
 - The organization filter option in testing distribution reports is now displayed in alphabetical order. <ReportsBadge/> <CloudBadge/>
+- The automatically generated TestFlight external public link is now displayed directly in the Appcircle UI whenever a new external test is created. <PublishBadge/> <CloudBadge/>
+- An informative tooltip is now displayed when users hover over the Start Build button without selecting a branch. <BuildBadge/> <CloudBadge/>
+- A warning is now shown when existing SSO settings are reused, informing users that the JSON file is pre-filled and allowing them to modify it if needed. <AccountBadge/> <CloudBadge/>
+- Users with the Build Environment Group Viewer role can no longer upload environment variables via JSON file. Additionally, users with the Publish Environment Group Viewer role can now download environment variables for the Publish module. <EnvironmentVariablesBadge/> <CloudBadge/>
+- A warning is now displayed in the UI when users enter a duplicated variable name. <EnvironmentVariablesBadge/> <CloudBadge/>
+- The Environment Variable Export action is now displayed in the Build Activity Log for better traceability. <EnvironmentVariablesBadge/> <CloudBadge/>
+- The [Appcircle macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 26.1.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_1-release-notes) (`17B100`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Sequoia `15.6.1`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_1-release-notes) (`26.1.1` `17B100`) installed along with Xcode 16.4-26.0.1 versions. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
 - Workflow editor save failures that occurred when the editor was left open for extended periods were fixed, and session state is now properly handled to prevent errors. <BuildBadge/> <CloudBadge/>
 - An issue was fixed with the build profile search filters, where accurate results were not being returned. <BuildBadge/> <CloudBadge/>
 - An issue was fixed in which completing a build for a branch located at the end of the branch list resulted in no branch being selected after the build was completed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where refreshing the branch list resulted in duplicated progress icons being displayed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where a selected provisioning profile could be chosen again when many profiles were available. The selected provision is now excluded from subsequent selection lists. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the build timer stopped when workflow steps did not produce logs for an extended period. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where removing a saved tag in Build Settings did not re-enable the Save button. <BuildBadge/> <CloudBadge/>
 - Overall typos, URL issues, and text errors were fixed in the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed in which the Apple device filter malfunctioned when only one device was registered. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where some events in the signing identity module did not generate notification messages. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where the copy button did not work for the Profile ID option in the publish settings. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where notification channels, such as email, displayed an incorrect version when a binary was uploaded while a Release Candidate binary was present in the Publish profile. <PublishBadge/> <CloudBadge/>
 - An issue was fixed in which the profile icon update screen for the Enterprise App Store profile did not display the active icon. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue was fixed in which background colors of the Enterprise Portal affected transparent logos. <EnterpriseStoreBadge/> <CloudBadge/>
 - Multiple bugs in the team management combobox component were fixed, including the size shrinking issue, improper filtering behavior. The combobox filtering option is now removed for sub-organizations. <AccountBadge/> <CloudBadge/>
