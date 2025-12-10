@@ -81,20 +81,6 @@ For production environments, **recommended** hardware requirements are
 
 The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
 
-:::caution Podman Compose Version Compatibility
-
-Podman Compose version `1.3.0` contains a known issue affecting relative path handling. To avoid this bug, use version `1.2.0` or earlier, or version `1.4.0` or later.
-
-:::
-
-:::info RHEL 8 Python Version Requirement
-
-Podman Compose version `1.4.0` and later require Python `3.7` or higher. 
-
-RHEL 8 systems may have an older Python version by default. Before installing or upgrading Podman Compose to `1.4.0` or newer, ensure Python `3.7+` is installed and set as the default `python3` interpreter.
-
-:::
-
 #### Enabling the Linger Option
 
 <LingerOption/>
