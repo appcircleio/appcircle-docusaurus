@@ -85,13 +85,13 @@ The Appcircle server supports Podman as the container runtime. The minimum requi
 
 :::caution Podman Compose Version Compatibility
 
-According to the Appcircle server version, you should use a compatible Podman Compose version using the information below.
+Based on the Appcircle server version, you should use a compatible version of Podman Compose as detailed below.
 
 #### `3.29.6` or later
 
-Podman Compose version must be `1.5.0` or later since it has a known issue affecting [`CMD` healthchecks](https://github.com/containers/podman-compose/releases/tag/v1.5.0) that breaks container runtime.
+Podman Compose version must be `1.5.0` or later since older versions have a known issue affecting [`CMD` health checks](https://github.com/containers/podman-compose/releases/tag/v1.5.0) that breaks container runtime.
 
-#### Older versions
+#### `3.29.4` or older
 
 Podman Compose version `1.3.0` contains a known issue affecting relative path handling. To avoid this bug, use version `1.2.0` or earlier, or version `1.4.0` or later.
 
