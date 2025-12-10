@@ -8,6 +8,7 @@ sidebar_label: Advanced Configuration
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 import ApplyHelmConfigurationChanges from '@site/docs/self-hosted-appcircle/install-server/helm-chart/configuration/\_apply-helm-configuration-changes.mdx';
+import CustomTdSsoCaution from '@site/docs/self-hosted-appcircle/install-server/\_custom-td-domain-sso-caution.mdx';
 
 For advanced configuration options, open the `values.yaml` file with your preferred text editor and modify the settings as needed.
 
@@ -37,6 +38,8 @@ distribution:
 :::caution
 The emails related to the Testing Distribution will now include the new domain in the links. Please note that old links associated with the previous domain will no longer work.
 :::
+
+<CustomTdSsoCaution />
 
 After updating the `values.yaml` file, create a TLS secret for the custom domain using the following command:
 

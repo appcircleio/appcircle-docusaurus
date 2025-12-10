@@ -451,27 +451,6 @@ We have `user-secret` filled in successfully and don't need `projects/spacetech/
 rm projects/spacetech/secret.yaml
 ```
 
-:::caution
-
-On your first export, which makes `global.yaml` template for you, also creates an empty template file for `user-secret` as seen below:
-
-```bash
-base64 -d projects/spacetech/user-secret
-```
-
-```yaml
-smtpServer:
-  password:
-keycloak:
-  initialPassword:
-```
-
-If you prefer defining above variables in `global.yaml`, then they should not be in `user-secret`.
-
-If you defined all of them in `global.yaml`,simply remove `user-secret` before next steps.
-
-:::
-
 Note that after changes made to yaml files, you must execute the script again for the changes to take effect as shown below.
 
 ```bash
@@ -489,6 +468,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - my
 - resource
 - store
+- *.store
 - monitor
 - redis
 - (optional) Enterprise App Store's Custom Domain
@@ -501,7 +481,19 @@ If your configuration (`global.yaml`) has setting `storeWeb.customDomain.enabled
 
 Below is an example DNS configuration that is compatible with our sample scenario.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3839-cloudflare-ss.png' />
+1. **Create an A Record for the `my` subdomain:**
+   - `my.appcircle.spacetech.com` → **198.244.212.84**
+
+2. **Create CNAME Records for the other subdomains:**
+   - `api.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `auth.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `dist.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `hook.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `monitor.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `redis.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `resource.appcircle.spacetech.com` → **my.appcircle.spacetech.com**
+   - `*.store.appcircle.spacetech.com` → **my.appcircle.spacetech.com** 
+      You can skip this subdomain and use a [Custom Enterprise App Store Domain](https://docs.appcircle.io/enterprise-app-store/portal-settings#store-domain).
 
 If you have a dedicated DNS, adding subdomains will be enough to run self-hosted Appcircle server in an easy and quick way.
 
@@ -547,6 +539,10 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  store.spacetech.com
 ```
 
+:::note
+`*.store` subdomain is not required for the server side. That is why it is not included in the list above.
+:::
+
 For clients that will connect to self-hosted Appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted Appcircle server that other hosts in the network can reach to server using that address.
 
 You can get external IP of self-hosted Appcircle server with below command.
@@ -567,10 +563,15 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  my.appcircle.spacetech.com
 35.241.181.2  resource.appcircle.spacetech.com
 35.241.181.2  store.appcircle.spacetech.com
+35.241.181.2  <your-store-prefix>.store.appcircle.spacetech.com
 35.241.181.2  monitor.appcircle.spacetech.com
 35.241.181.2  redis.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
 ```
+
+:::caution
+Wildcard subdomains are not supported in the `/etc/hosts` file. Therefore, the `*.store.appcircle.spacetech.com` domain cannot be defined in the hosts file. As a temporary solution for testing, you can get your store prefix from the Appcircle dashboard at `Enterprise App Store > Settings > Store Domain`. Then, replace `<your-store-prefix>` with your store prefix in the example above. The result would look like this: `biu3oeaktp7l.store.appcircle.spacetech.com`. This is a temporary solution for testing until you set up proper DNS for your self-hosted Appcircle server.
+:::
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.
 
