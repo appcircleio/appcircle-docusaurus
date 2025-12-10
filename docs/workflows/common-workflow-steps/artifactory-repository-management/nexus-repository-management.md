@@ -22,8 +22,6 @@ Sonatype Sonatype Nexus only supports **CocoaPods** for iOS. There is no support
 
 For more information about supported frameworks, please visit [**Sonatype Sonatype Nexus Repository documentation**](https://help.sonatype.com/en/formats.html).
 
-Please visit to [**Local Repository Integration**](/workflows/common-workflow-steps/artifactory-repository-management/local-repository-integration) documentation to see alternative solution for **SPM (Swfit Package Manager)**.
-
 :::
 
 :::tip Artifactory Management for SPM
