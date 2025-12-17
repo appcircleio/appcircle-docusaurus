@@ -16,6 +16,36 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.7 - 2025-12-17 BitBucket API Token Support, Publish Improvements, Bug Fixes and more
+
+### :muscle: Improvements
+
+- A new expiry date can now be selected when rotating active or expired API keys. <AccountBadge/> <CloudBadge/>
+- The Connection Pooling option will now be available in the LDAP creation settings instead of being limited to the edit screen. <AccountBadge/> <CloudBadge/>
+- Uploaded binaries in Publish profiles will now appear in the Publish report with a Not Started status, which will be updated when an active publish flow begins. <PublishBadge/> <CloudBadge/>
+- Active and registered provisioning profiles uploaded to Appcircle can now be selected instead of being automatically retrieved from the store for Auto Re-sign configurations of Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- The Duration (minutes) column in reports will now be displayed as Xm Xs instead of Xm.x. For example 10m 30s instead of 10.5. <ReportsBadge/> <CloudBadge/>
+- Provisioning profile validation is now performed using the App Store UUID instead of the profile name, and profile replacement is intentionally not supported to prevent potential data loss. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where adding a branch to a remote repository caused UI issues with configuration and trigger counts during branch addition to an Appcircle build profile. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where Git tags were not pushed alongside commits, ensuring tags are now included when pushing multiple local operations together. <BuildBadge/> <CloudBadge/> 
+- An issue was fixed where tag-based build triggers did not run when tags were created on older existing branches. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where deleting an SSO configuration for Testing Distribution caused UI inconsistencies that left it appearing active on the screen. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where certain version numbers were sorted incorrectly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where binaries with foreign character names were displayed incorrectly in the Publish module. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where the release note update script did not update the release notes on certain cases as part of the publish flow. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where some build profiles were missing from the profile filter list on the Build activity log screen for certain date ranges. <ReportsBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- Support for [Bitbucket API tokens](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#api-token-permissions-for-bitbucket-cloud-integration) is being introduced to replace app passwords, with connection updates provided ahead of the June 9, 2026 deprecation deadline for existing app paswords. <BuildBadge/> <CloudBadge/>
+- Partial draft saving for Google Play metadata information has been removed, and all required fields must now be completed before submission. <PublishBadge/> <CloudBadge/>
+- Email Approval Publish step now requires the logged-in account email to match the approval email, preventing copied approval links from being used by different users. <PublishBadge/> <CloudBadge/>
+
 ## 3.29.6 - 2025-11-14 Testing Distribution Improvements, Bug Fixes and more
 
 ### :muscle: Improvements
