@@ -88,6 +88,7 @@ Before publishing your binary to the app stores, you can add Release Notes in th
 Appcircle supports automatic parsing and submission of localized release notes to Google Play Console. When you provide release notes in multiple languages using the supported format, the system automatically separates and submits them as individual localized entries for each language.
 
 **Supported Format:**
+
 Use Google Play language codes with square brackets to define language-specific content:
 
 ```html
@@ -114,7 +115,7 @@ Use Google Play language codes with square brackets to define language-specific 
 
 **How to Use:**
 1. Format your release notes using the language code pattern shown above
-2. Provide the formatted content via Build module's or enter manually in the Binary Information
+2. Provide the formatted content via Build module or enter manually in the Binary Information
 3. The system will automatically parse and submit each language variant to Google Play Console
 
 **Supported Language Codes:** Use standard Google Play locale codes (e.g., `en-US`, `tr-TR`, `de-DE`, `fr-FR`, `ja-JP`, `zh-CN`). For a complete list of supported locale codes, refer to [Google Play Console documentation](https://support.google.com/googleplay/android-developer/table/4419860).
@@ -126,9 +127,11 @@ Release Notes are an essential tool for communication with your users. They can 
 :::caution Release Notes Character Limit 
 
 **For TestFlight**
+
 When submitting updates through TestFlight, the "What to Test" section has a 4,000-character limit. If your release notes exceed this limit, Apple will automatically trim the message to fit. Please ensure your notes are within this limit to avoid any important information being cut off.
 
 **For Google Play Console**
+
 When submitting updates to Google Play Console, each language has a [500-character limit](https://support.google.com/googleplay/android-developer/answer/9859348?hl=en) for release notes. Google Play supports up to [48 languages](https://play.google.com/console/about/translationservices/), allowing a total of 24,000 characters across all localized entries (500 characters × 48 languages).
 
 :::
