@@ -23,6 +23,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - A new expiry date can now be selected when rotating active or expired API keys. <AccountBadge/> <CloudBadge/>
 - The Connection Pooling option will now be available in the LDAP creation settings instead of being limited to the edit screen. <AccountBadge/> <CloudBadge/>
 - Uploaded binaries in Publish profiles will now appear in the Publish report with a Not Started status, which will be updated when an active publish flow begins. <PublishBadge/> <CloudBadge/>
+- The Appcircle Publish module now automatically parses multi-language release notes and submits them to Google Play Console as separate localized entries for each [supported language](https://support.google.com/googleplay/android-developer/table/4419860?hl=en). Language formatted release notes can be provided via Build module or manual entry in [Binary Information](/publish-module/publish-information/binary-information). For more information please check [Best Practices for Release Notes](/publish-module/publish-information/binary-information#best-practices-for-release-notes) documentation. <PublishBadge/> <CloudBadge/>
 - Active and registered provisioning profiles uploaded to Appcircle can now be selected instead of being automatically retrieved from the store for Auto Re-sign configurations of Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
 - The Duration (minutes) column in reports will now be displayed as Xm Xs instead of Xm.x. For example 10m 30s instead of 10.5. <ReportsBadge/> <CloudBadge/>
 - Provisioning profile validation is now performed using the App Store UUID instead of the profile name, and profile replacement is intentionally not supported to prevent potential data loss. <SigningIdentitiesBadge/> <CloudBadge/>
@@ -37,14 +38,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where binaries with foreign character names were displayed incorrectly in the Publish module. <PublishBadge/> <CloudBadge/>
-- An issue was fixed where the release note update script did not update the release notes on certain cases as part of the publish flow. <PublishBadge/> <CloudBadge/>
 - An issue was fixed where some build profiles were missing from the profile filter list on the Build activity log screen for certain date ranges. <ReportsBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
-- Support for [Bitbucket API tokens](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#api-token-permissions-for-bitbucket-cloud-integration) is being introduced to replace app passwords, with connection updates provided ahead of the June 9, 2026 deprecation deadline for existing app paswords. <BuildBadge/> <CloudBadge/>
+- Support for [Bitbucket API tokens](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#api-token-permissions-for-bitbucket-cloud-integration) is being introduced to replace app passwords, with connection updates provided ahead of the June 9, 2026 deprecation deadline for existing app passwords. <BuildBadge/> <CloudBadge/>
 - Partial draft saving for Google Play metadata information has been removed, and all required fields must now be completed before submission. <PublishBadge/> <CloudBadge/>
 - Email Approval Publish step now requires the logged-in account email to match the approval email, preventing copied approval links from being used by different users. <PublishBadge/> <CloudBadge/>
+- A [pool selection](/publish-module/publish-information/auto-resign-configuration#select-a-pool) option has been added to auto re-sign configurations for Testing Distribution and Publish modules. This setting must now be configured to use the auto re-sign feature. <DistributionBadge/> <PublishBadge/> <CloudBadge/>
 
 ## 3.29.6 - 2025-11-14 Testing Distribution Improvements, Bug Fixes and more
 
