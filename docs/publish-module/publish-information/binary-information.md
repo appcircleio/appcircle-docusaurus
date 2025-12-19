@@ -92,25 +92,26 @@ Appcircle supports automatic parsing and submission of localized release notes t
 Use Google Play language codes with square brackets to define language-specific content:
 
 ```html
-[en-US]
+<en-US>
 - Added dark mode support
 - Fixed login issues
 - Performance improvements
-
-[tr-TR]
+</en-US>
+<tr-TR>
 - Karanlık mod desteği eklendi
 - Giriş sorunları düzeltildi
 - Performans iyileştirmeleri
-
-[de-DE]
+</tr-TR>
+<de-DE>
 - Dark-Mode-Unterstützung hinzugefügt
 - Anmeldeprobleme behoben
 - Leistungsverbesserungen
-
-[es-ES]
+</de-DE>
+<es-ES>
 - Se agregó soporte para modo oscuro
 - Se corrigieron problemas de inicio de sesión
 - Mejoras de rendimiento
+</es-ES>
 ```
 
 **How to Use:**
