@@ -112,6 +112,7 @@ Use Google Play language codes with square brackets to define language-specific 
 - Se corrigieron problemas de inicio de sesión
 - Mejoras de rendimiento
 </es-ES>
+
 ```
 
 **How to Use:**
