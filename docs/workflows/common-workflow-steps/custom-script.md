@@ -634,3 +634,58 @@ fatal: could not read Username for Git provider
 ```
 
 :::
+
+### How can I start another workflow within on-going build process?
+
+In Appcircle, you can start a new build from a Custom Script step within an ongoing workflow. This is especially useful when you want to chain workflows or initiate secondary build processes programmatically.
+
+To do this, you need the [Appcircle CLI](/appcircle-api-and-cli/cli-authentication), The following script sets up the required parameters and starts the build.
+
+<PatDanger />
+
+```bash
+#Bash script
+
+sudo npm install -g @appcircle/cli
+
+appcircle login --pat $ORGANIZATION_PERSONAL_API_TOKEN
+
+appcircle build start \
+  --profileId <uuid> \
+  --branchId <uuid> \
+  --commitId <uuid> \
+  --commitHash <string> \
+  --configurationId <uuid> \
+  --workflowId <uuid> \
+  --branch <string> \
+  --workflow <string>
+```
+
+To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+
+To obtain the build profile ID and the branch ID, follow the steps below:
+1. Log in to your Appcircle organization.
+2. Go to the build module.
+3. Select the desired build profile and branch
+5. Copy them from the URL. `https://my.appcircle.io/build/detail/123456f-7d89-4545-5454-123456789abc/f1dc50d6-89aa-4f86-9e91-ec2859d747a3`
+ - Build Profile ID: `123456f-7d89-4545-5454-123456789abc`
+ - Branch ID: `f1dc50d6-89aa-4f86-9e91-ec2859d747a3`
+
+To obtain the configuration ID, follow the steps below: 
+1. Go to the build profile and select the desired branch
+2. Open a previously executed build log with desired configuration.
+3. Look for a line like: Configuration Id: `<uuid>`
+
+You can obtain the workflow ID in two ways, But keep in mind that the danger section down below.
+- Print it with: `echo $AC_WORKFLOW_ID` [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/)
+- Or use `--workflow "WorkflowName"` as an alternative.
+
+If a specific commit is required, you can pass the --commitHash parameter using the commit hash from your Git provider.
+
+:::danger
+
+If this custom script step starts the same workflow it’s part of, it may cause an endless loop by continuously starting itself.
+To avoid this, make sure to start a different workflow in this step.
+If an endless loop has already started, go to the manage workflow, find this custom script step, and disable its execution.
+
+:::
