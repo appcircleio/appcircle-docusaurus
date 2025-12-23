@@ -21,6 +21,13 @@ To make sure you always get the latest updates, it is recommended to use the lat
 
 :::
 
+:::warning Deprecation of Branch-Based Caching
+
+Previously, the Cache Pull step used branch-based caching by default. This behavior has been deprecated, and branches now share the same cache by default.
+If you prefer to continue using branch-based caching, you can manually add branch information to your cache label. Check out the details on [how to enable branch-based caching](/workflows/common-workflow-steps/build-cache/cache-push#how-to-configure-branch-based-caching).
+
+:::
+
 With cache, you can persist any resource that is ignored by Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build, or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from a remote location. It may help you in some cases, but **it's not a guaranteed way to speed up builds**. You should try and see the actual results of your project.
 
 The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labeling, you can have different chunks of caches, and you can share some caches between branches or build profiles. For further information, please check out the following documentation:
@@ -116,3 +123,7 @@ To view the generated artifacts on the [**Download Artifacts**](/workflows/commo
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-cache-push-component
+
+## FAQ
+
+### How to configure branch-based caching?

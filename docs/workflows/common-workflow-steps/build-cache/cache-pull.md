@@ -17,16 +17,24 @@ import CacheTokenIdCaution from '@site/docs/workflows/common-workflow-steps/buil
 
 :::
 
+:::warning Deprecation of Branch-Based Caching
+
+Previously, the Cache Pull step used branch-based caching by default. This behavior has been deprecated, and branches now share the same cache by default.
+If you prefer to continue using branch-based caching, you can manually add branch information to your cache label. Check out the details on [how to enable branch-based caching](/workflows/common-workflow-steps/build-cache/cache-push#how-to-configure-branch-based-caching).
+
+:::
+
 :::info
 
-If you need to use the cached folder in a different branch or a separate project, you have the capability to modify the values of `$AC_GIT_BRANCH` or `$AC_BUILD_PROFILE_ID`. For further information, please check out the following documentation:
-- [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
+If you need to use the cached folder in a separate project, you have the capability to modify the value of `$AC_BUILD_PROFILE_ID`. For further information, please check out the following documentation:
 - [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
 
-These variables can be adjusted within the [cache label](#input-variables) field, as indicated by the red highlight in the accompanying image. Simply replace them with the branch or project ID that corresponds to your intended usage.
+This variables can be adjusted within the [cache label](#input-variables) field, as indicated by the red highlight in the accompanying image. Simply replace them with the project ID that corresponds to your intended usage.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/cache-01.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-cache-pull-1.png' />
 
+If you are using [branch-based caching](/workflows/common-workflow-steps/build-cache/cache-push#how-to-configure-branch-based-caching), you might need to use share cached build files between workflows. For this, you can modify the value of `$AC_GIT_BRANCH`. For further information, please check out the following documentation:
+- [How to Share Files Between Workflows](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
 :::
 
 ### Prerequisites
@@ -39,7 +47,7 @@ This component does not require any prerequisite steps for operation. The only t
 
 For example, in the screenshot, to use cached files for Cocoapods, the **Cache Pull** step should be used before the [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullOrder.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-cache-pull-2.png' />
 
 :::
 
@@ -53,7 +61,7 @@ If there are no previously cached files and you attempt to use this step, the **
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pullInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-cache-pull-3.png' />
 
 | Variable Name              | Description                                    | Status |
 |----------------------------|------------------------------------------------|--------|
