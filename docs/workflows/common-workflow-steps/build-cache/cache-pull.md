@@ -6,6 +6,7 @@ tags: [cache pull, efficiency, dependencies, cache structure]
 
 import Screenshot from '@site/src/components/Screenshot';
 import CacheTokenIdCaution from '@site/docs/workflows/common-workflow-steps/build-cache/\_cache-token-id-expiration-time-caution.mdx';
+import CacheDeprecationBranch from '@site/docs/workflows/common-workflow-steps/build-cache/\_cache-deprecation-branch-based.mdx
 
 # Cache Pull
 
@@ -17,12 +18,7 @@ import CacheTokenIdCaution from '@site/docs/workflows/common-workflow-steps/buil
 
 :::
 
-:::warning Deprecation of Branch-Based Caching
-
-Previously, the Cache Pull step used branch-based caching by default. This behavior has been deprecated, and branches now share the same cache by default.
-If you prefer to continue using branch-based caching, you can manually add branch information to your cache label. Check out the details on [how to enable branch-based caching](/workflows/common-workflow-steps/build-cache/cache-push#how-to-configure-branch-based-caching).
-
-:::
+<CacheDeprecationBranch />
 
 :::info
 
@@ -33,8 +29,8 @@ This variables can be adjusted within the [cache label](#input-variables) field,
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-197-cache-pull-1.png' />
 
-If you are using [branch-based caching](/workflows/common-workflow-steps/build-cache/cache-push#how-to-configure-branch-based-caching), you might need to use share cached build files between workflows. For this, you can modify the value of `$AC_GIT_BRANCH`. For further information, please check out the following documentation:
-- [How to Share Files Between Workflows](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
+If you need to use branch-based caching, you can modify the [cache label](#input-variables) input value. For more information, please check the following documentation:
+- [How to Configure Branch-Base Caching](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching)
 :::
 
 ### Prerequisites
