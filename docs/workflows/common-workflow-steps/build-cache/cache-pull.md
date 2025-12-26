@@ -6,7 +6,7 @@ tags: [cache pull, efficiency, dependencies, cache structure]
 
 import Screenshot from '@site/src/components/Screenshot';
 import CacheTokenIdCaution from '@site/docs/workflows/common-workflow-steps/build-cache/\_cache-token-id-expiration-time-caution.mdx';
-import CacheDeprecationBranch from '@site/docs/workflows/common-workflow-steps/build-cache/\_cache-deprecation-branch-based.mdx
+import CacheDeprecationBranch from '@site/docs/workflows/common-workflow-steps/build-cache/\_cache-deprecation-branch-based.mdx';
 
 # Cache Pull
 
