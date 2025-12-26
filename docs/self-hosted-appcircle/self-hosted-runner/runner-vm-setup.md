@@ -786,7 +786,7 @@ MD5 (xcodes_251113.tar.gz) = a141a968a72c3f5ba40761139e61f268
   <TabItem value="251224" label="251224" default>
 
 ```bash
-MD5 (xcodes_251224.tar.gz) = @TODO
+MD5 (xcodes_251224.tar.gz) = 40e975b030f4b04b81d04c71e2dd1e17
 ```
 
   </TabItem>
