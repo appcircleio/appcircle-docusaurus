@@ -362,7 +362,7 @@ MD5 (macOS_251113.tar.gz) = 433b0c2fc81fe7f97af33168711fc066
   <TabItem value="251224" label="251224" default>
 
 ```bash
-MD5 (macOS_251224.tar.gz) = @TODO
+MD5 (macOS_251224.tar.gz) = 4384fe1988db6a54f6e399e91b9c7a2c
 ```
 
   </TabItem>
