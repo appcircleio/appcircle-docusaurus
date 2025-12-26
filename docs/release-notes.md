@@ -16,26 +16,100 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.7 - 2025-12-17 BitBucket API Token Support, Publish Improvements, Bug Fixes and more
+
+### :muscle: Improvements
+
+- A new expiry date can now be selected when rotating active or expired API keys. <AccountBadge/> <CloudBadge/>
+- The Connection Pooling option will now be available in the LDAP creation settings instead of being limited to the edit screen. <AccountBadge/> <CloudBadge/>
+- Uploaded binaries in Publish profiles will now appear in the Publish report with a Not Started status, which will be updated when an active publish flow begins. <PublishBadge/> <CloudBadge/>
+- The Appcircle Publish module now automatically parses multi-language release notes and submits them to Google Play Console as separate localized entries for each [supported language](https://support.google.com/googleplay/android-developer/table/4419860?hl=en). Language formatted release notes can be provided via Build module or manual entry in [Binary Information](/publish-module/publish-information/binary-information). For more information please check [Best Practices for Release Notes](/publish-module/publish-information/binary-information#best-practices-for-release-notes) documentation. <PublishBadge/> <CloudBadge/>
+- Active and registered provisioning profiles uploaded to Appcircle can now be selected instead of being automatically retrieved from the store for Auto Re-sign configurations of Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
+- The Duration (minutes) column in reports will now be displayed as Xm Xs instead of Xm.x. For example 10m 30s instead of 10.5. <ReportsBadge/> <CloudBadge/>
+- Provisioning profile validation is now performed using the App Store UUID instead of the profile name, and profile replacement is intentionally not supported to prevent potential data loss. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue was fixed where adding a branch to a remote repository caused UI issues with configuration and trigger counts during branch addition to an Appcircle build profile. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where Git tags were not pushed alongside commits, ensuring tags are now included when pushing multiple local operations together. <BuildBadge/> <CloudBadge/> 
+- An issue was fixed where tag-based build triggers did not run when tags were created on older existing branches. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where deleting an SSO configuration for Testing Distribution caused UI inconsistencies that left it appearing active on the screen. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where certain version numbers were sorted incorrectly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where binaries with foreign character names were displayed incorrectly in the Publish module. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where some build profiles were missing from the profile filter list on the Build activity log screen for certain date ranges. <ReportsBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- Support for [Bitbucket API tokens](/build/manage-the-connections/connection-guides/connecting-to-bitbucket#api-token-permissions-for-bitbucket-cloud-integration) is being introduced to replace app passwords, with connection updates provided ahead of the June 9, 2026 deprecation deadline for existing app passwords. <BuildBadge/> <CloudBadge/>
+- Partial draft saving for Google Play metadata information has been removed, and all required fields must now be completed before submission. <PublishBadge/> <CloudBadge/>
+- Email Approval Publish step now requires the logged-in account email to match the approval email, preventing copied approval links from being used by different users. <PublishBadge/> <CloudBadge/>
+- A [pool selection](/publish-module/publish-information/auto-resign-configuration#select-a-pool) option has been added to auto re-sign configurations for Testing Distribution and Publish modules. This setting must now be configured to use the auto re-sign feature. <DistributionBadge/> <PublishBadge/> <CloudBadge/>
+
+## 3.29.6 - 2025-11-14 Testing Distribution Improvements, Bug Fixes and more
+
+### :muscle: Improvements
+
+- A confirmation prompt was added for deleting testing group users. <DistributionBadge/> <CloudBadge/>
+- The organization filter option in testing distribution reports is now displayed in alphabetical order. <ReportsBadge/> <CloudBadge/>
+- The automatically generated TestFlight external public link is now displayed directly in the Appcircle UI whenever a new external test is created. <PublishBadge/> <CloudBadge/>
+- An informative tooltip is now displayed when users hover over the Start Build button without selecting a branch. <BuildBadge/> <CloudBadge/>
+- A warning is now shown when existing SSO settings are reused, informing users that the JSON file is pre-filled and allowing them to modify it if needed. <AccountBadge/> <CloudBadge/>
+- Users with the Build Environment Group Viewer role can no longer upload environment variables via JSON file. Additionally, users with the Publish Environment Group Viewer role can now download environment variables for the Publish module. <EnvironmentVariablesBadge/> <CloudBadge/>
+- A warning is now displayed in the UI when users enter a duplicated variable name. <EnvironmentVariablesBadge/> <CloudBadge/>
+- The Environment Variable Export action is now displayed in the Build Activity Log for better traceability. <EnvironmentVariablesBadge/> <CloudBadge/>
+- The [Appcircle macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 26.1.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_1-release-notes) (`17B100`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Sequoia `15.6.1`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_1-release-notes) (`26.1.1` `17B100`) installed along with Xcode 16.4-26.0.1 versions. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
+
+### 🐞 Fixes
+
+- Workflow editor save failures that occurred when the editor was left open for extended periods were fixed, and session state is now properly handled to prevent errors. <BuildBadge/> <CloudBadge/>
+- An issue was fixed with the build profile search filters, where accurate results were not being returned. <BuildBadge/> <CloudBadge/>
+- An issue was fixed in which completing a build for a branch located at the end of the branch list resulted in no branch being selected after the build was completed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where refreshing the branch list resulted in duplicated progress icons being displayed. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where a selected provisioning profile could be chosen again when many profiles were available. The selected provision is now excluded from subsequent selection lists. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the build timer stopped when workflow steps did not produce logs for an extended period. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where removing a saved tag in Build Settings did not re-enable the Save button. <BuildBadge/> <CloudBadge/>
+- Overall typos, URL issues, and text errors were fixed in the signing identity module. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed in which the Apple device filter malfunctioned when only one device was registered. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where some events in the signing identity module did not generate notification messages. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue was fixed where the copy button did not work for the Profile ID option in the publish settings. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where notification channels, such as email, displayed an incorrect version when a binary was uploaded while a Release Candidate binary was present in the Publish profile. <PublishBadge/> <CloudBadge/>
+- An issue was fixed in which the profile icon update screen for the Enterprise App Store profile did not display the active icon. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue was fixed in which background colors of the Enterprise Portal affected transparent logos. <EnterpriseStoreBadge/> <CloudBadge/>
+- Multiple bugs in the team management combobox component were fixed, including the size shrinking issue, improper filtering behavior. The combobox filtering option is now removed for sub-organizations. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where users with the Viewer Organization Management role received incorrect access denied errors when viewing the team member list. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where testing group CSV imports incorrectly displayed duplicated values as imported. <DistributionBadge/> <CloudBadge/>
+- Minor fixes and improves were applied for profile search was improved in the testing distribution module. <DistributionBadge/> <CloudBadge/>
+- An issue was fixed where source profiles were not displayed in the app version reports. <ReportsBadge/> <CloudBadge/>
+- An issue was fixed where the total message count was incorrect in the app sharing reports. <ReportsBadge/> <CloudBadge/>
+
 ## 3.29.5 - 2025-10-27 New Retention Period Settings, Activity Log Improvements, Bug Fixes and more
 
 ### 🆕 New Features
 
-- The new and upgraded artifact retention period settings have been introduced, allowing specific retention rules to be set for each module instead of being controlled from a single place. For more information, please visit the [Retention Period](/account/my-organization/artifacts/retention-period) documentation. <AccountBadge/> <CloudBadge/>
 - The new [Artifact Report](/account/my-organization/artifacts/retention-period#artifacts-reports) has been introduced, allowing users to monitor deletion operations, including manual artifact deletions and automatic system retention deletions, with filtering capabilities. <ReportsBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - The [Appcircle macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 26](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes) (`26.0.1` `17A400`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Sequoia 15.6.1) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_0_1-release-notes) (`26.0.1` `17A400`) installed along with Xcode 16.x versions and up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 - A warning is now displayed in the testing group creation input area when a duplicate email address is entered. <DistributionBadge/> <CloudBadge/>
 - CodePush activities are now displayed in the Build Activity Log. <ReportsBadge/> <CloudBadge/>
 - Overall UI and stability improvements have been made to the Account page. <AccountBadge/> <CloudBadge/>
 - Re-sign notifications are now displayed under the corresponding module’s notifications. <AccountBadge/> <CloudBadge/>
 - The Publish module has been renamed to Publish to Stores. <PublishBadge/> <CloudBadge/>
+- The workflow editor UX was improved: Delete icons now provide proper cursor feedback and hover states, making it clearer which elements are draggable versus deletable. <PublishBadge/> <CloudBadge/>
+- The URL structure now includes the organization ID. Users who have access to multiple organizations can directly switch to another organization and access shared resources (profiles, modules, etc.) via shared links. If they don’t have permission for the target organization, they’ll receive a permission error. When the organization ID is not present in the URL, users will automatically access the corresponding resource within their own organization. <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue causing display problems with live publish flow logs in some Edge browsers was fixed. <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where the start date was not displayed correctly at the beginning of the re-sign process but appeared properly after completion. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where the upload screen remained stuck in the uploading state when a user attempted to upload an existing binary on the Publish profile. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where clicking the status of a published binary displayed broken text in certain scenarios. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where marking a binary as RC through the publish flow screen did not display the app selection pop-up for Microsoft Intune–connected profiles. <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where publish results for some app versions were incorrectly reflected in the Publish Report. <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where starting a publish flow after marking another app version as a Release Candidate did not reflect updated changes. <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where build profile configurations required a branch to be selected for access. <BuildBadge/> <CloudBadge/>
@@ -45,6 +119,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where users with insufficient OAuth Azure permissions were blocked from changing or disconnecting the repository connection in the UI. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where the build status for some profile branches was getting stuck in the running state. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where CodePush app name validation allowed names shorter than three characters, as well as special characters and spaces. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the Save button in the Versioning tab of Build Profile configurations appeared active without any changes being made on Edge browsers. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where receiving an event message caused the branch list to refresh on Build profiles. <BuildBadge/> <CloudBadge/>
+- An issue was fixed where the Auto Code Signing tab’s certificate list did not display expired tags in build configurations. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where some users experienced freezing when deleting an .APK binary from their testing distribution profile. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where some users were unable to switch Android app versions within the Testing Distribution profile. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where some app versions were displayed as unsigned in the Testing Distribution profile despite being signed. <DistributionBadge/> <CloudBadge/>
@@ -53,6 +130,16 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where some users were unintentionally navigated back to a previously used section after switching browser tabs. <AccountBadge/> <CloudBadge/>
 - An issue has been fixed where some users received notifications from other sub-organizations. <AccountBadge/> <CloudBadge/>
 - An issue has been fixed where users experienced incorrect navigation when switching between Appcircle authentication types. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the Shared Credential setting displayed a sub-organization list for root organizations that did not have any sub-organizations. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where the Microsoft Intune credential settings did not display a help documentation link button. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where navigating to the dashboard from another module caused an incorrect title to appear on the browser tab. <AccountBadge/> <CloudBadge/>
+- An issue was fixed where selecting the in-between time filter option caused UI issues when the user attempted to select another type of filter on report pages. <ReportsBadge/> <CloudBadge/>
+- An issue was fixed where successful Microsoft Intune flow steps displayed incorrect API errors after the publish flow was completed. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue was fixed where clicking the full-size button on the custom script screen did not fully expand the view. <BuildIntegrationsBadge/> <CloudBadge/>
+- An issue was fixed where landscape-oriented images could not be added when uploading screenshots in the iOS Metadata screen. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where users could not view both organization and sub-organization data by default in the Publish Report without applying filters. <ReportsBadge/> <CloudBadge/>
+- An issue was fixed where the “Package Identifier Validation for Android” feature was incorrectly applied to iOS apps as well. The validation is now properly isolated and only affects Android apps. <PublishBadge/> <CloudBadge/>
+- An issue was fixed where special characters in app names were replaced with URL-encoded values after refreshing the page in the Publish flow. <PublishBadge/> <CloudBadge/>
 
 ## 3.29.4 - 2025-09-26 Build Activity Log, Report Improvements, Bug Fixes and more 
 
@@ -1634,7 +1721,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🐞 Fixed
 
-- The confusion regarding the use of Turkish characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/configurations) has been resolved. Turkish characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
+- The confusion regarding the use of foreign characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/configurations) has been resolved. foreign characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
 - The error in [permission management](/account/my-organization) in the environment variables section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem with the build transaction texts above the branch name in the "Branch" section being mixed up has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The error in permission management in the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile) section has been fixed. <CloudBadge/> <SelfHostedBadge/>

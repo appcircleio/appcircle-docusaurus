@@ -51,13 +51,13 @@ The functionality and configuration steps of **Appcircle’s Auto Re-sign** feat
 
 From the **Information** tab under Auto Re-sign configuration, you can manage the application's bundle identifier and display name values.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM125-infoNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-6.png' />
 
 #### Bundle Identifier
 
 Appcircle Publish profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile. 
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM125-informationBundle.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-7.png' />
 
 > ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-module/binary-management).
 
@@ -68,11 +68,28 @@ If the binary to be re-signed has multiple targets, each target bundle identifie
 
 :::
 
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Auto Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-8.png' />
+
+:::caution Pool Selection Is Mandatory
+Auto Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Auto Re-sign process will not start.
+- Uploaded binaries will remain unsigned.
+- No re-signed output will be generated for Publish profile.
+
+Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
+:::
+
 #### Display Name
 
 With the **Display Name** parameter, you can change the visible name of the binary that will be re-signed. The re-signing process starts with the specified display name, and once completed, the `CFBundleDisplayName` value inside the binary is updated accordingly.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM125-displayNameNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-9new.png' />
 
 ### Versioning
 
@@ -196,7 +213,7 @@ The functionality and configuration steps of **Appcircle’s Auto Re-sign** feat
 
 From the Information tab under Auto Re-sign configuration, you can manage the application's package identifier value.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM125-androidInfo.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-10.png' />
 
 #### Package Identifier
 
@@ -204,7 +221,24 @@ Appcircle Publish profiles can accept binaries with different package name. The 
 
 > ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-module/binary-management).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM125-packageIdNew.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-11.png' />
+
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Auto Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-12.png' />
+
+:::caution Pool Selection Is Mandatory
+Auto Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Auto Re-sign process will not start.
+- Uploaded binaries will remain unsigned.
+- No re-signed output will be generated for Publish profile.
+
+Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
+:::
 
 ### Versioning
 
