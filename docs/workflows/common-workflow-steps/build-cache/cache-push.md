@@ -119,7 +119,3 @@ To view the generated artifacts on the [**Download Artifacts**](/workflows/commo
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-cache-push-component
-
-## FAQ
-
-### How to configure branch-based caching?
