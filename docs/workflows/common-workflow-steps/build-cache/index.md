@@ -18,6 +18,6 @@ Discover the essentials of cache retrieval in our cache-pull guide. Speed up you
 
 Seamlessly share files between build profiles with our expert tips. This guide ensures consistent builds across profiles for better integration.
 
-# [How to Share Files Between Pipelines](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-pipelines)
+# [How to Configure Branch-Base Caching](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching)
 
-Facilitate file sharing between pipelines using our comprehensive strategies. Boost collaboration and pipeline efficiency with this crucial guide.
+Explains how to configure the Appcircle Cache structure so that each branch uses its own isolated cache.
