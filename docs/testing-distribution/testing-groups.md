@@ -1,7 +1,7 @@
 ---
 title: Testing Groups
 description: Manage your testers with Testing Groups. Distribute different app versions based on OS, features, and devices.
-tags: [testing, group, distribution, testers, ldap]
+tags: [testing, group, distribution, testers, ldap, faq]
 sidebar_position: 2
 ---
 

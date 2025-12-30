@@ -84,9 +84,9 @@ From now on, you will follow same installation steps seen below as other environ
 
 #### macOS VM
 
-Appcircle provides a ready-to-use macOS VM image, especially for enterprise installations. It can be run on macOS Ventura, Sonoma, or Sequoia `arm64` host.
+Appcircle provides a ready-to-use macOS VM image, especially for enterprise installations. It can be run on macOS Ventura, Sonoma, Sequoia, or Tahoe `arm64` hosts according to the guest macOS version.
 
-See details in [here](./runner-vm-setup).
+See details in [here](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup).
 
 :::
 
@@ -102,13 +102,13 @@ Download the latest self-hosted runner package.
   <TabItem value="osx-arm64" label="macOS arm64" default>
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.8.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-arm64-1.8.4.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-arm64-1.8.2.zip
+unzip -o -u appcircle-runner-osx-arm64-1.8.4.zip
 ```
 
   </TabItem>
@@ -116,13 +116,13 @@ unzip -o -u appcircle-runner-osx-arm64-1.8.2.zip
   <TabItem value="osx-x64" label="macOS x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.8.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-osx-x64-1.8.4.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-osx-x64-1.8.2.zip
+unzip -o -u appcircle-runner-osx-x64-1.8.4.zip
 ```
 
   </TabItem>
@@ -130,13 +130,13 @@ unzip -o -u appcircle-runner-osx-x64-1.8.2.zip
   <TabItem value="linux-x64" label="Linux x64">
 
 ```bash
-curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.8.2.zip
+curl -O -L https://cdn.appcircle.io/self-hosted/runner/appcircle-runner-linux-x64-1.8.4.zip
 ```
 
 Extract self-hosted runner package.
 
 ```bash
-unzip -o -u appcircle-runner-linux-x64-1.8.2.zip
+unzip -o -u appcircle-runner-linux-x64-1.8.4.zip
 ```
 
   </TabItem>
