@@ -31,12 +31,13 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS runners have Xcode versions 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
+Our macOS runners have Xcode versions 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
 
 The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
+| 26.2 | `17C52` |
 | 26.1.1 | `17B100` |
 | 26.0.1 | `17A400` |
 | 16.4 | `16F6` |
