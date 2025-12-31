@@ -27,6 +27,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Active and registered provisioning profiles uploaded to Appcircle can now be selected instead of being automatically retrieved from the store for Auto Re-sign configurations of Testing Distribution profiles. <DistributionBadge/> <CloudBadge/>
 - The Duration (minutes) column in reports will now be displayed as Xm Xs instead of Xm.x. For example 10m 30s instead of 10.5. <ReportsBadge/> <CloudBadge/>
 - Provisioning profile validation is now performed using the App Store UUID instead of the profile name, and profile replacement is intentionally not supported to prevent potential data loss. <SigningIdentitiesBadge/> <CloudBadge/>
+- The [Appcircle macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest GA release of the [Xcode 26.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes) (`17C52`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Sequoia `15.6.1`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.2](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_2-release-notes) (`26.2` `17C52`) installed along with Xcode 16.4-26.1.1 versions. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
