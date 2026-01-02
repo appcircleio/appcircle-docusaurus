@@ -24,6 +24,10 @@ With Appcircle's **Add Badge to Your App Icon** component, you can add badges an
 
 This step installs [Appium Server](https://appium.io/) and starts it.
 
+## [Appshield App Scanner for Android/iOS](/workflows/common-workflow-steps/appshield-scanner)
+
+Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
+
 ## [Authenticate with Netrc](/workflows/common-workflow-steps/authenticate-with-netrc)
 
 The `.netrc` file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file. However, if you want to use the .netrc file with curl, you need to append the `-n` command line parameter. You may also use the `--netrc-optional` parameter if you don't always use the `.netrc` file with curl.
