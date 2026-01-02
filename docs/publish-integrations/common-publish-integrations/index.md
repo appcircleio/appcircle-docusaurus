@@ -16,6 +16,14 @@ Appcircle's Common Integrations facilitate the distribution of your iOS and Andr
 - Automates repetitive tasks, reducing the amount of manual work required.
 - Enables the creation of custom Publish flows and actions not available in the default steps.
 
+## [Custom Script from Git](/publish-integrations/common-publish-integrations/custom-script-from-git)
+
+- Allows you to execute scripts directly from a Git repository, enabling centralized script management across multiple publish flows.
+- Eliminates the need to update flows when scripts change - simply update the script in Git and all flows automatically use the latest version.
+- Provides version control and change tracking for your scripts through Git history, making it easy to review and roll back changes.
+- Enables script reusability across different projects and workflows without duplication.
+- Automates repetitive tasks while maintaining consistency and reducing manual configuration errors.
+
 ## [Get Approval via Email](/publish-integrations/common-publish-integrations/get-approval-via-email)
 
 - Request and track approvals easily via email.
