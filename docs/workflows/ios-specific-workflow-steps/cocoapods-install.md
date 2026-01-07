@@ -9,7 +9,7 @@ import NexusHttpsProtocol from '@site/docs/\_nexus-https-protocol.mdx';
 
 # Cocoapods Install
 
-Runs the [CocoaPods](https://cocoapods.org) install command for dependency management. This step installs all pod dependencies. Appcircle uses the `pod install` command to install pods in the project. This command comes from the CocoaPods tool installed on the system. If a version is not specified for CocoaPods, this step will use the version of [**CocoaPods installed**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) on the system.
+Runs the [CocoaPods](https://cocoapods.org) install command for dependency management. This step installs all pod dependencies. Appcircle uses the `pod install` command to install pods in the project. This command comes from the CocoaPods tool installed on the system. If a version is not specified for CocoaPods, this step will use the version of [**CocoaPods installed**](/infrastructure/ios-build-infrastructure#ios-build-environment) on the system.
 
 ### Prerequisites
 
@@ -35,7 +35,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::info
 
-Please note that the **CocoaPods Install** step uses the default system [**CocoaPods version**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks). If you want to use a specific version, please enter it hardcoded in the CocoaPods Version parameter in the step.
+Please note that the **CocoaPods Install** step uses the default system [**CocoaPods version**](/infrastructure/ios-build-infrastructure#ios-build-environment). If you want to use a specific version, please enter it hardcoded in the CocoaPods Version parameter in the step.
 
 :::
 

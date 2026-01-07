@@ -11,12 +11,16 @@ import ContentRef from '@site/src/components/ContentRef';
 
 For each Android build, Appcircle creates a brand new virtual machine;
 
-- If you select "Appcircle Linux Pool (x86_64)", virtual machine will be Debian 11 Bullseye.
-- If you select "Appcircle Standard macOS Pool (arm64)", the virtual machine will be macOS Sonoma `14.5`, macOS Monterey `12.6`, or macOS Sequoia `15.4.1`.
+- If you select "Appcircle Linux Pool (x86_64)", the virtual machine will be the below
+  - Debian 11 Bullseye
+- If you select "Appcircle macOS Pool (arm64)", the virtual machine will be one of the options below
+  - macOS Sequoia `15.6.1`
+  - macOS Sequoia `15.4.1`
+  - macOS Sonoma `14.5`
 
 :::info
 
-If you select Appcircle Standard macOS Pool (arm64), you can not choose macOS version. It will be automatically selected by Appcircle.
+If you select Appcircle macOS Pool (arm64), you can not choose macOS version. It will be automatically selected by Appcircle.
 
 The chance is equal for all runners for your Android build because it does not affect your build.
 
@@ -34,7 +38,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Java Version
 
-Build agents have Java 8, 11, 17 and 21 installed. Java 17 is set as the default version.
+Appcircle runners have Java 8, 11, 17, and 21 installed. Java 17 is set as the default version.
 
 If you want to use a different Java version, please add the [Select Java Version](/workflows/common-workflow-steps/select-java-version) component to your workflow.
 
@@ -48,10 +52,10 @@ When you select "Appcircle Linux Pool (x86_64)" for Android builds, the followin
 :::tip
 We're deprecating Intel-based runners and transitioning our customers to Apple silicon-based (M-series) build machines.
 
-Although Intel-based runners are actively maintained, if your app does not specifically require an Intel-based build machine, we suggest using the "Appcircle Standard macOS Pool (arm64)", since it has much more build capacity and the latest updates as well.
+Although Intel-based runners are actively maintained, if your app does not specifically require an Intel-based build machine, we suggest using the "Appcircle macOS Pool (arm64)", since it has much more build capacity and the latest updates as well.
 :::
 
-When you select "Appcircle Standard macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
+When you select "Appcircle macOS Pool (arm64)" for Android builds, the following JDK locations are available within the environment variables:
 
 - **JAVA_HOME_8_X64**: `/Users/appcircle/.sdkman/candidates/java/8.0.392-zulu`
 - **JAVA_HOME_11_X64**: `/Users/appcircle/.sdkman/candidates/java/11.0.21-zulu`
@@ -60,7 +64,7 @@ When you select "Appcircle Standard macOS Pool (arm64)" for Android builds, the 
 
 ## Emulator
 
-Build agents have Pixel_3a Android 9.0 emulator pre-installed. You may add or remove other emulators by using `sdkmanager`.
+Appcircle runners have Pixel_3a Android 9.0 emulator pre-installed. You may add or remove other emulators by using `sdkmanager`.
 For example, in order to install Android 11 (API 30) emulator to x86_64 Linux, you can take the below steps:
 
 **1.** Install emulator system image if not exists. (If it exists, the command will return quickly with success.)
@@ -94,40 +98,41 @@ Based on: Android 11.0 (R)
 ```
 
 :::caution
-If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle Standard macOS Pool (arm64)**) don't support nested virtualization.
+If you're using UI tests with emulators, you must select an Intel device (**Appcircle Linux Pool (x86_64)**) since M-series virtual machines (**Appcircle macOS Pool (arm64)**) don't support nested virtualization.
 :::
 
-## Android Build Agent Stacks
+## Android Build Environment
 
 There are many pre-installed packages in virtual machines. You can get a full list of pre-installed packages by running Bash commands in custom script steps.
 
 Here are some most important packages installed in our Linux and macOS images used for Android builds:
 
-| Package             | Debian Bullseye | macOS Sonoma |  macOS Monterey | macOS Sequoia |
-| ------------------- | --------------- | -------------- | ----------------- | ---|
-| Apt Package Manager | 2.2.4           | n/A            | n/A               | n/A |
-| Bash                | 5.1.4           | 3.2.57         | 3.2.57            | 3.2.57 |
-| GNU Binutils        | 2.35.2          | n/A           | n/A              | n/A |
-| Bzip2               | 1.0.8           | n/A            | n/A               | n/A |
-| Curl                | 7.74.0          | 8.6.0          | 7.79.1            | 8.7.1 |
-| GCC                 | 10.2.1          | 16.0.0         | 14.0.0            | 17.0.0  |
-| Git                 | 2.35.1          | 2.45.2         | 2.38.1            | 2.49.0 |
-| Git LFS             | 2.13.2          | 3.5.1          | 3.2.0             | 3.6.1 |
-| Gradle              | 4.4.1           | 8.8            | 7.5.1             | 8.14 |
-| Gzip                | 1.10            | 430.100.5      | 353.100.22        | 457.100.3 |
-| Java                | 17.0.9          | 17.0.9         | 17.0.9            | 17.0.9 |
-| Maven               | 3.9.9           | 3.9.7          | 3.8.6             | 3.9.9 |
-| Node JS             | 18.20.5         | 18.20.3        | 18.19.1           | 18.20.8 |
-| OpenSSL             | 1.1.1           | 3.3.6          | 2.8.3             | 3.3.6 |
-| Perl                | 5.32.1          | 5.34.1         | 5.30.3            | 5.34.1 |
-| Python              | 3.9.2           | 3.12.3         | 3.10.8            | 3.13.3 |
-| Rake                | 13.2.1          | 13.0.6         | 13.0.1            | 13.0.6 |
-| Rbenv               | 1.3.0           | 1.2.0          | 1.2.0             | 1.3.2 |
-| Ruby                | 3.2.3           | 3.2.3          | 2.7.5             | 3.2.3 |
-| Unzip               | 6.00            | 6.00           | 6.00              | 6.00 |
-| Wget                | 1.21            | 1.24.5         | 1.21              | 1.25.0 |
-| Yarn                | 1.22.22         | 1.22.22        | 1.22.19           | 1.22.22 |
-| Zip                 | 3.0             | 3.0            | 3.0               | 6.00 |
+| Package             | Debian Bullseye | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` |
+| ------------------- | --------------- | -------------- | ----------------- | ----------------- |
+| Apt                 | 2.2.4           | n/A            | n/A | n/A |
+| Homebrew            | n/A             | 4.3.5          | 4.5.1 | 4.6.16 |
+| Bash                | 5.1.4           | 3.2.57         | 3.2.57 | 3.2.57 |
+| GNU Binutils        | 2.35.2          | n/A            | n/A | n/A |
+| Bzip2               | 1.0.8           | n/A            | n/A | n/A |
+| Curl                | 7.74.0          | 8.6.0          | 8.7.1 | 8.7.1 |
+| GCC                 | 10.2.1          | 16.0.0         | 17.0.0  | 17.0.0 |
+| Git                 | 2.35.1          | 2.45.2         | 2.49.0 | 2.51.0 |
+| Git LFS             | 2.13.2          | 3.5.1          | 3.6.1 | 3.7.0 |
+| Gradle              | 4.4.1           | 8.8            | 8.14 | 9.1.0 |
+| Gzip                | 1.10            | 430.100.5      | 457.100.3 | 457.140.3 |
+| Java                | 17.0.9          | 17.0.9         | 17.0.9 | 17.0.9 |
+| Maven               | 3.9.9           | 3.9.7          | 3.9.9 | 3.9.11 |
+| Node JS             | 18.20.5         | 18.20.3        | 18.20.8 | 18.20.8 |
+| OpenSSL             | 1.1.1           | 3.3.6          | 3.3.6 | 3.3.6 |
+| Perl                | 5.32.1          | 5.34.1         | 5.34.1 | 5.34.1 |
+| Python              | 3.9.2           | 3.12.3         | 3.13.3 | 3.14.0 |
+| Rake                | 13.2.1          | 13.0.6         | 13.0.6 | 13.3.0 |
+| Rbenv               | 1.3.0           | 1.2.0          | 1.3.2 | 1.3.2 |
+| Ruby                | 3.2.3           | 3.2.3          | 3.2.3 | 3.2.3 |
+| Unzip               | 6.00            | 6.00           | 6.00 | 6.00 |
+| Wget                | 1.21            | 1.24.5         | 1.25.0 | 1.25.0 |
+| Yarn                | 1.22.22         | 1.22.22        | 1.22.22 | 1.22.22 |
+| Zip                 | 3.0             | 3.0            | 3.0 | 3.0 |
 
 ### Using your own computer for build
 

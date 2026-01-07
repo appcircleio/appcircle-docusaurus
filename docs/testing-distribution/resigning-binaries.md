@@ -145,8 +145,24 @@ For iOS, you can configure:
 
 Appcircle Testing Distribution profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-1.png' />
 
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Auto Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-3.png' />
+
+:::caution Pool Selection Is Mandatory
+Auto Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Auto Re-sign process will not start.
+- Uploaded binaries will remain unsigned.
+- No re-signed output will be generated for Testing Distribution profile.
+
+Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
+:::
 
 #### Update Display Name
 
@@ -156,7 +172,7 @@ With the Display Name parameter, you can change the visible name of the binary t
 If `CFBundleDisplayName` is not present in the `info.plist`, changing the display name will not take effect.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-2.png' />
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
@@ -202,7 +218,24 @@ For Android, you can configure:
 
 Appcircle Testing Distribution profiles can accept binaries with different package ID. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different package ID is uploaded, it is re-signed according to the package ID of the profile. The package ID of the resulting re-signed binary is updated to match the one associated with the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-5.png' />
+
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Auto Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-4.png' />
+
+:::caution Pool Selection Is Mandatory
+Auto Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Auto Re-sign process will not start.
+- Uploaded binaries will remain unsigned.
+- No re-signed output will be generated for Testing Distribution profile.
+
+Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
+:::
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
