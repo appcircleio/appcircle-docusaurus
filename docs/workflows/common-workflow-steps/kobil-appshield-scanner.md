@@ -54,7 +54,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | Variable Name               | Description                                                                                          | Status |                                                                                                                                                                                                                                                                                                                                          
 | ---------------------------   | ----------------------------------------------------------------------------------------------------  | -------- |
 | `AC_APPSHIELD_APP_FILE_PATH`  | Path to the AAB/APK/IPA file for KOBIL Appshield Scanner to test.                                     | Required |
-| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session.                                                             | Required |
+| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session. If not provided, default value from AppCircle can also be used by the component.                                                             | Required |
 | `AC_APPSHIELD_USER_MAIL`      | Specifies the user e-mail if user wants to receive a detailed PDF report regading the analysis.       | Optional |
 | `AC_APPSHIELD_UPLOAD_TIMEOUT` | File upload timeout in seconds.                                                                       | Optional |
 
@@ -71,6 +71,47 @@ The output(s) resulting from the operation of this component are as follows:
 
 
 ---
+
+
+## Frequently Asked Questions (FAQ)
+
+
+### What is KOBIL Appshield Scanner?
+KOBIL Appshield Scanner is a mobile application security analysis tool for Android and iOS apps. It evaluates application security by combining dynamic runtime testing on real, physical devices with AI-supported static (file-based) analysis to determine whether an app is properly protected against common runtime attacks and tampering techniques.
+
+### What is KOBIL Appshield Scanner used for?
+KOBIL Appshield Scanner is used to verify the presence and effectiveness of mobile app security hardening mechanisms. It helps development and security teams understand whether their Android or iOS applications are protected against threats such as debugging, hooking, code injection, screen capture, and device compromise (root or jailbreak).
+
+### What types of mobile apps can KOBIL Appshield Scanner analyze?
+KOBIL Appshield Scanner supports Android and iOS mobile applications. It accepts AAB or APK files for Android and IPA files for iOS, performing both dynamic runtime testing and static analysis to evaluate the app’s overall security posture.
+
+### How is Appshield Scanner different from emulator-based security scanners?
+Unlike many security scanners that rely on ARM or x86_64 emulators and sandbox environments, KOBIL Appshield Scanner performs dynamic runtime tests on real, physical Android and iOS devices. This approach allows more accurate detection of security mechanisms and reduces false positives or missed findings caused by emulator detection or bypass techniques.
+
+### What security protections does Appshield Scanner check for?
+Appshield Scanner detects a wide range of mobile app security measures, including (but not limited to):
+- Root and jailbreak detection  
+- Anti-debugging mechanisms  
+- Frida and anti-hooking protections  
+- Anti code injection defenses  
+- Screenshot and screen recording detection  
+- Screen mirroring detection  
+- Keylogger detection  
+- Tapjacking protection  
+
+### What happens if some dynamic tests fail or cannot be executed?
+If certain dynamic test cases fail due to unexpected runtime issues or because the app actively blocks analysis, Appshield Scanner automatically performs a static, AI-powered analysis for those specific test cases. The findings from both dynamic and static analysis are then combined to produce a final security verdict.
+
+### How can I tell if my app is considered secure after the scan?
+After the scan completes, Appshield Scanner provides the output variable `AC_APPSHIELD_IS_APP_SECURE`:
+- `true` indicates the app is properly hardened and contains the required security mechanisms  
+- `false` indicates some security measures are missing  
+- `null` indicates the scan failed due to an internal or unexpected issue 
+
+
+## Additional Remarks
+
+Optionally, users can also receive a detailed PDF security report via email.
 
 To access the source code of this component, please use the following link:
 
