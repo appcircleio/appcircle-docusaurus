@@ -44,14 +44,14 @@ You can delete the providers you do not need by removing them from `selfHostedGi
 
 <ApplyHelmConfigurationChanges />
 
-For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket) page.
+For more details about "Bitbucket" usage, see related docs in the [Connecting to Bitbucket](/build/manage-the-connections/connection-guides/connecting-to-bitbucket) page.
 
-For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure) page.
+For more details about "Azure" usage, see related docs in the [Connecting to Azure DevOps](/build/manage-the-connections/connection-guides/connecting-to-azure) page.
 
-For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab) page.
+For more details about "GitLab" usage, see related docs in the [Connecting to GitLab](/build/manage-the-connections/connection-guides/connecting-to-gitlab) page.
 
-For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh) page.
+For more details about "Connect via SSH" usage, see related docs in the [Connect via SSH](/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh) page.
 
-For more details about "Connect via URL" usage, see related docs in the [Connect via URL](/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository) page.
+For more details about "Connect via URL" usage, see related docs in the [Connect via URL](/build/manage-the-connections/connection-guides/connecting-to-public-repository) page.
 
 <NeedHelp />

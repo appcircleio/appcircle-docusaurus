@@ -35,6 +35,16 @@ Only files with .keystore extension can be uploaded.
 
 Builds with debug type will be signed with a default keystore and don't need a keystore file to be uploaded to Appcircle. If you are building your app for distribution, you need to upload your keystore file in order to have your application signed.
 
+:::info Android Keystore Expiration Notifications
+
+You will be notified when an Android Keystore is about to expire. You can see the expiration notification in the [in-app notification window](/account/my-account/in-app-notifications) and optionally enable expiration [notifications](/account/my-organization/notifications) for Email, Slack, Microsoft Teams, etc.
+
+**Standard Schedule**: Keystores already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
+
+**Late Upload**: Keystores uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
+
+:::
+
 ### In-Project Keystore Usage
 
 You can alternatively have your signing details stored in your Gradle file and use your in-project keystore to sign your app.;

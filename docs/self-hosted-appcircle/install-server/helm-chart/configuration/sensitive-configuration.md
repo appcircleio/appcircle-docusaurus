@@ -12,7 +12,7 @@ import TabItem from '@theme/TabItem';
 
 ## Secrets for Sensitive Values
 
-To manage sensitive information such as the Appcircle initial user password, SMTP password, SSL certificates, and other secrets, it is recommended to use Kubernetes/Openshift secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner.
+To manage sensitive information such as the Appcircle initial user password, SSL certificates, and other secrets, it is recommended to use Kubernetes/Openshift secrets. This ensures that sensitive data is stored securely and can be accessed by applications running within the cluster in a controlled manner. Some settings like SMTP can be configured either through Kubernetes/Openshift secrets during initial deployment or directly from the Appcircle Dashboard after installation.
 
 :::caution
 The configurations for secret values should be **done before the first deployment** and **cannot be changed later**. To modify these settings, you should **[uninstall Appcircle](/self-hosted-appcircle/install-server/helm-chart/uninstallation)** and redeploy it.
@@ -84,6 +84,16 @@ oc create secret generic appcircle-server-auth-keycloak-passwords \
 
 #### SMTP password
 
+:::caution
+Starting from the server version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset.
+
+See the [email integration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) document for more information about the SMTP configuration.
+
+See the [version history](/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) to find out the minimum required Helm chart version for the server.
+:::
+
+If you prefer to configure SMTP via Kubernetes secrets during initial deployment:
+
 - Create a secret with the name `${releaseName}-smtp` containing the `password` key.
 
 :::info
@@ -112,6 +122,12 @@ oc create secret generic appcircle-server-smtp \
 </Tabs>
 
 - Remove the `.global.mail.smtp.password` key from the `values.yaml` file if it exists.
+
+:::tip
+Even if you initially configure SMTP using Kubernetes secrets, you can still use the Appcircle Dashboard for subsequent updates.
+
+But **keep in mind that** beforehand you should remove the relevant settings from the server configuration effectively, which requires you to apply configuration changes.
+:::
 
 #### SSL certificate
 

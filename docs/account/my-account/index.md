@@ -10,10 +10,8 @@ The "My Account" screen is accessible from the bottom left hover menu and it con
 
 Current headlines and the actions you can complete are listed below:
 
-- [Change Password](/account/my-account/account-management/change-password)
-- [Authenticator (Two Factor Authentication)](/account/my-account/account-management/authenticator-two-factor-authentication)
-- [Active Sessions](/account/my-account/account-management/active-sessions)
-- [Authentication Logs](/account/my-account/account-management/authentication-logs)
+- [Device Activity](/account/my-account/account-management/device-activity)
+- [Signing In](/account/my-account/account-management/signing-in)
 - [Delete Account](/account/my-account/account-management/delete-account)
 
 In order to see the details, check the submenu of this documentation page.

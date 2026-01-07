@@ -2,7 +2,7 @@
 title: CodePush via Build Module
 description: Learn how to work with Appcircle CodePush SDK on build module.
 tags: [appcircle codepush, build, ci, build module]
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # CodePush via Build Module

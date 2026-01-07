@@ -8,21 +8,13 @@ tags: [account, settings, security, personal details, password, two-factor authe
 
 In the Account Management section, you have comprehensive control over your account's security and personal information settings.
 
-## [Change Password](/account/my-account/account-management/change-password)
-
-Secure your account by regularly updating your password through this option.
-
-## [Two-Factor Authentication Setup](/account/my-account/account-management/authenticator-two-factor-authentication)
-
-Enhance account security by setting up two-factor authentication, adding an extra layer of protection.
-
-## [Active Sessions](/account/my-account/account-management/active-sessions)
+## [Device Activity](/account/my-account/account-management/device-activity)
 
 View and manage all active sessions to understand where your account is currently logged in.
 
-## [Authentication Logs](/account/my-account/account-management/authentication-logs)
+## [Signing In](/account/my-account/account-management/signing-in)
 
-View authentication logs to monitor user logins within your organization.
+Secure your account by regularly updating your password through this option. Also, enhance account security by setting up two-factor authentication, adding an extra layer of protection.
 
 ## [Delete Account](/account/my-account/account-management/delete-account)
 

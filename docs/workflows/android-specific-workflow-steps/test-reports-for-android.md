@@ -5,6 +5,7 @@ tags: [test, test report, test result, automation]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Test Reports for Android
 
@@ -30,6 +31,7 @@ Before running the **Test Reports for Android** step, you must complete certain 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_1.png'/>
 
+<AlwaysRunToggleDanger />
 
 ### Input Variables
 
@@ -40,7 +42,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name            | Description                                                      | Status    |
 | ------------------------ | ---------------------------------------------------------------- | --------- |
 | `$AC_TEST_RESULT_PATH`    | Specifies the directory and its subdirectories where compatible test files will be searched. | Required  |
-| `$AC_COVERAGE_RESULT_PATH`| Specifies the coverage path. | Optional  |
+| `$AC_COVERAGE_RESULT_PATH`| Path to the directory containing the code coverage results (e.g., `$AC_REPOSITORY_DIR/jacoco/`). Used for generating coverage reports. | Optional  |
 | `$AC_JACOCO_COVERAGE_TYPE`| Determines the parameter in your JaCoCo report based on which the coverage will be calculated. This setting is necessary when using JaCoCo parseable coverage results and specifying the coverage result path. Types description can be found in this [documentation](/continuous-testing/android-testing/running-android-unit-tests#jacoco-test-coverage) | Required  |
 
 

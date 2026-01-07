@@ -25,7 +25,7 @@ Make sure that one of the versions is [**Marked as Release Candidate**](/publish
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4007-releaseStatus.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-21.png' />
 
 
 :::danger Check Release Status

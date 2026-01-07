@@ -15,7 +15,9 @@ Your configured publish flow will be executed automatically when you enable **Au
 
 You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority3.png' alt="Publish Pool Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png'/>
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-33.png'/>
 
 "Appcircle Linux Pool (x86_64)" and "Appcircle Standard macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
 
@@ -79,6 +81,12 @@ For detailed information on Publish Variables, follow the link below.
 Store credentials are the connection details for the stores that you will publish your app to.
 
 For detailed information on store connections, follow the links below.
+
+:::caution Apple Enterprise API Key
+
+The Apple Enterprise Program is intended solely for in‑house distribution within an organization. Consequently, an Apple Enterprise API Key cannot be used in the Publish module because the Enterprise Program **does not** provide any **App Store Connect** or **TestFlight** infrastructure.
+
+:::
 
 | Store             | Connection                                                                                                                  |
 | ----------------- |-----------------------------------------------------------------------------------------------------------------------------|

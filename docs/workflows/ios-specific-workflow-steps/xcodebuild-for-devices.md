@@ -59,6 +59,14 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_ICLOUD_CONTAINER_ENVIRONMENT_FOR_EXPORT` | For non-App Store exports, if the app is using CloudKit, this configures the "com.apple.developer.icloud-container-environment" entitlement. Available options `Development` and `Production`.                                                           | Optional |
 | `$AC_DELETE_ARCHIVE`                          | Delete `build.xcarchive` file after creating ipa file.                                                                                                                                                                                                   | Optional |
 
+:::info Local SPM (Swift Package Manager)
+
+If SPM dependencies are kept locally in your project and are already installed, the Xcodebuild for Devices step may fail during the build while resolving the dependencies. For this reason, you can use the `-skipPackagePluginValidation` parameter in the `$AC_ARCHIVE_FLAGS` input to prevent reloading dependencies that are already installed in the project.
+
+**Note**: This may be a security risk if they are not from trusted sources.
+
+:::
+
 ### Output Variables
 
 The output(s) resulting from the operation of this component are as follows:
@@ -185,7 +193,7 @@ C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetc
 
 :::info Cloud Customers
 
-All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) documentation.
+All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-environment) documentation.
 
 However, issues may still occur depending on how the environment is used. If you are working in the cloud environment and the [**Custom Scripts**](/workflows/common-workflow-steps/custom-script) you use can **change** or **update** the packages in our environments. If cloud users encounter such **signing errors**, it is recommended to check the **Custom Scripts** used. You can use the example `bash` script below.
 

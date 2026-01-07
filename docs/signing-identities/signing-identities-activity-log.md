@@ -5,11 +5,14 @@ tags: [activity log, signing identities]
 sidebar_position: 7
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
+
 # Activity Log
 
 You can view Signing Identity module actions such as creating, deleting, and adding Apple Certificates or Android Keystores to Organizations or Sub Organizations in the Activity Log section.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4746-activity1.png' alt="Activity Log for Signing Identities" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-1.png' />
 
 Here is the full list of actions that can be monitored:
 
@@ -65,10 +68,12 @@ Organization Owners can also observe the actions of their Sub-Organizations.
 
 :::
 
-You can edit the required date range by clicking the time filter in the top right corner and selecting a time limit from various options. Alternatively, you can choose custom dates from the calendar.
+You can edit the required date range by clicking the time filter in the top filter header as the default search time option is the last 30 days. Alternatively, you can choose custom dates from the calendar by selecting 'In Between' option.
 
 Team activity logs also include filters to help users perform more precise searches. By clicking the 'All' option next to Organizations, you can select a specific organization or sub-organization from the list, provided you have access to monitor their signing identities activity.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4746-activity2.png' alt="Filtering Activity Log for Signing Identities" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-1.png'/>
 
-Another method to search is by **Actions**. Simply click the Organization drop-down box, select **Actions**, and then choose a specific action to refine your search.
+Another method to search is by **Actions**. Simply click the filter option and select **Actions**. Then you can choose a specific action to refine your search.
+
+<CSVExport />

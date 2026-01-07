@@ -123,6 +123,12 @@ storeWeb:
     domain: store.spacetech.com
 ```
 
+:::caution
+If the certificate of the custom store domain is not defined in the `global.yaml` file, the Enterprise App Store will listen on HTTP by default. It will not use the server-wide certificate defined in `.nginx.sslCertificate` for the Enterprise App Store.
+
+To enable HTTPS for the Enterprise App Store, you must provide `.storeWeb.customDomain.publicKey` and `.storeWeb.customDomain.privateKey` values. For details, refer to the [SSL Configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration#custom-domain) docs.
+:::
+
 - Apply configuration changes.
 
 ```bash
@@ -209,6 +215,12 @@ minio:
 storeWeb:
   external:
     subdomain: store-appcircle
+webEventRedis:
+  external:
+    subdomain: redis-appcircle
+grafana:
+  external:
+    subdomain: monitor-appcircle
 ```
 
 :::caution
@@ -294,7 +306,7 @@ The first thing you should check is **PAT** permissions.
 
 If you are sure that **PAT** has the required permissions, you should check the **Outbound Requests** configuration of your GitLab server.
 
-For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab#outbound-requests) section.
+For more details about configuring the outbound requests, you can refer to the [Outbound Requests](/build/manage-the-connections/connection-guides/connecting-to-gitlab#outbound-requests) section.
 
 ### What should be done after upgrading the hardware resources (CPU & memory) of the Appcircle server?
 

@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Metadata Details
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-metadataDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23.png' />
 
 ## Overview
 
@@ -149,6 +149,23 @@ Your app version within the Publish profile needs to be marked as Release Candid
 - **App Name**: This is how your app will appear on Google Play.
 - **Short Description**: A short description for your app. Users can expand to view your full description.
 - **Full Description**: A full description for your app.
+
+:::warning Mandatory Google Play Metadata Fields
+
+On **Google Play Console**, certain metadata fields are **mandatory** and must be completed before you can **save** the metadata details in Appcircle.
+
+The following fields are required by Google Play:
+
+- **App Name**
+- **Short Description**
+- **Full Description**
+- **App Icon**
+- **Feature Graphic**
+- **Phone Screenshots**
+
+If any of these required fields are missing, Google Play Console will not allow the metadata to be saved or updated. Make sure all mandatory fields are properly filled and uploaded before running the **Update Metadata on Google Play Console** publish step.
+
+:::
 
 ## Microsoft Intune Metadata Information
 

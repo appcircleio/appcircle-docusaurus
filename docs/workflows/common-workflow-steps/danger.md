@@ -23,6 +23,12 @@ This tool does not support AzureDevOps. Therefore, if your repository is hosted 
 
 :::
 
+:::info
+
+Danger integration currently supports Ruby only. For more details, see [**Danger for Ruby**](https://danger.systems/ruby/).
+
+:::
+
 ### Prerequisites
 
 Before running the **Danger** step, you must complete certain prerequisites, as detailed in the table below:
@@ -63,7 +69,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | `$DANGER_GITHUB_API_BASE_URL`             | The host that the GitHub Enterprise API is reachable on. For example: `https://git.corp.com/api/v3`                                            | Optional |
 | `$DANGER_GITLAB_API_TOKEN`                | GitLab Access Token for the bot user.                                                                                                          | Optional |
 | `$DANGER_GITLAB_HOST`                     | The host that GitLab is running on. For example: `git.corp.com`                                                                                | Optional |
-| `$DANGER_GITLAB_API_BASE_URL`             | The host that the GitHub Enterprise API is reachable on. For example: `https://git.corp.com/api/v4`                                            | Optional |
+| `$DANGER_GITLAB_API_BASE_URL`             | The host that the GitLab API is reachable on. For example: `https://git.corp.com/api/v4`                                            | Optional |
 | `$DANGER_BITBUCKETCLOUD_USERNAME`         | Bitbucket username for the bot user.                                                                                                           | Optional |
 | `$DANGER_BITBUCKETCLOUD_PASSWORD`         | Bitbucket password for the bot user.                                                                                                           | Optional |
 | `$DANGER_BITBUCKETCLOUD_UUID`             | Bitbucket UUID of the bot user.                                                                                                                | Optional |
@@ -76,3 +82,17 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-danger-component
+
+---
+
+## FAQ
+
+### How can I solve the `bundler: command not found: danger` error?
+
+
+This error occurs when the Danger gem is missing in your environment.
+To fix it, add the following line to your Gemfile:
+
+```
+gem 'danger'
+```

@@ -165,15 +165,49 @@ This feature only provides a solution for self-hosted Appcircle server installat
 
 ### Attribute Configuration Settings
 
-LDAP users must have an email address, regardless of whether or not it’s used to sign in.
+Appcircle requires users to log in using an email address.
+For LDAP integrations, all users must have a valid email address, even if that email isn’t used for signing in to other applications.
 
 Appcircle uses these LDAP attributes to create an account for the LDAP user.
 
-- The username LDAP attribute is a string. For example,'mail'.
-
 | Settings                | Description                                                                                                                                                     | Required | Examples   |
 | ----------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- | ---------- |
-| Username LDAP Attribute | Name of LDAP attribute, which is mapped as username. For many LDAP server vendors it can be 'uid'. For an active directory, it can be 'sAMAccountName' or 'cn'. | Yes      | mail,email |
+| Name                        | Descriptive name for your LDAP configuration.                                                                                                                                                                                                                               | Yes           | ldap-europe, ldap-support         |
+| Order                       | Priority number for LDAP connections. Lower numbers have higher priority.                                                                                                                                                                                                   | Yes           | 1, 2, 3                                        |
+| Vendor                      | Type of LDAP server vendor. Used to apply vendor-specific defaults (e.g., AD, OpenLDAP).                                                                                                                                                                                    | Yes           | Active Directory, OpenLDAP, Other              |
+| User Mail LDAP Attribute    | Name of LDAP attribute, which is mapped as user mail. For many LDAP server vendors it can be 'mail'.                                                                                                                                                                        | Yes           | mail,email                                     |
+| RDN LDAP Attribute          | The attribute used as the Relative Distinguished Name (RDN) when building user DNs. Often `uid` or `cn`.                                                                                                                                                                    | Yes           | cn, uid                                        |
+| UUID LDAP Attribute         | Unique identifier for LDAP users. Commonly `entryUUID` or `uid`. For Active Directory it should be 'objectGUID'.                                                                                                                                                            | Yes           | objectGUID, entryUUID, uid                     |
+| User Object Classes         | Comma-separated list of LDAP object classes to be considered user entries.                                                                                                                                                                                                  | Yes           | person, organizationalPerson, user             |
+| Connection URL              | LDAP server connection URL. Must include the scheme (`ldap://` or `ldaps://`) and host (optionally with port).                                                                                                                                                              | Yes           | ldap://openldap:389 |
+| Users DN                    | Full DN of the LDAP tree where your users exist. This DN is the parent of LDAP users. It could be for example 'ou=users,dc=example,dc=com' assuming that your typical user will have a DN such as 'uid='john',ou=users,dc=example,dc=com'.                                  | Yes           | ou=users,dc=example,dc=com                             |
+| Custom User LDAP Filter     | Additional LDAP filter for filtering searched users. Leave this empty if you don't need an additional filter. Make sure that it starts with '(' and ends with ')'.                                                                                                          | No            | (objectClass=inetOrgPerson)                    |
+| Phone Number LDAP Attribute | The LDAP attribute that stores the user’s phone number.                                                                                                                                                                                                                     | No            | telephoneNumber, mobile                        |
+| Search Scope                | For one level, the search applies only for users in the DNs specified by User DNs. For subtree, the search applies to the whole subtree.                                                                                           | Yes           | One Level, Subtree                             |
+| Bind Type                   | Type of the authentication method used during LDAP bind operation. It is used in most of the requests sent to the LDAP server. Currently only 'none' or 'simple' (bind credential + bind password authentication) mechanisms are available. | Yes           | Simple, None                              |
+| Bind DN                     | DN of the LDAP admin, which will be used by Appcircle to access LDAP server.                                                                                                                                                                                                  | Yes           | cn=admin,dc=io                                 |
+| Bind Credential             | Password of LDAP admin.                                                                                                                                                                                                                                                     | Yes           | ******** (hidden)                              |
+| Enable StartTLS             | Encrypts the connection to LDAP using STARTTLS, which will disable connection pooling.                                                                                                                                                                                       | No            |                                                |
+| Connection Timeout          | LDAP connection timeout in milliseconds.                                                                                                                                                                                                                                     | No            |                                                |
+| Read Timeout                | LDAP read timeout in milliseconds. This timeout applies for LDAP read operations.                                                                                                                                                     | No            |                                                |
+| Pagination                  | Enables retrieving LDAP users and groups in smaller batches instead of all at once. This improves performance for large directories by reducing memory and network load.                                                                                                                                  | No            |                                                |
+| Test Connection             | Tests if the LDAP connection can be successfully established using the provided configuration and credentials.                                                                                                                                                              | -             |                                                |
+| Test Authentication         | Tests if LDAP authentication works correctly with the configured Bind DN and credentials.                                                                                                                                                                                   | -             |                                                |
+| Group Mapper                | Defines how LDAP groups are mapped to internal groups. Used in LDAP mapping for importing or synchronizing group memberships.                                                                                                                                                           | No |                                                |
+| Role Mapper                 | Defines how LDAP roles are mapped to internal roles. Used in LDAP mapping for importing or synchronizing group or attribute-based roles.                                                                                                                                                           | No |                                                |
+
+:::info
+Common LDAP distinguished name (DN) attributes and their abbreviations used in LDAP configurations:
+* **DC:** domainComponent
+* **CN:** commonName
+* **OU:** organizationalUnitName
+* **O:** organizationName
+* **STREET:** streetAddress
+* **L:** localityName
+* **ST:** stateOrProvinceName
+* **C:** countryName
+* **UID:** userid
+:::
 
 ### Adding LDAP Configuration
 
@@ -218,7 +252,7 @@ LDAP configuration with an order value of `1` will be used before LDAP configura
 <Screenshot url='https://cdn.appcircle.io/docs/assets/ldap-9.png' />
 
 :::warning LDAP Connection Timeout
-When the LDAP server is unreachable, login attempts by admin users not linked to LDAP may experience a delay. 
+When the LDAP server is unreachable, login attempts by admin users not linked to LDAP may experience a delay.
 
 The authentication process will wait for the LDAP connection to time out before proceeding, after which the login will be successful. By default, this timeout is set to 2 minutes but can be adjusted in the LDAP configuration settings.
 :::

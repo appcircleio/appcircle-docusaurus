@@ -65,7 +65,7 @@ If your repository is Self Hosted with GitLab or Bitbucket, add your repo using 
 
 Azure DevOps requires a Personal Access Token to access the repository. The token must have access to the necessary repositories.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-azure">
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-azure">
 Connecting to Azure DevOps
 </ContentRef>
 
@@ -73,7 +73,7 @@ Connecting to Azure DevOps
 
 Generate a Personal Access Token or Project Access Token for GitLab. A Personal Access Token allows access to all the repositories of that person. A Project Access Token allows access to all the repositories under the specified project.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab">
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-gitlab">
 Connecting to GitLab
 </ContentRef>
 
@@ -83,7 +83,7 @@ Bitbucket also supports using repository tokens to access a single repository.
 
 Personal Access Token allows to access all the repositories of that person. Project Access Token allows to access all the repositories under the specified project.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket">
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-bitbucket">
 Connecting to Bitbucket
 </ContentRef>
 
@@ -106,7 +106,7 @@ If you use libraries in a private repo, these must be accessible with the tokens
 
 Create a new SSH key, upload the public key to your Repo, and the private key to Appcircle. Follow the steps in this guide.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh">
 Connecting to Private Repository via SSH
 </ContentRef>
 

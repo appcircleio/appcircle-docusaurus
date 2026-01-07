@@ -4,6 +4,9 @@ description: Get familiar with the Build History Report in Appcircle, tracking b
 tags: [reports, build history, build sessions, testing]
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+import CSVExport from '@site/docs/\_csv-export.mdx';
+
 # Build History
 
 This report is accessible from the Build module.
@@ -22,4 +25,6 @@ You can filter the report pages according to the organization.
 In the filtering options, you can only view and select the organization and sub-organization you belong to.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-history.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7112-4.png' />
+
+<CSVExport />

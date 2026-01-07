@@ -27,15 +27,6 @@ Before running the **Xcodebuild for Unit and UI Testing** step, you must complet
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder.png' />
 
-:::danger
-
-If any tests fail during this step, an error will be automatically reported, which reflects issues within the project's tests, not the Appcircle workflow. To prevent disruption in the workflow, enable the **`"Continue with the next step even if this step fails"`** option.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-continueEnable.png' />
-
-:::
-
-
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).

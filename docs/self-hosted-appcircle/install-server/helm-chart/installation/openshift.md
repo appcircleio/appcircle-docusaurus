@@ -40,7 +40,7 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
 
-**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in Openshift.
+**Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in OpenShift.
 
 </details>
 
@@ -116,7 +116,7 @@ Additionally, ensure that your OpenShift cluster is running version 4.12 or late
 
 ### 1. `oc`
 
-The **`oc`** Openshift CLI is **required**.
+The **`oc`** OpenShift CLI is **required**.
 
 ### 2. Helm v3
 
@@ -124,14 +124,7 @@ The **`oc`** Openshift CLI is **required**.
 
 ## Pre-installation Steps
 
-
-### 1. Production Readiness
-
-If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
-
-For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
-
-### 2. Configure `oc` CLI
+### 1. Configure `oc` CLI
 
 Log in to your OpenShift cluster using the `oc` CLI. If you are already logged in and have set the correct project, you may skip this step.
 
@@ -139,7 +132,7 @@ Log in to your OpenShift cluster using the `oc` CLI. If you are already logged i
 oc login -u ${username} ${OPENSHIFT_API_URL}
 ```
 
-### 3. Create Project
+### 2. Create Project
 
 **Create a project** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example project.
 
@@ -147,7 +140,7 @@ oc login -u ${username} ${OPENSHIFT_API_URL}
 oc new-project appcircle
 ```
 
-### 4. Create Container Registry Secret
+### 3. Create Container Registry Secret
 
 By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle.
 
@@ -193,6 +186,8 @@ oc create secret docker-registry containerregistry \
   --docker-username='yourRegistryUsername' \
   --docker-password='superSecretRegistryPassword'
 ```
+
+See [External Image Registries](/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry) page for more details.
 
   </TabItem>
 </Tabs>
@@ -344,9 +339,6 @@ auth:
     # Initial admin password - Should contain: min 6 chars, 1 lowercase, 1 uppercase, 1 number
     # You can create a secret with the password or directly enter the password here
     initialPassword: "superSecretAppcirclePassword1234"
-    image:
-      # Appcircle keycloak image repository path
-      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-keycloak
 
 # Internal Ingress controller configuration
 ingress-nginx:
@@ -359,6 +351,15 @@ vault:
       # Appcircle vault image repository path
       repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault
 
+cert-utils-operator:
+  image:
+    # Container image repository path for the cert-utils-operator
+    repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator
+  kube_rbac_proxy:
+    image:
+      # Container image repository path for the kube-rbac-proxy
+      repository: europe-west1-docker.pkg.dev/appcircle/docker-registry/kube-rbac-proxy
+
 # Web event Redis configuration
 webeventredis:
   # Enable TLS for Redis connections
@@ -368,8 +369,25 @@ webeventredis:
 
 </details>
 
+#### Production Readiness Configuration
+
+If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
+
+For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
+
   </TabItem>
 </Tabs>
+
+:::caution
+Starting from the server version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset. To use this method:
+
+1. Exclude the `global.mail` part from the `values.yaml` file.
+2. Configure SMTP settings on the Appcircle Dashboard after installation.
+
+See the [email integration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) document for more information about the SMTP configuration.
+
+See the [version history](/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) to find out the minimum required Helm chart version for the server.
+:::
 
 ### 2. Remove Sensitive Information From `values.yaml`
 
@@ -444,7 +462,7 @@ router-default   LoadBalancer  10.217.4.108   10.45.140.78  80/TCP,443/TCP,1936/
 
 ### 2. Login to the Appcircle Dashboard
 
-Check the output of the `Helm install` command to see login URL, initial username and command to get initial user password.
+Check the output of the `helm install` command to see login URL, initial username and command to get initial user password.
 
 ```bash
 Self-Hosted Configuration:

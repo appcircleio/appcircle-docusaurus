@@ -1,6 +1,6 @@
 ---
 title: Configuration
-description: Overview of the steps required to configure the self-hosted Appcircle on your infrastructure by Kubernetes or Openshift.
+description: Overview of the steps required to configure the self-hosted Appcircle on your infrastructure by Kubernetes or OpenShift.
 tags: [self-hosted, helm, configuration]
 sidebar_position: 2
 ---
@@ -20,6 +20,7 @@ Current headlines are listed below:
 - [LDAP Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ldap-configuration)
 - [SSL Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ssl-configuration)
 - [Domain Verification](/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification)
+- [External Image Registries](/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry)
 - [Advanced Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration)
 
 In order to see the details, check the submenu of this documentation page.

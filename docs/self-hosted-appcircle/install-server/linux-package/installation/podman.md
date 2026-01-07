@@ -12,6 +12,8 @@ import NetavarkConfiguration from '@site/docs/self-hosted-appcircle/install-serv
 import FirewalldConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_firewalld-configuration.mdx';
 import SwapConfiguration from '@site/docs/self-hosted-appcircle/install-server/linux-package/configure-server/\_swap-configuration.mdx';
 
+import HttpsOnlySupportedFeatures from '@site/docs/self-hosted-appcircle/install-server/linux-package/installation/_https-only-supported-features.mdx';
+
 # Overview
 
 Following sections give you detailed information about system requirements, installation and configuration steps. After following directives successfully, you will get a running Appcircle instance on your infrastructure.
@@ -80,6 +82,28 @@ For production environments, **recommended** hardware requirements are
 ### Podman Requirements
 
 The Appcircle server supports Podman as the container runtime. The minimum required version of Podman is 4.3.0 or higher.
+
+:::caution Podman Compose Version Compatibility
+
+Based on the Appcircle server version, you should use a compatible version of Podman Compose as detailed below.
+
+#### `3.29.6` or later
+
+Podman Compose version must be `1.5.0` or later since older versions have a known issue affecting [`CMD` health checks](https://github.com/containers/podman-compose/releases/tag/v1.5.0) that breaks container runtime.
+
+#### `3.29.4` or older
+
+Podman Compose version `1.3.0` contains a known issue affecting relative path handling. To avoid this bug, use version `1.2.0` or earlier, or version `1.4.0` or later.
+
+:::
+
+:::info RHEL 8 Python Version Requirement
+
+Podman Compose version `1.4.0` and later require Python `3.7` or higher.
+
+RHEL 8 systems may have an older Python version by default. Before installing or upgrading Podman Compose to `1.4.0` or newer, ensure Python `3.7+` is installed and set as the default `python3` interpreter.
+
+:::
 
 #### Enabling the Linger Option
 
@@ -279,6 +303,8 @@ If you want a secret used from `global.yaml`, then it should not be in `user-sec
 
 :::
 
+#### Configuring `global.yaml`
+
 `global.yaml` has some initial and example values preset when it's generated.
 
 ```yaml
@@ -289,7 +315,7 @@ external:
   scheme: http
   mainDomain: ".example.com"
 
-smtpServer:
+smtpServer: # Optional
   user:
   from:
   host:
@@ -327,7 +353,7 @@ external:
   scheme: http
   mainDomain: ".appcircle.spacetech.com"
 
-smtpServer:
+smtpServer: # Optional
   user: o***y*****@v******.net
   from: o***y*****@v******.net
   host: smtp.v******.net
@@ -349,11 +375,19 @@ storeWeb:
 
 For our example, we configured below values:
 
-- `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for SSL configuration details.
+- `external.scheme` is configured as `http` for our case. When we set as `https` we also need to configure other SSL options. See related section in online docs for [SSL configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) details.
 - `external.mainDomain` is set as a subdomain of our example company's main domain. See [DNS Settings](/self-hosted-appcircle/install-server/linux-package/installation/podman#4-dns-settings) for more details.
-- `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
+- `smtpServer` settings are set for e-mail notifications. We choose not to set SMTP password as plain text in here. Recommended methods will be explained in the next section. But if it's acceptable for you, then you can set `smtpServer.password` variable in here.
 - `keycloak.initialUsername` will be appcircle's default organization's admin user. Its username is set to `initialUsername`. We choose not to set its password as plain text in here. We will put it to `user-secret` on next steps. But if it's acceptable for you, then you can set `keycloak.initialPassword` variable in here.
 - `storeWeb.customDomain.domain` is set with our example company's store domain. It's used for enterprise app store URL.
+
+<HttpsOnlySupportedFeatures />
+
+:::caution
+Starting from the version `3.28.2`, SMTP settings can be configured directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings. To use this method, you can remove the `smtpServer` part from your `global.yaml` file, and configure SMTP settings on the Dashboard after installation.
+
+See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+:::
 
 :::caution
 
@@ -402,9 +436,19 @@ Now you can run services again. It should complete without any error.
 
 :::
 
-As seen in above items, we choose to set some secrets in `user-secret` file. So we need to take additional steps to complete configuration. If you set them as plain text in `global.yaml` then you don't need to take `user-secret` steps.
+#### Configuring Secrets
 
-First create your secret yaml configuration as plain text like below.
+As seen in previous section, we left some secrets out of the `global.yaml` to set them in `user-secret` file. So we need to take additional steps to complete configuration. If you set them as plain text in `global.yaml` then you don't need to take `user-secret` steps.
+
+:::caution
+As described in the previous section, SMTP settings can now be configured directly from the Appcircle Dashboard. With this method SMTP password will be stored as an encrypted secret which is secure unlike a plain text or `base64` encoding. To use this method:
+
+1. Remove the `smtpServer.password` part from the `secret.yaml` file in the next steps here. Therefore, it will not be included in the `user-secret` file that you will generate, and won't effect the Appcircle server configuration.
+2. Configure SMTP settings on the Dashboard after installation. See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+
+:::
+
+First create your `secret.yaml` configuration as plain text like below.
 
 ```yaml
 smtpServer:
@@ -802,22 +846,30 @@ Its response should be something like below.
 `WARNING:Services are not started. Project name is spacetech`
 
 :::caution
-
 Some configuration changes may require data cleanup with extra steps which means data loss if you use Appcircle server for some time.
 
 For example, you can add other git providers with above steps any time you want without any data loss. But changing `external.scheme` from "http" to "https" or changing `smtpServer.*` settings requires podman volume prune which results with data cleanup.
 
 So, we suggest you to be sure with your configuration before using it in production environment. You can try different settings back and forth until you're satisfied.
+:::
 
-To begin reconfiguration with data cleanup, use below command while stopping Appcircle server.
+:::tip
+#### SMTP Configuration
+
+Starting from version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard without a server reset or data cleanup.
+
+This is the recommended method if you do not have any specific reason to do it in the `global.yaml`.
+
+See [Email Integration docs](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) for more details.
+:::
+
+To begin reconfiguration with data cleanup (for settings like `external.scheme`), use below command while stopping Appcircle server.
 
 ```bash
 ./ac-self-hosted.sh -n "spacetech" reset
 ```
 
 It will remove all unused local volumes which is useful for a clean start.
-
-:::
 
 Then go back to your configuration and change settings as done previously at [configure](/self-hosted-appcircle/install-server/linux-package/installation/podman#3-configure) step.
 

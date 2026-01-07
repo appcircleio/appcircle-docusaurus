@@ -12,7 +12,7 @@ This option provides an in-depth view of the selected version's publish process.
 <!--
 The "Publish Details" feature in the Publish module provides a comprehensive view of the publish flow for both Android and iOS builds. It is where you can see the progress and logs of your publishing process to different platforms like Google Play Store and TestFlight. -->
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-publishDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-22.png' />
 
 ## Accessing Publish Details
 
