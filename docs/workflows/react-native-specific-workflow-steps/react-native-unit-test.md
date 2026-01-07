@@ -24,16 +24,6 @@ Before running the **React Native Unit Test** step, you must complete certain pr
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/unitOrderNew.png' />
 
-:::danger Step Rule
-
-If any workflow steps fail, Appcircle automatically skips the next steps. However, it is possible that some of your tests may fail. If you have a failing test, Appcircle will break the pipeline. If you want your pipeline not to break even if an error occurs in this step (especially for exporting test reports), you should activate the following option:
-
-- Continue with the next step even if this step fails to **ON**
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/unitStepRuleNew.png' />
-
-:::
-
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).

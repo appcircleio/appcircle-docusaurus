@@ -1,6 +1,6 @@
 ---
 title: Installation
-description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure by Kubernetes or Openshift.
+description: Overview of the steps required to install the self-hosted Appcircle on your infrastructure by Kubernetes or OpenShift.
 tags: [self-hosted, helm, installation]
 sidebar_position: 2
 ---

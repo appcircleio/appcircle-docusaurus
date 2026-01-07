@@ -17,7 +17,7 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 This document explains how to configure your Appcircle server's and Appcircle DMZ server's network subnet of the containers if the existing subnet is conflicting with other networks or not suitable for your use case.
 
 :::info
-This feature is included in the Appcircle server package version **`3.28.0` or later**.
+This feature is included in the Appcircle server package version **`3.28.2` or later**.
 :::
 
 ## Configuring the Subnet for Appcircle Server

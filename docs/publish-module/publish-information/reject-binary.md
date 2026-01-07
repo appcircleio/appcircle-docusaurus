@@ -17,7 +17,7 @@ When a binary file is **rejected**, it can no longer be [**Marked as Release Can
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE4123-rejectAction.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-26.png' />
 
 ### Rejection Reason
 

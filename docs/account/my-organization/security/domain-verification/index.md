@@ -89,6 +89,12 @@ A unique hostname is provided by Appcircle for each organization and domain. As 
 
 - If an invalid domain is entered, the verification process will not proceed.
 
+:::info Email Notification
+If a domain’s verification status changes — from verified to unverified or from unverified to verified — all organization owners will be notified via email.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM114-1.png' />
+:::
+
 ### Enabling Auto-Verify Option in SSO
 
 After configuring domain verification, you can enable the Auto Verify feature in the SSO configuration settings. This feature allows to automatically verify user email addresses and accept pending invitations when users log in via SSO using an email address associated with a verified domain. This is particularly useful in cases where users do not have access to their email inbox or are unable to complete email-based verification.

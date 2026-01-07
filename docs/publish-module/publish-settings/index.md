@@ -15,7 +15,9 @@ Your configured publish flow will be executed automatically when you enable **Au
 
 You can also select a runner pool from the **SELECT A POOL** dropdown list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE5053-priority3.png' alt="Publish Pool Selection" />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-30.png'/>
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-33.png'/>
 
 "Appcircle Linux Pool (x86_64)" and "Appcircle Standard macOS Pool (arm64)" are Appcircle cloud-hosted pools and only available for the cloud services.
 

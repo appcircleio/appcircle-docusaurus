@@ -54,6 +54,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Profile       | List Build Profiles                        | ✅     | ✅       | ✅        | ✅      |
 | Build Profile       | Build List                                 | ✅     | ✅       | ✅        | ✅      |
 | Repository          | Connect/Disconnect Repository              | ✅     | ✅       | ⛔        | ⛔      |
+| Webhook             | View Webhook URL, Webhook Key              | ✅     | ✅       | ✅        | ✅      |
+| Webhook             | Generate Webhook Key                       | ✅     | ✅       | ⛔        | ⛔      |
 | Configuration       | Add/Delete/Update Build Configuration      | ✅     | ✅       | ⛔        | ⛔      |
 | Configuration       | View Build Configuration                   | ✅     | ✅       | ✅        | ✅      |
 | Workflow            | Add/Delete/Update Workflows                | ✅     | ✅       | ⛔        | ⛔      |
@@ -64,6 +66,8 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Build Actions       | Delete Commit Artifacts                    | ✅     | ✅       | ⛔        | ⛔      |
 | Build Actions       | Download Artifacts                         | ✅     | ✅       | ✅        | ✅      |
 | Build Actions       | Distribution Binary                        | ✅     | ✅       | ✅        | ⛔      |
+| Build Actions       | View Build Cache Size Usage                | ✅     | ✅       | ✅        | ✅      |
+| Build Actions       | Clear Build Caches                         | ✅     | ✅       | ⛔        | ⛔      |
 | Test Results        | List Test Results                          | ✅     | ✅       | ✅        | ✅      |
 | Connection          | Add/Delete/Update Connections (User Based) | ✅     | ✅       | ✅        | ✅      |
 | Connection          | List Connection (User Based)               | ✅     | ✅       | ✅        | ✅      |
@@ -72,7 +76,10 @@ The following table details the roles and restrictions for the [**Build**](/buil
 | Runner Access Token | Create/Delete Runner Access Token          | ✅     | ⛔       | ⛔        | ⛔      |
 | Runner Access Token | List Runner Access Token                   | ✅     | ⛔       | ⛔        | ⛔      |
 | Report              | List Build Reports                         | ✅     | ✅       | ✅        | ✅      |
-
+| Build Cache         | View Build Cache Usage                     | ✅     | ✅       | ✅        | ✅      |
+| Build Cache         | Delete Build Cache                         | ✅     | ✅       | ⛔        | ⛔      |
+| Build History       | View Build History                         | ✅     | ✅       | ✅        | ✅      |
+| Build Activity Log  | View Build Activity Log                    | ✅     | ✅       | ✅        | ✅      |
 
 :::caution Distribution Binary and Runner Details
 
@@ -155,20 +162,21 @@ The following table details the roles and restrictions for the [**Signing and Id
 
 The following table details the roles and restrictions for the [**Testing Distribution**](/testing-distribution) module. Please refer to the related module information and caution notes. 
 
-| Testing Distribution | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
-|----------------------|----------------------------------------|-------|---------|----------|---------------|--------|
-| Distribution Profile | Add/Delete/Update Distribution Profile | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Distribution Profile | Setting Update Distribution Profile    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Distribution Profile | List Distribution Profiles             | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Version          | Add/Delete/Update App Version          | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version Actions  | Send to Testers                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version Actions  | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| App Version Actions  | Send to Publish                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| App Version Actions  | Download Binary                        | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Settings             | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔             | ⛔      |
-| Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Report               | List Reports App Version               | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Report               | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Testing Distribution       | Scopes                                 | Owner | Manager | Operator | Ext. Operator | Viewer |
+|----------------------------|----------------------------------------|-------|---------|----------|-------------|--------|
+| Distribution Profile       | Add/Delete/Update Distribution Profile | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
+| Distribution Profile       | Setting Update Distribution Profile    | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
+| Distribution Profile       | List Distribution Profiles             | ✅     | ✅       | ✅        | ✅           | ✅      |
+| App Version                | Add/Delete/Update App Version          | ✅     | ✅       | ✅        | ✅           | ⛔      |
+| App Version Actions        | Send to Testers                        | ✅     | ✅       | ✅        | ✅           | ⛔      |
+| App Version Actions        | Send to Enterprise App Store           | ✅     | ✅       | ✅        | ⛔           | ⛔      |
+| App Version Actions        | Send to Publish                        | ✅     | ✅       | ✅        | ⛔           | ⛔      |
+| App Version Actions        | Download Binary                        | ✅     | ✅       | ✅        | ✅           | ⛔      |
+| Settings                   | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔           | ⛔      |
+| Settings                   | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔           | ✅      |
+| Auto Re-sign Configuration | List/Update Auto Re-sign Configuration | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
+| Report                     | List Reports App Version               | ✅     | ✅       | ✅        | ⛔           | ✅      |
+| Report                     | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔           | ✅      |
 
 :::caution Authentication Settings
 
@@ -217,34 +225,38 @@ The following table details the roles and restrictions for the [**Testing Groups
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the related module information and caution notes.
 
-| Publish                  | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
-|--------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
-| Publish Profiles         | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Profiles         | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Version              | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| App Version              | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profile Settings | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | Download Publish Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish Flows            | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows            | View Publish Flow                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Publish                  | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
-| App Store Connect Info   | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Check Release Status     | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                 | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Metadata                 | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Mark as RC               | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Resing Binary            | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Release Note             | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| History                  | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
-| History                  | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Download Binary          | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
-| Cancel Submission        | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Reject Binary            | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
-| Activity Logs            | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Publish                    | Scopes                                    | Owner | Manager | Operator | Ext. Operator | Viewer |
+|----------------------------|-------------------------------------------|-------|---------|----------|---------------|--------|
+| Publish Profiles           | Add/Delete/Update Publish Profile         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Profiles           | List Publish Profiles                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Version                | Add/Delete App Version                    | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| App Version                | List App Versions                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Profile Settings           | View/Update Profile Settings              | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | Add/Delete/Update Publish Flow Step       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | Download Publish Flow                     | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | Upload Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish Flows              | View Publish Flow                         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Publish                    | Start/Restart/Stop Flow                   | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | Start Single Step                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | Update Publish Details                    | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish                    | View Publish Details                      | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Store Connect Info     | List/Update App Store Connect Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| TestFlight Beta Info       | List/Update TestFlight Beta Information   | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Auto Re-sign Configuration | List/Update Auto Re-sign Configuration    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Check Release Status       | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata                   | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Metadata                   | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Mark as RC                 | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Binary Information         | List Binary Information                   | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Binary Comparison          | List Binary Comparison                    | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Resing Binary              | Resigning Binary                          | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Release Note               | Update Release Note                       | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| History                    | View/Download History Logs                | ✅     | ✅       | ✅        | ✅             | ✅      |
+| History                    | List History                              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Download Binary            | Download Binary                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Cancel Submission          | Cancel Submission                         | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Reject Binary              | Reject Binary                             | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Activity Logs              | List Activity Log Details                 | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Resign Binary
 
@@ -263,19 +275,22 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | Publish Profiles                | List Publish Profiles                       | ✅     | ✅       | ✅        | ✅             | ✅      |
 | App Version                     | Add/Delete App Version                      | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | App Version                     | List App Versions                           | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Publish Profile Settings        | View/Update Profile Settings                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Profile Settings                | View/Update Profile Settings                | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows                   | Add/Delete/Update Publish Flow Step         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows                   | Download Publish Flow                       | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows                   | Download Publish Flow                       | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish Flows                   | Upload Publish Flow                         | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
-| Publish Flows                   | View Publish Flow                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Publish Flows                   | View Publish Flow                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Publish                         | Start/Restart/Stop Flow                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                         | Start Single Step                           | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                         | Update Publish Details                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Publish                         | View Publish Details                        | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Google Play Console Information | List/Update Google Play Console Information | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| Auto Re-sign Configuration      | List/Update Auto Re-sign Configuration      | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Metadata                        | Update Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | Metadata                        | View Metadata Details                       | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Mark as RC                      | Marking RC a version                        | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Binary Information              | List Binary Information                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Binary Comparison               | List Binary Comparison                      | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Resing Binary                   | Resigning Binary                            | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Release Note                    | Update Release Note                         | ✅     | ✅       | ✅        | ✅             | ⛔      |
 | History                         | View/Download History Logs                  | ✅     | ✅       | ✅        | ✅             | ✅      |
@@ -356,12 +371,15 @@ Also, the user can view self-hosted runners and change configuration.
 | Report                                               | View Organziation Report                | ✅     | ✅       | ✅      |
 | Artifacts                                            | View Retention Period                   | ✅     | ✅       | ✅      |
 | Artifacts                                            | Update Retention Period                 | ✅     | ✅       | ⛔      |
+| Artifacts                                            | View Artifacts Report                   | ✅     | ✅       | ✅      |
 | Domain Verification                                  | View Domain List                        | ✅     | ✅       | ✅     |
 | Domain Verification                                  | View Domain Verification Details        | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Add New Domain Verification             | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Verify a Domain                         | ✅     | ✅       | ⛔      |
 | Domain Verification                                  | Remove Domain Verification              | ✅     | ✅       | ⛔      |
 | Export Users                                         | Export User List                        | ✅     | ✅       | ⛔      |
+| API Keys                                             | View API Keys List                      | ✅     | ✅       | ✅       |
+| API Keys                                             | Manage/Delete API Keys                  | ✅     | ✅       | ⛔      |
 
 :::info Organization Management
 

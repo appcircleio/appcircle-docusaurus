@@ -25,3 +25,7 @@ Leverage Testing Distribution to efficiently distribute test builds to specific 
 ## [Visual Studio Marketplace](/marketplace/visual-studio-marketplace)
 
 Appcircle offers two extensions: "Testing Distribution" and "Enterprise App Store". These help users distribute builds to test groups, individuals, or for beta testing.
+
+## [OpenAI Marketplace](/marketplace/open-ai)
+
+Appcircle offers a custom Assistant GPT that provides users with quick, clear answers about Appcircle, including step-by-step instructions and troubleshooting support.

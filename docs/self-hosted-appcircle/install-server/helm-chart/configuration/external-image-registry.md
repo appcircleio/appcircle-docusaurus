@@ -1,5 +1,6 @@
 ---
-title: External Image Registries
+title: External Image Registries for Helm Chart
+sidebar_label: External Image Registries
 description: Learn how to configure external image registries for Appcircle server when installing using a Helm chart
 tags:
   [
@@ -116,7 +117,7 @@ kubectl create secret docker-registry containerregistry \
 
   </TabItem>
 
-  <TabItem value="openshift" label="Openshift">
+  <TabItem value="openshift" label="OpenShift">
 
 ```bash
 oc create secret docker-registry containerregistry \
@@ -208,7 +209,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry/webhookservice:v3.27.3
 
   </TabItem>
 
-  <TabItem value="openshift" label="Openshift">
+  <TabItem value="openshift" label="OpenShift">
 
 ```txt
 europe-west1-docker.pkg.dev/appcircle/docker-registry/agentcacheservice:v3.27.3

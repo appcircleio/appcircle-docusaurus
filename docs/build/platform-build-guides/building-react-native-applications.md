@@ -28,7 +28,7 @@ Simply create a new build profile as usual and select your target operating syst
 
 Once your build profile is created, click on it and connect your Git repository. For details on this step, please follow the directions on the following page:
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile">Adding a Build Profile</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides">Connection Guides</ContentRef>
 
 ### Build Configuration for React Native Applications
 
@@ -38,7 +38,7 @@ Build configuration options are very similar to native iOS or Android applicatio
 
 If your project uses private modules, don't forget to add the necessary SSH keys to your workflow steps. You can use `Activate SSH Private Key` step to add your private SSH keys.
 
-<ContentRef url="/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
+<ContentRef url="/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh">Connecting to Private Repository via SSH</ContentRef>
 
 You may also use `Authenticate with netrc` step to access your private modules.
 
@@ -186,7 +186,7 @@ If you face problems during NPM/Yarn install steps on Appcircle but not on your 
 
 First, you should check the [NPM status page](https://yarnpkg.com/getting-started/qa#queries-to-registryyarnpkgcom-return-a-404500-is-it-down) for possible availability issues.
 
-Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-agent-stacks) and the [Android build agent stacks](/infrastructure/android-build-infrastructure#android-build-agent-stacks) pages for the exact versions.
+Our runners have yarn classic (1.x) by default. See the [iOS build agent stacks](/infrastructure/ios-build-infrastructure#ios-build-environment) and the [Android build agent stacks](/infrastructure/android-build-infrastructure#android-build-environment) pages for the exact versions.
 
 On the other hand, yarn modern (2.x) has stability improvements that can fix these kinds of network errors. You can see [here](https://yarnpkg.com/getting-started/qa#why-should-you-upgrade-to-yarn-modern) for details.
 

@@ -7,6 +7,7 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
 
 # Running Android Unit Tests
 
@@ -97,6 +98,8 @@ You must add this component **after** running your tests so that it can parse te
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
 
+<AlwaysRunToggleDanger />
+
 You must configure the **Test Report Component** and enter the path of code coverage and test results paths. For example, if you run your tests with an emulator, your files will be generated in the following folders.
 
 - **Code Coverage Files:** `$AC_COVERAGE_RESULT_PATH`
@@ -105,17 +108,6 @@ You must configure the **Test Report Component** and enter the path of code cove
 You must configure the component to parse those folders.
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-workflow.png" />
-
-:::danger
-
-There's one important setting that you should change. If any workflow steps fail, Appcircle automatically skips other steps and jumps directly to the Export Build Artifacts step. However, it is possible that some of your tests may fail. **If Test Report Component doesn't run, reports will not be generated.** You should turn on the following toggles so that Test Report Component always runs whether your tests fail or pass.
-
-- Always run this step even if the previous steps fail to **ON**
-- Continue with the next step even if this step fails to **ON**
-
-:::
-
-<Screenshot url="https://cdn.appcircle.io/docs/assets/android-unit-test-report-steps-on.png" />
 
 :::caution
 

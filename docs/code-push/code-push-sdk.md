@@ -29,7 +29,7 @@ Add the SDK to dependencies section in your `package.json` file.
 
 ```json package.json
 "dependencies": {
-    "@appcircle/react-native-code-push": "0.0.2",
+    "@appcircle/react-native-code-push": "0.0.3",
     
     //Other Dependencies here
 }
@@ -77,6 +77,12 @@ For Appcircle Cloud, the **ServerURL** is `https://api.appcircle.io/codepush`.
   </TabItem>
 
 </Tabs>
+
+#### Enabling CodePush Code Signing
+
+To leverage Appcircle's CodePush Code Signing capability for release validation, you must integrate the public key you generated locally into your project configuration. Using this key pair, the Appcircle CodePush SDK verifies the signature of each incoming release against the key embedded in the app and decides whether the update can be applied. If verification fails, the update is blocked and will not be installed by the device. 
+
+For complete setup instructions, refer to the CodePush Code Signing [documentation.](/code-push/code-push-code-signing)
 
 ### SDK Installation and Configuration
 
@@ -150,19 +156,13 @@ include ':app', ':appcircle_react-native-code-push'
 project(':appcircle_react-native-code-push').projectDir = new File(rootProject.projectDir, '../node_modules/@appcircle/react-native-code-push/android/app')
 ```
 
-2. In your android/app/build.gradle file, add the `codepush.gradle` file as an additional build task definition to the end of the file:
+2. In your `android/app/build.gradle` file, add the `codepush.gradle` file as an additional build task definition to the end of the file:
 
 ```java
 apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepush.gradle"
 ```
 
 3. Update the MainApplication file to use CodePush via the following changes:
-
-:::caution If New Architecture Is Enabled
-
-This `MainApplication.kt` may not work properly if you are using the new architecture.
-
-:::
 
 Update the `MainApplication.kt`.
 
@@ -311,3 +311,7 @@ override val reactHost: ReactHost
 If you are using [**Microsoft CodePush SDK**](https://github.com/microsoft/react-native-code-push)  with the new architecture enabled, you may encounter this error when attempting to push OTA updates. If that happens, you can follow [**these instructions**](https://github.com/microsoft/react-native-code-push/issues/2083#issuecomment-1411745157) to resolve it. 
 
 Alternatively, you can use the [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push), which supports the new architecture for React Native 0.76 and above.
+
+### Does Appcircle CodePush support Expo projects?
+
+No, Appcircle CodePush currently supports only bare React Native projects. Managed Expo apps are not supported at this time.

@@ -1,7 +1,7 @@
 ---
 title: Enterprise App Store Profile
 description: Learn how to create an Enterprise App Store profile in Appcircle
-tags: [enterprise app store, enterprise profile, enterprise app store setup]
+tags: [enterprise app store, enterprise profile, enterprise app store setup, faq]
 sidebar_position: 1
 ---
 
@@ -58,6 +58,12 @@ The Publish Flow steps can be customized to send the binary to the Enterprise Ap
 The above tasks can also be initiated using the Appcircle CLI. The Appcircle CLI documentation should be checked for the command line parameters.
 
 <ContentRef url="/appcircle-api-and-cli">Appcircle CLI</ContentRef>
+
+### Upload via Appcircle Marketplace
+
+You can also upload binaries from other CI tools using ready-to-use plugins.
+
+<ContentRef url="/marketplace">Appcircle Marketplace</ContentRef>
 
 ## Profile Actions
 
@@ -222,19 +228,19 @@ Always use the original share link from EAS → Profile → Settings, as sharing
 
 ## Binary Actions
 
-### Binary Details
+### Binary Information
 
 This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas1.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas8.png' />
 
 #### Build Metadata Details
 
 The following metadata is displayed in the Binary Details section of a Enterprise App Store Profile only when the binary is generated via the Build Module, either through automatic or manual triggers, and subsequently distributed using Auto Distribution to the Enterprise App Store module.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas4.png' />
 
 - **Trigger Type**: Indicates what initiated the build. Possible values include:
 
@@ -250,6 +256,18 @@ The following metadata is displayed in the Binary Details section of a Enterpris
 - **Workflow Name**: The name of the workflow profile name executed during the build process (e.g., Default Push Workflow).
 - **Config Name**: Indicates the configuration profile name used within the selected workflow (e.g., Default Configuration).
 
+#### Binary Comparison
+
+In the top-right corner of the Binary Information screen, you can click the **Compare** button to compare the current binary with another of your choice. The comparison highlights differences between the two binaries using color-coded indicators for easy identification.
+
+:::caution Build Details Comparison
+
+Binaries generated through the Appcircle Build Module include associated build details. **However**, if the compared binary was **manually** uploaded to Appcircle, those details **will not be available** for comparison.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas3.png' />
 
 ### Publish
 
@@ -260,7 +278,7 @@ The Enterprise App Store module includes two channels: Beta and Live.
 
 Apps can be sent to the Beta or Live channels by hitting the `...` button and then selecting the **Publish** menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary9.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas5.png' />
 
 The channel can be selected, and a summary and release notes for the release can be written. Once the **Publish** button is clicked, the particular binary will be made available to all beta users.
 
@@ -273,7 +291,7 @@ A version can be sent to the Live Channel in two ways:
 - Click the **Publish** button and select **Live** for the channel.
 - Click the ... button for any beta build and select **Go Live** from the menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas10.png' />
 
 :::info
 
@@ -329,19 +347,19 @@ App versions that were published to the Beta or Live channels as unlisted will d
 
 Any binary can be removed from the Live or Beta channels by selecting the **Unpublish** action from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas9.png' />
 
 ### Download
 
 The binary artifact in the Enterprise App Store profile can be downloaded by selecting the Download button from the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary6.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas6.png' />
 
 ### Delete
 
 Binaries in the Enterprise App Store profiles can be deleted by clicking the Delete button in the actions menu.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6183-binary7.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-eas7.png' />
 
 :::info
 
@@ -371,9 +389,27 @@ You can access the relevant terms and conditions from the links below and get de
 
 :::
 
-## FAQ 
+## Enterprise App Store FAQ
 
-### How can I get a binary from another organization to use in the Enterprise App Store ?
+#### What is Enterprise App Store?
+
+Enterprise App Store is Appcircle's new feature that lets you create your own mobile app store for your in-house apps (apps that are not meant to be distributed through Apple's App Store and Google Play Store).
+
+#### What is the difference between Enterprise App Store and Testing Distribution
+
+[**Testing Distribution**](/testing-distribution) is a process designed to facilitate the manual testing of new builds by internal or third-party teams, ensuring that each iteration is thoroughly validated before final release.
+
+[**Enterprise App Store**](/enterprise-app-store), on the other hand, serves as the final distribution method, offering a secure and branded experience for internal customers.
+
+Understanding the difference between these two methods is essential for effective internal distribution, ensuring that the right version of your app reaches the right audience at the right time.
+
+https://appcircle.io/blog/understanding-the-difference-between-testing-distribution-and-enterprise-app-store
+
+#### Can non-Enterprise companies use this feature?
+
+Yes. From small teams to large enteprises, anybody can create their own app store.
+
+#### How can I get a binary from another organization to use in the Enterprise App Store ?
 
 Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA, APK, or AAB.
@@ -386,7 +422,7 @@ In Organization A's build profile workflow, after the build step, we can add a [
 ```bash
 #Bash script
 sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle login personal-access-key --secret $ORG_B_PERSONAL_ACCESS_KEY
 # If an IPA or AAB is required, change *.apk to *.ipa or *.aab
 appcircle enterprise-app-store version upload-for-profile \
   --entProfileId "$ORG_B_ENT_APP_STORE_PROFILE_ID" \
@@ -398,7 +434,7 @@ appcircle enterprise-app-store version upload-for-profile \
 ```bash
 #Bash script
 sudo npm install -g @appcircle/cli
-appcircle login --pat $ORG_B_PERSONAL_API_TOKEN
+appcircle login personal-access-key --secret $ORG_B_PERSONAL_ACCESS_KEY
 # If an IPA or AAB is required, change *.apk to *.ipa or *.aab
 appcircle enterprise-app-store version upload-without-profile \
   --app "$AC_OUTPUT_DIR"/*.apk
@@ -409,11 +445,11 @@ This will also generate a new Enterprise App Store profile and application will 
 <NewerVersionCodeCaution />
 
 The key point here is that we need two essential parameters to make this work.
-- `ORG_B_PERSONAL_API_TOKEN` => Organization PAT (Personal API Token) from Organization B.
+- `$ORG_B_PERSONAL_ACCESS_KEY` => Personal Access Key from Organization B.
 - `ORG_B_ENT_APP_STORE_PROFILE_ID` => Enterprise App Store profile ID from Organization B.
 - `$AC_OUTPUT_DIR` => Automatically defined by the system. See [Reserved Variables](/environment-variables/appcircle-specific-environment-variables/).
 
-To generate Personal API Token, follow this documentation [API authentication](/appcircle-api-and-cli/api-authentication/)
+To generate Personal Access Key, follow this [documentation](/account/my-organization/security/personal-access-key#generatingmanaging-the-personal-access-keys)
 
 To obtain the Enterprise App Store profile ID, follow the steps below: 
 1. Log in to organization B.
@@ -423,9 +459,49 @@ To obtain the Enterprise App Store profile ID, follow the steps below:
 5. Then the Enterprise App Store profile ID is => `123456f-7d89-4545-5454-123456789abc`
 
 After collecting the required parameters, set the following values as [Environment Variables](/environment-variables/):
-- `ORG_B_PERSONAL_API_TOKEN`
+- `ORG_B_PERSONAL_ACCESS_KEY`
 - `ORG_B_ENT_APP_STORE_PROFILE_ID`
 
 <PatDanger />
 
 <EnvGroupSetCaution />
+
+#### What kind of apps can I put to my Enterprise Portal
+
+As long as they are signed with an Ad Hoc or Enterprise Distribution Certificate, all apps with .ipa or .apk/.aab files can be uploaded.
+
+#### Can we customize our Enterprise Portal and how?
+
+Yes. You can customize your logo, primary and secondary color and the main text color.
+
+#### How will users enter my Enterprise Portal?
+
+Once you go to your portal's settings in Appcircle, you can define a prefix and Appcircle will give you a URL with the given prefix. Alternatively, you can use your own domain. (Not eligible on Starter plans. Please [contact us](https://appcircle.io/contact) to request custom domains).
+
+#### Can I set an authentication method for accessing the Enterprise Portal?
+
+Yes, you can choose one of the authentication methods provided by Appcircle to authenticate your users and control their access to the portal. For more information, please visit the Enterprise App Store [**Store Authentication**](/enterprise-app-store/portal-settings#store-authentication) documentations.
+
+#### Can I send a binary from another CI tool?
+
+Yes, you can use Appcircle API & CLI tools within your current CI tool to directly send the binary and utilize it within the Enterprise App Store. For more information, please visit the [**Appcircle API & CLI**](/appcircle-api-and-cli) documentations.
+
+#### Is my app store accessible from desktop web?
+
+Yes. Desktop users can access your app portal and view the available apps through your store's URL. To install and run an app, you need to open the store from a mobile device. Desktop website will display a QR code next to your portal to pen the page from mobile devices easily.
+
+#### How can I create an Enterprise Distribution Certificate on iOS?
+
+You have to be enrolled on [Apple Enterprise Developer Program](https://developer.apple.com/programs/enterprise/) ($299/year). You can alternatively use Ad Hoc certificates if you aren'a a member of the Enterprise Developer program (see question below).
+
+#### Can I distribute apps signed with Ad Hoc / App Store Provisioning Profile from my Enterprise Portal?
+
+You can distribute apps that are signed with an Ad Hoc certificate (iOS). Please note that your users' device identifiers must be added to Apple Developer Portal and should be included in the provisioning profile used in signing the build. Apps signed with App Store certificates can't be distributed.
+
+#### What does downloads/month mean? How is the number calculated?
+
+A download is calculated every time an app is downloaded from our servers. So a user downloading an app, updating to a new version and re-installing any version adds to the download count.
+
+#### Do you offer plans specific to Enterprise App Store (without CI/CD features)?
+
+Thanks to the modular structure of Appcircle, all modules can be used independently. Accordingly, you can also request a special plan only for Enterprise App Store. Please [contact us](https://appcircle.io/contact) for detailed information.

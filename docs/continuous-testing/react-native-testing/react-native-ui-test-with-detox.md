@@ -4,6 +4,8 @@ description: Learn effectively run UI test with Detox to ensure quality of React
 tags: [detox, test, ui tests, quality assurance]
 ---
 
+import AlwaysRunToggleDanger from '@site/docs/\_always_run_toggle_danger.mdx';
+
 # React Native UI Test on Appcircle
 
 UI Testing with Detox for React Native ensures the reliability and performance of mobile apps by automating interactions and validating the user experience on real devices and simulators across platforms.
@@ -107,6 +109,7 @@ You must add this step **after** the `React Native UI Test` so that it can parse
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-testReport.png' />
 
+<AlwaysRunToggleDanger />
 
 ## Showing Test Reports
 

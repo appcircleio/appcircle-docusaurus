@@ -13,6 +13,8 @@ tags:
 sidebar_position: 1
 ---
 
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
+
 The Appcircle Testing Distribution action allows users to upload their apps and start distribution to test groups or individuals.
 
 ### Discover Action
@@ -67,6 +69,6 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens)
+<PersonalApiTokenRef />
 
 - To create or learn more about Appcircle testing and distribution profiles, please refer to [Creating or Selecting a Distribution Profile](/testing-distribution/create-or-select-a-distribution-profile)

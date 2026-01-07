@@ -14,6 +14,7 @@ sidebar_position: 1
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import PersonalApiTokenRef from '@site/docs/\_personal-api-token-reference.mdx';
 
 The Appcircle Testing Distribution plugin allows users to upload their apps and start distribution to test groups or individuals.
 
@@ -90,6 +91,6 @@ If multiple workflows start simultaneously, the order in which versions are shar
 
 ## References
 
-- For details on generating an Appcircle Personal API Token, visit [Generating/Managing Personal API Tokens](/appcircle-api-and-cli/api-authentication#generatingmanaging-the-personal-api-tokens).
+<PersonalApiTokenRef />
 
 - For more detailed instructions and support, visit the [Testing Distribution documentation](/testing-distribution).

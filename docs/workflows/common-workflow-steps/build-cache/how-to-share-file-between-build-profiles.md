@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # How to Share Files Between Build Profiles
 
-With the build cache structure provided by Appcircle, cache files can be shared between different [**Build Profiles**](/build/manage-the-connections/adding-a-build-profile/). This sharing of files enables the faster generation of packages in different Build Profiles, reducing build time. Below is a simple, step-by-step example of how you can achieve this.
+With the build cache structure provided by Appcircle, cache files can be shared between different [**Build Profiles**](/build/manage-the-connections/connection-guides/). This sharing of files enables the faster generation of packages in different Build Profiles, reducing build time. Below is a simple, step-by-step example of how you can achieve this.
 
 :::info
 

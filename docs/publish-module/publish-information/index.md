@@ -12,7 +12,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Publish module provides users with several key actions to manage their application versions effectively. Below is an overview of each menu item and its function within the system:
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3857-pub1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-18.png' />
 
 ## [App Store Connect Information](/publish-module/publish-information/app-information)
 
@@ -25,6 +25,10 @@ With the Check Release Status function, you can instantly update the status info
 ## [Publish Details](/publish-module/publish-information/publish-details)
 
 This option provides an in-depth view of the selected version's publish process. Users can review the steps taken, configurations used, and outcomes of the publish sequence. It's an essential resource for understanding the specific details of a version's journey through the publish workflow.
+
+## [Auto Re-sign](/publish-module/publish-information/auto-resign-configuration)
+
+The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
 ## [Google Play Console Information](/publish-module/publish-information/google-play-information)
 

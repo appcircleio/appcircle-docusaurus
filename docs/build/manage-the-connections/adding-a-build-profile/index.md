@@ -3,13 +3,14 @@ title: Adding a Build Profile & Connecting a Repository
 description: Learn how to add a build profile and connect a repository in Appcircle
 tags: [build profile, connection, repository, faq]
 sidebar_position: 1
+slug: /build/manage-the-connections/connection-guides
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Connect your repository
+# Connection Guides
 
-You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, you can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible Git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh#how-to-connect-to-aws-codecommit-repositories-through-ssh-1))
+You can connect GitHub through a GitHub app or Bitbucket and GitLab repositories to your build profile through OAuth apps. Alternatively, you can connect private repositories through SSH and public repositories directly on GitHub, Bitbucket, GitLab, and other compatible Git providers such as Azure DevOps and AWS CodeCommit. ([Please refer here for more information on AWS CodeCommit connections.](/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh#how-to-connect-to-aws-codecommit-repositories-through-ssh-1))
 
 You can also connect to your self-hosted Bitbucket and GitLab account directly within Appcircle.
 
@@ -27,13 +28,13 @@ When you have exceeded the build limit of your plan, Appcircle will not be able 
 
 You can refer to the links below for a detailed explanation on connecting a repository from GitHub, GitLab, Azure, and other platforms:
 
-* [Connecting to GitHub](/build/manage-the-connections/adding-a-build-profile/connecting-to-github)
-* [Connecting to GitLab](/build/manage-the-connections/adding-a-build-profile/connecting-to-gitlab)
-* [Connecting to Bitbucket](/build/manage-the-connections/adding-a-build-profile/connecting-to-bitbucket)
-* [Connecting to Azure DevOps](/build/manage-the-connections/adding-a-build-profile/connecting-to-azure)
-* [Connecting to Public Repository](/build/manage-the-connections/adding-a-build-profile/connecting-to-public-repository)
-* [Connecting to Private Repository via SSH](/build/manage-the-connections/adding-a-build-profile/connecting-to-private-repository-via-ssh)
-* [Connecting to Multiple Instances](/build/manage-the-connections/adding-a-build-profile/connecting-multiple-instance)
+* [Connecting to GitHub](/build/manage-the-connections/connection-guides/connecting-to-github)
+* [Connecting to GitLab](/build/manage-the-connections/connection-guides/connecting-to-gitlab)
+* [Connecting to Bitbucket](/build/manage-the-connections/connection-guides/connecting-to-bitbucket)
+* [Connecting to Azure DevOps](/build/manage-the-connections/connection-guides/connecting-to-azure)
+* [Connecting to Public Repository](/build/manage-the-connections/connection-guides/connecting-to-public-repository)
+* [Connecting to Private Repository via SSH](/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh)
+* [Connecting to Multiple Instances](/build/manage-the-connections/connection-guides/connecting-multiple-instance)
 
 ## FAQ
 

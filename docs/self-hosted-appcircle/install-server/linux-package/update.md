@@ -62,7 +62,18 @@ For more information about the DMZ structure, you can check the [Appcircle DMZ d
 
 Below is the version history of the self-hosted Appcircle server. This table helps you track the latest updates and releases since your current version.
 
-<!-- Version Anchor Links -->
+<!-- Version anchor links to release notes -->
+[3.29.6]: https://docs.appcircle.io/release-notes#3-29-6
+[3.29.5]: https://docs.appcircle.io/release-notes#3-29-5
+[3.29.4]: https://docs.appcircle.io/release-notes#3-29-4
+[3.29.3]: https://docs.appcircle.io/release-notes#3-29-3
+[3.29.2]: https://docs.appcircle.io/release-notes#3-29-2
+[3.29.1]: https://docs.appcircle.io/release-notes#3-29-1
+[3.29.0]: https://docs.appcircle.io/release-notes#3-29-0
+[3.28.3]: https://docs.appcircle.io/release-notes#3-28-3
+[3.28.2]: https://docs.appcircle.io/release-notes#3-28-2
+[3.28.1]: https://docs.appcircle.io/release-notes#3-28-1
+[3.28.0]: https://docs.appcircle.io/release-notes#3-28-0
 [3.27.2]: https://docs.appcircle.io/release-notes#3-27-2
 [3.27.1]: https://docs.appcircle.io/release-notes#3-27-1
 [3.27.0]: https://docs.appcircle.io/release-notes#3-27-0
@@ -95,9 +106,24 @@ Below is the version history of the self-hosted Appcircle server. This table hel
     <summary>Click to view version history.</summary>
 
         Since the cloud and self-hosted versions are released asynchronously, the release dates listed in the table may differ from those on the **[Release Notes](https://docs.appcircle.io/release-notes)** page.
+
+        :::tip
+        Release dates in the table below are listed in `dd/mm/yyyy` date format.
+        :::
         
         | Version   | Release Date |
         |-----------|--------------|
+        | [3.29.6]  | 24/12/2025   |
+        | [3.29.5]  |     -        |
+        | [3.29.4]  | 13/10/2025   |
+        | [3.29.3]  | 23/09/2025   |
+        | [3.29.2]  |     -        |
+        | [3.29.1]  |     -        |
+        | [3.29.0]  | 15/08/2025   |
+        | [3.28.3]  | 01/08/2025   |
+        | [3.28.2]  | 17/07/2025   |
+        | [3.28.1]  |     -        |
+        | [3.28.0]  |     -        |
         |  3.27.3   | 21/05/2025   |
         | [3.27.2]  | 12/05/2025   |
         | [3.27.1]  |     -        |
@@ -186,6 +212,16 @@ In order to migrate to single-node single drive MinIO configuration or stay with
 :::
 
 <RedisDomainCaution/>
+
+:::caution
+
+#### Upgrade path for `3.29.3` or later
+
+If you are using `3.28.3` or an older version and planning to upgrade to `3.29.3` or a later version, you must have an **intermediate upgrade step** with version `3.29.0`.
+
+See **[here](/release-notes#upgrading-from-3283-or-older-versions-)** for further details, and follow the guide for a healthy upgrade path.
+
+:::
 
 Extract self-hosted Appcircle package into folder.
 

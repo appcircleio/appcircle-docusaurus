@@ -160,13 +160,7 @@ You can **skip** this section **if you use the default** Ingress-Nginx controlle
 
 Configure the Appcircle ingresses for production usage. For more details, please check the [Ingress Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration.md#configuring-ingress-annotations) documentation.
 
-### 2. Production Readiness
-
-If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
-
-For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
-
-### 3. Create Namespace
+### 2. Create Namespace
 
 **Create a namespace** for the Appcircle server deployment. In this documentation, we will use `appcircle` as the example namespace.
 
@@ -174,7 +168,7 @@ For more information, you can check the [Production Readiness](/self-hosted-appc
 kubectl create namespace appcircle
 ```
 
-### 4. Create Container Registry Secret
+### 3. Create Container Registry Secret
 
 By default, Appcircle uses its own image registry, which requires authentication with the `cred.json` file provided by Appcircle.
 
@@ -401,8 +395,26 @@ webeventredis:
 
 </details>
 
+#### Production Readiness Configuration
+
+If you are deploying the Appcircle server for a production environment, it is recommended that stateful applications, such as databases or object storage, be deployed outside the scope of the Appcircle server Helm chart.
+
+For more information, you can check the [Production Readiness](/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness) documentation.
+
+
   </TabItem>
 </Tabs>
+
+:::caution
+Starting from the server version `3.28.2`, SMTP settings can be configured and updated directly from the Appcircle Dashboard. This is the recommended approach for managing SMTP settings as it allows you to update the configuration at any time without requiring server reset. To use this method:
+
+1. Exclude the `global.mail` part from the `values.yaml` file.
+2. Configure SMTP settings on the Appcircle Dashboard after installation.
+
+See the [email integration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#configure-via-dashboard-recommended) document for more information about the SMTP configuration.
+
+See the [version history](/self-hosted-appcircle/install-server/helm-chart/upgrades#version-history) to find out the minimum required Helm chart version for the server.
+:::
 
 ### 2. Remove Sensitive Information From `values.yaml`
 
