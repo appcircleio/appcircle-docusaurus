@@ -24,7 +24,7 @@ With Appcircle's **Add Badge to Your App Icon** component, you can add badges an
 
 This step installs [Appium Server](https://appium.io/) and starts it.
 
-## [KOBIL Appshield Scanner for Android/iOS](/workflows/common-workflow-steps/konil-appshield-scanner)
+## [KOBIL Appshield Scanner for Android/iOS](/workflows/common-workflow-steps/kobil-appshield-scanner)
 
 KOBIL Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
 
