@@ -1,19 +1,19 @@
 ---
-title: Appshield Scanner for Android/iOS
-description: Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
-tags: [android, ios, mobile, security, scan, appshield-scanner]
+title: KOBIL Appshield Scanner for Android/iOS
+description: KOBIL Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
+tags: [android, ios, mobile, security, scan, kobil-appshield-scanner]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Appshield App Scanner for Android / iOS
+# KOBIL Appshield Scanner for Android / iOS
 
-Appshield Scanner starts its analysis by accepting the application file (AAB/APK for Android, IPA for iOS) and starting dynamic runtime tests after initial file and format validations. 
+KOBIL Appshield Scanner starts its analysis by accepting the application file (AAB/APK for Android, IPA for iOS) and starting dynamic runtime tests after initial file and format validations. 
 It is important to note that while many scanning solutions use ARM/x86_64 based emulators and sandbox environments, Appshield performs all these dynamic tests in **real/physical Android and/or iOS devices.**
 At the end of the dynamic test session, Appshield indicates which security measures/hardenings are present and implemented in the app. If some testcases were failed due to unforeseen errors or cannot be tested various bypass mechanisms 
 implemented by the app itself, Appshield then starts a static, AI-powered analysis for mentioned testcases to gather additional findings and then reaches a final verdict.
 
-**Security measures/hardenings Appshield Scanner checks for in an application includes (but not limited to)**:
+**Security measures/hardenings KOBIL Appshield Scanner checks for in an application includes (but not limited to)**:
 
 * **Root/Jailbreak Detection**: Detects whether the device has been rooted or jailbroken, which increases the risk of unauthorized system access and tampering.
 * **Frida / Anti-Hooking Detection:** Identifies runtime instrumentation frameworks (like Frida) or hooks that intercept and modify function calls to prevent dynamic analysis and tampering.
@@ -26,7 +26,7 @@ implemented by the app itself, Appshield then starts a static, AI-powered analys
 
 ### Prerequisites
 
-Before running the **Appshield Scanner** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **KOBIL Appshield Scanner** step, you must complete certain prerequisites, as detailed in the table below:
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
@@ -35,7 +35,7 @@ Before running the **Appshield Scanner** step, you must complete certain prerequ
 
 :::danger
 
-If a step other than the **Android Build** or **Android Sign** step is used to build or sign the app, then the **Appshield Scanner** step depends on this step.
+If a step other than the **Android Build** or **Android Sign** step is used to build or sign the app, then the **KOBIL Appshield Scanner** step depends on this step.
 
 :::
 
@@ -52,9 +52,11 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 :::
 
 | Variable Name               | Description                                                                                          | Status |                                                                                                                                                                                                                                                                                                                                          
-| --------------------------- | ---------------------------------------------------------------------------------------------------- | -------- |
-| `AC_APPSHIELD_APP_FILE_PATH`| Specifies the URL or path of the AAB/APK/IPA app file accessible from Appcircle.                     | Required |                                                                                                                                                        
-| `AC_APPSHIELD_USER_MAIL`    | Specifies the user e-mail if user wants to receive a detailed PDF report regading the analysis.      | Optional |
+| ---------------------------   | ----------------------------------------------------------------------------------------------------  | -------- |
+| `AC_APPSHIELD_APP_FILE_PATH`  | Path to the AAB/APK/IPA file for KOBIL Appshield Scanner to test.                                     | Required |
+| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session.                                                             | Required |
+| `AC_APPSHIELD_USER_MAIL`      | Specifies the user e-mail if user wants to receive a detailed PDF report regading the analysis.       | Optional |
+| `AC_APPSHIELD_UPLOAD_TIMEOUT` | File upload timeout in seconds.                                                                       | Optional |
 
 ---
 

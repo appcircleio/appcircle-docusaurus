@@ -333,10 +333,10 @@ appdome:
   description: "Description for appdome"
   permalink: /appdome
 
-appshield-scanner:
-  label: "appshield-scanner"
-  description: "Description for appshield-scanner"
-  permalink: /appshield-scanner
+kobil-appshield-scanner:
+  label: "kobil-appshield-scanner"
+  description: "Description for kobil-appshield-scanner"
+  permalink: /kobil-appshield-scanner
 
 appearance:
   label: "appearance"
