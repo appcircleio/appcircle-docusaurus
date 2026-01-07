@@ -32,7 +32,7 @@ kubectl delete namespace appcircle
 
   <TabItem value="openshift" label="OpenShift">
 
-Using the project name you specified in the [Create Project](/self-hosted-appcircle/install-server/helm-chart/installation/openshift#3-create-project) section, run the following command to delete all resources of the Appcircle server.
+Using the project name you specified in the [Create Project](/self-hosted-appcircle/install-server/helm-chart/installation/openshift#2-create-project) section, run the following command to delete all resources of the Appcircle server.
 
 ```bash
 oc delete project appcircle
