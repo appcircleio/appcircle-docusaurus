@@ -162,9 +162,9 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.mail.smtp.fromDisplayName`                            | The display name for the sender of emails.                                                           | -                             |
 | `global.mail.smtp.port`                                       | Port number for the SMTP server.                                                                     | -                             |
 | `global.mail.smtp.password`                                   | Password for the SMTP account.                                                                       | -                             |
-| `global.mail.smtp.ssl`                                        | Whether SSL is enabled for SMTP.                                                                     | 'false'                       |
-| `global.mail.smtp.auth`                                       | Whether authentication is enabled for SMTP.                                                          | 'true'                        |
-| `global.mail.smtp.starttls`                                   | Whether STARTTLS is enabled for SMTP.                                                                | 'true'                        |
+| `global.mail.smtp.ssl`                                        | Whether SSL is enabled for SMTP.                                                                     | -                             |
+| `global.mail.smtp.auth`                                       | Whether authentication is enabled for SMTP.                                                          | -                             |
+| `global.mail.smtp.starttls`                                   | Whether STARTTLS is enabled for SMTP.                                                                | -                             |
 | `global.distribution.distribution-testerweb.url`              | The external URL for the distribution tester web module.                                             | -                             |
 | `global.tlsWildcard.cert`                                     | The wildcard TLS certificate.                                                                        | -                             |
 | `global.tlsWildcard.caCert`                                   | The Certificate Authority (CA) for the wildcard certificate.                                         | -                             |
