@@ -2434,7 +2434,7 @@ slack:
   permalink: /snyk-scan
 
 "scan":
-  label: "sscan"
+  label: "scan"
   description: "Description for scan"
   permalink: /scan
   
