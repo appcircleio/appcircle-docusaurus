@@ -17,14 +17,15 @@ At the end of the dynamic test session, Appshield indicates which security measu
 
 ### Prerequisites
 
+For Android, APK or AAB format (signed) and for iOS, IPA format (signed) is required for **KOBIL Appshield Scanner**.  
 Before running the **KOBIL Appshield Scanner** step, you must complete certain prerequisites, as detailed in the table below:
 
 #### For Android (Java / Kotlin and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **KOBIL Appshield Scanner** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
+| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
 
 #### For iOS (Objective-C / Swift and React Native) 
@@ -38,16 +39,17 @@ Before running the **KOBIL Appshield Scanner** step, you must complete certain p
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **KOBIL Appshield Scanner** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
+| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
 
 #### For iOS Flutter
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+
 
 
 ### Input Variables
