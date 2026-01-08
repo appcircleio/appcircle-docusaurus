@@ -18,7 +18,7 @@ At the end of the dynamic test session, Appshield indicates which security measu
 ### Prerequisites
 
 For Android, APK or AAB format (signed) and for iOS, IPA format (signed) is required for **KOBIL Appshield Scanner**.  
-Before running the **KOBIL Appshield Scanner** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **KOBIL Appshield Scanner** step, here are some example steps/flows to obtain a signed AAB/APK/IPA file, illustrated below:
 
 #### For Android (Java / Kotlin and React Native) 
 
