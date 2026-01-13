@@ -30,14 +30,6 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
-
-#### For iOS (Objective-C / Swift and React Native) 
-
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-
-
 #### For Android Flutter 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
@@ -45,6 +37,11 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 | [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
+#### For iOS (Objective-C / Swift and React Native) 
+
+| Prerequisite Workflow Step        | Description                                                                                              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 #### For iOS Flutter
 
@@ -52,8 +49,6 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-
-
 
 ### Input Variables
 
@@ -88,8 +83,7 @@ To access the source code of this component, please use the following link:
 https://github.com/appcircleio/appcircle-kobil-appshield-scanner.git
 
 
-## Frequently Asked Questions (FAQ)
-
+## FAQ
 
 ### What is KOBIL Appshield Scanner?
 KOBIL Appshield Scanner is a mobile application security analysis tool for Android and iOS apps. It evaluates application security by combining dynamic runtime testing on real, physical devices with AI-supported static (file-based) analysis to determine whether an app is properly protected against common runtime attacks and tampering techniques.
