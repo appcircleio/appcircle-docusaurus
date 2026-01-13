@@ -5,6 +5,7 @@ tags: [android, ios, mobile, security, scan, kobil-appshield-scanner]
 ---
 
 import SensitiveVariablesDanger from '@site/docs/\_sensitive-variables-danger.mdx';
+import Screenshot from '@site/src/components/Screenshot';
 
 # KOBIL Appshield Scanner
 
@@ -12,13 +13,15 @@ KOBIL Appshield Scanner starts its analysis by accepting the application file (A
 
 It is important to note that while many scanning solutions use ARM/x86_64 based emulators and sandbox environments, Appshield performs all these dynamic tests on **real/physical Android and/or iOS devices.**
 
-At the end of the dynamic test session, Appshield indicates which security measures/hardenings are present and implemented in the app. If some test cases were to fail due to unforeseen errors or cannot be tested due to various bypass mechanisms implemented by the app itself, Appshield then starts a static, AI-powered analysis for the mentioned testcases to gather additional findings and then reaches a final verdict.
+At the end of the dynamic test session, Appshield indicates which security measures/hardenings are present and implemented in the app. If some test cases were to fail due to unforeseen errors or cannot be tested due to various bypass mechanisms implemented by the app itself, Appshield then starts a static, AI-powered analysis for the mentioned test cases to gather additional findings and then reaches a final verdict.
 
 
 ### Prerequisites
 
 For Android, APK or AAB format (signed) and for iOS, IPA format (signed) is required for **KOBIL Appshield Scanner**.  
 Before running the **KOBIL Appshield Scanner** step, here are some example steps/flows to obtain a signed AAB/APK/IPA file, illustrated below:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/kobil-appshield-scanner-0.png' />
 
 #### For Android (Java / Kotlin and React Native) 
 
@@ -27,14 +30,6 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 | [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
-
-#### For iOS (Objective-C / Swift and React Native) 
-
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-
-
 #### For Android Flutter 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
@@ -42,6 +37,11 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 | [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
 | [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
+#### For iOS (Objective-C / Swift and React Native) 
+
+| Prerequisite Workflow Step        | Description                                                                                              |
+| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 #### For iOS Flutter
 
@@ -50,22 +50,21 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 | [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 | [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
-
-
 ### Input Variables
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/kobil-appshield-scanner-1.png' />
 
 <SensitiveVariablesDanger />
 
 | Variable Name               | Description                                                                                          | Status |                                                                                                                                                                                                                                                                                                                                          
 | ---------------------------   | ----------------------------------------------------------------------------------------------------  | -------- |
 | `AC_APPSHIELD_APP_FILE_PATH`  | Path to the AAB/APK/IPA file for KOBIL Appshield Scanner to test.                                     | Required |
-| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session. If not provided, default value from AppCircle can also be used by the component.                                                             | Required |
-| `AC_APPSHIELD_USER_MAIL`      | Specifies the user e-mail if user wants to receive a detailed PDF report regading the analysis.       | Optional |
+| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session. If not provided, default value from Appcircle can also be used by the component.                                                             | Required |
+| `AC_APPSHIELD_USER_MAIL`      | Specifies the user e-mail if user wants to receive a detailed PDF report regarding the analysis.       | Optional |
 | `AC_APPSHIELD_UPLOAD_TIMEOUT` | File upload timeout in seconds.                                                                       | Optional |
 
----
 
 ### Output Variables
 
@@ -74,14 +73,17 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                          | Description                                                                                                                                                                                                                                                                                         |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AC_APPSHIELD_IS_APP_SECURE`           | Booelan variable indicating whether the app is properly hardened and contains the security/defense mechanisms. "true" indicates app is secure, "false" indicates app is not completely secure (has missing security measures), and "null" indicates the testing has failed for some internal reason. |                                            |
+| `AC_APPSHIELD_IS_APP_SECURE`           | Boolean variable indicating whether the app is properly hardened and contains the security/defense mechanisms. "true" indicates app is secure, "false" indicates app is not completely secure (has missing security measures), and "null" indicates the testing has failed for some internal reason. |                                            |
 
 
 ---
 
+To access the source code of this component, please use the following link:
 
-## Frequently Asked Questions (FAQ)
+https://github.com/appcircleio/appcircle-kobil-appshield-scanner.git
 
+
+## FAQ
 
 ### What is KOBIL Appshield Scanner?
 KOBIL Appshield Scanner is a mobile application security analysis tool for Android and iOS apps. It evaluates application security by combining dynamic runtime testing on real, physical devices with AI-supported static (file-based) analysis to determine whether an app is properly protected against common runtime attacks and tampering techniques.
@@ -114,12 +116,3 @@ After the scan completes, Appshield Scanner provides the output variable `AC_APP
 - `true` indicates the app is properly hardened and contains the required security mechanisms  
 - `false` indicates some security measures are missing  
 - `null` indicates the scan failed due to an internal or unexpected issue 
-
-
-## Additional Remarks
-
-Optionally, users can also receive a detailed PDF security report via email.
-
-To access the source code of this component, please use the following link:
-
-https://github.com/appcircleio/appcircle-kobil-appshield-scanner.git
