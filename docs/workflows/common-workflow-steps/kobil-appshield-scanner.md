@@ -12,7 +12,7 @@ KOBIL Appshield Scanner starts its analysis by accepting the application file (A
 
 It is important to note that while many scanning solutions use ARM/x86_64 based emulators and sandbox environments, Appshield performs all these dynamic tests on **real/physical Android and/or iOS devices.**
 
-At the end of the dynamic test session, Appshield indicates which security measures/hardenings are present and implemented in the app. If some test cases were to fail due to unforeseen errors or cannot be tested due to various bypass mechanisms implemented by the app itself, Appshield then starts a static, AI-powered analysis for the mentioned testcases to gather additional findings and then reaches a final verdict.
+At the end of the dynamic test session, Appshield indicates which security measures/hardenings are present and implemented in the app. If some test cases were to fail due to unforeseen errors or cannot be tested due to various bypass mechanisms implemented by the app itself, Appshield then starts a static, AI-powered analysis for the mentioned test cases to gather additional findings and then reaches a final verdict.
 
 
 ### Prerequisites
@@ -61,8 +61,8 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name               | Description                                                                                          | Status |                                                                                                                                                                                                                                                                                                                                          
 | ---------------------------   | ----------------------------------------------------------------------------------------------------  | -------- |
 | `AC_APPSHIELD_APP_FILE_PATH`  | Path to the AAB/APK/IPA file for KOBIL Appshield Scanner to test.                                     | Required |
-| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session. If not provided, default value from AppCircle can also be used by the component.                                                             | Required |
-| `AC_APPSHIELD_USER_MAIL`      | Specifies the user e-mail if user wants to receive a detailed PDF report regading the analysis.       | Optional |
+| `AC_APPSHIELD_API_KEY`        | User API key for starting a test session. If not provided, default value from Appcircle can also be used by the component.                                                             | Required |
+| `AC_APPSHIELD_USER_MAIL`      | Specifies the user e-mail if user wants to receive a detailed PDF report regarding the analysis.       | Optional |
 | `AC_APPSHIELD_UPLOAD_TIMEOUT` | File upload timeout in seconds.                                                                       | Optional |
 
 ---
@@ -74,10 +74,14 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                          | Description                                                                                                                                                                                                                                                                                         |
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `AC_APPSHIELD_IS_APP_SECURE`           | Booelan variable indicating whether the app is properly hardened and contains the security/defense mechanisms. "true" indicates app is secure, "false" indicates app is not completely secure (has missing security measures), and "null" indicates the testing has failed for some internal reason. |                                            |
+| `AC_APPSHIELD_IS_APP_SECURE`           | Boolean variable indicating whether the app is properly hardened and contains the security/defense mechanisms. "true" indicates app is secure, "false" indicates app is not completely secure (has missing security measures), and "null" indicates the testing has failed for some internal reason. |                                            |
 
 
 ---
+
+To access the source code of this component, please use the following link:
+
+https://github.com/appcircleio/appcircle-kobil-appshield-scanner.git
 
 
 ## Frequently Asked Questions (FAQ)
@@ -114,12 +118,3 @@ After the scan completes, Appshield Scanner provides the output variable `AC_APP
 - `true` indicates the app is properly hardened and contains the required security mechanisms  
 - `false` indicates some security measures are missing  
 - `null` indicates the scan failed due to an internal or unexpected issue 
-
-
-## Additional Remarks
-
-Optionally, users can also receive a detailed PDF security report via email.
-
-To access the source code of this component, please use the following link:
-
-https://github.com/appcircleio/appcircle-kobil-appshield-scanner.git
