@@ -30,10 +30,26 @@ Before you can use the CLI to manage your CodePush deployments, you need to auth
 Run the following command to start the login process:
 
 ```bash
-appcircle-code-push login --accessKey <Your-Personal-Access-Token>
+appcircle-code-push login --accessKey <Your-Personal-Access-Key>
 ```
 
-This command will prompt you to enter your Appcircle authentication credentials. Once authenticated, you’ll be able to access and manage your CodePush profiles via CLI.
+### Self-hosted Login
+
+:::caution Self-hosted Version
+
+Self-hosted CodePush is available in Appcircle self-hosted version `3.28.2` and above. If you are using an earlier version, you must upgrade to enable self-hosted CodePush.
+
+:::
+
+Run the following command to start the login process for your self-hosted environment:
+
+```bash
+appcircle-code-push login --accessKey <Your-Personal-Access-Key> --serverUrl <Server-Url> --authUrl <Auth-Url>
+```
+
+- `--serverUrl`: Specifies the CodePush API server URL used by self-hosted Appcircle instances (e.g. `https://api-appcircle.spacetech.com/codepush`).
+- `--authUrl`: Specifies the authentication endpoint used by self-hosted Appcircle instances (e.g. `https://auth-appcircle.spacetech.com`).
+
 
 ## CLI Experience
 

@@ -94,6 +94,10 @@ This component uploads file or folders to given FTP server.
 
 Clones the Git repository to the build agent with the given arguments.
 
+## [KOBIL Appshield Scanner for Android/iOS](/workflows/common-workflow-steps/kobil-appshield-scanner)
+
+KOBIL Appshield Scanner performs dynamic runtime scans/analysis and AI supported static (file-based) inspections for mobile app files (APK, AAB, IPA) to detect existing security mechanisms and indicates whether an app is secure or not.
+
 ## [Maestro Cloud Upload](/workflows/common-workflow-steps/maestro-cloud-upload)
 
 This component uploads both your app binary and flows to Maestro Cloud.
