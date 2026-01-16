@@ -1,5 +1,5 @@
 ---
-title: KOBIL Appshield Scanner for Android/iOS
+title: KOBIL Appshield Scanner
 description: KOBIL Appshield Scanner is a mobile application security analysis tool for Android and iOS apps.
 tags: [android, ios, mobile, security, scan, kobil-appshield-scanner]
 ---
@@ -7,7 +7,7 @@ tags: [android, ios, mobile, security, scan, kobil-appshield-scanner]
 import SensitiveVariablesDanger from '@site/docs/\_sensitive-variables-danger.mdx';
 import Screenshot from '@site/src/components/Screenshot';
 
-# KOBIL Appshield Scanner
+# KOBIL Appshield Scanner for Android/iOS
 
 KOBIL Appshield Scanner starts its analysis by accepting the application file (AAB/APK for Android, IPA for iOS) and performs dynamic runtime tests after initial file and format validations. 
 
@@ -75,6 +75,12 @@ The output(s) resulting from the operation of this component are as follows:
 | -------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `AC_APPSHIELD_IS_APP_SECURE`           | Boolean variable indicating whether the app is properly hardened and contains the security/defense mechanisms. "true" indicates app is secure, "false" indicates app is not completely secure (has missing security measures), and "null" indicates the testing has failed for some internal reason. |                                            |
 
+:::warning
+
+When the app is not secure, this step fails and breaks the pipeline.
+To prevent pipeline interruption, enable "[Continue with the next step even if this step fails](/build/build-process-management#editing-workflow-steps)".
+
+:::
 
 ---
 
