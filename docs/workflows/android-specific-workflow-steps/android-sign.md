@@ -97,7 +97,7 @@ The **Android Sign** step is often where most Android-related issues arise. The 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_3.png' />
 
-Users may encounter a **“Package invalid”** error when attempting to launch an application after successfully installing an APK on an Android device. Although the installation appears to complete without errors, the app fails to open.
+Users may encounter a **“App not installed as package appears to be invalid.”** error when attempting to launch an application after successfully installing an APK on an Android device. Although the installation appears to complete without errors, the app fails to open.
 
 This issue is typically related to APK integrity, signing configuration, or device compatibility.
 
