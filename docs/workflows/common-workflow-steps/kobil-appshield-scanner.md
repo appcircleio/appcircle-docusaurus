@@ -78,7 +78,7 @@ The output(s) resulting from the operation of this component are as follows:
 :::warning
 
 When the app is not secure, this step fails and breaks the pipeline.
-To prevent pipeline interruption, enable "[Continue with the next step even if this step fails](/build/build-process-management#editing-workflow-steps)".
+To prevent pipeline interruption, enable "[Continue with the next step even if this step fails](/build/build-process-management/build-workflows#editing-workflow-steps)" toggle.
 
 :::
 
