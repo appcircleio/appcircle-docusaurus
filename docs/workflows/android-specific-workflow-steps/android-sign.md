@@ -95,29 +95,15 @@ The **Android Sign** step is often where most Android-related issues arise. The 
 
 ### “Package invalid” Error After Installing an APK
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-sign_3.png' />
+
 Users may encounter a **“Package invalid”** error when attempting to launch an application after successfully installing an APK on an Android device. Although the installation appears to complete without errors, the app fails to open.
 
 This issue is typically related to APK integrity, signing configuration, or device compatibility.
 
 Possible causes and solutions:
 
-#### 1. APK Is Corrupted or Incomplete
-
-**Cause:**
-
-The APK file may be partially uploaded, corrupted during download, or incorrectly generated during the build process.
-
-**How to Check:**
-
-* Try installing the APK on another device or emulator.
-* Verify the APK file size and compare it with previous successful builds.
-
-**Solution:**
-
-* Rebuild the APK from Appcircle.
-* Re-download the APK and ensure the transfer process completes successfully.
-
-#### 2. APK Is Signed Incorrectly or Not Signed
+#### 1. APK Is Signed Incorrectly or Not Signed
 
 **Cause:**
 
@@ -132,6 +118,22 @@ Android requires all APKs to be properly signed. An incorrect signing configurat
 
 * Ensure the **Android Sign** step is configured correctly in your Appcircle workflow.
 * Confirm that the signing key matches the one used for previous releases of the app.
+
+#### 2. APK Is Corrupted or Incomplete
+
+**Cause:**
+
+The APK file may be partially uploaded, corrupted during download, or incorrectly generated during the build process.
+
+**How to Check:**
+
+* Try installing the APK on another device or emulator.
+* Verify the APK file size and compare it with previous successful builds.
+
+**Solution:**
+
+* Rebuild the APK from Appcircle.
+* Re-download the APK and ensure the transfer process completes successfully.
 
 #### 3. Package Name Mismatch
 
