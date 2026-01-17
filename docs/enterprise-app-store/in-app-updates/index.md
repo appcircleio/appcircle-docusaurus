@@ -46,19 +46,19 @@ Steps to Generate a Profile-Specific Secret:
 
 3- Select Generate Secret to create a profile-specific secret.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-in-app-secret.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-56.png' />
 
 #### Enterprise Portal Prefix
 
 Navigate to the Enterprise App Store module and settings page to find the **STORE PREFIX** information. You can also modify it if needed.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE_4207-Enterprise-Store-Prefix-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-60.png' />
 
 #### Enterprise Portal URL
 
 Navigate to the Enterprise Store module and settings page to find the **STORE URL** information.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/SP-239-store-url.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-61.png' />
 
 #### Enterprise Store Profile Id
 
@@ -70,11 +70,11 @@ You can obtain your Enterprise Store Profile ID from the Profile Settings, the U
 
 2. Select the Settings from the top right corner.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4225-profile4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-40.png' />
 
 3. Find and copy your Profile ID under the Info tab by clicking the copy button, next to your Profile ID.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4487.png' alt='Copy the Profile ID' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-57.png' alt='Copy the Profile ID' />
 
 ##### How to Extract Your Enterprise Store Profile ID from the URL
 

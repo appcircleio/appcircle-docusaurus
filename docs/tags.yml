@@ -3112,3 +3112,23 @@ quay:
   label: "artifacts report"
   description: "Documentation related to artifacts report"
   permalink: "/artifacts-report"
+
+"reusable scripts":
+  label: "reusable scripts"
+  description: "Documentation related to reusable scripts"
+  permalink: "/reusable-scripts"
+
+"artifactory":
+  label: "artifactory"
+  description: "Documentation related to artifactory"
+  permalink: "/artifactory"
+
+"branch based":
+  label: "branch based"
+  description: "Documentation related to branch based"
+  permalink: "/branch-based"
+
+"branch":
+  label: "branch"
+  description: "Documentation related to branch"
+  permalink: "/branch"

@@ -1,7 +1,7 @@
 ---
 title: How to Configure Branch-Base Caching
 description: Explains how to configure the Appcircle Cache structure so that each branch uses its own isolated cache.
-tags: [branch-based, branch, data sharing, cache, cache push, cache pull]
+tags: [branch based, branch, data sharing, cache, cache push, cache pull]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
