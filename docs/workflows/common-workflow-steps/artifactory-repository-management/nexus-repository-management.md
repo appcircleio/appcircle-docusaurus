@@ -10,7 +10,7 @@ import NexusHttpsProtocol from '@site/docs/\_nexus-https-protocol.mdx';
 
 # Sonatype Nexus Integration
 
-Integrating Sonatype Nexus into your CI/CD pipeline enables secure, efficient, and automated management of dependencies, artifacts, and container images. By connecting Appcircle with Nexus Repository Manager, teams can centralize artifact storage, enforce security policies, and ensure consistent version control across builds. This integration not only streamlines dependency resolution but also enhances supply chain security through vulnerability scanning and license compliance checks — ultimately improving build reliability and traceability throughout the release process.
+Integrating Sonatype Nexus into your CI/CD pipeline enables secure, efficient, and automated management of dependencies, artifacts, and container images. By connecting Appcircle with Nexus Repository Manager, teams can centralize artifact storage, enforce security policies, and ensure consistent version control across builds. This integration not only streamlines dependency resolution but also enhances supply chain security through vulnerability scanning and license compliance checks. Ultimately improving build reliability and traceability throughout the release process.
 
 ### Nexus Integration for iOS
 

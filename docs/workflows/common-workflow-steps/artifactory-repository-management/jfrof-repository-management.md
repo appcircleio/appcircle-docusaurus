@@ -13,7 +13,7 @@ Integrating JFrog into your CI/CD workflows provides a unified and secure approa
 
 ## JFrog Integration for iOS
 
-Integrating JFrog Artifactory into iOS projects allows seamless management of CocoaPods and Swift Package Manager dependencies within a secure and centralized repository. This setup ensures consistent build environments, faster dependency resolution, and improved control over private libraries — all while maintaining compliance and traceability across your CI/CD workflows.
+Integrating JFrog Artifactory into iOS projects allows seamless management of CocoaPods and Swift Package Manager dependencies within a secure and centralized repository. This setup ensures consistent build environments, faster dependency resolution, and improved control over private libraries, all while maintaining compliance and traceability across your CI/CD workflows.
 
 ### Cocoapods Dependencies
 
@@ -97,7 +97,7 @@ To fetch SPM dependencies from JFrog during the build process, you first need to
 
 #### How can I fetch the all dependencies from JFrog with SPM?
 
-In the **Xcodebuild for Devices** step, to fetch SPM dependencies from JFrog, you need to make certain modifications to the `Package.swift` file within your project. For this, the relevant artifactory URL must be specified as the dependency URL in the `Package.swift` file. A short example is shown in the following bash script.
+In the **Xcodebuild for Devices** step, to fetch SPM dependencies from JFrog, you need to make certain modifications to the `Package.swift` file within your project. For this, the relevant artifactory URL must be specified as the dependency URL in the `Package.swift` file. A short example is shown in the following bash script:
 
 ```bash
 
@@ -123,9 +123,9 @@ let package = Package(
 
 ```
 
-- JFrogPlatformURL → Artifactory Domain (For Example: https://company.jfrog.io)
-- swift-local → Repository name in JFrog
-- MyLibrary.git → Dependency Git Repository URL
+- `JFrogPlatformURL` → Artifactory Domain (e.g. `https://company.jfrog.io`)
+- `swift-local` → Repository name in JFrog
+- `MyLibrary.git` → Dependency Git Repository URL
 
 
 ## JFrog Integration for Android
