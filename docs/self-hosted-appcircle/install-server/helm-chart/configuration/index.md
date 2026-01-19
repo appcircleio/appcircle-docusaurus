@@ -22,5 +22,6 @@ Current headlines are listed below:
 - [Domain Verification](/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification)
 - [External Image Registries](/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry)
 - [Advanced Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration)
+- [Resource Configuration](/self-hosted-appcircle/install-server/helm-chart/configuration/resource-configuration)
 
 In order to see the details, check the submenu of this documentation page.
