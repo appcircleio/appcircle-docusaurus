@@ -29,7 +29,7 @@ For a complete overview of the Appcircle Enterprise App Store module capabilitie
 
 ## [Enterprise App Store Profile](/enterprise-app-store/enterprise-app-store-profile)
 
-There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or send them through Appcircle's Distribution, Build, or Publish modules.
+There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or send them through Appcircle's Distribution, Build, or Publish to Stores modules.
 
 <ContentRef url="/enterprise-app-store/enterprise-app-store-profile">Enterprise App Store Profile]</ContentRef>
 

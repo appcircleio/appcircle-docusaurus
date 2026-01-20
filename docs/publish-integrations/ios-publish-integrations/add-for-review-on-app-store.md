@@ -10,7 +10,7 @@ import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Add for Review on App Store
 
-Appcircle Publish Module isolates the user to a great extent in the App Store Connect interface with its steps. This allows you to manage the publishing process from a single location.. With the Add for Review on App Store step, you can send your application version in TestFlight directly for review.
+Appcircle Publish to Stores module isolates the user to a great extent in the App Store Connect interface with its steps. This allows you to manage the publishing process from a single location.. With the Add for Review on App Store step, you can send your application version in TestFlight directly for review.
 
 <RunnerUsage />
 

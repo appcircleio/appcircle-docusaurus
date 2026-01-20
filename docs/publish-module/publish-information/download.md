@@ -1,6 +1,6 @@
 ---
 title: Downloading Binaries
-description: Learn how to download the built application files from the Publish module in Appcircle
+description: Learn how to download the built application files from the Publish to Stores in Appcircle
 tags: [publish, download, binaries, distribution]
 sidebar_position: 8
 ---
@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Downloading Binaries
 
-The "Download" function in the Publish module allows you to easily download the built application files, such as IPA for iOS or APK/AAB for Android, directly to your local system.
+The "Download" function in the Publish to Stores module allows you to easily download the built application files, such as IPA for iOS or APK/AAB for Android, directly to your local system.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-25.png' />
 
@@ -17,7 +17,7 @@ The "Download" function in the Publish module allows you to easily download the 
 
 1. **Navigate to the Desired Version:**
 
-   - In the Publish module, locate the version of the app that you want to download.
+   - In the Publish to Stores module, locate the version of the app that you want to download.
 
 2. **Open the Options Menu:**
 
@@ -36,8 +36,8 @@ The "Download" function in the Publish module allows you to easily download the 
 
 ## Use Cases for Downloading Binaries
 
-- **Local Testing:** Quickly grab a build for local testing or sharing with testers who may not have access to the Publish module.
+- **Local Testing:** Quickly grab a build for local testing or sharing with testers who may not have access to the Publish to Stores module.
 - **Backup:** Keep a local backup of certain builds for record-keeping or rollback purposes.
 - **Distribution:** Manually distribute the build to other services or stakeholders as needed.
 
-Please note that the availability of binaries for download might depend on the retention policy set within the Publish module or the build's life cycle management rules. Make sure to download the binaries you need before they are auto-purged if such a policy is in place.
+Please note that the availability of binaries for download might depend on the retention policy set within the Publish to Stores module or the build's life cycle management rules. Make sure to download the binaries you need before they are auto-purged if such a policy is in place.

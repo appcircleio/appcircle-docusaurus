@@ -9,7 +9,7 @@ tags: [publish settings, publish, settings]
 import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 
-When a build is completed on the Build module and its artifacts are distributed to the Publish module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
+When a build is completed on the Build module and its artifacts are distributed to the Publish to Stores module, we can start the publish process to the stores using the **Auto Publish** toggle in **Settings**.
 
 Your configured publish flow will be executed automatically when you enable **Auto Publish**.
 
@@ -84,7 +84,7 @@ For detailed information on store connections, follow the links below.
 
 :::caution Apple Enterprise API Key
 
-The Apple Enterprise Program is intended solely for in‑house distribution within an organization. Consequently, an Apple Enterprise API Key cannot be used in the Publish module because the Enterprise Program **does not** provide any **App Store Connect** or **TestFlight** infrastructure.
+The Apple Enterprise Program is intended solely for in‑house distribution within an organization. Consequently, an Apple Enterprise API Key cannot be used in the Publish to Stores module because the Enterprise Program **does not** provide any **App Store Connect** or **TestFlight** infrastructure.
 
 :::
 

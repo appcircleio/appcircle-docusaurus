@@ -1,6 +1,6 @@
 ---
 title: Send to Enterprise App Store
-description: Learn how to send Binary to Enterprise App Store in the Publish module of Appcircle
+description: Learn how to send Binary to Enterprise App Store in the Publish to Stores module of Appcircle
 tags: [publish, publish module, enterprise, app store, enterprise app store, review]
 sidebar_position: 4
 ---
@@ -10,7 +10,7 @@ import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Send to Enterprise App Store
 
-With Appcircle's Publish module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Enterprise App Store module.
+With Appcircle's Publish to Stores module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Enterprise App Store module.
 
 Enterprise App Store offers a store structure that you can use and customise for internal application distribution. For detailed information, please see the [**Enterprise App Store document**](/enterprise-app-store).
 

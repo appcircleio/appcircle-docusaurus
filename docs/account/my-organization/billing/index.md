@@ -24,7 +24,7 @@ The Billing section allows you to monitor your usage summary, including builds, 
 - **[Builds](/build/build-process-management/manual-builds)** : Number of builds initiated from the build module in a single billing cycle.
 - **[Code Push Updates](/code-push)** : The number of devices receiving CodePush updates within a single billing cycle.
 - **[Testing Distribution](/testing-distribution/testing-portal)** : Number of app downloads from the Testing Portal in a single billing cycle.
-- **[Publishes](/publish-module)** : Number of publishes initiated from the Publish module in a single billing cycle.
+- **[Publishes](/publish-module)** : Number of publishes initiated from the Publish to Stores in a single billing cycle.
 - **[Enterprise App Store](/enterprise-app-store/enterprise-portal)** : Number of app downloads from the Enterprise App Store in a single billing cycle.
 - **[Team Members](/account/my-organization/profile-and-team/team-management)** : Number of team members allowed in a single organization.
 - **[Artifact Storage](/account/my-organization/artifacts)** : Total storage size for all the build and distribution artifacts across the platform.

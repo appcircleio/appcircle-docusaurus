@@ -1,6 +1,6 @@
 ---
 title: Send to Testing Distribution
-description: Learn how to send Binary to Testing Distribution in the Publish module of Appcircle
+description: Learn how to send Binary to Testing Distribution in the Publish to Stores module of Appcircle
 tags: [publish, publish module, distribution, testing distribution]
 sidebar_position: 4
 ---
@@ -10,7 +10,7 @@ import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
 # Send to Testing Distribution
 
-With Appcircle's Publish module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Testing Distribution module.
+With Appcircle's Publish to Stores module, you can submit your application to external stores such as App Store, Google Play, Huawei AppGallery or Microsoft Intune, as well as to Appcircle's Testing Distribution module.
 
 Testing Distribution module allows you to distribute your application without the need for any external tools. For detailed information, please see the [**Testing Distribution Documentation**](/testing-distribution).
 

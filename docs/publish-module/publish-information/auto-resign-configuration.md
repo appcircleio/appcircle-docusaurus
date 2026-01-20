@@ -1,17 +1,17 @@
 ---
 title: Auto Re-sign
-description: Learn how to automatically re-sign your binary in the Publish module of Appcircle
+description: Learn how to automatically re-sign your binary in the Publish to Stores module of Appcircle
 tags: [publish, publish module, auto, re-sign, configuration]
 sidebar_position: 3
 ---
 
 # Auto Re-sign
 
-The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
+The **Auto Re-sign** feature in Appcircle’s Publish to Stores module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
 ## Enabling Auto Re-sign
 
-To use the **Auto Re-sign** feature in the Appcircle Publish module, you need to enable the **Auto Re-sign** toggle within the Publish Settings section.
+To use the **Auto Re-sign** feature in the Appcircle Publish to Stores module, you need to enable the **Auto Re-sign** toggle within the Publish Settings section.
 
 :::caution Business Rule for Auto Publish and Auto Re-sign
 

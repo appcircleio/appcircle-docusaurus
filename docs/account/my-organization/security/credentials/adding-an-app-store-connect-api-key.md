@@ -122,7 +122,7 @@ Once the API key is generated, it must be added to Appcircle:
 6.	Click Save to complete the setup.
 
 :::info
-Please note that the registered Enterprise API Key cannot be used within the Publish module because the Apple Enterprise Program does not provide TestFlight or App Store Connect services.
+Please note that the registered Enterprise API Key cannot be used within the Publish to Stores because the Apple Enterprise Program does not provide TestFlight or App Store Connect services.
 :::
 
 ## Sharing App Store Connect Credentials

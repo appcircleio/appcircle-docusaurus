@@ -40,7 +40,7 @@ Some role types are not used in certain modules because they are redundant or un
 
 When assigning roles on Appcircle, you can assign more than one role for a user at the same time. For example, a user can be both **Manager** and **Operator** in the Build module.
 
-For this reason, Appcircle behavior will change when multiple roles are assigned. For example, you have assigned **Ext Operator** and **Viewer** role in **Publish Module** for a user. This means that the Ext Operator role now has the privileges of the Viewer role. So while Ext Operator cannot see Activity logs, it now has access to those logs because it also has the viewer role.
+For this reason, Appcircle behavior will change when multiple roles are assigned. For example, you have assigned **Ext Operator** and **Viewer** role in **Publish to Stores** for a user. This means that the Ext Operator role now has the privileges of the Viewer role. So while Ext Operator cannot see Activity logs, it now has access to those logs because it also has the viewer role.
 
 :::
 
@@ -221,7 +221,7 @@ The following table details the roles and restrictions for the [**Testing Groups
 | Testing Groups | List LDAP Groups and Members              | ✅     | ✅       | ✅      |
 
 
-### Publish Module iOS Permissions
+### Publish to Stores iOS Permissions
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for iOS. Please refer to the related module information and caution notes.
 
@@ -265,7 +265,7 @@ User can resign the binary if this user has **Manager** or **Viewer** Signing Id
 :::
 
 
-### Publish Module Android Permissions
+### Publish to Stores Android Permissions
 
 The following table details the roles and restrictions for the [**Publish**](/publish-module) module for Android. Please refer to the related modules information and caution notes.
 
