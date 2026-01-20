@@ -1,7 +1,7 @@
 ---
 title: Git Providers Configuration
 description: Learn how to configure git providers
-tags: [self-hosted, helm, configuration, kubernetes]
+tags: [self-hosted, helm, configuration, kubernetes, openshift]
 sidebar_position: 70
 ---
 
