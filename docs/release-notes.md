@@ -16,6 +16,39 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.8 - 2026-01-20 Single Active Session, Metadata Details Update, Bug Fixes and more
+
+### 🆕 New Features
+
+- Single Active Session feature has been introduced for Enterprise App Store and Testing Distribution modules. Restricting users to one active session across browsers and devices by terminating previous sessions on new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Performance improvements have been made to the Team Management UI. <AccountBadge/> <CloudBadge/>
+- The Testing Distribution and Enterprise App Store profile settings have been reworked, and some settings have been moved to a different tab to improve consistency. Refer to the related documentation to see the latest state. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- The notification center will now be opened by toast messages if it is closed when they are clicked. <AccountBadge/> <CloudBadge/>
+- A notification will now be displayed in the Notification Center when a new user is invited to the organization. <AccountBadge/> <CloudBadge/>
+- Metadata Approval step name has been changed with Metadata Approval via Email. <PublishBadge/> <CloudBadge/>
+- Publish module now supports Custom Script execution with Node.js and Python runtimes, enabling script reuse and more advanced automation during the Publish phase. <PublishBadge/> <CloudBadge/>
+- Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/>
+- [KOBIL Appshield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a Kobil account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/>
+- The UI React version and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/>
+- The Custom Script from Git component is now available in Publish flows, enabling you to execute scripts directly from your Git repositories. This enhancement improves script reusability and manageability across your publish flows. <PublishIntegrationsBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where SAML-type SSO configurations were appearing for OpenID SSO configurations in the “Create from existing SSO configuration” option. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where Enterprise Portal binary tag entries were accepting manual text input. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue has been fixed where quotation marks caused errors during the Send to TestFlight publish step in the release notes section. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where the “Manually release this version” option selected in the Metadata Details section was not being updated correctly when the flow was executed with Update Metadata. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where certain environment variables were not consistently populated for user-triggered builds, despite being expected to be available across all trigger types. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- Partial saving for App Store Metadata Details is no longer supported. Users must now provide all required fields before submission, as the previous preparation and incremental completion workflow has been removed. All mandatory information will be requested at the time of submission, and submissions cannot be completed progressively. <PublishBadge/> <CloudBadge/>
+
+
 ## 3.29.7 - 2025-12-17 BitBucket API Token Support, Publish Improvements, Bug Fixes and more
 
 ### :muscle: Improvements
