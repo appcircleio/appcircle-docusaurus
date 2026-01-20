@@ -274,3 +274,11 @@ The **Single Active Session** feature supports all valid authentication types: *
 
 This feature is **not** applicable when the authentication type is set to **None (No Authentication)**.
 :::
+
+:::tip Channel Independence
+
+**Live** and **Beta** channels operate independently and do not affect each other’s sessions.
+
+If a user is logged in to the **Beta** channel, it will **not** terminate or impact the user’s active session in the **Live** channel, and vice versa.
+
+:::

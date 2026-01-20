@@ -275,10 +275,6 @@ When the **Single Active Session** toggle is enabled, each user can have only on
 
 If the toggle is disabled, users can sign in from multiple browsers or devices at the same time without terminating existing sessions.
 
-:::info
-The Single Active Session feature is available for organizations with an Enterprise license.
-:::
-
 :::warning Single Active Session Compatibility
 The **Single Active Session** feature supports all valid authentication types: **SSO**, **Static**, and **LDAP**.
 
