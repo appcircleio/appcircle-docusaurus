@@ -34,7 +34,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Publish module now supports Custom Script execution with Node.js and Python runtimes, enabling script reuse and more advanced automation during the Publish phase. <PublishBadge/> <CloudBadge/>
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/>
 - The UI React version and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/>
-- CDN support has been added to improve CodePush delivery through the Resource Server, enhancing performance and reliability for end users. <BuildBadge/> <CloudBadge/>
+- CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
