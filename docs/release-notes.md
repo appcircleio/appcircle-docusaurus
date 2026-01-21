@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.29.8 - 2026-01-20 Single Active Session, Metadata Details Update, Bug Fixes and more
+## 3.29.8 - 2026-01-21 Single Active Session, Metadata Details Update, Bug Fixes and more
 
 ### 🆕 New Features
 
