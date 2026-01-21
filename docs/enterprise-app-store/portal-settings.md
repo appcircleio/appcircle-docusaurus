@@ -24,7 +24,7 @@ SSO and LDAP login is only available for Enterprise accounts. Only the Organizat
 
 Enterprise Portal authentication can be set to 'none,' allowing users to log in automatically without entering credentials.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-67.png" alt="None Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-91.png" alt="None Authentication Type for Enterprise Portal" />
 
 Please note that this authentication method will also affect the shared links and QR codes for app versions across all Enterprise Store profiles.
 
@@ -32,13 +32,13 @@ Please note that this authentication method will also affect the shared links an
 
 You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-66.png" alt="Static Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-92.png" alt="Static Authentication Type for Enterprise Portal" />
 
 ### SSO Login
 
 You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/security/authentications/store-sso-authentication) documentation.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-68.png" alt="SSO Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-90.png" alt="SSO Authentication Type for Enterprise Portal" />
 
 :::info
 
@@ -67,7 +67,7 @@ Please check the below document to learn more about SSO integration.
 
 In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-65.png" alt="LDAP Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-93.png" alt="LDAP Authentication Type for Enterprise Portal" />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-6.png' />
 
@@ -158,7 +158,7 @@ You can customize your store prefix which will be reflected in your Enterprise P
 
 The URL can be copied by clicking the copy icon next to it.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-69.png" alt="Store Prefix Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-94.png" alt="Store Prefix Settings for Enterprise Portal" />
 
 ### Custom Domain
 
