@@ -20,20 +20,21 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Single Active Session feature has been introduced for Enterprise App Store and Testing Distribution modules. Restricting users to one active session across browsers and devices by terminating previous sessions on new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- Single Active Session feature has been introduced for [Enterprise App Store](/enterprise-app-store/portal-settings#session-management) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#single-active-session) modules. Restricting users to one active session across browsers and devices by terminating previous sessions on new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- [KOBIL Appshield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a Kobil account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/>
+- The Custom Script from Git component is now available in Publish flows, enabling you to execute scripts directly from your Git repositories. This enhancement improves script reusability and manageability across your publish flows. <PublishIntegrationsBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - Performance improvements have been made to the Team Management UI. <AccountBadge/> <CloudBadge/>
-- The Testing Distribution and Enterprise App Store profile settings have been reworked, and some settings have been moved to a different tab to improve consistency. Refer to the related documentation to see the latest state. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- The [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#settings) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#profile-settings) profile settings have been reworked, and some settings have been moved to a different tab to improve consistency. Refer to the related documentation to see the latest state. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - The notification center will now be opened by toast messages if it is closed when they are clicked. <AccountBadge/> <CloudBadge/>
 - A notification will now be displayed in the Notification Center when a new user is invited to the organization. <AccountBadge/> <CloudBadge/>
 - Metadata Approval step name has been changed with Metadata Approval via Email. <PublishBadge/> <CloudBadge/>
 - Publish module now supports Custom Script execution with Node.js and Python runtimes, enabling script reuse and more advanced automation during the Publish phase. <PublishBadge/> <CloudBadge/>
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/>
-- [KOBIL Appshield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a Kobil account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/>
 - The UI React version and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/>
-- The Custom Script from Git component is now available in Publish flows, enabling you to execute scripts directly from your Git repositories. This enhancement improves script reusability and manageability across your publish flows. <PublishIntegrationsBadge/> <CloudBadge/>
+- CDN support has been added to improve CodePush delivery through the Resource Server, enhancing performance and reliability for end users. <BuildBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -73,6 +74,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where binaries with foreign character names were displayed incorrectly in the Publish module. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where some users encountered a JSON parsing error when sending newly created applications marked as RC to Intune using the “Create a new app” option. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where an incorrect validation error for the Short Description length was displayed after retrieving metadata from Google Play Console, even when the character limit was not exceeded. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where adding new devices for development provisioning failed due to an error returned by Apple, preventing devices from being added successfully. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where some build profiles were missing from the profile filter list on the Build activity log screen for certain date ranges. <ReportsBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
