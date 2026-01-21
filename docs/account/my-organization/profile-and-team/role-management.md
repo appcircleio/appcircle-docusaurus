@@ -174,6 +174,7 @@ The following table details the roles and restrictions for the [**Testing Distri
 | App Version Actions        | Download Binary                        | ✅     | ✅       | ✅        | ✅           | ⛔      |
 | Settings                   | Select Authentication Type             | ✅     | ⛔       | ⛔        | ⛔           | ⛔      |
 | Settings                   | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔           | ✅      |
+| Session Management         | Single Active Session                  | ✅     |  ⛔      | ⛔       | ⛔           | ⛔      |
 | Auto Re-sign Configuration | List/Update Auto Re-sign Configuration | ✅     | ✅       | ⛔        | ⛔           | ⛔      |
 | Report                     | List Reports App Version               | ✅     | ✅       | ✅        | ⛔           | ✅      |
 | Report                     | List Reports App Sharing               | ✅     | ✅       | ✅        | ⛔           | ✅      |
@@ -338,6 +339,7 @@ Manage and Upload Apps to Enterprise App Store.
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Customization Settings            | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Store Domain                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Session Management   | Single Active Session                  | ✅     |  ⛔      | ⛔       | ⛔           | ⛔      |
 | Report               | List Reports                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 
 :::caution Authentication Settings

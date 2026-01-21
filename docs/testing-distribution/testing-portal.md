@@ -157,7 +157,7 @@ For more information about using distribution links, please visit the [using dis
 
 #### Profile Card
 
-When the user icon is selected, the distribution profile information will be displayed. This information can be updated from the [Info](/testing-distribution/create-or-select-a-distribution-profile#information) tab within the profile settings.
+When the user icon is selected, the distribution profile information will be displayed. This information can be updated from the [Info](/testing-distribution/create-or-select-a-distribution-profile#config) tab within the profile settings.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4071-info2.png' />
 
