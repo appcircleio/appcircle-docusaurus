@@ -20,25 +20,25 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- Single Active Session feature has been introduced for [Enterprise App Store](/enterprise-app-store/portal-settings#session-management) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#single-active-session) modules. Restricting users to one active session across browsers and devices by terminating previous sessions on new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
-- [KOBIL Appshield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a Kobil account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/>
+- Single Active Session feature has been introduced for [Enterprise App Store](/enterprise-app-store/portal-settings#session-management) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#single-active-session) modules. This restrics users to one active session across browsers and devices by terminating previous sessions on a new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- [KOBIL AppShield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a KOBIL account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/>
 - The Custom Script from Git component is now available in Publish flows, enabling you to execute scripts directly from your Git repositories. This enhancement improves script reusability and manageability across your publish flows. <PublishIntegrationsBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - Performance improvements have been made to the Team Management UI. <AccountBadge/> <CloudBadge/>
 - The [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#settings) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#profile-settings) profile settings have been reworked, and some settings have been moved to a different tab to improve consistency. Refer to the related documentation to see the latest state. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
-- The notification center will now be opened by toast messages if it is closed when they are clicked. <AccountBadge/> <CloudBadge/>
+- If the Notification Center is closed, it will now open when toast messages are clicked. <AccountBadge/> <CloudBadge/>
 - A notification will now be displayed in the Notification Center when a new user is invited to the organization. <AccountBadge/> <CloudBadge/>
-- Metadata Approval step name has been changed with Metadata Approval via Email. <PublishBadge/> <CloudBadge/>
+- Metadata Approval step name has been changed to Metadata Approval via Email. <PublishBadge/> <CloudBadge/>
 - Publish module now supports Custom Script execution with Node.js and Python runtimes, enabling script reuse and more advanced automation during the Publish phase. <PublishBadge/> <CloudBadge/>
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/>
-- The UI React version and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/>
+- The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
-- An issue has been fixed where SAML-type SSO configurations were appearing for OpenID SSO configurations in the “Create from existing SSO configuration” option. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where SAML-type SSO configurations were appearing in OpenID SSO configurations in the “Create from existing SSO configuration” option. <AccountBadge/> <CloudBadge/>
 - An issue has been fixed where Enterprise Portal binary tag entries were accepting manual text input. <EnterpriseStoreBadge/> <CloudBadge/>
 - An issue has been fixed where quotation marks caused errors during the Send to TestFlight publish step in the release notes section. <PublishIntegrationsBadge/> <CloudBadge/>
 - An issue has been fixed where the “Manually release this version” option selected in the Metadata Details section was not being updated correctly when the flow was executed with Update Metadata. <PublishIntegrationsBadge/> <CloudBadge/>
