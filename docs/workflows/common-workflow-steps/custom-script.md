@@ -41,7 +41,7 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 
 | Variable Name | Description                                                                                                                                                                                                         | Status   |
 | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `Execute`     | You can run your script as **`Bash`** or **`Ruby`** with two different language environments in the **Execute With** input value.                                                                                   | Required |
+| `Execute`     | You can run your script as **`Bash`**, **`Ruby`**, **`Python`**, or **`Nodejs`**, based on the selected **Execute With** environment.                                                                                   | Required |
 | `Script`      | With the **Script** input variable, you can add the script you want to run and run it directly in the selected language. If you leave this input blank, it will proceed to the next step without taking any action. | Optional |
 
 :::caution
@@ -527,11 +527,11 @@ If you are using a public repository, you do not need to obtain an access token.
 
 :::
 
-To use this approach, you must first convert your Bash or Ruby script into a Git repository. This means placing your Bash or Ruby file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure).
+To use this approach, you must first convert your Bash, Ruby, Python, or Nodejs script into a Git repository. This means placing your script file into a Git repository and pushing it to your preferred Git provider (e.g., GitHub, GitLab, Bitbucket, Azure).
 
 :::caution
 
-It is recommended to create a repository specifically for the desired custom script as a Bash or Ruby file.
+It is recommended to create a repository specifically for the desired custom script as a Bash, Ruby, Python, or Nodejs file.
 
 :::
 

@@ -16,6 +16,40 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.8 - 2026-01-21 Single Active Session, Metadata Details Update, Bug Fixes and more
+
+### 🆕 New Features
+
+- The Single Active Session feature has been introduced for [Enterprise App Store](/enterprise-app-store/portal-settings#session-management) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#single-active-session) modules. This restricts users to one active session across browsers and devices by terminating previous sessions on a new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- [KOBIL AppShield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a KOBIL account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/>
+- The Custom Script from Git component is now available in Publish flows, enabling you to execute scripts directly from your Git repositories. This enhancement improves script reusability and manageability across your publish flows. <PublishIntegrationsBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Performance improvements have been made to the Team Management UI. <AccountBadge/> <CloudBadge/>
+- The [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#settings) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#profile-settings) profile settings have been reworked, and some settings have been moved to a different tab to improve consistency. Refer to the related documentation to see the latest state. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- If the Notification Center is closed, it will now open when toast messages are clicked. <AccountBadge/> <CloudBadge/>
+- A notification will now be displayed in the Notification Center when a new user is invited to the organization. <AccountBadge/> <CloudBadge/>
+- Metadata Approval step name has been changed to Metadata Approval via Email. <PublishBadge/> <CloudBadge/>
+- Publish module now supports Custom Script execution with Node.js and Python runtimes, enabling script reuse and more advanced automation during the Publish phase. <PublishBadge/> <CloudBadge/>
+- Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/>
+- The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/>
+- CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where SAML-type SSO configurations were appearing in OpenID SSO configurations in the “Create from existing SSO configuration” option. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where Enterprise Portal binary tag entries were accepting manual text input. <EnterpriseStoreBadge/> <CloudBadge/>
+- An issue has been fixed where quotation marks caused errors during the Send to TestFlight publish step in the release notes section. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where the “Manually release this version” option selected in the Metadata Details section was not being updated correctly when the flow was executed with Update Metadata. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where certain environment variables were not consistently populated for user-triggered builds, despite being expected to be available across all trigger types. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- Partial saving for App Store Metadata Details is no longer supported. Users must now provide all required fields before submission, as the previous preparation and incremental completion workflow has been removed. All mandatory information will be requested at the time of submission, and submissions cannot be completed progressively. <PublishBadge/> <CloudBadge/>
+
+
 ## 3.29.7 - 2025-12-17 BitBucket API Token Support, Publish Improvements, Bug Fixes and more
 
 ### :muscle: Improvements
@@ -40,6 +74,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/>
 - An issue was fixed where binaries with foreign character names were displayed incorrectly in the Publish module. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where some users encountered a JSON parsing error when sending newly created applications marked as RC to Intune using the “Create a new app” option. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where an incorrect validation error for the Short Description length was displayed after retrieving metadata from Google Play Console, even when the character limit was not exceeded. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where adding new devices for development provisioning failed due to an error returned by Apple, preventing devices from being added successfully. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue was fixed where some build profiles were missing from the profile filter list on the Build activity log screen for certain date ranges. <ReportsBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
@@ -444,7 +481,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 ### 🆕 New Features
 
 - Root organization credentials, such as [App Store Connect](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key#sharing-app-store-connect-credentials) and [Google Play Developer](/account/my-organization/security/credentials/adding-google-play-service-account#sharing-google-play-developer-credentials) API keys, can now be shared with sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The [“Hide from profile list on Testing”](/testing-distribution/create-or-select-a-distribution-profile#hide-from-profile-list) toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [“Hide from profile list on Testing”](/testing-distribution/create-or-select-a-distribution-profile#exclude-from-shared-application-list) toggle can now be used in Testing Distribution profile settings to prevent the selected profile from appearing in the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Bundle and Package Validation](/testing-distribution/create-or-select-a-distribution-profile#bundlepackage-identifier-validation) toggles can now be used to specify a bundle ID (for iOS) or package ID (for Android). When enabled, any app with a different bundle or package ID will be blocked from being uploaded to the Testing Distribution profile. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [“Hide Shared Application List”](/testing-distribution/create-or-select-a-distribution-profile#hide-shared-application-list) toggle can now be used under the Authentication tab in Testing Distribution profile settings to restrict access to the shared profile list within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
@@ -602,7 +639,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 - Users can now access the Pull Request (PR) description during the build process by using the $AC_GIT_PR_DESCRIPTION environment variable. <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Performance optimizations have been made for the build branch search feature and the app version search in Testing Distribution. <BuildBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The warning message for reaching the download limit has been improved in the Testing Portal’s mobile view. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The Share button has been removed from the app action list within the Enterprise App Store. Instead, users can now obtain the Beta or Live channel links from the profile settings’ “[Links](/enterprise-app-store/enterprise-app-store-profile#links)” section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Share button has been removed from the app action list within the Enterprise App Store. Instead, users can now obtain the Beta or Live channel links from the profile settings’ “[Links](/enterprise-app-store/enterprise-app-store-profile#distribution-links)” section. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Several UI and text improvements have been made to the Enterprise App Store module within Appcircle, as well as to the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
@@ -647,7 +684,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 - An issue was fixed where the Display Name of the Resign property did not update after the resign process was completed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the 'Get help with build errors' link in the Build Log section was not working. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where [connections](build/manage-the-connections) (Azure, Bitbucket, GitLab, GitHub) were removed from the original organization after deleting a second root organization. The connections now remain intact in the original organization. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#links) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue was fixed where [sharing an app version link](enterprise-app-store/enterprise-app-store-profile#distribution-links) for an Enterprise App Store configured with 'none' auth type would redirect users to the app version list instead of directly to the installation step. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed in the Testing Distribution module where the [resign](testing-distribution/resigning-binaries) feature detected an empty target, preventing the binary from being resigned. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where the IdP-initiated SSO flow would not work if the alias contained capital letters. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where retrieving an access token from Swagger would return a load fail error. <CloudBadge/>
@@ -1115,10 +1152,10 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 
 ### 🆕 New Features
 
-- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the [Info tab](/testing-distribution/create-or-select-a-distribution-profile#information) within the Testing Distribution profile settings. This information will be displayed on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Publisher and contact information, along with Privacy Policy and Terms of Service URLs, can now be viewed and updated under the [Info tab](/testing-distribution/create-or-select-a-distribution-profile#config) within the Testing Distribution profile settings. This information will be displayed on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [Shared App Profiles](/testing-distribution/testing-portal#navigating-between-shared-app-profiles) will now be displayed within the Testing Portal. This will allow the users to view and navigate between different Testing Distribution Profiles that have shared app versions for the same user. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - For each app version, the file size and certificate version will now be shown within the [Testing Portal](/testing-distribution/testing-portal). <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
-- A new [user menu](/testing-distribution/create-or-select-a-distribution-profile#information) has been added to the Testing Portal, where the testing distribution profile's publisher information, login method, and a logout button are displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A new [user menu](/testing-distribution/create-or-select-a-distribution-profile#config) has been added to the Testing Portal, where the testing distribution profile's publisher information, login method, and a logout button are displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - When downloading app versions with an enterprise-type certificate within the Testing Portal, a [guidance message](/testing-distribution/testing-portal) will now be displayed. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Submissions with "Waiting for Review" or "In Review" status can now be [cancelled](/publish-module/publish-information/cancel-submission) on App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - App versions can now be [rejected](/publish-module/publish-information/reject-binary) by users with Manager and Operator roles. Rejected app versions cannot be marked as RC (Release Candidate); they can only be deleted or viewed. The same version can also be re-uploaded for rejected items. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
