@@ -196,6 +196,30 @@ Older podman versions may be incompatible for our operations. Podman versions ab
 
 <NetavarkConfiguration/>
 
+:::tip Network Conflicts & Troubleshooting
+
+**Podman Network Conflicts:**  
+Podman containers (especially rootless) may use default IP ranges like `10.0.2.100` (see [GitHub Discussion](https://github.com/containers/podman/discussions/10472)). If your host or LAN uses the same subnet, you may experience connectivity issues or unexpected routing behavior.
+
+**How to Troubleshoot:**
+- Use `traceroute` inside a container to check network paths. You can use a toolbox image for this.
+- Inspect container IPs with:
+  ```bash
+  podman inspect <container_name> --format '{{ .NetworkSettings.IPAddress }}'
+  ```
+- If you see conflicts, consider changing Podman's network CIDR with the `--subnet` option (see [Podman Network Docs](https://docs.podman.io/en/v5.5.2/markdown/podman-network-create.1.html#subnet-subnet)).
+  - First, remove the existing network:
+      ```bash
+      podman network rm appcircle-backend
+      ```
+  - Then, create a new network with your custom CIDR:
+      ```bash
+      podman network create --subnet 192.168.33.0/24 appcircle-backend
+      ```
+      `appcircle-backend` is the network used by the Appcircle server. Make sure to use this exact name in your command.
+
+:::
+
 #### Change the Podman Data Location
 
 In certain scenarios, you may encounter situations where the available free space on the root directory (`/`) is limited. However, you might have ample free space in a different directory, such as `$HOME` or `/opt`.
@@ -477,27 +501,6 @@ We have `user-secret` filled in successfully and don't need `projects/spacetech/
 rm projects/spacetech/secret.yaml
 ```
 
-:::caution
-
-On your first export, which makes `global.yaml` template for you, also creates an empty template file for `user-secret` as seen below:
-
-```bash
-base64 -d projects/spacetech/user-secret
-```
-
-```yaml
-smtpServer:
-  password:
-keycloak:
-  initialPassword:
-```
-
-If you prefer defining above variables in `global.yaml`, then they should not be in `user-secret`.
-
-If you defined all of them in `global.yaml`,simply remove `user-secret` before next steps.
-
-:::
-
 Note that after changes made to yaml files, you must execute the script again for the changes to take effect as shown below.
 
 ```bash
@@ -515,6 +518,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - my
 - resource
 - store
+- *.store
 - monitor
 - redis
 - (optional) Enterprise App Store's Custom Domain
@@ -558,30 +562,42 @@ Entries in the hosts file have the following format:
 Address  HostName
 ```
 
-On self-hosted Appcircle server, you should add below entries to the `/etc/hosts` file.
+##### Server Side Configuration
 
-```txt
-0.0.0.0  api.appcircle.spacetech.com
-0.0.0.0  auth.appcircle.spacetech.com
-0.0.0.0  dist.appcircle.spacetech.com
-0.0.0.0  hook.appcircle.spacetech.com
-0.0.0.0  my.appcircle.spacetech.com
-0.0.0.0  resource.appcircle.spacetech.com
-0.0.0.0  store.appcircle.spacetech.com
-0.0.0.0  monitor.appcircle.spacetech.com
-0.0.0.0  redis.appcircle.spacetech.com
-0.0.0.0  store.spacetech.com
-```
+In production environments, it is recommended to configure proper DNS records before installation.
 
-For clients that will connect to self-hosted Appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted Appcircle server that other hosts in the network can reach to server using that address.
+For testing or initial setup, you may temporarily add the necessary subdomains to the server’s `/etc/hosts` file using the server’s external IP address.
 
-You can get external IP of self-hosted Appcircle server with below command.
+:::caution
+Changes made to the server’s `/etc/hosts` file are propagated into the containers by Podman. 
+Do not use `0.0.0.0` as the IP address for Appcircle subdomains. Containers interpret `0.0.0.0` as their own external IP, which can break inter-container communication.
+:::
+
+To determine the external IP address of your self-hosted Appcircle server, run:
 
 ```bash
 hostname -I | awk '{print $1}'
 ```
 
-Let's assume we got value `35.241.181.2` as an example.
+For example, if your server’s external IP is `35.241.181.2`, add the following entries to `/etc/hosts`:
+```txt
+35.241.181.2  api.appcircle.spacetech.com
+35.241.181.2  auth.appcircle.spacetech.com
+35.241.181.2  dist.appcircle.spacetech.com
+35.241.181.2  hook.appcircle.spacetech.com
+35.241.181.2  my.appcircle.spacetech.com
+35.241.181.2  resource.appcircle.spacetech.com
+35.241.181.2  store.appcircle.spacetech.com
+35.241.181.2  monitor.appcircle.spacetech.com
+35.241.181.2  redis.appcircle.spacetech.com
+35.241.181.2  store.spacetech.com
+```
+
+##### Client Side Configuration
+
+For clients that will connect to self-hosted Appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted Appcircle server that other hosts in the network can reach to server using that address.
+
+We already have the external IP address of our server as `35.241.181.2` from previous step.
 
 Other clients that connect to the server should add below entries to their `/etc/hosts` files.
 
