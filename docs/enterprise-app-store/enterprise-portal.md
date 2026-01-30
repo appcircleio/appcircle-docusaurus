@@ -25,6 +25,12 @@ Appcircle's Enterprise App Store module allows you to distribute your applicatio
 
 :::
 
+:::caution Supported Minimum iOS Versions
+
+Appcircle's Enterprise App Store Module works as **expected** on Apple devices running **iOS 15 and later versions**. However, **unexpected errors may occur** in the Enterprise App Store Portal on **iOS 15 and earlier versions**. For this reason, we **recommend** running the Enterprise App Store Portal on a device with **at least iOS 15** installed.
+
+:::
+
 https://developer.apple.com/programs/enterprise/
 
 ## Login

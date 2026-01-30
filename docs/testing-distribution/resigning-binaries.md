@@ -25,11 +25,11 @@ To sign an iOS binary, you need a valid certificate and provisioning profile. Ap
 
 You can either select the files from the list or upload IPA, xcarchive files by clicking the **Upload** button at the top of the list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1.png' />
 
 2. Click the ... button and select **Re-sign Binary**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss5.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-21.png' />
 
 This form will show the following details of the original binary.
 
@@ -83,11 +83,7 @@ A provisioning profile must be selected for each target; otherwise, re-signing w
 
 When you sign an app version through Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss3.png' />
-
-If you hover over the **signed** badge, the certification name used to sign the app version will be displayed.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-22.png' />
 
 ## Re-signing Android Binaries
 
@@ -99,11 +95,11 @@ To sign an Android binary, a valid keystore file is required. Both APK and AAB f
 
 Files can either be selected from the list or uploaded by clicking the **Upload** button at the top of the list for APK and AAB files.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-and4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-23.png' />
 
 2. Click the "..." button and select **Re-sign Binary**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-and2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-24.png' />
 
 The following details of the original binary will be shown in this form.
 
@@ -113,11 +109,7 @@ The following details of the original binary will be shown in this form.
 
 When an app version is signed using the Testing Distribution Profile or uploaded manually or automatically through the Build module, a **signed** badge will be displayed on the Testing Distribution Profile for the corresponding app version.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-and6.png' />
-
-Hovering over the **signed** badge will display the certification name used to sign the app version.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-and1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-25.png' />
 
 ## Auto Re-sign
 
@@ -127,13 +119,13 @@ The **Auto Re-sign** feature allows users to automatically re-sign their iOS (`.
 
 You can enable the **Auto Re-sign** feature by navigating to Settings option and enabling Auto-resign toggle for iOS and/or Android.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-26.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-27.png' />
 
 Once it's enabled, you will need to configure the Auto Re-sign feature for iOS and Android. **Auto Re-sign Configurations** options can be found by clicking **...**.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6889-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-26.png' />
 
 ### iOS Auto Re-sign Configurations
 
@@ -145,8 +137,24 @@ For iOS, you can configure:
 
 Appcircle Testing Distribution profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-1.png' />
 
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Auto Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-3.png' />
+
+:::caution Pool Selection Is Mandatory
+Auto Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Auto Re-sign process will not start.
+- Uploaded binaries will remain unsigned.
+- No re-signed output will be generated for Testing Distribution profile.
+
+Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
+:::
 
 #### Update Display Name
 
@@ -156,7 +164,7 @@ With the Display Name parameter, you can change the visible name of the binary t
 If `CFBundleDisplayName` is not present in the `info.plist`, changing the display name will not take effect.
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-2.png' />
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
@@ -202,7 +210,24 @@ For Android, you can configure:
 
 Appcircle Testing Distribution profiles can accept binaries with different package ID. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different package ID is uploaded, it is re-signed according to the package ID of the profile. The package ID of the resulting re-signed binary is updated to match the one associated with the profile.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6968-ss4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-5.png' />
+
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Auto Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-4.png' />
+
+:::caution Pool Selection Is Mandatory
+Auto Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Auto Re-sign process will not start.
+- Uploaded binaries will remain unsigned.
+- No re-signed output will be generated for Testing Distribution profile.
+
+Always ensure that a valid macOS pool is selected before saving the Auto Re-sign configuration.
+:::
 
 - **Versioning**: By utilizing the versioning capability of the Auto Re-sign feature, you can modify the version and build number of the incoming binary according to the defined strategy during the re-signing process.
 
@@ -241,11 +266,11 @@ Testing Distribution profiles will not allow `.AAB` binaries to be shared with t
 
 You can either select the files from the list or upload binaries by clicking the **Upload** button at the top of the list.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-1.png' />
 
 2. Click the... button and select **Resign History**
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss8.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-28.png' />
 
 3. Each signing process will be listed for that binary. If you click the **View Log** button, you can get more details about the process.
 

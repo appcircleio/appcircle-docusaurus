@@ -24,7 +24,7 @@ SSO and LDAP login is only available for Enterprise accounts. Only the Organizat
 
 Enterprise Portal authentication can be set to 'none,' allowing users to log in automatically without entering credentials.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-none.png" alt="None Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-91.png" alt="None Authentication Type for Enterprise Portal" />
 
 Please note that this authentication method will also affect the shared links and QR codes for app versions across all Enterprise Store profiles.
 
@@ -32,13 +32,13 @@ Please note that this authentication method will also affect the shared links an
 
 You can set a different username and password for live and beta apps. The usernames of the live and beta section must be different.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-static.png" alt="Static Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-92.png" alt="Static Authentication Type for Enterprise Portal" />
 
 ### SSO Login
 
 You may also use SSO for your Enterprise Portal. Appcircle supports both OpenID and SAML SSO providers. In order to enable SSO integration, please follow [Store Authentications](/account/my-organization/security/authentications/store-sso-authentication) documentation.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-sso.png" alt="SSO Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-90.png" alt="SSO Authentication Type for Enterprise Portal" />
 
 :::info
 
@@ -67,7 +67,7 @@ Please check the below document to learn more about SSO integration.
 
 In order to create an LDAP login, first click the **Activate** link next to the LDAP login. If you select **Enable LDAP Login**, your previous login options will be disabled and LDAP login will be enabled. Click the **Details** link and then click the **Create** link. Appcircle supports multiple LDAP providers. You can add multiple LDAP servers with different settings.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-ldap.png" alt="LDAP Authentication Type for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-93.png" alt="LDAP Authentication Type for Enterprise Portal" />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4456-6.png' />
 
@@ -158,7 +158,7 @@ You can customize your store prefix which will be reflected in your Enterprise P
 
 The URL can be copied by clicking the copy icon next to it.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-prefix.png" alt="Store Prefix Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-94.png" alt="Store Prefix Settings for Enterprise Portal" />
 
 ### Custom Domain
 
@@ -218,7 +218,7 @@ Only the main organization has the privilege to Set up, Configure and Customize 
 
 The captcha configuration in the Enterprise App Store module is designed to enhance login security for the Enterprise Portal. It provides flexibility for administrators to control how and when captcha is enforced, as well as to set restrictions on failed login attempts.
 
-<Screenshot url="https://cdn.appcircle.io/docs/assets/BE-4867-captcha.png" alt="Captcha Settings for Enterprise Portal" />
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-70.png" alt="Captcha Settings for Enterprise Portal" />
 
 #### Captcha Enable/Disable Toggle
 
@@ -245,4 +245,40 @@ If a user gets restriction due to failed attempts, the recovery time is 1 hour.
 
 :::info
 Please note that Enable Captcha feature is only available for organizations with an Enterprise license.
+:::
+
+## Session Management
+
+The Session Management feature allows administrators to control how user sessions behave in the Enterprise Portal across devices and browsers.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-80.png" alt="Session Management Settings for Enterprise Portal" />
+
+#### Single Active Session
+
+When the **Single Active Session** toggle is enabled, each user can have only one active session at a time across all browsers and devices within the Enterprise Portal.
+
+- If the same user signs in from another browser or device, the previous active session is automatically terminated.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8124-81.png" alt="Session Management Warning for Enterprise Portal" />
+
+- This helps prevent simultaneous logins with the same account and improves overall account security.
+
+If the toggle is disabled, users can sign in from multiple browsers or devices at the same time without terminating existing sessions.
+
+:::info
+The Session Management feature is available for organizations with an Enterprise license.
+:::
+
+:::warning Single Active Session Compatibility
+The **Single Active Session** feature supports all valid authentication types: **SSO**, **Static**, and **LDAP**.
+
+This feature is **not** applicable when the authentication type is set to **None (No Authentication)**.
+:::
+
+:::tip Channel Independence
+
+**Live** and **Beta** channels operate independently and do not affect each other’s sessions.
+
+If a user is logged in to the **Beta** channel, it will **not** terminate or impact the user’s active session in the **Live** channel, and vice versa.
+
 :::

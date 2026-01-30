@@ -5,6 +5,7 @@ tags: [android, mobile, security, build, appdome]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import SensitiveVariablesDanger from '@site/docs/\_sensitive-variables-danger.mdx';
 
 # Appdome Build-2Secure for Android
 
@@ -37,13 +38,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appdome-build-to-secure_2.png'/>
 
-:::danger Sensitive Variables
-
-Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
-
-We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
-
-:::
+<SensitiveVariablesDanger />
 
 | Variable Name               | Description                                                                                                                                                                                                                                                                                                                                                  | Status   |
 | --------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | -------- |
@@ -52,7 +47,8 @@ We recommend using [**Environment Variables**](/build/build-environment-variable
 | `$AC_APPDOME_FUSION_SET_ID` | Specifies the Appdome Fusion Set ID, which must be obtained from the Appdome account. Refer to [this document](https://apis.appdome.com/docs/getting-started#getting-a-fusion-sets-id) for more information.                                                                                                                                                 | Required |
 | `$AC_APPDOME_TEAM_ID`       | Specifies the Appdome Team ID. Insert your team's ID if using a team account. Refer to [this document](https://apis.appdome.com/docs/getting-started#getting-a-teams-id) for more information.                                                                                                                                                               | Optional |
 | `$AC_APPDOME_SIGN_METHOD`   | Specifies the Appdome app signing method. Options are: `On-Appdome`, `Private-Signing`, and `Auto-Dev-Signing`. The default value is `On-Appdome`. For details, refer to [this document](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/). | Required |
-| `$AC_APPDOME_GP_SIGNING`    | Specifies whether your app is signed for Google Play. If `true`, distribute through the Google Play App Signing program. Details are available [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/). The default value is `false`.      | Required |
+| `$AC_APPDOME_GP_SIGNING` | Specifies whether the app should be signed for Google Play. If set to `true`, the app is prepared for distribution via Google Play App Signing and requires the `AC_GOOGLE_SIGN_FINGERPRINT` environment variable to be defined. More details are available [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/automated-signing-secured-android-ios/automatic-code-signing-for-secured-android-apps-on-appdome/). | Required |
+| `$AC_GOOGLE_SIGN_FINGERPRINT` | Fingerprint (SHA-1 or SHA-256) of the Google Play App Signing certificate. Required when Google Play Signing is enabled. This value must be defined as a secret under the [**Environment Variables**](/build/build-environment-variables). | Optional |
 | `$AC_APPDOME_BUILD_LOGS`    | If `true`, it enables diagnostic logs for troubleshooting secured apps. Details are available [here](https://www.appdome.com/how-to/devsecops-automation-mobile-cicd/test-secured-mobile-apps/appdome-diagnostic-logs-for-troubleshooting-secured-apps/).                                                                                                    | Required |
 
 ---

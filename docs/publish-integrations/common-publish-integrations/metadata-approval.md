@@ -1,5 +1,5 @@
 ---
-title: Metadata Approval
+title: Metadata Approval via Email
 description: Learn how to use Metadata Approval in Publish
 tags: [publish, metadata, approve]
 ---
@@ -7,9 +7,9 @@ tags: [publish, metadata, approve]
 import Screenshot from '@site/src/components/Screenshot';
 import NoRunnerUsage from '@site/docs/\_publish-steps-runner-no-usage-info.mdx';
 
-# Metadata Approval
+# Metadata Approval via Email
 
-The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
+The Metadata Approval via Email step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
 
 This step is useful in team environments where metadata needs to be validated manually before release.
 
@@ -40,9 +40,9 @@ This step is one of the dependent steps. The table below lists the dependent ste
 
 :::caution Prerequisites
 
-Please note that the **Metadata Approval** step **must** be used before the steps listed in the table above. 
+Please note that the **Metadata Approval via Email** step **must** be used before the steps listed in the table above. 
 
-Running **Metadata Approval** step after your updated metadata has been applied in your developer accounts may **cause unexpected errors** in your publish flows.
+Running **Metadata Approval via Email** step after your updated metadata has been applied in your developer accounts may **cause unexpected errors** in your publish flows.
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5906-metadataApprovalNew1.png'/>
@@ -107,11 +107,11 @@ Please note that all of the data displayed in the metadata approval panel is **r
 Please note that in order to make any updates within [**Metadata Details**](/publish-module/publish-information/meta-data-information), certain rules must be met. While the Publish Flow is running, Metadata Details are locked and no changes are permitted. Please pay close attention to the business rules outlined below.
 
 **Metadata will be locked when:**
-- the **Metadata Approval** step starts, is in progress, or is completed
+- the **Metadata Approval via Email** step starts, is in progress, or is completed
 - the **[Update Metadata on App Store Connect](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect)/Google Play Console** step starts
 
 **Metadata will be unlocked when:**
-- the **Metadata Approval** step completes with a status of `Failed` or `Stopped`
+- the **Metadata Approval via Email** step completes with a status of `Failed` or `Stopped`
 - the **[Update Metadata on App Store Connect](/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect)/Google Play Console** step completes with a status of `Success`, `Failed`, or `Stopped`
 - the Publish Flow completes
 
@@ -133,4 +133,4 @@ When a user wants to reject a metadata, they can reject by clicking the **Reject
 
 ## Output Variables
 
-**Metadata Approval** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-module/publish-flow).
+**Metadata Approval via Email** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-module/publish-flow).

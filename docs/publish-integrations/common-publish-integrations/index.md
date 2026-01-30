@@ -16,6 +16,14 @@ Appcircle's Common Integrations facilitate the distribution of your iOS and Andr
 - Automates repetitive tasks, reducing the amount of manual work required.
 - Enables the creation of custom Publish flows and actions not available in the default steps.
 
+## [Custom Script from Git](/publish-integrations/common-publish-integrations/custom-script-from-git)
+
+- Allows you to execute scripts directly from a Git repository, enabling centralized script management across multiple publish flows.
+- Eliminates the need to update flows when scripts change - simply update the script in Git and all flows automatically use the latest version.
+- Provides version control and change tracking for your scripts through Git history, making it easy to review and roll back changes.
+- Enables script reusability across different projects and workflows without duplication.
+- Automates repetitive tasks while maintaining consistency and reducing manual configuration errors.
+
 ## [Get Approval via Email](/publish-integrations/common-publish-integrations/get-approval-via-email)
 
 - Request and track approvals easily via email.
@@ -43,9 +51,9 @@ With Appcircle's Publish module, you can submit your application to external sto
 
 Testing Distribution module allows you to distribute your application without the need for any external tools.
 
-## [Metadata Approval](/publish-integrations/common-publish-integrations/metadata-approval)
+## [Metadata Approval via Email](/publish-integrations/common-publish-integrations/metadata-approval)
 
-The Metadata Approval step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
+The Metadata Approval via Email step is used to get email-based approval before publishing your app's metadata. This ensures that designated users can review and either approve or reject the App Store, Google Play, Microsoft Intune and Huawei AppGallary metadata before proceeding with the publishing step.
 
 ## [Send Email](/publish-integrations/common-publish-integrations/send-email)
 The **Send Email** step allows you to send customized email notifications during your Appcircle Publish Flow for both iOS and Android builds. This can be used to alert stakeholders, notify of publish statuses, or provide deployment-related information.
