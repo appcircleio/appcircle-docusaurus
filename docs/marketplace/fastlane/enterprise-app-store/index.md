@@ -53,7 +53,7 @@ After adding the plugin to your project, configure your Fastfile as follows:
 ```ruby
   lane :distribute_app_store do
     appcircle_enterprise_app_store(
-      personalAPIToken: "$(AC_PERSONAL_API_TOKEN)",
+      personalAccessKey: "$(AC_PERSONAL_ACCESS_KEY)",
       appPath: "$(APP_PATH)",
       summary: "$(SUMMARY)",
       releaseNotes: "$(RELEASE_NOTE)",
@@ -62,7 +62,13 @@ After adding the plugin to your project, configure your Fastfile as follows:
   end
 ```
 
-- `personalAPIToken`: The Appcircle Personal API token is utilized to authenticate and secure access to Appcircle services, ensuring that only authorized users can perform actions within the platform.
+#### Authentication Parameters
+
+The plugin supports two authentication methods. You can use either `personalAccessKey` (recommended) or `personalAPIToken` (legacy), but not both at the same time.
+
+- `personalAccessKey` (recommended): The Appcircle Personal Access Key used to authenticate and authorize access to Appcircle services. This is the recommended authentication method. The plugin will automatically generate a Personal Access Token (PAT) from your Personal Access Key using the Auth API.
+
+- `personalAPIToken` (legacy, optional): The legacy Personal API Token used for authentication. This parameter is maintained for backward compatibility. It is recommended to migrate to `personalAccessKey` for better security and future compatibility. If you use this parameter, the plugin will use it directly without generating a PAT. For more details, check out the **[release notes](https://docs.appcircle.io/release-notes#3-29-4)**.
 - `appPath`: Indicates the file path to the application package that will be uploaded to Appcircle Testing Distribution Profile.
 - `releaseNotes`: Contains the details of changes, updates, and improvements made in the current version of the app being published.
 - `summary`: Used to provide a brief overview of the version of the app that is about to be published.
