@@ -49,3 +49,22 @@ The parameters required for this step to work as expected are listed below:
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-publish-send-to-appgallery.git
+
+
+## FAQ
+
+### App is not visible on Huawei AppGallery after a successful publish
+
+**Question**:
+
+Publishing to Huawei AppGallery completes successfully on Appcircle, but the app does not appear on the Huawei Store. The same build is visible on Google Play without any issues. Why does this happen?
+
+**Answer**:
+
+This issue can occur if there is a previous rollout on Huawei AppGallery that has not been completed or canceled.
+We observed that when an incomplete or ongoing rollout exists, Huawei AppGallery may block the new upload even though Appcircle reports the publish step as successful.
+
+**Solution**:
+
+- Cancel the previous incomplete rollout on Huawei AppGallery.
+- After canceling the old rollout, you will see that the app you previously submitted has been successfully installed.
