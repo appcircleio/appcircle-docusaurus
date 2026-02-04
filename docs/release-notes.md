@@ -39,10 +39,12 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🐞 Fixes
 
 - An issue has been fixed where SAML-type SSO configurations were appearing in OpenID SSO configurations in the “Create from existing SSO configuration” option. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the notification service could throw an error when users clicked the Manage button in self-hosted admin settings while configuring SMTP settings. <AccountBadge/> <SelfHostedBadge/>
 - An issue has been fixed where Enterprise Portal binary tag entries were accepting manual text input. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where quotation marks caused errors during the Send to TestFlight publish step in the release notes section. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where the “Manually release this version” option selected in the Metadata Details section was not being updated correctly when the flow was executed with Update Metadata. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where certain environment variables were not consistently populated for user-triggered builds, despite being expected to be available across all trigger types. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where incorrect field labels in the Bitbucket API token configuration for self-hosted environments to improve clarity and reduce user confusion during setup. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
@@ -70,6 +72,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue was fixed where Git tags were not pushed alongside commits, ensuring tags are now included when pushing multiple local operations together. <BuildBadge/> <CloudBadge/>  <SelfHostedBadge/>
 - An issue was fixed where tag-based build triggers did not run when tags were created on older existing branches. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where deleting an SSO configuration for Testing Distribution caused UI inconsistencies that left it appearing active on the screen. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where EAS and Tester Distribution Portal UIs ignored the OTP server’s configured expiration time and always displayed a hardcoded 5-minute countdown, ensuring the UI now respects server-defined expiry with appropriate tolerance. <AccountBadge/> <SelfHostedBadge/>
 - An issue was fixed where certain version numbers were sorted incorrectly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
