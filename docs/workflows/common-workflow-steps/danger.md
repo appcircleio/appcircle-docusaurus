@@ -29,6 +29,26 @@ Danger integration currently supports Ruby only. For more details, see [**Danger
 
 :::
 
+:::info Danger Version
+
+Please remember that you must use the one of **latest** versions of **Danger** in your project. To avoid encountering any errors while working with Danger on Appcircle, you must have the latest version of Danger installed in your Gemfile.
+
+**Example Gemfile:**
+
+```ruby
+
+source "https://rubygems.org"
+
+gem "danger", "9.5.3"
+.
+.
+.
+. //Other Gems
+
+```
+
+:::
+
 ### Prerequisites
 
 Before running the **Danger** step, you must complete certain prerequisites, as detailed in the table below:
@@ -56,6 +76,16 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 Please do not use sensitive variables such as **Username**, **Password**, **API Key**, or **Personal Access Key** directly within the step.
 
 We recommend using [**Environment Variables**](/build/build-environment-variables) groups for such sensitive variables.
+
+:::
+
+:::caution Danger Inputs
+
+The Danger component requires the following inputs to work with Git providers. Define the input information required by your Git provider in the Appcircle Environment Variable and provide it directly to the component input.
+
+This way, when the build starts, Appcircle will register these environment variables to the runner, and the Danger component will automatically use this information.
+
+For more information, please visit the [**Environment Variables**](/build/build-environment-variables) documentation.
 
 :::
 
