@@ -2,7 +2,7 @@
 title: Enterprise Portal 
 description: Learn how to use Enterprise Portal in Appcircle
 tags: [enterprise app store, enterprise portal setup, enterprise portal]
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 Appcircle features a separate distribution screen designed to facilitate easy downloading of shared applications.

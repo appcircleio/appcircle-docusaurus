@@ -31,7 +31,13 @@ For a complete overview of the Appcircle Enterprise App Store module capabilitie
 
 There are several ways to create an Enterprise App Store Profile. You can either manually upload your IPA or APK files or send them through Appcircle's Distribution, Build, or Publish modules.
 
-<ContentRef url="/enterprise-app-store/enterprise-app-store-profile">Enterprise App Store Profile]</ContentRef>
+<ContentRef url="/enterprise-app-store/enterprise-app-store-profile">Enterprise App Store Profile</ContentRef>
+
+## [Re-sign Binary](/enterprise-app-store/resign-binary)
+
+Enterprise App Store Re-Sign & Auto-Resign enables re-signing and automatic re-signing of iOS and Android applications distributed via the Enterprise App Store.
+
+<ContentRef url="/enterprise-app-store/resign-binary">Re-sign Binary</ContentRef>
 
 ## [Portal Customization](/enterprise-app-store/portal-customization)
 
