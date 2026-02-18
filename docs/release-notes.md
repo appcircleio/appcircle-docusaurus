@@ -35,6 +35,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/> <SelfHostedBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
