@@ -35,14 +35,17 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/> <SelfHostedBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue has been fixed where SAML-type SSO configurations were appearing in OpenID SSO configurations in the “Create from existing SSO configuration” option. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the notification service could throw an error when users clicked the Manage button in self-hosted admin settings while configuring SMTP settings. <AccountBadge/> <SelfHostedBadge/>
 - An issue has been fixed where Enterprise Portal binary tag entries were accepting manual text input. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where quotation marks caused errors during the Send to TestFlight publish step in the release notes section. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where the “Manually release this version” option selected in the Metadata Details section was not being updated correctly when the flow was executed with Update Metadata. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where certain environment variables were not consistently populated for user-triggered builds, despite being expected to be available across all trigger types. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where incorrect field labels in the Bitbucket API token configuration for self-hosted environments to improve clarity and reduce user confusion during setup. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
