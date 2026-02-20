@@ -58,8 +58,54 @@ All workflow steps in Appcircle are open source. Code should be easy to understa
 #### 2.1.1 Code Consistency Requirements
 
 All steps must follow the same conventions for naming, file structure, and environment handling.
-For example:
-- Use the function name `run_command` for terminal executions.
+
+**Exit Codes**
+
+All steps must use the following exit conventions:
+- `exit 0` – The step completes successfully and execution continues to the next step.
+- `exit 1` – The step fails and breaks the workflow execution.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_3.png'/>
+
+**Error Logging**
+
+To display an error message to the user, print it with the `@@[error]` tag:
+
+```
+@@[error] Your error message here
+```
+
+Any log printed in this format will be shown as an error message in the Appcircle interface.
+
+**Running Terminal Commands**
+
+All terminal commands must be executed through a function named `run_command`. This ensures consistent logging and error handling across all steps. The command must be printed with the `@@[command]` tag before execution.
+
+Example `run_command` implementation in Ruby:
+
+```ruby
+def run_command(command)
+  puts "@@[command] #{command}"
+  status = nil
+  stdout_str = nil
+  stderr_str = nil
+  Open3.popen3(command) do |stdin, stdout, stderr, wait_thr|
+    stdout.each_line do |line|
+      puts line
+    end
+    stdout_str = stdout.read
+    stderr_str = stderr.read
+    status = wait_thr.value
+  end
+
+  unless status.success?
+    abort(stderr_str)
+  end
+end
+```
+
+**Environment Variables**
+
 - Save new environment variables to the [`AC_ENV_FILE_PATH`](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables).
 
 #### 2.1.2 Logging and Output Standards
@@ -78,6 +124,29 @@ Logging patterns:
 For reference:
 - Example workflow step code for **color usage**: [appcircle-android-post-process-component/main.rb](https://github.com/appcircleio/appcircle-android-post-process-component/blob/master/main.rb)
 - Example workflow step code for **logging patterns**: [appcircle-cache-pull-component/main.rb](https://github.com/appcircleio/appcircle-cache-pull-component/blob/main/main.rb)
+
+:::warning Avoid Using Environment Variables Directly in Code
+
+Never access environment variables directly within your step's code. Instead, expose each required variable as a **named input** in your `component.yaml`, and set its `defaultValue` to the corresponding environment variable.
+
+**Why?**
+- Makes the step easier to test in isolation.
+- Users can clearly see all required inputs without reading through the source code.
+- Inputs can be overridden when needed, improving flexibility.
+
+**Example:**
+
+```yaml
+inputs:
+  - key: AC_BUILD_NUMBER
+    defaultValue: "$BUILD_NUMBER"
+    title: "Build Number"
+    isRequired: true
+```
+
+Then in your main code, read `AC_BUILD_NUMBER` as a regular input — not `$BUILD_NUMBER` directly.
+
+:::
 
 ### 2.2 `component.yaml` Configuration
 
@@ -135,6 +204,13 @@ There are two validation rules to be considered for the input:
 
 :::
 
+:::warning Type of Default Value
+
+Always wrap the value with double quotes ("") to explicitly mark it as a string.
+Even if you provide a value like `beeloan`, the `component.yaml` will send it as a string.
+
+:::
+
 ### 2.3 `README.md` Rules
 
 Each step must include a `README.md` file to provide clear usage instructions and input/output definitions.
@@ -172,6 +248,45 @@ Thank you for helping us make Appcircle better! 🙌
 ```
 
 After completing these files, the workflow step will be ready for testing
+
+### 2.4 Unit Test Configuration
+
+Each new workflow step should include unit tests to verify that the step behaves as expected before publishing.
+
+#### 2.4.1 Test File Structure
+
+Place test files in a `test/` directory at the root of the repository. Name your test file according to the main code language:
+
+- `test/test_main.rb` for Ruby steps
+- `test/test_main.sh` for Bash steps
+
+#### 2.4.2 Testing Requirements
+
+Tests must cover the following scenarios:
+
+- **Happy path**: The step runs successfully with valid inputs.
+- **Missing required inputs**: The step fails gracefully when a required input is not provided.
+- **Invalid inputs**: The step handles unexpected or malformed values properly.
+
+#### 2.4.3 Running Tests Locally
+
+Before submitting a pull request, ensure all tests pass locally:
+
+```bash
+# For Ruby
+ruby test/test_main.rb
+
+# For Bash
+bash test/test_main.sh
+```
+
+#### 2.4.4 Test Coverage
+
+All critical functions in the main code file should be covered by tests. Aim for at least **80% coverage** to ensure reliability and maintainability.
+
+---
+
+Once unit tests are configured and passing, the workflow step is considered complete and ready for the **review and testing** process.
 
 ## 3. Testing the Step
 
@@ -245,7 +360,7 @@ Your documentation must comply with the Document Guidelines in the README to fol
 
 ### 4.2 Adding Step to Index Page
 
-After determining your document's location, add your workflow step to the corresponding `index.md` page. Follow the existing ordering rules and include your step as shown below:
+After determining your document's location, add your workflow step to the corresponding `index.md` page. Steps must be listed in **alphabetical order** by step name, find the correct position before inserting your entry. Include your step as shown below:
 
 ```markdown
 
@@ -385,7 +500,55 @@ Please do not forget to remove any comment lines starting with "💬".
 
 :::
 
-## 5. Review & Deployment Process
+## 5. Create Content for the Integration Page
+
+The newly added integration **must be listed on the Appcircle Integrations page** in the same format as existing integrations available at:
+[https://appcircle.io/integrations](https://appcircle.io/integrations)
+
+To enable the relevant person on the **Appcircle** side to complete this addition, the integration content **must be included in the pull request**, either as:
+
+- A dedicated file, or
+- A clearly formatted PR comment.
+
+The content should strictly follow the structure below:
+
+```md
+# Integration Name
+
+Short description of the integration and its purpose.
+
+## Key Benefits
+**Feature 1**: Description
+
+**Feature 2**: Description
+
+...
+
+## Points to Consider
+**Consideration 1**: Description
+
+**Consideration 2**: Description
+
+...
+
+## FAQs
+
+### Question 1
+Answer
+
+### Question 2
+Answer
+
+...
+```
+
+### Notes
+
+* The **Integration Name** should be clear and consistent with the product or service name.
+* Descriptions should be concise, technical, and user-focused.
+* All sections are required to ensure consistency across the Integrations page.
+
+## 6. Review & Deployment Process
 
 After completing your step implementation and documentation, inform the Appcircle team. The team will review and test both the code and the documentation. During this process:
 
