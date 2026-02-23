@@ -65,7 +65,7 @@ All steps must use the following exit conventions:
 - `exit 0` – The step completes successfully and execution continues to the next step.
 - `exit 1` – The step fails and breaks the workflow execution.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_3.png'/>
+<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_14.png'/>
 
 **Error Logging**
 
@@ -80,6 +80,8 @@ Any log printed in this format will be shown as an error message in the Appcircl
 **Running Terminal Commands**
 
 All terminal commands must be executed through a function named `run_command`. This ensures consistent logging and error handling across all steps. The command must be printed with the `@@[command]` tag before execution.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_15.png'/>
 
 Example `run_command` implementation in Ruby:
 
