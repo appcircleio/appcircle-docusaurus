@@ -1,6 +1,7 @@
 ---
 title: Marking Release Candidates
 description: Learn how to mark a version as a release candidate in Appcircle
+slug: /publish-to-stores-module/publish-information/marking-release-candidates
 tags: [publish information, release candidate, mark as rc]
 sidebar_position: 3
 ---

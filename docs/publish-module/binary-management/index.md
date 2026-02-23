@@ -1,6 +1,7 @@
 ---
 title: Binary Management
 description: Learn how to manage binaries in Appcircle
+slug: /publish-to-stores-module/binary-management
 tags: [publish module, binary management]
 ---
 
@@ -29,7 +30,7 @@ You can install iOS app versions with different BundleIDs under the same Publish
 
 Similarly, for Android Publish Profiles, all app versions must have identical Package Names within the Android Publish Profile.
 
-You can view the Bundle ID (iOS) and Package Name (Android) beneath the Publish Profile name. Users can also verify this information by selecting the [Binary Information](/publish-module/publish-information/binary-information) for an app version under the actions menu.
+You can view the Bundle ID (iOS) and Package Name (Android) beneath the Publish Profile name. Users can also verify this information by selecting the [Binary Information](/publish-to-stores-module/publish-information/binary-information) for an app version under the actions menu.
 :::
 
 ### BundleID Matching
@@ -40,9 +41,9 @@ When a binary BundleID uploaded to the Publish profile does not match the master
 
 :::caution BundleID Matching
 
-Note that you cannot mark your application version with a mismatched BundleID as a [**Release Candidate**](/publish-module/publish-information/marking-release-candidates). 
+Note that you cannot mark your application version with a mismatched BundleID as a [**Release Candidate**](/publish-to-stores-module/publish-information/marking-release-candidates). 
 
-For BundleID change, you can use the [**Resign Binary**](/publish-module/publish-information/resign-binary) feature in the Action button or upload a matching binary.
+For BundleID change, you can use the [**Resign Binary**](/publish-to-stores-module/publish-information/resign-binary) feature in the Action button or upload a matching binary.
 
 :::
 
@@ -54,7 +55,7 @@ For this, click on the **Actions** button for the relevant version and go to **D
 
 ## Store Status
 
-Appcircle now allows you to track the App Store status of your applications directly within the Publish module. This powerful feature is tailored for **Enterprise License** holders, ensuring continuous monitoring of your application's deployment status.
+Appcircle now allows you to track the App Store status of your applications directly within the Publish to Stores module. This powerful feature is tailored for **Enterprise License** holders, ensuring continuous monitoring of your application's deployment status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-16.png' />
 
@@ -67,14 +68,14 @@ Appcircle now allows you to track the App Store status of your applications dire
 - **Completion of Distribution**: When a version reaches **`Ready for Distribution`**, Appcircle stops monitoring it, allowing you to focus resources on versions that still require attention.
 
 :::caution Store Credentials Required
-Ensure you select store credentials in the [Publish settings](/publish-module/publish-settings#store-credentials) to start monitoring. If the credentials are **not** selected, the status will display as **`Not Available`**.
+Ensure you select store credentials in the [Publish settings](/publish-to-stores-module/publish-settings#store-credentials) to start monitoring. If the credentials are **not** selected, the status will display as **`Not Available`**.
 :::
 
 This streamlined approach ensures that you are always informed of your application's status, simplifying management and enhancing your deployment strategy directly from the Appcircle dashboard.
 
 ### Filter By Status
 
-In the Publish module, where your Publish profiles are listed, you can use the filter option to display specific Publish profiles based on their latest store status.
+In the Publish to Stores module, where your Publish profiles are listed, you can use the filter option to display specific Publish profiles based on their latest store status.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter1.png' />
 
@@ -92,7 +93,7 @@ The iOS Publish filter options will only display the available statuses from the
 
 ## FAQ
 
-### How can I get a binary from another organization to use in the Publish Module ?
+### How can I get a binary from another organization to use in the Publish to Stores Module ?
 
 Let’s assume there are two organizations: Organization A and Organization B.
 In Organization A, we have a build profile that generates an IPA, APK, or AAB.
@@ -118,7 +119,7 @@ appcircle publish profile version upload \
 - --platform "ios" or "android" **[REQUIRED]** Specifies the platform for the binary.
 - --markAsRc true/false  **[OPTIONAL]** Marks the binary as a release candidate automatically. (Default: `false`)
 - --summary "Release Notes" **[OPTIONAL]** Adds release notes to the app version.  
-  **Note**: To include release notes, the version must first be [marked as a release candidate](/publish-module/publish-information/marking-release-candidates).
+  **Note**: To include release notes, the version must first be [marked as a release candidate](/publish-to-stores-module/publish-information/marking-release-candidates).
 
 :::
 
@@ -139,7 +140,7 @@ To generate Personal Access Key, follow this documentation [API authentication](
 
 To obtain the Publish profile ID, follow the steps below: 
 1. Log in to organization B.
-2. Go to Publish module.
+2. Go to Publish to Stores module.
 3. Select the desired Publish profile
 4. Copy it from the URL. `https://my.appcircle.io/publish/android/123456f-7d89-4545-5454-123456789abc`
 5. Then the Publish profile ID is => `123456f-7d89-4545-5454-123456789abc`
