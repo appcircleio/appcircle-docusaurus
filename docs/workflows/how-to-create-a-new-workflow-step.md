@@ -51,11 +51,11 @@ When the Appcircle team creates a repository, it will include an **MIT license**
 Each workflow step must include a main execution file. Currently, Appcircle supports two languages: **Ruby** and **Bash**.
 Therefore, the main file must be named either `main.rb` or `main.sh`.
 
-#### 2.1.0 Code Quality Requirements
+#### 2.1.1 Code Quality Requirements
 
 All workflow steps in Appcircle are open source. Code should be easy to understand and maintain, as all users may contribute to it. Following **Clean Code** principles is mandatory.
 
-#### 2.1.1 Code Consistency Requirements
+#### 2.1.2 Code Consistency Requirements
 
 All steps must follow the same conventions for naming, file structure, and environment handling.
 
@@ -108,7 +108,7 @@ end
 
 - Save new environment variables to the [`AC_ENV_FILE_PATH`](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables#ios--android-common-environment-variables).
 
-#### 2.1.2 Logging and Output Standards
+#### 2.1.3 Logging and Output Standards
 
 Logs must follow a color-coded system for consistency:
 
