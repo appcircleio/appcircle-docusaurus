@@ -1,7 +1,7 @@
 ---
 title: How to Create a New Workflow Step
 description: A guide to defining, configuring, and integrating a new step into a workflow.
-tags: [create, new step, workflow, development]
+tags: [create, new step, workflow, development, build]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
