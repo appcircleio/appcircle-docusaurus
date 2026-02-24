@@ -37,7 +37,7 @@ This step should always follow steps that may affect Archive and Export, such as
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-8307-newxcodeinput.png' />
 
 | Variable Name                                 | Description                                                                                                                                                                                                                                              | Status   |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
