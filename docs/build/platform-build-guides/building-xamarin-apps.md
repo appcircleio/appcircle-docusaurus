@@ -304,7 +304,7 @@ Although these steps are the minimum requirements for a mobile app build pipelin
 We suggest you check out the following modules for specific use cases mentioned below:
 
 - Use [Testing Distribution](/testing-distribution) to deploy the Xamarin app to your tester groups to get feedback.
-- Ready to release? Then [Publish](/publish-module) the Xamarin app to public stores such as Google Play, App Store, or Huawei App Gallery.
+- Ready to release? Then [Publish](/publish-to-stores-module) the Xamarin app to public stores such as Google Play, App Store, or Huawei App Gallery.
 - Use the [Enterprise App Store](/enterprise-app-store) if you want to distribute the Xamarin app to your in-house or private users.
 
 ___

@@ -10,7 +10,7 @@ import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 
 # Update Metadata on App Store Connect
 
-This step uploads all edited metadata information from the [**Metadata Information**](/publish-module/publish-information/meta-data-information) page to the corresponding sections on App Store Connect. When this step executes, you can see the detailed updated metadata information with localization.
+This step uploads all edited metadata information from the [**Metadata Information**](/publish-to-stores-module/publish-information/meta-data-information) page to the corresponding sections on App Store Connect. When this step executes, you can see the detailed updated metadata information with localization.
 
 <RunnerUsage />
 
@@ -31,8 +31,8 @@ Below are the parameters necessary for this step's operation, along with their d
 
 :::info
 
-- **Uploads screenshots while sending METADATA** : This value is `true` by default and includes screen shots uploaded in [**Metadata Information**](/publish-module/publish-information/meta-data-information#ios-metadata-information) during the upload process. If `false`, screen shots will not be uploaded.
-- **Update Metadata fields** : This value is `true` by default and ensures that the [**Metadata Information**](/publish-module/publish-information/meta-data-information#ios-metadata-information) to be updated is uploaded. If `false`, the entered metadata information will not be uploaded.
+- **Uploads screenshots while sending METADATA** : This value is `true` by default and includes screen shots uploaded in [**Metadata Information**](/publish-to-stores-module/publish-information/meta-data-information#ios-metadata-information) during the upload process. If `false`, screen shots will not be uploaded.
+- **Update Metadata fields** : This value is `true` by default and ensures that the [**Metadata Information**](/publish-to-stores-module/publish-information/meta-data-information#ios-metadata-information) to be updated is uploaded. If `false`, the entered metadata information will not be uploaded.
 - **Clear all previously uploaded screenshots** : This value is `false` by default. If `true`, screen shots on the App Store Connect will be deleted and new ones will be uploaded. 
 
 :::danger Clear all previously uploaded screenshots

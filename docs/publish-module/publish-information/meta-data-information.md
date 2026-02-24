@@ -1,6 +1,7 @@
 ---
 title: Metadata Details
 description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
+slug: /publish-to-stores-module/publish-information/meta-data-information
 tags: [metadata, app distribution, appcircle dashboard]
 sidebar_position: 5
 ---
@@ -113,7 +114,7 @@ If there is existing metadata associated with your app on the Google Play Consol
 
 **Updating Android Metadata:** You can easily update your Google Play Console metadata for your app via Appcircle by following these steps:
 
-- Update your app's metadata on Appcircle within the Publish module.
+- Update your app's metadata on Appcircle within the Publish to Stores module.
 - Add the **Update Metadata on Google Play Console** Publish flow step to your workflow.
 - Run your Publish Flow of your app by selecting the Publish Details under actions menu.
 
@@ -173,7 +174,7 @@ The metadata information field can be changed according to the store credentials
 
 :::danger Microsoft Intune Metadata and Credential
 
-If the Microsoft Intune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft Intune credential**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-module/publish-settings#store-credentials).
+If the Microsoft Intune credential is not selected, the metadata fields will not change. For this reason, make sure that you have integrated [**Microsoft Intune credential**](/account/my-organization/security/credentials/adding-microsoft-intune-api-key) and selected the correct credentials in [**Publish Settings**](/publish-to-stores-module/publish-settings#store-credentials).
 
 :::
 
