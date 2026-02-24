@@ -1,6 +1,7 @@
 ---
 title: Managing Publish Profiles
 description: Learn how to manage publish profiles in Appcircle
+slug: /publish-to-stores-module/creating-publish-profiles/managing-publish-profiles
 tags: [publish, publish profiles, distribution]
 sidebar_position: 2
 ---

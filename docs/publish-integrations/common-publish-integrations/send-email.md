@@ -70,7 +70,7 @@ First, you need to define the environment variables. To do this, go to the Publi
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6186-email6.png' />
 
-For more information, please refer to the [Publish Variables](/publish-module/publish-variables) documentation.
+For more information, please refer to the [Publish Variables](/publish-to-stores-module/publish-variables) documentation.
 
 ### Selecting Environment Variables
 
