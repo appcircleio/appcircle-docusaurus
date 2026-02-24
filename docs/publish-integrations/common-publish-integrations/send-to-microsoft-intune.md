@@ -26,7 +26,7 @@ To send an app from Appcircle to Microsoft Intune, you need to register an appli
   Adding Microsoft Intune API Credentials
 </ContentRef>
 
-After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-module/publish-settings). In the [Store Credential](/publish-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
+After completing the integration with Microsoft Intune, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Microsoft Intune Credential you integrated, from the drop-down list. Then, click on the **Save** button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5766-Publish-intune-settings2.png' />  
 
@@ -45,7 +45,7 @@ Below are the parameters necessary for this step's operation for iOS, along with
 | `$AC_INTUNE_MIN_OS_VERSION`     | The `Minimum Operating System` specifies the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed. Default: `iOS 8.0`. | Optional |
 
 :::warning
-If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
+If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v2.png' />
 :::
@@ -64,7 +64,7 @@ Below are the parameters necessary for this step's operation for Android, along 
 | `$AC_INTUNE_MIN_OS_VERSION`     | The `Minimum Operating System` specifies the earliest operating system version on which the app can be installed. If you assign the app to a device with an earlier operating system, it will not be installed. Default: `Android 4.0 (Ice Cream Sandwich)`. | Optional |
 
 :::danger
-If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
+If you choose to create a new application in Microsoft Intune while marking the app version as release candidate and execute this step before updating the [metadata information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information#microsoft-intune-metadata-information), these values will be assigned to the application being created by default.
  - The `Targeted Platform` is set when the application is first created in Microsoft Intune and cannot be changed afterwards. Ensure that you select the correct platform before executing this step.
 <Screenshot url='https://cdn.appcircle.io/docs/assets/send-to-intune-select-app-light-v2.png' />
 :::

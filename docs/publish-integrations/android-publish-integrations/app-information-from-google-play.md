@@ -33,17 +33,17 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, go to [Publishing Settings](/publish-module/publish-settings). In the [Store Credential](/publish-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
 
 :::info
 
-If you are using [Publish Variables](/publish-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-module/publish-settings) window.
+If you are using [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-to-stores-module/publish-settings) window.
 
 :::
 
 ## Input Variables
 
-No input variables are required for the **App Information from Google Play** step. It will retrieve information from Google Play, based on the app you are running and the [Store Credential](/publish-module/publish-settings#store-credentials) you select in [Publishing Settings](/publish-module/publish-settings).
+No input variables are required for the **App Information from Google Play** step. It will retrieve information from Google Play, based on the app you are running and the [Store Credential](/publish-to-stores-module/publish-settings#store-credentials) you select in [Publishing Settings](/publish-to-stores-module/publish-settings).
 
 ## Output Variables
 

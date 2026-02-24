@@ -1,6 +1,7 @@
 ---
 title: Cancel Submission
 description: Learn how to cancel submission on App Store Connect in Appcircle
+slug: /publish-to-stores-module/publish-information/cancel-submission
 tags: [publish, publish details, publish flow, cancel submission, submission]
 sidebar_position: 10
 ---

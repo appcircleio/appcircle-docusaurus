@@ -54,7 +54,7 @@ Users who decide to reject the binary, must provide an explanation. This explana
 
 ### Prerequisites
 
-There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
+There are no required steps that must precede the **Get Approval via Email** step. However, please note that any steps executed before the **Get Approval via Email** step in the [Publish flow](/publish-to-stores-module/publish-flow) will not be impacted by the approval process. The approval logic will only affect the steps that follow the **Get Approval via Email** step.
 
 ### Input Variables
 
@@ -76,7 +76,7 @@ If the **Minimum Required Approval Count** cannot be achieved, the step will fai
 
 ### Output Variables
 
-**Get Approval via Email** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-module/publish-flow).
+**Get Approval via Email** step does not produce any output, but the success or failure of the step depends on the approvals or rejections received from the sent emails. This outcome affects the subsequent steps in the [Publish flow](/publish-to-stores-module/publish-flow).
 
 ---
 
