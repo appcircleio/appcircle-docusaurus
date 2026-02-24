@@ -19,7 +19,7 @@ For more details, please refer to the following links:
 
 - [**Appcircle Testing Distribution**](/testing-distribution/)
 - [**Appcircle Enterprise App Store**](/enterprise-app-store/)
-- [**Appcircle Publish**](/publish-module/)
+- [**Appcircle Publish**](/publish-to-stores-module/)
 
 :::
 

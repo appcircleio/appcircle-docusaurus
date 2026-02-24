@@ -1398,3 +1398,138 @@ status = 301
 from = "/build/connection-guides/connecting-to-github"
 to = "/build/manage-the-connections/connection-guides/connecting-to-github"
 status = 301
+
+[[redirects]]
+from = "/publish-module"
+to = "/publish-to-stores-module"
+status = 301
+
+[[redirects]]
+from = "/publish-module/binary-management"
+to = "/publish-to-stores-module/binary-management"
+status = 301
+
+[[redirects]]
+from = "/publish-module/creating-publish-profiles"
+to = "/publish-to-stores-module/creating-publish-profiles"
+status = 301
+
+[[redirects]]
+from = "/publish-module/creating-publish-profiles/managing-publish-profiles"
+to = "/publish-to-stores-module/creating-publish-profiles/managing-publish-profiles"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-activity-log"
+to = "/publish-to-stores-module/publish-activity-log"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-flow"
+to = "/publish-to-stores-module/publish-flow"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information"
+to = "/publish-to-stores-module/publish-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/app-information"
+to = "/publish-to-stores-module/publish-information/app-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/auto-resign-configuration"
+to = "/publish-to-stores-module/publish-information/auto-resign-configuration"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/binary-information"
+to = "/publish-to-stores-module/publish-information/binary-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/cancel-submission"
+to = "/publish-to-stores-module/publish-information/cancel-submission"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/check-release-status"
+to = "/publish-to-stores-module/publish-information/check-release-status"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/delete"
+to = "/publish-to-stores-module/publish-information/delete"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/download"
+to = "/publish-to-stores-module/publish-information/download"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/google-play-information"
+to = "/publish-to-stores-module/publish-information/google-play-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/history"
+to = "/publish-to-stores-module/publish-information/history"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/marking-release-candidates"
+to = "/publish-to-stores-module/publish-information/marking-release-candidates"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/meta-data-information"
+to = "/publish-to-stores-module/publish-information/meta-data-information"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/publish-details"
+to = "/publish-to-stores-module/publish-information/publish-details"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/reject-binary"
+to = "/publish-to-stores-module/publish-information/reject-binary"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-information/resign-binary"
+to = "/publish-to-stores-module/publish-information/resign-binary"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-report"
+to = "/publish-to-stores-module/publish-report"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-resign-report"
+to = "/publish-to-stores-module/publish-resign-report"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-settings"
+to = "/publish-to-stores-module/publish settings"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-variables"
+to = "/publish-to-stores-module/publish-variables"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-walkthrough-for-app-store"
+to = "/publish-to-stores-module/publish-walkthrough-for-app-store"
+status = 301
+
+[[redirects]]
+from = "/publish-module/publish-walkthrough-for-google-play"
+to = "/publish-to-stores-module/publish-walkthrough-for-google-play"
+status = 301

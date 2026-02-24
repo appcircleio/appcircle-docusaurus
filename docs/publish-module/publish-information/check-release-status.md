@@ -1,15 +1,16 @@
 ---
 title: Check Release Status
 description: Learn how to check and update statuses in the Publish module of Appcircle
+slug: /publish-to-stores-module/publish-information/check-release-status
 tags: [publish, publish module, app information, app store connect, review]
 sidebar_position: 2
 ---
 
 # Check Release Status
 
-Appcircle performs status checks for your published applications. This status gives you information about the status of the relevant version on the market. You can find detailed information about Appcircle's status feature in the [**Store Status Documentation**](/publish-module/binary-management#store-status).
+Appcircle performs status checks for your published applications. This status gives you information about the status of the relevant version on the market. You can find detailed information about Appcircle's status feature in the [**Store Status Documentation**](/publish-to-stores-module/binary-management#store-status).
 
-Appcircle updates a published app for status updates **every 30 minutes** if the app is [**Marked as RC**](/publish-module/publish-information/marking-release-candidates). However, the user can also do this manually.
+Appcircle updates a published app for status updates **every 30 minutes** if the app is [**Marked as RC**](/publish-to-stores-module/publish-information/marking-release-candidates). However, the user can also do this manually.
 
 :::caution Check Release Status Manually
 
@@ -21,7 +22,7 @@ With the Check Release Status function, you can instantly update the status info
 
 :::info
 
-Make sure that one of the versions is [**Marked as Release Candidate**](/publish-module/publish-information/marking-release-candidates) so that you can do a status check.
+Make sure that one of the versions is [**Marked as Release Candidate**](/publish-to-stores-module/publish-information/marking-release-candidates) so that you can do a status check.
 
 :::
 

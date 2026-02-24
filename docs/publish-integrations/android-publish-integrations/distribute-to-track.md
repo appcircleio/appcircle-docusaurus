@@ -43,7 +43,7 @@ Following input configurations are required for the **Distribute to Track** step
 | `$AC_AUTO_SEND_PLAYSTORE_REVIEW` | The `Auto Send for Review` where you select whether your changes should automatically go for review on the Google Play Console. Options: `Send for Review Automatically but Rescue Errors`, `Don't Send for Review Automatically but Rescue Errors`, `Always Send for Review Automatically`, `Never Send for Review Automatically`.                         | Optional  |
 | `$AC_RELEASE_NOTES`  | Provides release notes for the submission to Google Play. Use the `$AC_RELEASE_NOTES` variable to include the current release notes for the app version. Check or edit your app version's release notes in Binary Information.                                                                                                                              | Optional  |
 
-For detailed information about **Auto Send for Review** setting, please refer to the [Auto Send for Review](/publish-module/publish-information/google-play-information#auto-send-for-review) documentation.
+For detailed information about **Auto Send for Review** setting, please refer to the [Auto Send for Review](/publish-to-stores-module/publish-information/google-play-information#auto-send-for-review) documentation.
 
 ## Output Variables
 

@@ -1,6 +1,7 @@
 ---
 title: Publish Flow
 description: Learn how to customize the publish flow in Appcircle
+slug: /publish-to-stores-module/publish-flow
 tags: [publish, publish flow, distribution]
 sidebar_position: 1
 ---
@@ -10,11 +11,11 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Publish Flow
 
-Appcircle includes a predefined flow in the Publish module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
+Appcircle includes a predefined flow in the Publish to Stores module for publishing the application to stores (App Store, Google Play, Huawei AppGallery, Microsoft Intune). This flow can be customized according to your specific publishing requirements.
 
 :::caution Runner Usage
 
-Appcircle's Publish module requires a **runner** to operate. The runner dependency of each step in the **Publish Flows** is specified in the relevant step's documentation. For detailed information on runner dependencies, please refer to the documentation of the relevant steps.
+Appcircle's Publish to Stores module requires a **runner** to operate. The runner dependency of each step in the **Publish Flows** is specified in the relevant step's documentation. For detailed information on runner dependencies, please refer to the documentation of the relevant steps.
 
 :::
 

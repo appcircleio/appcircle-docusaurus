@@ -1,21 +1,22 @@
 ---
 title: Auto Re-sign
 description: Learn how to automatically re-sign your binary in the Publish module of Appcircle
+slug: /publish-to-stores-module/publish-information/auto-resign-configuration
 tags: [publish, publish module, auto, re-sign, configuration]
 sidebar_position: 3
 ---
 
 # Auto Re-sign
 
-The **Auto Re-sign** feature in Appcircle’s Publish module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
+The **Auto Re-sign** feature in Appcircle’s Publish to Stores module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
 
 ## Enabling Auto Re-sign
 
-To use the **Auto Re-sign** feature in the Appcircle Publish module, you need to enable the **Auto Re-sign** toggle within the Publish Settings section.
+To use the **Auto Re-sign** feature in the Appcircle Publish to Stores module, you need to enable the **Auto Re-sign** toggle within the Publish Settings section.
 
 :::caution Business Rule for Auto Publish and Auto Re-sign
 
-Appcircle supports both **Auto Publish** and **Auto Re-sign** features. If both toggles are **enabled** simultaneously, Appcircle, by business rule, will first initiate the automatic re-signing process. Once the re-signing is complete, the automatic publishing process will begin. For more detailed information about **Auto Publish**, please refer to the Auto Publish [documentation](/publish-module/publish-settings#auto-publish).
+Appcircle supports both **Auto Publish** and **Auto Re-sign** features. If both toggles are **enabled** simultaneously, Appcircle, by business rule, will first initiate the automatic re-signing process. Once the re-signing is complete, the automatic publishing process will begin. For more detailed information about **Auto Publish**, please refer to the Auto Publish [documentation](/publish-to-stores-module/publish-settings#auto-publish).
 
 :::
 
@@ -59,7 +60,7 @@ Appcircle Publish profiles can accept binaries with different bundle identifiers
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-7.png' />
 
-> ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-module/binary-management).
+> ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
 
 
 :::caution Multiple Target Binary
@@ -219,7 +220,7 @@ From the Information tab under Auto Re-sign configuration, you can manage the ap
 
 Appcircle Publish profiles can accept binaries with different package name. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different package name is uploaded, it is re-signed according to the package name of the profile. The package name of the resulting re-signed binary is updated to match the one associated with the profile. 
 
-> ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-module/binary-management).
+> ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE7916-11.png' />
 

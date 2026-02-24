@@ -179,7 +179,7 @@ For more detailed information about identifier validation, please visit the **Bu
 
 #### Send to Publish
 
-Enabling "Automatically Distribute to Publish" will display the available [Publish](/publish-module) profiles for distribution.
+Enabling "Automatically Distribute to Publish" will display the available [Publish](/publish-to-stores-module) profiles for distribution.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5278-publish.png' />
 
