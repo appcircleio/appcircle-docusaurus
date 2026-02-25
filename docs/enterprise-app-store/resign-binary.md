@@ -23,11 +23,23 @@ You can use manual re-sign to:
 - Modify the app display name
 - Adjust version and build numbers before distribution
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an2.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an3.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an4.png' />
+
 Manual re-sign operations are performed per app version and the resulting output is stored as a new re-signed artifact.
+
+:::info iOS Re-sign Configurations 
+For detailed information about Manual iOS Re-sign configurations, please refer to the [configuration](/enterprise-app-store/resign-binary#ios-auto-re-sign) section. The configuration structure for Manual and Auto Re-sign is the same. However, unlike Auto Re-sign, Manual Re-sign configurations must be reconfigured for each re-sign action.
+:::
 
 ## Android Re-sign
 
 Manual Android re-sign enables re-signing APK or AAB files using a different keystore configuration.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an1.png' />
 
 You can use manual re-sign to:
 - Replace the signing keystore
@@ -41,10 +53,17 @@ You can use manual re-sign to:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a4.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a5.png' />
+:::info Android Re-sign Configurations
+For detailed information about Manual Android Re-sign configurations, please refer to the [configuration](/enterprise-app-store/resign-binary#android-auto-re-sign) section. The configuration structure for Manual and Auto Re-sign is the same. However, unlike Auto Re-sign, Manual Re-sign configurations must be reconfigured for each re-sign action.
+:::
 
 ## Auto Re-sign Configurations
 
+Auto Re-sign enables Appcircle to automatically re-sign newly uploaded binaries based on predefined signing and versioning rules.
+
+Before using this feature, you must first configure the Auto Re-sign settings for the relevant platform (iOS or Android), including identifier management, versioning strategy, and signing credentials.
+
+After completing the configuration, make sure to enable the Auto Re-sign option from the Enterprise App Store profile settings. Otherwise, newly uploaded binaries will not be re-signed automatically.
 
 ### iOS Auto Re-sign
 
@@ -204,6 +223,12 @@ If you want to perform **In-house** signing using an **Enterprise API** Key, mak
 
 :::
 
+:::info Enabling Auto Re-sign
+Once you configure the Auto Re-sign settings, you must enable the Auto Re-sign feature from the Enterprise App Store profile settings. Otherwise, newly uploaded binaries will not be re-signed automatically.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an7.png' />
+
 ### Android Auto Re-sign
 
 The functionality and configuration steps of **Appcircle’s Auto Re-sign** feature for the Android platform are explained step-by-step below.
@@ -300,3 +325,9 @@ _**Convert AAB To APK**_
 The **Convert AAB to APK** option allows you to automatically convert an Android App Bundle (AAB) file into an APK during the re-signing process. This is especially useful when your distribution channel requires an `APK` instead of an `AAB`. When enabled, Appcircle will handle the conversion and signing of the resulting APK seamlessly.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a13.png' />
+
+:::info Enabling Auto Re-sign
+Once you configure the Auto Re-sign settings, you must enable the Auto Re-sign feature from the Enterprise App Store profile settings. Otherwise, newly uploaded binaries will not be re-signed automatically.
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-an8.png' />
