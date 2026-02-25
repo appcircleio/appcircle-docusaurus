@@ -12,7 +12,7 @@ This guide outlines the process for creating a new workflow step in Appcircle.
 
 :::info
 
-Before creating a new workflow step, please check [Appcircle Integrations](https://appcircle.io/integrations) page to ensure the integration does not already exist.
+Before creating a new workflow step, please check the [Appcircle Integrations](https://appcircle.io/integrations) page to ensure the integration does not already exist.
 
 :::
 
@@ -27,7 +27,7 @@ The first phase is to create a dedicated repository where the step’s code will
 
 Before starting the development of a new workflow step, contributors must first get in touch with the Appcircle team. This ensures that the proposed step aligns with Appcircle’s roadmap and standards.
 
-> **Contact Appcircle Team:** 🔗 [Contact Appcircle Team](https://appcircle.io/contact)
+> **Contact the Appcircle Team:** 🔗 [Contact Appcircle Team](https://appcircle.io/contact)
 
 
 ### 1.2. Create Repository in Appcircle Organization
@@ -62,8 +62,8 @@ All steps must follow the same conventions for naming, file structure, and envir
 **Exit Codes**
 
 All steps must use the following exit conventions:
-- `exit 0` – The step completes successfully and execution continues to the next step.
-- `exit 1` – The step fails and breaks the workflow execution.
+- `exit 0`: The step completes successfully, and execution continues to the next step.
+- `exit 1`: The step fails and breaks the workflow execution.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_14.png'/>
 
@@ -157,7 +157,7 @@ This file ensures the step integrates properly into the Appcircle platform.
 
 :::tip
 
-For example, you can review how the `component.yaml` of the following repository is structured:
+For example, you can review how the `component.yaml` of the following repository is structured as follows:
 - [Appcircle Firebase App Distribution component](https://github.com/appcircleio/appcircle-firebase-distribution-component)
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_5.png'/>
@@ -165,7 +165,7 @@ For example, you can review how the `component.yaml` of the following repository
 :::
 
 #### Required YAML Structure
-Specifies the essential fields and format that every `component.yaml` file must follow for proper step integration.
+Specifies the essential fields and format of every `component.yaml` file must follow for proper step integration.
 
 ```yaml
 platform: "The projects the step operates on. Options: 'Common', 'Android', or 'iOS. If empty, it supports all platform.'"
@@ -201,7 +201,7 @@ files:
 :::warning Input Validation Rules
 
 There are two validation rules to be considered for the input:
-  - If `isRequired: true` and input not provided, step execution will fail.
+  - If `isRequired: true` and input is not provided, step execution will fail.
   - For `editorType: select`, `defaultValue` must match one of the provided options.
 
 :::
@@ -243,13 +243,13 @@ Add any additional relevant information after this section.
 
 ## Contributing
 
-We welcome contributions to improve this workflow step. If you would like to add enhancements or fix issues, please refer to the [Appcircle Contribution Guidelines](Link to this documantation). Following these guidelines ensures consistency across all steps and helps us review and merge your contributions more efficiently.
+We welcome contributions to improve this workflow step. If you would like to add enhancements or fix issues, please refer to the [Appcircle Contribution Guidelines](Link to this documentation). Following these guidelines ensures consistency across all steps and helps us review and merge your contributions more efficiently.
 
 Thank you for helping us make Appcircle better! 🙌
 
 ```
 
-After completing these files, the workflow step will be ready for testing
+After completing these files, the workflow step will be ready for testing.
 
 ### 2.4 Unit Test Configuration
 
@@ -315,13 +315,13 @@ After completing your source code, you need to follow these steps to test your c
 
 ### 3.1 Post-Testing Requirements
 
-Once your tests complete successfully, you must finalize the documentation explaining how to use this step effectively.
+Once your tests are complete successfully, you must finalize the documentation explaining how to use this step effectively.
 
 :::info Different Test Cases
 
 In certain scenarios, you may need to test the following additional cases:
 - **Cross-platform testing**: If necessary, test across different pools such as React Native, Flutter, Java/Kotlin, or Swift.
-- **Different Operating System testing**: If necessary, test across different pools such as Linux or macOS.
+- **Different Operating System Testing**: If necessary, test across different pools such as Linux or macOS.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_13.png'/>
 - **Integration testing**: Test with other integrations that are likely to be used together.
 
@@ -338,7 +338,7 @@ Use this checklist to ensure all testing requirements are met before submitting 
 - [ ] Cross-platform compatibility verified (if applicable)
 - [ ] Integration with existing components tested
 
-✅ Once these steps are successfully completed, you can proceed to the Documentation.
+✅ Once these steps are successfully completed, you can proceed to the documentation.
 
 ## 4. Documentation
 
@@ -362,7 +362,7 @@ Your documentation must comply with the Document Guidelines in the README to fol
 
 ### 4.2 Adding Step to Index Page
 
-After determining your document's location, add your workflow step to the corresponding `index.md` page. Steps must be listed in **alphabetical order** by step name, find the correct position before inserting your entry. Include your step as shown below:
+After determining your document's location, add your workflow step to the corresponding `index.md` page. Steps must be listed in **alphabetical order** by step name; find the correct position before inserting your entry. Include your step as shown below:
 
 ```markdown
 
@@ -391,7 +391,7 @@ description: Add a concise purpose for the document/component.
 tags: [add, terms, or, keywords, relevant, to, this topic]
 ---
 
-💬 Add following line for adding screenshots seamlessly
+💬 Add the following line for adding screenshots seamlessly.
 import Screenshot from '@site/src/components/Screenshot';
 
 # Step Name
@@ -409,7 +409,7 @@ Before running the **Step Name** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step | Description |
 |---------------------------|-------------|
-| [**Prerequisite Step Name**](Relative URL of component. e.g., /workflow/platform-name/component-name) | Description of why is needed. |
+| [**Prerequisite Step Name**](Relative URL of component. e.g., /workflow/platform-name/component-name) | Description of why it is needed. |
 | ... | ... |
 
 
@@ -417,11 +417,11 @@ Before running the **Step Name** step, you must complete certain prerequisites, 
 
 There are no prerequisites required before using the **Step Name** step.
 
-💬 If sequential execution is required with no dependency, add it as a caution like follow.
+💬 If sequential execution is required with no dependency, add it as a caution like the following.
 
 :::caution
 
-  If [**Pre Component Name**](Relative URL of component. e.g., /workflow/platform-name/component-name) component is in the workflow, the **Compnent Name** must come before it.
+If [**Pre Component Name**](Relative URL of component. e.g., /workflow/platform-name/component-name) component is in the workflow, the **Component Name** must come before it.
 
 :::
  
@@ -429,18 +429,18 @@ There are no prerequisites required before using the **Step Name** step.
  
 :::caution
 
- Following steps can only be used after the **Component Name** step:
+ The following steps can only be used after the **Component Name** step:
  - [**Pre Component Name**](Relative URL of component. e.g., /workflow/platform-name/component-name)
  - ...
 
 :::
 
-💬 Add additional necessary information such as info or a caution box. If it is a repeating info etc box, make it a component and reuse it.
+💬 Add additional necessary information, such as info or a caution box. If it is a repeating info box, etc., make it a component and reuse it.
 
 ## Input Variables
 
-💬 If there are input variables; add following introduction
-This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+💬 If there are input variables, add the following introduction
+This step contains some input variable(s). It needs these variable(s) to work. The table below gives an explanation for this variable(s).
 
 💬 Add a screenshot link of the component input details page below the description.
 
@@ -452,7 +452,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ## Output Variables
 
-💬 If there are output variables; add following introduction
+💬 If there are output variables, add the following introduction
 The output(s) resulting from the operation of this component are as follows:
 
 💬 Include a table with these columns:
@@ -504,10 +504,10 @@ Please do not forget to remove any comment lines starting with "💬".
 
 ## 5. Create Content for the Integration Page
 
-The newly added integration **must be listed on the Appcircle Integrations page** in the same format as existing integrations available at:
+The newly added integration **must be listed on the Appcircle Integrations page** in the same format as existing integrations available at
 [https://appcircle.io/integrations](https://appcircle.io/integrations)
 
-To enable the relevant person on the **Appcircle** side to complete this addition, the integration content **must be included in the pull request**, either as:
+To enable the relevant person on the **Appcircle** side to complete this addition, the integration content **must be included in the pull request**, either as
 
 - A dedicated file, or
 - A clearly formatted PR comment.
@@ -554,16 +554,16 @@ Answer
 
 After completing your step implementation and documentation, inform the Appcircle team. The team will review and test both the code and the documentation. During this process:
 
-- **Code Review:** The team will evaluate your component's functionality, performance, and adherence to best practices
-- **Documentation Review:** All documentation will be checked for clarity, completeness, and consistency with existing standards
-- **Testing Phase:** Comprehensive testing will be conducted to ensure compatibility and reliability
-- **Communication:** You may be contacted for clarifications, additional information, or requested modifications
+- **Code Review:** The team will evaluate your component's functionality, performance, and adherence to best practices.
+- **Documentation Review:** All documentation will be checked for clarity, completeness, and consistency with existing standards.
+- **Testing Phase:** Comprehensive testing will be conducted to ensure compatibility and reliability.
+- **Communication:** You may be contacted for clarifications, additional information, or requested modifications.
 
 ### What to Expect
 
-- **Response Time:** Initial review feedback typically provided as soon as posible
-- **Collaboration:** Be prepared to iterate on feedback and make necessary adjustments
-- **Final Approval:** Once all requirements are met, your contribution will be approved for deployment
+- **Response Time:** Initial review feedback is typically provided as soon as posible.
+- **Collaboration:** Be prepared to iterate on feedback and make necessary adjustments.
+- **Final Approval:** Once all requirements are met, your contribution will be approved for deployment.
 
 ---
 
