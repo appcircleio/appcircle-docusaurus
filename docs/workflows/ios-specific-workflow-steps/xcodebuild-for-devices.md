@@ -37,13 +37,14 @@ This step should always follow steps that may affect Archive and Export, such as
 
 This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE2880-buildInput.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE-8307-newxcodeinput.png' />
 
 | Variable Name                                 | Description                                                                                                                                                                                                                                              | Status   |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
 | `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                  | Required |
 | `$AC_OUTPUT_DIR_PATH`                         | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                    | Required |
 | `$AC_SCHEME`                                  | Specifies the project scheme for build. If you filled in **`Configuration => Build Scheme`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration).                                   | Required |
+| `$AC_CLEAN_BUILD`                             | Adds the clean parameter to xcodebuild command. When false, performs incremental build without cleaning. Default value is `true`.                                   | Optional |
 | `$AC_ARCHIVE_FLAGS`                           | Specifies the extra xcodebuild flag. For example: `-quiet`.                                                                                                                                                                                                 | Optional |
 | `$AC_PROJECT_PATH`                            | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_CERTIFICATES`                            | This variable specifies the path of the certificates to be signed.                                                                                                                                                                                       | Required |
