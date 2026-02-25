@@ -68,3 +68,58 @@ We observed that when an incomplete or ongoing rollout exists, Huawei AppGallery
 
 - Cancel the previous incomplete rollout on Huawei AppGallery.
 - After canceling the old rollout, you will see that the app you previously submitted has been successfully installed.
+
+
+### Cannot obtain upload URL (403)
+
+**Error**
+
+```
+Cannot obtain upload url, please check API Token / Permissions (status code: 403)
+```
+
+**Possible Causes & Solutions**
+
+If you encounter this error during the **Send to Huawei AppGallery** step in **Appcircle**, please verify the following points:
+
+#### 1. Check API Client Permissions
+
+Ensure that the **AppGallery API Client** has **at least the following permissions enabled**:
+
+- **Development**
+- **Operations**
+
+Missing or insufficient permissions will result in a `403 Forbidden` response when requesting the upload URL.
+
+#### 2. Verify the API Key Used in Appcircle
+
+Make sure that the **correct AppGallery API Key** is configured in Appcircle.
+
+**Recommendation:**
+Delete the existing AppGallery API Key in Appcircle and re-add the intended one to eliminate any misconfiguration.
+
+:::info
+
+Unlike Google Play Console, **Huawei AppGallery** allows downloading the same API Client JSON file multiple times. Re-downloading the JSON does not invalidate previous downloads.
+
+:::
+
+#### 3. Confirm Huawei App ID Configuration
+
+Ensure that the **Huawei App ID** is correctly entered in the **Send to Huawei AppGallery** step configuration in Appcircle.
+
+An incorrect or missing App ID will prevent Appcircle from obtaining the upload URL.
+
+#### 4. Restart the Workflow
+
+After making any changes (API Key, permissions, App ID):
+
+* Use the **Restart Flow** button in Appcircle
+* Then rerun the **Send to Huawei AppGallery** step
+
+This ensures that all recent configuration updates are properly applied.
+
+---
+
+If the problem persists after completing all steps, please contact support with your pipeline details and error logs.
+
