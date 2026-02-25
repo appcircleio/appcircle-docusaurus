@@ -25,9 +25,9 @@ You also need to have an AppGallery Connect API and its key as a JSON file. Plea
   Adding Huawei AppGallery API Key
 </ContentRef>
 
-After completing the integration with Huawei AppGallery API Key, go to [Publishing Settings](/publish-module/publish-settings). In the [`Store Credential`](/publish-module/publish-settings#store-credentials) section, select the Huawei AppGallery API Key you uploaded, from the drop-down list.
+After completing the integration with Huawei AppGallery API Key, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Huawei AppGallery API Key you uploaded, from the drop-down list.
 
-If you are using [Publish Variables](/publish-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-module/publish-settings) window.
+If you are using [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-to-stores-module/publish-settings) window.
 
 ## Input Variables
 
@@ -49,3 +49,22 @@ The parameters required for this step to work as expected are listed below:
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-publish-send-to-appgallery.git
+
+
+## FAQ
+
+### App is not visible on Huawei AppGallery after a successful publish
+
+**Question**:
+
+Publishing to Huawei AppGallery completes successfully on Appcircle, but the app does not appear on the Huawei Store. The same build is visible on Google Play without any issues. Why does this happen?
+
+**Answer**:
+
+This issue can occur if there is a previous rollout on Huawei AppGallery that has not been completed or canceled.
+We observed that when an incomplete or ongoing rollout exists, Huawei AppGallery may block the new upload even though Appcircle reports the publish step as successful.
+
+**Solution**:
+
+- Cancel the previous incomplete rollout on Huawei AppGallery.
+- After canceling the old rollout, you will see that the app you previously submitted has been successfully installed.

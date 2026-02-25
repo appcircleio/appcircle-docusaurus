@@ -18,7 +18,7 @@ Appcircle Publish Module isolates the user to a great extent in the App Store Co
 
 When this step is executed, Appcircle will directly submit the relevant version for review.
 
-For this reason, if there is an error in your [**Metadata Information**](/publish-module/publish-information/meta-data-information) or [**App Information**](/publish-module/publish-information/app-information) details, the step will fail.
+For this reason, if there is an error in your [**Metadata Information**](/publish-to-stores-module/publish-information/meta-data-information) or [**App Information**](/publish-to-stores-module/publish-information/app-information) details, the step will fail.
 
 :::
 

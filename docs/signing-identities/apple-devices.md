@@ -34,6 +34,12 @@ To manage your devices, simply visit the relevant sections in the Apple Devices 
 - **Non-Registered Devices**: This section shows devices registered on Appcircle but not yet registered in your Apple Developer account. You can manually add a new device in this section.
 - **Invited Users**: This section lists users who have received email invitations to provide device information. You can collect new device details via email.
 
+:::caution Non-Registered Devices
+
+In Appcircle's Apple Devices feature, when an invited user successfully completes the device UDID journey, the user's device UDID will be listed in the **Non-Registered** device list. However, if this user's UDID value **is already registered** in the **App Store Connect** account, it will not appear in the Non-Registered Devices list.
+
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4404New-sections.png' />
 
 Follow this document for detailed usage and purpose of all sections.

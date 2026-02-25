@@ -28,9 +28,9 @@ You also need to have a Google Service Account and its key as a JSON file. Pleas
   Adding Google Play Service Accounts
 </ContentRef>
 
-After completing the integration with Google Play Services, go to [Publishing Settings](/publish-module/publish-settings). In the [`Store Credential`](/publish-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
+After completing the integration with Google Play Services, go to [Publishing Settings](/publish-to-stores-module/publish-settings). In the [`Store Credential`](/publish-to-stores-module/publish-settings#store-credentials) section, select the Google Play Store API Key you uploaded, from the drop-down list.
 
-If you are using [Publish Variables](/publish-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-module/publish-settings) window.
+If you are using [Publish Variables](/publish-to-stores-module/publish-settings#publish-variables), you should select them in the [Publishing Settings](/publish-to-stores-module/publish-settings) window.
 
 ## Input Variables
 
@@ -45,7 +45,7 @@ The parameters required for this step to work as expected are listed below:
 | `$AC_AUTO_SEND_PLAYSTORE_REVIEW` | The `Auto Send for Review` where you select whether your changes should automatically go for review on the Google Play Console. Options: `Send for Review Automatically but Rescue Errors`, `Don't Send for Review Automatically but Rescue Errors`, `Always Send for Review Automatically`, `Never Send for Review Automatically`.
 | `$AC_RELEASE_NOTES`  | Provides release notes for the submission to Google Play. Use the `$AC_RELEASE_NOTES` variable to include the current release notes for the app version. Check or edit your app version's release notes in Binary Information. | Optional  |
 
-For detailed information about **Auto Send for Review** setting, please refer to the [Auto Send for Review](/publish-module/publish-information/google-play-information#auto-send-for-review) documentation.
+For detailed information about **Auto Send for Review** setting, please refer to the [Auto Send for Review](/publish-to-stores-module/publish-information/google-play-information#auto-send-for-review) documentation.
 
 :::tip
 
