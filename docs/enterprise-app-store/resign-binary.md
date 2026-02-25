@@ -81,7 +81,7 @@ _**Bundle Identifier**_
 
 Appcircle Publish profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile.
 
-> ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-module/binary-management).
+> ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-i6.png' />
 
@@ -243,7 +243,7 @@ _**Package Identifier**_
 
 Appcircle Publish profiles can accept binaries with different package name. The binary defined for the profile serves as the reference for Auto Re-sign. When a binary with a different package name is uploaded, it is re-signed according to the package name of the profile. The package name of the resulting re-signed binary is updated to match the one associated with the profile.
 
-> ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-module/binary-management).
+> ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8261-a6.png' />
 
