@@ -59,6 +59,20 @@ You can find the release notes in the [Google Play Console](https://play.google.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-publishflow-publish-google-play-2.png'/>
 
+For track type differences and best practices, please refer to the following official Google documentation:
+- [Understanding different testing tracks and their requirements](https://support.google.com/googleplay/android-developer/answer/14151465)
+- [Differences between internal, closed, and open testing](https://support.google.com/googleplay/android-developer/answer/9845334)
+
+:::
+
+:::info App Status usage
+
+**Draft**
+  Use when the app setup is incomplete or when you want to upload binaries and update metadata **without submitting the app for review**.
+
+**Completed**
+  Use when all required information is finalized and the app is **ready to be submitted for review or release**.
+
 :::
 
 ## Output Variables
@@ -72,3 +86,28 @@ You can find the release notes in the [Google Play Console](https://play.google.
 To access the source code of this component, please use the following link:
 
 https://github.com/appcircleio/appcircle-publish-send-to-playstore
+
+## FAQ
+
+### `changesNotSentForReview` Errors
+
+**Sample Error:**
+```
+Changes are sent for review automatically. The query parameter changesNotSentForReview must not be set.
+```
+
+**Q: What does `changesNotSentForReview` mean?**
+
+- According to Google Play API docs, it indicates that changes in this edit **will not be reviewed** until they are explicitly sent for review from the Google Play Console UI.
+- These changes are **queued** with any other pending changes not yet sent for review.
+
+**Q: When should I use `changesNotSentForReview: true`?**
+
+* Only use `true` if your app/track is in a **rejected** state.
+* Otherwise, leave it **unset or false**, so the changes can be sent for review automatically.
+
+**Q: What if I get a 400 error related to draft status?**
+
+* Enable publishing to `draft`
+* Or promote the `draft` build to a testing track (Alpha/Beta/Internal)
+* Follow Play Console steps: fill questionnaires, upload screenshots, get approval, then retry publishing.

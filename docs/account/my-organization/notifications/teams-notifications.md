@@ -22,7 +22,41 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 Appcircle supports sending notifications to Microsoft Teams for the major events in all modules. You can connect Appcircle to your Microsoft Team channel to set up module-based event notifications to be sent to the selected channel.
 
+## Connecting Microsoft Teams via Workflows
+
+Microsoft now recommends using **Workflows-based webhooks** instead of the legacy Incoming Webhook connector.  
+
+This new approach provides a secure and scalable way to send notifications to Teams channels.
+
+To connect Appcircle using Workflows:
+
+1. Open the target Teams channel.
+2. Click the **••• (More options)** menu.
+3. Select **Workflows**.
+4. Choose the template **Send Webhook alerts to a channel**.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8339-1.png" />
+
+5. Select the Team and Channel where notifications should be posted.
+6. Add the workflow and copy the generated webhook URL.
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8339-2.png" />
+
+7. Paste this URL into Appcircle when configuring notification webhooks (for example via the *Send webhook alerts to channel* workflow step).
+
+<Screenshot url="https://cdn.appcircle.io/docs/assets/BE8339-3.png" />
+
+When a notification payload is sent to this workflow URL, Microsoft Teams processes the request and posts the message to the configured channel.
+
 ## Adding Incoming Webhook to Microsoft Teams
+
+:::warning Incoming Webhook Retirement Notice
+
+Microsoft is retiring **Office 365 Connectors**, including the **Incoming Webhook** integration used by Microsoft Teams.  
+The migration deadline has been extended, and organizations must transition to the new workflow-based webhook model **by April 30, 2026** to avoid service disruption.
+
+If you are using the Incoming Webhook integration in Appcircle, we strongly recommend migrating to the new workflow-based webhook connection method as soon as possible.
+:::
 
 In order to get notifications, the administrator of the channel should add an incoming webhook to the given channel.
 

@@ -63,7 +63,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_ANDROID_KEYSTORE_PASSWORD` | Password for the selected *keystore* file. This value will be auto-generated based on your *keystore* file selection. | Required |
 | `$AC_ANDROID_ALIAS` | Alias name for the selected *keystore* file. This value will be auto-generated depending on your **Configuration** |
 | `$AC_ANDROID_ALIAS_PASSWORD` | Alias password for the selected *keystore* file. This value will be auto-generated depending on your **Configuration** |
-| `$AC_V2_SIGN` | Defaults to false. Set true if the signature should be done using apksigner instead of jarsigner. For more information, [Apps targeting Android 11 require APK Signature Scheme v2](https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme). | Optional |
+| `$AC_V2_SIGN` | Defaults to false. Set true if the signature should be done using apksigner instead of jarsigner. For more information, [Apps targeting Android 11 require APK Signature Scheme v2](https://developer.android.com/about/versions/11/behavior-changes-11#minimum-signature-scheme) or the [Appcircle V2 Sign](/build/platform-build-guides/building-android-applications/android-signing-for-google-play#enable-v2-sign-in-appcircle) documentation. | Optional |
 
 ### Output Variables
 
