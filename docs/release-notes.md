@@ -36,6 +36,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
 - Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
 - Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
+- The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
