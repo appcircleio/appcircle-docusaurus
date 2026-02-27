@@ -16,6 +16,10 @@ import Screenshot from '@site/src/components/Screenshot';
 
 The Metadata Information section in the Appcircle dashboard is essential for defining the presence of your application on digital distribution platforms. This document will guide you through each field and its significance to ensure your app's metadata is complete and effective.
 
+:::info
+Please note that accessing Metadata Details requires an organization with Enterprise License.
+:::
+
 ## iOS Metadata Information
 
 ### Localization Settings
