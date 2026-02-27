@@ -2,7 +2,7 @@
 title: Portal Customization
 description: Customize the appearance and authentication settings of your Enterprise App Store in Appcircle
 tags: [enterprise app store, customize, appearance]
-sidebar_position: 2
+sidebar_position: 3
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

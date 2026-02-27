@@ -339,6 +339,9 @@ Manage and Upload Apps to Enterprise App Store.
 | Settings             | View Authentication Settings           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Customization Settings            | ✅     | ✅       | ✅        | ⛔             | ✅      |
 | Settings             | View Store Domain                      | ✅     | ✅       | ✅        | ⛔             | ✅      |
+| Re-sign Binary       | Run Manual Re-sign                     | ✅     | ✅       | ✅        | ⛔             | ⛔      |
+| Re-sign Binary       | View Auto Re-sign Settings             | ✅     | ✅       | ⛔         | ⛔             | ⛔       |
+| Re-sign Binary       | Edit Auto Re-sign Settings             | ✅     | ✅       | ⛔         | ⛔             | ⛔       |
 | Session Management   | Single Active Session                  | ✅     |  ⛔      | ⛔       | ⛔           | ⛔      |
 | Report               | List Reports                           | ✅     | ✅       | ✅        | ⛔             | ✅      |
 

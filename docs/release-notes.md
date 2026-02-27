@@ -16,6 +16,42 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.29.9 - 2026-02-26 Binary Re-sign Support for Enterprise App Store, Account Page Improvements, Bug Fixes and more
+
+### 🆕 New Features
+
+- The Manual and Auto Binary [Re-sign](/enterprise-app-store/resign-binary) feature has been introduced for the Enterprise App Store module, enabling binaries to be re-signed similarly to the Publish and Testing Distribution modules. <EnterpriseStoreBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Metadata fields containing user-defined `$ENV` values will no longer be overwritten by backend data when the Retrieve from Last Updated action is performed. <PublishBadge/> <CloudBadge/>
+- The visibility of multi-line tooltip texts has been improved. <CloudBadge/>
+- The user authentication method, such as Password or SSO, will now be displayed on the Account page. <AccountBadge/> <CloudBadge/>
+- Users authenticated via SSO or LDAP can no longer change their passwords on the Account page, and password updates must be performed by logging out and signing in again using standard password authentication. <AccountBadge/> <CloudBadge/>
+- New actions have been added to the Signing Identity configurations for Notification channels, including Email and MS Teams. <AccountBadge/> <CloudBadge/>
+- Organization PAT create and revoke actions will now be displayed in the Team Activity Log. <AccountBadge/> <CloudBadge/>
+- The File Name column will now display the actual file name instead of the Keystore Alias in the Android Keystore lists. <SigningIdentitiesBadge/> <CloudBadge/>
+- File types will now be displayed as `APK`,`AAB` and `IPA` on the app version list within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/>
+- After downloading an app, the Testing Portal will now redirect users back to the app version list. <DistributionBadge/> <CloudBadge/>
+- Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
+- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
+- Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
+- The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- Several UI issues affecting viewer role users that caused inconsistent behavior have been fixed. <CloudBadge/>
+- An issue causing Keystore uploads to fail when the key alias contained non-ASCII characters has been fixed. <SigningIdentitiesBadge/> <CloudBadge/>
+- An issue where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`) has been fixed. <PublishBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- AAB files can no longer be published to Beta or Live channels within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/>
+- The automatic background conversion of uploaded AAB files to APK using Android keystore has been removed from Enterprise App Store module. Users can use 'Convert AAB to APK' toggle within the Auto Re-sign configurations. <EnterpriseStoreBadge/> <CloudBadge/>
+- Access to both iOS and Android Publish roles is now required to send a binary to the Publish module from other modules such as Enterprise App Store and Testing Distribution. <PublishBadge/> <CloudBadge/>
+- Manual Re-sign operations now use the same configuration structure as Auto Re-signs across Appcircle modules, and Entitlements are no longer supported. <CloudBadge/>
+- Microsoft is retiring Office 365 Connectors, including the Incoming Webhook integration used by Microsoft Teams. The migration deadline has been extended, and organizations must transition to the new [workflow-based](/account/my-organization/notifications/teams-notifications#connecting-microsoft-teams-via-workflows) webhook model by April 30, 2026 to avoid service disruption. If you are using the Incoming Webhook integration in Appcircle, we strongly recommend migrating to the new workflow-based webhook connection method as soon as possible. <AccountBadge/> <CloudBadge/>
+
 ## 3.29.8 - 2026-01-21 Single Active Session, Metadata Details Update, Bug Fixes and more
 
 ### 🆕 New Features

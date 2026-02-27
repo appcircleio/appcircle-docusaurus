@@ -2,7 +2,7 @@
 title: Portal Settings
 description: Learn how to configure your enterprise app store profile in Appcircle
 tags: [store settings, enterprise app store, captcha, authentication, custom domain, sso, ldap, static login, saml, openid, two-factor authentication]
-sidebar_position: 3
+sidebar_position: 4
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
