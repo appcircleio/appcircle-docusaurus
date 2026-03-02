@@ -21,6 +21,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - The Manual and Auto Binary [Re-sign](/enterprise-app-store/resign-binary) feature has been introduced for the Enterprise App Store module, enabling binaries to be re-signed similarly to the Publish and Testing Distribution modules. <EnterpriseStoreBadge/> <CloudBadge/>
+- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -34,7 +35,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - File types will now be displayed as `APK`,`AAB` and `IPA` on the app version list within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/>
 - After downloading an app, the Testing Portal will now redirect users back to the app version list. <DistributionBadge/> <CloudBadge/>
 - Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
-- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
 - Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
 - The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
 
