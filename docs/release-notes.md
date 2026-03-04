@@ -2359,7 +2359,6 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 - Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
 - Added [FAQ section](/build/platform-build-guides/building-ios-applications#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
 - Added [FAQ section](/build/platform-build-guides/building-ios-applications#provisioning-profile-error) for Provisioning Profiles.
-- Added FAQ section for Missing Entitlements​
 - Added [FAQ section](/build/platform-build-guides/building-android-applications#gradle-build-after-bintray-shutdown) for Bintray deprecation
 - Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter build errors
 - Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter file naming errors
