@@ -32,6 +32,6 @@ Current headlines and the actions you can complete are listed below:
 - [**Security**](/account/my-organization/security)
 - [**Notifications**](/account/my-organization/notifications)
 - [**Artifacts**](/account/my-organization/artifacts)
-- [**Team Activity Log**](/account/my-organization/profile-and-team/team-activity-log)
+- [**Organization Activity**](/account/my-organization/profile-and-team/organization-activity)
 
 In order to see the details, check the submenu of this documentation page.

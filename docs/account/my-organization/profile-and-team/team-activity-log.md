@@ -1,36 +1,49 @@
 ---
-title: Team Activity Log
+title: Organization Activity
 description: Appcircle will notify external services via webhooks when a certain event occurs. When the events you specified happen, we'll send a POST request in JSON format to the URLs you provide. (Team Activity Log)
+slug: /account/my-organization/profile-and-team/organization-activity
 tags:
   [
     organizations,
     sub organizations,
-    team activity log,
+    organization activity,
     organization membership,
     role management,
     activity log,
   ]
 
 ---
+import Screenshot from '@site/src/components/Screenshot';
 
-You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in the Team Activity Log section within the My Organization area.
+You can view team management actions such as creating, deleting, and adding members to Organizations or Sub Organizations in the Organization Activity section within the My Organization area.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-1.png' />
 
 Here is the full list of actions that can be monitored:
 
-- Creating a new Organization / Sub-Organization
-- Deleting an Organization / Sub-Organization
-- Updating an Organization / Sub-Organization
-- Inviting a new member to an Organization / Sub-Organization
-- Re-inviting a new member to an Organization / Sub-Organization
-- Deleting the invitation of a new member to an Organization / Sub-Organization
-- A new member accepting their invitation to an Organization / Sub-Organization
-- An update in the role of an invited member during invitation for an Organization / Sub-Organization
-- Assigning a member to an Organization / Sub-Organization
-- Removing a member from an Organization / Sub-Organization
-- A member leaving an Organization / Sub-Organization
-- Updating a member's role within an Organization / Sub-Organization
+- Organization Create
+- Organization Update
+- Organization Delete
+- Organization Invite Create
+- Organization Invite Re-Invite
+- Organization Invite Update
+- Organization Invite Delete
+- Organization Invite Accept
+- Organization Member Assign
+- Organization Member Remove
+- Organization Member Leave
+- Organization Member Role Update
+- Organization PAT Create
+- Organization PAT Revoke
+- Organization API Key Create
+- Organization API Key Update
+- Organization API Key Revoke
+- Organization API Key Rotate
+- LDAP Group Mapping Create
+- LDAP Group Mapping Delete
+- LDAP Role Mapping Create
+- LDAP Role Mapping Update
+- LDAP Role Mapping Delete
 
 :::caution
 
@@ -46,14 +59,14 @@ Organization Owners can also observe the team activity actions of their Sub-Orga
 
 :::
 
-You can edit the required date range by clicking the time filter in the top right corner and selecting a time limit from various options. Alternatively, you can choose custom dates from the calendar.
+You can edit the required date range by clicking the **Filter** button and choosing a date option from various options.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity4.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-2.png' />
 
-Team activity logs also include filters to help users perform more precise searches. By clicking the 'All' option next to Organizations, you can select a specific organization or sub-organization from the list, provided you have access to monitor their team activity.
+Organization Activity also include filters to help users perform more precise searches. By clicking the **Filter** button and choosing Organization: 'All' option, you can select a specific organization or sub-organization from the list, provided you have access to monitor their organization activity.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-3.png' />
 
-Another method to search is by **Actions**. Simply click the Organization drop-down box, select **Actions**, and then choose a specific action to refine your search.
+Another method to search is by **Actions**. Simply click the **Filter** button and select **Actions**. Then choose a specific action to refine your search.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3744-teamactivity3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8426-4.png' />
