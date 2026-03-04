@@ -2,7 +2,7 @@
 title: Re-sign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
 slug: /publish-to-stores-module/publish-information/resign-binary
-tags: [ios, resigning, provisioning profiles, entitlements, faq]
+tags: [ios, resigning, provisioning profiles, faq]
 sidebar_position: 6
 ---
 
@@ -25,70 +25,161 @@ When you need to distribute an iOS application to different environments (like Q
 
 ### Fields and Options
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-resignUI.png' />
+The functionality and configuration steps of **Appcircle’s Re-sign** feature for the iOS platform are explained step-by-step below.
+
+### Information
+
+From the **Information** tab under Re-sign configuration, you can manage the application's bundle identifier and display name values.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-13.png' />
+
+#### Bundle Identifier
+
+Appcircle Publish profiles can accept binaries with different bundle identifiers. The binary defined for the profile serves as the reference for Re-sign. When a binary with a different bundle identifier is uploaded, it is re-signed according to the bundle identifier of the profile. The bundle identifier of the resulting re-signed binary is updated to match the one associated with the profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-14.png' />
+
+> ⚠️ Note: Release flows cannot be initiated with a binary whose bundle identifier differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
+
+:::caution Multiple Target Binary
+
+If the binary to be re-signed has multiple targets, each target bundle identifiers **must be registered** in your **Apple Developer** portal. Otherwise, you **may encounter errors** during the re-signing process.
+
+:::
+
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-15.png' />
+
+:::caution Pool Selection Is Mandatory
+Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Re-sign process will not start.
+- Selected binaries will remain unsigned.
+- No re-signed output will be generated for Publish profile.
+
+Always ensure that a valid macOS pool is selected before saving the Re-sign configuration.
+:::
 
 #### Display Name
 
-- **Field**: [`CFBundleDisplayName`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundledisplayname)
-- **Description**: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
+With the **Display Name** parameter, you can change the visible name of the binary that will be re-signed. The re-signing process starts with the specified display name, and once completed, the `CFBundleDisplayName` value inside the binary is updated accordingly.
 
-:::caution Changing Display Name
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-16.png' />
 
-Please note that if the project `info.plist` file does **not** have a `CFBundleDisplayName` parameter, changing the display name during resigning will **not** work.
+### Versioning
+
+By utilizing the versioning capability of the Re-sign feature, you can modify the version and build number of the selected binary according to the defined strategy during the re-signing process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-17.png' />
+
+#### Update Build Number
+
+With the **Update Build Number** feature, you can automatically increment the build number of the selected binary during the re-sign process using the specified offset value. When this feature is enabled, a new build number will be generated based on the given offset before the re-signing begins, and the binary will be signed with this updated build number.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-18.png' />
+
+
+- **Build Number Source**: The defined base build number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, and **Uploaded Binary** are available options.
+  - **App Store**: The build number will be calculated based on the latest live version available on the **Apple App Store**.
+  - **TestFlight**: The build number will be determined by referencing the latest version available on **TestFlight**.
+  - **Uploaded Binary**: The build number or version code will be calculated from the **most recent binary** uploaded to Appcircle.
+- **Build Number**: The offset value is a number to be added or subtracted from the **build number source**.
+
+
+#### Update Version Number
+
+With the **Update Version Number** feature, you can automatically increment the version number of the selected binary during the re-sign process using the specified offset value. When this feature is enabled, a new version number will be generated before the re-signing begins, based on the selected increment strategy and offset, and the binary will be signed with this updated version number.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-19.png' />
+
+- **Version Number**: The defined base version number will be used for versioning during the re-signing process. **App Store**, **TestFlight**, and **Uploaded Binary** are available options
+  - **App Store**: The version number will be calculated by referencing the latest live version available on the **Apple App Store**.
+  - **TestFlight**: The version number will be determined based on the latest version available on **TestFlight**.
+  - **Uploaded Binary**: The version number or version name will be calculated based on the most recently **uploaded binary** to Appcircle.
+- **Version Number**: The offset value is a number to be added or subtracted from the **version number source**.
+- **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version number.
+
+:::caution Update Versioning
+
+Within the Re-sign feature configuration, if any store-based option is selected for versioning, it is mandatory to select an appropriate API key to retrieve the version information. If you do not want to perform versioning using the store, please select the **Uploaded Binary** option instead.
+
+For more information, please visit the **Credentials** [documentation.](/account/my-organization/security/credentials)
+
+:::
+
+### Signing
+
+Appcircle requires valid certificate and provisioning profile to successfully perform the re-sign process. The re-signing begins using the associated certificates and provisioning profile.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-20.png' />
+
+#### App Store Credential
+
+Appcircle’s Re-sign feature requires an **App Store Connect** credential. Therefore, selecting a credential is mandatory for both versioning and signing processes. This credential is used to download the necessary signing assets and retrieve version-related information when versioning is configured to use App Store data.
+
+For more information, please visit the **App Store Connect API Key** [documentation](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-21.png' />
+
+#### Signing Method
+
+The **Signing Method** defines how Appcircle selects the provisioning profile during the re-signing process. This strategy determines whether Appcircle should use an existing provisioning profile. Selecting the appropriate signing strategy ensures compatibility with your target distribution method and proper signing of your binary.
+
+For more information about these signing strategies, please visit the Apple Profiles [documentation](/signing-identities/apple-profiles).
+
+:::caution Enterprise API Key and In-house Signing
+
+The Re-sign feature also supports **In-house** signing. You can perform this by selecting an **Enterprise API Key**. However, please note that only In-house signing is allowed with an Enterprise Key—attempting to use it with any other signing method will result in an error.
 
 :::
 
-#### Version
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-22.png' />
 
-- **Field**: [`CFBundleShortVersionString`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleshortversionstring)
-- **Description**: The release or version number of the bundle.
+#### Create a New Provision Profile
 
-#### Build Number
+If the **Create a New Provision Profile** option is enabled, Appcircle generates a valid provisioning profile for signing using the Apple API Key selected in the profile settings and your Apple Developer account. If this option is disabled, Appcircle matches an existing valid provisioning profile from your Apple Developer portal for the signing process.
 
-- **Field**: [`CFBundleVersion`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleversion)
-- **Description**: The version of the build that identifies an iteration of the bundle.
+:::caution Create a New Provision Profile
 
-#### Entitlements
-
-- **Options**:
-  - **Entitlements from provisioning profiles**: Existing entitlements in the signed provision profile.
-  - **Edit**: Edit existing entitlements, or add or remove.
-
-
-#### Targets
-
-- **Description**: Select a new provisioning profile for new targets.
-
-#### Bundle ID
-
-- **Field**: [`CFBundleIdentifier`](https://developer.apple.com/documentation/bundleresources/information_property_list/cfbundleidentifier)
-- **Description**: Original Bundle ID.
-
-:::caution BundleID
-Please note that changing the **BundleID** is allowed while the related version is being re-signed in the **Publish to Stores module**. However, you **cannot start** a publish operation unless it matches the Bundle ID defined for the [Publish Profile](/publish-to-stores-module/creating-publish-profiles#create-profile-manually).
-:::
-
-#### Provisioning Profiles
-
-- **Description**: Select a new provisioning profile for the Bundle ID.
-
-### Edit Entitlements
-
-With the entitlement editing feature of the Re-sign Binary feature in the Publish to Stores module of Appcircle. If you want, you can change your existing entitlements or add or remove them.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-entitlementEdit.png' />
-
-#### Changing Existing Entitlement or Add/Remove Option
-
-When you click the Edit button on the Re-sign Binary screen, a new page will open for Entitlement editing. In this page, you can update, delete or add a new entitlement to your existing entitlements.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE3973-editDetails.png' />
-
-:::danger Entitlement Change
-
-If you want to change, add or remove Entitlement. The **Provision Profile** and **Bundle Identifier** you will re-sign **must contain** the **entitlements** you want to change. If the **Bundle ID** or **Provision Profile** does not contain or support these changes, the re-sign operation may **fail**.
+If you **do not** want to create the provisioning profile for signing, Appcircle will attempt to match a valid provisioning profile and use it for the signing process. When this option is disabled and a matching provisioning profile cannot be found, a new provisioning profile will be automatically created.
 
 :::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-23.png' />
+
+#### Using Existing Provisioning Profile
+
+When using the Re-sign feature, Appcircle also provides the option to select an existing provisioning profile. If the **Create a New Provision Profile** option is not enabled, the user can manually select a provisioning profile. To be selectable, the relevant profile must already be uploaded under **Apple Profiles** in the **Signing Identity** module.
+
+For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Profiles](/signing-identities/apple-profiles) documentations.
+
+:::caution Existing Provision Profile
+
+If no provisioning profile is selected, Appcircle will still **attempt to match** a provisioning profile using the selected **App Store Credential**. If the provisioning profile **cannot be found** in the **Apple Developer portal**, a new one **will be generated**.
+
+For example, if the binary being signed has multiple targets and only one provisioning profile has been selected, Appcircle **will try to find** the related provisioning profiles for the other targets in the **Apple Developer portal**, and if they are not found, **it will generate them**.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-24.png' />
+
+#### Certificates
+
+In addition to the selected signing strategy, Appcircle requires a corresponding certificate to perform the re-sign process. Therefore, make sure that your certificates are uploaded under the **Apple Certificate** section in the **Appcircle Signing Identity module**. The re-signing process will begin using the certificate you have selected.
+
+For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Certificates](/signing-identities/apple-certificates) documentations.
+
+:::caution Enterprise API Key and In-house signing
+
+If you want to perform **In-house** signing using an **Enterprise API** Key, make sure that a compatible signing certificate is selected. Otherwise, Appcircle will not be able to verify the certificate and the signing process will fail.
+
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-25.png' />
 
 ### Resigning Process
 
@@ -102,8 +193,6 @@ To re-sign a binary, follow these steps:
 
 Once the binary is resigned, a new package is automatically created to reflect the changes. This ensures that any distribution or testing utilizes the most current setup without requiring a complete rebuild.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resigned.png' />
-
 The newly created package can then be distributed or tested according to your publish flow requirements. This update ensures that your application conforms to the necessary provisioning and entitlement specifications for different environments, such as development, staging, or production, without additional build steps.
 
 This feature streamlines the application update process by allowing for quick adjustments to the app's configurations, significantly reducing the time and resources needed for separate build cycles.
@@ -114,19 +203,102 @@ Re-signing an Android binary allows you to apply a new keystore to your applicat
 
 ### Fields and Options
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-resign-android-option.png' />
+The functionality and configuration steps of **Appcircle’s Re-sign** feature for the Android platform are explained step-by-step below.
 
-- **Package ID**: This is the unique identifier for your Android application, also known as the application ID. It usually follows the format `com.example.myapp` and should not be changed during the re-signing process.
+### Information
 
-:::caution Package ID
-Please note that changing the **Package ID** is not allowed while the related version is being re-signed in the **Publish to Stores module**. If you need to change the **Package ID value** of your package, please use the **Re-sign Binary** feature in [Testing Distribution](/testing-distribution/resigning-binaries).
+From the Information tab under Re-sign configuration, you can manage the application's package identifier value.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-26.png' />
+
+#### Package Identifier
+
+Appcircle Publish profiles can accept binaries with different package name. The binary defined for the profile serves as the reference for Re-sign. When a binary with a different package name is selected, it is re-signed according to the package name of the profile. The package name of the resulting re-signed binary is updated to match the one associated with the profile.
+
+> ⚠️ Note: Release flows cannot be initiated with a binary whose package name differs from that of the profile. For more information, please visit the Binary Management [documentation](/publish-to-stores-module/binary-management).
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-27.png' />
+
+#### Select a Pool
+
+The Pool Selection field defines which organization pool will be used to execute the Re-sign process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-28.png' />
+
+:::caution Pool Selection Is Mandatory
+Re-sign will not work if a pool is not selected.
+
+If no pool is defined:
+- The Re-sign process will not start.
+- Selected binaries will remain unsigned.
+- No re-signed output will be generated for Publish profile.
+
+Always ensure that a valid macOS pool is selected before saving the Re-sign configuration.
 :::
 
-- **Version Name**: This field represents the human-readable version of your app, such as `1.2.3`. It is used for display purposes and can be adjusted if necessary during the re-signing process.
+### Versioning
 
-- **Version Code**: The version code is a numerical value that represents the version of your app. Unlike the version name, this is used by the Android system to prevent or allow installations over existing ones. This should be incremented or adjusted according to your versioning strategy.
+By utilizing the versioning capability of the Re-sign feature, you can modify the version code and version name of the selected binary according to the defined strategy during the re-signing process.
 
-- **Keystores**: This dropdown allows you to select a keystore to re-sign your binary. A keystore contains one or more keys. You must select the keystore that contains the appropriate key for signing your application. The keystore used for re-signing must match the requirements of the platform where the app will be distributed.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-29.png' />
+
+#### Update Version Code
+
+With the **Update Version Code** feature, you can automatically increment the version code of the selected binary during the re-sign process using the specified offset value. When this feature is enabled, a new version code will be generated based on the given offset before the re-signing begins, and the binary will be signed with this updated version code.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-30.png' />
+
+- **Version Code Source**: The defined base version code will be used for versioning during the re-signing process. **Google Play**, and **Uploaded Binary** are available options.
+  - **Google Play**: The version code will be set by referencing the latest live version on **Google Play Console**.
+  - **Uploaded Binary**: The version code will be calculated from the **most recent binary** uploaded to Appcircle.
+- **Version Code Offset**: The offset value is a number to be added or subtracted from the **version code source**.
+
+#### Update Version Name
+
+With the **Update Version Name** features, you can automatically increment the version name of the selected binary during the re-sign process using the specified offset value. When this feature is enabled, a new version name will be generated before the re-signing begins, based on the selected increment strategy and offset, and the binary will be signed with this updated version name.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-31.png' />
+
+- **Version Number/Version Name Source**: The defined base version name will be used for versioning during the re-signing process. **Google Play** and **Uploaded Binary** are available options
+  - **Google Play(Android)**: The version name will be set by referencing the latest live version on **Google Play Console**.
+  - **Uploaded Binary**: The version name will be calculated based on the most recently **uploaded binary** to Appcircle.
+- **Version Name Offset**: The offset value is a number to be added or subtracted from the **version name source**.
+- **Increment Strategy**: You can increase the `major`, `minor`, or `patch` value of the version name.
+
+
+:::caution Update Versioning
+
+Within the Auto Re-sign feature configuration, if any store-based option is selected for versioning, it is mandatory to select an appropriate API key to retrieve the version information. If you do not want to perform versioning using the store, please select the **Uploaded Binary** option instead.
+
+For more information, please visit the **Credentials** [documentation.](/account/my-organization/security/credentials)
+
+:::
+
+### Signing
+
+Appcircle requires a necessary Keystore to successfully perform the re-sign process. The re-signing begins using the associated keystore.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-32.png' />
+
+#### Google Play Console Credential
+
+A **Google Play Console** credential is only required if versioning is configured to use store-based data. When versioning is set to retrieve version information from the Google Play Console, an API key must be provided to access live version details during the re-signing process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-33.png' />
+
+#### Keystores
+
+The **Keystores** section is where you manage the signing credentials required for Android re-signing. To successfully perform the re-sign process, Appcircle needs access to a valid keystore. You must upload the keystore file, provide the necessary alias, and enter the key and store passwords within the **Android Keystores** section of the **Signing Identity** module. The re-signing will be executed using the selected keystore credentials.
+
+For more information, please visit the [Signing Identity Module](/signing-identities) and [Android Keystores](/signing-identities/android-keystores) documentations.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-34.png' />
+
+#### Convert AAB To APK
+
+The **Convert AAB to APK** option allows you to automatically convert an Android App Bundle (AAB) file into an APK during the re-signing process. This is especially useful when your distribution channel requires an `APK` instead of an `AAB`. When enabled, Appcircle will handle the conversion and signing of the resulting APK seamlessly.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-36.png' />
 
 ### Re-signing Process
 
@@ -141,18 +313,3 @@ After configuring the necessary options, click the **Sign** button to start the 
 ### Post-Resignation
 
 Once the binary has been re-signed, it will create a new package with the updated signing configurations. The newly re-signed binary will appear in your version list marked with the new version code if updated during the process.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/be-3161-publish-android-after-resign.png' />
-
-## FAQ
-
-### Missing Entitlements
-
-If you receive an error similar to the following, it generally means your provisioning profile doesn't have the entitlements of your project.
-
-```
-error: Provisioning profile "AppCircle" doesn't support the Push Notifications capability. (in target 'Runner' from project 'Runner)
-error: Provisioning profile "AppCircle" doesn't include the aps-environment entitlement. (in target 'Runner' from project Runner')
-```
-
-Whenever you add a new capability (Push Notifications, Keychain Sharing, CloudKit...) to your project, you need to update your provisioning profile and upload it to Appcircle.
