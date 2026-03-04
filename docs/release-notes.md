@@ -28,6 +28,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Metadata fields containing user-defined `$ENV` values will no longer be overwritten by backend data when the Retrieve from Last Updated action is performed. <PublishBadge/> <CloudBadge/>
 - The visibility of multi-line tooltip texts has been improved. <CloudBadge/>
 - The user authentication method, such as Password or SSO, will now be displayed on the Account page. <AccountBadge/> <CloudBadge/>
+- The Team Activity Log section has been renamed to Organization Activity. <AccountBadge/> <CloudBadge/>
 - Users authenticated via SSO or LDAP can no longer change their passwords on the Account page, and password updates must be performed by logging out and signing in again using standard password authentication. <AccountBadge/> <CloudBadge/>
 - New actions have been added to the Signing Identity configurations for Notification channels, including Email and MS Teams. <AccountBadge/> <CloudBadge/>
 - Organization PAT create and revoke actions will now be displayed in the Team Activity Log. <AccountBadge/> <CloudBadge/>
@@ -44,6 +45,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue causing Keystore uploads to fail when the key alias contained non-ASCII characters has been fixed. <SigningIdentitiesBadge/> <CloudBadge/>
 - An issue where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`) has been fixed. <PublishBadge/> <CloudBadge/>
 - Fixed an issue where Fortify-related validation rules could fail when incompatible data was provided by some organizations. Validation criteria have been improved to ensure more reliable processing. <BuildBadge/> <CloudBadge/>
+- Fixed an issue where the QR code was not displayed on the LDAP 2FA login screen in the Testing Portal. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
@@ -2357,7 +2359,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 - Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
 - Added [FAQ section](/build/platform-build-guides/building-ios-applications#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
 - Added [FAQ section](/build/platform-build-guides/building-ios-applications#provisioning-profile-error) for Provisioning Profiles.
-- Added [FAQ section](/publish-to-stores-module/publish-information/resign-binary#missing-entitlements) for Missing Entitlements​
+- Added FAQ section for Missing Entitlements​
 - Added [FAQ section](/build/platform-build-guides/building-android-applications#gradle-build-after-bintray-shutdown) for Bintray deprecation
 - Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter build errors
 - Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter file naming errors
