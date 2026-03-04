@@ -247,6 +247,8 @@ global:
   urls:
     # Main domain configuration - All Appcircle services will be subdomains of this domain
     domainName: .appcircle.spacetech.com
+  rbac:
+    create: true
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
   mail:
     smtp:
@@ -264,6 +266,10 @@ global:
       auth: "true"
       username: "appcircle-smtp-user"
       password: "superSecretSmtpPassword"
+
+codepush:
+  codepush-postgresql:
+    enabled: true
 
 # Authentication configuration
 auth:

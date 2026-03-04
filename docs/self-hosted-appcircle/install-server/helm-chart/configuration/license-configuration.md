@@ -43,6 +43,9 @@ oc get secret appcircle-server-auth-keycloak \
   </TabItem>
 </Tabs>
 
+> **Note:**  
+> Please provide your Organization ID to [Appcircle Support](https://appcircle.io/contact). After verifying your information, our team will issue your license. Once the license is issued and you get informed, follow the instructions below to apply your license to your Appcircle server.
+
 ### Creating a Secret for License Authentication
 
 Create a secret that contains the `cred.json` file you received from Appcircle to authenticate the Appcircle license.

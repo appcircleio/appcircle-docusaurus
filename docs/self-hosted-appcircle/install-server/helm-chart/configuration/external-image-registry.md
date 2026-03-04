@@ -177,6 +177,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry/buildserver:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/dashboardserver:1.8.92-beta1196
 europe-west1-docker.pkg.dev/appcircle/docker-registry/distributionserver:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/disttesterweb:v3.27.3
+europe-west1-docker.pkg.dev/appcircle/docker-registry/codepushservice:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/kafkab:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/keycloakversioning:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/licenseserver:v3.27.3
@@ -218,6 +219,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry/appcircle-vault:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/appparserserver:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/buildserver:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/cert-utils-operator:v1.3.12
+europe-west1-docker.pkg.dev/appcircle/docker-registry/codepushservice:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/dashboardserver:1.8.92-beta1196
 europe-west1-docker.pkg.dev/appcircle/docker-registry/distributionserver:v3.27.3
 europe-west1-docker.pkg.dev/appcircle/docker-registry/disttesterweb:v3.27.3
