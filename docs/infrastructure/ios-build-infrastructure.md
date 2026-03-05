@@ -37,7 +37,7 @@ The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xc
 
 | Version | Build |
 | ------- | ----- |
-| 26.3 RC 1 | `17C519` |
+| 26.3 | `17C529` |
 | 26.2 | `17C52` |
 | 26.1.1 | `17B100` |
 | 26.0.1 | `17A400` |
