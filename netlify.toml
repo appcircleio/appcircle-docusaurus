@@ -1538,3 +1538,8 @@ status = 301
 from = "/account/my-organization/profile-and-team/team-activity-log"
 to = "/account/my-organization/profile-and-team/organization-activity"
 status = 301
+
+[[redirects]]
+from = "/workflows/how-to-create-a-new-workflow-step"
+to = "/workflows/how-to-create-an-integration"
+status = 301
