@@ -1533,3 +1533,8 @@ status = 301
 from = "/publish-module/publish-walkthrough-for-google-play"
 to = "/publish-to-stores-module/publish-walkthrough-for-google-play"
 status = 301
+
+[[redirects]]
+from = "/account/my-organization/profile-and-team/team-activity-log"
+to = "/account/my-organization/profile-and-team/organization-activity"
+status = 301
