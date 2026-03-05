@@ -213,10 +213,17 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_251224.tar.gz
+```
+
+  </TabItem>
+    <TabItem value="260303" label="260303" default>
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/macOS_260303.tar.gz
 ```
 
   </TabItem>
@@ -290,10 +297,17 @@ md5 macOS_251113.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 md5 macOS_251224.tar.gz
+```
+
+  </TabItem>
+    <TabItem value="260303" label="260303" default>
+
+```bash
+md5 macOS_260303.tar.gz
 ```
 
   </TabItem>
@@ -359,10 +373,17 @@ MD5 (macOS_251113.tar.gz) = 433b0c2fc81fe7f97af33168711fc066
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 MD5 (macOS_251224.tar.gz) = 4384fe1988db6a54f6e399e91b9c7a2c
+```
+
+  </TabItem>
+    <TabItem value="260303" label="260303" default>
+
+```bash
+MD5 (macOS_260303.tar.gz) = 425ad8bff9189a156d09b308cebd54a3
 ```
 
   </TabItem>
@@ -430,10 +451,17 @@ mkdir -p $HOME/.tart/vms/macOS_251113
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 mkdir -p $HOME/.tart/vms/macOS_251224
+```
+
+  </TabItem>
+    <TabItem value="260303" label="260303" default>
+
+```bash
+mkdir -p $HOME/.tart/vms/macOS_260303
 ```
 
   </TabItem>
@@ -499,10 +527,17 @@ pigz -cvdp 4 macOS_251113.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_2
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 pigz -cvdp 4 macOS_251224.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_251224
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+pigz -cvdp 4 macOS_260303.tar.gz | tar xvf - --directory $HOME/.tart/vms/macOS_260303
 ```
 
   </TabItem>
@@ -570,10 +605,17 @@ du -sh $HOME/.tart/vms/macOS_251113
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 du -sh $HOME/.tart/vms/macOS_251224
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+du -sh $HOME/.tart/vms/macOS_260303
 ```
 
   </TabItem>
@@ -641,10 +683,17 @@ curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_251224.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+curl -L -O -C - https://storage.googleapis.com/appcircle-dev-common/self-hosted/xcodes_260303.tar.gz
 ```
 
   </TabItem>
@@ -714,10 +763,17 @@ md5 xcodes_251113.tar.gz
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 md5 xcodes_251224.tar.gz
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+md5 xcodes_260303.tar.gz
 ```
 
   </TabItem>
@@ -783,10 +839,17 @@ MD5 (xcodes_251113.tar.gz) = a141a968a72c3f5ba40761139e61f268
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 MD5 (xcodes_251224.tar.gz) = 40e975b030f4b04b81d04c71e2dd1e17
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+MD5 (xcodes_260303.tar.gz) = fdccb3a8611306932248556a763a0e94
 ```
 
   </TabItem>
@@ -860,10 +923,17 @@ pigz -cvdp 4 xcodes_251113.tar.gz | tar xvf - --directory $HOME/images
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 pigz -cvdp 4 xcodes_251224.tar.gz | tar xvf - --directory $HOME/images
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+pigz -cvdp 4 xcodes_260303.tar.gz | tar xvf - --directory $HOME/images
 ```
 
   </TabItem>
@@ -987,12 +1057,25 @@ If you're currently not ready for Xcode `16.x.x` migration, you can go on using 
 | 16.4 | `16F6` |
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 **Note:** This macOS VM image is the Sequoia (`15.6.1`) stack and comes with the Xcode versions below:
 
 | Version | Build |
 | ------- | ----- |
+| 26.2 | `17C52` |
+| 26.1.1 | `17B100` |
+| 26.0.1 | `17A400` |
+| 16.4 | `16F6` |
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+**Note:** This macOS VM image is the Sequoia (`15.6.1`) stack and comes with the Xcode versions below:
+
+| Version | Build |
+| ------- | ----- |
+| 26.3 | `17C529` |
 | 26.2 | `17C52` |
 | 26.1.1 | `17B100` |
 | 26.0.1 | `17A400` |
@@ -1086,12 +1169,21 @@ nohup ./download-runner.sh "251113" &
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
 chmod +x download-runner.sh && \
 nohup ./download-runner.sh "251224" &
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+curl -fsSL https://cdn.appcircle.io/self-hosted/download-runner-beta.sh -o download-runner.sh && \
+chmod +x download-runner.sh && \
+nohup ./download-runner.sh "260303" &
 ```
 
   </TabItem>
@@ -1213,10 +1305,17 @@ tart clone macOS_251113 vm01
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 tart clone macOS_251224 vm01
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+tart clone macOS_260303 vm01
 ```
 
   </TabItem>
@@ -1424,7 +1523,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -1432,6 +1531,18 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.26.0.dmg:ro \
   --disk=$HOME/images/xcode.26.1.dmg:ro \
   --disk=$HOME/images/xcode.26.2.dmg:ro
+```
+
+  </TabItem>
+    <TabItem value="260303" label="260303" default>
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.16.4.dmg:ro \
+  --disk=$HOME/images/xcode.26.0.dmg:ro \
+  --disk=$HOME/images/xcode.26.1.dmg:ro \
+  --disk=$HOME/images/xcode.26.2.dmg:ro \
+  --disk=$HOME/images/xcode.26.3.dmg:ro
 ```
 
   </TabItem>
@@ -1800,7 +1911,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -1808,6 +1919,18 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.26.0.dmg:ro \
   --disk=$HOME/images/xcode.26.1.dmg:ro \
   --disk=$HOME/images/xcode.26.2.dmg:ro
+```
+
+  </TabItem>
+    <TabItem value="260303" label="260303" default>
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.16.4.dmg:ro \
+  --disk=$HOME/images/xcode.26.0.dmg:ro \
+  --disk=$HOME/images/xcode.26.1.dmg:ro \
+  --disk=$HOME/images/xcode.26.2.dmg:ro \
+  --disk=$HOME/images/xcode.26.3.dmg:ro
 ```
 
   </TabItem>
@@ -1926,10 +2049,18 @@ chmod u+x $HOME/runner1/run.sh
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.2.0.sh && \
+chmod u+x $HOME/runner1/run.sh
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+curl -L -o $HOME/runner1/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.3.0.sh && \
 chmod u+x $HOME/runner1/run.sh
 ```
 
@@ -2004,10 +2135,18 @@ chmod u+x $HOME/runner2/run.sh
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.2.0.sh && \
+chmod u+x $HOME/runner2/run.sh
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+curl -L -o $HOME/runner2/run.sh https://storage.googleapis.com/appcircle-dev-common/self-hosted/run-1.3.0.sh && \
 chmod u+x $HOME/runner2/run.sh
 ```
 
@@ -2234,7 +2373,7 @@ screen -d -m tart run vm01 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 screen -d -m tart run vm01 --no-graphics \
@@ -2242,6 +2381,18 @@ screen -d -m tart run vm01 --no-graphics \
   --disk=$HOME/images/xcode.26.0.dmg:ro \
   --disk=$HOME/images/xcode.26.1.dmg:ro \
   --disk=$HOME/images/xcode.26.2.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+screen -d -m tart run vm01 --no-graphics \
+  --disk=$HOME/images/xcode.16.4.dmg:ro \
+  --disk=$HOME/images/xcode.26.0.dmg:ro \
+  --disk=$HOME/images/xcode.26.1.dmg:ro \
+  --disk=$HOME/images/xcode.26.2.dmg:ro \
+  --disk=$HOME/images/xcode.26.3.dmg:ro
 ```
 
   </TabItem>
@@ -2355,7 +2506,7 @@ screen -d -m tart run vm02 --no-graphics \
 ```
 
   </TabItem>
-  <TabItem value="251224" label="251224" default>
+  <TabItem value="251224" label="251224">
 
 ```bash
 screen -d -m tart run vm02 --no-graphics \
@@ -2363,6 +2514,18 @@ screen -d -m tart run vm02 --no-graphics \
   --disk=$HOME/images/xcode.26.0.dmg:ro \
   --disk=$HOME/images/xcode.26.1.dmg:ro \
   --disk=$HOME/images/xcode.26.2.dmg:ro
+```
+
+  </TabItem>
+  <TabItem value="260303" label="260303" default>
+
+```bash
+screen -d -m tart run vm02 --no-graphics \
+  --disk=$HOME/images/xcode.16.4.dmg:ro \
+  --disk=$HOME/images/xcode.26.0.dmg:ro \
+  --disk=$HOME/images/xcode.26.1.dmg:ro \
+  --disk=$HOME/images/xcode.26.2.dmg:ro \
+  --disk=$HOME/images/xcode.26.3.dmg:ro
 ```
 
   </TabItem>
