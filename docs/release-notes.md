@@ -38,7 +38,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
 - Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
 - The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
-- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Stable release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest stable release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
