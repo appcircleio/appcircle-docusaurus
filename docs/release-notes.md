@@ -38,6 +38,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
 - Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
 - The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -46,6 +47,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`) has been fixed. <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where the “App Information From App Store” Publish flow step caused an error while checking the App Store connection status. <PublishIntegrationsBadge/> <CloudBadge/>
 - An issue has been fixed where Fortify-related validation rules could fail when incompatible data was provided by some organizations. Validation criteria have been improved to ensure more reliable processing. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where setting the build status could return a 404 error for Bitbucket self-hosted repositories due to endpoint validation problems.
 - An issue has been fixed where the QR code was not displayed on the LDAP 2FA login screen in the Testing Portal. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
@@ -75,7 +77,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/> <SelfHostedBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
-- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3 RC1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -87,6 +89,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where certain environment variables were not consistently populated for user-triggered builds, despite being expected to be available across all trigger types. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where incorrect field labels in the Bitbucket API token configuration for self-hosted environments to improve clarity and reduce user confusion during setup. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where deleting app versions with the same bundle or package IDs negatively affected delete operations across different testing distribution profiles. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where users with a large number of app versions in Testing Distribution experienced errors when deleting apps. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
