@@ -44,7 +44,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Several UI issues affecting viewer role users that caused inconsistent behavior have been fixed. <CloudBadge/>
 - An issue causing Keystore uploads to fail when the key alias contained non-ASCII characters has been fixed. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`) has been fixed. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`). <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the auto re-sign operation did not start for publish profiles with disabled publish flow steps. <PublishBadge/> <CloudBadge/>
 - An issue has been fixed where the “App Information From App Store” Publish flow step caused an error while checking the App Store connection status. <PublishIntegrationsBadge/> <CloudBadge/>
 - An issue has been fixed where Fortify-related validation rules could fail when incompatible data was provided by some organizations. Validation criteria have been improved to ensure more reliable processing. <BuildBadge/> <CloudBadge/>
 - An issue has been fixed where setting the build status could return a 404 error for Bitbucket self-hosted repositories due to endpoint validation problems.
