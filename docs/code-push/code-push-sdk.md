@@ -270,11 +270,33 @@ This configuration ensures that your app checks for updates when it starts, and 
 
 ## FAQ
 
+### How to Customize When and How Often to Check for an Update?
+
+By default, CodePush will check for updates on every app start. If an update is available, it will be silently downloaded, and installed the next time the app is restarted (either explicitly by the end user or by the OS), which ensures the least invasive experience for your end users. If an available update is mandatory, then it will be installed immediately, ensuring that the end user gets it as soon as possible.
+
+Alternatively, if you want fine-grained control over when the check happens (like a button press or timer interval), you can call [CodePush.sync()](https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md#codepushsync) at any time with your desired `SyncOptions`.
+
+For all customization options, you can check this [API documentation](https://github.com/microsoft/react-native-code-push/blob/master/docs/api-js.md).
+
+### How to Deploy CodePush Updates to Multiple Environments (Debug, Release etc.)?
+
+#### Android
+The Android Gradle plugin allows you to define custom config settings for each "build type" (like debug, release). This mechanism allows you to easily configure your debug builds to use your CodePush staging deployment key and your release builds to use your CodePush production deployment key.
+
+For details on how to setup, visit [Multiple Deployment Testing-Android](https://github.com/microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-android.md).
+
+#### iOS
+
+Xcode allows you to define custom build settings for each "configuration" (like debug, release), which can then be referenced as the value of keys within the Info.plist file (like the CodePushDeploymentKey setting). This mechanism allows you to easily configure your builds to produce binaries, which are configured to synchronize with different CodePush deployments.
+
+For details on how to setup, visit [Multiple Deployment Testing-iOS](https://github.com/microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-ios.md).
+
+
 ### How to Use CodePush with New Architecture on Android?
 
 [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) supports the new architecture on Android for React Native versions 0.76 and above.
 
-If you are having trouble using CodePush with new architecture in your Android app, you can update
+If you are **having trouble** using CodePush with new architecture in your Android app, you can update
 your `MainApplication.kt` file as follows:
 
 ```kotlin
@@ -312,6 +334,14 @@ If you are using [**Microsoft CodePush SDK**](https://github.com/microsoft/react
 
 Alternatively, you can use the [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push), which supports the new architecture for React Native 0.76 and above.
 
-### Does Appcircle CodePush support Expo projects?
+### Does Appcircle CodePush Support Self-Hosted Version?
+
+Yes. Appcircle CodePush is available for self-hosted environments (version 3.28.2 and above), so you can manage and distribute OTA updates within your own infrastructure. For setup and configuration, see [DMZ documentation](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz).
+
+### Does Appcircle CodePush Support Expo Projects?
 
 No, Appcircle CodePush currently supports only bare React Native projects. Managed Expo apps are not supported at this time.
+
+### Does Appcircle CodePush SDK Support Codegen?
+
+No. The Appcircle CodePush SDK currently does not support React Native projects that rely on Codegen.
