@@ -1,6 +1,7 @@
 ---
 title: AppSweep Mobile Security Testing
 description: Learn how to use the AppSweep Mobile Security Testing workflow step in Appcircle
+slug: /build-integrations/android-specific-integrations/appsweep-mobile-security-testing
 tags: [android, mobile, security, testing, appsweep]
 ---
 
@@ -18,7 +19,7 @@ Before running the **AppSweep Mobile Security Testing** step, you must complete 
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                               |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | The **AppSweep Mobile Security Testing** step requires the repository to be cloned from the Git provider before it can function properly. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-appsweep-mobile-security-testing_1.png'/>
 

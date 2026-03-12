@@ -21,7 +21,7 @@ If your selected pool from config is "Appcircle macOS Pool (arm64)", there are s
 
 MacOS images run on fresh virtual machines for stability and performance. They are created just for your build and become ready within seconds.
 
-During the build process, you can install any dependencies and run commands using [custom script](/workflows/common-workflow-steps/custom-script) steps in the build workflow. This gives you complete control over your build and the virtual machine.
+During the build process, you can install any dependencies and run commands using [custom script](/build-integrations/common-integrations/custom-script) steps in the build workflow. This gives you complete control over your build and the virtual machine.
 
 :::info
 
@@ -73,7 +73,7 @@ The "Appcircle macOS Pool (arm64)" macOS **Sonoma** (`14.5`) stack has the Xcode
 
 ## iOS Build Environment
 
-There are many pre-installed packages on virtual machines. You can get a full list of pre-installed packages by running Bash commands in the [custom script](/workflows/common-workflow-steps/custom-script) steps.
+There are many pre-installed packages on virtual machines. You can get a full list of pre-installed packages by running Bash commands in the [custom script](/build-integrations/common-integrations/custom-script) steps.
 
 Here are some of the most important packages installed in our iOS build runners used for iOS builds:
 

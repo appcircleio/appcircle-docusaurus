@@ -1,6 +1,7 @@
 ---
 title: Testinium
 description: The Testinium step allows users to upload their mobile applications to Testinium and run a test plan.
+slug: /build-integrations/common-integrations/testinium-steps/testinium
 tags: [testinium, app upload, run, test, plan]
 sidebar_position: 3
 ---
@@ -14,7 +15,7 @@ The **Testinium** step integrates the [Testinium](https://testinium.com/) testin
 
 :::tip Multiple Test Plans
 
-If you're using Testinium as an enterprise or need to run multiple test plans for the same app, use the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) step followed by multiple [**Testinium Run Test Plan**](/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan) steps instead of the **Testinium** step. This allows you to execute multiple test plans separately within the workflow.
+If you're using Testinium as an enterprise or need to run multiple test plans for the same app, use the [**Testinium Upload App**](/build-integrations/common-integrations/testinium-steps/testinium-upload-app) step followed by multiple [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-steps/testinium-run-test-plan) steps instead of the **Testinium** step. This allows you to execute multiple test plans separately within the workflow.
 
 :::
 
@@ -26,8 +27,8 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Testinium** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Testinium** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_1.1.png'/>
 
@@ -35,7 +36,7 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_2.1.png'/>
 
@@ -43,8 +44,8 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Testinium** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Testinium** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_3.1.png'/>
 
@@ -52,8 +53,8 @@ Before running the **Testinium** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_4.1.png'/>
 

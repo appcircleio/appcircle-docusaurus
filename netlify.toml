@@ -845,27 +845,27 @@ status = 301
 # Workflow (Build Integration) related redirects
 [[redirects]]
 from = "/continuous-testing/using-aws-device-farm-for-ios-and-android-continuous-testing"
-to = "/workflows/common-workflow-steps/aws-device-farm-and-deploy"
+to = "/build-integrations/common-integrations/aws-device-farm-and-deploy"
 status = 301
 
 [[redirects]]
 from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows#adding-fastlane-to-the-appcircle-build-workflow-as-a-step"
-to = "/workflows/common-workflow-steps/fastlane"
+to = "/build-integrations/common-integrations/fastlane"
 status = 301
 
 [[redirects]]
 from = "/integrations/integration-guides/azure-bot-for-swiftlint-and-detekt"
-to = "/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint"
+to = "/build-integrations/ios-specific-integrations/azure-bot-for-swiftlint"
 status = 301
 
 [[redirects]]
 from = "/integrations/azure-bot-for-swiftlint-and-detekt"
-to = "/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint"
+to = "/build-integrations/ios-specific-integrations/azure-bot-for-swiftlint"
 status = 301
 
 [[redirects]]
 from = "/integrations/managing-release-notes"
-to = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
+to = "/build-integrations/common-integrations/build-and-test/publish-release-notes"
 status = 301
 
 [[redirects]]
@@ -875,277 +875,277 @@ status = 301
 
 [[redirects]]
 from = "/integrations/deploying-web-apps-to-aws-amplify-console"
-to = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
+to = "/build-integrations/flutter-specific-integrations/flutter-build-for-web"
 status = 301
 
 [[redirects]]
 from = "/integrations/deployment-guides/deploying-web-apps-to-aws-amplify-console"
-to = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
+to = "/build-integrations/flutter-specific-integrations/flutter-build-for-web"
 status = 301
 
 [[redirects]]
 from = "/integrations/integration-guides/jira-integration"
-to = "/workflows/common-workflow-steps/jira-comment"
+to = "/build-integrations/common-integrations/jira-comment"
 status = 301
 
 [[redirects]]
 from = "/integrations/integration-guides/azure-board"
-to = "/workflows/common-workflow-steps/azure-board"
+to = "/build-integrations/common-integrations/azure-board"
 status = 301
 
 [[redirects]]
 from = "/integrations/workflow-optimization/using-fastlane-in-the-workflows"
-to = "/workflows/common-workflow-steps/fastlane"
+to = "/build-integrations/common-integrations/fastlane"
 status = 301
 
 [[redirects]]
 from = "/integrations/working-with-custom-scripts/"
-to = "/workflows/common-workflow-steps/custom-script"
+to = "/build-integrations/common-workflow-steps/custom-script"
 status = 301
 
 [[redirects]]
 from = "/integrations/integration-guides/appdome-integration"
-to = "/workflows"
+to = "/build-integrations"
 status = 301
 
 [[redirects]]
 from = "/integrations/working-with-custom-scripts/custom-script-faq"
-to = "/workflows/common-workflow-steps/custom-script"
+to = "/build-integrations/common-workflow-steps/custom-script"
 status = 301
 
 [[redirects]]
 from = "/integrations/working-with-custom-scripts/custom-script-samples"
-to = "/workflows/common-workflow-steps/custom-script"
+to = "/build-integrations/common-workflow-steps/custom-script"
 status = 301
 
 [[redirects]]
-from = "/workflows/android-specific-workflow-steps/build-and-test/android-build-for-ui-testing"
-to = "/workflows/android-specific-workflow-steps/android-build-for-ui-testing"
+from = "/build-integrations/android-specific-workflow-steps/build-and-test/android-build-for-ui-testing"
+to = "/build-integrations/android-specific-workflow-steps/android-build-for-ui-testing"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/git-clone"
-to = "/workflows/common-workflow-steps/git-clone"
+to = "/build-integrations/common-workflow-steps/git-clone"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/distribution/android-sign"
-to = "/workflows/android-specific-workflow-steps/android-sign"
+to = "/build-integrations/android-specific-workflow-steps/android-sign"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/distribution/firebase-upload-dsym"
-to = "/workflows/ios-specific-workflow-steps/firebase-upload-dsym"
+to = "/build-integrations/ios-specific-workflow-steps/firebase-upload-dsym"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/slather"
-to = "/workflows/ios-specific-workflow-steps/slather"
+to = "/build-integrations/ios-specific-workflow-steps/slather"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/carthage"
-to = "/workflows/ios-specific-workflow-steps/carthage"
+to = "/build-integrations/ios-specific-workflow-steps/carthage"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/cocoapods-install"
-to = "/workflows/ios-specific-workflow-steps/cocoapods-install"
+to = "/build-integrations/ios-specific-workflow-steps/cocoapods-install"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-testing"
-to = "/workflows/ios-specific-workflow-steps/xcodebuild-for-testing"
+to = "/build-integrations/ios-specific-workflow-steps/xcodebuild-for-testing"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/android-build"
-to = "/workflows/android-specific-workflow-steps/android-build"
+to = "/build-integrations/android-specific-workflow-steps/android-build"
 status = 301
 
 [[redirects]]
 from = "/integrations/uploading-files-to-amazon-sin-the-workflows"
-to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+to = "/build-integrations/common-workflow-steps/upload-files-to-amazon-s3"
 status = 301
 
 [[redirects]]
 from = "/integrations/deployment-guides/uploading-files-to-amazon-sin-the-workflows"
-to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+to = "/build-integrations/common-workflow-steps/upload-files-to-amazon-s3"
 status = 301
 
 [[redirects]]
 from = "/continuous-testing/firebase-test-lab-for-android"
-to = "/workflows/android-specific-workflow-steps/firebase-test-lab"
+to = "/build-integrations/android-specific-workflow-steps/firebase-test-lab"
 status = 301
 
 [[redirects]]
 from = "/continuous-testing/android-testing/firebase-test-lab-for-android"
-to = "/workflows/android-specific-workflow-steps/firebase-test-lab"
+to = "/build-integrations/android-specific-workflow-steps/firebase-test-lab"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/android-dependency-report"
-to = "/workflows/android-specific-workflow-steps/android-dependency-report"
+to = "/build-integrations/android-specific-workflow-steps/android-dependency-report"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/appsweep-mobile-security-testing"
-to = "/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing"
+to = "/build-integrations/android-specific-workflow-steps/appsweep-mobile-security-testing"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/post-processor"
-to = "/workflows/android-specific-workflow-steps/app-post-processor"
+to = "/build-integrations/android-specific-workflow-steps/app-post-processor"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/distribution/app-center-android-distribution"
-to = "/workflows/android-specific-workflow-steps/app-center-android-distribution"
+to = "/build-integrations/android-specific-workflow-steps/app-center-android-distribution"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/authenticate-with-netrc"
-to = "/workflows/common-workflow-steps/authenticate-with-netrc"
+to = "/build-integrations/common-workflow-steps/authenticate-with-netrc"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/export-build-artifacts"
-to = "/workflows/common-workflow-steps/export-build-artifacts"
+to = "/build-integrations/common-workflow-steps/export-build-artifacts"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/file-size-check"
-to = "/workflows/common-workflow-steps/file-size-check"
+to = "/build-integrations/common-workflow-steps/file-size-check"
 status = 301
 
 [[redirects]]
 from = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-analyze"
-to = "/workflows/flutter-specific-workflow-steps/flutter-analyze"
+to = "/build-integrations/flutter-specific-workflow-steps/flutter-analyze"
 status = 301
 
 [[redirects]]
 from = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-build-for-web"
-to = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
+to = "/build-integrations/flutter-specific-workflow-steps/flutter-build-for-web"
 status = 301
 
 [[redirects]]
 from = "/workflows/flutter-specific-workflow-steps/build-and-test/flutter-install"
-to = "/workflows/flutter-specific-workflow-steps/flutter-install"
+to = "/build-integrations/flutter-specific-workflow-steps/flutter-install"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-ios-simulator"
-to = "/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator"
+to = "/build-integrations/ios-specific-workflow-steps/xcodebuild-for-ios-simulator"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/distribution/appcenter-ios-distribution"
-to = "/workflows/ios-specific-workflow-steps/appcenter-ios-distribution"
+to = "/build-integrations/ios-specific-workflow-steps/appcenter-ios-distribution"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/distribution/install-certificates-provisions"
-to = "/workflows/ios-specific-workflow-steps/install-certificates-provisions"
+to = "/build-integrations/ios-specific-workflow-steps/install-certificates-provisions"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/android-unit-tests"
-to = "/workflows/android-specific-workflow-steps/android-unit-tests"
+to = "/build-integrations/android-specific-workflow-steps/android-unit-tests"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/distribution/appdome-build-to-secure-for-android"
-to = "/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android"
+to = "/build-integrations/android-specific-workflow-steps/appdome-build-to-secure-for-android"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/distribution/bundle-universal-apk"
-to = "/workflows/android-specific-workflow-steps/bundle-universal-apk"
+to = "/build-integrations/android-specific-workflow-steps/bundle-universal-apk"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/gradle-runner"
-to = "/workflows/android-specific-workflow-steps/gradle-runner"
+to = "/build-integrations/android-specific-workflow-steps/gradle-runner"
 status = 301
 
 [[redirects]]
 from = "/workflows/android-specific-workflow-steps/build-and-test/lint"
-to = "/workflows/android-specific-workflow-steps/lint"
+to = "/build-integrations/android-specific-workflow-steps/lint"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/azure-board"
-to = "/workflows/common-workflow-steps/azure-board"
+to = "/build-integrations/common-workflow-steps/azure-board"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/aws-device-farm-and-deploy"
-to = "/workflows/common-workflow-steps/aws-device-farm-and-deploy"
+to = "/build-integrations/common-workflow-steps/aws-device-farm-and-deploy"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/authanticate-with-netrc"
-to = "/workflows/common-workflow-steps/authenticate-with-netrc"
+to = "/build-integrations/common-workflow-steps/authenticate-with-netrc"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/publish-release-notes"
-to = "/workflows/common-workflow-steps/publish-release-notes"
+to = "/build-integrations/common-workflow-steps/publish-release-notes"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/custom-script"
-to = "/workflows/common-workflow-steps/custom-script"
+to = "/build-integrations/common-workflow-steps/custom-script"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/fastlane"
-to = "/workflows/common-workflow-steps/fastlane"
+to = "/build-integrations/common-workflow-steps/fastlane"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/jira-component"
-to = "/workflows/common-workflow-steps/jira-comment"
+to = "/build-integrations/common-workflow-steps/jira-comment"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/jira-component"
-to = "/workflows/common-workflow-steps/jira-comment"
+to = "/build-integrations/common-workflow-steps/jira-comment"
 status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/build-and-test/upload-files-to-amazon-s3"
-to = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+to = "/build-integrations/common-workflow-steps/upload-files-to-amazon-s3"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/distribution/browserstack-app-automation"
-to = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
+to = "/build-integrations/ios-specific-workflow-steps/browserstack-app-automation"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/azure-bot-for-swiftlint"
-to = "/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint"
+to = "/build-integrations/ios-specific-workflow-steps/azure-bot-for-swiftlint"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/xcodebuild-for-devices"
-to = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
+to = "/build-integrations/ios-specific-workflow-steps/xcodebuild-for-devices"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/build-and-test/swiftlint"
-to = "/workflows/ios-specific-workflow-steps/swiftlint"
+to = "/build-integrations/ios-specific-workflow-steps/swiftlint"
 status = 301
 
 [[redirects]]
 from = "/workflows/ios-specific-workflow-steps/tuist"
-to = "/workflows/ios-specific-workflow-steps/tuist-install"
+to = "/build-integrations/ios-specific-workflow-steps/tuist-install"
 status = 301
 
 [[redirects]]
 from = "/workflows/why-to-use-workflows"
-to = "/workflows"
+to = "/build-integrations"
 status = 301
 
 ## Self-hosted redirects after Helm update
@@ -1296,12 +1296,12 @@ status = 301
 
 [[redirects]]
 from = "/workflows/common-workflow-steps/testinium"
-to = "/workflows/common-workflow-steps/testinium-steps/testinium"
+to = "/build-integrations/common-workflow-steps/testinium-steps/testinium"
 status = 301
 
 [[redirects]]
 from = "/workflows/react-native-specific-workflow-steps#app-center-codepush"
-to = "/workflows/react-native-specific-workflow-steps/appcircle-codepush"
+to = "/build-integrations/react-native-specific-workflow-steps/appcircle-codepush"
 status = 301
 
 [[redirects]]
@@ -1541,5 +1541,521 @@ status = 301
 
 [[redirects]]
 from = "/workflows/how-to-create-a-new-workflow-step"
-to = "/workflows/how-to-create-an-integration"
+to = "/build-integrations/how-to-create-an-integration"
+status = 301
+
+[[redirects]]
+from = "/workflows"
+to = "/build-integrations"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps"
+to = "/build-integrations/android-specific-integrations"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/android-build"
+to = "/build-integrations/android-specific-integrations/android-build"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/android-build-for-ui-testing"
+to = "/build-integrations/android-specific-integrations/android-build-for-ui-testing"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/android-dependency-report"
+to = "/build-integrations/android-specific-integrations/android-dependency-report"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/android-sign"
+to = "/build-integrations/android-specific-integrations/android-sign"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/android-unit-tests"
+to = "/build-integrations/android-specific-integrations/android-unit-tests"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/app-center-android-distribution"
+to = "/build-integrations/android-specific-integrations/app-center-android-distribution"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/app-post-processor"
+to = "/build-integrations/android-specific-integrations/app-post-processor"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android"
+to = "/build-integrations/android-specific-integrations/appdome-build-to-secure-for-android"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing"
+to = "/build-integrations/android-specific-integrations/appsweep-mobile-security-testing"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/azure-bot-for-detekt-report"
+to = "/build-integrations/android-specific-integrations/azure-bot-for-detekt-report"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso"
+to = "/build-integrations/android-specific-integrations/browserstack-app-automate-espresso"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/bundle-universal-apk"
+to = "/build-integrations/android-specific-integrations/bundle-universal-apk"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/detekt"
+to = "/build-integrations/android-specific-integrations/detekt"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/firebase-test-lab"
+to = "/build-integrations/android-specific-integrations/firebase-test-lab"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/gradle-runner"
+to = "/build-integrations/android-specific-integrations/gradle-runner"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/increment-build-and-version-number"
+to = "/build-integrations/android-specific-integrations/increment-build-and-version-number"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/lambdatest-app-automate-espresso"
+to = "/build-integrations/android-specific-integrations/lambdatest-app-automate-espresso"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/lint"
+to = "/build-integrations/android-specific-integrations/lint"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/test-reports-for-android"
+to = "/build-integrations/android-specific-integrations/test-reports-for-android"
+status = 301
+
+[[redirects]]
+from = "/workflows/android-specific-workflow-steps/wait-for-android-emulator"
+to = "/build-integrations/android-specific-integrations/wait-for-android-emulator"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps"
+to = "/build-integrations/flutter-specific-integrations"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/firebase-deployment"
+to = "/build-integrations/flutter-specific-integrations/firebase-deployment"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/flutter-analyze"
+to = "/build-integrations/flutter-specific-integrations/flutter-analyze"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/flutter-build-for-android"
+to = "/build-integrations/flutter-specific-integrations/flutter-build-for-android"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/flutter-build-for-ios"
+to = "/build-integrations/flutter-specific-integrations/flutter-build-for-ios"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
+to = "/build-integrations/flutter-specific-integrations/flutter-build-for-web"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/flutter-install"
+to = "/build-integrations/flutter-specific-integrations/flutter-install"
+status = 301
+
+[[redirects]]
+from = "/workflows/flutter-specific-workflow-steps/flutter-test"
+to = "/build-integrations/flutter-specific-integrations/flutter-test"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps"
+to = "/build-integrations/react-native-specific-integrations"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/app-center-code-push"
+to = "/build-integrations/react-native-specific-integrations/app-center-code-push"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/appcircle-codepush"
+to = "/build-integrations/react-native-specific-integrations/appcircle-codepush"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/node-install"
+to = "/build-integrations/react-native-specific-integrations/node-install"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/npm-yarn-commands"
+to = "/build-integrations/react-native-specific-integrations/npm-yarn-commands"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/react-native-ui-test"
+to = "/build-integrations/react-native-specific-integrations/react-native-ui-test"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/react-native-unit-test"
+to = "/build-integrations/react-native-specific-integrations/react-native-unit-test"
+status = 301
+
+[[redirects]]
+from = "/workflows/react-native-specific-workflow-steps/test-reports-react-native"
+to = "/build-integrations/react-native-specific-integrations/test-reports-react-native"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/appcenter-ios-distribution"
+to = "/build-integrations/ios-specific-integrations/appcenter-ios-distribution"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/appdome-build-to-secure-for-ios"
+to = "/build-integrations/ios-specific-integrations/appdome-build-to-secure-for-ios"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/audit-permission-change"
+to = "/build-integrations/ios-specific-integrations/audit-permission-change"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint"
+to = "/build-integrations/ios-specific-integrations/azure-bot-for-swiftlint"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/browserstack-app-automation"
+to = "/build-integrations/ios-specific-integrations/browserstack-app-automation"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/carthage"
+to = "/build-integrations/ios-specific-integrations/carthage"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/cocoapods-deintegrate"
+to = "/build-integrations/ios-specific-integrations/cocoapods-deintegrate"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/cocoapods-install"
+to = "/build-integrations/ios-specific-integrations/cocoapods-install"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/convert-xcresult-to-xml-html"
+to = "/build-integrations/ios-specific-integrations/convert-xcresult-to-xml-html"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/firebase-upload-dsym"
+to = "/build-integrations/ios-specific-integrations/firebase-upload-dsym"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/install-certificates-provisions"
+to = "/build-integrations/ios-specific-integrations/install-certificates-provisions"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/ios-increment-build-and-version-number"
+to = "/build-integrations/ios-specific-integrations/ios-increment-build-and-version-number"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/slather"
+to = "/build-integrations/ios-specific-integrations/slather"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/swiftlint"
+to = "/build-integrations/ios-specific-integrations/swiftlint"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/test-reports-for-ios"
+to = "/build-integrations/ios-specific-integrations/test-reports-for-ios"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/tuist-commands"
+to = "/build-integrations/ios-specific-integrations/tuist-commands"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/tuist-install"
+to = "/build-integrations/ios-specific-integrations/tuist-install"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/xcode-select"
+to = "/build-integrations/ios-specific-integrations/xcode-select"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-devices"
+to = "/build-integrations/ios-specific-integrations/xcodebuild-for-devices"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator"
+to = "/build-integrations/ios-specific-integrations/xcodebuild-for-ios-simulator"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-testing"
+to = "/build-integrations/ios-specific-integrations/xcodebuild-for-testing"
+status = 301
+
+[[redirects]]
+from = "/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test"
+to = "/build-integrations/ios-specific-integrations/xcodebuild-for-unit-and-ui-test"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps"
+to = "/build-integrations/common-integrations"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/active-ssh-private-key"
+to = "/build-integrations/common-integrations/active-ssh-private-key"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/add-badge-app-icon"
+to = "/build-integrations/common-integrations/add-badge-app-icon"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/appium-server"
+to = "/build-integrations/common-integrations/appium-server"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/authenticate-with-netrc"
+to = "/build-integrations/common-integrations/authenticate-with-netrc"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/aws-device-farm-and-deploy"
+to = "/build-integrations/common-integrations/aws-device-farm-and-deploy"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/azure-board"
+to = "/build-integrations/common-integrations/azure-board"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/check-network-access"
+to = "/build-integrations/common-integrations/check-network-access"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/custom-script"
+to = "/build-integrations/common-integrations/custom-script"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/custom-script-from-git"
+to = "/build-integrations/common-integrations/custom-script-from-git"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/danger"
+to = "/build-integrations/common-integrations/danger"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/data-theorem-mobile-secure"
+to = "/build-integrations/common-integrations/data-theorem-mobile-secure"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/export-build-artifacts"
+to = "/build-integrations/common-integrations/export-build-artifacts"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/fastlane"
+to = "/build-integrations/common-integrations/fastlane"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/file-size-check"
+to = "/build-integrations/common-integrations/file-size-check"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/firebase-app-distribution"
+to = "/build-integrations/common-integrations/firebase-app-distribution"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/fod-mobile-assesment"
+to = "/build-integrations/common-integrations/fod-mobile-assesment"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/ftp-upload"
+to = "/build-integrations/common-integrations/ftp-upload"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/git-clone"
+to = "/build-integrations/common-integrations/git-clone"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/jira-comment"
+to = "/build-integrations/common-integrations/jira-comment"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/kobil-appshield-scanner"
+to = "/build-integrations/common-integrations/kobil-appshield-scanner"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/maestro-cloud-upload"
+to = "/build-integrations/common-integrations/maestro-cloud-upload"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/marathon-cloud"
+to = "/build-integrations/common-integrations/marathon-cloud"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/publish-release-notes"
+to = "/build-integrations/common-integrations/publish-release-notes"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/repeato-test-runner"
+to = "/build-integrations/common-integrations/repeato-test-runner"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/saucectl-run"
+to = "/build-integrations/common-integrations/saucectl-run"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/select-java-version"
+to = "/build-integrations/common-integrations/select-java-version"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/set-environment-variable"
+to = "/build-integrations/common-integrations/set-environment-variable"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/snyk-scan-security"
+to = "/build-integrations/common-integrations/snyk-scan-security"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/sonarqube"
+to = "/build-integrations/common-integrations/sonarqube"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/upload-files-to-amazon-s3"
+to = "/build-integrations/common-integrations/upload-files-to-amazon-s3"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/artifactory-repository-management"
+to = "/build-integrations/common-integrations/artifactory-repository-management"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/artifactory-repository-management/jfrof-repository-management"
+to = "/build-integrations/common-integrations/artifactory-repository-management/jfrof-repository-management"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/artifactory-repository-management/nexus-repository-management"
+to = "/build-integrations/common-integrations/artifactory-repository-management/nexus-repository-management"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/build-cache"
+to = "/build-integrations/common-integrations/build-cache"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/build-cache/cache-pull"
+to = "/build-integrations/common-integrations/build-cache/cache-pull"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/build-cache/cache-push"
+to = "/build-integrations/common-integrations/build-cache/cache-push"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching"
+to = "/build-integrations/common-integrations/build-cache/how-to-configure-branch-based-caching"
+status = 301
+
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles"
+to = "/build-integrations/common-integrations/build-cache/how-to-share-file-between-build-profiles"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/testinium-steps"
+to = "/build-integrations/common-integrations/testinium-steps"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/testinium-steps/testinium"
+to = "/build-integrations/common-integrations/testinium-steps/testinium"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan"
+to = "/build-integrations/common-integrations/testinium-steps/testinium-run-test-plan"
+status = 301
+
+[[redirects]]
+from = "/workflows/common-workflow-steps/testinium-steps/testinium-upload-app"
+to = "/build-integrations/common-integrations/testinium-steps/testinium-upload-app"
 status = 301

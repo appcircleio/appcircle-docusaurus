@@ -1,6 +1,7 @@
 ---
 title: Android Build for UI Testing
-description: Learn how to use the Android Build for UI Testing workflow step in Appcircle
+description: Learn how to use the Android Build for UI Testing integration in Appcircle
+slug: /build-integrations/android-specific-integrations/android-build-for-ui-testing
 tags: [android, mobile, ui testing, testing]
 ---
 
@@ -16,13 +17,13 @@ Before running the **Android Build for UI Testing** step, you must complete cert
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                                                            |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Android Build for UI Testing** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Build for UI Testing** step. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | To initiate the **Android Build for UI Testing** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Build for UI Testing** step. |
 
 :::caution
 
 If you're updating the version via Appcircle, ensure that the following step comes before the **Android Build for UI Testing** step:
 
-- [**Android Increment Build and Version Number**](/workflows/android-specific-workflow-steps/increment-build-and-version-number)
+- [**Android Increment Build and Version Number**](/build-integrations/android-specific-integrations/increment-build-and-version-number)
 
 :::
 
@@ -30,8 +31,8 @@ If you're updating the version via Appcircle, ensure that the following step com
 
 If you're working with a **React Native Android** project, ensure that the following steps come before the **Android Build for UI Testing** step:
 
-- [**Install Node**](/workflows/react-native-specific-workflow-steps/node-install)
-- [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
+- [**Install Node**](/build-integrations/react-native-specific-integrations/node-install)
+- [**NPM/Yarn Commands**](/build-integrations/react-native-specific-integrations/npm-yarn-commands)
 
 :::
 
@@ -39,7 +40,7 @@ If you're working with a **React Native Android** project, ensure that the follo
 
 :::note
 
-The **[Firebase Test Lab for Android](/workflows/android-specific-workflow-steps/firebase-test-lab)** step has been added as an example. You can use the APK you produce for UI testing in any component you choose.
+The **[Firebase Test Lab for Android](/build-integrations/android-specific-integrations/firebase-test-lab)** step has been added as an example. You can use the APK you produce for UI testing in any component you choose.
 
 :::
 
@@ -51,7 +52,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name        | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | -------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
-| `$AC_REPOSITORY_DIR` | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                             | Required |
+| `$AC_REPOSITORY_DIR` | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/build-integrations/common-integrations/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                             | Required |
 | `$AC_MODULE`         | This variable specifies the project module to be built. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can locate the available modules for your project. For more information, please refer to this [Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
 | `$AC_PROJECT_PATH`   | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                                                                                                                                        | Optional |
 

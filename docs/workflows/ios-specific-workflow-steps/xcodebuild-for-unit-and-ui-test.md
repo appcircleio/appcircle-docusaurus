@@ -1,6 +1,7 @@
 ---
 title: Xcodebuild for Unit and UI Testing
 description: This step performs unit and UI tests for your iOS applications. This does not "build" your app, but uses the "xcodebuild" command to run tests.
+slug: /build-integrations/ios-specific-integrations/xcodebuild-for-unit-and-ui-test
 tags: [build, test, ios, workflow, xcodebuild, unit, testing]
 ---
 
@@ -22,8 +23,8 @@ Before running the **Xcodebuild for Unit and UI Testing** step, you must complet
 
 | Prerequisite Workflow Step                                                                | Description                                     |
 |-------------------------------------------------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone)                | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `$AC_REPOSITORY_DIR` variable. |
-| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)    | This step selects the specified Xcode version. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone)                | The repository must be cloned to initiate the unit and UI testing process. Following the clone, this step will run the tests and create the `$AC_REPOSITORY_DIR` variable. |
+| [**Xcode Select**](/build-integrations/ios-specific-integrations/xcode-select)    | This step selects the specified Xcode version. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3098-unitOrder.png' />
 
@@ -35,7 +36,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. | Required |
 | `$AC_OUTPUT_DIR_PATH`         | Specifies the path for outputs for generated artifacts. | Required |
 | `$AC_SCHEME`                  | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_ARCHIVE_FLAGS`           | Specifies the extra xcodebuild flag. For example: **`-quiet`** | Optional |
@@ -54,7 +55,7 @@ Ensure the simulator type matches the OS version used. For example, if you use t
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your workflow after this step.
+To view the output artifacts on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step is included in your workflow after this step.
 
 :::
 

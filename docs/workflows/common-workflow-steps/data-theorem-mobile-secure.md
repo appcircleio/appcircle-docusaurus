@@ -1,6 +1,7 @@
 ---
 title: Data Theorem Mobile Secure
 description: Data Theorem Mobile Secure, enables users to automatically scan their mobile applications for security vulnerabilities and compliance issues directly from the Appcircle.
+slug: /build-integrations/common-integrations/data-theorem-mobile-secure
 tags: [data theorem, secure, mobile]
 ---
 
@@ -18,8 +19,8 @@ Before running the **Data Theorem Mobile Secure** step, you must complete certai
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_1.png'/>
 
@@ -27,7 +28,7 @@ Before running the **Data Theorem Mobile Secure** step, you must complete certai
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_2.png'/>
 
@@ -35,8 +36,8 @@ Before running the **Data Theorem Mobile Secure** step, you must complete certai
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Data Theorem Mobile Secure** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | Required if using a signed app. Processes the output for signing. If already signed, this step can be skipped. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_3.png'/>
 
@@ -44,8 +45,8 @@ Before running the **Data Theorem Mobile Secure** step, you must complete certai
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-datatheorem_4.png'/>
 

@@ -162,7 +162,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
-<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/build-integrations">What are Workflows and How to Use Them?</ContentRef>
 
 ### Start Build
 
@@ -293,7 +293,7 @@ After this operation, the references of the relevant files will be rewritten.
 
 After the release of Xcode 16, this issue experienced in older versions was fixed in Ruby's gem library with `1.26.0` or later version of the [**`xcodeproj`**](https://rubygems.org/gems/xcodeproj/versions/1.26.0) library. At Appcircle, we have also applied these updates to our infrastructure and deployed them to our cloud environment.
 
-However, for our customers using self-hosted setups, an image update is required. If you are using Appcircle in a self-hosted environment, the version of the `xcodeproj` library may be **outdated**. To resolve this, either update the runner image or manually increase the version in the build pipeline using a [**Custom Script**](/workflows/common-workflow-steps/custom-script).
+However, for our customers using self-hosted setups, an image update is required. If you are using Appcircle in a self-hosted environment, the version of the `xcodeproj` library may be **outdated**. To resolve this, either update the runner image or manually increase the version in the build pipeline using a [**Custom Script**](/build-integrations/common-integrations/custom-script).
 
 You can update the `xcodeproj` library using the following Bash script in your workflow:
 

@@ -2,6 +2,7 @@
 title: Appcircle CodePush Workflow
 sidebar_label: Appcircle CodePush
 description: Learn how to integrate Appcircle CodePush SDK.
+slug: /build-integrations/react-native-specific-integrations/appcircle-codepush
 tags: [appcircle codepush, build, ci, build module]
 sidebar_position: 1
 ---

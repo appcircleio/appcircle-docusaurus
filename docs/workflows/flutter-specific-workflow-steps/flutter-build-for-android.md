@@ -1,6 +1,7 @@
 ---
 title: Flutter Build for Android
 description: The Flutter Build for Android step builds your Flutter project with Flutter SDK.
+slug: /build-integrations/flutter-specific-integrations/flutter-build-for-android
 tags: [flutter, build, android]
 ---
 
@@ -16,7 +17,7 @@ Before running the **Flutter Build for Android** step, you must complete certain
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | This step fetches the repository that needs to be built from the specified branch. It is essential for initiating the Flutter Android build process. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/flutter-workflow-components-build_1.png'/>
 
@@ -70,4 +71,4 @@ https://github.com/appcircleio/appcircle-android-flutter-build-component
 
 To resolve this issue, please refer to the following document for detailed instructions:
 
-- [Android Build FAQ](/workflows/android-specific-workflow-steps/android-build#how-can-i-solve-the-out-of-memory-error-java-heap-memory-or-set-the-heap-memory-during-the-build)
+- [Android Build FAQ](/build-integrations/android-specific-integrations/android-build#how-can-i-solve-the-out-of-memory-error-java-heap-memory-or-set-the-heap-memory-during-the-build)

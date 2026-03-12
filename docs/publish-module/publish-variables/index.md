@@ -265,7 +265,7 @@ In the Appcircle Publish to Stores module, the steps within a Publish flow opera
 
 Below is an example of how this can be done. Once an ENV variable is modified in a step and saved to the output direction, it will become accessible in another step.
 
-- For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/workflows/common-workflow-steps/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
+- For the first step. Suppose we create a release note using the [**Publish Release Note Component**](/build-integrations/common-integrations/publish-release-notes) during the build process. We then want to modify and use this release note during the Publish process.
 
 :::caution
 

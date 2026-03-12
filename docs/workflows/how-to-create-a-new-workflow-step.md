@@ -1,7 +1,7 @@
 ---
 title: How to Create an Integration
 description: A guide to defining, configuring, and integrating a new step into a workflow.
-slug: /workflows/how-to-create-an-integration
+slug: /build-integrations/how-to-create-an-integration
 tags: [create, new step, workflow, development, build, integration]
 ---
 
@@ -295,7 +295,7 @@ Once unit tests are configured and passing, the workflow step is considered comp
 
 After completing your source code, you need to follow these steps to test your custom step:
 
-1. **Create your workflow** and add a [Custom Script](/workflows/common-workflow-steps/custom-script) to the designated location where your step should be placed.
+1. **Create your workflow** and add a [Custom Script](/build-integrations/common-integrations/custom-script) to the designated location where your step should be placed.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_6.png'/>
 2. **Rename the Custom Script** to reflect its purpose and functionality.
    <Screenshot url='https://cdn.appcircle.io/docs/assets/develop-new-wf-step_7.png'/>
@@ -351,11 +351,11 @@ There are specific rules that must be followed for workflow documentation, outli
 
 The location of your documentation depends on your step's platform compatibility:
 
-- **Cross-platform steps** (all platforms) → [Common Workflow Steps](/workflows/common-workflow-steps)
-- **iOS-specific steps** → [iOS Specific Workflow Steps](/workflows/ios-specific-workflow-steps)  
-- **Android-specific steps** → [Android Specific Workflow Steps](/workflows/android-specific-workflow-steps)
-- **React Native-specific steps** → [React Native Specific Workflow Steps](/workflows/react-native-specific-workflow-steps)
-- **Flutter-specific steps** → [Flutter Specific Workflow Steps](/workflows/flutter-specific-workflow-steps)
+- **Cross-platform steps** (all platforms) → [Common Workflow Steps](/build-integrations/common-integrations)
+- **iOS-specific steps** → [iOS Specific Workflow Steps](/build-integrations/ios-specific-integrations)  
+- **Android-specific steps** → [Android Specific Workflow Steps](/build-integrations/android-specific-integrations)
+- **React Native-specific steps** → [React Native Specific Workflow Steps](/build-integrations/react-native-specific-integrations)
+- **Flutter-specific steps** → [Flutter Specific Workflow Steps](/build-integrations/flutter-specific-integrations)
 
 Your documentation must comply with the Document Guidelines in the README to follow the latest contribution standards.
 

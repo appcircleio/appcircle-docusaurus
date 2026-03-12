@@ -49,7 +49,7 @@ These certificates and provisioning profiles will be used while building the sig
 
 :::info
 
-Keep in mind that, in order to use iOS Signing Identities in the build pipeline, the [workflow](/workflows) should also have an [**Install Certificates & Profiles**](/workflows/ios-specific-workflow-steps/install-certificates-provisions) step.
+Keep in mind that, in order to use iOS Signing Identities in the build pipeline, the [workflow](/build-integrations) should also have an [**Install Certificates & Profiles**](/build-integrations/ios-specific-integrations/install-certificates-provisions) step.
 
 :::
 
@@ -61,7 +61,7 @@ Keep in mind that, in order to use iOS Signing Identities in the build pipeline,
 
 :::info
 
-Keep in mind that, in order to switch to the selected Xcode version in the build pipeline, the [workflow](/workflows) should also have an [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select) step.
+Keep in mind that, in order to switch to the selected Xcode version in the build pipeline, the [workflow](/build-integrations) should also have an [**Xcode Select**](/build-integrations/ios-specific-integrations/xcode-select) step.
 
 :::
 
@@ -81,7 +81,7 @@ Currently, **Automatic Code Signing** is not supported for iOS Xamarin builds. F
 
 :::
 
-**6.** In your [workflow](/workflows), use the below custom script as a replacement of the default **Xcodebuild for Devices** step. Remove the **CocoaPods Install** and **Increment Build and Version Number** steps from your workflow.
+**6.** In your [workflow](/build-integrations), use the below custom script as a replacement of the default **Xcodebuild for Devices** step. Remove the **CocoaPods Install** and **Increment Build and Version Number** steps from your workflow.
 
 :::info
 
@@ -184,13 +184,13 @@ These keystores will be used while building the signed app in the build pipeline
 
 :::info
 
-Keep in mind that, in order to use Android Signing Identities in the build pipeline, the [workflow](/workflows) should also have an [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign) step.
+Keep in mind that, in order to use Android Signing Identities in the build pipeline, the [workflow](/build-integrations) should also have an [**Android Sign**](/build-integrations/android-specific-integrations/android-sign) step.
 
 :::
 
 **5.** In the [Build Profile Configuration](/build/build-process-management/configurations), open the **Signing** tab and select your app's keystore from the list of Signing Identities.
 
-**6.** In your [workflow](/workflows), use the below **Custom Script** as a replacement of the default **Android Build** step. Remove the **Android App Post-Processor** and **Increment Build and Version Number** steps from your workflow.
+**6.** In your [workflow](/build-integrations), use the below **Custom Script** as a replacement of the default **Android Build** step. Remove the **Android App Post-Processor** and **Increment Build and Version Number** steps from your workflow.
 
 :::info
 

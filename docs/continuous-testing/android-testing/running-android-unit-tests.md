@@ -66,7 +66,7 @@ Simply go to your build workflow and add a custom script after the **Sign Applic
 
 See the following page on our documentation to learn more about creating custom workflow steps:
 
-<ContentRef url="/workflows/common-workflow-steps/custom-script">Working with Custom Scripts</ContentRef>
+<ContentRef url="/build-integrations/common-integrations/custom-script">Working with Custom Scripts</ContentRef>
 
 Add the following Bash script to your custom script step:
 
@@ -150,10 +150,10 @@ Appcircle can show passing and failing tests in compact UI. If your tests genera
 
 Appcircle currently supports the following mobile automation testing tools:
 
-- [Appium](/workflows/common-workflow-steps/#appium-server)
-- [BrowserStack App Automate - Espresso](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso)
-- [Maestro](/workflows/common-workflow-steps/maestro-cloud-upload)
-- [Testinium](/workflows/common-workflow-steps/testinium-steps/testinium)
+- [Appium](/build-integrations/common-integrations/#appium-server)
+- [BrowserStack App Automate - Espresso](/build-integrations/android-specific-integrations/browserstack-app-automate-espresso)
+- [Maestro](/build-integrations/common-integrations/maestro-cloud-upload)
+- [Testinium](/build-integrations/common-integrations/testinium-steps/testinium)
 
 Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
 
@@ -180,7 +180,7 @@ curl -u "$AC_BROWSERSTACK_USERNAME:$AC_BROWSERSTACK_ACCESS_KEY" \
 
 :::info
 
-Appcircle's [**BrowserStack App Automate - Espresso**](/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso) step already parses JUnit Test reports. The above code sample is only given as an example.
+Appcircle's [**BrowserStack App Automate - Espresso**](/build-integrations/android-specific-integrations/browserstack-app-automate-espresso) step already parses JUnit Test reports. The above code sample is only given as an example.
 
 :::
 

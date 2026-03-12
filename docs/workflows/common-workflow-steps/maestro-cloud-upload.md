@@ -1,6 +1,7 @@
 ---
 title: Maestro Cloud Upload
 description: Facilitate the execution of automated tests for mobile applications directly within Appcircle using Maestro Cloud Upload.
+slug: /build-integrations/common-integrations/maestro-cloud-upload
 tags: [maestro, maestro cloud, mobile, testing]
 ---
 
@@ -20,14 +21,14 @@ Before running the **Maestro Cloud Upload** step, you must complete certain prer
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | Fetches the repository to be built from the specified branch, ensuring that the [Maestro CLI](https://maestro.mobile.dev/getting-started/installing-maestro) can run on the repository path. |
+| [**Git Clone**](/build-integrations/common-integrations/#git-clone) | Fetches the repository to be built from the specified branch, ensuring that the [Maestro CLI](https://maestro.mobile.dev/getting-started/installing-maestro) can run on the repository path. |
 
 ### For Android (Java / Kotlin and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Maestro Cloud Upload** step. |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Maestro Cloud Upload** step. |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_1.png'/>
 
@@ -35,7 +36,7 @@ Before running the **Maestro Cloud Upload** step, you must complete certain prer
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_2.png'/>
 
@@ -43,8 +44,8 @@ Before running the **Maestro Cloud Upload** step, you must complete certain prer
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Maestro Cloud Upload** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Maestro Cloud Upload** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_3.png'/>
 
@@ -52,8 +53,8 @@ Before running the **Maestro Cloud Upload** step, you must complete certain prer
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-maestro-cloud-upload_4.png'/>
 

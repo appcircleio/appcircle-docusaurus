@@ -2736,9 +2736,9 @@ Using concurrency on the same Mac device (host) by configuring more than one VM 
 
 #### Build Cache
 
-When you hit the hardware barriers and try to find a way to improve build pipeline duration with existing runner configuration, you can consider using **[Build Cache](/workflows/common-workflow-steps/build-cache/cache-push)**.
+When you hit the hardware barriers and try to find a way to improve build pipeline duration with existing runner configuration, you can consider using **[Build Cache](/build-integrations/common-integrations/build-cache/cache-push)**.
 
-Using **[build cache](/workflows/common-workflow-steps/build-cache/cache-push)** can optimize resource usage by reducing repetitive build tasks and reducing demand on CPU, memory, and bandwidth, which can result in significant performance improvement depending on your build workflow.
+Using **[build cache](/build-integrations/common-integrations/build-cache/cache-push)** can optimize resource usage by reducing repetitive build tasks and reducing demand on CPU, memory, and bandwidth, which can result in significant performance improvement depending on your build workflow.
 
 You can specifically cache the build and test outputs to minimize how much work is done in subsequent builds, which is expected to make the build pipeline more efficient, especially in repositories with frequent updates.
 

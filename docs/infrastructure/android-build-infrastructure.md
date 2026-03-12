@@ -28,7 +28,7 @@ The chance is equal for all runners for your Android build because it does not a
 
 Virtual machines are created and they become ready for build within seconds.
 
-During the build process, you can install any dependencies and run commands using [custom script](/workflows/common-workflow-steps/custom-script) steps in the build workflow. This gives you complete control over your build and the virtual machine.
+During the build process, you can install any dependencies and run commands using [custom script](/build-integrations/common-integrations/custom-script) steps in the build workflow. This gives you complete control over your build and the virtual machine.
 
 :::info
 
@@ -40,7 +40,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 Appcircle runners have Java 8, 11, 17, and 21 installed. Java 17 is set as the default version.
 
-If you want to use a different Java version, please add the [Select Java Version](/workflows/common-workflow-steps/select-java-version) component to your workflow.
+If you want to use a different Java version, please add the [Select Java Version](/build-integrations/common-integrations/select-java-version) component to your workflow.
 
 When you select "Appcircle Linux Pool (x86_64)" for Android builds, the following JDK locations are available within the environment variables:
 

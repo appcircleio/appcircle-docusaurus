@@ -1,6 +1,7 @@
 ---
 title: React Native UI Test
 description: Learn how to run UI tests with Detox for your React Native projects easily with Appcircle, ensuring high-quality code and improved app performance.
+slug: /build-integrations/react-native-specific-integrations/react-native-ui-test
 tags: [react native, mobile, workflow, step, test, ui test, detox]
 ---
 
@@ -8,15 +9,15 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # React Native UI Test
 
-This component runs all the UI tests in your project written with [Detox](https://wix.github.io/Detox/docs/introduction/getting-started) integration. When this step is completed, it generates a test report file in `e2e-report.xml` format. You can view these test results in detail using Appcircle's [**Test Report**](/workflows/react-native-specific-workflow-steps/test-reports-react-native) component.
+This component runs all the UI tests in your project written with [Detox](https://wix.github.io/Detox/docs/introduction/getting-started) integration. When this step is completed, it generates a test report file in `e2e-report.xml` format. You can view these test results in detail using Appcircle's [**Test Report**](/build-integrations/react-native-specific-integrations/test-reports-react-native) component.
 
 For detailed information for continuous testing, please visit our [React Native Continuous Testing documentation](/continuous-testing/react-native-testing/react-native-ui-test-with-detox).
 
-To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/workflows/react-native-specific-workflow-steps/test-reports-react-native).
+To generate detailed Test Reports. Please visit our [Test Reports Component documentation](/build-integrations/react-native-specific-integrations/test-reports-react-native).
 
 :::info Java Version
 
-The default Java version in Appcircle's build stacks is **Java 17**. If your project requires a **higher** or **lower** Java version, please use the [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) component. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
+The default Java version in Appcircle's build stacks is **Java 17**. If your project requires a **higher** or **lower** Java version, please use the [**Select Java Version**](/build-integrations/common-integrations/select-java-version) component. On the other hand, you can see all details for build stacks both iOS and Android with this [documentation](/infrastructure).
 
 :::
 
@@ -28,10 +29,10 @@ Before running the **React Native UI Test** step, you must complete certain prer
 
 | Prerequisite Workflow Step                                                                 | Description                                                                                                                                                                            |
 |--------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps#git-clone)                                | Clone the selected repository to the build machine.                                                                                                                                    |
-| [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)           | This step will install Node modules for your application.                                                                                                                              |
-| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands) | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
-| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps#cocoapods-install)          | This step installs all the dependencies of the pod file.                                                                                                                               |
+| [**Git Clone**](/build-integrations/common-integrations#git-clone)                                | Clone the selected repository to the build machine.                                                                                                                                    |
+| [**Install Node**](/build-integrations/react-native-specific-integrations#install-node)           | This step will install Node modules for your application.                                                                                                                              |
+| [**NPM/Yarn Commands**](/build-integrations/react-native-specific-integrations/npm-yarn-commands) | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
+| [**Cocoapods Install**](/build-integrations/ios-specific-integrations#cocoapods-install)          | This step installs all the dependencies of the pod file.                                                                                                                               |
 
 :::info
 
@@ -45,10 +46,10 @@ If your **CocoaPods** dependencies are **embedded** in the project, you do not n
 
 | Prerequisite Workflow Step                                                                            | Description                                                                                                                                                                            |
 |-------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps#git-clone)                                           | Clone the selected repository to the build machine.                                                                                                                                    |
-| [**Install Node**](/workflows/react-native-specific-workflow-steps#install-node)                      | This step will install Node modules for your application.                                                                                                                              |
-| [**NPM/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)            | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
-| [**Wait for Android Emulator**](/workflows/android-specific-workflow-steps/wait-for-android-emulator) | This step waits for the Android Emulator to boot. You must use this step before running any UI tests.                                                                                  |
+| [**Git Clone**](/build-integrations/common-integrations#git-clone)                                           | Clone the selected repository to the build machine.                                                                                                                                    |
+| [**Install Node**](/build-integrations/react-native-specific-integrations#install-node)                      | This step will install Node modules for your application.                                                                                                                              |
+| [**NPM/Yarn Commands**](/build-integrations/react-native-specific-integrations/npm-yarn-commands)            | This step installs the [NPM](https://www.npmjs.com/) or [Yarn](https://www.npmjs.com/package/yarn) package manager to install specific dependencies for your React Native applications. |
+| [**Wait for Android Emulator**](/build-integrations/android-specific-integrations/wait-for-android-emulator) | This step waits for the Android Emulator to boot. You must use this step before running any UI tests.                                                                                  |
 
 :::danger React Native UI Test for Android
 
@@ -72,7 +73,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                | Description                                                                                                                                                                                                                                                                                                                                 | Status   |
 |------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps#git-clone) step.                                                                                                                                                                 | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations#git-clone) step.                                                                                                                                                                 | Required |
 | `$AC_OUTPUT_DIR`             | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                                                                                                       | Required |
 | `$AC_RN_DETOX_CONFIGURATION` | Specify the detox configuration name to used when building and running the tests.                                                                                                                                                                                                                                                           | Required |
 | `$AC_RN_DETOX_TEST_ARGS`     | Specify the Detox extra arguments to add the test command. The arguments will be executed by appending `detox test --configuration<configname>` to the end of the command. The default value is `--take-screenshots all` For more information, see the Detox test [CLI options](https://wix.github.io/Detox/docs/19.x/api/detox-cli/#test). | Optional |
@@ -110,7 +111,7 @@ For more information, please visit [**Continuous Testing**](/continuous-testing/
 
 :::info How to Download Screen Shots
 
-The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) as `test_attachments.zip`. You can access the relevant screenshots in **Download Artifact** and download them directly.
+The Appcircle interface does **not** support displaying screenshots generated from UI tests in React Native projects. All screenshots created as a result of these tests are exported to [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts) as `test_attachments.zip`. You can access the relevant screenshots in **Download Artifact** and download them directly.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/downloadAttachments.png' />
 
@@ -118,7 +119,7 @@ The Appcircle interface does **not** support displaying screenshots generated fr
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To view the output artifacts on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step is included in your Workflow after this step.
 
 :::
 

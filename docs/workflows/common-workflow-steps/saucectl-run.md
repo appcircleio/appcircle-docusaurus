@@ -1,6 +1,7 @@
 ---
 title: Saucectl Run
 description: The `saucectl` command line interface orchestrates the relationship between your tests in your framework, and the rich parallelization, test history filtering, and analytics of Sauce Labs.
+slug: /build-integrations/common-integrations/saucectl-run
 tags: [saucectl, saucectl run, sauce labs, test, android test, emulator, device test, automation, ios test, ui test, simulator]
 ---
 
@@ -20,7 +21,7 @@ Below are the workflow steps required before running the **Saucectl** step, list
 
 | Prerequisite Workflow Step  | Description                                                                   |
 | --------------------------- | ----------------------------------------------------------------------------- |
-| [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | This step generates the required Android test application outputs needed for testing on Sauce Labs. |
+| [Android Build for UI Testing](/build-integrations/android-specific-integrations/android-build-for-ui-testing) | This step generates the required Android test application outputs needed for testing on Sauce Labs. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-saucectl-1.0.png'/>
 
@@ -30,7 +31,7 @@ Below are the workflow steps required before running the **Saucectl** step, list
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) | After the [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step runs, the test IPA and APP paths (`$AC_TEST_IPA_PATH` and `$AC_TEST_APP_PATH`) will be created automatically. So that the **Saucectl Run** component depends on these paths. |
+| [**Xcodebuild for Testing**](/build-integrations/ios-specific-integrations#xcodebuild-for-testing) | After the [**Xcodebuild for Testing**](/build-integrations/ios-specific-integrations#xcodebuild-for-testing) step runs, the test IPA and APP paths (`$AC_TEST_IPA_PATH` and `$AC_TEST_APP_PATH`) will be created automatically. So that the **Saucectl Run** component depends on these paths. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE4255-saucectlRunFlow.png' />
 
@@ -120,8 +121,8 @@ For each component, specific input variables are required for its operation on y
 | AC_SL_ACCESS_KEY          | Sauce Labs access key. It must be set as a secret environment variable.                                          | Required |
 | AC_RUN_ONLY_VIA_CONFIG    | Whether to run only using the configuration file. If set to `true`, no need to fill in the other options. Default is `false`. Options: `true, false`. | Required |
 | AC_SL_SELECT_SUITE        | Specifies a test suite to execute by name rather than all suites defined in the config file. Check [saucectl](https://docs.saucelabs.com/dev/cli/saucectl/run/#--select-suite) documentation for details. Default value is `$AC_SL_SELECT_SUITE`. | Optional |
-| AC_SL_APP_PATH            | Path to the main application file that will be tested. This should be the location of the app (APK for Android or IPA for iOS) within the Sauce Labs environment or your build process. If not provided, app will be used as default in `config.yml`. If set to `AC_APK_PATH`, [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) step output will be loaded automatically. Or if set to `AC_TEST_APP_PATH` for iOS, [Xcodebuild for Testing](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step output will be loaded automatically. | Optional |
-| AC_SL_TEST_APP_PATH       | Path to the test application file, which contains the test code to be run against the main app. This is usually a separate test APK for Android or an additional test bundle for iOS. If not provided, app will be used as default in `config.yml`. If set to `AC_TEST_APK_PATH`, [Android Build for UI Testing](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) step output will be loaded automatically. Or if set to `AC_TEST_IPA_PATH` for iOS, [Xcodebuild for Testing](/workflows/ios-specific-workflow-steps#xcodebuild-for-testing) step output will be loaded automatically. | Optional |
+| AC_SL_APP_PATH            | Path to the main application file that will be tested. This should be the location of the app (APK for Android or IPA for iOS) within the Sauce Labs environment or your build process. If not provided, app will be used as default in `config.yml`. If set to `AC_APK_PATH`, [Android Build for UI Testing](/build-integrations/android-specific-integrations/android-build-for-ui-testing) step output will be loaded automatically. Or if set to `AC_TEST_APP_PATH` for iOS, [Xcodebuild for Testing](/build-integrations/ios-specific-integrations#xcodebuild-for-testing) step output will be loaded automatically. | Optional |
+| AC_SL_TEST_APP_PATH       | Path to the test application file, which contains the test code to be run against the main app. This is usually a separate test APK for Android or an additional test bundle for iOS. If not provided, app will be used as default in `config.yml`. If set to `AC_TEST_APK_PATH`, [Android Build for UI Testing](/build-integrations/android-specific-integrations/android-build-for-ui-testing) step output will be loaded automatically. Or if set to `AC_TEST_IPA_PATH` for iOS, [Xcodebuild for Testing](/build-integrations/ios-specific-integrations#xcodebuild-for-testing) step output will be loaded automatically. | Optional |
 | AC_SL_ARTIFACT_CLEANUP    | Clear the artifacts directory before downloading new test data. Check [saucectl](https://docs.saucelabs.com/dev/cli/saucectl/run/#--artifactscleanup) documentation for details. Default is `false`. Options: `true, false`. | Optional |
 | AC_SL_DOWNLOAD_DIR        | Specifies the path to the folder location in which to download artifacts. A separate subdirectory is generated in this location for each suite for which artifacts are downloaded. Must be set in conjunction with `Sauce Labs Download Match` and `Sauce Labs When to Download Artifacts`. Check [saucectl](https://docs.saucelabs.com/dev/cli/saucectl/run/#--artifactsdownloaddirectory) documentation for details. Default value is `$AC_SL_DOWNLOAD_DIR`. | Optional |
 | AC_SL_DOWNLOAD_MATCH      | Specifies which artifacts to download based on whether they match the name or file type pattern provided. Supports the wildcard character *. Must be set in conjunction with `Sauce Labs Download Directory` and `Sauce Labs When to Download Artifacts`. Check [saucectl](https://docs.saucelabs.com/dev/cli/saucectl/run/#--artifactsdownloadwhen) documentation for details. Default value is `$AC_SL_DOWNLOAD_MATCH`. | Optional |

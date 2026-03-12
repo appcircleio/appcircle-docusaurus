@@ -1,6 +1,7 @@
 ---
 title: Install Node
 description: Ensure the correct Node version for your React Native app with Install Node. A crucial step for building React Native applications.
+slug: /build-integrations/react-native-specific-integrations/node-install
 tags: [react native, mobile, workflow, step, node, install, version]
 ---
 
@@ -16,7 +17,7 @@ Before running the **Install Node** step, you must complete certain prerequisite
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | Clone the selected repository to the build machine. Please use the **Install Node** step after this step. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | Clone the selected repository to the build machine. Please use the **Install Node** step after this step. |
 
 :::caution
 

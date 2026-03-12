@@ -1,6 +1,7 @@
 ---
 title: Git Clone
 description: The Git Clone step is used to fetch the source code repository from a Git provider and clone it into the runner where the build and deployment processes take place.
+slug: /build-integrations/common-integrations/git-clone
 tags: [git, clone, workflow, step]
 ---
 
@@ -16,7 +17,7 @@ Before running the **Git Clone** step, you must complete certain prerequisites, 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Activate SSH Private Key**](/workflows/common-workflow-steps/active-ssh-private-key) | This step sets up your SSH key on the build machine **if you used one to connect your repository with SSH**. |
+| [**Activate SSH Private Key**](/build-integrations/common-integrations/active-ssh-private-key) | This step sets up your SSH key on the build machine **if you used one to connect your repository with SSH**. |
 
 :::caution
 

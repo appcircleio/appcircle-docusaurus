@@ -11,7 +11,7 @@ import DowntimeCaution from '@site/docs/self-hosted-appcircle/install-server/lin
 
 Appcircle has a limit for cache sizes that can be pushed or pulled on the build workflows.
 
-The `maxBodySize` parameter in the `global.yaml` file allows you to configure the maximum cache file size that can be uploaded with the [Cache Push](/workflows/common-workflow-steps/#cache-push) component.
+The `maxBodySize` parameter in the `global.yaml` file allows you to configure the maximum cache file size that can be uploaded with the [Cache Push](/build-integrations/common-integrations/#cache-push) component.
 
 By default, the cache size is set to **4096m**. However, you can increase or decrease this limit according to your needs by modifying the `global.yaml` file.
 

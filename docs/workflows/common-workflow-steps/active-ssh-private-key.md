@@ -1,6 +1,7 @@
 ---
 title: Active SSH Private Key
 description: Secure your connections with an Active SSH Private Key. Enhance security and manage your remote operations smoothly and safely.
+slug: /build-integrations/common-integrations/active-ssh-private-key
 tags: [secure, ssh, connections, private key]
 ---
 
@@ -16,7 +17,7 @@ There are no prerequisites required before using the **Active SSH Private Key** 
 
 :::caution
 
-If you connect to your repository via SSH, use this step before the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.
+If you connect to your repository via SSH, use this step before the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. To securely clone repositories connected via SSH, you must define the SSH key for the relevant build agent.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3151-sshOrder.png' />
 

@@ -1,6 +1,7 @@
 ---
 title: Flutter Build for iOS
 description: Learn to build iOS apps with the Flutter Build for iOS component. Ensure Flutter Install and Git Clone steps are completed first.
+slug: /build-integrations/flutter-specific-integrations/flutter-build-for-ios
 tags: [flutter, build, ios]
 ---
 
@@ -16,12 +17,12 @@ Before running the **Flutter Build for iOS** step, you must complete certain pre
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
-| [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install) | This step will install the Flutter SDK. If a version is not specified, it will install the latest **stable** version. The **Flutter SDK** package must be installed on the system. For this reason, make sure that **Flutter Build for iOS** is used after the **Flutter Install**. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | This step will clone your project through the connected Git provider and create the `$AC_REPOSITORY_DIR` variable. |
+| [**Flutter Install**](/build-integrations/flutter-specific-integrations/flutter-install) | This step will install the Flutter SDK. If a version is not specified, it will install the latest **stable** version. The **Flutter SDK** package must be installed on the system. For this reason, make sure that **Flutter Build for iOS** is used after the **Flutter Install**. |
 
 :::caution
 
-Once you have compiled your app for Flutter iOS, the native environment will be built. For this reason, this step should be used before the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step.
+Once you have compiled your app for Flutter iOS, the native environment will be built. For this reason, this step should be used before the [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices) step.
 
 :::
 

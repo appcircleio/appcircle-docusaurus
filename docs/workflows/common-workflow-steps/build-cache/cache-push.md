@@ -1,6 +1,7 @@
 ---
 title: Cache Push 
 description: Optimize your workflow by utilizing Cache Push to save and streamline data access, improving speed and reliability in your projects.
+slug: /build-integrations/common-integrations/build-cache/cache-push
 tags: [cache push, optimization, storage, dependencies, cache structure]
 ---
 
@@ -10,7 +11,7 @@ import CacheDeprecationBranch from '@site/docs/workflows/common-workflow-steps/b
 
 # Cache Push
 
-Every single build at Appcircle runs in a clean state. It means that all files and folders that are not versioned in the Git repository are lost when the build pipeline is completed. For example, install dependencies or build artifacts. If you need to keep those files and folders, you can use the Appcircle **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components.
+Every single build at Appcircle runs in a clean state. It means that all files and folders that are not versioned in the Git repository are lost when the build pipeline is completed. For example, install dependencies or build artifacts. If you need to keep those files and folders, you can use the Appcircle **Cache Push** and [**Cache Pull**](/build-integrations/common-integrations/build-cache/cache-pull) components.
 
 :::danger Minimum Version Requirement
 
@@ -26,9 +27,9 @@ To make sure you always get the latest updates, it is recommended to use the lat
 
 With cache, you can persist any resource that is ignored by Git. So you can transfer files and folders between build pipelines. Sometimes it may speed up your build, or it may help if you have reliability issues with the original download location for dependencies. But keep in mind that the cache is uploaded to or downloaded from a remote location. It may help you in some cases, but **it's not a guaranteed way to speed up builds**. You should try and see the actual results of your project.
 
-The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](/workflows/common-workflow-steps/build-cache/cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labels, you can create separate cache chunks, share caches between build profiles, or isolate them per branch. For further information, please check out the following documentation:
-- [How to Configure Branch-Base Caching](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching)
-- [How to Share Files Between Build Profiles](/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles)
+The cache is stored as a single archive file. **Cache Push** and [**Cache Pull**](/build-integrations/common-integrations/build-cache/cache-pull) components work in coordination on the same cache file defined with a label. Cache labeling helps you organize your caches. With custom labels, you can create separate cache chunks, share caches between build profiles, or isolate them per branch. For further information, please check out the following documentation:
+- [How to Configure Branch-Base Caching](/build-integrations/common-integrations/build-cache/how-to-configure-branch-based-caching)
+- [How to Share Files Between Build Profiles](/build-integrations/common-integrations/build-cache/how-to-share-file-between-build-profiles)
 
 :::warning Cache Storage Limits
 
@@ -44,7 +45,7 @@ These limits apply per build. Exceeding the limit will result in a failed cache 
 
 :::
 
-When you drag and drop the **Cache Push** component into your [workflow](/workflows), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
+When you drag and drop the **Cache Push** component into your [workflow](/build-integrations), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
 
 <CacheTokenIdCaution />
 
@@ -68,7 +69,7 @@ Before running the **Cache Push** step, you must complete certain prerequisites,
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`$AC_REPOSITORY_DIR`](#input-variables) path. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | If the folders to be cached are in the repo directory, the **Git Clone** step must be used before. This step will generate the [`$AC_REPOSITORY_DIR`](#input-variables) path. |
 
 :::danger
 
@@ -78,7 +79,7 @@ Keep in mind that included paths and the **Cache Push** step's workflow order ar
 
 :::caution
 
-The other important prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example, in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step.
+The other important prerequisite for this component to work is that it must be used after the step in which the generated artifact of the step is to be cached. For example, in the screen shot, to cache dependencies, the **Cache Push** step is used after the [**CocoaPods Install**](/build-integrations/ios-specific-integrations/cocoapods-install) step.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2911-pushOrder.png' />
 
@@ -96,7 +97,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_CACHE_LABEL`          | User defined cache label to identify one cache from others. Both **Cache Push** and **Cache Pull** steps should have the same value to match. | Required |
 | `$AC_CACHE_INCLUDED_PATHS` | Specifies the files and folders that should be in the cache. Multiple glob patterns can be provided as a colon-separated list. For example; `.gradle:app/build` or `Pods:Podfile.lock`. | Required |
 | `$AC_CACHE_EXCLUDED_PATHS` | Specifies the files and folders that should be ignored from the cache. Multiple glob patterns can be provided as a colon-separated list. For example, `.gradle/*.lock:*.apk`. | Optional |
-| `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Optional |
+| `$AC_REPOSITORY_DIR`       | Specifies the cloned repository path. This path will be generated after running the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. | Optional |
 
 :::tip
 
@@ -106,11 +107,11 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ### Output Variables
 
-You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from '[Download Artifacts](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) > `ac_cache.zip`'. Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
+You cannot reach the cache archive file directly by yourself. But you can see cache file updates and track changes to cache at the end of the build pipeline from '[Download Artifacts](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts) > `ac_cache.zip`'. Also, build logs have some useful information about the cache mechanism and how included and excluded paths are processed. You can see the produced cache file size from the build logs. (The size of the cache file affects upload and download durations.)
 
 :::caution
 
-To view the generated artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in the [workflow](/workflows) after this step.
+To view the generated artifacts on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step is included in the [workflow](/build-integrations) after this step.
 
 :::
 

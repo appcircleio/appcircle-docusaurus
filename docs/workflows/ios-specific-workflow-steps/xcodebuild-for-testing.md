@@ -1,6 +1,7 @@
 ---
 title: Xcodebuild for Testing
 description: Build your app with Xcodebuild for Testing. Generate an IPA for use in test automation frameworks like BrowserStack or Testinium."
+slug: /build-integrations/ios-specific-integrations/xcodebuild-for-testing
 tags: [build, test, ios, workflow, step]
 ---
 
@@ -8,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcodebuild for Testing
 
-This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](/workflows/ios-specific-workflow-steps/browserstack-app-automation) or [**Testinium**](/workflows/common-workflow-steps/testinium-steps/testinium).
+This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](/build-integrations/ios-specific-integrations/browserstack-app-automation) or [**Testinium**](/build-integrations/common-integrations/testinium-steps/testinium).
 
 ### Prerequisites
 
@@ -16,8 +17,8 @@ Before running the **Xcodebuild for Testing** step, you must complete certain pr
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)     | This step selects the Xcode version that is specified. |
-| [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)   | This step installs all the dependencies of the pod file. |
+| [**Xcode Select**](/build-integrations/ios-specific-integrations/xcode-select)     | This step selects the Xcode version that is specified. |
+| [**CocoaPods Install**](/build-integrations/ios-specific-integrations/cocoapods-install)   | This step installs all the dependencies of the pod file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2827-testingOrder.png' />
 
@@ -35,7 +36,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status               |
 |-------------------------------|------------------------------------------------|----------------------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps#git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations#git-clone) step. | Required |
 | `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_ARCHIVE_FLAGS`             | Specifies the extra xcodebuild flag. For example: **`-quiet`** | Optional |
 | `$AC_PROJECT_PATH`               | Specifies the project path. For example: **`./appcircle.xcodeproj`**. This variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |

@@ -1,6 +1,7 @@
 ---
 title: Jira Comment
 description: Explore Jira Comment, a tool for efficient project management and issue tracking. Enhance your workflow with Appcircle's integration.
+slug: /build-integrations/common-integrations/jira-comment
 tags: [jira, workflow, issue tracking, step]
 ---
 
@@ -36,7 +37,7 @@ To ensure that the **Jira Comment** step runs even if your workflow fails, pleas
 
 To add a comment, the issue ID must be supplied to the component. We need to get this issue ID dynamically so that our workflow can work for multiple branches. Appcircle components use environment variables to pass the state. We can add a step just before the **Jira Comment** to prepare the necessary environment variables.
 
-For example, you're working on a feature branch called `feature/jiraissue-1`. You may use the below Ruby script to get `jiraissue-1` from the branch name and use this information with the **Jira Comment**. Please see the [**Custom Script documentation**](/workflows/common-workflow-steps/custom-script) for this implementation.
+For example, you're working on a feature branch called `feature/jiraissue-1`. You may use the below Ruby script to get `jiraissue-1` from the branch name and use this information with the **Jira Comment**. Please see the [**Custom Script documentation**](/build-integrations/common-integrations/custom-script) for this implementation.
 
 ```ruby
 branch = ENV['AC_GIT_BRANCH']
@@ -100,7 +101,7 @@ The required inputs for authorization vary based on the type of Jira instance (O
 | `$AC_JIRA_EMAIL`              | The email associated with your Jira account. This field is required for using API tokens instead of PAT.         | Optional |
 | `$AC_JIRA_TOKEN`              | User's API Token. If this value is fill, the Jira e-mail field must be filled. Only Jira Cloud users can use API Token. You can create token from [here](https://id.atlassian.com/manage-profile/security/api-tokens) | Optional |
 | `$AC_JIRA_PAT`              | Specify the Personal Access Token for Jira authentication. Only Jira On-Prem users can use PAT.  | Optional |
-| `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to this [header](/workflows/common-workflow-steps/jira-comment#configuration-of-jira-comment) for instructions on extracting this information from branch names or commit messages. | Required |
+| `$AC_JIRA_ISSUE`              | The ID or key of the issue. Refer to this [header](/build-integrations/common-integrations/jira-comment#configuration-of-jira-comment) for instructions on extracting this information from branch names or commit messages. | Required |
 | `$AC_JIRA_FAIL_TRANSITION`    | Transition ID or name for the failed step. Optionally change the status of your issue if the previous state fails. Ensure that the `Always run this step even if the previous steps fail` switch is enabled for this feature to work.  | Optional |
 | `$AC_JIRA_SUCCESS_TRANSITION` | Transition ID or name for the successful step. Optionally change the status of your issue if the previous state succeeds.                                                    | Optional |
 | `$AC_JIRA_TEMPLATE_V2`           | The comment template used to post a comment if [Jira REST API Version 2](#jira-rest-api-version-reference) is selected. Variables prefixed with `$` will be replaced during the build process. Refer to [this header](#changing-template) to modify the template. | Required |
