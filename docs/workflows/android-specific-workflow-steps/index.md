@@ -9,7 +9,7 @@ tags: [android, mobile]
 
 The steps listed below are specific to the Android build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
 ## [Android Build for UI Testing](/build-integrations/android-specific-integrations/android-build-for-ui-testing)
 

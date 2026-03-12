@@ -9,7 +9,7 @@ tags: [ios, mobile, workflow, step]
 
 The steps listed below are specific to the iOS build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
 ## [App Center iOS Distribution](/build-integrations/ios-specific-integrations/appcenter-ios-distribution)
 

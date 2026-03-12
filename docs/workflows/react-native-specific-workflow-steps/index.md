@@ -1,15 +1,15 @@
 ---
-title: React Native Specific Workflow Steps
-description: Explore React Native specific workflow steps for building profiles. Visit our workflow marketplace for a complete list.
+title: React Native Specific Integrations
+description: Explore React Native specific integrations for building profiles. Visit our workflow marketplace for a complete list.
 slug: /build-integrations/react-native-specific-integrations
 tags: [react native, mobile, workflow, step]
 ---
 
-# React Native Specific Workflow Steps
+# React Native Specific Integrations
 
 The steps listed below are specific to the React Native build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
 ## [Appcircle CodePush](/build-integrations/react-native-specific-integrations/appcircle-codepush)
 

@@ -1,17 +1,17 @@
 ---
-title: Common Workflow Steps
-description: Common workflow steps in Appcircle
+title: Common Integrations
+description: Common Integrations in Appcircle
 slug: /build-integrations/common-integrations
 tags: [workflow, steps, common]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Common Workflow Steps
+# Common Integrations
 
 The steps listed below are common across all build profiles regardless of the target OS and platform.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
 ## [Activate SSH Key](/build-integrations/common-integrations/active-ssh-private-key)
 

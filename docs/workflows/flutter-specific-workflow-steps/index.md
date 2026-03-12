@@ -1,15 +1,15 @@
 ---
-title: Flutter Specific Workflow Steps
+title: Flutter Specific Integrations
 description: The steps listed below are specific to the Flutter build profiles.
 slug: /build-integrations/flutter-specific-integrations
 tags: [flutter, build, test, workflow, step]
 ---
 
-# Flutter Specific Workflow Steps
+# Flutter Specific Integrations
 
 The steps listed below are specific to the Flutter build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
 ## [Firebase Deployment](/build-integrations/flutter-specific-integrations/firebase-deployment)
 
