@@ -19,7 +19,7 @@ Currently, this configuration supports enabling SSO with only one identity provi
 
 The SSO setup described in this document integrates the selected identity provider with the Appcircle IAM module, essentially adding the provider as an identity source for Appcircle.
 
-This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okto and OneLogin. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
+This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okta and OneLogin. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
 
 :::caution
 
