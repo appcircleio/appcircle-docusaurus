@@ -280,16 +280,15 @@ For all customization options, you can check this [API documentation](https://gi
 
 ### How to Deploy CodePush Updates to Multiple Environments (Debug, Release etc.)?
 
+#### iOS
+Xcode allows you to define custom build settings for each "configuration" (like debug, release), which can then be referenced as the value of keys within the `Info.plist` file (like the CodePushDeploymentKey setting). This mechanism allows you to easily configure your builds to produce binaries, which are configured to synchronize with different CodePush deployments.
+
+For details on how to setup, visit [Multiple Deployment Testing-iOS](https://github.com/microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-ios.md).
+
 #### Android
 The Android Gradle plugin allows you to define custom config settings for each "build type" (like debug, release). This mechanism allows you to easily configure your debug builds to use your CodePush staging deployment key and your release builds to use your CodePush production deployment key.
 
 For details on how to setup, visit [Multiple Deployment Testing-Android](https://github.com/microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-android.md).
-
-#### iOS
-
-Xcode allows you to define custom build settings for each "configuration" (like debug, release), which can then be referenced as the value of keys within the `Info.plist` file (like the CodePushDeploymentKey setting). This mechanism allows you to easily configure your builds to produce binaries, which are configured to synchronize with different CodePush deployments.
-
-For details on how to setup, visit [Multiple Deployment Testing-iOS](https://github.com/microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-ios.md).
 
 
 ### How to Use CodePush with New Architecture on Android?
