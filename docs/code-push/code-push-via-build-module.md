@@ -21,4 +21,4 @@ With the end-to-end automation capability of the Build Module, you can also incl
 
 - [**Building React Native Projects:**](/build/platform-build-guides/building-react-native-applications) A step-by-step guide for configuring and building React Native applications using Appcircle's Build Module.
 
-- [**Appcircle CodePush Step:**](/workflows/react-native-specific-workflow-steps/appcircle-codepush) Details on how to add and configure the CodePush step in your workflow to automate the release of OTA updates.
+- [**Appcircle CodePush Step:**](/build-integrations/react-native-specific-integrations/appcircle-codepush) Details on how to add and configure the CodePush step in your workflow to automate the release of OTA updates.

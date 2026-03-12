@@ -1,6 +1,7 @@
 ---
 title: Xcodebuild for iOS Simulator
-description: Build your iOS app for the Simulator with Xcodebuild. Creates an unsigned xarchive file. 
+description: Build your iOS app for the Simulator with Xcodebuild. Creates an unsigned xarchive file.
+slug: /build-integrations/ios-specific-integrations/xcodebuild-for-ios-simulator
 tags: [ios, simulator, xcodebuild, workflow, step]
 ---
 
@@ -16,8 +17,8 @@ Before running the **Xcodebuild for iOS Simulator** step, you must complete cert
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)     | This step selects the Xcode version that is specified. |
-| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)   | This step installs all the dependencies of the pod file. |
+| [**Xcode Select**](/build-integrations/ios-specific-integrations/xcode-select)     | This step selects the Xcode version that is specified. |
+| [**Cocoapods Install**](/build-integrations/ios-specific-integrations/cocoapods-install)   | This step installs all the dependencies of the pod file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2586-sim_order.png' />
 
@@ -36,7 +37,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
-| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`         | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. | Required |
 | `$AC_OUTPUT_DIR_PATH`        | Specifies the path for outputs for generated artifacts. | Required |
 | `$AC_SCHEME`                 | Specifies the project scheme for build. If you filled in `Config => Build Schema` in the Configuration, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration). | Required |
 | `$AC_SIMULATOR_ARCH`          | Specifies the CPU architecture for the simulator build. The default variable is **`arm64`**. | Optional |

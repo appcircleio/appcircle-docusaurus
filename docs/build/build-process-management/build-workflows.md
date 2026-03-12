@@ -43,7 +43,7 @@ You can use the "Clone" option to create a new workflow based on the currently a
 
 <Screenshot url="https://cdn.appcircle.io/docs/assets/BE5278-workflow6.png" />
 
-Appcircle will build your application with the steps defined in the [workflow](/workflows). Steps will be executed in order from the top to the bottom.
+Appcircle will build your application with the steps defined in the [workflow](/build-integrations). Steps will be executed in order from the top to the bottom.
 
 You can customize each step for specific configurations with your application structure. Step parameters can be modified, outputs of each step can be used in another step, and step versions can be selected accordingly.
 

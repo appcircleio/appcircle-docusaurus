@@ -1,6 +1,7 @@
 ---
 title: Testinium Run Test Plan
 description: The Testinium Run Test Plan step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
+slug: /build-integrations/common-integrations/testinium-steps/testinium-run-test-plan
 tags: [testinium, plan, run, test, mobile, automation, app automate]
 sidebar_position: 2
 ---
@@ -21,11 +22,11 @@ Before running the **Testinium Run Test Plan** step, you must complete certain p
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) | Required to upload your application to Testinium before executing test plans with the **Testinium Run Test Plan** step. |
+| [**Testinium Upload App**](/build-integrations/common-integrations/testinium-steps/testinium-upload-app) | Required to upload your application to Testinium before executing test plans with the **Testinium Run Test Plan** step. |
 
 :::tip
 
-After using the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) step once, you can add multiple **Testinium Run Test Plan** steps to the workflow for each test plan.
+After using the [**Testinium Upload App**](/build-integrations/common-integrations/testinium-steps/testinium-upload-app) step once, you can add multiple **Testinium Run Test Plan** steps to the workflow for each test plan.
 
 :::
 

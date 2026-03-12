@@ -1,6 +1,7 @@
 ---
 title: Test Reports for React Native
 description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface for React Native applications.
+slug: /build-integrations/react-native-specific-integrations/test-reports-react-native
 tags: [test, test report, test result, automation]
 ---
 
@@ -23,8 +24,8 @@ Before running the **Test Reports for React Native** step, you must complete cer
 
 | Prerequisite Workflow Step                                                                           | Description                                                                                    |
 | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| [**React Native Unit Test**](/workflows/react-native-specific-workflow-steps/react-native-unit-test) | Run unit tests in your project to generate an `junit-report.xml` file containing the test outcomes.   |
-| [**React Native UI Test**](/workflows/react-native-specific-workflow-steps/react-native-ui-test)     | Run UI tests in your project to generate an `e2e-report.xml` file containing the test outcomes. |
+| [**React Native Unit Test**](/build-integrations/react-native-specific-integrations/react-native-unit-test) | Run unit tests in your project to generate an `junit-report.xml` file containing the test outcomes.   |
+| [**React Native UI Test**](/build-integrations/react-native-specific-integrations/react-native-ui-test)     | Run UI tests in your project to generate an `e2e-report.xml` file containing the test outcomes. |
 
 :::caution Prerequisites
 
@@ -45,7 +46,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 :::caution
 
-To view the output artifacts on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step is included in your Workflow after this step.
+To view the output artifacts on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step is included in your Workflow after this step.
 
 :::
 

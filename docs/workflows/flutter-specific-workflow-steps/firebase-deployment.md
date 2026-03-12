@@ -1,6 +1,7 @@
 ---
 title: Firebase Deployment
 description: Firebase deployment is quick, and secure app launches. Get started with our concise guide to deploying on Firebase efficiently.
+slug: /build-integrations/flutter-specific-integrations/firebase-deployment
 tags: [firebase, web, distribution, deployment]
 ---
 
@@ -18,8 +19,8 @@ Before running the **Firebase Deployment** step, you must complete certain prere
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Flutter Build for Web**](/workflows/flutter-specific-workflow-steps/flutter-build-for-web) | The Flutter Build for Web step builds your web application using the [Flutter SDK](https://docs.flutter.dev/deployment/web#building-the-app-for-release) |
-| [**Flutter Install**](/workflows/flutter-specific-workflow-steps/flutter-install) | This step installs the [Flutter SDK](https://docs.flutter.dev/deployment/web#building-the-app-for-release). If no version is specified, it installs the latest stable version. |
+| [**Flutter Build for Web**](/build-integrations/flutter-specific-integrations/flutter-build-for-web) | The Flutter Build for Web step builds your web application using the [Flutter SDK](https://docs.flutter.dev/deployment/web#building-the-app-for-release) |
+| [**Flutter Install**](/build-integrations/flutter-specific-integrations/flutter-install) | This step installs the [Flutter SDK](https://docs.flutter.dev/deployment/web#building-the-app-for-release). If no version is specified, it installs the latest stable version. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3150-deployOrder.png' />
 

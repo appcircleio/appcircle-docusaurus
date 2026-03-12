@@ -1,6 +1,7 @@
 ---
 title: Export Build Artifacts
 description: Exports the specified build artifacts from the build agent to the Appcircle dashboard.
+slug: /build-integrations/common-integrations/export-build-artifacts
 tags: [export, artifact, build, workflow, step]
 ---
 

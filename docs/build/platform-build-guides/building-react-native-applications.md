@@ -150,7 +150,7 @@ Once you complete your build configuration, you can edit your build workflow. Re
 
 To learn more about Appcircle's Workflow editor, see the corresponding page below:
 
-<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/build-integrations">What are Workflows and How to Use Them?</ContentRef>
 
 ### Starting a React Native Build and After a Build
 
@@ -231,7 +231,7 @@ Appcircle uses the LTS (Long Term Support) node version by default.
 
 You can access how to change your node version and other relative information about workflow steps and configurations on the page below:
 
-<ContentRef url="/workflows/react-native-specific-workflow-steps">React Native Specific Workflow Steps</ContentRef>
+<ContentRef url="/build-integrations/react-native-specific-integrations">React Native Specific Workflow Steps</ContentRef>
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

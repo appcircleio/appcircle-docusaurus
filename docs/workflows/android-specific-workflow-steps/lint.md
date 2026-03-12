@@ -1,6 +1,7 @@
 ---
 title: Lint
 description: Learn how to use the Android Lint workflow step in Appcircle
+slug: /build-integrations/android-specific-integrations/lint
 tags: [android, mobile, lint]
 ---
 
@@ -18,7 +19,7 @@ Before running the **Android Lint** step, you must complete certain prerequisite
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                   |
 | --------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | To start the **Android Lint** process, the repository that needs to be built must be fetched from the branch. This generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Android Lint** step. |
 
 :::caution
 
@@ -36,14 +37,14 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name        | Description                                                                                                                                                                                                                                                                                                                                                                                        | Status   |
 | -------------------- |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
-| `$AC_REPOSITORY_DIR` | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                            | Required |
+| `$AC_REPOSITORY_DIR` | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/build-integrations/common-integrations/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                            | Required |
 | `$AC_MODULE`         | This variable specifies the project module to be built. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can locate the available modules for your project. For more information, please refer to this [Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
 | `$AC_VARIANTS`       | This variable specifies the project variant to be built. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants).               | Required |
 | `$AC_PROJECT_PATH`   | Specifies the project path. If your project that needs to be built is **not located** in the root directory where it was cloned from Git, you should provide the subpath as a relative path.                                                                                                                                                                                                       | Optional |
 
 :::info
 
-If you have filled in the required variables in the **Configuration** section, you will not need to redefine these variables again on the [**Workflows**](/workflows/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document.
+If you have filled in the required variables in the **Configuration** section, you will not need to redefine these variables again on the [**Workflows**](/build-integrations/). For more information about configurations, refer to the [Build Profile Configuration Overview](/build/build-process-management/configurations) document.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lint_3.png' alt="Configuration Image" />
 
@@ -64,7 +65,7 @@ The output(s) resulting from the operation of this component are as follows:
 
 :::caution
 
-To view the Lint report on the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/workflows/common-workflow-steps#export-build-artifacts) step is included in your **Workflow** after this step.
+To view the Lint report on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts/#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations#export-build-artifacts) step is included in your **Workflow** after this step.
 
 :::
 

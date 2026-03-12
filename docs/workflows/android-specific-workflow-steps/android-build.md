@@ -1,6 +1,7 @@
 ---
 title: Android Build
-description: Learn how to use the Android Build workflow step in Appcircle
+description: Learn how to use the Android Build integration in Appcircle
+slug: /build-integrations/android-specific-integrations/android-build
 tags: [android, mobile, android build, build]
 ---
 
@@ -17,7 +18,7 @@ Before running the **Android Build** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                                                                                                                  |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | To initiate the Android build process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the Git Clone step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-android-build_3.png' alt="image2" />
 
@@ -29,7 +30,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | ----------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
-| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                             | Required |
+| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/build-integrations/common-integrations/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                             | Required |
 | `$AC_MODULE`                  | This variable specifies the project module to be build. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can locate the available modules for your project. For more information, please refer to [this Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
 | `$AC_VARIANTS`                | This variable specifies the project variant to be build. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants).               | Required |
 | `$AC_OUTPUT_TYPE`             | This variable specifies the output type for your build file (APK or AAB). This variable can also be set via the build [Configuration](/build/build-process-management/configurations).                                                                                                                                                                                          | Required |
@@ -107,7 +108,7 @@ You can implement this solution using one of the following methods:
 
 #### Method 1: Using a Custom Script During the Build
 
-If your project has varying heap size requirements, you can adjust the heap size during the build phase with a [**Custom Script**](/workflows/common-workflow-steps/custom-script) before the **Android Build** step. Your script should include the following command:
+If your project has varying heap size requirements, you can adjust the heap size during the build phase with a [**Custom Script**](/build-integrations/common-integrations/custom-script) before the **Android Build** step. Your script should include the following command:
 
 ```bash
 echo "org.gradle.jvmargs=-Xms1g -Xmx7168M"  >> $AC_REPOSITORY_DIR/gradle.properties
@@ -148,7 +149,7 @@ If adding two **Android Build** steps makes the build process too lengthy, you c
 
 2. **Generating APK from AAB file:**
     1. **Configure for AAB:** Set up the build [configuration](/build/build-process-management/configurations) to generate an AAB.
-    2. **Add a Bundle Universal Apk Step:** Insert the [`Bundle Universal Apk`](/workflows/android-specific-workflow-steps/bundle-universal-apk) step in your workflow after the **Android Build** step.
+    2. **Add a Bundle Universal Apk Step:** Insert the [`Bundle Universal Apk`](/build-integrations/android-specific-integrations/bundle-universal-apk) step in your workflow after the **Android Build** step.
     3. **Configure the Bundle Universal Apk Step:** Complete the inputs for the **Bundle Universal Apk** step. To sign the APK via this step, you might need to upload your keystore file to the system if there is no uploaded.
     4. **Convert AAB to APK:** This step will convert the generated AAB into an APK.
 

@@ -1,6 +1,7 @@
 ---
 title: Xcode Select
 description: Specify Xcode version for your build process with Xcode Select.
+slug: /build-integrations/ios-specific-integrations/xcode-select
 tags: [xcode, version, workflow, step]
 ---
 
@@ -16,7 +17,7 @@ There are no prerequisites required before using the **Xcode Select** step.
 
 :::danger
 
-Always use this step **before** [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) and [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices). If you have other **Xcode related** steps, such as [**Xcodebuild for iOS Simulators**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator) and [**Xcodebuild for Unit and UI Tests**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test), **don't forget** to use before them.
+Always use this step **before** [**CocoaPods Install**](/build-integrations/ios-specific-integrations/cocoapods-install) and [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices). If you have other **Xcode related** steps, such as [**Xcodebuild for iOS Simulators**](/build-integrations/ios-specific-integrations/xcodebuild-for-ios-simulator) and [**Xcodebuild for Unit and UI Tests**](/build-integrations/ios-specific-integrations/xcodebuild-for-unit-and-ui-test), **don't forget** to use before them.
 
 :::
 

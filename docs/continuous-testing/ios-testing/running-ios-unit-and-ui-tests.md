@@ -34,7 +34,7 @@ Make sure the step is after the **Xcode Select** step and before **Export Build 
 
 See the following page on our documentation to learn more about adding new workflow steps:
 
-<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/build-integrations">What are Workflows and How to Use Them?</ContentRef>
 
 To learn more about **Xcodebuild for Unit and UI Tests** step, visit its source on Github:
 
@@ -88,10 +88,10 @@ Appcircle can show passing and failing tests in compact UI. If your tests genera
 
 Appcircle currently supports the following mobile automation testing tools:
 
-- [Appium](/workflows/common-workflow-steps/#appium-server)
-- [BrowserStack App Automate (XCUI)](/workflows/ios-specific-workflow-steps/browserstack-app-automation)
-- [Maestro](/workflows/common-workflow-steps/maestro-cloud-upload)
-- [Testinium](/workflows/common-workflow-steps/testinium-steps/testinium)
+- [Appium](/build-integrations/common-integrations/#appium-server)
+- [BrowserStack App Automate (XCUI)](/build-integrations/ios-specific-integrations/browserstack-app-automation)
+- [Maestro](/build-integrations/common-integrations/maestro-cloud-upload)
+- [Testinium](/build-integrations/common-integrations/testinium-steps/testinium)
 
 Each service allows you to run your tests on real devices, and test scenarios can be started with the artifacts created on Appcircle. Rich reports can be managed by visiting the web site of each service.
 
@@ -119,6 +119,6 @@ curl -u "$AC_BROWSERSTACK_USERNAME:$AC_BROWSERSTACK_ACCESS_KEY" \
 
 :::info
 
-Appcircle's [**BrowserStack App Automate(XCUI)**](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/browserstack-app-automation) step already parses JUnit Test reports. The above code sample is only given as an example.
+Appcircle's [**BrowserStack App Automate(XCUI)**](https://docs.appcircle.io/build-integrations/ios-specific-integrations/browserstack-app-automation) step already parses JUnit Test reports. The above code sample is only given as an example.
 
 :::

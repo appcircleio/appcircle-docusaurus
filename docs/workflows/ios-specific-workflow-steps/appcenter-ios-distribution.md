@@ -1,6 +1,7 @@
 ---
 title: App Center iOS Distribution
 description: Distribute your iOS app to App Center for testing and distribution.
+slug: /build-integrations/ios-specific-integrations/appcenter-ios-distribution
 tags: [distribute, app center, ios, workflow, step]
 ---
 
@@ -16,13 +17,13 @@ Before running the **App Center iOS Distrubiton** step, you must complete certai
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | This step will build your application in ARM architecture and generate an `IPA` and `dSYM` file. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices) | This step will build your application in ARM architecture and generate an `IPA` and `dSYM` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2612-center_order.png' />
 
 :::caution
 
-Note that if you do not use this step after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices), Appcircle will not find **IPA** and **dSYM** files to distribute to the **App Center**.
+Note that if you do not use this step after the [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices), Appcircle will not find **IPA** and **dSYM** files to distribute to the **App Center**.
 
 :::
 

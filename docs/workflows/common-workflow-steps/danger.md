@@ -1,6 +1,7 @@
 ---
 title: Danger
 description: Streamline your code review process with Danger. Automate checks and enforce code standards pre-merge to maintain high-quality software.
+slug: /build-integrations/common-integrations/danger
 tags: [code review, quality assurance, automaiton, development tools, appcircle, mobile ci/cd]
 ---
 
@@ -19,7 +20,7 @@ https://appcircle.io/blog/danger-in-ci-automate-your-mobile-code-reviews
 
 :::danger
 
-This tool does not support AzureDevOps. Therefore, if your repository is hosted on AzureDevOps, this tool will not function. Please use the [**Azure Bot for Swiftlint**](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint)(for iOS) and [**Azure Bot for Detekt Report**](/workflows/android-specific-workflow-steps/azure-bot-for-detekt-report)(for Android) components instead.
+This tool does not support AzureDevOps. Therefore, if your repository is hosted on AzureDevOps, this tool will not function. Please use the [**Azure Bot for Swiftlint**](/build-integrations/ios-specific-integrations/azure-bot-for-swiftlint)(for iOS) and [**Azure Bot for Detekt Report**](/build-integrations/android-specific-integrations/azure-bot-for-detekt-report)(for Android) components instead.
 
 :::
 
@@ -55,7 +56,7 @@ Before running the **Danger** step, you must complete certain prerequisites, as 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repository needs to be cloned to begin the code review process. After this step, the variable `$AC_REPOSITORY_DIR` will be set. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | The repository needs to be cloned to begin the code review process. After this step, the variable `$AC_REPOSITORY_DIR` will be set. |
 
 :::caution
 
@@ -91,7 +92,7 @@ For more information, please visit the [**Environment Variables**](/build/build-
 
 | Variable Name                             | Description                                                                                                                                    | Status   |
 |-------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_REPOSITORY_DIR`                      | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`                      | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. | Required |
 | `$AC_DANGER_PATH`                         | Specifies path of Dangerfile. This path comes from `$AC_REPOSITORY_DIR`. If DangerFile is in main directory of your repository. Do not change.  | Required |
 | `$AC_DANGER_EXTRA_PARAMETERS`             | Extra command line parameters. For Example: enter `--verbose` for verbose mode.                                                                | Optional |
 | `$DANGER_GITHUB_API_TOKEN`                | Github Access Token for the bot user.                                                                                                          | Optional |

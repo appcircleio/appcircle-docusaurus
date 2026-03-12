@@ -64,7 +64,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - The Single Active Session feature has been introduced for [Enterprise App Store](/enterprise-app-store/portal-settings#session-management) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#single-active-session) modules. This restricts users to one active session across browsers and devices by terminating previous sessions on a new login, supporting SSO, Static, and LDAP authentication types. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [KOBIL AppShield Scanner](/workflows/common-workflow-steps/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a KOBIL account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [KOBIL AppShield Scanner](/build-integrations/common-integrations/kobil-appshield-scanner) component has been added and can be used by Appcircle users without creating a KOBIL account, providing dynamic analysis to detect security mechanisms in mobile apps. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Custom Script from Git component is now available in Publish flows, enabling you to execute scripts directly from your Git repositories. This enhancement improves script reusability and manageability across your publish flows. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -75,7 +75,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - A notification will now be displayed in the Notification Center when a new user is invited to the organization. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Metadata Approval step name has been changed to Metadata Approval via Email. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Publish module now supports Custom Script execution with Node.js and Python runtimes, enabling script reuse and more advanced automation during the Publish phase. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/build-integrations/common-integrations/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/> <SelfHostedBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3 RC1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
@@ -243,7 +243,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - Introducing [Build Activity Log](/build/build-activity-log) – Actions such as creating, deleting, and adding Build profiles or updating configurations performed in your Organization or Sub-Organizations can now be viewed in the Build Activity Log section. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Added a new [Check Network Access component](/workflows/common-workflow-steps/check-network-access) to the Build Module to validate connectivity to common endpoints and custom URLs, ensuring early detection of network issues during workflows. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Added a new [Check Network Access component](/build-integrations/common-integrations/check-network-access) to the Build Module to validate connectivity to common endpoints and custom URLs, ensuring early detection of network issues during workflows. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Publish flows can now be initiated with a single click using the new Start Publish Process button located next to the action list button for each app version. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
@@ -409,7 +409,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 
 ### 🆕 New Features
 
-- The [Custom Script from Git component](/workflows/common-workflow-steps/custom-script#how-do-i-store-and-re-use-custom-scripts-from-a-git-repository) now lets you pull and run your scripts directly from any Git repository. Supported script types: Bash (`.sh`), Ruby (`.rb`), Python (`.py`), Perl (`.pl`), Node.js (`.js`), and Java (`.java`). <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Custom Script from Git component](/build-integrations/common-integrations/custom-script#how-do-i-store-and-re-use-custom-scripts-from-a-git-repository) now lets you pull and run your scripts directly from any Git repository. Supported script types: Bash (`.sh`), Ruby (`.rb`), Python (`.py`), Perl (`.pl`), Node.js (`.js`), and Java (`.java`). <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -969,7 +969,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - SSO and LDAP configurations for Enterprise Portal and Testing Portal access have been separated and can now be found under Authentication Settings within the Security section of the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The login and user management settings for SSO and LDAP have been separated into dedicated sections for authentication and authorization, offering improved clarity and control over the management of these configurations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A version option has been added in the Tuist component to allow installation of a specific Tuist version. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The [Tuist Commands](workflows/ios-specific-workflow-steps/tuist-commands) step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Tuist Commands](/build-integrations/ios-specific-integrations/tuist-commands) step has been added to the Appcircle iOS workflow to enable execution of specific Tuist commands. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - [React Native UI Test](continuous-testing/react-native-testing/react-native-ui-test-with-detox) and [React Native Unit Test](continuous-testing/react-native-testing/react-native-unit-test-with-jest) components have been added to Appcircle workflows to enable the execution of unit and UI tests for projects on the React Native platform. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Actions in the Signing Identity module can now be monitored within the [Activity Log](/signing-identities/signing-identities-activity-log) section. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Informative screens were added to provide users with guidance when switching authentication methods from Testing Distribution or Enterprise App Store settings. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
@@ -1081,7 +1081,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - The Authentications section is now hidden for sub-organizations. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Deleted SSO mapping settings will no longer appear in new configurations, ensuring data integrity. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The **Order** tab has been added to the LDAP creation settings. <AccountBadge/> <SelfHostedBadge/>
-- [The Android Increment Build and Version Number](/workflows/android-specific-workflow-steps/increment-build-and-version-number) workflow step is now compatible with Kotlin DSL projects, so that you can manage your app versioning within the Appcircle pipeline seamlessly. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [The Android Increment Build and Version Number](/build-integrations/android-specific-integrations/increment-build-and-version-number) workflow step is now compatible with Kotlin DSL projects, so that you can manage your app versioning within the Appcircle pipeline seamlessly. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -1144,7 +1144,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - An additional rule has been implemented to prevent the deletion of deployed versions marked as `Live` or `Beta` in the Enterprise App Store. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An updated warning message will now be shown if the notify button is used without LDAP or SSO authentication. The message will also be tailored to cases where no emails are entered in the [***Manage Access***](enterprise-app-store/enterprise-app-store-profile#manage-access) settings, ensuring clearer notifications. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A new rule set has been implemented in the Enterprise App Store to prevent the [deletion of versions](enterprise-app-store/enterprise-app-store-profile#delete) marked as `Live` or `Beta`. RC-marked versions cannot be deleted, the delete buttons for Live and Beta versions have been disabled. To delete these versions, they must first be unpublished <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The Build Module has been updated to enforce uniqueness for all [workflow](workflows) step names. This enhancement was implemented to prevent potential conflicts caused by duplicate names, thereby improving the clarity and reliability of build workflows. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Build Module has been updated to enforce uniqueness for all [workflow](/build-integrations) step names. This enhancement was implemented to prevent potential conflicts caused by duplicate names, thereby improving the clarity and reliability of build workflows. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The ability to cancel the publishing process, as well as triggered and tagged builds, has been introduced. <PublishBadge/> <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The Store Submit display has been removed from the Self-Hosted dashboard. <SelfHostedBadge/>
 
@@ -1333,7 +1333,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - Fixed an issue where build logs were being saved prematurely due to a time synchronization problem, causing logs to be saved before the end of the process. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where API returned incorrect response code for requests with invalid commitId or buildId. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Admin Build Details section showed incorrect build status for cancelled builds. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Fixed an issue in Jira comments where new lines were not rendered when using [Jira REST API v2](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment#jira-rest-api-version-reference), as the payload was previously received as plain text. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed an issue in Jira comments where new lines were not rendered when using [Jira REST API v2](https://docs.appcircle.io/build-integrations/common-integrations/jira-comment#jira-rest-api-version-reference), as the payload was previously received as plain text. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where users couldn't send release notes for binaries via 'Send to Google Play'. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the Publish Flow did not display the final step after successfully completing the process. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
@@ -1354,7 +1354,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - Fixed an issue where the restart flow rule failed in certain cases, causing invalid flow validations within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed issues where the API allowed requests with duplicate and blank [Publish variable](https://docs.appcircle.io/publish-to-stores-module/publish-variables) and group names. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where [Store Status](https://docs.appcircle.io/publish-to-stores-module/binary-management#store-status) received from the Get Approval from Test Flight or Get Approval from App Store steps was not being displayed on the AppVersion's and Profile's Store Status. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Fixed a bug at the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step that was throwing an unexpected JSON parse error when using [Jira REST API v3](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment#jira-rest-api-version-reference) and ensured the integrity of the payload for commit messages containing line breaks. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed a bug at the [Jira Comment](https://docs.appcircle.io/build-integrations/common-integrations/jira-comment) step that was throwing an unexpected JSON parse error when using [Jira REST API v3](https://docs.appcircle.io/build-integrations/common-integrations/jira-comment#jira-rest-api-version-reference) and ensured the integrity of the payload for commit messages containing line breaks. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that was affecting Appcircle UI notifications such as build success, failure, etc. <SelfHostedBadge/>
 - Fixed a problem that caused the self-hosted Appcircle server logging service to not start and work correctly when using the root user. <SelfHostedBadge/>
 
@@ -1371,7 +1371,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - The ["Get Approval via Email"](https://docs.appcircle.io/publish-integrations/common-publish-integrations/get-approval-via-email) component now allows you to view the statuses of all users in its logs. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have added an activity log for updates to Release Notes on the [Metadata Information](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information) page within the Publish Module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Self-hosted users can now choose to hide the Change Password option in the account settings page by disabling the Forgot Password option in Self-Hosted Settings. <AccountBadge/> <SelfHostedBadge/>
-- We have added the ability for Jira Enterprise users to choose the API version.The [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) workflow step now supports both Jira Cloud and On-Prem use cases for both Jira API v2 and v3, which makes the integration more flexible. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- We have added the ability for Jira Enterprise users to choose the API version.The [Jira Comment](https://docs.appcircle.io/build-integrations/common-integrations/jira-comment) workflow step now supports both Jira Cloud and On-Prem use cases for both Jira API v2 and v3, which makes the integration more flexible. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - We have updated the documentation links on the workflow steps to enable users to access the most current and detailed documents for integration purposes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
@@ -1387,12 +1387,12 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 - Fixed a bug on UI where an app version name was cut short due to Release Candidate badge , also affected the other app version names within Publish Profile. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where, during the resigning of an .IPA binary, the sign button was enabled despite no Provision Profile being selected. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue regarding the positioning of the Provisioning Profile and Read-Only Bundle ID options within Resign Binary feature has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The broken Jira transitions that the [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment) step is making are now fixed so that you can update the status of Jira issues in the build pipeline. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The broken Jira transitions that the [Jira Comment](https://docs.appcircle.io/build-integrations/common-integrations/jira-comment) step is making are now fixed so that you can update the status of Jira issues in the build pipeline. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Android apps with special characters in their names now proceed without errors during signing and other steps. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - A bug fix has been applied to the auto distribution and publish features to address issues with non-existing Testing Distribution and Publish Profiles. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
-- Fixed the incorrect versioning of the [Gradle Runner](https://docs.appcircle.io/workflows/android-specific-workflow-steps/gradle-runner) step, which was breaking current workflows because of incompatible changes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [Testinium](https://docs.appcircle.io/workflows/common-workflow-steps/testinium-steps/testinium) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
-- [Maestro Cloud Upload](https://docs.appcircle.io/workflows/common-workflow-steps/maestro-cloud-upload) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Fixed the incorrect versioning of the [Gradle Runner](https://docs.appcircle.io/build-integrations/android-specific-integrations/gradle-runner) step, which was breaking current workflows because of incompatible changes. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Testinium](https://docs.appcircle.io/build-integrations/common-integrations/testinium-steps/testinium) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [Maestro Cloud Upload](https://docs.appcircle.io/build-integrations/common-integrations/maestro-cloud-upload) step dependencies are defined for the workflow editor so that the user can easily include the integration in the correct order. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that caused the [no-proxy](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration#edit-no_proxy-for-internal-container-network) helper tool to throw an error when the CIDR notation was used in the `no_proxy` environment variable. <SelfHostedBadge/>
 - Fixed a bug that prevented the self-hosted Appcircle server logging service from being healthy when a proxy is used for network access. <SelfHostedBadge/>
 - Fixed a bug that causes the wrong self-hosted server package to [download](https://docs.appcircle.io/self-hosted-appcircle/update#1-download-latest) when a specific version is preferred instead of the latest. <SelfHostedBadge/>
@@ -1544,7 +1544,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Within the Publish Module, customers now have the capability to designate their desired app version as a Release Candidate, streamlining the process of identifying and managing versions prior to official release. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" and [self-hosted macOS VM image](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup/) have been updated to include the latest [Xcode 15.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-15_3-release-notes) release. <CloudBadge/> <SelfHostedBadge/>
 - The "Appcircle Standard macOS Pool (arm64)" has been transitioned to [macOS Sonoma](https://docs.appcircle.io/infrastructure/ios-build-infrastructure), now featuring the latest Xcode and stack updates. <CloudBadge/> <SelfHostedBadge/>
-- The "Appcircle Standard macOS Pool (arm64)" and the self-hosted runner environment now feature the latest [JDK 21](/workflows/common-workflow-steps/select-java-version), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
+- The "Appcircle Standard macOS Pool (arm64)" and the self-hosted runner environment now feature the latest [JDK 21](/build-integrations/common-integrations/select-java-version), along with patch version upgrades for JDK 8, 11, and 17, ensuring compatibility and providing users with access to the most up-to-date Java development environment. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -1628,7 +1628,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Fixed a bug that makes browser crash while viewing build logs. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that prints the incorrect remaining limit when the license is expired. <CloudBadge/> <SelfHostedBadge/>
 - Fixed a bug that threw an error while renaming the publish profile. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the missing default values for [Appdome Build-2Secure for Android](/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android) workflow step output. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the missing default values for [Appdome Build-2Secure for Android](/build-integrations/android-specific-integrations/appdome-build-to-secure-for-android) workflow step output. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the [JaCoCo](https://www.eclemma.org/jacoco/) code coverage "NilObject" error by improving the parser algorithm at the [test report](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests#generating-test-report) workflow step. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the format of values in the publish flow step settings so that they're more user-friendly instead of "key|value" style. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the value of the `AC_PULL_NUMBER` environment variable in the build pipeline, which should be the merge request `iid` value for the GitLab connection. <CloudBadge/> <SelfHostedBadge/>
@@ -1670,11 +1670,11 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Fixed an issue that caused the [invited user](/account/my-organization/profile-and-team/team-management) not to be redirected to the sign up page if they were not registered. <CloudBadge/> <SelfHostedBadge/>
 - Fixed an issue where the authentication logs section was not visible. <CloudBadge/>
 - The error with the email hint text falling into the email field on the login and sign up pages has been fixed. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the [Xcodebuild for Unit and UI Tests](/workflows/ios-specific-workflow-steps/#xcodebuild-for-unit-and-ui-tests) workflow step, which was stuck in the build pipeline until timeout in some cases. <CloudBadge/> <SelfHostedBadge/>
-- Fixed the crash in the [Export Build Artifacts](/workflows/common-workflow-steps#export-build-artifacts) workflow step that occurs while uploading files in the artifacts that have 0 bytes of length or no content. <CloudBadge/> <SelfHostedBadge/>
-- The bundler version bug has been fixed in the [Fastlane](/workflows/common-workflow-steps/fastlane) workflow step by pinning the last bundler version compatible with the ruby version that's included in build runners. <CloudBadge/> <SelfHostedBadge/>
-- The permission error that occurred while using the [Authenticate with Netrc](/workflows/common-workflow-steps#authenticate-with-netrc) workflow step was fixed. <CloudBadge/> <SelfHostedBadge/>
-- The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the [Xcodebuild for Unit and UI Tests](/build-integrations/ios-specific-integrations/#xcodebuild-for-unit-and-ui-tests) workflow step, which was stuck in the build pipeline until timeout in some cases. <CloudBadge/> <SelfHostedBadge/>
+- Fixed the crash in the [Export Build Artifacts](/build-integrations/common-integrations#export-build-artifacts) workflow step that occurs while uploading files in the artifacts that have 0 bytes of length or no content. <CloudBadge/> <SelfHostedBadge/>
+- The bundler version bug has been fixed in the [Fastlane](/build-integrations/common-integrations/fastlane) workflow step by pinning the last bundler version compatible with the ruby version that's included in build runners. <CloudBadge/> <SelfHostedBadge/>
+- The permission error that occurred while using the [Authenticate with Netrc](/build-integrations/common-integrations#authenticate-with-netrc) workflow step was fixed. <CloudBadge/> <SelfHostedBadge/>
+- The command line parameter order has been changed to fetch provisioning profiles for signing first, which fixes the broken auto-sign feature in the [Xcodebuild for Devices](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) workflow step. <CloudBadge/> <SelfHostedBadge/>
 - Fixed the errors thrown while using the [Bitbucket](/build/manage-the-connections/connection-guides/connecting-to-bitbucket) connection in build profiles. <CloudBadge/> <SelfHostedBadge/>
 - In the [Azure DevOps Server 2020](/build/manage-the-connections/connection-guides/connecting-to-azure#connecting-to-azure-devops-server-repository) version, the trigger was malfunctioning due to the different JSON format received after a merge operation following a PR (Pull Request). It was fixed. <CloudBadge/> <SelfHostedBadge/>
 - The bug that prevents users from changing their emails was fixed. <CloudBadge/> <SelfHostedBadge/>
@@ -1688,15 +1688,15 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - Added [Connections](/build/manage-the-connections) to the Build module, where all connections (OAuth, PAT) can be viewed and edited. From here, you can disconnect, reconnect, and view the build profiles affected by the connections. <CloudBadge/> <SelfHostedBadge/>
 - You can now [disconnect and reconnect](/build/manage-the-connections/reconnect-change-provider#change-git-provider-and-reconnect) to another repository or Git provider without deleting the link to an added profile. You can also change PATs for connections made with PAT. <CloudBadge/> <SelfHostedBadge/>
-- The [Testinium](/workflows/common-workflow-steps/#testinium) workflow component now tries several times in case of an error from the Testinium APIs. <CloudBadge/> <SelfHostedBadge/>
-- The [Appdome-Build-2Secure](/workflows/ios-specific-workflow-steps/#appdome-build-2secure-for-ios) for iOS component was added, which is the integration that allows activating security and app protection features. <CloudBadge/> <SelfHostedBadge/>
+- The [Testinium](/build-integrations/common-integrations/#testinium) workflow component now tries several times in case of an error from the Testinium APIs. <CloudBadge/> <SelfHostedBadge/>
+- The [Appdome-Build-2Secure](/build-integrations/ios-specific-integrations/#appdome-build-2secure-for-ios) for iOS component was added, which is the integration that allows activating security and app protection features. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
 - Now builds that result in a warning will also appear as a warning in the branch list. <CloudBadge/> <SelfHostedBadge/>
 - Appcircle builds can now be displayed as “Appcircle/BuildProfileId” in pipelines on Git providers. <CloudBadge/> <SelfHostedBadge/>
 - The URL format validation used when adding Git provider [instances](/build/manage-the-connections/connection-guides/connecting-multiple-instance) has been removed for self-hosted environments. <SelfHostedBadge/>
-- The [Testinium](/workflows/common-workflow-steps/#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
+- The [Testinium](/build-integrations/common-integrations/#testinium) workflow component parses result summary and outputs in seperate environment variables. <CloudBadge/> <SelfHostedBadge/>
 - A user-friendly format has been introduced in the [testing distribution](/testing-distribution/create-or-select-a-distribution-profile) emails. <CloudBadge/> <SelfHostedBadge/>
 - [Brute-force protection](/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/ldap-brutefore) and the ability to configure it have been added when logging into the Enterprise App Store and Testing Distribution via the LDAP method in self-hosted use. <SelfHostedBadge/>
 - The caching mechanism used when choosing between Testing Distribution [authentication](/testing-distribution/create-or-select-a-distribution-profile#authentication) options has been disabled for the sake of quick response. <CloudBadge/> <SelfHostedBadge/>
@@ -1740,9 +1740,9 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - A bug that prevented failed builds from sending notifications to the MS Teams application has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - Previously, you could only select one profile for test deployment. Now you can select [multiple profiles in the distribution](/build/build-process-management/configurations#distribution-configuration) profile settings. <CloudBadge/> <SelfHostedBadge/>
 - Removed the obsolete icon from the Commit ID redirect link in the build profile details. <CloudBadge/> <SelfHostedBadge/>
-- The cache size was bumped to 4 GB while using the [cache push](/workflows/common-workflow-steps/#cache-push) in the build pipeline. <SelfHostedBadge/>
+- The cache size was bumped to 4 GB while using the [cache push](/build-integrations/common-integrations/#cache-push) in the build pipeline. <SelfHostedBadge/>
 - We made improvements to the self-hosted server [SSL configuration](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) for enhanced security. <SelfHostedBadge/>
-- The [Testinium](/workflows/common-workflow-steps/#testinium) workflow step has the latest improvements from customer feedback and enhanced stability. <CloudBadge/> <SelfHostedBadge/>
+- The [Testinium](/build-integrations/common-integrations/#testinium) workflow step has the latest improvements from customer feedback and enhanced stability. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
@@ -1778,7 +1778,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - Users can more easily switch to the self-hosted version of their choice by only [downloading](../self-hosted-appcircle/install-server/linux-package/update#1-download-latest) the server package. <SelfHostedBadge/>
 - Added the [NTP configuration](../self-hosted-appcircle/self-hosted-runner/runner-vm-setup#2-configure-base-runners-ntp-settings) helper tool to the self-hosted runner package. <SelfHostedBadge/>
 - Added self-signed certificate management for Node.JS to the [certificate installer](../self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates#adding-certificates) tool. <SelfHostedBadge/>
-- Now you can analyze your [SwiftLint](/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint) and [Detekt](/workflows/android-specific-workflow-steps/) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
+- Now you can analyze your [SwiftLint](/build-integrations/ios-specific-integrations/azure-bot-for-swiftlint) and [Detekt](/build-integrations/android-specific-integrations/) reports and post the report details under the opened PR on Azure DevOps. <CloudBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixed
 
@@ -1818,7 +1818,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🐞 Fixed
 
-- The confusion regarding the use of foreign characters when creating [workflows](/workflows) and [configurations](/build/build-process-management/configurations) has been resolved. foreign characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
+- The confusion regarding the use of foreign characters when creating [workflows](/build-integrations) and [configurations](/build/build-process-management/configurations) has been resolved. foreign characters and some special characters can no longer be used in this section. <CloudBadge/> <SelfHostedBadge/>
 - The error in [permission management](/account/my-organization) in the environment variables section has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The problem with the build transaction texts above the branch name in the "Branch" section being mixed up has been fixed. <CloudBadge/> <SelfHostedBadge/>
 - The error in permission management in the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile) section has been fixed. <CloudBadge/> <SelfHostedBadge/>
@@ -1894,15 +1894,15 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 - [Java 17](../infrastructure/android-build-infrastructure) added to build agents. <CloudBadge/> <SelfHostedBadge/>
 - [Build Profile](/build/manage-the-connections/connection-guides) configurations are separated from branchs. It is now easier to see and manage configs from a single location. <CloudBadge/> <SelfHostedBadge/>
 - [SSO](/account/my-organization/security/authentications) and [LDAP](/account/my-organization/security/authentications) Login added to Testing Distribution. <CloudBadge/> <SelfHostedBadge/>
-- [Azure Boards](/workflows/common-workflow-steps/azure-board) workflow step added. <CloudBadge/> <SelfHostedBadge/>
-- [Repeato](/workflows/common-workflow-steps/#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
-- [Snyk Secure Scan](/workflows/common-workflow-steps/#snyk-scan-security) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [Azure Boards](/build-integrations/common-integrations/azure-board) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [Repeato](/build-integrations/common-integrations/#repeato-mobile-test-automation) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [Snyk Secure Scan](/build-integrations/common-integrations/#snyk-scan-security) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
-- [Xcode Build for Simulator](/workflows/ios-specific-workflow-steps/#xcodebuild-for-ios-simulator) workflow step updated. The new version allows you to create both x86_64 and arm64 simulator builds. This step can optionally install the simulator builds to run UI tests on the simulator. <CloudBadge/> <SelfHostedBadge/>
+- [Xcode Build for Simulator](/build-integrations/ios-specific-integrations/#xcodebuild-for-ios-simulator) workflow step updated. The new version allows you to create both x86_64 and arm64 simulator builds. This step can optionally install the simulator builds to run UI tests on the simulator. <CloudBadge/> <SelfHostedBadge/>
 - [Test Report](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests) step tries to parse JUnit files if it can't find .xctestresult files. This can be useful if your testing framework(BrowserStack, Repeato, etc.) is producing JUnit reports. <CloudBadge/> <SelfHostedBadge/>
-- [Wait for Android Emulator](/workflows/android-specific-workflow-steps/#wait-for-android-emulator) step updated to install optional APK after the emulator boots. <CloudBadge/> <SelfHostedBadge/>
+- [Wait for Android Emulator](/build-integrations/android-specific-integrations/#wait-for-android-emulator) step updated to install optional APK after the emulator boots. <CloudBadge/> <SelfHostedBadge/>
 - The default Xcode version is bumped to 14.2 for new projects. <CloudBadge/> <SelfHostedBadge/>
 - Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
@@ -1926,11 +1926,11 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 ### 🆕 New Feature
 
 - [Xcode 14.3](/infrastructure/ios-build-infrastructure) added to build agents. Since Xcode 14.3 only runs on Ventura, Appcircle Standard macOS Pool (arm64) infrastructure is also updated. Please test your workflows extensively. <CloudBadge/> <SelfHostedBadge/>
-- [FTP Upload](/workflows/common-workflow-steps/#ftp-upload) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [FTP Upload](/build-integrations/common-integrations/#ftp-upload) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
-- [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step updated. <CloudBadge/> <SelfHostedBadge/>
+- [Data Theorem Mobile Secure](/build-integrations/common-integrations/#data-theorem-mobile-secure) workflow step updated. <CloudBadge/> <SelfHostedBadge/>
 - New options added to [Android Resign](/testing-distribution/resigning-binaries). <CloudBadge/> <SelfHostedBadge/>
 - Sub-organizations can see their download reports. <CloudBadge/> <SelfHostedBadge/>
 - Build configuration screen is improved. Changing the tabs no longer resets the configuration. <CloudBadge/> <SelfHostedBadge/>
@@ -1944,8 +1944,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🆕 New Feature
 
-- [Data Theorem Mobile Secure](/workflows/common-workflow-steps/#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
-- [App Center CodePush](/workflows/react-native-specific-workflow-steps/appcircle-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [Data Theorem Mobile Secure](/build-integrations/common-integrations/#data-theorem-mobile-secure) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center CodePush](/build-integrations/react-native-specific-integrations/appcircle-codepush) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 - Latest five build status added to build profile. <CloudBadge/> <SelfHostedBadge/>
 - Slack Bot added. <CloudBadge/>
 
@@ -1973,8 +1973,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 - [Resigning](/testing-distribution/resigning-binaries) iOS and Android binaries added to Test Distribution module. <CloudBadge/> <SelfHostedBadge/>
 - Enterprise customers can create [sub organizations](/account/my-organization) to manage their users. <CloudBadge/> <SelfHostedBadge/>
-- [App Center iOS Distribution](/workflows/ios-specific-workflow-steps#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
-- [App Center Android Distribution](/workflows/android-specific-workflow-steps#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center iOS Distribution](/build-integrations/ios-specific-integrations#app-center-ios-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
+- [App Center Android Distribution](/build-integrations/android-specific-integrations#app-center-android-distribution) workflow step added. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvement
 
@@ -2022,7 +2022,7 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🆕 New Feature
 
-- [AppSweep Mobile Security Testing](/workflows/android-specific-workflow-steps/#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
+- [AppSweep Mobile Security Testing](/build-integrations/android-specific-integrations/#appsweep-mobile-security-testing) component added. <CloudBadge/> <SelfHostedBadge/>
 - [Self-signed certificate](/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration) support added for Testing Distribution. <SelfHostedBadge/>
 - [Enterprise App Store](/enterprise-app-store/portal-customization) is now available in German and Turkish languages in addition to English. To switch to your preferred language, simply navigate to the language settings on your store homepage and select either German or Turkish. <CloudBadge/> <SelfHostedBadge/>
 - [New APIs](https://api.appcircle.io/openapi/index.html?urls.primaryName=store) are added to directly download IPA or APK files from Enterprise App Store by using a PAT. <CloudBadge/> <SelfHostedBadge/>
@@ -2073,10 +2073,10 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 ### 🆕 New Feature
 
 - [LDAP Login](/enterprise-app-store/portal-settings#ldap-login) added to Enterprise App Store.
-- [Jira](/workflows/common-workflow-steps/jira-comment) component added.
+- [Jira](/build-integrations/common-integrations/jira-comment) component added.
 - [Microsoft Teams](/account/my-organization/notifications/teams-notifications) integration added.
-- [Gradle Runner](/workflows/android-specific-workflow-steps/#gradle-runner) component added.
-- [Maestro Cloud Upload](/workflows/common-workflow-steps/#maestro-cloud-upload) component added.
+- [Gradle Runner](/build-integrations/android-specific-integrations/#gradle-runner) component added.
+- [Maestro Cloud Upload](/build-integrations/common-integrations/#maestro-cloud-upload) component added.
 
 ### :muscle: Improvement
 
@@ -2092,11 +2092,11 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 ### 🆕 New Feature
 
 - [Apple Devices](/signing-identities/apple-devices) section will allow you to easily register new devices and add them to Ad Hoc provisioning profiles.
-- [Firebase Deployment ]/workflows/flutter-specific-workflow-steps/firebase-deployment) component added.
+- [Firebase Deployment ]/build-integrations/flutter-specific-integrations/firebase-deployment) component added.
 
 ### :muscle: Improvement
 
-- [Firebase App Distribution](/workflows/common-workflow-steps/#firebase-app-distribution) component support service account.
+- [Firebase App Distribution](/build-integrations/common-integrations/#firebase-app-distribution) component support service account.
 - UI improvements for the custom script editor.
 
 ### 🐞 Fixed
@@ -2107,8 +2107,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🆕 New Feature
 
-- [BrowserStack App Automate - Espresso](/workflows/android-specific-workflow-steps/#browserstack-app-automate---espresso) component added
-- [BrowserStack App Automate - XCUI](/workflows/ios-specific-workflow-steps/#browserstack-app-automate---xcui) component added
+- [BrowserStack App Automate - Espresso](/build-integrations/android-specific-integrations/#browserstack-app-automate---espresso) component added
+- [BrowserStack App Automate - XCUI](/build-integrations/ios-specific-integrations/#browserstack-app-automate---xcui) component added
 
 ### :muscle: Improvement
 
@@ -2143,8 +2143,8 @@ The single-node single drive [MinIO configuration](/self-hosted-appcircle/instal
 
 ### 🆕 New Feature
 
-- [Testinium](/workflows/common-workflow-steps/#testinium) component added. This component allows you to run your test plans on [Testinium](https://testinium.com)
-- [Firebase dSYM Upload](/workflows/ios-specific-workflow-steps/firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
+- [Testinium](/build-integrations/common-integrations/#testinium) component added. This component allows you to run your test plans on [Testinium](https://testinium.com)
+- [Firebase dSYM Upload](/build-integrations/ios-specific-integrations/firebase-upload-dsym) component added. You may use this component to upload Debug Symbols to Firebase.
 
 ### :muscle: Improvement
 
@@ -2179,7 +2179,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 ### 🆕 New Feature
 
 - Test Reports added for [iOS](/continuous-testing/ios-testing/running-ios-unit-and-ui-tests) and [Android](/continuous-testing/android-testing/running-android-unit-tests). Please check their documentation to learn how to set up your workflows.
-- [Danger](/workflows/common-workflow-steps/#code-reviews-with-danger) component added. Danger runs during your CI process and gives teams the chance to automate common code review chores
+- [Danger](/build-integrations/common-integrations/#code-reviews-with-danger) component added. Danger runs during your CI process and gives teams the chance to automate common code review chores
 - The emulator feature is removed.
 
 ### :muscle: Improvement
@@ -2195,9 +2195,9 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 ### 🆕 New Feature
 
 - [Fallback config](/build/build-process-management/build-manually-or-with-triggers) added for Pull/Merge Requests and Tag triggers.
-- [Netrc component](/workflows/common-workflow-steps) You can use this component to add credentials for hosts such as your repositories or external hosts.
-- [Bundletool Component](/workflows/android-specific-workflow-steps) You can use this component to create universal apk from the aab.
-- [Detekt](/workflows/android-specific-workflow-steps) You can use this component to run your detekt gradle task.
+- [Netrc component](/build-integrations/common-integrations) You can use this component to add credentials for hosts such as your repositories or external hosts.
+- [Bundletool Component](/build-integrations/android-specific-integrations) You can use this component to create universal apk from the aab.
+- [Detekt](/build-integrations/android-specific-integrations) You can use this component to run your detekt gradle task.
 
 ### :muscle: Improvement
 
@@ -2207,9 +2207,9 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 
 ### 🆕 New Feature
 
-- [Fortify On Demand Component](/workflows/common-workflow-steps) You can use Fortify On Demand uploader for all your projects.
-- [Firebase App Distribution Component](/workflows/common-workflow-steps) You can use Firebase App Distribution to distribute your builds.
-- [Wait for Android Emulator](/workflows/android-specific-workflow-steps) You must use this step before your UI tests to wait for the Android emulator to start.
+- [Fortify On Demand Component](/build-integrations/common-integrations) You can use Fortify On Demand uploader for all your projects.
+- [Firebase App Distribution Component](/build-integrations/common-integrations) You can use Firebase App Distribution to distribute your builds.
+- [Wait for Android Emulator](/build-integrations/android-specific-integrations) You must use this step before your UI tests to wait for the Android emulator to start.
 
 ### :muscle: Improvement
 
@@ -2231,8 +2231,8 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 
 - [New Dashboard](https://my.appcircle.io) Appcircle has a brand new dashboard that shows an overview of your account.
 - [Artifacts Management](/account/my-organization/artifacts) You can set the retention period for your build artifacts.
-- [Appium Server Component](/workflows/common-workflow-steps) You can use Appium Server for iOS and Android projects.
-- [SwiftLint Component](/workflows/ios-specific-workflow-steps) You can use Swiftlint for iOS projects.
+- [Appium Server Component](/build-integrations/common-integrations) You can use Appium Server for iOS and Android projects.
+- [SwiftLint Component](/build-integrations/ios-specific-integrations) You can use Swiftlint for iOS projects.
 
 ### :muscle: Improvement
 
@@ -2251,7 +2251,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 - [Self-Hosted Runners](../self-hosted-appcircle/self-hosted-runner) Self-hosted runner enables you to use your own systems and infrastructure for running Appcircle build pipelines.
 - [Automatic iOS Code Signing](/signing-identities/apple-profiles#automatic-signing) If you're using Xcode 13 or later, you can now use the automatic code signing option to automatically sign your iOS apps.
 - [Artifacts Management](/account/my-organization/artifacts) You can set the retention period for your build artifacts.
-- [SonarQube Component](/workflows/common-workflow-steps) You can use SonarQube for iOS and Android projects.
+- [SonarQube Component](/build-integrations/common-integrations) You can use SonarQube for iOS and Android projects.
 
 ### :muscle: Improvement
 
@@ -2286,7 +2286,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 
 ### 🆕 New Feature
 
-- [Release Notes Component](/workflows/common-workflow-steps/publish-release-notes) You can create release notes with Publish Release Notes component.
+- [Release Notes Component](/build-integrations/common-integrations/publish-release-notes) You can create release notes with Publish Release Notes component.
 - [Enterprise App Store](/enterprise-app-store/portal-settings) Certificate Details added to Enterprise App Store.
 - [Enterprise App Store](../enterprise-app-store/enterprise-reports) Detailed reports are added to Enterprise App Store.
 - [Open API](https://api.appcircle.io/openapi/index.html?urls.primaryName=signing-identity) New API endpoints added to Certificate and Provisioning profiles upload.
@@ -2315,7 +2315,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 
 - [Android Stack](https://docs.appcircle.io/infrastructure/android-build-infrastructure) Android Build Infrastructure updated. Now the default JAVA version is 11.
 - [iOS Stack](https://docs.appcircle.io/infrastructure/ios-build-infrastructure) iOS Build Infrastructure updated. Xcode 13.4 added to iOS agents.
-- [Workflow Management](https://docs.appcircle.io/workflows/#setting-up-workflows) You can now import or export your workflows as a YAML file.
+- [Workflow Management](https://docs.appcircle.io/build-integrations/#setting-up-workflows) You can now import or export your workflows as a YAML file.
 - [Appcircle CLI Update](https://www.npmjs.com/package/@appcircle/cli) Getting Live and Beta versions added to CLI.
 - When you download the logs, the profile and branch names will be added to the file name.
 
@@ -2328,7 +2328,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 ### 🆕 New Feature
 
 - [SSO Login](https://docs.appcircle.io/account/sso/single-sign-on) is now available for all Enterprise accounts. You can connect your SAML and OpenID Provider right now!
-- [Cached Builds](https://docs.appcircle.io/workflows/common-workflow-steps/#cache-push) are available to all. You can now use the Cache Push and Cache Pull components on your workflows to cache your dependencies and speed up your builds.
+- [Cached Builds](https://docs.appcircle.io/build-integrations/common-integrations/#cache-push) are available to all. You can now use the Cache Push and Cache Pull components on your workflows to cache your dependencies and speed up your builds.
 
 ### 🐞 Fixed
 
@@ -2340,7 +2340,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 
 - Huawei AppGallery support added. You can submit your apk or aab files to Huawei AppGallery.
 - Java 11 added to iOS agents
-- [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#slather),[Tuist](https://docs.appcircle.io/workflows/ios-specific-workflow-steps#tuist) and Badge components added
+- [Slather](https://docs.appcircle.io/build-integrations/ios-specific-integrations#slather),[Tuist](https://docs.appcircle.io/build-integrations/ios-specific-integrations#tuist) and Badge components added
 - You can now see all your running builds from the status bar and cancel them.
 - [Skip the Workflow](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers/#skipping-a-workflow) if the commit message includes `[skip ci]` or `[ci skip]`
 - [Retry Merge/Pull Request workflow](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers/#retrying-a-workflow) if the comment includes `[retry]`
@@ -2350,7 +2350,7 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 - [Triggers updated](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers/#auto-build-on-every-push). You can use a default config for new branches. You no longer need to configure every branch.
 - [New environment variables](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables/) added for commit message, build number, PR number, time stamp.
 - You can now download build logs directly from the menu.
-- [Node Install](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) step uses `lts` version as default.
+- [Node Install](https://docs.appcircle.io/build-integrations/react-native-specific-integrations#install-node) step uses `lts` version as default.
 - Error messages are clarified for build permissions.
 
 ### 🐞 Fixed
@@ -2468,7 +2468,7 @@ Your current GitHub OAuth connection will stay as is. However, Appcircle recomme
 
 ### Disclaimer for React Native Users
 
-The default Node version which Appcircle uses to build React Native apps are upgraded from v13 to v16. If your app relies on v13 or another specific version of Node, [refer to this documentation](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps#install-node) to configure your node version. You can change your node version on your workflow settings at **Install Node** step.
+The default Node version which Appcircle uses to build React Native apps are upgraded from v13 to v16. If your app relies on v13 or another specific version of Node, [refer to this documentation](https://docs.appcircle.io/build-integrations/react-native-specific-integrations#install-node) to configure your node version. You can change your node version on your workflow settings at **Install Node** step.
 
 :::
 
@@ -2570,7 +2570,7 @@ More info is located under: [https://developer.apple.com/news/?id=ib31uj1j](http
 - You can specify which Xcode version to use on your builds. This can also be specified on the repository and will be seamlessly fetched from the relevant repository during the **Fetch Details** Process. Available versions: 13.0, 12.5, 12.4, 12.3, 12.2, 12.1, 12.0, 11.7, 11.6, 11.5, 11.4, 11.3, 11.2, 11.1 and 11.0
   - Latest Xcode 13 beta is used on 13.0.x
 - [Appcircle CLI ](https://www.npmjs.com/package/@appcircle/cli)has a fresh look\&feel and lots of new features along with it.
-- [Export Build Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps#export-build-artifacts) has been added for a separate step. You can remove this step and upload your files elsewhere if your artifacts have a need to be on-premise.
+- [Export Build Artifacts](https://docs.appcircle.io/build-integrations/common-integrations#export-build-artifacts) has been added for a separate step. You can remove this step and upload your files elsewhere if your artifacts have a need to be on-premise.
 - [Setting build status](https://docs.appcircle.io/build/building-ios-applications#sending-the-build-status-to-the-repository-providers) updates to the repository providers - You can now send updates about a commit to the repository providers for a complete CI/CD experience.
 - A new workflow setting, **Always run this step even if the previous steps fail** has been added. The steps which have this enabled will always run.
 - [Appcircle Marketplace](https://www.appcircle.io/integrations/) has been released. Checking which features are supported built-in has never been easier!
@@ -2613,7 +2613,7 @@ This is a major release with the complete revamp of the build workflows and auto
 
 ### 🆕 New Feature
 
-- [Repository-level workflows](/workflows) - You can now define multiple workflows in a build profile and assign them to multiple branches or assign multiple workflows to the same branch. You can also clone workflows for easier management.
+- [Repository-level workflows](/build-integrations) - You can now define multiple workflows in a build profile and assign them to multiple branches or assign multiple workflows to the same branch. You can also clone workflows for easier management.
 - [Repository-level triggers](/build/build-process-management/build-manually-or-with-triggers) - You can now specify triggers in the build profile level with wildcards for branch names and workflow selection for each trigger for higher flexibility and manageability of the build profiles.
 - [Pull request/merge request triggers](/build/build-process-management/build-manually-or-with-triggers#auto-build-pullmerge-requests) - You can now trigger builds whenever you initiate a pull request or merge request from a source branch to the target branch. The build will be done with the pull/merge result. This allows testing the PR/MR result before the actual approval of the request.
 

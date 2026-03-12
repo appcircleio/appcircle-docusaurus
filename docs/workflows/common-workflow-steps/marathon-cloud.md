@@ -1,6 +1,7 @@
 ---
 title: Marathon Cloud 
 description: Accelerate your mobile app development with Marathon Cloud integration on Appcircle. Seamless integration and efficient management capabilities.
+slug: /build-integrations/common-integrations/marathon-cloud
 tags: [marathon, cloud, test, automation, test report, test automation]
 ---
 
@@ -25,14 +26,14 @@ Please note that this component works separately on both the native **Android** 
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing) | After the Xcodebuild for Testing step runs, the test IPA paths `$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH` will be created automatically. So that the **Marathon Cloud** component depends on these paths. |
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | Once the Android Build for UI Testing step is completed, the test APK paths `$AC_APK_PATH` and `$AC_TEST_APK_PATH` are automatically generated. The **Marathon Cloud** component relies on these paths. |
+| [**Xcodebuild for Testing**](/build-integrations/ios-specific-integrations/xcodebuild-for-testing) | After the Xcodebuild for Testing step runs, the test IPA paths `$AC_TEST_IPA_PATH` and `$AC_UITESTS_RUNNER_PATH` will be created automatically. So that the **Marathon Cloud** component depends on these paths. |
+| [**Android Build for UI Testing**](/build-integrations/android-specific-integrations/android-build-for-ui-testing) | Once the Android Build for UI Testing step is completed, the test APK paths `$AC_APK_PATH` and `$AC_TEST_APK_PATH` are automatically generated. The **Marathon Cloud** component relies on these paths. |
 
 :::danger
 
 When using this component for the **iOS platform**, do not forget to change the **`Destination`** value in the **Xcodebuild for Testing** step. This value will be `generic/platform=iOS` by default. This means that it creates a generic test `IPA` for all iOS devices. Since the Marathon Cloud component runs on a specific test device, you need to change this value. For example, `platform=iOS Simulator,name=iPhone 15 Pro,OS=17.2`.
 
-Please note that if you do not change this parameter, the Marathon Cloud component will fail and the pipeline will break. For further information, please follow the [**Xcodebuild for Testing documentation**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing).
+Please note that if you do not change this parameter, the Marathon Cloud component will fail and the pipeline will break. For further information, please follow the [**Xcodebuild for Testing documentation**](/build-integrations/ios-specific-integrations/xcodebuild-for-testing).
 
 :::
 

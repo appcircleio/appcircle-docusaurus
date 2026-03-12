@@ -1,6 +1,7 @@
 ---
 title: Authenticate with Netrc
 description: Authenticate with Netrc in your Appcircle workflows
+slug: /build-integrations/common-integrations/authenticate-with-netrc
 tags: [netrc, authentication, git, curl]
 ---
 

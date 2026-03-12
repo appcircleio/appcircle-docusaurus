@@ -1,6 +1,7 @@
 ---
 title: iOS Increment Build and Version Number
 description: Learn how to increment the version code and version name of an iOS application in Appcircle
+slug: /build-integrations/ios-specific-integrations/ios-increment-build-and-version-number
 tags: [versioning, ios, build version, version code, version name, increment]
 ---
 

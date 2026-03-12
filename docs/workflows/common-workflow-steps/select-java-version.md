@@ -1,6 +1,7 @@
 ---
 title: Select Java Version
 description: Switch the current Java version to the selected one.
+slug: /build-integrations/common-integrations/select-java-version
 tags: [java, java version, jdk]
 ---
 
@@ -35,7 +36,7 @@ There are no prerequisites required before using the **Select Java Version** ste
 
 :::caution
 
-If you have a step that necessitates changing the Java version (e.g., the [**Android Build**](/workflows/android-specific-workflow-steps/android-build) step), the **Select Java Version** step should run before that step in the [workflow](/workflows).
+If you have a step that necessitates changing the Java version (e.g., the [**Android Build**](/build-integrations/android-specific-integrations/android-build) step), the **Select Java Version** step should run before that step in the [workflow](/build-integrations).
 
 :::
 
@@ -83,7 +84,7 @@ https://github.com/appcircleio/appcircle-select-java-version-component
 
 ### How do I check available Java versions in the Appcircle runner?
 
-To view the Java versions available in the Appcircle runner, you can run the following [Custom Script](/workflows/common-workflow-steps/custom-script) in your workflow:
+To view the Java versions available in the Appcircle runner, you can run the following [Custom Script](/build-integrations/common-integrations/custom-script) in your workflow:
 
 ```bash
 echo "Default Java version:" $JAVA_HOME

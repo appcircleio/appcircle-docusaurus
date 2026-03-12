@@ -1,6 +1,7 @@
 ---
 title: Appium Server
 description: Enhance your app testing with Appium Server. Automate mobile app testing across platforms for better efficiency and accuracy in development.
+slug: /build-integrations/common-integrations/appium-server
 tags: [testing, automation, server, cli, development, appium]
 ---
 

@@ -1,6 +1,7 @@
 ---
 title: Wait for Android Emulator
 description: The Wait for Android Emulator step waits for the Android Emulator to boot. You must use this step before running any UI tests.
+slug: /build-integrations/android-specific-integrations/wait-for-android-emulator
 tags: [android, mobile, emulator]
 ---
 
@@ -24,8 +25,8 @@ Before running the **Wait for Android Emulator** step, you must complete certain
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                                                                                                                                                                                            |
 | -------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | This step is necessary to obtain the Android outputs required for processing. Without adding this step beforehand, the **Wait for Android Emulator** step will still function, but the app will not be installed.                                                                                                                      |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. Failure to add this step beforehand will result in the **Wait for Android Emulator** step still functioning, but since the app is not signed, there may be installation issues. If your app is already signed, you can skip this step. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | This step is necessary to obtain the Android outputs required for processing. Without adding this step beforehand, the **Wait for Android Emulator** step will still function, but the app will not be installed.                                                                                                                      |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. Failure to add this step beforehand will result in the **Wait for Android Emulator** step still functioning, but since the app is not signed, there may be installation issues. If your app is already signed, you can skip this step. |
 
 :::caution
 
