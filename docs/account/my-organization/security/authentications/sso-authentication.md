@@ -19,7 +19,7 @@ Currently, this configuration supports enabling SSO with only one identity provi
 
 The SSO setup described in this document integrates the selected identity provider with the Appcircle IAM module, essentially adding the provider as an identity source for Appcircle.
 
-This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okta, OneLogin and Keycloak. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
+This document provides a comprehensive guide to configuring SSO with various supported identity providers, including Auth0, Microsoft Entra ID (formerly Azure Active Directory), Okto and OneLogin. Whether you choose to implement OpenID Connect or SAML, this guide will walk you through the necessary steps to ensure a successful integration with Appcircle.
 
 :::caution
 
@@ -39,9 +39,6 @@ When Single Sign-On (SSO) is enabled for an organization, all users must log in 
     - Okta (SAML)
 - OneLogin:
     - OneLogin (SAML)
-- Keycloak:
-    - Keycloak (OpenID Connect)
-    - Keycloak (SAML)
 
 Each section will provide detailed instructions for configuring your chosen identity provider, including screenshots and troubleshooting tips to ensure a smooth setup process.
 
@@ -60,7 +57,7 @@ These prerequisites will ensure that the SSO configuration process is smooth and
 
 Understanding the following key terms will help you navigate the SSO configuration process more effectively:
 
-- **Identity Provider (IdP):** The service responsible for authenticating the user and issuing identity information. Common examples include Auth0, Microsoft Entra ID, Okta, OneLogin, and Keycloak.
+- **Identity Provider (IdP):** The service responsible for authenticating the user and issuing identity information. Common examples include Auth0, Microsoft Entra ID, Okta and OneLogin.
 - **Service Provider (SP):** The service (in this case, Appcircle) that relies on the IdP to authenticate users and grant them access. The SP uses the identity information provided by the IdP to manage user sessions and permissions.
 - **SAML Assertion:** A secure XML document sent by the IdP to the SP, containing the user's authentication and authorization information. This document is a core component of the SAML protocol, used to establish a user’s identity across different services.
 - **OpenID Connect Token:** A token used in the OpenID Connect protocol to convey identity information from the IdP to the SP. This token typically includes user information and is crucial for establishing secure communication between the IdP and SP.
@@ -958,31 +955,5 @@ This section provides a list of common issues that users might encounter during 
 - **Incomplete Attribute Mapping:** Verify that all necessary user attributes are mapped from OneLogin to Appcircle to avoid incomplete user sessions or missing information.
 - **Account Linking Failures:** Ensure that user email addresses match between OneLogin and Appcircle. Discrepancies in user data can prevent successful account linking.
 - **Certificate Expiration:** Verify that the SAML signing certificate in OneLogin is valid and not expired to ensure seamless authentication with Appcircle.
-
-</details>
-
-<details>
-  <summary>6.8 Troubleshooting for Keycloak (OpenID Connect)</summary>
-
-- **Invalid Client ID/Secret:** Verify that the Client ID and Secret from Keycloak are correctly entered in Appcircle.
-- **Incorrect Redirect URI:** Ensure that the redirect URIs match between Keycloak and Appcircle.
-- **Incorrect Client Configuration:** Ensure that the client settings in Keycloak, including redirect URIs and client secrets, are correctly configured to match those in Appcircle’s SSO settings.
-- **Key Rotation Issues:** Periodically check for key rotations in Keycloak and update the keys in Appcircle’s SSO configuration to avoid validation errors.
-- **OIDC Token Mismatches:** Validate that the tokens issued by Keycloak match the expected format in Appcircle, including the correct scopes and audience claims.
-- **Token Signature Verification Failures:** Ensure the public key in Appcircle matches the one used by Keycloak for token signing.
-
-</details>
-
-<details>
-  <summary>6.9 Troubleshooting for Keycloak (SAML)</summary>
-
-- **Certificate Mismatches:** Ensure the SAML certificate in Keycloak matches what Appcircle expects.
-- **SAML Response Issues:** Verify that the NameID format and attribute mapping are configured correctly.
-- **ACS URL Errors:** Ensure the Assertion Consumer Service (ACS) URL in Keycloak matches the one configured in Appcircle.
-- **Assertion Signing Problems:** Ensure that the assertions are properly signed and that the correct signing algorithm is used in both Keycloak and Appcircle. Mismatches in signing algorithms can lead to failed authentication attempts.
-- **SAML Assertion Format Issues:** Use a SAML debugging tool to validate the format and content of the SAML assertions before configuring them in Appcircle. Ensure that all required fields, such as the audience and recipient, are correctly set.
-- **Misconfigured SAML Bindings:** Verify that the correct SAML binding method (e.g., POST or Redirect) is configured in both Keycloak and Appcircle to ensure smooth communication during the SSO process.
-- **Invalid Certificate Configuration:** Ensure that the SAML signing certificate used in Keycloak is valid and correctly configured in Appcircle. Expired or incorrectly configured certificates can cause authentication failures.
-- **Clock Synchronization Issues:** Ensure that the system clocks of both Keycloak and Appcircle are synchronized to prevent timing-related authentication errors, such as expired assertions.
 
 </details>
