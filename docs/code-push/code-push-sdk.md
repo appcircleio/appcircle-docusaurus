@@ -287,7 +287,7 @@ For details on how to setup, visit [Multiple Deployment Testing-Android](https:/
 
 #### iOS
 
-Xcode allows you to define custom build settings for each "configuration" (like debug, release), which can then be referenced as the value of keys within the Info.plist file (like the CodePushDeploymentKey setting). This mechanism allows you to easily configure your builds to produce binaries, which are configured to synchronize with different CodePush deployments.
+Xcode allows you to define custom build settings for each "configuration" (like debug, release), which can then be referenced as the value of keys within the `Info.plist` file (like the CodePushDeploymentKey setting). This mechanism allows you to easily configure your builds to produce binaries, which are configured to synchronize with different CodePush deployments.
 
 For details on how to setup, visit [Multiple Deployment Testing-iOS](https://github.com/microsoft/react-native-code-push/blob/master/docs/multi-deployment-testing-ios.md).
 
