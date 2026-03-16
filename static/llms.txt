@@ -1,0 +1,437 @@
+# Appcircle Documentation
+
+> Appcircle is an enterprise-grade mobile CI/CD platform that automates building, testing, signing, and distributing iOS, Android, React Native, and Flutter applications. It offers cloud, self-hosted, and hybrid deployment options with advanced security and modular architecture.
+
+## Getting Started
+
+- [Getting Started With Appcircle](https://docs.appcircle.io/getting-started-with-appcircle): Appcircle is a mobile CI/CD platform which makes it easy for you to manage the lifecycle of your mobile applications.
+- [Latest Release Notes](https://docs.appcircle.io/release-notes): Appcircle release notes
+
+## Build
+
+- [Build Module Overview](https://docs.appcircle.io/build): Streamline your app development with the Build Module in Appcircle, offering automated builds for iOS and Android platforms.
+- [Build Profile](https://docs.appcircle.io/build/build-process-management): Learn how to manage your build processes effectively with Appcircle.
+- [Profile Creation](https://docs.appcircle.io/build/build-process-management/profile-creation): Learn how to create Build Profiles on Appcircle
+- [Configurations](https://docs.appcircle.io/build/build-process-management/configurations): Learn how to create and manage Build Profile configurations on Appcircle
+- [Workflows](https://docs.appcircle.io/build/build-process-management/build-workflows): Learn how to create and manage Build Profile workflows on Appcircle
+- [Triggers](https://docs.appcircle.io/build/build-process-management/build-manually-or-with-triggers): Learn how to build manually or automatically with webhooks and triggers in Appcircle
+- [Branch Operations](https://docs.appcircle.io/build/build-process-management/build-profile-branch-operations): Learn how to manage branches in Appcircle
+- [Manual Builds](https://docs.appcircle.io/build/build-process-management/manual-builds): Learn how to start manual builds on Appcircle
+- [Binary Actions](https://docs.appcircle.io/build/build-process-management/binary-actions): Learn how to use binary actions on Appcircle
+- [Build History](https://docs.appcircle.io/build/build-history): Get familiar with the Build History Report in Appcircle, tracking build sessions initiated over a specific time period.
+- [Build Activity Log](https://docs.appcircle.io/build/build-activity-log): Understand the Activity Log for Build module in Appcircle.
+- [Connection Guides](https://docs.appcircle.io/build/manage-the-connections/connection-guides): Learn how to connect your repositories to Appcircle via GitHub, GitLab, Bitbucket, Azure DevOps, SSH, or public repositories.
+- [Connecting to GitHub](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-to-github): Learn how to connect your GitHub repositories to Appcircle
+- [Connecting to GitLab](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-to-gitlab): Learn how to connect to GitLab repositories in Appcircle
+- [Connecting to Bitbucket](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-to-bitbucket): Learn how to connect to Bitbucket in Appcircle
+- [Connecting to Azure DevOps](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-to-azure): Learn how to connect to Azure DevOps in Appcircle
+- [Connecting to Private Repository via SSH](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-to-private-repository-via-ssh): Learn how to connect to a private repository via SSH in Appcircle
+- [Connecting to Public Repository](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-to-public-repository): Learn how to connect to a public repository in Appcircle
+- [Connecting to Multiple Instances](https://docs.appcircle.io/build/manage-the-connections/connection-guides/connecting-multiple-instance): Learn how to connect to multiple instances of the same Git provider in Appcircle
+- [Manage the Connections](https://docs.appcircle.io/build/manage-the-connections): The Connections page for checking and editing Git provider connections.
+- [Connection Management](https://docs.appcircle.io/build/manage-the-connections/reconnect-change-provider): Learn how to manage connections in Appcircle
+- [Accessing Internal Networks](https://docs.appcircle.io/build/manage-the-connections/accessing-repositories-in-internal-networks-firewalls): Learn how to access repositories within internal networks and behind firewalls in Appcircle
+- [Platform Build Guides](https://docs.appcircle.io/build/platform-build-guides): Find detailed instructions on building applications for various platforms using Appcircle.
+- [Building iOS Applications](https://docs.appcircle.io/build/platform-build-guides/building-ios-applications): Building iOS applications with Appcircle without any additional configuration.
+- [Building Android Applications](https://docs.appcircle.io/build/platform-build-guides/building-android-applications): Learn how to build Android applications in Appcircle
+- [Android 11+ Signing for Google Play](https://docs.appcircle.io/build/platform-build-guides/building-android-applications/android-signing-for-google-play): Learn how to enable V2 signing for Android 11+ in Appcircle
+- [Flutter Mobile Applications](https://docs.appcircle.io/build/platform-build-guides/building-flutter-applications): Build Flutter applications in Appcircle for iOS or Android platforms.
+- [Flutter Web Applications](https://docs.appcircle.io/build/platform-build-guides/building-flutter-applications/building-flutter-web-applications): Build Flutter web applications in Appcircle.
+- [React Native Applications](https://docs.appcircle.io/build/platform-build-guides/building-react-native-applications): Build React Native applications in Appcircle for iOS or Android platforms.
+- [.NET MAUI Applications](https://docs.appcircle.io/build/platform-build-guides/building-dotnet-maui-apps): Learn how to build a .NET MAUI app on Appcircle
+- [Xamarin Applications](https://docs.appcircle.io/build/platform-build-guides/building-xamarin-apps): Learn how to build a Xamarin app on Appcircle
+- [Ionic Applications](https://docs.appcircle.io/build/platform-build-guides/building-ionic-projects-with-custom-scripts): Learn how to build Ionic applications with custom scripts in Appcircle
+
+## Build Integrations (Workflow Steps)
+
+- [What are Workflows and How to Use Workflows?](https://docs.appcircle.io/workflows): Understand workflows in Appcircle for building, testing, and deploying applications.
+- [Common Workflow Steps](https://docs.appcircle.io/workflows/common-workflow-steps): Common workflow steps in Appcircle
+- [Git Clone](https://docs.appcircle.io/workflows/common-workflow-steps/git-clone): Fetch the source code repository from a Git provider and clone it into the runner.
+- [Custom Script](https://docs.appcircle.io/workflows/common-workflow-steps/custom-script): Use Custom Script steps for additional functionalities in your builds.
+- [Custom Script from Git](https://docs.appcircle.io/workflows/common-workflow-steps/custom-script-from-git): Run scripts during the build by cloning from any Git repository.
+- [Export Build Artifacts](https://docs.appcircle.io/workflows/common-workflow-steps/export-build-artifacts): Exports the specified build artifacts from the build agent to the Appcircle dashboard.
+- [Fastlane](https://docs.appcircle.io/workflows/common-workflow-steps/fastlane): Appcircle supports Fastlane for build automation as a supplementary feature.
+- [Cache Pull](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache/cache-pull): Retrieve and reuse stored data for faster builds.
+- [Cache Push](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache/cache-push): Save and streamline data access for improved build speed.
+- [Build Cache](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache): Build Cache in Appcircle
+- [How to Configure Branch-Base Caching](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching): Configure Appcircle Cache so each branch uses its own isolated cache.
+- [How to Share Files Between Build Profiles](https://docs.appcircle.io/workflows/common-workflow-steps/build-cache/how-to-share-file-between-build-profiles): Share files between build profiles efficiently.
+- [Active SSH Private Key](https://docs.appcircle.io/workflows/common-workflow-steps/active-ssh-private-key): Secure connections with an Active SSH Private Key.
+- [Authenticate with Netrc](https://docs.appcircle.io/workflows/common-workflow-steps/authenticate-with-netrc): Authenticate with Netrc in your Appcircle workflows
+- [Select Java Version](https://docs.appcircle.io/workflows/common-workflow-steps/select-java-version): Switch the current Java version to the selected one.
+- [Set Environment Variable](https://docs.appcircle.io/workflows/common-workflow-steps/set-environment-variable): Set Environment Variable step sets environment value for given keys
+- [Add a Badge to Your App Icon](https://docs.appcircle.io/workflows/common-workflow-steps/add-badge-app-icon): Learn how to add a badge to your app icon with Appcircle's badge component.
+- [File Size Check](https://docs.appcircle.io/workflows/common-workflow-steps/file-size-check): Monitor your app's size and break the pipeline when size limit is exceeded.
+- [Check Network Access](https://docs.appcircle.io/workflows/common-workflow-steps/check-network-access): Check network access with external sources for the Appcircle build module.
+- [Publish Release Notes](https://docs.appcircle.io/workflows/common-workflow-steps/publish-release-notes): Publish release notes for your app versions.
+- [Danger](https://docs.appcircle.io/workflows/common-workflow-steps/danger): Automate code review checks and enforce code standards pre-merge.
+- [SonarQube](https://docs.appcircle.io/workflows/common-workflow-steps/sonarqube): Analyse your code quality with the SonarQube CLI.
+- [Snyk Scan Security](https://docs.appcircle.io/workflows/common-workflow-steps/snyk-scan-security): Incorporate vulnerability scanning into CI/CD workflows with Snyk.
+- [Firebase App Distribution](https://docs.appcircle.io/workflows/common-workflow-steps/firebase-app-distribution): Distribute applications to testers and stakeholders via Firebase.
+- [Upload Files to Amazon S3](https://docs.appcircle.io/workflows/common-workflow-steps/upload-files-to-amazon-s3): Upload files to Amazon S3 with Appcircle.
+- [FTP Upload](https://docs.appcircle.io/workflows/common-workflow-steps/ftp-upload): Streamline file transfers with FTP Upload.
+- [AWS Device Farm and Deploy](https://docs.appcircle.io/workflows/common-workflow-steps/aws-device-farm-and-deploy): Run tests concurrently on multiple mobile devices with AWS Device Farm.
+- [Azure Boards](https://docs.appcircle.io/workflows/common-workflow-steps/azure-board): Manage your software development process with Azure Boards.
+- [Jira Comment](https://docs.appcircle.io/workflows/common-workflow-steps/jira-comment): Efficient project management and issue tracking with Jira Comment.
+- [Appium Server](https://docs.appcircle.io/workflows/common-workflow-steps/appium-server): Automate mobile app testing across platforms with Appium Server.
+- [Maestro Cloud Upload](https://docs.appcircle.io/workflows/common-workflow-steps/maestro-cloud-upload): Execute automated tests for mobile applications using Maestro Cloud Upload.
+- [Marathon Cloud](https://docs.appcircle.io/workflows/common-workflow-steps/marathon-cloud): Accelerate mobile app development with Marathon Cloud integration.
+- [Repeato Test Runner](https://docs.appcircle.io/workflows/common-workflow-steps/repeato-test-runner): Execute automated tests for mobile applications with Repeato Test Runner.
+- [Saucectl Run](https://docs.appcircle.io/workflows/common-workflow-steps/saucectl-run): Orchestrate test framework relationships with saucectl.
+- [Testinium Steps](https://docs.appcircle.io/workflows/common-workflow-steps/testinium-steps): Integrate Appcircle with Testinium for uploading apps and running automated tests.
+- [Testinium Upload App](https://docs.appcircle.io/workflows/common-workflow-steps/testinium-steps/testinium-upload-app): Upload mobile applications to Testinium platform directly from Appcircle.
+- [Testinium Run Test Plan](https://docs.appcircle.io/workflows/common-workflow-steps/testinium-steps/testinium-run-test-plan): Run automated tests on mobile applications using Testinium.
+- [Testinium](https://docs.appcircle.io/workflows/common-workflow-steps/testinium-steps/testinium): Upload applications to Testinium and run a test plan.
+- [Data Theorem Mobile Secure](https://docs.appcircle.io/workflows/common-workflow-steps/data-theorem-mobile-secure): Scan mobile applications for security vulnerabilities with Data Theorem.
+- [Fortify on Demand Mobile Assessment](https://docs.appcircle.io/workflows/common-workflow-steps/fod-mobile-assesment): Comprehensive mobile security testing with Fortify on Demand.
+- [KOBIL Appshield Scanner](https://docs.appcircle.io/workflows/common-workflow-steps/kobil-appshield-scanner): Mobile application security analysis tool for Android and iOS apps.
+- [Artifactory Repository Management](https://docs.appcircle.io/workflows/common-workflow-steps/artifactory-repository-management): Artifactory Management in Appcircle
+- [JFrog Integration](https://docs.appcircle.io/workflows/common-workflow-steps/artifactory-repository-management/jfrof-repository-management): JFrog repository management integration in Appcircle.
+- [Sonatype Nexus Integration](https://docs.appcircle.io/workflows/common-workflow-steps/artifactory-repository-management/nexus-repository-management): Sonatype Nexus repository management integration in Appcircle.
+- [iOS Specific Workflow Steps](https://docs.appcircle.io/workflows/ios-specific-workflow-steps): iOS-specific workflow steps for building profiles.
+- [Install Certificates and Provisioning Profiles](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/install-certificates-provisions): Install certificates and provisioning profiles for iOS distribution.
+- [Xcodebuild for Devices (Archive & Export)](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-devices): Build iOS apps for ARM devices with Xcodebuild.
+- [Xcodebuild for iOS Simulator](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator): Build your iOS app for the Simulator with Xcodebuild.
+- [Xcodebuild for Testing](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-testing): Build app with Xcodebuild for Testing for use in test automation frameworks.
+- [Xcodebuild for Unit and UI Testing](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test): Perform unit and UI tests for iOS applications with xcodebuild.
+- [Xcode Select](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/xcode-select): Specify Xcode version for your build process.
+- [Cocoapods Install](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-install): Manage dependencies in your project with pod install.
+- [CocoaPods Deintegrate](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/cocoapods-deintegrate): Remove pods to maintain a streamlined development environment.
+- [Carthage](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/carthage): Dependency management for iOS projects with Carthage.
+- [Tuist Install](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/tuist-install): Scale your Xcode projects by installing Tuist.
+- [Tuist Commands](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/tuist-commands): Scale Xcode projects with Tuist commands.
+- [SwiftLint](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/swiftlint): Identify programmatic and stylistic errors with SwiftLint.
+- [Slather](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/slather): Convert Xcode's test results into various formats with Slather.
+- [Test Reports for iOS](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/test-reports-for-ios): Display test results and code coverage for iOS applications.
+- [Convert Xcresult to HTML/XML](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/convert-xcresult-to-xml-html): Convert Xcresult files to HTML/XML for enhanced readability.
+- [Firebase Upload dSYM](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/firebase-upload-dsym): Upload debug symbols to Firebase Crashlytics.
+- [iOS Increment Build and Version Number](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/ios-increment-build-and-version-number): Increment the version code and version name of an iOS application.
+- [Azure Bot for Swiftlint](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/azure-bot-for-swiftlint): Integrate Azure DevOps Bot with SwiftLint for PR analysis.
+- [Audit Permission Changes](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/audit-permission-change): Track and audit permission changes in iOS builds.
+- [BrowserStack App Automate](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/browserstack-app-automation): Run XCUI tests on BrowserStack App Automate.
+- [Appdome Build-2Secure for iOS](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/appdome-build-to-secure-for-ios): Automate mobile app security with Appdome Build-2Secure for iOS.
+- [App Center iOS Distribution](https://docs.appcircle.io/workflows/ios-specific-workflow-steps/appcenter-ios-distribution): Distribute your iOS app to App Center for testing and distribution.
+- [Android Specific Workflow Steps](https://docs.appcircle.io/workflows/android-specific-workflow-steps): Android specific workflow steps in Appcircle
+- [Android Build](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build): Android Build workflow step in Appcircle
+- [Android Build for UI Testing](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-build-for-ui-testing): Android Build for UI Testing workflow step in Appcircle
+- [Android Sign](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-sign): Sign APK or AAB with the given Android keystore.
+- [Android Unit Tests](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-unit-tests): Android Unit Tests workflow step in Appcircle
+- [Gradle Runner](https://docs.appcircle.io/workflows/android-specific-workflow-steps/gradle-runner): Execute specified Gradle task in Appcircle.
+- [Lint](https://docs.appcircle.io/workflows/android-specific-workflow-steps/lint): Android Lint workflow step in Appcircle
+- [Detekt](https://docs.appcircle.io/workflows/android-specific-workflow-steps/detekt): Check for code smells, performance problems, and bugs with Detekt.
+- [Android Dependency Report](https://docs.appcircle.io/workflows/android-specific-workflow-steps/android-dependency-report): Android Dependency Report workflow step in Appcircle
+- [Android Increment Build and Version Number](https://docs.appcircle.io/workflows/android-specific-workflow-steps/increment-build-and-version-number): Increment the version code and version name of an Android application.
+- [Bundle Universal Apk](https://docs.appcircle.io/workflows/android-specific-workflow-steps/bundle-universal-apk): Create a universal APK from an AAB file.
+- [App Post-Processor](https://docs.appcircle.io/workflows/android-specific-workflow-steps/app-post-processor): Process Android output binary files with App Post-Processor.
+- [Test Reports for Android](https://docs.appcircle.io/workflows/android-specific-workflow-steps/test-reports-for-android): Display test results and code coverage for Android applications.
+- [Firebase Test Lab for Android](https://docs.appcircle.io/workflows/android-specific-workflow-steps/firebase-test-lab): Integrate with Firebase Test Lab for continuous Android app testing.
+- [Wait for Android Emulator](https://docs.appcircle.io/workflows/android-specific-workflow-steps/wait-for-android-emulator): Wait for the Android Emulator to boot before running UI tests.
+- [BrowserStack App Automate - Espresso](https://docs.appcircle.io/workflows/android-specific-workflow-steps/browserstack-app-automate-espresso): Run Espresso tests on BrowserStack App Automate.
+- [LambdaTest App Automate - Espresso](https://docs.appcircle.io/workflows/android-specific-workflow-steps/lambdatest-app-automate-espresso): Cloud-based Espresso testing with LambdaTest.
+- [Appdome Build-2Secure for Android](https://docs.appcircle.io/workflows/android-specific-workflow-steps/appdome-build-to-secure-for-android): Automate security feature integration for Android with Appdome.
+- [AppSweep Mobile Security Testing](https://docs.appcircle.io/workflows/android-specific-workflow-steps/appsweep-mobile-security-testing): AppSweep Mobile Security Testing workflow step in Appcircle
+- [Azure DevOps Bot for Detekt Report](https://docs.appcircle.io/workflows/android-specific-workflow-steps/azure-bot-for-detekt-report): Analyze Detekt report and post details within opened PRs in Azure DevOps.
+- [App Center Android Distribute](https://docs.appcircle.io/workflows/android-specific-workflow-steps/app-center-android-distribution): Distribute Android applications to testers via App Center.
+- [Flutter Specific Workflow Steps](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps): Flutter-specific workflow steps for building profiles.
+- [Flutter Install](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/flutter-install): Install the specified Flutter SDK for subsequent operations.
+- [Flutter Build for iOS](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/flutter-build-for-ios): Build iOS apps with the Flutter Build for iOS component.
+- [Flutter Build for Android](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/flutter-build-for-android): Build Flutter project for Android with Flutter SDK.
+- [Flutter Build for Web](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/flutter-build-for-web): Build web apps with the Flutter Build for Web component.
+- [Flutter Test](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/flutter-test): Run Flutter unit tests.
+- [Flutter Analyze](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/flutter-analyze): Run flutter analyze command in your Flutter project.
+- [Firebase Deployment](https://docs.appcircle.io/workflows/flutter-specific-workflow-steps/firebase-deployment): Deploy Flutter web apps to Firebase.
+- [React Native Specific Workflow Steps](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps): React Native specific workflow steps for building profiles.
+- [Install Node](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/node-install): Ensure the correct Node version for your React Native app.
+- [NPM/Yarn Commands](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/npm-yarn-commands): Manage dependencies in React Native applications with NPM/Yarn.
+- [React Native UI Test](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/react-native-ui-test): Run UI tests with Detox for React Native projects.
+- [React Native Unit Test](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/react-native-unit-test): Run unit tests with Jest for React Native projects.
+- [Test Reports for React Native](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/test-reports-react-native): Display test results and code coverage for React Native applications.
+- [Appcircle CodePush Workflow](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/appcircle-codepush): Integrate Appcircle CodePush SDK in your workflow.
+- [App Center CodePush](https://docs.appcircle.io/workflows/react-native-specific-workflow-steps/app-center-code-push): Update apps with App Center Code Push.
+- [How to Create an Integration](https://docs.appcircle.io/workflows/how-to-create-a-new-workflow-step): A guide to defining, configuring, and integrating a new step into a workflow.
+
+## Continuous Testing
+
+- [Continuous Testing](https://docs.appcircle.io/continuous-testing): Appcircle provides a variety of testing options for your mobile applications.
+- [iOS Testing](https://docs.appcircle.io/continuous-testing/ios-testing): Run unit and UI tests for iOS apps for optimal app functionality.
+- [Running Unit & UI Tests](https://docs.appcircle.io/continuous-testing/ios-testing/running-ios-unit-and-ui-tests): Run Unit and UI tests for iOS applications during builds.
+- [Android Testing](https://docs.appcircle.io/continuous-testing/android-testing): Comprehensive Android app testing with unit tests and Firebase Test Lab.
+- [Running Unit Tests](https://docs.appcircle.io/continuous-testing/android-testing/running-android-unit-tests): Run unit tests for Android applications in Appcircle
+- [React Native Testing](https://docs.appcircle.io/continuous-testing/react-native-testing): Run unit and UI tests for React Native apps.
+- [UI Test with Detox](https://docs.appcircle.io/continuous-testing/react-native-testing/react-native-ui-test-with-detox): Run UI tests with Detox to ensure quality of React Native projects.
+- [Unit Test with Jest](https://docs.appcircle.io/continuous-testing/react-native-testing/react-native-unit-test-with-jest): Run unit tests with Jest to ensure quality of React Native projects.
+
+## Environment Variables
+
+- [Introduction to Environment Variables](https://docs.appcircle.io/environment-variables): Environment variables let you extend your build configuration in Appcircle.
+- [Reserved Variables](https://docs.appcircle.io/environment-variables/appcircle-specific-environment-variables): Pre-defined environment variables in Appcircle.
+- [Platform-Specific Usage](https://docs.appcircle.io/environment-variables/platform-specific-usage): Use platform-specific environment variables for iOS and Android builds.
+- [Android Builds](https://docs.appcircle.io/environment-variables/platform-specific-usage/using-environment-variables-in-android-projects): Using Environment Variables in Android Projects
+- [iOS Builds](https://docs.appcircle.io/environment-variables/platform-specific-usage/using-environment-variables-in-ios-projects): Use environment variables in iOS projects in Appcircle
+- [Overview](https://docs.appcircle.io/build/build-environment-variables): Overview of environment variables in Appcircle
+
+## Versioning
+
+- [Versioning](https://docs.appcircle.io/versioning): Understand and manage versioning for Android and iOS applications
+- [Android Versioning](https://docs.appcircle.io/versioning/android-version): Manage version code and version name in Android projects with Appcircle
+- [iOS Versioning](https://docs.appcircle.io/versioning/ios-version): Manage versioning for iOS applications in Appcircle
+
+## CodePush
+
+- [Appcircle CodePush](https://docs.appcircle.io/code-push): Learn how to use Appcircle CodePush profile.
+- [CodePush Profile](https://docs.appcircle.io/code-push/code-push-profile): Manage your Appcircle CodePush profile and releases.
+- [Appcircle CodePush Profile](https://docs.appcircle.io/code-push/code-push-profile/appcircle-code-push-profile): Create Appcircle CodePush profile
+- [CodePush Release](https://docs.appcircle.io/code-push/code-push-profile/code-push-release-management): Manage a release with Appcircle CodePush
+- [CodePush SDK](https://docs.appcircle.io/code-push/code-push-sdk): Integrate Appcircle CodePush SDK to React Native projects.
+- [CodePush CLI](https://docs.appcircle.io/code-push/code-push-cli): Use Appcircle CodePush CLI and manage deployments via command line.
+- [CodePush Code Signing](https://docs.appcircle.io/code-push/code-push-code-signing): Sign your application with Appcircle CodePush for React Native projects.
+- [CodePush via Build Module](https://docs.appcircle.io/code-push/code-push-via-build-module): Work with Appcircle CodePush SDK on build module.
+
+## Signing Identities
+
+- [Signing Identities](https://docs.appcircle.io/signing-identities): Manage signing identities in Appcircle
+- [Apple Certificates](https://docs.appcircle.io/signing-identities/apple-certificates): Manage iOS certificates in Appcircle
+- [Apple Profiles](https://docs.appcircle.io/signing-identities/apple-profiles): Manage iOS provisioning profiles in Appcircle
+- [Apple Identifiers](https://docs.appcircle.io/signing-identities/apple-identifiers): Manage iOS identifiers in Appcircle
+- [Apple Devices](https://docs.appcircle.io/signing-identities/apple-devices): Distribute iOS apps to Apple devices with Appcircle
+- [Android Keystores](https://docs.appcircle.io/signing-identities/android-keystores): Manage Android keystores in Appcircle
+- [Activity Log](https://docs.appcircle.io/signing-identities/signing-identities-activity-log): Activity Log for Signing Identities in Appcircle.
+- [Signing Reports](https://docs.appcircle.io/signing-identities/signing-reports): Signing Reports in Appcircle for visibility on signing identities usage.
+
+## Testing Distribution
+
+- [Testing Distribution](https://docs.appcircle.io/testing-distribution): Create a distribution profile and share your builds with testers in Appcircle
+- [Distribution Profile](https://docs.appcircle.io/testing-distribution/create-or-select-a-distribution-profile): Create or select a distribution profile for testing in Appcircle
+- [Testing Groups](https://docs.appcircle.io/testing-distribution/testing-groups): Manage testers with Testing Groups and distribute different app versions.
+- [Testing Portal](https://docs.appcircle.io/testing-distribution/testing-portal): Use the Testing Portal for downloading binaries.
+- [Re-sign Binaries](https://docs.appcircle.io/testing-distribution/resigning-binaries): Resign iOS binaries with a new certificate or keystore.
+- [Reporting](https://docs.appcircle.io/testing-distribution/reports): Comprehensive reports on app sharing and version histories.
+
+## Enterprise App Store
+
+- [Enterprise App Store](https://docs.appcircle.io/enterprise-app-store): Distribute in-house applications to your users with the Enterprise App Store.
+- [Enterprise App Store Profile](https://docs.appcircle.io/enterprise-app-store/enterprise-app-store-profile): Create an Enterprise App Store profile in Appcircle
+- [Enterprise Portal](https://docs.appcircle.io/enterprise-app-store/enterprise-portal): Use Enterprise Portal in Appcircle
+- [Portal Customization](https://docs.appcircle.io/enterprise-app-store/portal-customization): Customize the appearance and authentication settings of your Enterprise App Store.
+- [Portal Settings](https://docs.appcircle.io/enterprise-app-store/portal-settings): Configure your enterprise app store profile in Appcircle
+- [In-app Updates](https://docs.appcircle.io/enterprise-app-store/in-app-updates): Implement in-app updates through your Enterprise App Store.
+- [Re-sign Binary](https://docs.appcircle.io/enterprise-app-store/resign-binary): Resign iOS and Android binaries within Appcircle Enterprise App Store.
+- [Portal Reports](https://docs.appcircle.io/enterprise-app-store/enterprise-reports): View the reports of your Enterprise App Store in Appcircle
+
+## Publish to Stores
+
+- [Publish to Stores](https://docs.appcircle.io/publish-to-stores-module): Distribute mobile applications to App Store, Google Play, Huawei AppGallery and Microsoft Intune.
+- [Creating Publish Profiles](https://docs.appcircle.io/publish-to-stores-module/creating-publish-profiles): Create publish profiles in Appcircle
+- [Managing Publish Profiles](https://docs.appcircle.io/publish-to-stores-module/creating-publish-profiles/managing-publish-profiles): Manage publish profiles in Appcircle
+- [Binary Management](https://docs.appcircle.io/publish-to-stores-module/binary-management): Manage binaries in Appcircle
+- [Publish Flow](https://docs.appcircle.io/publish-to-stores-module/publish-flow): Customize the publish flow in Appcircle
+- [Publish Variables](https://docs.appcircle.io/publish-to-stores-module/publish-variables): Set up and manage key-value pairs essential for the app publishing process.
+- [Publish Settings](https://docs.appcircle.io/publish-to-stores-module/publish-settings): Configure the publish settings for your app in Appcircle
+- [Publish Information Overview](https://docs.appcircle.io/publish-to-stores-module/publish-information): Overview of the Publish module in Appcircle
+- [Binary Information](https://docs.appcircle.io/publish-to-stores-module/publish-information/binary-information): View and manage binary information in Appcircle
+- [App Store Connect Information](https://docs.appcircle.io/publish-to-stores-module/publish-information/app-information): Update App Information in the Publish module of Appcircle
+- [Google Play Console Information](https://docs.appcircle.io/publish-to-stores-module/publish-information/google-play-information): Update App Information in the Publish module for Google Play Console
+- [Metadata Details](https://docs.appcircle.io/publish-to-stores-module/publish-information/meta-data-information): Fill out metadata for app distribution platforms within the Appcircle dashboard.
+- [Auto Re-sign](https://docs.appcircle.io/publish-to-stores-module/publish-information/auto-resign-configuration): Automatically re-sign your binary in the Publish module.
+- [Re-sign Binary](https://docs.appcircle.io/publish-to-stores-module/publish-information/resign-binary): Resign iOS application binaries within Appcircle.
+- [Marking Release Candidates](https://docs.appcircle.io/publish-to-stores-module/publish-information/marking-release-candidates): Mark a version as a release candidate in Appcircle
+- [Check Release Status](https://docs.appcircle.io/publish-to-stores-module/publish-information/check-release-status): Check and update statuses in the Publish module of Appcircle
+- [Cancel Submission](https://docs.appcircle.io/publish-to-stores-module/publish-information/cancel-submission): Cancel submission on App Store Connect in Appcircle
+- [Reject Binary](https://docs.appcircle.io/publish-to-stores-module/publish-information/reject-binary): Reject binary in Appcircle
+- [Publish Details](https://docs.appcircle.io/publish-to-stores-module/publish-information/publish-details): View the details of the publish flow in Appcircle
+- [History](https://docs.appcircle.io/publish-to-stores-module/publish-information/history): Access and review Publish History and Resign History in Appcircle
+- [Downloading Binaries](https://docs.appcircle.io/publish-to-stores-module/publish-information/download): Download built application files from the Publish module.
+- [Delete](https://docs.appcircle.io/publish-to-stores-module/publish-information/delete): Delete a build version in the Publish module of Appcircle
+- [Publish Walkthrough for App Store](https://docs.appcircle.io/publish-to-stores-module/publish-walkthrough-for-app-store): Use Publish module in Appcircle for App Store
+- [Publish Walkthrough for Google Play Console](https://docs.appcircle.io/publish-to-stores-module/publish-walkthrough-for-google-play): Automate app publishing to Google Play Console using the Publish to Stores module.
+- [Publish Activity Log](https://docs.appcircle.io/publish-to-stores-module/publish-activity-log): Activity Log for Publish in Appcircle.
+- [Publish Report](https://docs.appcircle.io/publish-to-stores-module/publish-report): Report for Publish in Appcircle.
+- [Publish Re-sign Report](https://docs.appcircle.io/publish-to-stores-module/publish-resign-report): Report for Publish Re-sign in Appcircle.
+
+## Publish Integrations
+
+- [Publish Integrations](https://docs.appcircle.io/publish-integrations): Publish Integrations connect application builds to app stores for Android and iOS.
+- [Common Integrations Overview](https://docs.appcircle.io/publish-integrations/common-publish-integrations): Common Integrations for iOS and Android app store distribution.
+- [Send to Enterprise App Store](https://docs.appcircle.io/publish-integrations/common-publish-integrations/send-to-enterprise-app-store): Send Binary to Enterprise App Store in the Publish module.
+- [Send to Testing Distribution](https://docs.appcircle.io/publish-integrations/common-publish-integrations/send-to-testing-distribution): Send Binary to Testing Distribution in the Publish module.
+- [Send to Microsoft Intune](https://docs.appcircle.io/publish-integrations/common-publish-integrations/send-to-microsoft-intune): Submit your app to Microsoft Intune using Appcircle.
+- [Update Metadata on Microsoft Intune](https://docs.appcircle.io/publish-integrations/common-publish-integrations/update-metadata-on-microsoft-intune): Upload Metadata information of application on Microsoft Intune.
+- [Get Approval via Email](https://docs.appcircle.io/publish-integrations/common-publish-integrations/get-approval-via-email): Get Approval via Email in Publish
+- [Metadata Approval via Email](https://docs.appcircle.io/publish-integrations/common-publish-integrations/metadata-approval): Use Metadata Approval in Publish
+- [Send Email](https://docs.appcircle.io/publish-integrations/common-publish-integrations/send-email): Send customized emails from Publish Flow steps.
+- [Custom Script (Publish Flow)](https://docs.appcircle.io/publish-integrations/common-publish-integrations/custom-script): Create custom Publish flows not available in default steps.
+- [Custom Script from Git](https://docs.appcircle.io/publish-integrations/common-publish-integrations/custom-script-from-git): Execute scripts from Git repositories in Publish flows.
+- [iOS Integrations Overview](https://docs.appcircle.io/publish-integrations/ios-publish-integrations): Guides on preparing and distributing iOS apps through App Store and TestFlight.
+- [Send to App Store](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/send-to-app-store): Submit your iOS application to the App Store with Appcircle
+- [Send to TestFlight](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/sent-to-testflight): Upload the selected application package to TestFlight.
+- [Add for Review on App Store](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/add-for-review-on-app-store): Submit your app for review on the App Store.
+- [Get Approval from TestFlight](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/approval-test-flight): Get approval from TestFlight in Appcircle
+- [Check App Store Release Status](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/check-app-store-release-status): Check the release status of your application on the App Store.
+- [App Information from App Store](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/app-information-app-store): Fetch your app's current listing information from the App Store.
+- [Update Metadata on App Store Connect](https://docs.appcircle.io/publish-integrations/ios-publish-integrations/update-metadata-on-app-store-connect): Upload Metadata information of application on App Store Connect.
+- [Android Integrations Overview](https://docs.appcircle.io/publish-integrations/android-publish-integrations): Android Integrations facilitate distribution of Android applications to major app stores.
+- [Publish to Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-google-play): Publish Android applications to the Google Play Store.
+- [Distribute to Track](https://docs.appcircle.io/publish-integrations/android-publish-integrations/distribute-to-track): Release apps to different testing or production tracks via Google Play Console.
+- [Get Approval From Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/get-approval-from-google-play): Check your app release approval status on Google Play Console.
+- [App Information from Google Play](https://docs.appcircle.io/publish-integrations/android-publish-integrations/app-information-from-google-play): Check status of app releases in Google Play Console.
+- [Update Metadata on Google Play Console](https://docs.appcircle.io/publish-integrations/android-publish-integrations/update-metadata-on-google-play): Upload Metadata information of application on Google Play Console.
+- [Publish to Huawei AppGallery](https://docs.appcircle.io/publish-integrations/android-publish-integrations/publish-to-huawei-appgallery): Publish Android applications to Huawei AppGallery with Appcircle
+
+## Build Infrastructure
+
+- [Build Infrastructure](https://docs.appcircle.io/infrastructure): Select the optimal build stack for iOS or Android applications.
+- [iOS Build Stacks](https://docs.appcircle.io/infrastructure/ios-build-infrastructure): iOS build stacks in Appcircle
+- [Android Build Stacks](https://docs.appcircle.io/infrastructure/android-build-infrastructure): Android build stacks in Appcircle
+- [Machine Plans](https://docs.appcircle.io/infrastructure/machine-plans): Machine Plans in Appcircle
+
+## Account & Organization
+
+- [My Account / My Organization](https://docs.appcircle.io/account): Manage personal and organizational settings in Appcircle.
+- [My Account](https://docs.appcircle.io/account/my-account): Manage your personal account details
+- [Sign Up / Login](https://docs.appcircle.io/account/my-account/sign-up-login): Sign up for or log into Appcircle at my.appcircle.io.
+- [Account Management](https://docs.appcircle.io/account/my-account/account-management): Manage account security and personal information. Update details, change passwords, set up two-factor authentication.
+- [Signing In](https://docs.appcircle.io/account/my-account/account-management/signing-in): Change your password and setup two factor authenticator in Appcircle
+- [Delete Account](https://docs.appcircle.io/account/my-account/account-management/delete-account): Delete your account in Appcircle
+- [Device Activity](https://docs.appcircle.io/account/my-account/account-management/device-activity): Manage your device activity in Appcircle
+- [In-app Notifications](https://docs.appcircle.io/account/my-account/in-app-notifications): View and filter your in-app notifications.
+- [My Organization](https://docs.appcircle.io/account/my-organization): Manage your Appcircle organization, set up roles, control access, and oversee all projects.
+- [Profile and Team](https://docs.appcircle.io/account/my-organization/profile-and-team): Manage Appcircle profile and team settings.
+- [Organization Management](https://docs.appcircle.io/account/my-organization/profile-and-team/organization-management): Organizations in Appcircle are separate units with separate workspaces.
+- [Team Management](https://docs.appcircle.io/account/my-organization/profile-and-team/team-management): Manage team members and roles within Appcircle organizations.
+- [Role Management](https://docs.appcircle.io/account/my-organization/profile-and-team/role-management): Overview of role management and permissions in Appcircle
+- [Organization Activity](https://docs.appcircle.io/account/my-organization/profile-and-team/team-activity-log): Organization activity log in Appcircle.
+- [Appcircle Security](https://docs.appcircle.io/account/my-organization/security): Manage credentials, authentications, and notifications in Appcircle.
+- [Authenticaiton](https://docs.appcircle.io/account/my-organization/security/authentications): Set up and manage authentication methods to protect access.
+- [Appcircle SSO Authentication](https://docs.appcircle.io/account/my-organization/security/authentications/sso-authentication): Establish Single Sign-On (SSO) providers for your organization.
+- [Testing Portal LDAP Authentication](https://docs.appcircle.io/account/my-organization/security/authentications/distribution-ldap-authentication): Set up LDAP login integration for the Testing Portal.
+- [Testing Portal SSO Authentication](https://docs.appcircle.io/account/my-organization/security/authentications/distribution-sso-authentication): Set up SSO for distributing applications via Testing Portal.
+- [Enterprise Portal LDAP Authentication](https://docs.appcircle.io/account/my-organization/security/authentications/store-ldap-authentication): Set up LDAP login integration for the Enterprise Portal.
+- [Enterprise Portal SSO Authentication](https://docs.appcircle.io/account/my-organization/security/authentications/store-sso-authentication): Set up SSO for your applications in Enterprise store.
+- [Authorization](https://docs.appcircle.io/account/my-organization/security/authorization): Establish authorization for your organization.
+- [RBAC Authorization](https://docs.appcircle.io/account/my-organization/security/authorization/rbac-authorization): Establish manual authorization for your organization.
+- [SSO Authorization](https://docs.appcircle.io/account/my-organization/security/authorization/sso-authorization): Establish SSO authorization for your organization.
+- [Enterprise App Store SSO Authorization](https://docs.appcircle.io/account/my-organization/security/authorization/store-sso-authorization): Establish SSO authorization for your Enterprise App Store.
+- [Credentials](https://docs.appcircle.io/account/my-organization/security/credentials): Manage and securely store credentials in Appcircle.
+- [App Store Connect API Key](https://docs.appcircle.io/account/my-organization/security/credentials/adding-an-app-store-connect-api-key): Generate an App Store Connect API Key for linking your Apple Developer account.
+- [Google Play Service Account](https://docs.appcircle.io/account/my-organization/security/credentials/adding-google-play-service-account): Add a Google Play Service Account to your Appcircle account
+- [Huawei AppGallery API Key](https://docs.appcircle.io/account/my-organization/security/credentials/adding-huawei-api-key): Add a Huawei AppGallery API Key to your account in Appcircle
+- [Microsoft Intune API Key](https://docs.appcircle.io/account/my-organization/security/credentials/adding-microsoft-intune-api-key): Add a Microsoft Intune account to your Appcircle account
+- [API Keys](https://docs.appcircle.io/account/my-organization/security/api-keys): Generate and manage your API Keys.
+- [Personal Access Key](https://docs.appcircle.io/account/my-organization/security/personal-access-key): Create personal API token in Appcircle
+- [Domain Verification](https://docs.appcircle.io/account/my-organization/security/domain-verification): Verify your domains for Appcircle organizations.
+- [Notification Integrations](https://docs.appcircle.io/account/my-organization/notifications): Set up and manage notifications across Slack, email, and more.
+- [Slack Notifications](https://docs.appcircle.io/account/my-organization/notifications/slack-notifications): Set up Slack notifications for major events in Appcircle.
+- [Email Notifications](https://docs.appcircle.io/account/my-organization/notifications/email-connection): Set up email notifications and subscription management in Appcircle
+- [Microsoft Teams Notifications](https://docs.appcircle.io/account/my-organization/notifications/teams-notifications): Send notifications to Microsoft Teams for major events in all modules.
+- [Webhooks Configuration](https://docs.appcircle.io/account/my-organization/notifications/webhooks): Notify external services via webhooks when a certain event occurs.
+- [Artifacts](https://docs.appcircle.io/account/my-organization/artifacts): Manage the logs and artifacts of your build profiles in Appcircle
+- [Build Cache](https://docs.appcircle.io/account/my-organization/artifacts/build-cache): Manage the build cache in Appcircle
+- [Retention Period](https://docs.appcircle.io/account/my-organization/artifacts/retention-period): Manage the retention period of your artifacts in Appcircle.
+- [Billing](https://docs.appcircle.io/account/my-organization/billing): Monitor your usage of various modules within Appcircle.
+
+## Appcircle API and CLI
+
+- [Introduction to Appcircle API and CLI](https://docs.appcircle.io/appcircle-api-and-cli): Appcircle CLI is a unified tool for accessing Appcircle platform features from the command line.
+- [API Authentication](https://docs.appcircle.io/appcircle-api-and-cli/api-authentication): Authenticate with the Appcircle API
+- [CLI Authentication](https://docs.appcircle.io/appcircle-api-and-cli/cli-authentication): Authenticate with the Appcircle CLI
+- [App Center Migration Tool](https://docs.appcircle.io/appcircle-api-and-cli/appcenter-migration-tool): Migrate App Center organizations, collaborators, and apps to Appcircle.
+
+## Self-Hosted Appcircle
+
+- [Overview & Concepts](https://docs.appcircle.io/self-hosted-appcircle): Overview of self-hosted Appcircle and related concepts
+- [Server Setup](https://docs.appcircle.io/self-hosted-appcircle/install-server): Steps required to setup the self-hosted Appcircle server on your infrastructure.
+- [Install the Self-Hosted Appcircle Server (Linux)](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package): Install the self-hosted Appcircle on your infrastructure using Linux.
+- [Installation (Docker/Podman)](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation): Set up self-hosted Appcircle servers on your infrastructure.
+- [Pre-Installation Checklist](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/pre-installation-checklist): Checklist to be followed before installing the self-hosted Appcircle
+- [Docker](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/docker): Install Appcircle server using Docker
+- [Podman](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/podman): Install and configure self-hosted Appcircle server with Podman
+- [Cloud Providers](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers): Install on Amazon Web Services (AWS) or Microsoft Azure.
+- [Install Appcircle on Amazon Web Services (AWS)](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/aws): Create an Appcircle server instance on AWS
+- [Install Appcircle on Microsoft Azure](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/installation/cloud-providers/azure): Create an Appcircle server instance on Microsoft Azure
+- [Server Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server): Essential settings and customizations for self-hosted Appcircle servers.
+- [Integrations and Access](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access): Configure integrations and access controls for your self-hosted server.
+- [Integrations](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration): Configure email and SSO integrations in Appcircle
+- [LDAP Settings](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ldap-settings): Configure LDAP settings in Appcircle
+- [SSL Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/ssl-configuration): Configure SSL for your self-hosted Appcircle server
+- [Proxy Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/proxy-configuration): Configure a proxy server for your self-hosted Appcircle server
+- [Network Access](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/network-access): Configure and enable external network access for self-hosted server and runner
+- [Git Providers](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/git-providers): Configure git providers in self-hosted Appcircle
+- [Login Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/login-configuration): Configure the login settings in Appcircle
+- [Advanced Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration): Advanced configuration settings for self-hosted Appcircle.
+- [LDAP Brute Force Protection](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/ldap-brutefore): Configure LDAP brute-force protection on the Appcircle server
+- [Cache Size Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/cache-size-configuration): Configure the cache size limit in the Appcircle server
+- [Command-Line Interface (CLI) Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/appcircle-cli): Configure the Appcircle CLI to use your self-hosted server
+- [Container Engine Network Subnet](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/container-engine-network-subnet): Configure a specific network subnet for containers.
+- [Enterprise App Store and Testing Distribution in DMZ](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/advanced-configuration/store-dist-dmz): Create a server in DMZ for Enterprise App Store and Testing Distribution.
+- [Customize Enterprise App Store](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/enterprise-store): Customize the Enterprise App Store on self-hosted installations
+- [Testing Distribution Customization](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/testing-distribution): Customize the Testing Distribution on Self-hosted Installations
+- [External Image Registries](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/external-image-registry): Configure external image registries in Appcircle
+- [Monitoring](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/monitoring): Monitor Appcircle Server service logs and metrics with Grafana.
+- [Offline Install/Upgrade](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/offline-installation): Use offline container images for Appcircle server installation and upgrade
+- [MinIO Migration](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/minio-migration): Migrate from multi-node single drive MinIO to single-node single drive MinIO.
+- [Auto-upgrading Server](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/auto-updating): Upgrade a self-hosted Appcircle server automatically.
+- [Restarting Host](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/restarting-host): Enable automatic startup of your Appcircle server.
+- [Domain Verification for Linux Package](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/configure-server/domain-verification): Configure domain verification for Docker/Podman installations.
+- [Updates](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/update): Upgrade self-hosted Appcircle server
+- [Troubleshooting & FAQ for Appcircle Server and Runner](https://docs.appcircle.io/self-hosted-appcircle/install-server/linux-package/faq): Troubleshooting and FAQ for Appcircle server and runner
+- [Helm Chart](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart): Install the self-hosted Appcircle on your infrastructure using Helm.
+- [Installation](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation): Install the self-hosted Appcircle on Kubernetes or OpenShift.
+- [Kubernetes](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes): Install and configure self-hosted Appcircle server with Helm chart to Kubernetes
+- [OpenShift](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/installation/openshift): Install and configure self-hosted Appcircle server with Helm chart to OpenShift
+- [Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration): Configure the self-hosted Appcircle on Kubernetes or OpenShift.
+- [Helm Advanced Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/advanced-configuration): Fully configure the Appcircle server Helm chart
+- [SSL Configuration (Helm)](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/ssl-configuration): Configure SSL certificate for HTTPS connections
+- [Ingress Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/ingress-configuration): Configure Ingress for Helm chart
+- [LDAP Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/ldap-configuration): Configure LDAP for Helm chart
+- [License Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/license-configuration): Configure license for the Appcircle server
+- [Git Providers Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/git-providers-configuration): Configure git providers for Helm chart
+- [Adding CA Certificates](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/ca-certificates): Configure CA license for the Appcircle Self Hosted server
+- [Sensitive Values](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/sensitive-configuration): Configure sensitive values for Appcircle server Helm chart
+- [Storage Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/storage-configuration): Configure storage details of Appcircle server Helm chart.
+- [Enterprise App Store Customization (Helm)](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/enterprise-store-configuration): Configure Enterprise App Store for Helm chart
+- [External Image Registries for Helm Chart](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/external-image-registry): Configure external image registries for Helm chart
+- [Domain Verification for Helm Chart](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/domain-verification): Configure domain verification for Kubernetes/OpenShift.
+- [Production Readiness](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness): Production readiness configurations for the Appcircle server Helm chart.
+- [Database and Vault Configurations](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/database-and-vault): Configure the Appcircle server Helm chart for production environments
+- [AWS S3 Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/aws-s3-configuration): Configure AWS S3 as object storage for Appcircle server.
+- [GCP Cloud Storage Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/gcp-cloud-storage-configuration): Configure GCP Cloud Storage as object storage for Appcircle server.
+- [S3-Compatible Object Storage Configuration](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/configuration/production-readiness/s3-compatible-storage-configuration): Configure any S3-compatible object storage for Appcircle server.
+- [Upgrades](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/upgrades): Upgrade the Appcircle server Helm chart deployment
+- [Uninstallation](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/uninstallation): Uninstall the Appcircle server Helm chart deployment
+- [Troubleshooting & FAQ (Helm)](https://docs.appcircle.io/self-hosted-appcircle/install-server/helm-chart/faq): Troubleshooting and FAQ for Helm chart
+- [Overview of Self-hosted Runner](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner): Self-hosted runner enables using your own systems for running Appcircle build pipelines.
+- [Self-Hosted Runner Installation](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/installation): Install and configure the self-hosted Appcircle runner
+- [Configure Runner](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner): Configure runners within your self-hosted Appcircle setup.
+- [Managing Pools](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-pools): Manage self-hosted pools in Appcircle
+- [Managing Runners](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner/manage-runners): Manage self-hosted runners in Appcircle
+- [Service Configuration](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner/runner-service): Configure self-hosted runner service
+- [Android Emulators](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner/android-emulator): Use Android emulators on self-hosted runners in Appcircle
+- [Self-signed Certificates](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/configure-runner/custom-certificates): Add self-signed certificates to the Appcircle runner
+- [Runner Virtual Machine Setup](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/runner-vm-setup): Set up a self-hosted runner as a macOS VM image
+- [Upgrading Runner](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/update): Upgrade self-hosted runner in Appcircle
+- [Cloud Providers Integration](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/cloud-providers): Integrate cloud providers with your Appcircle builds.
+- [Amazon Web Services (AWS) Runner](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/cloud-providers/aws): Create a self-hosted Appcircle runner instance on AWS.
+- [Troubleshooting & FAQ for Appcircle Runner](https://docs.appcircle.io/self-hosted-appcircle/self-hosted-runner/faq): Troubleshooting and FAQ for Appcircle runner
+
+## Marketplace
+
+- [Marketplace Overview](https://docs.appcircle.io/marketplace): Overview of Marketplace Integrations
+- [GitHub Marketplace](https://docs.appcircle.io/marketplace/github-marketplace): Appcircle GitHub action for distributing builds to testers directly from pipelines.
+- [Setting Up Appcircle Testing Distribution Action](https://docs.appcircle.io/marketplace/github-marketplace/testing-distribution): GitHub Action to distribute builds to Appcircle
+- [Setting Up Appcircle Enterprise App Store Action](https://docs.appcircle.io/marketplace/github-marketplace/enterprise-app-store): GitHub Action to publish builds to Appcircle app store
+- [Fastlane Marketplace](https://docs.appcircle.io/marketplace/fastlane): Appcircle fastlane plugin for distributing builds to testers.
+- [Setting Up Appcircle Testing Distribution Plugin For Fastlane](https://docs.appcircle.io/marketplace/fastlane/testing-distribution): Fastlane plugin to distribute builds to Appcircle
+- [Setting Up Appcircle Enterprise App Store Plugin](https://docs.appcircle.io/marketplace/fastlane/enterprise-app-store): Fastlane plugin to publish builds to Appcircle app store
+- [Jenkins Marketplace](https://docs.appcircle.io/marketplace/jenkins): Appcircle Jenkins plugin for distributing builds to testers.
+- [Setting Up Appcircle Testing Distribution Plugin](https://docs.appcircle.io/marketplace/jenkins/testing-distribution): Jenkins plugin to distribute builds to Appcircle
+- [Setting Up Appcircle Enterprise App Store Plugin For Jenkins](https://docs.appcircle.io/marketplace/jenkins/enterprise-app-store): Jenkins plugin to publish builds to Appcircle app store
+- [Visual Studio Marketplace](https://docs.appcircle.io/marketplace/visual-studio-marketplace): Appcircle Azure DevOps extension for distributing builds from Azure DevOps pipelines.
+- [Setting Up Appcircle Testing Distribution Task in Azure DevOps Pipeline](https://docs.appcircle.io/marketplace/visual-studio-marketplace/testing-distribution): Azure DevOps Testing Distribution extension
+- [Setting Up Appcircle Enterprise App Store in Azure DevOps Pipeline](https://docs.appcircle.io/marketplace/visual-studio-marketplace/enterprise-app-store): Azure DevOps Enterprise Store Extension
+- [OpenAI Marketplace](https://docs.appcircle.io/marketplace/open-ai): Discover Appcircle Assistant in the OpenAI Marketplace.
+
+## Best Practices
+
+- [Best Practices](https://docs.appcircle.io/best-practices): Recommended best practices for app development and deployment with Appcircle.
+- [Appcircle Onboarding](https://docs.appcircle.io/best-practices/onboarding): Checklist to add your iOS or Android project to Appcircle.
+- [Building Multiple Apps in One Profile](https://docs.appcircle.io/best-practices/building-multiple-apps-in-one-profile): Build multiple apps in one profile in Appcircle
