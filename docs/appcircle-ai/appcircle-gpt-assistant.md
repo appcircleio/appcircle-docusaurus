@@ -1,7 +1,7 @@
 ---
 title: Appcircle GPT Assistant
 description: Discover and use the Appcircle GPT Assistant for quick answers, step-by-step guidance, and troubleshooting support.
-tags: [appcircle ai, appcircle gpt assistant, gpt, help, troubleshooting]
+tags: [appcircle ai , gpt, help, troubleshooting]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

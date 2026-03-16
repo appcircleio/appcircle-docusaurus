@@ -293,6 +293,11 @@ appcircle ai:
   description: "Description for appcircle assistant"
   permalink: /appcircle-assistant
 
+"appcircle mcp":
+  label: "appcircle mcp"
+  description: "Documentation related to the Appcircle MCP server"
+  permalink: /appcircle-mcp
+
 "appcircle bot":
   label: "appcircle bot"
   description: "Description for appcircle bot"
@@ -2942,6 +2947,11 @@ mcp:
   label: "model context protocol"
   description: "Documentation related to the Model Context Protocol (MCP)"
   permalink: /model-context-protocol
+
+"mcp server":
+  label: "mcp server"
+  description: "Documentation related to the MCP server"
+  permalink: /mcp-server
 
 "ci/cd":
   label: "ci/cd"
