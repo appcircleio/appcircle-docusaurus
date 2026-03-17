@@ -21,6 +21,12 @@ When this step runs in your workflow, Appcircle sends a unique approval email to
 
 <NoRunnerUsage />
 
+:::info Default Timeout Period
+
+Once the **Metadata Approval via Email** step begins, it waits for 10 days for the required condition to be met—whether positive or negative. At the end of the 10 days, the flow status is updated from `Waiting` to `Timeout`.
+
+:::
+
 :::caution Metadata Approval Panel
 
 Access to the Metadata Approval Panel is **exclusively** available via the link sent in the approval email; it is **not** accessible through the standard Publish module UI.
