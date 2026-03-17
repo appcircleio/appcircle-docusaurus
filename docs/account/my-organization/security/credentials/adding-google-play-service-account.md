@@ -123,6 +123,10 @@ Sub-Organizations cannot edit or delete credentials shared by the Root Organizat
 
 The shared credentials by the Root Organization will be marked with Root Tag on the Sub Organization's credential list.
 
+:::tip Sharing with All Sub-Organizations
+When the “Share with all sub-organizations” toggle is enabled, the credential is shared with all existing sub-organizations and will automatically be available for newly created sub-organizations.
+:::
+
 ## FAQ
 
 **Can I retrieve the JSON private key that I uploaded to Appcircle?**

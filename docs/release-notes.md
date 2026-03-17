@@ -92,6 +92,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where deleting app versions with the same bundle or package IDs negatively affected delete operations across different testing distribution profiles. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where users with a large number of app versions in Testing Distribution experienced errors when deleting apps. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where uploading binaries to Testing Distribution profiles took longer than expected. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
