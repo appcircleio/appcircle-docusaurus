@@ -30,6 +30,12 @@ Upon restarting or initiating the step, it resets all answers to `Waiting`. User
 
 :::
 
+:::info Default Timeout Period
+
+Once the **Get Approval via Email** step begins, it waits for 10 days for the required condition to be met—whether positive or negative. At the end of the 10 days, the flow status is updated from `Waiting` to `Timeout`.
+
+:::
+
 :::tip Get Approval via Email
 
 The Get Approval via Email step can be used for different purposes. Since this step takes two different parameters, one Required and one Optional, the usage varies. 
