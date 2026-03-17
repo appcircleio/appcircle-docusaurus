@@ -8,6 +8,7 @@ sidebar_position: 6
 
 import Screenshot from '@site/src/components/Screenshot';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
+import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
 
 # Re-sign Binary
 
@@ -16,6 +17,8 @@ The **Re-sign Binary** feature in Appcircle allows you to re-sign both iOS and A
 This feature streamlines the process of updating app distribution and security settings, ensuring that your applications can be quickly adapted to meet changing requirements or distribution strategies.
 
 <RunnerUsage />
+
+<BillingInfoForResign />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-24.png' />
 
