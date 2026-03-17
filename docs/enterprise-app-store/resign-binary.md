@@ -7,6 +7,7 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
+import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
 
 # Re-sign Binary
 
@@ -15,6 +16,7 @@ Enterprise App Store Re-Sign & Auto-Resign enables re-signing and automatic re-s
 This feature allows controlled updates to build and version numbers, signing identities, and store credentials, while providing a unified re-sign flow for both manual and automated scenarios.
 
 <RunnerUsage />
+<BillingInfoForResign />
 
 ## iOS Re-sign
 
