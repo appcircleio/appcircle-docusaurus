@@ -100,16 +100,16 @@ You can exclude one or more toolsets when running the server (via environment va
 
 ## Supported Clients
 
-The Appcircle MCP Server works with any MCP-capable client. Installation and client-specific setup (including how to add the server and configure your token) are documented in the [Installation Guides](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides).
+The Appcircle MCP Server works with any MCP-capable client. Installation and client-specific setup (including how to add the server and configure your token) are documented in the [Installation Guides](https://github.com/appcircleio/appcircle-mcp/tree/main/docs/installation_guides).
 
-- [**Claude Applications** (Claude Desktop, Claude Code)](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/claude_applications.md)
-- [**Cursor IDE**](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/cursor.md)
-- [**Codex** (App and CLI)](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/codex.md)
-- [**Antigravity IDE**](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/antigravity.md)
-- [**VS Code** (GitHub Copilot)](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/vscode.md)
-- [**Windsurf IDE**](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/windsurf.md)
-- [**Gemini CLI**](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/gemini_cli.md)
-- [**GitHub Copilot CLI**](https://github.com/appcircleio/appcircle-mcp/docs/installation_guides/copilot_cli.md)
+- [**Claude Applications** (Claude Desktop, Claude Code)](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/claude_applications.md)
+- [**Cursor IDE**](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/cursor.md)
+- [**Codex** (App and CLI)](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/codex.md)
+- [**Antigravity IDE**](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/antigravity.md)
+- [**VS Code** (GitHub Copilot)](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/vscode.md)
+- [**Windsurf IDE**](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/windsurf.md)
+- [**Gemini CLI**](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/gemini_cli.md)
+- [**GitHub Copilot CLI**](https://github.com/appcircleio/appcircle-mcp/blob/main/docs/installation_guides/copilot_cli.md)
 
 Follow the guide for your client to install or connect to the Appcircle MCP Server and to set your Appcircle access token.
 
@@ -134,14 +134,14 @@ When creating the token (either method), **restrict write access** if you only n
 
 ## FAQ
 
-### Do I need write access to use the MCP?
+### Do I need write access to use the Appcircle MCP?
 
 No. Read-only access is enough for listing builds, profiles, and reports. Grant write access only if you want the AI or your client to trigger builds or change settings. When creating an API Key, use Viewer (or read-only) roles for the relevant modules. When using a Personal Access Key, your user role in the organization applies.
 
-### Do I need to install the server locally?
+### Do I need to install the Appcircle MCP server locally?
 
-No. You can connect to the **remote host** at `https://mcp.appcircle.io` and send your Appcircle token with each request; no local install is required. If you prefer to run the server locally (stdio, streamable-http, or Docker), see the [documentation](https://github.com/appcircleio/appcircle-mcp) for running modes and client configuration.
+No. You can connect to the **remote host** at `https://mcp.appcircle.io` and send your Appcircle token with each request; no local install is required. If you prefer to run the server locally (stdio, streamable-http, or Docker), see the [documentation](https://github.com/appcircleio/appcircle-mcp?tab=readme-ov-file#appcircle-mcp-server) for running modes and client configuration.
 
-### Where do I find installation steps for my client?
+### Where do I find installation steps for my Appcircle MCP client?
 
-Client-specific installation and setup guides are in the [appcircle-mcp repository](https://github.com/appcircleio/appcircle-mcp#installation). Follow the guide for your client (Claude, Cursor, Codex, VS Code, etc.) to add the Appcircle MCP Server and configure your token.
+Client-specific installation and setup guides are in the [Installation Guides](https://github.com/appcircleio/appcircle-mcp#installation). Follow the guide for your client (Claude, Cursor, Codex, VS Code, etc.) to add the Appcircle MCP Server and configure your token.
