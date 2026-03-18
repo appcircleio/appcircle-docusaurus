@@ -1,14 +1,14 @@
 ---
-title: Testinium Steps
+title: Testinium Integrations
 sidebar_label: Testinium
-description: Testinium steps integrate Appcircle with Testinium for uploading apps and running automated tests on the cloud or enterprise environments.
-slug: /build-integrations/common-integrations/testinium-steps
+description: Testinium Integrations integrate Appcircle with Testinium for uploading apps and running automated tests on the cloud or enterprise environments.
+slug: /build-integrations/common-integrations/testinium-integrations
 tags: [testinium, plan, run, app upload, test, mobile, automation, app automate]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# Testinium Steps
+# Testinium Integrations
 
 ## [Testinium Upload App](/build-integrations/common-integrations/testinium-steps/testinium-upload-app)
 

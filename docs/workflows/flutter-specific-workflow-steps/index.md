@@ -1,15 +1,15 @@
 ---
 title: Flutter Specific Integrations
-description: The steps listed below are specific to the Flutter build profiles.
+description: The integrations listed below are specific to the Flutter build profiles.
 slug: /build-integrations/flutter-specific-integrations
-tags: [flutter, build, test, workflow, step]
+tags: [flutter, build, test, workflow, integration]
 ---
 
 # Flutter Specific Integrations
 
-The steps listed below are specific to the Flutter build profiles.
+The integrations listed below are specific to the Flutter build profiles.
 
-You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related integration.
 
 ## [Firebase Deployment](/build-integrations/flutter-specific-integrations/firebase-deployment)
 
@@ -33,7 +33,7 @@ This component builds a web app with the [Flutter SDK](https://flutter.dev/docs/
 
 ## [Flutter Install](/build-integrations/flutter-specific-integrations/flutter-install)
 
-This workflow step installs the specified Flutter SDK to run the Flutter CLI for subsequent, Analyze, Build and Test operations.
+Installs the specified Flutter SDK to run the Flutter CLI for subsequent, Analyze, Build and Test operations.
 
 ## [Flutter Test](/build-integrations/flutter-specific-integrations/flutter-test)
 

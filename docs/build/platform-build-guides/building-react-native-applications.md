@@ -231,7 +231,7 @@ Appcircle uses the LTS (Long Term Support) node version by default.
 
 You can access how to change your node version and other relative information about workflow steps and configurations on the page below:
 
-<ContentRef url="/build-integrations/react-native-specific-integrations">React Native Specific Workflow Steps</ContentRef>
+<ContentRef url="/build-integrations/react-native-specific-integrations">React Native Specific Integrations</ContentRef>
 
 import NeedHelp from '@site/docs/\_need-help.mdx';
 

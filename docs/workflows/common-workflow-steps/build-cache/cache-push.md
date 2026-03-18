@@ -45,7 +45,7 @@ These limits apply per build. Exceeding the limit will result in a failed cache 
 
 :::
 
-When you drag and drop the **Cache Push** component into your [workflow](/build-integrations), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
+When you drag and drop the **Cache Push** component into your [workflow](https://github.com/appcircleio/appcircle-workflow-components), it comes with pre-defined values according to your project type. For example, in the case of Android projects, it comes with pre-defined [Gradle cache](https://docs.gradle.org/current/userguide/build_cache.html) paths, which should prove useful for most Android apps.
 
 <CacheTokenIdCaution />
 
@@ -111,7 +111,7 @@ You cannot reach the cache archive file directly by yourself. But you can see ca
 
 :::caution
 
-To view the generated artifacts on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step is included in the [workflow](/build-integrations) after this step.
+To view the generated artifacts on the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts) page, please ensure that the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step is included in the [workflow](https://github.com/appcircleio/appcircle-workflow-components) after this step.
 
 :::
 

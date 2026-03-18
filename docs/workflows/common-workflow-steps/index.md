@@ -2,20 +2,20 @@
 title: Common Integrations
 description: Common Integrations in Appcircle
 slug: /build-integrations/common-integrations
-tags: [workflow, steps, common]
+tags: [workflow, integration, common]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # Common Integrations
 
-The steps listed below are common across all build profiles regardless of the target OS and platform.
+The integrations listed below are common across all build profiles regardless of the target OS and platform.
 
-You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related integration.
 
 ## [Activate SSH Key](/build-integrations/common-integrations/active-ssh-private-key)
 
-This step sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
+This integration sets up your SSH key in the build machine if you used one to connect your repository. This allows the build machine to connect to your private repository using your SSH key.
 
 ## [Add a Badge to Your App Icon](/build-integrations/common-integrations/add-badge-app-icon)
 
@@ -23,7 +23,7 @@ With Appcircle's **Add Badge to Your App Icon** component, you can add badges an
 
 ## [Appium Server](/build-integrations/common-integrations/appium-server)
 
-This step installs [Appium Server](https://appium.io/) and starts it.
+This integration installs [Appium Server](https://appium.io/) and starts it.
 
 ## [Authenticate with Netrc](/build-integrations/common-integrations/authenticate-with-netrc)
 
@@ -47,15 +47,15 @@ This component checks network access to external services commonly used in Appci
 
 ## [Custom Script](/build-integrations/common-integrations/custom-script)
 
-You can use **Custom Script** steps for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
+You can use **Custom Script** integration for additional functionalities in your builds. Appcircle will run the commands in your custom scripts and perform the specified actions. These scripts will be run on the runner and you can use any functionality of the build environment as you need.
 
 ## [Custom Script from Git](/build-integrations/common-integrations/custom-script-from-git)
 
-You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT).
+You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This integration supports authenticated cloning (via username and PAT).
 
 ## [Code Reviews with Danger](/build-integrations/common-integrations/danger)
 
-**Danger** runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical step in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
+**Danger** runs during your CI process and gives teams the chance to automate common code review chores. This provides another logical integration in your build, through this Danger can help lint your rote tasks in daily code review. You can use Danger to codify your team’s norms. Leaving humans to think about harder problems.
 
 https://blog.appcircle.io/article/danger-in-ci-automate-your-mobile-code-reviews
 
@@ -71,7 +71,7 @@ Exports the specified build artifacts from the build agent to the Appcircle dash
 
 Appcircle supports **Fastlane** for build automation as a supplementary feature to Appcircle's own build automation.
 
-With Appcircle, you can automate your build and signing processes with the flexible workflow structure, and you can also use Fastlane as a workflow step within the build workflows.
+With Appcircle, you can automate your build and signing processes with the flexible workflow structure, and you can also use Fastlane as an integration within the build workflows.
 
 ## [File Size Check](/build-integrations/common-integrations/file-size-check)
 
@@ -85,7 +85,7 @@ https://github.com/appcircleio/appcircle-firebase-dsym-upload-component
 
 ## [Fortify On Demand](/build-integrations/common-integrations/fod-mobile-assesment)
 
-This step installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment.
+This integration installs [Fortify on Demand](https://www.microfocus.com/en-us/cyberres/application-security/fortify-on-demand/) and submits a Fortify on Demand Mobile Assessment.
 
 ## [FTP Upload](/build-integrations/common-integrations/ftp-upload)
 
@@ -121,15 +121,15 @@ The `saucectl` command line interface orchestrates the relationship between your
 
 ## [Select Java Version](/build-integrations/common-integrations/select-java-version)
 
-The **Select Java Version** step updates the JDK and Java version to the selected one during the build process.
+The **Select Java Version** integration updates the JDK and Java version to the selected one during the build process.
 
 ## [Set Environment Variable](/build-integrations/common-integrations/set-environment-variable)
 
-The **Set Environment Variable** step enables the setting of environment values for specified keys. Although creating environment variables via the Environment Variables page is typically recommended, this step provides flexibility to modify environment variables directly within the build workflow when necessary.
+The **Set Environment Variable** integration enables the setting of environment values for specified keys. Although creating environment variables via the Environment Variables page is typically recommended, this integration provides flexibility to modify environment variables directly within the build workflow when necessary.
 
 ## [Snyk Scan Security](/build-integrations/common-integrations/snyk-scan-security)
 
-By utilizing this step, you will be able to test your project dependencies for vulnerabilities during builds and use **Snyk** to monitor your projects.
+By utilizing this integration, you will be able to test your project dependencies for vulnerabilities during builds and use **Snyk** to monitor your projects.
 
 ## [SonarQube](/build-integrations/common-integrations/sonarqube)
 
@@ -137,16 +137,16 @@ You can use **SonarQube** component to check your code quality.
 
 ## [Testinium Upload App](/build-integrations/common-integrations/testinium-steps/testinium-upload-app)
 
-The **Testinium Upload App** step uploads mobile apps from Appcircle to Testinium, supporting both cloud and enterprise environments.
+The **Testinium Upload App** integration uploads mobile apps from Appcircle to Testinium, supporting both cloud and enterprise environments.
 
 ## [Testinium Run Test Plan](/build-integrations/common-integrations/testinium-steps/testinium-run-test-plan)
 
-The **Testinium Run Test Plan** step allows you to run automated tests on your mobile applications directly from Appcircle, whether using Testinium cloud or enterprise setup.
+The **Testinium Run Test Plan** integration allows you to run automated tests on your mobile applications directly from Appcircle, whether using Testinium cloud or enterprise setup.
 
 ## [Testinium](/build-integrations/common-integrations/testinium-steps/testinium)
 
-The **Testinium** step allows users to upload their mobile applications to **Testinium** and run a test plan for Testinium cloud users.
+The **Testinium** integration allows users to upload their mobile applications to **Testinium** and run a test plan for Testinium cloud users.
 
 ## [Upload Files to Amazon S3](/build-integrations/common-integrations/upload-files-to-amazon-s3)
 
-The **Upload Files to Amazon S3** step in Appcircle enables direct uploading of any file or folder to the designated Amazon S3 bucket during the build process.
+The **Upload Files to Amazon S3** integration in Appcircle enables direct uploading of any file or folder to the designated Amazon S3 bucket during the build process.

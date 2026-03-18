@@ -1,7 +1,7 @@
 ---
 title: Testinium Upload App
-description: The Testinium Upload App step enables uploading mobile applications to the Testinium platform for automated testing directly from Appcircle.
-slug: /build-integrations/common-integrations/testinium-steps/testinium-upload-app
+description: The Testinium Upload App integration enables uploading mobile applications to the Testinium platform for automated testing directly from Appcircle.
+slug: /build-integrations/common-integrations/testinium-integrations/testinium-upload-app
 tags: [testinium, app upload, test, mobile, app automate, automation]
 sidebar_position: 1
 ---
@@ -12,58 +12,58 @@ import TestiniumEnterpriseWhitelistDanger from '@site/docs/workflows/common-work
 
 # Testinium Upload App
 
-The **Testinium Upload App** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing developers to upload mobile applications seamlessly to Testinium. This step serves as a prerequisite for executing test plans, enabling efficient and automated testing directly within the Appcircle environment.
+The **Testinium Upload App** integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing developers to upload mobile applications seamlessly to Testinium. This step serves as a prerequisite for executing test plans, enabling efficient and automated testing directly within the Appcircle environment.
 
 ### Prerequisites
 
-Before running the **Testinium Upload App** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **Testinium Upload App**, you must complete certain prerequisites, as detailed in the table below:
 
 <TestiniumEnterpriseWhitelistDanger />
 
 :::info
 
-After uploading the application, you should use the [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-steps/testinium-run-test-plan) step to run the test plan and view the test report. If you prefer to perform both operations within the same step, use the [**Testinium**](/build-integrations/common-integrations/testinium-steps/testinium) step instead.
+After uploading the application, you should use the [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-integrations/testinium-run-test-plan) integration to run the test plan and view the test report. If you prefer to perform both operations within the same integration, use the [**Testinium**](/build-integrations/common-integrations/testinium-steps/testinium) integration instead.
 
 :::
 
 #### For Android (Java / Kotlin and React Native) 
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Testinium Upload App** step.                                                                           |
-| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| Prerequisite Integration                                                             | Description                                                                                                                            |
+|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Testinium Upload App**.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This integration is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_1.png'/>
 
 #### For iOS (Objective-C / Swift and React Native) 
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Prerequisite Integration                                                                                           | Description                                                                                              |
+|--------------------------------------------------------------------------------------------------------------------| -------------------------------------------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates a `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_2.png'/>
 
 #### For Android Flutter 
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Testinium Upload App** step.                                                                           |
-| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| Prerequisite Integrations                                                                                    | Description                                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Testinium Upload App**.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)                           | This integration is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_3.png'/>
 
 #### For iOS Flutter
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Prerequisite Integrations                                                                                          | Description                                                                                              |
+|--------------------------------------------------------------------------------------------------------------------| -------------------------------------------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in `ARM` architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios)               | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_4.png'/>
 
 ### Input Variables
 
-This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+This integration contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium-upload-app_5-1.png'/>
 
@@ -88,8 +88,8 @@ The output(s) resulting from the operation of this component are as follows:
 
 | Variable Name                     | Description                                                                     |
 | --------------------------------- | ------------------------------------------------------------------------------- | 
-| `AC_TESTINIUM_UPLOADED_APP_ID`    | The unique identifier for the application was uploaded to Testinium. This ID is used to select the uploaded application on the **Testinium Run Test Plan** step. |
-| `AC_TESTINIUM_APP_OS`             | The operating system of the uploaded application, either `iOS` or `Android`. This helps to run the test plan according to the platform OS in the **Testinium Run Test Plan** step. |
+| `AC_TESTINIUM_UPLOADED_APP_ID`    | The unique identifier for the application was uploaded to Testinium. This ID is used to select the uploaded application on the **Testinium Run Test Plan**. |
+| `AC_TESTINIUM_APP_OS`             | The operating system of the uploaded application, either `iOS` or `Android`. This helps to run the test plan according to the platform OS in the **Testinium Run Test Plan**. |
 
 ---
 

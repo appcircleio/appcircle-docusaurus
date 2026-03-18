@@ -36,7 +36,7 @@ There are no prerequisites required before using the **Select Java Version** ste
 
 :::caution
 
-If you have a step that necessitates changing the Java version (e.g., the [**Android Build**](/build-integrations/android-specific-integrations/android-build) step), the **Select Java Version** step should run before that step in the [workflow](/build-integrations).
+If you have a step that necessitates changing the Java version (e.g., the [**Android Build**](/build-integrations/android-specific-integrations/android-build) step), the **Select Java Version** step should run before that step in the [workflow](https://github.com/appcircleio/appcircle-workflow-components).
 
 :::
 

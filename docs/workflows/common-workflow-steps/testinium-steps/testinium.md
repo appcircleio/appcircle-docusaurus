@@ -1,7 +1,7 @@
 ---
 title: Testinium
-description: The Testinium step allows users to upload their mobile applications to Testinium and run a test plan.
-slug: /build-integrations/common-integrations/testinium-steps/testinium
+description: The Testinium integration allows users to upload their mobile applications to Testinium and run a test plan.
+slug: /build-integrations/common-integrations/testinium-integrations/testinium
 tags: [testinium, app upload, run, test, plan]
 sidebar_position: 3
 ---
@@ -11,56 +11,56 @@ import SensitiveVariablesDanger from '@site/docs/\_sensitive-variables-danger.md
 
 # Testinium
 
-The **Testinium** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, enabling users to upload mobile applications, execute test plans, and analyze results. This step helps developers run automated tests, assess test outcomes, and ensure app quality before deployment.
+The **Testinium** integration integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, enabling users to upload mobile applications, execute test plans, and analyze results. This integration helps developers run automated tests, assess test outcomes, and ensure app quality before deployment.
 
 :::tip Multiple Test Plans
 
-If you're using Testinium as an enterprise or need to run multiple test plans for the same app, use the [**Testinium Upload App**](/build-integrations/common-integrations/testinium-steps/testinium-upload-app) step followed by multiple [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-steps/testinium-run-test-plan) steps instead of the **Testinium** step. This allows you to execute multiple test plans separately within the workflow.
+If you're using Testinium as an enterprise or need to run multiple test plans for the same app, use the [**Testinium Upload App**](/build-integrations/common-integrations/testinium-integrations/testinium-upload-app) integration followed by multiple [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-integrations/testinium-run-test-plan) integrations instead of the **Testinium** one. This allows you to execute multiple test plans separately within the workflow.
 
 :::
 
 ### Prerequisites
 
-Before running the **Testinium** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **Testinium** integration, you must complete certain prerequisites, as detailed in the table below:
 
 #### For Android (Java / Kotlin and React Native) 
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Testinium** step.                                                                           |
-| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| Prerequisite Workflow Integration                                                    | Description                                                                                                                            |
+|--------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Testinium** integration.                                                                          |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This integration is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_1.1.png'/>
 
 #### For iOS (Objective-C / Swift and React Native) 
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Prerequisite Workflow Integration                                                                                  | Description                                                                                              |
+|--------------------------------------------------------------------------------------------------------------------| -------------------------------------------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_2.1.png'/>
 
 #### For Android Flutter 
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Testinium** step.                                                                           |
-| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | This step is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
+| Prerequisite Workflow Integration                                                                            | Description                                                                                                                            |
+|--------------------------------------------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------|
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Testinium** integration.                                                                          |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)                           | This integration is required for signing the app. It processes the output for signing but can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_3.1.png'/>
 
 #### For iOS Flutter
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
+| Prerequisite Workflow Integration<br/>                                                                                  | Description                                                                                              |
+|--------------------------------------------------------------------------------------------------------------------| -------------------------------------------------------------------------------------------------------- |
 | [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios)               | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_4.1.png'/>
 
 ### Input Variables
 
-This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+This integration contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_5.1.png'/>
 
