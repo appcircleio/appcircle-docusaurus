@@ -22,7 +22,7 @@ Before running the **Testinium Upload App**, you must complete certain prerequis
 
 :::info
 
-After uploading the application, you should use the [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-integrations/testinium-run-test-plan) integration to run the test plan and view the test report. If you prefer to perform both operations within the same integration, use the [**Testinium**](/build-integrations/common-integrations/testinium-steps/testinium) integration instead.
+After uploading the application, you should use the [**Testinium Run Test Plan**](/build-integrations/common-integrations/testinium-integrations/testinium-run-test-plan) integration to run the test plan and view the test report. If you prefer to perform both operations within the same integration, use the [**Testinium**](/build-integrations/common-integrations/testinium-integrations/testinium) integration instead.
 
 :::
 

@@ -9,7 +9,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Xcodebuild for Testing
 
-This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](/build-integrations/ios-specific-integrations/browserstack-app-automation) or [**Testinium**](/build-integrations/common-integrations/testinium-steps/testinium).
+This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks like [**BrowserStack**](/build-integrations/ios-specific-integrations/browserstack-app-automation) or [**Testinium**](/build-integrations/common-integrations/testinium-integrations/testinium).
 
 ### Prerequisites
 
