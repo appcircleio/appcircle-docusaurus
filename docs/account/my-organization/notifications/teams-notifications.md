@@ -122,6 +122,10 @@ The Build module can send notifications for key build lifecycle events, such as:
 - Test Report Created
 - Build Cache Cleared
 
+#### License Events
+
+- Retention Policy Updated
+
 #### CodePush Events
 
 - CodePush App Created
@@ -148,7 +152,17 @@ Notifications related to certificate, keystore, and provisioning profile operati
 - Android Keystore Uploaded
 - Android Keystore Deleted
 - Android Keystore Expiration Reminder
-
+- Apple Device List Fetch Success
+- Apple Device Registered
+- Apple Device Updated
+- Apple Multiple Devices Updated
+- Apple Multiple Devices Registered
+- Apple Device Provisioned
+- Apple Device Unregistered
+- Apple Identifier Created
+- Apple Identifier Deleted
+- Apple Identifier Created in Apple Developer Portal
+- Apple Identifier Updated in Apple Developer Portal
 
 ### Testing Distribution
 

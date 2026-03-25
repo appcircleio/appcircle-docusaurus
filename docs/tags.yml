@@ -3132,3 +3132,8 @@ quay:
   label: "branch"
   description: "Documentation related to branch"
   permalink: "/branch"
+
+"organization activity":
+  label: "organization activity"
+  description: "Documentation related to organization activity"
+  permalink: "/organization-activity"

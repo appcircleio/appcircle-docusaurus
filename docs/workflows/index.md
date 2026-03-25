@@ -78,35 +78,35 @@ Please note that modifying workflow steps may cause your builds to fail, so utmo
 
 :::
 
-## [How to Create a New Workflow Step](/workflows/how-to-create-a-new-workflow-step)
+## [How to Create an Integration](/workflows/how-to-create-an-integration)
 
-This guide explains the process of creating a new workflow step, including defining its purpose, configuring inputs and outputs, writing the necessary scripts or code, and integrating it into existing workflows for automation.
+This guide explains the process of creating a new integration, including defining its purpose, configuring inputs and outputs, writing the necessary scripts or code, and integrating it into existing workflows for automation.
 
-## [Common Workflow Steps](/workflows/common-workflow-steps)
+## [Common Integrations](/workflows/common-workflow-steps)
 
 These steps are common across all build profiles regardless of the target OS and platform.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [iOS Specific Workflow Steps](/workflows/ios-specific-workflow-steps)
+## [iOS Specific Integrations](/workflows/ios-specific-workflow-steps)
 
 These steps are specific to the iOS build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Android Specific Workflow Steps](/workflows/android-specific-workflow-steps)
+## [Android Specific Integrations](/workflows/android-specific-workflow-steps)
 
 These steps are specific to the Android build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [React Native Specific Workflow Steps](/workflows/react-native-specific-workflow-steps)
+## [React Native Specific Integrations](/workflows/react-native-specific-workflow-steps)
 
 These steps are specific to the React Native build profiles.
 
 You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Flutter Specific Workflow Steps](/workflows/flutter-specific-workflow-steps)
+## [Flutter Specific Integrations](/workflows/flutter-specific-workflow-steps)
 
 These steps are specific to the Flutter build profiles.
 

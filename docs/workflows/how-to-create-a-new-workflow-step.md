@@ -1,18 +1,19 @@
 ---
-title: How to Create a New Workflow Step
+title: How to Create an Integration
 description: A guide to defining, configuring, and integrating a new step into a workflow.
-tags: [create, new step, workflow, development, build]
+slug: /workflows/how-to-create-an-integration
+tags: [create, new step, workflow, development, build, integration]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
-# How to Create a New Workflow Step
+# How to Create an Integration
 
-This guide outlines the process for creating a new workflow step in Appcircle.
+This guide outlines the process for creating a new Integration in Appcircle.
 
 :::info
 
-Before creating a new workflow step, please check the [Appcircle Integrations](https://appcircle.io/integrations) page to ensure the integration does not already exist.
+Before creating a new integration, please check the [Appcircle Integrations](https://appcircle.io/integrations) page to ensure the integration does not already exist.
 
 :::
 
@@ -25,7 +26,7 @@ The first phase is to create a dedicated repository where the step’s code will
 
 ### 1.1. Contact Appcircle Team
 
-Before starting the development of a new workflow step, contributors must first get in touch with the Appcircle team. This ensures that the proposed step aligns with Appcircle’s roadmap and standards.
+Before starting the development of a new integration, contributors must first get in touch with the Appcircle team. This ensures that the proposed step aligns with Appcircle’s roadmap and standards.
 
 > **Contact the Appcircle Team:** 🔗 [Contact Appcircle Team](https://appcircle.io/contact)
 
@@ -253,7 +254,7 @@ After completing these files, the workflow step will be ready for testing.
 
 ### 2.4 Unit Test Configuration
 
-Each new workflow step should include unit tests to verify that the step behaves as expected before publishing.
+Each new integration should include unit tests to verify that the step behaves as expected before publishing.
 
 #### 2.4.1 Test File Structure
 

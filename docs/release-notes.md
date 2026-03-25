@@ -21,12 +21,14 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### 🆕 New Features
 
 - The Manual and Auto Binary [Re-sign](/enterprise-app-store/resign-binary) feature has been introduced for the Enterprise App Store module, enabling binaries to be re-signed similarly to the Publish and Testing Distribution modules. <EnterpriseStoreBadge/> <CloudBadge/>
+- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - Metadata fields containing user-defined `$ENV` values will no longer be overwritten by backend data when the Retrieve from Last Updated action is performed. <PublishBadge/> <CloudBadge/>
 - The visibility of multi-line tooltip texts has been improved. <CloudBadge/>
 - The user authentication method, such as Password or SSO, will now be displayed on the Account page. <AccountBadge/> <CloudBadge/>
+- The Team Activity Log section has been renamed to Organization Activity. <AccountBadge/> <CloudBadge/>
 - Users authenticated via SSO or LDAP can no longer change their passwords on the Account page, and password updates must be performed by logging out and signing in again using standard password authentication. <AccountBadge/> <CloudBadge/>
 - New actions have been added to the Signing Identity configurations for Notification channels, including Email and MS Teams. <AccountBadge/> <CloudBadge/>
 - Organization PAT create and revoke actions will now be displayed in the Team Activity Log. <AccountBadge/> <CloudBadge/>
@@ -34,15 +36,22 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - File types will now be displayed as `APK`,`AAB` and `IPA` on the app version list within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/>
 - After downloading an app, the Testing Portal will now redirect users back to the app version list. <DistributionBadge/> <CloudBadge/>
 - Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
-- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
 - Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
 - The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
+- Updated the Android Sign step to prevent v2 (apksigner) signing for AAB outputs, ensuring that `AAB` files are signed only with jarsigner, while `APK` signing behavior remains unchanged. <BuildIntegrationsBadge/> <CloudBadge/>
+- In the newly added Android Sign step in the workflow, the “**V2 Sign**” option now defaults to true. If your APK uses v1 signing, this value must be set to false. For `AAB` builds, this setting has no effect. <BuildIntegrationsBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest stable release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
 - Several UI issues affecting viewer role users that caused inconsistent behavior have been fixed. <CloudBadge/>
 - An issue causing Keystore uploads to fail when the key alias contained non-ASCII characters has been fixed. <SigningIdentitiesBadge/> <CloudBadge/>
-- An issue where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`) has been fixed. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`). <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the auto re-sign operation did not start for publish profiles with disabled publish flow steps. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where the “App Information From App Store” Publish flow step caused an error while checking the App Store connection status. <PublishIntegrationsBadge/> <CloudBadge/>
+- An issue has been fixed where Fortify-related validation rules could fail when incompatible data was provided by some organizations. Validation criteria have been improved to ensure more reliable processing. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where setting the build status could return a 404 error for Bitbucket self-hosted repositories due to endpoint validation problems.
+- An issue has been fixed where the QR code was not displayed on the LDAP 2FA login screen in the Testing Portal. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
@@ -71,7 +80,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Cache Push and Cache Pull steps now generate and restore cache per build profile by default instead of per branch, improving cache reuse and reducing fragmentation; [documentation](/workflows/common-workflow-steps/build-cache/how-to-configure-branch-based-caching) has been added for users who want to continue using branch-based caching. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/> <SelfHostedBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
-- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3 RC1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -83,6 +92,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where certain environment variables were not consistently populated for user-triggered builds, despite being expected to be available across all trigger types. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where incorrect field labels in the Bitbucket API token configuration for self-hosted environments to improve clarity and reduce user confusion during setup. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where deleting app versions with the same bundle or package IDs negatively affected delete operations across different testing distribution profiles. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where users with a large number of app versions in Testing Distribution experienced errors when deleting apps. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where uploading binaries to Testing Distribution profiles took longer than expected. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
@@ -2356,7 +2368,6 @@ If your builds fail on Appcircle Standard macOS Pool (arm64) or if you’re not 
 - Added [Huawei AppGallery](https://docs.appcircle.io/account/adding-huawei-api-key) section for creating Huawei AppGallery API Key.
 - Added [FAQ section](/build/platform-build-guides/building-ios-applications#cocoapods-errros-due-to-version-mismatch) for Cocoapods version.
 - Added [FAQ section](/build/platform-build-guides/building-ios-applications#provisioning-profile-error) for Provisioning Profiles.
-- Added [FAQ section](/publish-to-stores-module/publish-information/resign-binary#missing-entitlements) for Missing Entitlements​
 - Added [FAQ section](/build/platform-build-guides/building-android-applications#gradle-build-after-bintray-shutdown) for Bintray deprecation
 - Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter build errors
 - Added [FAQ section](/build/platform-build-guides/building-flutter-applications#faq) for Flutter file naming errors

@@ -58,6 +58,10 @@ The Build module can send notifications for key build lifecycle events, such as:
 - Fetch Started
 - Test Report Created
 
+#### License Events
+
+- Retention Policy Updated
+
 ### Signing Identity
 
 Notifications related to certificate, keystore, and provisioning profile operations, such as:
@@ -72,6 +76,17 @@ Notifications related to certificate, keystore, and provisioning profile operati
 - Android Keystore Uploaded
 - Android Keystore Deleted
 - Android Keystore Expiration Reminder
+- Apple Device List Fetch Success
+- Apple Device Registered
+- Apple Device Updated
+- Apple Multiple Devices Updated
+- Apple Multiple Devices Registered
+- Apple Device Provisioned
+- Apple Device Unregistered
+- Apple Identifier Created
+- Apple Identifier Deleted
+- Apple Identifier Created in Apple Developer Portal
+- Apple Identifier Updated in Apple Developer Portal
 
 ### Testing Distribution
 

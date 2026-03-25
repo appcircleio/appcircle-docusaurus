@@ -5,11 +5,18 @@ tags: [ios, android, resigning, provisioning profiles, keystore, entitlements, f
 sidebar_position: 2
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
+import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
+
 # Re-sign Binary
 
 Enterprise App Store Re-Sign & Auto-Resign enables re-signing and automatic re-signing of iOS and Android applications distributed via the Enterprise App Store.
 
 This feature allows controlled updates to build and version numbers, signing identities, and store credentials, while providing a unified re-sign flow for both manual and automated scenarios.
+
+<RunnerUsage />
+<BillingInfoForResign />
 
 ## iOS Re-sign
 
@@ -19,7 +26,7 @@ Manual iOS re-sign allows you to re-sign an existing IPA using a different signi
 
 You can use manual re-sign to:
 - Change the signing certificate or provisioning profile
-- Update the bundle identifier to match the Publish profile
+- Update the bundle identifier to match the profile
 - Modify the app display name
 - Adjust version and build numbers before distribution
 
@@ -43,7 +50,7 @@ Manual Android re-sign enables re-signing APK or AAB files using a different key
 
 You can use manual re-sign to:
 - Replace the signing keystore
-- Update the package name to match the Publish profile
+- Update the package name to match the profile
 - Modify version code and version name values
 - Convert AAB files to APK if required for distribution
 

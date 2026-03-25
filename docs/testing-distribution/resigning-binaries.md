@@ -8,18 +8,27 @@ sidebar_position: 3
 import Screenshot from '@site/src/components/Screenshot';
 import NarrowImage from '@site/src/components/NarrowImage';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
+import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
 
 # Re-signing
 
 Re-signing is the process of modifying an existing binary with a new signing certificate or keystore, required when an application needs to be published under a different developer account or when updating an existing application. This process involves removing the original signature and replacing it with a new one.
 
 <RunnerUsage />
+<BillingInfoForResign />
+
 
 ## Re-signing iOS Binaries
 
 To sign an iOS binary, you need a valid certificate and provisioning profile. Appcircle supports both IPA and xcarchive files. The process of signing an iOS binary involves selecting the correct certificate and provisioning profile and specifying the bundle identifier and version number. Once these details are entered, Appcircle will generate a new signed binary with the updated information.
 
 ### iOS Re-sign Process
+
+You can use manual re-sign to:
+- Change the signing certificate or provisioning profile
+- Update the bundle identifier to match the profile
+- Modify the app display name
+- Adjust version and build numbers before distribution
 
 1. Select the binary.
 
@@ -31,55 +40,17 @@ You can either select the files from the list or upload IPA, xcarchive files by 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-21.png' />
 
-This form will show the following details of the original binary.
+Manual re-sign operations are performed per app version and the resulting output is stored as a new re-signed artifact.
 
-**Display Name**
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-10.png' />
 
-CFBundleDisplayName: The user-visible name for the bundle, used by Siri and visible on the iOS Home screen.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-11.png' />
 
-:::caution Changing Display Name
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-12.png' />
 
-Please note that if the project `info.plist` file does **not** have a `CFBundleDisplayName` parameter, changing the display name during resigning will **not** work.
-
+:::info iOS Re-sign Configurations
+For detailed information about Manual iOS Re-sign configurations, please refer to the [configuration](/testing-distribution/resigning-binaries#ios-auto-re-sign-configurations) section. The configuration structure for Manual and Auto Re-sign is the same. However, unlike Auto Re-sign, Manual Re-sign configurations must be reconfigured for each re-sign action.
 :::
-
-**Version**
-
-CFBundleShortVersionString: The release or version number of the bundle.
-
-**Build Number**
-
-CFBundleVersion: The version of the build that identifies an iteration of the bundle.
-
-**Entitlements**
-
-- Entitlements from provisioning profiles
-
-Use entitlements from the new provisioning profile
-
-- Combine app entitlements
-
-Extract app bundle codesigning entitlements and combine them with entitlements from new provisioning
-
-- New Entitlements.
-
-This XML file can be edited to modify capabilities. The Re-signing process uses a **single** entitlement XML file.
-
-If your provisioning profiles have the correct entitlements set, using the first option is the safest option.
-
-**Targets**
-
-You need to select new provisioning profiles for each target. Bundle ids will be automatically populated when you select a new provisioning profile. However, if you use a wildcard provisioning profile, you may need to write the correct bundle id for the selected target.
-
-:::caution
-
-A provisioning profile must be selected for each target; otherwise, re-signing will fail.
-
-:::
-
-3. Fill in the details for re-sign process and hit the **Sign** button
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-ss6.png' />
 
 When you sign an app version through Testing Distribution Profile or upload a signed app version manually or automatically through the Build module, Testing Distribution Profile will display a **signed** badge when the corresponding app version is selected.
 
@@ -101,11 +72,21 @@ Files can either be selected from the list or uploaded by clicking the **Upload*
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8124-24.png' />
 
-The following details of the original binary will be shown in this form.
+You can use manual re-sign to:
+- Replace the signing keystore
+- Update the package name to match the profile
+- Modify version code and version name values
+- Convert AAB files to APK if required for distribution
 
-3. Select the correct keystore and click the **Sign** button to sign your binary. You may also change the Package ID, Version Name and Version Code.
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-7.png' />
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6154-and3.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-8.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-9.png' />
+
+:::info Android Re-sign Configurations
+For detailed information about Manual Android Re-sign configurations, please refer to the [configuration](/testing-distribution/resigning-binaries#android-auto-re-sign-configurations) section. The configuration structure for Manual and Auto Re-sign is the same. However, unlike Auto Re-sign, Manual Re-sign configurations must be reconfigured for each re-sign action.
+:::
 
 When an app version is signed using the Testing Distribution Profile or uploaded manually or automatically through the Build module, a **signed** badge will be displayed on the Testing Distribution Profile for the corresponding app version.
 
