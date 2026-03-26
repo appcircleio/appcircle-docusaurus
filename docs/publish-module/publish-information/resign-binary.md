@@ -166,7 +166,7 @@ For more information, please visit the [Signing Identity Module](/signing-identi
 
 Appcircle’s manual re-sign binary feature allows you to sign binaries for multiple targets. If you wish to use an existing provision for this, Appcircle requires two inputs. One of these inputs contains the bundle identifier of the target to be signed, while the other is used to select which provision will be used to sign that target. Appcircle processes the selected bundle identifiers for signing based on the provided inputs.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-246-manuel-resing-multiple-target.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-newss.png' />
 
 :::
 
