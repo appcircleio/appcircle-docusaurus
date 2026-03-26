@@ -6,6 +6,7 @@ sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
+import Screenshot from '@site/src/components/Screenshot';
 
 # Appcircle MCP Server
 
@@ -115,7 +116,7 @@ Follow the guide for your client to install or connect to the Appcircle MCP Serv
 
 You can see the available tools in your MCP client after the Appcircle MCP server is configured. The client lists the tools the server provides; you or the AI can then call them to fetch Build profiles, distribution details, reports, and more. 
 
-**!!!!Claude Desktop Screenshot here!!!!**
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8468-claude-desktop-mcp.png'/>  
 
 ## Authentication
 
