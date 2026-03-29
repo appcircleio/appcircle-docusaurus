@@ -379,6 +379,43 @@ Please note that you **cannot** delete a binary that is published to the Beta or
 
 :::
 
+## Expiration Status
+
+The Binary list on the Enterprise App Store profile screen, Binary Details screen and the Binary Comparison screen display certificate or keystore expiration information for uploaded binaries.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-1.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-2.png' />
+
+- **Expire Soon** status is shown for binaries whose signing certificate/keystore is approaching its expiration date which is within 1 month.
+- **Expired** status is shown for binaries whose signing certificate/keystore has already expired.
+
+The expiration date is highlighted to help users identify binaries that require action:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-3.png' />
+
+:::caution Expired Binary Restriction
+If the signing certificate/keystore of a binary is expired, the binary cannot be published to the **Beta** or **Live** channel.
+Also, if the expired binary was already published to a channel, it cannot be downloaded via Appcircle UI or Enterprise Portal.
+:::
+
+#### Expiration Notifications
+
+Enterprise App Store binaries will generate expiration notifications when their signing certificates/keystores are approaching expiration.
+
+Notifications are sent only for binaries that are currently published to the **Beta** or **Live** channel.
+
+The following notifications are sent once for each eligible binary:
+
+- **1 month** before expiration
+- **2 weeks** before expiration
+- **1 week** before expiration
+- **24 hours** before expiration
+
+In addition to email notifications, local notifications are also triggered using the same schedule.
+
+To receive email notifications, users must enable the corresponding setting in the Notifications section for the relevant channel.
+
 ## Apple Enterprise Program
 
 The Apple Developer Enterprise Program allows large organizations to develop and deploy proprietary, internal-use apps directly to their employees. This program is designed for specific use cases that require private distribution through secure internal systems or a Mobile Device Management solution.
