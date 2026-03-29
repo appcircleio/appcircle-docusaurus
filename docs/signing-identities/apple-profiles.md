@@ -157,6 +157,52 @@ You will be notified when a provisioning profile is about to expire. You can see
 
 :::
 
+### Sharing Apple Profiles
+
+Root Organization users have the ability to share their Apple Provisioning Profiles with Sub-Organizations. 
+
+Shared provisioning profiles can be used in Sub-Organizations just like locally uploaded or fetched profiles.
+
+#### How to Share Apple Profiles
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-25.png' />
+
+1. Navigate to the Apple Profiles Section  
+   Go to the Signing Identity module and open the **Apple Profiles** section.
+
+2. Open Profile List  
+   Locate the provisioning profile you want to share.
+
+3. Select the Profile  
+   Click the **Share** icon under the Actions column.
+
+4. Configure Sharing Settings  
+   In the Share panel:
+
+- Enable **Share with all sub-organizations** to automatically share the profile with all existing and newly created sub-organizations.
+- Alternatively, manually select specific sub-organizations.
+
+5. Save Sharing Configuration  
+   Click **Share** to complete the process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-26.png' />
+
+#### Behavior in Sub-Organizations
+
+- Shared provisioning profiles will be visible and selectable in Sub-Organizations.
+- These profiles will be marked with a **Shared** tag on Root Organization and **Inherited** tag on Sub Organizations.
+- Sub-Organization users **cannot edit, rename, or delete** shared provisioning profiles.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-27.png' />
+
+:::tip
+- If **Share with all sub-organizations** is enabled, the profile will also be automatically available in newly created sub-organizations.
+:::
+
+:::caution
+- Any changes or deletions made in the Root Organization will affect all Sub-Organizations using the shared provisioning profile.
+:::
+
 ### Deleting Provisioning Profiles
 
 You can delete a single Provisioning Profile or multiple ones by selecting the checkboxes next to the provisioning profiles. You can also select the checkbox at the top of the list to select all available ones. Once you select the checkboxes for the files you need, a delete button will appear at the top right corner.
