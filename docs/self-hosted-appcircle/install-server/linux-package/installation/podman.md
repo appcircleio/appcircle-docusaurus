@@ -518,6 +518,7 @@ Appcircle server has some subdomains for different services. So, you need to add
 - monitor
 - redis
 - (optional) Enterprise App Store's Custom Domain
+- (optional) MCP server DNS: mcp
 
 :::info
 
@@ -571,6 +572,7 @@ On self-hosted Appcircle server, you should add below entries to the `/etc/hosts
 0.0.0.0  monitor.appcircle.spacetech.com
 0.0.0.0  redis.appcircle.spacetech.com
 0.0.0.0  store.spacetech.com
+0.0.0.0  mcp.appcircle.spacetech.com
 ```
 
 For clients that will connect to self-hosted Appcircle server, either self-hosted runners or end-users using their browsers for web UI, should add external IP of the server to their `/etc/hosts` files. External IP is the address of self-hosted Appcircle server that other hosts in the network can reach to server using that address.
@@ -596,6 +598,7 @@ Other clients that connect to the server should add below entries to their `/etc
 35.241.181.2  monitor.appcircle.spacetech.com
 35.241.181.2  redis.appcircle.spacetech.com
 35.241.181.2  store.spacetech.com
+35.241.181.2  mcp.appcircle.spacetech.com
 ```
 
 With this network setup, you can run and test both self-hosted Appcircle server and connected self-hosted runners with all functionality.

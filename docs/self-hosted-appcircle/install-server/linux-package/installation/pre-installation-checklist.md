@@ -126,6 +126,9 @@ These subdomains are **api**, **auth**, **dist**, **hook**, **my**, **resource**
   - [ ] `monitor.appcircle.spacetech.com`
   - [ ] `redis.appcircle.spacetech.com`
 
+- [ ] (Optional) If you are setting up the MCP server, create the following additional DNS entry on your DNS:
+  - [ ] `mcp.appcircle.spacetech.com`
+
 - [ ] All of these domain names should resolve to the same server IP address, which is the Appcircle server.
 
 You can see details in the [DNS Settings](/self-hosted-appcircle/install-server/linux-package/installation/docker#4-dns-settings) section.

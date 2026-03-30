@@ -40,6 +40,10 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
 
+(Optional) If you are setting up the MCP server, create the following additional DNS entry:
+
+8. mcp.appcircle.spacetech.com
+
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in OpenShift.
 
 </details>
@@ -459,6 +463,8 @@ router-default   LoadBalancer  10.217.4.108   10.45.140.78  80/TCP,443/TCP,1936/
    - `my.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `kvs.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+
+   - (Optional) `mcp.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
 
 ### 2. Login to the Appcircle Dashboard
 
