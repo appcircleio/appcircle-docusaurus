@@ -6,9 +6,13 @@ tags: [publish, publish module, auto, re-sign, configuration]
 sidebar_position: 3
 ---
 
+import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
+
 # Auto Re-sign
 
 The **Auto Re-sign** feature in Appcircle’s Publish to Stores module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
+
+<BillingInfoForResign />
 
 ## Enabling Auto Re-sign
 

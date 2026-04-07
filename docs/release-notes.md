@@ -38,6 +38,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
 - Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
 - The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
+- Updated the Android Sign step to prevent v2 (apksigner) signing for AAB outputs, ensuring that `AAB` files are signed only with jarsigner, while `APK` signing behavior remains unchanged. <BuildIntegrationsBadge/> <CloudBadge/>
+- In the newly added Android Sign step in the workflow, the “**V2 Sign**” option now defaults to true. If your APK uses v1 signing, this value must be set to false. For `AAB` builds, this setting has no effect. <BuildIntegrationsBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest stable release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
@@ -92,6 +94,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - An issue has been fixed where some users received Bad Request errors during binary downloads on the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where deleting app versions with the same bundle or package IDs negatively affected delete operations across different testing distribution profiles. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where users with a large number of app versions in Testing Distribution experienced errors when deleting apps. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where uploading binaries to Testing Distribution profiles took longer than expected. <DistributionBadge/> <CloudBadge/>
 
 ### :warning: Breaking Changes
 
