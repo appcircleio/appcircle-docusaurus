@@ -14,6 +14,7 @@ For each Android build, Appcircle creates a brand new virtual machine;
 - If you select "Appcircle Linux Pool (x86_64)", the virtual machine will be the below
   - Debian 11 Bullseye
 - If you select "Appcircle macOS Pool (arm64)", the virtual machine will be one of the options below
+  - macOS Tahoe `26.3.2`
   - macOS Sequoia `15.6.1`
   - macOS Sequoia `15.4.1`
   - macOS Sonoma `14.5`
@@ -107,32 +108,32 @@ There are many pre-installed packages in virtual machines. You can get a full li
 
 Here are some most important packages installed in our Linux and macOS images used for Android builds:
 
-| Package             | Debian Bullseye | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` |
-| ------------------- | --------------- | -------------- | ----------------- | ----------------- |
-| Apt                 | 2.2.4           | n/A            | n/A | n/A |
-| Homebrew            | n/A             | 4.3.5          | 4.5.1 | 4.6.16 |
-| Bash                | 5.1.4           | 3.2.57         | 3.2.57 | 3.2.57 |
-| GNU Binutils        | 2.35.2          | n/A            | n/A | n/A |
-| Bzip2               | 1.0.8           | n/A            | n/A | n/A |
-| Curl                | 7.74.0          | 8.6.0          | 8.7.1 | 8.7.1 |
-| GCC                 | 10.2.1          | 16.0.0         | 17.0.0  | 17.0.0 |
-| Git                 | 2.35.1          | 2.45.2         | 2.49.0 | 2.51.0 |
-| Git LFS             | 2.13.2          | 3.5.1          | 3.6.1 | 3.7.0 |
-| Gradle              | 4.4.1           | 8.8            | 8.14 | 9.1.0 |
-| Gzip                | 1.10            | 430.100.5      | 457.100.3 | 457.140.3 |
-| Java                | 17.0.9          | 17.0.9         | 17.0.9 | 17.0.9 |
-| Maven               | 3.9.9           | 3.9.7          | 3.9.9 | 3.9.11 |
-| Node JS             | 18.20.5         | 18.20.3        | 18.20.8 | 18.20.8 |
-| OpenSSL             | 1.1.1           | 3.3.6          | 3.3.6 | 3.3.6 |
-| Perl                | 5.32.1          | 5.34.1         | 5.34.1 | 5.34.1 |
-| Python              | 3.9.2           | 3.12.3         | 3.13.3 | 3.14.0 |
-| Rake                | 13.2.1          | 13.0.6         | 13.0.6 | 13.3.0 |
-| Rbenv               | 1.3.0           | 1.2.0          | 1.3.2 | 1.3.2 |
-| Ruby                | 3.2.3           | 3.2.3          | 3.2.3 | 3.2.3 |
-| Unzip               | 6.00            | 6.00           | 6.00 | 6.00 |
-| Wget                | 1.21            | 1.24.5         | 1.25.0 | 1.25.0 |
-| Yarn                | 1.22.22         | 1.22.22        | 1.22.22 | 1.22.22 |
-| Zip                 | 3.0             | 3.0            | 3.0 | 3.0 |
+| Package             | Debian Bullseye | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` | macOS Tahoe `26.3.2` |
+| ------------------- | --------------- | -------------- | ----------------- | ----------------- | ----------------- |
+| Apt                 | 2.2.4           | n/A            | n/A | n/A | n/A |
+| Homebrew            | n/A             | 4.3.5          | 4.5.1 | 4.6.16 | 5.1.0 |
+| Bash                | 5.1.4           | 3.2.57         | 3.2.57 | 3.2.57 | 5.3.9 |
+| GNU Binutils        | 2.35.2          | n/A            | n/A | n/A | n/A |
+| Bzip2               | 1.0.8           | n/A            | n/A | n/A | n/A |
+| Curl                | 7.74.0          | 8.6.0          | 8.7.1 | 8.7.1 | 8.7.1 |
+| GCC                 | 10.2.1          | 16.0.0         | 17.0.0  | 17.0.0 | 21.0.0 |
+| Git                 | 2.35.1          | 2.45.2         | 2.49.0 | 2.51.0 | 2.53.0 |
+| Git LFS             | 2.13.2          | 3.5.1          | 3.6.1 | 3.7.0 | 3.7.1 |
+| Gradle              | 4.4.1           | 8.8            | 8.14 | 9.1.0 | 9.4.0 | 
+| Gzip                | 1.10            | 430.100.5      | 457.100.3 | 457.140.3 | 475 |
+| Java                | 17.0.9          | 17.0.9         | 17.0.9 | 17.0.9 | 17.0.12 |
+| Maven               | 3.9.9           | 3.9.7          | 3.9.9 | 3.9.11 | 3.9.14 |
+| Node JS             | 18.20.5         | 18.20.3        | 18.20.8 | 18.20.8 | 22.22.1 |
+| OpenSSL             | 1.1.1           | 3.3.6          | 3.3.6 | 3.3.6 | 3.3.6 |
+| Perl                | 5.32.1          | 5.34.1         | 5.34.1 | 5.34.1 | 5.34.1 |
+| Python              | 3.9.2           | 3.12.3         | 3.13.3 | 3.14.0 | 3.14.3 |
+| Rake                | 13.2.1          | 13.0.6         | 13.0.6 | 13.3.0 | 13.0.6 |
+| Rbenv               | 1.3.0           | 1.2.0          | 1.3.2 | 1.3.2 | 1.3.2 |
+| Ruby                | 3.2.3           | 3.2.3          | 3.2.3 | 3.2.3 | 3.2.3 |
+| Unzip               | 6.00            | 6.00           | 6.00 | 6.00 | 6.00 |
+| Wget                | 1.21            | 1.24.5         | 1.25.0 | 1.25.0 | 1.25.0 |
+| Yarn                | 1.22.22         | 1.22.22        | 1.22.22 | 1.22.22 | 1.22.22 |
+| Zip                 | 3.0             | 3.0            | 3.0 | 3.0 | 3.0 |
 
 ### Using your own computer for build
 
