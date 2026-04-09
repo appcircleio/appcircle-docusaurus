@@ -67,6 +67,10 @@ This functionality enables users to download the binary directly from the Publis
 
 Canceling a submission on the App Store can be crucial for developers who need to make last-minute changes or corrections. Learn how to efficiently cancel your app submission, understand common pitfalls, and ensure a smoother app review process.
 
+## [Release This Version](publish-to-stores-module/publish-information/release-this-version)
+
+Releasing a version on the App Store is a critical step for developers who want to make their approved app available to users. Learn how to efficiently release your app version, understand the available release options, and ensure a seamless delivery to your audience.
+
 ## [Reject Binary](/publish-to-stores-module/publish-information/reject-binary)
 
 Binary rejection on Appcircle can delay your app's launch. Discover the top reasons for binary rejection, how to address them effectively, and ensure your app meets guidelines for a successful approval process. Optimize your app's chances today!
