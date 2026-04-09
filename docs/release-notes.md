@@ -102,7 +102,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 - Partial saving for App Store Metadata Details is no longer supported. Users must now provide all required fields before submission, as the previous preparation and incremental completion workflow has been removed. All mandatory information will be requested at the time of submission, and submissions cannot be completed progressively. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
-
 ## 3.29.7 - 2025-12-17 BitBucket API Token Support, Publish Improvements, Bug Fixes and more
 
 ### :muscle: Improvements
