@@ -41,6 +41,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Updated the Android Sign step to prevent v2 (apksigner) signing for AAB outputs, ensuring that `AAB` files are signed only with jarsigner, while `APK` signing behavior remains unchanged. <BuildIntegrationsBadge/> <CloudBadge/>
 - In the newly added Android Sign step in the workflow, the “**V2 Sign**” option now defaults to true. If your APK uses v1 signing, this value must be set to false. For `AAB` builds, this setting has no effect. <BuildIntegrationsBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest stable release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest release of the [Xcode 26.4](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_4-release-notes) (`17E192`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
@@ -81,6 +82,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The React version used in the UI and its dependencies have been upgraded to ensure improved performance, enhanced security, and better overall stability. <CloudBadge/> <SelfHostedBadge/>
 - CDN support has been implemented to enhance the stability and performance of CodePush package distribution. <BuildBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of the [Xcode 26.3 RC1](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Tahoe `26.3.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.4](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_4-release-notes) (`26.4` `17E192`) installed along with Xcode 26.3 version and up-to-date [build tools](/infrastructure/ios-build-infrastructure#ios-build-environment) for iOS and Android builds. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -99,7 +101,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :warning: Breaking Changes
 
 - Partial saving for App Store Metadata Details is no longer supported. Users must now provide all required fields before submission, as the previous preparation and incremental completion workflow has been removed. All mandatory information will be requested at the time of submission, and submissions cannot be completed progressively. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-
 
 ## 3.29.7 - 2025-12-17 BitBucket API Token Support, Publish Improvements, Bug Fixes and more
 
