@@ -16,6 +16,38 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.30.0 - 
+
+### 🆕 New Features
+
+- Support for sharing signing identity items such as certificates, provisioning profiles, and keystores with the sub organizations has been added. <SigningIdentitiesBadge/> <CloudBadge/>
+- Support has been added for user-defined keystore names for existing and newly generated keystores, along with read-only editing that allows only the name field to be updated. <SigningIdentitiesBadge/> <CloudBadge/>
+- The new “Release This Version” feature allows you to release submitted versions directly to the App Store from Appcircle without navigating to App Store Connect. <PublishBadge/> <CloudBadge/>
+- Environment variable groups can now be securely shared from the root organization to sub-organizations with “share with specific” and “share with all” options, ensuring controlled access, hidden secret values, proper UI tagging, and seamless availability across Build and Publish modules. <EnvironmentVariablesBadge/> <CloudBadge/>
+- A new OAuth 2 integration, Azure Devops Entra ID, has been added to the UI, enabling authorization for Azure DevOps. <BuildBadge/> <CloudBadge/>
+
+
+
+### :muscle: Improvements
+
+- Report filter enhancements have been made to the UI to improve clarity and user experience across multiple modules. <ReportsBadge/> <CloudBadge/>
+- Sharing of signing identity items and environment variable groups with sub-organizations, along with export and import actions, can now be monitored through the activity logs of the relevant modules. <ReportsBadge/> <CloudBadge/>
+- A warning is now displayed when an artifact has a failed hash validation. <BuildBadge/> <CloudBadge/>
+- Encrypted environment variable values can now be edited in both Build and Publish modules, with updates applied through overwrite-only input due to secure storage constraints. <EnvironmentVariablesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where the Profile Information action did not open correctly for App Store type provisioning profiles. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed in approval panels where long text inputs caused layout and fitting problems across string fields. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where manual re-signing failed for IPAs with multiple targets due to incorrect provisioning mapping, by enabling target-level selection and matching of provisioning profiles to ensure successful signing. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where the Save button was incorrectly enabled on the Versioning tab even when no changes were made. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where builds were incorrectly shown as “Waiting for Other Builds” on the main screen after the log window was closed, until the page was refreshed. <BuildBadge/> <CloudBadge/>
+- Several issues have been fixed in the Build list and log screens where branch filtering and build history could reset or become inconsistent after reopening logs, canceling a build, or receiving live build status updates. <BuildBadge/> <CloudBadge/>
+### :warning: Breaking Changes
+
+
+
+
 ## 3.29.9 - 2026-02-26 Binary Re-sign Support for Enterprise App Store, Account Page Improvements, Bug Fixes and more
 
 ### 🆕 New Features
