@@ -14,7 +14,7 @@ With Appcircle's **Release This Version** feature, you can release your submitte
 
 :::caution Release This Version
 
-This feature is only active for versions with a status of **Pending Developer Release** on App Store Connect. If the version does not have this statuse, the feature will appear disabled.
+This feature is only active for versions with a status of **Pending Developer Release** on App Store Connect. If the version does not have this status, the feature will appear as disabled.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-261-pending-dev-new.png' />
 
