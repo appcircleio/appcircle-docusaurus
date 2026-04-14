@@ -91,6 +91,43 @@ The iOS Publish filter options will only display the available statuses from the
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-3106-publishfilter4.png' />
 
+## Expiration Status and Notifications
+
+### Expiration Status
+
+Within the Publish to Stores module, binaries display expiration-related statuses based on their signing certificate validity.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-4.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-5.png' />
+
+- **Expire Soon** status is shown when the certificate is approaching its expiration date.
+- **Expired** status is shown when the certificate has already expired.
+
+When hovering over these status tags, a tooltip is displayed:
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-6.png' />
+
+For expired binaries:
+
+- The **Publish** action is disabled.
+- The **Mark as RC** action is disabled.
+
+### Expiration Notifications
+
+Expiration notifications are triggered for binaries that are marked as **Release Candidate (RC)**.
+
+Notifications are grouped under the **Publish** section in the notification center and must be enabled for the Publish to Stores module.
+
+The following notifications are sent once for each eligible binary:
+
+- **1 month** before expiration
+- **2 weeks** before expiration
+- **1 week** before expiration
+- **24 hours** before expiration
+
+In addition to email notifications, local notifications are also triggered using the same schedule.
+
 ## FAQ
 
 ### How can I get a binary from another organization to use in the Publish to Stores Module ?
