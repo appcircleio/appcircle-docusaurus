@@ -20,47 +20,50 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- The Manual and Auto Binary [Re-sign](/enterprise-app-store/resign-binary) feature has been introduced for the Enterprise App Store module, enabling binaries to be re-signed similarly to the Publish and Testing Distribution modules. <EnterpriseStoreBadge/> <CloudBadge/>
-- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/>
+- The Manual and Auto Binary [Re-sign](/enterprise-app-store/resign-binary) feature has been introduced for the Enterprise App Store module, enabling binaries to be re-signed similarly to the Publish and Testing Distribution modules. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Support for regex-based trigger conditions has been added to enable more flexible matching while evaluating performance and impact on existing configurations. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- Metadata fields containing user-defined `$ENV` values will no longer be overwritten by backend data when the Retrieve from Last Updated action is performed. <PublishBadge/> <CloudBadge/>
-- The visibility of multi-line tooltip texts has been improved. <CloudBadge/>
-- The user authentication method, such as Password or SSO, will now be displayed on the Account page. <AccountBadge/> <CloudBadge/>
-- The Team Activity Log section has been renamed to Organization Activity. <AccountBadge/> <CloudBadge/>
-- Users authenticated via SSO or LDAP can no longer change their passwords on the Account page, and password updates must be performed by logging out and signing in again using standard password authentication. <AccountBadge/> <CloudBadge/>
-- New actions have been added to the Signing Identity configurations for Notification channels, including Email and MS Teams. <AccountBadge/> <CloudBadge/>
-- Organization PAT create and revoke actions will now be displayed in the Team Activity Log. <AccountBadge/> <CloudBadge/>
-- The File Name column will now display the actual file name instead of the Keystore Alias in the Android Keystore lists. <SigningIdentitiesBadge/> <CloudBadge/>
-- File types will now be displayed as `APK`,`AAB` and `IPA` on the app version list within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/>
-- After downloading an app, the Testing Portal will now redirect users back to the app version list. <DistributionBadge/> <CloudBadge/>
-- Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/>
-- Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/>
-- The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/>
-- Updated the Android Sign step to prevent v2 (apksigner) signing for AAB outputs, ensuring that `AAB` files are signed only with jarsigner, while `APK` signing behavior remains unchanged. <BuildIntegrationsBadge/> <CloudBadge/>
-- In the newly added Android Sign step in the workflow, the “**V2 Sign**” option now defaults to true. If your APK uses v1 signing, this value must be set to false. For `AAB` builds, this setting has no effect. <BuildIntegrationsBadge/> <CloudBadge/>
+- Metadata fields containing user-defined `$ENV` values will no longer be overwritten by backend data when the Retrieve from Last Updated action is performed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The visibility of multi-line tooltip texts has been improved. <CloudBadge/> <SelfHostedBadge/>
+- The user authentication method, such as Password or SSO, will now be displayed on the Account page. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Team Activity Log section has been renamed to Organization Activity. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Users authenticated via SSO or LDAP can no longer change their passwords on the Account page, and password updates must be performed by logging out and signing in again using standard password authentication. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- New actions have been added to the Signing Identity configurations for Notification channels, including Email and MS Teams. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Organization PAT create and revoke actions will now be displayed in the Team Activity Log. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The File Name column will now display the actual file name instead of the Keystore Alias in the Android Keystore lists. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- File types will now be displayed as `APK`,`AAB` and `IPA` on the app version list within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- After downloading an app, the Testing Portal will now redirect users back to the app version list. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Exception and error messages have been improved throughout Appcircle modules for better clarity. <CloudBadge/> <SelfHostedBadge/>
+- Updates, deletions, and additions of Build Triggers will now be displayed in the Notification Center. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The clean parameter in the archive command within the Xcodebuild for Devices step has been made optional. This will prevent already built frameworks from being rebuilt. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Updated the Android Sign step to prevent v2 (apksigner) signing for AAB outputs, ensuring that `AAB` files are signed only with jarsigner, while `APK` signing behavior remains unchanged. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- In the newly added Android Sign step in the workflow, the “**V2 Sign**” option now defaults to true. If your APK uses v1 signing, this value must be set to false. For `AAB` builds, this setting has no effect. <BuildIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest stable release of the [Xcode 26.3](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_3-release-notes) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest release of the [Xcode 26.4](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_4-release-notes) (`17E192`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
-- Several UI issues affecting viewer role users that caused inconsistent behavior have been fixed. <CloudBadge/>
-- An issue causing Keystore uploads to fail when the key alias contained non-ASCII characters has been fixed. <SigningIdentitiesBadge/> <CloudBadge/>
+- Several UI issues affecting viewer role users that caused inconsistent behavior have been fixed. <CloudBadge/> <SelfHostedBadge/>
+- An issue causing Keystore uploads to fail when the key alias contained non-ASCII characters has been fixed. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue has been fixed where Publish Metadata Details did not accept the version number as a Publish Variable (`$AC_PUBLISH_APP_VERSION`). <PublishBadge/> <CloudBadge/>
-- An issue has been fixed where the auto re-sign operation did not start for publish profiles with disabled publish flow steps. <PublishBadge/> <CloudBadge/>
-- An issue has been fixed where the “App Information From App Store” Publish flow step caused an error while checking the App Store connection status. <PublishIntegrationsBadge/> <CloudBadge/>
-- An issue has been fixed where Fortify-related validation rules could fail when incompatible data was provided by some organizations. Validation criteria have been improved to ensure more reliable processing. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where setting the build status could return a 404 error for Bitbucket self-hosted repositories due to endpoint validation problems.
-- An issue has been fixed where the QR code was not displayed on the LDAP 2FA login screen in the Testing Portal. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where the auto re-sign operation did not start for publish profiles with disabled publish flow steps. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where Huawei AppGallery profiles incorrectly displayed Google Play Console information in the App Information and re-signing sections, causing API key selection errors and incorrect versioning source. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where manual re-signing failed for IPAs with multiple targets due to missing target-level bundle identifier and provisioning profile mapping, causing Fastlane errors and workflow failures. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the “App Information From App Store” Publish flow step caused an error while checking the App Store connection status. <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where Fortify-related validation rules could fail when incompatible data was provided by some organizations. Validation criteria have been improved to ensure more reliable processing. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where setting the build status could return a 404 error for Bitbucket self-hosted repositories due to endpoint validation problems. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where switching organizations while viewing a build profile did not refresh the screen, causing the previous organization’s build profile to remain visible. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue has been fixed where the QR code was not displayed on the LDAP 2FA login screen in the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
-- AAB files can no longer be published to Beta or Live channels within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/>
-- The automatic background conversion of uploaded AAB files to APK using Android keystore has been removed from Enterprise App Store module. Users can use 'Convert AAB to APK' toggle within the Auto Re-sign configurations. <EnterpriseStoreBadge/> <CloudBadge/>
-- Access to both iOS and Android Publish roles is now required to send a binary to the Publish module from other modules such as Enterprise App Store and Testing Distribution. <PublishBadge/> <CloudBadge/>
-- Manual Re-sign operations now use the same configuration structure as Auto Re-signs across Appcircle modules, and Entitlements are no longer supported. <CloudBadge/>
-- Microsoft is retiring Office 365 Connectors, including the Incoming Webhook integration used by Microsoft Teams. The migration deadline has been extended, and organizations must transition to the new [workflow-based](/account/my-organization/notifications/teams-notifications#connecting-microsoft-teams-via-workflows) webhook model by April 30, 2026 to avoid service disruption. If you are using the Incoming Webhook integration in Appcircle, we strongly recommend migrating to the new workflow-based webhook connection method as soon as possible. <AccountBadge/> <CloudBadge/>
+- AAB files can no longer be published to Beta or Live channels within the Enterprise App Store profiles. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The automatic background conversion of uploaded AAB files to APK using Android keystore has been removed from Enterprise App Store module. Users can use 'Convert AAB to APK' toggle within the Auto Re-sign configurations. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Access to both iOS and Android Publish roles is now required to send a binary to the Publish module from other modules such as Enterprise App Store and Testing Distribution. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Manual Re-sign operations now use the same configuration structure as Auto Re-signs across Appcircle modules, and Entitlements are no longer supported. <CloudBadge/> <SelfHostedBadge/>
+- Microsoft is retiring Office 365 Connectors, including the Incoming Webhook integration used by Microsoft Teams. The migration deadline has been extended, and organizations must transition to the new [workflow-based](/account/my-organization/notifications/teams-notifications#connecting-microsoft-teams-via-workflows) webhook model by April 30, 2026 to avoid service disruption. If you are using the Incoming Webhook integration in Appcircle, we strongly recommend migrating to the new workflow-based webhook connection method as soon as possible. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ## 3.29.8 - 2026-01-21 Single Active Session, Metadata Details Update, Bug Fixes and more
 
@@ -499,7 +502,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 
 - Support for the [GitHub Enterprise](build/manage-the-connections/connection-guides/connecting-to-github) connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Introduced dynamic [SMTP configuration](self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#email) for self-hosted environments, including live updates to mail server settings, and test email functionality. <AccountBadge/> <SelfHostedBadge/>
-- Introduced the [Appcircle Assistant GPT](/marketplace/open-ai), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
+- Introduced the [Appcircle Assistant GPT](/appcircle-ai/appcircle-gpt-assistant.md), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
