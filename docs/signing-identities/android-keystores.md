@@ -31,7 +31,7 @@ Only files with .keystore extension can be uploaded.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-06-Upload-Android-Keystores.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8651-keystorenewpage.png' />
 
 Builds with debug type will be signed with a default keystore and don't need a keystore file to be uploaded to Appcircle. If you are building your app for distribution, you need to upload your keystore file in order to have your application signed.
 
@@ -42,6 +42,16 @@ You will be notified when an Android Keystore is about to expire. You can see th
 **Standard Schedule**: Keystores already in the system 30+ days before expiration receive notifications at 30, 15, 7, 3, 1 days before expiration, plus expiring today.
 
 **Late Upload**: Keystores uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
+
+:::
+
+### Uploading a Multi-Alias Keystore
+
+Appcircle supports uploading multi-alias Android keystores. If your keystore contains more than one alias, you can upload the same keystore multiple times by using a different alias for each entry.
+
+:::info
+
+Make sure that the alias and password you enter belong to the same key entry. Different aliases from the same keystore can be uploaded separately, but each one must be added with its correct alias and password.
 
 :::
 
