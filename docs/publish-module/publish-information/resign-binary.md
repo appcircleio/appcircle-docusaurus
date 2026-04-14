@@ -160,6 +160,17 @@ When using the Re-sign feature, Appcircle also provides the option to select an 
 
 For more information, please visit the [Signing Identity Module](/signing-identities) and [Apple Profiles](/signing-identities/apple-profiles) documentations.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-24.png' />
+
+:::info Multiple Target
+
+Appcircle’s manual re-sign binary feature allows you to sign binaries for multiple targets. If you wish to use an existing provision for this, Appcircle requires two inputs. One of these inputs contains the bundle identifier of the target to be signed, while the other is used to select which provision will be used to sign that target. Appcircle processes the selected bundle identifiers for signing based on the provided inputs.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/CSM-newss.png' />
+
+:::
+
+
 :::caution Existing Provision Profile
 
 If no provisioning profile is selected, Appcircle will still **attempt to match** a provisioning profile using the selected **App Store Credential**. If the provisioning profile **cannot be found** in the **Apple Developer portal**, a new one **will be generated**.
@@ -168,7 +179,7 @@ For example, if the binary being signed has multiple targets and only one provis
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8407-24.png' />
+
 
 #### Certificates
 

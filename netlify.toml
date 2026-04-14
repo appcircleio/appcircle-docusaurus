@@ -874,6 +874,11 @@ to = "/build/build-process-management/build-workflows"
 status = 301
 
 [[redirects]]
+from = "/marketplace/open-ai"
+to = "/appcircle-ai/appcircle-gpt-assistant"
+status = 301
+
+[[redirects]]
 from = "/integrations/deploying-web-apps-to-aws-amplify-console"
 to = "/workflows/flutter-specific-workflow-steps/flutter-build-for-web"
 status = 301
