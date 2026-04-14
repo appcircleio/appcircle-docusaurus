@@ -45,6 +45,52 @@ You will be notified when an Android Keystore is about to expire. You can see th
 
 :::
 
+### Sharing Android Keystores
+
+Root Organization users have the ability to share their Android Keystores with Sub-Organizations. 
+
+Shared keystores can be used in Sub-Organizations just like locally created or uploaded keystores.
+
+#### How to Share Android Keystores
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-15.png' />
+
+1. Navigate to the Android Keystores Section  
+   Go to the Signing Identity module and open the **Android Keystores** section.
+
+2. Open Keystore List  
+   Locate the keystore you want to share.
+
+3. Select the Keystore  
+   Click the **Share** icon under the Actions column.
+
+4. Configure Sharing Settings  
+   In the Share panel:
+
+- Enable **Share with all sub-organizations** to automatically share the keystore with all existing and newly created sub-organizations.
+- Alternatively, manually select specific sub-organizations.
+
+5. Save Sharing Configuration  
+   Click **Share** to complete the process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-16.png' />
+
+#### Behavior in Sub-Organizations
+
+- Shared keystores will be visible and selectable in Sub-Organizations.
+- These keystores will be marked with a **Shared** on Root Organizations and **Inherited** tag on Sub Organizations.
+- Sub-Organization users **cannot edit, rename, or delete** shared keystores.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-18.png' />
+
+:::tip
+- If **Share with all sub-organizations** is enabled, the keystore will also be automatically available in newly created sub-organizations.
+:::
+
+:::caution
+- Any changes or deletions made in the Root Organization will affect all Sub-Organizations using the shared keystore.
+:::
+
 ### In-Project Keystore Usage
 
 You can alternatively have your signing details stored in your Gradle file and use your in-project keystore to sign your app.;

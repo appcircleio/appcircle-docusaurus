@@ -212,6 +212,10 @@ The first section allows you to share the deployed binaries automatically with t
 
 Your application will be sent to the related testing groups as soon as your build is complete, or when a package is manually uploaded or deployed via CLI.
 
+:::caution Expired Binary Restriction
+The auto-send mechanism does not distribute expired binaries. If a binary is expired at the time of distribution, the auto-share process will not send it to testing groups.
+:::
+
 #### Show Only the Shared Version to the Tester
 
 When the “Show Only the Shared Version to Tester” toggle is enabled, receiving-end testers will only be able to access the most recently uploaded binary version within the Testing Portal, provided that the Auto-Send feature is enabled.
@@ -397,6 +401,10 @@ After sharing your app versions with testers, the most recent sharing time will 
 
 :::
 
+:::caution Expired Binary Restriction
+If a binary is expired, it cannot be shared with testers. The **Share** action is disabled for expired binaries.
+:::
+
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-share.png' />
 
 ### Tracking your distribution
@@ -458,6 +466,28 @@ Binaries generated through the Appcircle Build Module include associated build d
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td2.png' />
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE6767-td3.png' />
+
+#### Expiration Status
+
+The Testing Distribution profile binary list, Binary Details screen and Binary Comparison screen displays certificate/keystore expiration information for uploaded binaries.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-8.png' />
+
+- **Expire Soon** status is shown for binaries whose signing certificate is approaching its expiration date.
+- **Expired** status is shown for binaries whose signing certificate has already expired.
+- The expiration date remains visible even if certificate information is hidden on the Testing Portal.
+
+When hovering over these status tags, a tooltip is displayed to show the related expiration date.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-7.png' />
+
+Wherever binary details are shown in the Testing Distribution module, binaries with certificates that are approaching expiration are marked with **Expire Soon**, while expired binaries are marked with **Expired**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-10.png' />
+
+:::info Expired Binary Download Restriction
+If a binary that is shared from Testing Distribution later becomes expired, the Download button will be disabled on both Testing Distribution and Testing Portal surfaces.
+:::
 
 ### Send your application to Enterprise App Store
 
