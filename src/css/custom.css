@@ -1047,6 +1047,10 @@ button[class*='toggleButton']:hover svg[class*='lightToggleIcon'] path {
   background-image: url(../../static/img/sidebar/best-practices.svg);
 }
 
+.section-title.appcircle-ai > div >a::before {
+  background-image: url(../../static/img/sidebar/appcircle-ai.svg);
+}
+
 .hidden {
   display: none !important;
 }
