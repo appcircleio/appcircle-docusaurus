@@ -158,3 +158,51 @@ Certificates deleted on **Appcircle** will only be removed from **Appcircle** an
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE5651-AppleCertificates-Delete-Annotated2.png' />
+
+## Sharing Apple Certificates
+
+Root Organization users have the ability to share their Apple Certificates with Sub-Organization users.
+
+Shared certificates can be used in Sub-Organizations just like locally created or uploaded certificates.
+
+### How to Share Apple Certificates
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-20.png' />
+
+1. Navigate to the Apple Certificates Section  
+   Go to the Signing Identity module and open the **Apple Certificates** section.
+
+2. Open Certificate List  
+   Locate the certificate you want to share from the list.
+
+3. Select the Certificate  
+   Click the **Share** icon under the Actions column for the selected certificate.
+
+4. Configure Sharing Settings  
+   In the Share panel:
+
+- Enable **Share with all sub-organizations** to automatically share the certificate with all existing and newly created sub-organizations.
+- Alternatively, manually select specific sub-organizations that should have access.
+
+5. Save Sharing Configuration  
+   Click **Share** to apply the configuration.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-30.png' />
+
+### Behavior in Sub-Organizations
+
+- Shared certificates will be visible and selectable in Sub-Organizations as if they were their own.
+- These certificates will be marked with a **Shared** tag on Root Organization and **Inherited** tag on Sub Organizations' certificate list.
+- Sub-Organization users **cannot edit, rename, or delete** shared certificates.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-24.png' />
+
+:::tip
+- When **Share with all sub-organizations** is enabled, the certificate will automatically be available in newly created sub-organizations as well. 
+:::
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-31.png' />
+
+:::caution
+- Any updates or deletions made in the Root Organization will directly affect all Sub-Organizations using the shared certificate.
+:::
