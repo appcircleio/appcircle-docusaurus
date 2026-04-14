@@ -502,7 +502,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 
 - Support for the [GitHub Enterprise](build/manage-the-connections/connection-guides/connecting-to-github) connection type has been added to allow build profiles to connect to repositories using a Fine-Grained Personal Access Token. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Introduced dynamic [SMTP configuration](self-hosted-appcircle/install-server/linux-package/configure-server/integrations-and-access/integration#email) for self-hosted environments, including live updates to mail server settings, and test email functionality. <AccountBadge/> <SelfHostedBadge/>
-- Introduced the [Appcircle Assistant GPT](/marketplace/open-ai), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
+- Introduced the [Appcircle Assistant GPT](/appcircle-ai/appcircle-gpt-assistant.md), a custom AI assistant that provides answers about Appcircle, including step-by-step instructions and troubleshooting support. <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
