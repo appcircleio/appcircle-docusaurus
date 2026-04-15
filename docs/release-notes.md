@@ -16,7 +16,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.30.0 - 2026-04-14 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
+## 3.30.0 - 2026-04-15 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
 
 ### 🆕 New Features
 
@@ -42,7 +42,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Organization-level events have been added to the notification system, enabling alerts via Slack, Microsoft Teams, and email for actions such as user and sub-organization changes, credential and authentication updates, API key management, personal access key activity, and domain verification events. <AccountBadge/> <CloudBadge/>
 - The tab order in the Apple Devices section has been updated to Invited Users, Non-Registered Devices, and Registered Devices, with the page defaulting to the Registered Devices tab on load. <SigningIdentitiesBadge/> <CloudBadge/>
 - Notifications have been added to inform users when provisioning profiles are deleted by Fastlane during iOS re-sign processes with “Create New Provisioning Profile” enabled, including warnings for any affected build configurations. <SigningIdentitiesBadge/> <CloudBadge/>
-- Android keystore handling has been improved by supporting separate alias (key) passwords from the keystore password and enabling alias selection for multi-alias keystores, allowing more flexible and secure signing configurations. <SigningIdentitiesBadge/> <CloudBadge/>
+- Android keystore handling has been improved by supporting separate alias (key) passwords from the keystore password and enabling alias selection for [multi-alias keystores](/signing-identities/android-keystores#uploading-a-multi-alias-keystore), allowing more flexible and secure signing configurations. <SigningIdentitiesBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 

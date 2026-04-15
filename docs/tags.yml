@@ -3167,3 +3167,8 @@ quay:
   label: "organization activity"
   description: "Documentation related to organization activity"
   permalink: "/organization-activity"
+
+"release version":
+  label: "release version"
+  description: "Documentation related to release version"
+  permalink: "/release-version"
