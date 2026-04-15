@@ -16,6 +16,50 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.30.0 - 2026-04-15 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
+
+### 🆕 New Features
+
+- Signing Identity module items such as certificates, provisioning profiles, and keystores can now be [shared](/signing-identities/apple-certificates#sharing-apple-certificates) from the root organization to the sub-organizations. <SigningIdentitiesBadge/> <CloudBadge/>
+- Support has been added for user-defined keystore names for existing and newly generated keystores, along with read-only editing that allows only the name field to be updated. <SigningIdentitiesBadge/> <CloudBadge/>
+- The new “[Release This Version](/publish-to-stores-module/publish-information/release-this-version)” feature allows you to release submitted versions directly to the App Store from Appcircle without navigating to App Store Connect. <PublishBadge/> <CloudBadge/>
+- Environment variable groups can now be [shared](/build/build-environment-variables#sharing-environment-variable-groups) from the root organization to sub-organizations with “share with specific” and “share with all” options, ensuring controlled access, hidden secret values, proper UI tagging, and seamless availability across Build and Publish modules. <EnvironmentVariablesBadge/> <CloudBadge/>
+- Bulk [import and export](/build/build-environment-variables#exporting-environment-variable-groups) capabilities have been added for environment variables, supporting JSON, CSV, and .env formats with conflict preview and secure handling, while file-type variables continue to require manual upload via the UI. <EnvironmentVariablesBadge/> <CloudBadge/>
+- A new OAuth 2 integration, Azure Devops Entra ID, has been added to the UI, enabling authorization for Azure DevOps on Build Profiles. <BuildBadge/> <CloudBadge/>
+- Expiration awareness has been introduced across [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#expiration-status), [Publish to Stores](/publish-to-stores-module/binary-management#expiration-status-and-notifications), and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#expiration-status) modules with unified “expire soon” and “expired” statuses, scheduled notifications (where applicable), visual indicators, tooltips, and automatic disabling of actions such as download, share, and publish for expired binaries. <EnterpriseStoreBadge/> <PublishBadge/> <DistributionBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Report filter enhancements have been made to the UI to improve clarity and user experience across multiple modules. <ReportsBadge/> <CloudBadge/>
+- Sharing of signing identity items and environment variable groups with sub-organizations, along with export and import actions, can now be monitored through the activity logs of the relevant modules. <ReportsBadge/> <CloudBadge/>
+- Artifact Reports have been improved by adding profile name visibility, allowing users to see which profile an artifact was deleted from. <ReportsBadge/> <CloudBadge/>
+- A warning is now displayed when an artifact has a failed hash validation. <BuildBadge/> <CloudBadge/>
+- Component version handling has been enhanced with support for “Latest” and wildcard patterns (e.g., 1..), improved version ordering, and more robust error handling for missing or invalid versions. <BuildBadge/> <CloudBadge/>
+- Encrypted environment variable values can now be edited in both Build and Publish modules, with updates applied through overwrite-only input due to secure storage constraints. <EnvironmentVariablesBadge/> <CloudBadge/>
+- UI improvements have been made to standardize the Add API Credential experience across Google Play, Microsoft Intune, Huawei AppGallery, and App Store integrations for a more consistent design. <AccountBadge/> <CloudBadge/>
+- Visual indicators have been added for Personal Access Keys to highlight warning and critical states based on expiration status, helping users proactively manage keys and avoid service interruptions. <AccountBadge/> <CloudBadge/>
+- Personal Access Key expiration notifications have been introduced, automatically emailing key owners when their keys are within one week of expiration. <AccountBadge/> <CloudBadge/>
+- Organization-level events have been added to the notification system, enabling alerts via Slack, Microsoft Teams, and email for actions such as user and sub-organization changes, credential and authentication updates, API key management, personal access key activity, and domain verification events. <AccountBadge/> <CloudBadge/>
+- The tab order in the Apple Devices section has been updated to Invited Users, Non-Registered Devices, and Registered Devices, with the page defaulting to the Registered Devices tab on load. <SigningIdentitiesBadge/> <CloudBadge/>
+- Notifications have been added to inform users when provisioning profiles are deleted by Fastlane during iOS re-sign processes with “Create New Provisioning Profile” enabled, including warnings for any affected build configurations. <SigningIdentitiesBadge/> <CloudBadge/>
+- Android keystore handling has been improved by supporting separate alias (key) passwords from the keystore password and enabling alias selection for [multi-alias keystores](/signing-identities/android-keystores#uploading-a-multi-alias-keystore), allowing more flexible and secure signing configurations. <SigningIdentitiesBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where the Profile Information action did not open correctly for App Store type provisioning profiles. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed in approval panels where long text inputs caused layout and fitting problems across string fields. <PublishBadge/> <CloudBadge/>
+- An issue has been fixed where manual re-signing failed for IPAs with multiple targets due to incorrect provisioning mapping, by enabling target-level selection and matching of provisioning profiles to ensure successful signing. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where the Save button was incorrectly enabled on the Versioning tab even when no changes were made. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where trigger-related environment variables (`AC_TRIGGER_TYPE`, `AC_BUILD_USER_EMAIL`, `AC_TRIGGERED_USER`) were not consistently populated for all build trigger types, ensuring accurate and reliable values across all supported Git providers. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where builds were incorrectly shown as “Waiting for Other Builds” on the main screen after the log window was closed, until the page was refreshed. <BuildBadge/> <CloudBadge/>
+- Several issues have been fixed in the Build list and log screens where branch filtering and build history could reset or become inconsistent after reopening logs, canceling a build, or receiving live build status updates. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where re-sign–specific workflow steps, intended only for Testing Distribution, were incorrectly visible in the Build module despite being incompatible with standard workflow inputs. <BuildIntegrationsBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- Due to Fastlane removing existing provisioning profiles from the Apple Developer Portal during re-sign operations, related build profile configurations may become empty and require reconfiguration, as deleted profiles may still appear stored in Appcircle but are no longer valid on Apple’s side. <SigningIdentitiesBadge/> <CloudBadge/>
+- Expired binaries are now strictly restricted across all modules: downloads are disabled in Testing and Enterprise Portals; sharing and sending (including auto-send) from Testing Distribution is blocked; publishing to Live/Beta channels in Enterprise App Store is prevented; and expired binaries can no longer be marked as RC or used to start publish flows in the Publish module. <EnterpriseStoreBadge/> <PublishBadge/> <DistributionBadge/> <CloudBadge/>
+
 ## 3.29.9 - 2026-02-26 Binary Re-sign Support for Enterprise App Store, Account Page Improvements, Bug Fixes and more
 
 ### 🆕 New Features
