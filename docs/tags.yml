@@ -283,10 +283,20 @@ appcircle:
   description: "Description for appcircle app store"
   permalink: /appcircle-app-store
 
+appcircle ai:
+  label: "appcircle ai"
+  description: "Documentation related to Appcircle AI"
+  permalink: /appcircle-ai
+
 "appcircle assistant":
   label: "appcircle assistant"
   description: "Description for appcircle assistant"
   permalink: /appcircle-assistant
+
+"appcircle mcp":
+  label: "appcircle mcp"
+  description: "Documentation related to the Appcircle MCP server"
+  permalink: /appcircle-mcp
 
 "appcircle bot":
   label: "appcircle bot"
@@ -1357,6 +1367,11 @@ gitlab:
   label: "google play service account"
   description: "Description for google play service account"
   permalink: /google-play-service-account
+
+ai:
+  label: "ai"
+  description: "Documentation related to AI features and capabilities"
+  permalink: /ai
 
 gpt:
   label: "gpt"
@@ -2923,6 +2938,21 @@ xml:
   description: "Description for xml"
   permalink: /xml
 
+mcp:
+  label: "mcp"
+  description: "Documentation related to the Model Context Protocol (MCP)"
+  permalink: /mcp
+
+"model context protocol":
+  label: "model context protocol"
+  description: "Documentation related to the Model Context Protocol (MCP)"
+  permalink: /model-context-protocol
+
+"mcp server":
+  label: "mcp server"
+  description: "Documentation related to the MCP server"
+  permalink: /mcp-server
+
 "ci/cd":
   label: "ci/cd"
   description: "Description for ci/cd"
@@ -3137,3 +3167,8 @@ quay:
   label: "organization activity"
   description: "Documentation related to organization activity"
   permalink: "/organization-activity"
+
+"release version":
+  label: "release version"
+  description: "Documentation related to release version"
+  permalink: "/release-version"

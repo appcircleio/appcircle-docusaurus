@@ -31,7 +31,7 @@ Only files with .keystore extension can be uploaded.
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/02-06-Upload-Android-Keystores.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8651-keystorenewpage.png' />
 
 Builds with debug type will be signed with a default keystore and don't need a keystore file to be uploaded to Appcircle. If you are building your app for distribution, you need to upload your keystore file in order to have your application signed.
 
@@ -43,6 +43,62 @@ You will be notified when an Android Keystore is about to expire. You can see th
 
 **Late Upload**: Keystores uploaded with less than 30 days remaining before expiration get notifications starting from upload day, then continuing with the next applicable intervals from the standard schedule.
 
+:::
+
+### Uploading a Multi-Alias Keystore
+
+Appcircle supports uploading multi-alias Android keystores. If your keystore contains more than one alias, you can upload the same keystore multiple times by using a different alias for each entry.
+
+:::info
+
+Make sure that the alias and password you enter belong to the same key entry. Different aliases from the same keystore can be uploaded separately, but each one must be added with its correct alias and password.
+
+:::
+
+### Sharing Android Keystores
+
+Root Organization users have the ability to share their Android Keystores with Sub-Organizations. 
+
+Shared keystores can be used in Sub-Organizations just like locally created or uploaded keystores.
+
+#### How to Share Android Keystores
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-15.png' />
+
+1. Navigate to the Android Keystores Section  
+   Go to the Signing Identity module and open the **Android Keystores** section.
+
+2. Open Keystore List  
+   Locate the keystore you want to share.
+
+3. Select the Keystore  
+   Click the **Share** icon under the Actions column.
+
+4. Configure Sharing Settings  
+   In the Share panel:
+
+- Enable **Share with all sub-organizations** to automatically share the keystore with all existing and newly created sub-organizations.
+- Alternatively, manually select specific sub-organizations.
+
+5. Save Sharing Configuration  
+   Click **Share** to complete the process.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-16.png' />
+
+#### Behavior in Sub-Organizations
+
+- Shared keystores will be visible and selectable in Sub-Organizations.
+- These keystores will be marked with a **Shared** on Root Organizations and **Inherited** tag on Sub Organizations.
+- Sub-Organization users **cannot edit, rename, or delete** shared keystores.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8525-18.png' />
+
+:::tip
+- If **Share with all sub-organizations** is enabled, the keystore will also be automatically available in newly created sub-organizations.
+:::
+
+:::caution
+- Any changes or deletions made in the Root Organization will affect all Sub-Organizations using the shared keystore.
 :::
 
 ### In-Project Keystore Usage
