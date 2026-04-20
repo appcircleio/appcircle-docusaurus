@@ -27,6 +27,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Bulk [import and export](/build/build-environment-variables#exporting-environment-variable-groups) capabilities have been added for environment variables, supporting JSON, CSV, and .env formats with conflict preview and secure handling, while file-type variables continue to require manual upload via the UI. <EnvironmentVariablesBadge/> <CloudBadge/>
 - A new OAuth 2 integration, Azure Devops Entra ID, has been added to the UI, enabling authorization for Azure DevOps on Build Profiles. <BuildBadge/> <CloudBadge/>
 - Expiration awareness has been introduced across [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#expiration-status), [Publish to Stores](/publish-to-stores-module/binary-management#expiration-status-and-notifications), and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#expiration-status) modules with unified “expire soon” and “expired” statuses, scheduled notifications (where applicable), visual indicators, tooltips, and automatic disabling of actions such as download, share, and publish for expired binaries. <EnterpriseStoreBadge/> <PublishBadge/> <DistributionBadge/> <CloudBadge/>
+- [Appcircle MCP](/appcircle-ai/appcircle-mcp-server) has been introduced, enabling standardized integration with AI agents and external tools to access and interact with Appcircle resources. <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -57,7 +58,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
-- Due to Fastlane removing existing provisioning profiles from the Apple Developer Portal during re-sign operations, related build profile configurations may become empty and require reconfiguration, as deleted profiles may still appear stored in Appcircle but are no longer valid on Apple’s side. <SigningIdentitiesBadge/> <CloudBadge/>
+- Due to provisioning profiles being removed from the Apple Developer Portal during re-sign operations, related build profile configurations may become empty and require reconfiguration, as deleted profiles may still appear stored in Appcircle but are no longer valid on Apple’s side. <SigningIdentitiesBadge/> <CloudBadge/>
 - Expired binaries are now strictly restricted across all modules: downloads are disabled in Testing and Enterprise Portals; sharing and sending (including auto-send) from Testing Distribution is blocked; publishing to Live/Beta channels in Enterprise App Store is prevented; and expired binaries can no longer be marked as RC or used to start publish flows in the Publish module. <EnterpriseStoreBadge/> <PublishBadge/> <DistributionBadge/> <CloudBadge/>
 
 ## 3.29.9 - 2026-02-26 Binary Re-sign Support for Enterprise App Store, Account Page Improvements, Bug Fixes and more
