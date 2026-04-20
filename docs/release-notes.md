@@ -57,7 +57,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### :warning: Breaking Changes
 
-- Due to Fastlane removing existing provisioning profiles from the Apple Developer Portal during re-sign operations, related build profile configurations may become empty and require reconfiguration, as deleted profiles may still appear stored in Appcircle but are no longer valid on Apple’s side. <SigningIdentitiesBadge/> <CloudBadge/>
 - Expired binaries are now strictly restricted across all modules: downloads are disabled in Testing and Enterprise Portals; sharing and sending (including auto-send) from Testing Distribution is blocked; publishing to Live/Beta channels in Enterprise App Store is prevented; and expired binaries can no longer be marked as RC or used to start publish flows in the Publish module. <EnterpriseStoreBadge/> <PublishBadge/> <DistributionBadge/> <CloudBadge/>
 
 ## 3.29.9 - 2026-02-26 Binary Re-sign Support for Enterprise App Store, Account Page Improvements, Bug Fixes and more
