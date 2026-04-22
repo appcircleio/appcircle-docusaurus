@@ -1746,7 +1746,7 @@ management:
 MAUI:
   label: "MAUI"
   description: "Description for MAUI"
-  permalink: /MAUI
+  permalink: /maui
 
 "MAUI build":
   label: "MAUI build"
@@ -2271,7 +2271,7 @@ schemes:
 "SDK versions":
   label: "SDK versions"
   description: "Description for SDK versions"
-  permalink: /SDK-versions
+  permalink: /sdk-versions
 
 "search":
   label: "search"

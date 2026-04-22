@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Testing Distribution Task in Azure DevOps Pipeline
+title: Appcircle Testing Distribution Azure DevOps Task
 sidebar_label: Testing Distribution
 description: Overview of self-hosted Appcircle and related concepts regarding testing distribution
 tags:
