@@ -1,6 +1,7 @@
 ---
 title: CocoaPods Deintegrate
 description: Clean your Xcode projects with Cocoapods Deintegrate. Remove pods swiftly to maintain a streamlined, efficient development environment.
+slug: /build-integrations/ios-specific-integrations/cocoapods-deintegrate
 tags: [cocoapods, deintegrate, workflow, step]
 ---
 
@@ -18,11 +19,11 @@ Before running the **CocoaPods Deintegrate** step, you must complete certain pre
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods Deintegrate process. After the clone, Fastlane will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created.|
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | The repo needs to be cloned in order to start the CocoaPods Deintegrate process. After the clone, Fastlane will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created.|
 
 :::caution
 
-Please remember to use the [**CocoaPods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) step after this component, as it clears all dependencies in the project.
+Please remember to use the [**CocoaPods Install**](/build-integrations/ios-specific-integrations/cocoapods-install) step after this component, as it clears all dependencies in the project.
 
 :::
 
@@ -37,7 +38,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name                            | Description                         | Status           |
 |-------------------------------|------------------------------------------------|------------------|
 | `$AC_XCODEPROJ_PATH`          | Specifies the project path. For example: `./appcircle.xcodeproj`. Empty value will look for an `.xcodeproj` file. | Optional |
-| `$AC_REPOSITORY_DIR`    | Specifies the directory where the repository is cloned. This path is generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                         | Optional |
+| `$AC_REPOSITORY_DIR`    | Specifies the directory where the repository is cloned. This path is generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step.                                                                                         | Optional |
 | `$AC_COCOAPODS_VERSION` | Specifies the CocoaPods version. If you need a specific version, provide it here as hardcoded, and the system will automatically install that version.                                                                                        | Optional |
 
 ---

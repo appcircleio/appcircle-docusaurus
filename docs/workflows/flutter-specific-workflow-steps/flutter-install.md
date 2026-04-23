@@ -1,6 +1,7 @@
 ---
 title: Flutter Install
 description: This workflow step installs the specified Flutter SDK to run the Flutter CLI for subsequent analysis, build, and test operations.
+slug: /build-integrations/flutter-specific-integrations/flutter-install
 tags: [flutter, install, sdk]
 ---
 
@@ -23,11 +24,11 @@ There are no prerequisites required before using the **Flutter Install** step.
 :::caution
 
 These steps depend on Flutter installation and can only be used after the **Flutter Install** step:
-- [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps/flutter-build-for-ios)
-- [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps/flutter-build-for-android)
-- [**Flutter Analyze**](/workflows/flutter-specific-workflow-steps/flutter-analyze)
-- [**Flutter Test**](/workflows/flutter-specific-workflow-steps/flutter-test)
-- [**Flutter Build for Web**](/workflows/flutter-specific-workflow-steps/flutter-build-for-web)
+- [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations/flutter-build-for-ios)
+- [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations/flutter-build-for-android)
+- [**Flutter Analyze**](/build-integrations/flutter-specific-integrations/flutter-analyze)
+- [**Flutter Test**](/build-integrations/flutter-specific-integrations/flutter-test)
+- [**Flutter Build for Web**](/build-integrations/flutter-specific-integrations/flutter-build-for-web)
 
 :::
 

@@ -1,6 +1,7 @@
 ---
 title: NPM/Yarn Commands
 description: Learn to use NPM/Yarn commands for managing dependencies in your React Native applications. Enhance your app's functionality.
+slug: /build-integrations/react-native-specific-integrations/npm-yarn-commands
 tags: [react native, mobile, workflow, step, yarn]
 ---
 
@@ -16,7 +17,7 @@ Before running the **NPM/Yarn Commands** step, you must complete certain prerequ
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Install Node**](/workflows/react-native-specific-workflow-steps/node-install) | This step will install Node modules for your application. Please note that the **NPM/Yarn Commands** step should be used after this step. |
+| [**Install Node**](/build-integrations/react-native-specific-integrations/node-install) | This step will install Node modules for your application. Please note that the **NPM/Yarn Commands** step should be used after this step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2797-npmOrder.png' />
 
@@ -28,7 +29,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                 | Description                                    | Status |
 |-------------------------------|------------------------------------------------|--------|
-| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_REPOSITORY_DIR`          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. | Required |
 | `$AC_NPM_COMMAND_ARGS`        | The NPM command to run. You can add different command parameters directly. The default is: `npm/yarn install`. | Optional |
 
 ---

@@ -101,7 +101,7 @@ The versioning system works by consuming environment variables. Even though it's
 
 | Variable Name                 | Description                                                                                                          | Status   |
 | ----------------------------- | -------------------------------------------------------------------------------------------------------------------- |----------|
-| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If it runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                               | Required |
+| `$AC_REPOSITORY_DIR`          | This variable represents the path of the cloned Git repository. If it runs after the [Git Clone](/build-integrations/common-integrations/git-clone) step, the variable will be automatically populated.                                               | Required |
 | `$AC_PROJECT_PATH`            | Specifies the project path. For example: `./appcircle.xcodeproj`. | Required |
 | `$AC_SCHEME`                  | Specifies the project scheme for the build. | Required |
 | `$AC_BUILD_NUMBER_SOURCE`     | Build number source type(env variable or Xcode). | Optional |

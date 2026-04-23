@@ -1,6 +1,7 @@
 ---
 title: Tuist Install
 description: Scale your Xcode projects by installing Tuist. Streamline project management and automate configurations for efficient iOS app development.
+slug: /build-integrations/ios-specific-integrations/tuist-install
 tags: [tuist, xcode automation, project management, ios development, code generation, tuist install]
 ---
 
@@ -14,7 +15,7 @@ You can seamlessly integrate Tuist Install into your workflow with Appcircle, ma
 
 :::info
 
-Tuist CLI tool is a tool that enables different actions to be performed in the project with different commands. The **Tuist Install** step only installs Tuist and runs the `tuist generate` command to generate the project. On the other hand, if you want to run other commands that Tuist has, please visit the [**Tuist Commands**](/workflows/ios-specific-workflow-steps/tuist-commands) step document.
+Tuist CLI tool is a tool that enables different actions to be performed in the project with different commands. The **Tuist Install** step only installs Tuist and runs the `tuist generate` command to generate the project. On the other hand, if you want to run other commands that Tuist has, please visit the [**Tuist Commands**](/build-integrations/ios-specific-integrations/tuist-commands) step document.
 
 :::
 
@@ -24,19 +25,19 @@ Before running the **Tuist Install** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `$AC_REPOSITORY_DIR` variable.  |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | You need to clone the repository to start the Tuist process. After cloning, the system installs Tuist and creates the `$AC_REPOSITORY_DIR` variable.  |
 
 :::caution Tuist Usage
 
 Appcircle's Tuist Install component generates your project using only the `tuist generate` command. This means that it will automatically generate the `.xcworkspace` and `.xcodeproj` files in the project after the tuist generate command runs. Note that if you use **Tuist Install** in the Appcircle pipeline and want to generate an **IPA** file, you need the other build steps, such as
 
-- [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices)
-- [**Xcodebuild for iOS Simulator**](/workflows/ios-specific-workflow-steps/xcodebuild-for-ios-simulator)
-- [**Xcodebuild for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing)
-- [**Xcodebuild for Unit and UI Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test)
-- [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install)
+- [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices)
+- [**Xcodebuild for iOS Simulator**](/build-integrations/ios-specific-integrations/xcodebuild-for-ios-simulator)
+- [**Xcodebuild for Testing**](/build-integrations/ios-specific-integrations/xcodebuild-for-testing)
+- [**Xcodebuild for Unit and UI Testing**](/build-integrations/ios-specific-integrations/xcodebuild-for-unit-and-ui-test)
+- [**Cocoapods Install**](/build-integrations/ios-specific-integrations/cocoapods-install)
 
-For more iOS specific workflow steps, please visit the [**iOS Integration**](/workflows/ios-specific-workflow-steps) documentation.
+For more iOS specific workflow steps, please visit the [**iOS Integration**](/build-integrations/ios-specific-integrations) documentation.
 
 :::
 
@@ -70,7 +71,7 @@ For this reason, iOS apps using Tuist versions `1.x` or `2.x` are not supported 
 
 | Variable Name            | Description                                                                                                                                                                         | Status   |
 |--------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------|
-| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step. | Required |
+| `$AC_TUIST_PATH`         | Specifies the path to the directory containing the project definition. This path is automatically generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step. | Required |
 | `$AC_TUIST_VERSION`      | Specifies the Tuist version. If not specified, the latest version of Tuist will be installed.                                                                                       | Optional |
 
 ---

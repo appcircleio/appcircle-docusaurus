@@ -1,6 +1,7 @@
 ---
 title: BrowserStack App Automate - Espresso
 description: BrowserStack App Automate - Espresso is a testing solution provided by BrowserStack specifically designed for Android applications using the Espresso testing framework.
+slug: /build-integrations/android-specific-integrations/browserstack-app-automate-espresso
 tags: [android, mobile, testing, espresso, browserstack]
 ---
 
@@ -18,7 +19,7 @@ Before running the **BrowserStack App Automate - Espresso** step, you must compl
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android app outputs for processing. |
+| [**Android Build for UI Testing**](/build-integrations/android-specific-integrations/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android app outputs for processing. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-browserstack-app-automate-espresso_1.png'/>
 

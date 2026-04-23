@@ -1,6 +1,7 @@
 ---
 title: FTP Upload
 description: Streamline your file transfers with FTP Upload. Secure, fast, and reliable FTP solutions to enhance your data management and operational efficiency.
+slug: /build-integrations/common-integrations/ftp-upload
 tags: [file, transfer, secure, fast, upload file]
 ---
 
@@ -17,7 +18,7 @@ There are no prerequisites required before using the **FTP Upload** step.
 
 :::caution
 
-This step has no prerequisites but must follow the artifact production step. For example, as the screenshot below demonstrates, use it right after the [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) step. This setup ensures the IPA file produced in the pipeline is sent to any **FTP server**.
+This step has no prerequisites but must follow the artifact production step. For example, as the screenshot below demonstrates, use it right after the [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices) step. This setup ensures the IPA file produced in the pipeline is sent to any **FTP server**.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3153-ftpOrder.png' />
 

@@ -1,6 +1,7 @@
 ---
 title: Publish Release Notes
 description: Learn to publish release notes for your app versions. Communicate updates and changes effectively with Appcircle.
+slug: /build-integrations/common-integrations/publish-release-notes
 tags: [build, test, release, notes, workflow, step]
 ---
 
@@ -10,7 +11,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 You can use the **Publish Release Notes** step to generate release notes during your workflow. These release notes can be enriched with environment variables or Ruby snippets, and you also have the option to include your own release notes file by specifying its path. This component generates a `release-notes.txt` file with the provided options and copies it to the `$AC_OUTPUT_DIR` path. The generated release notes will be utilized in the following areas:
 
-- Distribution Portals (such as [Appcircle Testing Distribution](/testing-distribution) or [Firebase App Distribution](/workflows/common-workflow-steps/firebase-app-distribution) step)
+- Distribution Portals (such as [Appcircle Testing Distribution](/testing-distribution) or [Firebase App Distribution](/build-integrations/common-integrations/firebase-app-distribution) step)
 - [Enterprise App Store](/enterprise-app-store)
 - Publishing (to [Google Play](/publish-integrations/android-publish-integrations/publish-to-google-play) or Approval Email steps)
 
@@ -28,7 +29,7 @@ There are no prerequisites required before using the **Publish Release Notes** s
 
 :::danger
 
-To create rich release notes, the Release Notes component should be included in your workflow. It is recommended to place it just before the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step so that you can have access to all build artifacts, such as git commit messages, test results, or build logs.
+To create rich release notes, the Release Notes component should be included in your workflow. It is recommended to place it just before the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step so that you can have access to all build artifacts, such as git commit messages, test results, or build logs.
 
 :::
 
@@ -45,13 +46,13 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 ### Output Variables
 
-This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts).
+This step creates the `release-notes.txt` file. It does not keep this file in a variable, but you can access this file via [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/workflow-publish-release-notes-output.png' />
 
 :::danger
 
-Don't forget to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to access the release notes output and distribute it after the build.
+Don't forget to use the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step to access the release notes output and distribute it after the build.
 
 :::
 

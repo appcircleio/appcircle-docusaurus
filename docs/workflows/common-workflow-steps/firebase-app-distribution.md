@@ -1,6 +1,7 @@
 ---
 title: Firebase App Distribution
 description: Firebase App Distribution, enables developers to distribute their applications to testers and stakeholders for testing purposes.
+slug: /build-integrations/common-integrations/firebase-app-distribution
 tags: [firebase, mobile, distribution]
 ---
 
@@ -31,8 +32,8 @@ Before running the **Firebase App Distribution** step, you must complete certain
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_1.png'/>
 
@@ -40,7 +41,7 @@ Before running the **Firebase App Distribution** step, you must complete certain
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_2.png'/>
 
@@ -48,8 +49,8 @@ Before running the **Firebase App Distribution** step, you must complete certain
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required for the **Firebase App Distribution** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | Required for signing the app; processes the app for signing. This step can be skipped if the app is already signed. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_3.png'/>
 
@@ -57,8 +58,8 @@ Before running the **Firebase App Distribution** step, you must complete certain
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
-| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-firebase-app-distribution_4.png'/>
 

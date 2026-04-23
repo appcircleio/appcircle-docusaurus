@@ -114,7 +114,7 @@ Connecting to Private Repository via SSH
 
 The .netrc file contains login and initialization information used by the auto-login process. You can use this component to add credentials for hosts such as your repositories or external hosts. Git automatically recognizes the .netrc file.\
 
-<ContentRef url="/workflows/common-workflow-steps/authenticate-with-netrc">
+<ContentRef url="/build-integrations/common-integrations/authenticate-with-netrc">
 Authenticate with .netrc
 </ContentRef>
 

@@ -1,6 +1,7 @@
 ---
 title: LambdaTest App Automate - Espresso
 description: LambdaTest App Automate - Espresso is a cloud-based testing solution tailored for Android applications using the Espresso testing framework.
+slug: /build-integrations/android-specific-integrations/lambdatest-app-automate-espresso
 tags: [android, mobile, testing, espresso, lambdatest]
 ---
 
@@ -19,7 +20,7 @@ Before running the **LambdaTest App Automate - Espresso** step, ensure you have 
 
 | Prerequisite Workflow Step                                                                                  | Description                                                                                                 |
 | ----------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- |
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the required app and test APK outputs. |
+| [**Android Build for UI Testing**](/build-integrations/android-specific-integrations/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the required app and test APK outputs. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-lambdatest-app-automate-espresso_0.png'/>
 

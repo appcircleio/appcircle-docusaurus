@@ -1,6 +1,7 @@
 ---
 title: Upload Files to Amazon S3
 description: Learn how to upload files to Amazon S3 with Appcircle. Streamline your storage and backup processes for app development.
+slug: /build-integrations/common-integrations/upload-files-to-amazon-s3
 tags: [build, test, upload, amazon, workflow, step]
 ---
 

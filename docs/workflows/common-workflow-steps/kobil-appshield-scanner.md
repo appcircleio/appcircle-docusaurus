@@ -1,6 +1,7 @@
 ---
 title: KOBIL Appshield Scanner
 description: KOBIL Appshield Scanner is a mobile application security analysis tool for Android and iOS apps.
+slug: /build-integrations/common-integrations/kobil-appshield-scanner
 tags: [android, ios, mobile, security, scan, kobil-appshield-scanner]
 ---
 
@@ -27,28 +28,28 @@ Before running the **KOBIL Appshield Scanner** step, here are some example steps
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
 #### For Android Flutter 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for Android**](/workflows/flutter-specific-workflow-steps#flutter-build-for-android) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
+| [**Flutter Build for Android**](/build-integrations/flutter-specific-integrations#flutter-build-for-android) | Generates the app required (APK or AAB) for the **KOBIL Appshield Scanner** step.                                                                           |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | Required for signing the app (APK or AAB). If app is already signed, this step can be skipped. |
 
 #### For iOS (Objective-C / Swift and React Native) 
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 #### For iOS Flutter
 
 | Prerequisite Workflow Step        | Description                                                                                              |
 | --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Flutter Build for iOS**](/workflows/flutter-specific-workflow-steps#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
+| [**Flutter Build for iOS**](/build-integrations/flutter-specific-integrations#flutter-build-for-ios) | Prepares the Flutter project for the iOS environment and builds it using the [Flutter SDK](https://github.com/flutter/flutter). |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations#xcodebuild-for-devices-archive--export) | Builds the application in ARM architecture and generates an `IPA` file. |
 
 ### Input Variables
 

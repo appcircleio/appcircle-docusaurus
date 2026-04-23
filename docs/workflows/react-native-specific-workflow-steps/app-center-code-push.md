@@ -1,6 +1,7 @@
 ---
 title: App Center CodePush
 description: Effortlessly update apps with App Center Code Push. Learn quick, reliable code deployment without app store delays.
+slug: /build-integrations/react-native-specific-integrations/app-center-code-push
 tags: [react native, mobile, workflow, step, code push, app center]
 unlisted: true
 ---

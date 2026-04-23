@@ -1,6 +1,7 @@
 ---
 title: Xcodebuild for Devices (Archive & Export)
 description: Learn to build iOS apps for ARM devices with Xcodebuild. Essential for Sharing With Testers feature and iOS distribution
+slug: /build-integrations/ios-specific-integrations/xcodebuild-for-devices
 tags: [xcode, ios, build, archive, export, workflow, step]
 ---
 
@@ -22,9 +23,9 @@ Before running the **Xcodebuild for Devices** step, you must complete certain pr
 
 | Require Workflow Step                                                                                      | Description                                                                                                                                                                         |
 | ---------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone)                      | The repository that needs to be built must be fetched from the Git provider. **Xcodebuild for Devices** should be used after this step.                                             |
-| [**Xcode Select**](/workflows/ios-specific-workflow-steps/xcode-select)   | In this step, select the Xcode version to build. **Xcodebuild for Devices** should be used after this step.                                                                         |
-| [**Cocoapods Install**](/workflows/ios-specific-workflow-steps/cocoapods-install) | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone)                      | The repository that needs to be built must be fetched from the Git provider. **Xcodebuild for Devices** should be used after this step.                                             |
+| [**Xcode Select**](/build-integrations/ios-specific-integrations/xcode-select)   | In this step, select the Xcode version to build. **Xcodebuild for Devices** should be used after this step.                                                                         |
+| [**Cocoapods Install**](/build-integrations/ios-specific-integrations/cocoapods-install) | This step installs all pod dependencies for project. **Xcodebuild for Devices** should be used after this step. If you use SPM (Swift Package Manager), it is not necessary to use. |
 
 :::danger
 
@@ -41,7 +42,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                                 | Description                                                                                                                                                                                                                                              | Status   |
 | --------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------- |
-| `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                  | Required |
+| `$AC_REPOSITORY_DIR`                          | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step.                                                                                  | Required |
 | `$AC_OUTPUT_DIR_PATH`                         | This variable specifies the path of the artifacts that will be generated after the build is complete.                                                                                                                                                    | Required |
 | `$AC_SCHEME`                                  | Specifies the project scheme for build. If you filled in **`Configuration => Build Scheme`**, this variable comes from [Configuration](/build/platform-build-guides/building-ios-applications#build-configuration).                                   | Required |
 | `$AC_CLEAN_BUILD`                             | Adds the clean parameter to xcodebuild command. When false, performs incremental build without cleaning. Default value is `true`.                                   | Optional |
@@ -196,7 +197,7 @@ C05EDAE401000000:error:0308010C:digital envelope routines:inner_evp_generic_fetc
 
 All packages running in Appcircle cloud environments are controlled by the Appcircle development teams on runners and updated when necessary. One of the packages used on runners is **LibreSSL**. In Appcircle Cloud environments, the **LibreSSL** 3.3.6 version on macOS Sonoma and the **LibreSSL** 2.8.3 version on macOS Monterey are used. For more information, please visit our [**Build Infrastructure**](/infrastructure/ios-build-infrastructure#ios-build-environment) documentation.
 
-However, issues may still occur depending on how the environment is used. If you are working in the cloud environment and the [**Custom Scripts**](/workflows/common-workflow-steps/custom-script) you use can **change** or **update** the packages in our environments. If cloud users encounter such **signing errors**, it is recommended to check the **Custom Scripts** used. You can use the example `bash` script below.
+However, issues may still occur depending on how the environment is used. If you are working in the cloud environment and the [**Custom Scripts**](/build-integrations/common-integrations/custom-script) you use can **change** or **update** the packages in our environments. If cloud users encounter such **signing errors**, it is recommended to check the **Custom Scripts** used. You can use the example `bash` script below.
 
 ```bash
 export PATH="/usr/bin:$PATH"

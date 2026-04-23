@@ -1,6 +1,7 @@
 ---
 title: Cocoapods Install
 description: Master Cocoapods Install for managing dependencies in your project. Learn how to use the 'pod install' command effectively.
+slug: /build-integrations/ios-specific-integrations/cocoapods-install
 tags: [cocoapods, install, workflow, step]
 ---
 
@@ -17,7 +18,7 @@ Before running the **Cocoapods Install** step, you must complete certain prerequ
 
 | Prerequisite Workflow Step                                                        | Description                                                                                                                                                                                              |
 | --------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | The repo needs to be cloned in order to start the CocoaPods installation process. After the clone, CocoaPods will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2588-pod_order.png' />
 
@@ -30,7 +31,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | Variable Name           | Description                                                                                                                                                                                                                                   | Status   |
 | ----------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
 | `$AC_PROJECT_PATH`      | Specifies the project path. For example: `./appcircle.xcodeproj`. If you filled in **`Configuration => Project or Workspace`**, this variable comes from [Configuration](/build/build-process-management/configurations). | Required |
-| `$AC_REPOSITORY_DIR`    | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/workflows/common-workflow-steps/git-clone) step.                                                                                            | Required |
+| `$AC_REPOSITORY_DIR`    | Specifies the cloned repository directory. This path will be generated after the [**Git Clone**](/build-integrations/common-integrations/git-clone) step.                                                                                            | Required |
 | `$AC_COCOAPODS_VERSION` | Specifies the CocoaPods version. If there is a specific version you want to use, give it here as hardcoded, and the system will automatically install the given version.                                                                      | Optional |
 
 :::info
@@ -78,7 +79,7 @@ For users with a Nexus infrastructure, an alternative approach to centralize and
 
 :::caution Configure Sonatype Nexus Repository Authentication
 
-If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash script given below.
+If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/build-integrations/common-integrations/authenticate-with-netrc) step or by using a [**Custom Script**](/build-integrations/common-integrations/custom-script). If Custom Script is used, you can use the bash script given below.
 
 For more information, please visit the [**Sonatype Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html#configure-nexus-repository-authentication).
 
@@ -168,7 +169,7 @@ After these changes;
 
 #### Option 1: Using Cache Push and Pull in Build Pipelines (Recommended)
 
-CocoaPods caches are compatible with Appcircle's [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push) and [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull) steps.
+CocoaPods caches are compatible with Appcircle's [Cache Push](/build-integrations/common-integrations/build-cache/cache-push) and [Cache Pull](/build-integrations/common-integrations/build-cache/cache-pull) steps.
 
 When you add the **Cache Push** step to the pipeline, it stores CocoaPods dependencies so they can be restored in future builds with **Cache Pull**, avoiding potential network access issues.
 
@@ -176,5 +177,5 @@ This also reduces the duration of the **CocoaPods Install** step, since dependen
 
 #### Option 2: Using Appcircle's Nexus Server for Specific Dependencies
 
-For dependencies that cause issues (for example, `Mapbox-iOS-SDK`), you can [configure your Podfile](/workflows/ios-specific-workflow-steps/cocoapods-install#example-2-how-can-i-fetch-some-dependencies-from-different-repositories) to fetch them from the Appcircle Nexus server instead of the default source.
+For dependencies that cause issues (for example, `Mapbox-iOS-SDK`), you can [configure your Podfile](/build-integrations/ios-specific-integrations/cocoapods-install#example-2-how-can-i-fetch-some-dependencies-from-different-repositories) to fetch them from the Appcircle Nexus server instead of the default source.
 

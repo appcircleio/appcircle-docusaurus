@@ -1,6 +1,7 @@
 ---
 title: Set Environment Variable
 description: Set Environment Variable step sets environment value for given keys
+slug: /build-integrations/common-integrations/set-environment-variable
 tags: [environment, variable]
 ---
 

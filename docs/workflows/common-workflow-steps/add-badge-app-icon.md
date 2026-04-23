@@ -1,6 +1,7 @@
 ---
 title: Add a Badge to Your App Icon
 description: Learn how to add a badge to your app icon with Appcircle's badge component.
+slug: /build-integrations/common-integrations/add-badge-app-icon
 tags: [badge, app icon, version, build, appcircle, mobile ci/cd]
 ---
 
@@ -21,7 +22,7 @@ Before running the **Add a Badge to Your App Icon** step, you must complete cert
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps#git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `$AC_REPOSITORY_DIR` will be set. |
+| [**Git Clone**](/build-integrations/common-integrations#git-clone) | The repository needs to be cloned to begin the badge-adding process. After this step, the variable `$AC_REPOSITORY_DIR` will be set. |
 
 :::caution
 

@@ -136,7 +136,7 @@ const config = {
               },
               {
                 label: "Integrations",
-                to: "/workflows",
+                to: "/build-integrations",
               },
               {
                 label: "Appcircle CLI",

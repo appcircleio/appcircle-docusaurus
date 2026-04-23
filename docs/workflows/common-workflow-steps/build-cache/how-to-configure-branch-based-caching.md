@@ -1,6 +1,7 @@
 ---
 title: How to Configure Branch-Base Caching
 description: Explains how to configure the Appcircle Cache structure so that each branch uses its own isolated cache.
+slug: /build-integrations/common-integrations/build-cache/how-to-configure-branch-based-caching
 tags: [branch based, branch, data sharing, cache, cache push, cache pull]
 ---
 
@@ -22,7 +23,7 @@ Cache benefits will apply starting from the second and subsequent builds of the 
 
 ### Steps to Enable Branch-Based Caching
 
-1. Open the **Cache Pull** step that you added to your pipeline by following the [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull) documentation.
+1. Open the **Cache Pull** step that you added to your pipeline by following the [Cache Pull](/build-integrations/common-integrations/build-cache/cache-pull) documentation.
 
 2. Update the default **Cache label** input as shown below:
 
@@ -39,7 +40,7 @@ Cache benefits will apply starting from the second and subsequent builds of the 
 
 3. Save the changes in the Cache Pull step.
 
-4. In the same pipeline, open the **Cache Push** step that you added by following the [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push) documentation.
+4. In the same pipeline, open the **Cache Push** step that you added by following the [Cache Push](/build-integrations/common-integrations/build-cache/cache-push) documentation.
 
 5. Update the default **Cache label** input as shown below:
 

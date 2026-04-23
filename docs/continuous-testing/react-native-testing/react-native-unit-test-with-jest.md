@@ -61,22 +61,22 @@ To run your tests during the build process, you can simply add the **React Nativ
 
 Make sure the step is placed after the following:
 
-- [**Node Install**](/workflows/react-native-specific-workflow-steps/node-install)
-- [**Npm/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
+- [**Node Install**](/build-integrations/react-native-specific-integrations/node-install)
+- [**Npm/Yarn Commands**](/build-integrations/react-native-specific-integrations/npm-yarn-commands)
 
 and  make sure the step is placed before the following: 
 
-- [**Test Reports for React Native**](/workflows/react-native-specific-workflow-steps/test-reports-react-native)
-- [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
+- [**Test Reports for React Native**](/build-integrations/react-native-specific-integrations/test-reports-react-native)
+- [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts)
 
-For detailed information on Workflow structure, please visit the [**Workflows documentation**](/workflows).
+For detailed information on Workflow structure, please visit the [**Workflows documentation**](/build-integrations).
 
-For more information, please visit the **React Native Unit Test** workflow step [documentation](/workflows/react-native-specific-workflow-steps/react-native-unit-test#prerequisites).
+For more information, please visit the **React Native Unit Test** workflow step [documentation](/build-integrations/react-native-specific-integrations/react-native-unit-test#prerequisites).
 
 
 ## Generating Test Report
 
-If you add [Test Report Component](/workflows/react-native-specific-workflow-steps/test-reports-react-native) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
+If you add [Test Report Component](/build-integrations/react-native-specific-integrations/test-reports-react-native) to your workflow, Appcircle will show the result of your tests and code coverage with a clean UI.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/test-reports.png' />
 

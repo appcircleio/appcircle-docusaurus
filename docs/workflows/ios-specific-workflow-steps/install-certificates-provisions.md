@@ -1,6 +1,7 @@
 ---
 title: Install Certificates and Provisioning Profiles
 description: Learn how to install certificates and provisioning profiles for iOS distribution in Appcircle.
+slug: /build-integrations/ios-specific-integrations/install-certificates-provisions
 tags: [ios, certificate, install, signing]
 ---
 
@@ -23,7 +24,7 @@ If you are using an automatic code sign, you can remove this step. Since automat
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | Clone your repository to the runner machine. Use the Install Certificates and Provisiong Profiles step after this step. This step will clone your repository to be able to use provisioning profiles and certificates. |
 
 :::danger
 

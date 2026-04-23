@@ -1,6 +1,7 @@
 ---
 title: Azure Bot for Swiftlint
 description: Integrate Azure DevOps Bot with SwiftLint to analyze and report details under PRs. Automate builds with configured triggers.
+slug: /build-integrations/ios-specific-integrations/azure-bot-for-swiftlint
 tags: [ios, azure, workflow, step]
 ---
 
@@ -34,7 +35,7 @@ Before running the **Azure Bot for Swiftlint** step, you must complete certain p
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Swiftlint**](/workflows/ios-specific-workflow-steps/swiftlint) | This component will check the source code for programmatic as well as stylistic errors. This is helpful in identifying some common and uncommon mistakes that are made during coding. |
+| [**Swiftlint**](/build-integrations/ios-specific-integrations/swiftlint) | This component will check the source code for programmatic as well as stylistic errors. This is helpful in identifying some common and uncommon mistakes that are made during coding. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-azureBotOrder.png' />
 

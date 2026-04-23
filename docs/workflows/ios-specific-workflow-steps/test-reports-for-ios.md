@@ -1,6 +1,7 @@
 ---
 title: Test Reports for iOS
 description: Test Report step displays your test results and code coverage in an aesthetically pleasing user interface for iOS applications.
+slug: /build-integrations/ios-specific-integrations/test-reports-for-ios
 tags: [test, test report, test result, automation]
 ---
 
@@ -27,7 +28,7 @@ Before running the **Test Reports for iOS** step, you must complete certain prer
 
 | Prerequisite Workflow Step                                   | Description                                                                   |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| [**Xcodebuild for Unit and UI Test**](/workflows/ios-specific-workflow-steps/xcodebuild-for-unit-and-ui-test) | Run unit and UI tests in your project to generate an `.xcresult` file containing the test outcomes. |
+| [**Xcodebuild for Unit and UI Test**](/build-integrations/ios-specific-integrations/xcodebuild-for-unit-and-ui-test) | Run unit and UI tests in your project to generate an `.xcresult` file containing the test outcomes. |
 
 <AlwaysRunToggleDanger />
 

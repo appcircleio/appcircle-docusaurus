@@ -1,6 +1,7 @@
 ---
 title: Snyk Scan Security
 description: The Snyk Security Scan step enables developers to seamlessly incorporate vulnerability scanning into their CI/CD workflows.
+slug: /build-integrations/common-integrations/snyk-scan-security
 tags: [snyk scan, security, mobile]
 ---
 
@@ -18,7 +19,7 @@ Before running the **Snyk Scan Security** step, you must complete certain prereq
 
 | Prerequisite Workflow Step | Description                                                                                   |
 | -------------------------- | --------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | Fetches the repository to be built from the specified branch, ensuring that the [Snyk CLI](https://docs.snyk.io/snyk-cli) can run on the repository path. |
+| [**Git Clone**](/build-integrations/common-integrations/#git-clone) | Fetches the repository to be built from the specified branch, ensuring that the [Snyk CLI](https://docs.snyk.io/snyk-cli) can run on the repository path. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-snyk-scan-cloud-upload_1.png'/>
 

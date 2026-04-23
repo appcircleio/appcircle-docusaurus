@@ -1,6 +1,7 @@
 ---
 title: Firebase Test Lab for Android
 description: Integrate Appcircle with Firebase Test Lab for continuous Android app testing. Prerequisites include Android Build for UI Testing.
+slug: /build-integrations/android-specific-integrations/firebase-test-lab
 tags: [android, test, firebase, test lab, continuous testing, ui testing, robo testing, instrumentation testing]
 ---
 
@@ -16,7 +17,7 @@ Before running the **Firebase Test Lab for Android** step, you must complete cer
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
+| [**Android Build for UI Testing**](/build-integrations/android-specific-integrations/android-build-for-ui-testing) | The **Android Build for UI Testing** step must be executed to obtain the necessary Android application outputs for processing. |
 
 In addition to the steps you need to run on Appcircle, there are also adjustments you need to make on the Firebase Test Lab side. These adjustments can be made as follows:
 
@@ -47,7 +48,7 @@ As the final step, go to the [Google Developers Console API Library page](https:
 
 ### 2. Build Workflow Configuration for Firebase Test Lab
 
-To utilize the Firebase Test Lab in your builds, open the [workflow editor](/workflows) and add the **Firebase Test Lab for Android** step after the build or sign steps. If you want to run instrumentation tests, also add the **Android Build for UI Testing** step before the **Firebase Test Lab for Android** step.
+To utilize the Firebase Test Lab in your builds, open the [workflow editor](/build-integrations) and add the **Firebase Test Lab for Android** step after the build or sign steps. If you want to run instrumentation tests, also add the **Android Build for UI Testing** step before the **Firebase Test Lab for Android** step.
 
 :::caution
 

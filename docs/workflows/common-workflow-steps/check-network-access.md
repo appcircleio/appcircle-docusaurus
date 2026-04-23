@@ -1,6 +1,7 @@
 ---
 title: Check Network Access
 description: Check the network access with external sources for the Appcircle build module.
+slug: /build-integrations/common-integrations/check-network-access
 tags: [network, build tools, external services, curl, network access, proxy, ssl]
 ---
 

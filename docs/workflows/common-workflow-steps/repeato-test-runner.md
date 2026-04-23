@@ -1,6 +1,7 @@
 ---
 title: Repeato Test Runner
 description: Repeato Test Runner facilitates the execution of automated tests for mobile applications directly within Appcircle.
+slug: /build-integrations/common-integrations/repeato-test-runner
 tags: [repeato, test runner, mobile, automation]
 ---
 
@@ -22,7 +23,7 @@ Before running the **Repeato Test Runner** step, you must complete certain prere
 
 | Prerequisite Workflow Step                                   | Description                                                                                                                                                                                                                  |
 | ------------------------------------------------------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
+| [**Git Clone**](/build-integrations/common-integrations/#git-clone) | The repository that needs to be built must be fetched from the branch. Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the Android Build step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-repeato_1.png'/>
 

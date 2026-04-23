@@ -84,19 +84,19 @@ To run your tests during the build process, you can simply add the **React Nativ
 
 Make sure the step is placed after the following:
 
-- [**Node Install**](/workflows/react-native-specific-workflow-steps/node-install)
-- [**Npm/Yarn Commands**](/workflows/react-native-specific-workflow-steps/npm-yarn-commands)
-- [**Cocoapods Install** ](/workflows/ios-specific-workflow-steps/cocoapods-install) (for only iOS)
-- [**Wait for Android Emulator**](/workflows/android-specific-workflow-steps/wait-for-android-emulator) (for only Android)
+- [**Node Install**](/build-integrations/react-native-specific-integrations/node-install)
+- [**Npm/Yarn Commands**](/build-integrations/react-native-specific-integrations/npm-yarn-commands)
+- [**Cocoapods Install** ](/build-integrations/ios-specific-integrations/cocoapods-install) (for only iOS)
+- [**Wait for Android Emulator**](/build-integrations/android-specific-integrations/wait-for-android-emulator) (for only Android)
 
 and make sure the step is placed before the following:
 
-- [**Test Reports for React Native**](/workflows/react-native-specific-workflow-steps/test-reports-react-native)
-- [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts)
+- [**Test Reports for React Native**](/build-integrations/react-native-specific-integrations/test-reports-react-native)
+- [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts)
 
-For detailed information on Workflow structure, please visit the [**Workflows documentation**](/workflows).
+For detailed information on Workflow structure, please visit the [**Workflows documentation**](/build-integrations).
 
-For more information, please visit the **React Native UI Test** workflow step [documentation](/workflows/react-native-specific-workflow-steps/react-native-ui-test#prerequisites).
+For more information, please visit the **React Native UI Test** workflow step [documentation](/build-integrations/react-native-specific-integrations/react-native-ui-test#prerequisites).
 
 
 ## Generating Test Report

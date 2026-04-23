@@ -1,6 +1,7 @@
 ---
 title: Gradle Runner
 description: The Gradle Runner workflow step executes the specified Gradle task provided by the user.
+slug: /build-integrations/android-specific-integrations/gradle-runner
 tags: [android, mobile, gradle]
 ---
 
@@ -16,7 +17,7 @@ Before running the **Gradle Runner** step, you must complete certain prerequisit
 
 | Prerequisite Workflow Step                                                            | Description                                                                                                                                                                                                                                                                                              |
 | ------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | To initiate the **Gradle Runner** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Gradle Runner** step. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | To initiate the **Gradle Runner** process, the repository that needs to be built must be fetched from the branch. This is achieved as follows: Upon completion of the **Git Clone** step, it generates the `$AC_REPOSITORY_DIR` variable, which is then used as the input for the **Gradle Runner** step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-gradle-runner_1.png'/>
 
@@ -28,7 +29,7 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 
 | Variable Name                      | Description                                                                                                                                                                                                                                                                                                                                                                                         | Status   |
 | ---------------------------------- |-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| -------- |
-| `$AC_REPOSITORY_DIR`               | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/workflows/common-workflow-steps/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                             | Required |
+| `$AC_REPOSITORY_DIR`               | This variable represents the path of the cloned Git repository. If this step runs after the [Git Clone](/build-integrations/common-integrations/git-clone) step, the variable will be automatically populated.                                                                                                                                                                                             | Required |
 | `$AC_MODULE`                       | This variable specifies the project module to be built. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can locate the available modules for your project. For more information, please refer to this [Android document](https://developer.android.com/studio/projects#ApplicationModules). | Required |
 | `$AC_VARIANTS`                     | This variable specifies the project variant to be built. This variable can also be set via the build [Configuration](/build/build-process-management/configurations). In Android Studio, you can find the available variants for your project. For more information, please refer to this [Android document](https://developer.android.com/build/build-variants).               | Required |
 | `$AC_OUTPUT_DIR`                   | Specifies the directory path for the generated app files.                                                                                                                                                                                                                                                                                                                                           | Required |
@@ -42,7 +43,7 @@ As the output may vary depending on the task you execute, there is no specific o
 
 :::caution
 
-If there is an output generated, ensure to use the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](/workflows/common-workflow-steps/export-build-artifacts#download-exported-artifacts) page.
+If there is an output generated, ensure to use the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step afterward to ensure it is included in the [**Download Artifacts**](/build-integrations/common-integrations/export-build-artifacts#download-exported-artifacts) page.
 
 :::
 

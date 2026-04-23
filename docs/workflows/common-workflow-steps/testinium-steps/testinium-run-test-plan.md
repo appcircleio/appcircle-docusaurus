@@ -1,6 +1,7 @@
 ---
 title: Testinium Run Test Plan
-description: The Testinium Run Test Plan step allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
+description: The Testinium Run Test Plan integration allows users to run automated tests on their mobile applications using Testinium directly from the Appcircle.
+slug: /build-integrations/common-integrations/testinium-integrations/testinium-run-test-plan
 tags: [testinium, plan, run, test, mobile, automation, app automate]
 sidebar_position: 2
 ---
@@ -11,21 +12,21 @@ import TestiniumEnterpriseWhitelistDanger from '@site/docs/workflows/common-work
 
 # Testinium Run Test Plan
 
-The **Testinium Run Test Plan** step integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing for automated testing of mobile applications directly within the Appcircle environment. This step enables developers to execute the test plan, analyze test outcomes, and verify the quality of their mobile apps before deployment.
+The **Testinium Run Test Plan** integrates the [Testinium](https://testinium.com/) testing platform into Appcircle's CI/CD workflow, allowing for automated testing of mobile applications directly within the Appcircle environment. This integration enables developers to execute the test plan, analyze test outcomes, and verify the quality of their mobile apps before deployment.
 
 ### Prerequisites
 
-Before running the **Testinium Run Test Plan** step, you must complete certain prerequisites, as detailed in the table below:
+Before running the **Testinium Run Test Plan** integration, you must complete certain prerequisites, as detailed in the table below:
 
 <TestiniumEnterpriseWhitelistDanger />
 
-| Prerequisite Workflow Step        | Description                                                                                              |
-| --------------------------------- | -------------------------------------------------------------------------------------------------------- |
-| [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) | Required to upload your application to Testinium before executing test plans with the **Testinium Run Test Plan** step. |
+| Prerequisite Workflow Integration                                                                               | Description                                                                                                                    |
+|-----------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
+| [**Testinium Upload App**](/build-integrations/common-integrations/testinium-integrations/testinium-upload-app) | Required to upload your application to Testinium before executing test plans with the **Testinium Run Test Plan** integration. |
 
 :::tip
 
-After using the [**Testinium Upload App**](/workflows/common-workflow-steps/testinium-steps/testinium-upload-app) step once, you can add multiple **Testinium Run Test Plan** steps to the workflow for each test plan.
+After using the [**Testinium Upload App**](/build-integrations/common-integrations/testinium-integrations/testinium-upload-app) integration once, you can add multiple **Testinium Run Test Plan** integrations to the workflow for each test plan.
 
 :::
 
@@ -33,7 +34,7 @@ After using the [**Testinium Upload App**](/workflows/common-workflow-steps/test
 
 ### Input Variables
 
-This step contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
+This integration contains some input variable(s). It needs these variable(s) to work. The table below gives explanation for this variable(s).
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/common-workflow-components-testinium_run_test_plan_2-1.png'/>
 
@@ -49,8 +50,8 @@ This step contains some input variable(s). It needs these variable(s) to work. T
 | `$AC_TESTINIUM_MAX_FAIL_PERCENTAGE` | Specifies the maximum failure percentage limit to interrupt the workflow. It must be in the range `0`-`100`. Selecting `0` means failures will not interrupt the workflow. | Optional |
 | `$AC_TESTINIUM_TIMEOUT`     | Specifies the Testinium plan timeout in minutes.                                                            | Required |
 | `$AC_TESTINIUM_MAX_API_RETRY_COUNT` | Specifies the maximum retry in case of Testinium platform congestion or API errors.            | Required |
-| `$AC_TESTINIUM_UPLOADED_APP_ID` | The unique identifier for the application was uploaded to Testinium. This ID is generated after the **Testinium App Upload** step.  | Required |
-| `$AC_TESTINIUM_APP_OS` | The operating system of the uploaded application, either `iOS` or `Android`. This value is determined after the **Testinium App Upload** step.  | Required |
+| `$AC_TESTINIUM_UPLOADED_APP_ID` | The unique identifier for the application was uploaded to Testinium. This ID is generated after the **Testinium App Upload**.  | Required |
+| `$AC_TESTINIUM_APP_OS` | The operating system of the uploaded application, either `iOS` or `Android`. This value is determined after the **Testinium App Upload**. | Required |
 
 ### Output Variables
 

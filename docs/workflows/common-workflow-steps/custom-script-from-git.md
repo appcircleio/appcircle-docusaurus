@@ -1,6 +1,7 @@
 ---
 title: Custom Script from Git
 description: Use Custom Script from Git to run your own scripts during the build. Easily add custom steps by cloning scripts from any Git repository, with support for authentication.
+slug: /build-integrations/common-integrations/custom-script-from-git
 tags: [custom script, custom scripts, data protection, build, git, git scripts, reuse]
 ---
 
@@ -57,7 +58,7 @@ There are no prerequisites required before using the **Custom Script from Git** 
 
 :::tip
 
-Note that you can put the **Custom Script from Git** component anywhere you want in the workflow. This step is used to add different capabilities to the existing workflow. As well as the [**Custom Script**](/workflows/common-workflow-steps/custom-script).
+Note that you can put the **Custom Script from Git** component anywhere you want in the workflow. This step is used to add different capabilities to the existing workflow. As well as the [**Custom Script**](/build-integrations/common-integrations/custom-script).
 
 :::
 

@@ -1,6 +1,7 @@
 ---
 title: Firebase Upload dSYM 
 description: Upload your debug symbols to Firebase Crashlytics with Appcircle. Streamline your iOS app development and debugging processes.
+slug: /build-integrations/ios-specific-integrations/firebase-upload-dsym
 tags: [build, test, distribute, firebase, crashlytics, ios, workflow, step]
 ---
 
@@ -16,7 +17,7 @@ Before running the **Firebase Upload dSYM** step, you must complete certain prer
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Xcodebuild for Devices**](/workflows/ios-specific-workflow-steps/xcodebuild-for-devices) | This step will build your application, create an Archive file, and generate `.ipa`. The Archive file contains the `.dSYM` file. Please use **Firebase Upload dSYM** step after this step. |
+| [**Xcodebuild for Devices**](/build-integrations/ios-specific-integrations/xcodebuild-for-devices) | This step will build your application, create an Archive file, and generate `.ipa`. The Archive file contains the `.dSYM` file. Please use **Firebase Upload dSYM** step after this step. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE2581-dsym_step_order.png' />
 

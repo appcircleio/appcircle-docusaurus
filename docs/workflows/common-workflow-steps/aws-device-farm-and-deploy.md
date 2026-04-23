@@ -1,6 +1,7 @@
 ---
 title: AWS Device Farm and Deploy
 description: AWS Device Farm is an application testing service that enables you to run your tests concurrently on multiple mobile devices to speed up the execution of your tests and generates videos and logs to help you quickly identify issues with your app.
+slug: /build-integrations/common-integrations/aws-device-farm-and-deploy
 tags: [android, ios, mobile, testing, aws, device]
 ---
 
@@ -28,8 +29,8 @@ Pay attention to the dependent step on whichever platform you are working on.
 
 | Prerequisite Workflow Step                                                                                                            | Description                                                                                                                                                                                 |
 | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [**Android Build for UI Testing**](/workflows/android-specific-workflow-steps/android-build-for-ui-testing)      | This step is tailored to build your Android test application using Gradle Wrapper (gradlew) for the designated architectures outlined in your project. |
-| [**Xcodebuild Build for Testing**](/workflows/ios-specific-workflow-steps/xcodebuild-for-testing) | This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks.                                                                    |
+| [**Android Build for UI Testing**](/build-integrations/android-specific-integrations/android-build-for-ui-testing)      | This step is tailored to build your Android test application using Gradle Wrapper (gradlew) for the designated architectures outlined in your project. |
+| [**Xcodebuild Build for Testing**](/build-integrations/ios-specific-integrations/xcodebuild-for-testing) | This step builds your application and generates an IPA for testing so that it can be used in test automation frameworks.                                                                    |
 
 #### For iOS
 

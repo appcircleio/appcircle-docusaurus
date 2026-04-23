@@ -120,7 +120,7 @@ Any custom operation during the build can be executed through the Custom Script 
 
 For details on using Appcircle's workflow editor, please see the related page below:
 
-<ContentRef url="/workflows">What are Workflows and How to Use Them?</ContentRef>
+<ContentRef url="/build-integrations">What are Workflows and How to Use Them?</ContentRef>
 
 ### Start Build
 
@@ -154,7 +154,7 @@ Every Android project has a `gradlew` file in the main repository directory. If 
 
 ### How can I change the JDK version for autofill?
 
-Appcircle currently has OpenJDK 17 (default), OpenJDK 8, OpenJDK 11 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can add the [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) step to your workflow.
+Appcircle currently has OpenJDK 17 (default), OpenJDK 8, OpenJDK 11 and OpenJDK 21. If you want to use a different Java version for your build pipeline, you can add the [**Select Java Version**](/build-integrations/common-integrations/select-java-version) step to your workflow.
 
 But unfortunately, you cannot use custom scripts for autofill operations, which make it easy to fill in configuration details while adding a new build profile.
 

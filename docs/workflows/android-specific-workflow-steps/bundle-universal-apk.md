@@ -1,6 +1,7 @@
 ---
 title: Bundle Universal Apk
 description: This step creates a universal APK from an AAB file.
+slug: /build-integrations/android-specific-integrations/bundle-universal-apk
 tags: [android, mobile, distribution, bundle, aab, apk]
 ---
 
@@ -18,8 +19,8 @@ Before running the **Bundle Universal Apk** step, you must complete certain prer
 
 | Prerequisite Workflow Step                                                                         | Description                                                                                                                                                              |
 | -------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| [**Android Build**](/workflows/android-specific-workflow-steps/android-build) | This step is necessary to generate the **AAB** app that will be converted to an **APK**.                                                                                 |
-| [**Android Sign**](/workflows/android-specific-workflow-steps/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. If your app is already signed in the build step, you can skip this step. |
+| [**Android Build**](/build-integrations/android-specific-integrations/android-build) | This step is necessary to generate the **AAB** app that will be converted to an **APK**.                                                                                 |
+| [**Android Sign**](/build-integrations/android-specific-integrations/android-sign)   | If you intend to use a signed app, this step must be executed beforehand to process the output. If your app is already signed in the build step, you can skip this step. |
 
 :::caution
 

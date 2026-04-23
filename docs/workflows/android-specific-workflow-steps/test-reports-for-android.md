@@ -1,6 +1,7 @@
 ---
 title: Test Reports for Android
 description: Explore the Test Report feature for Android in Appcircle. Understand how it presents test results and code coverage in a user-friendly interface.
+slug: /build-integrations/android-specific-integrations/test-reports-for-android
 tags: [test, test report, test result, automation]
 ---
 
@@ -27,7 +28,7 @@ Before running the **Test Reports for Android** step, you must complete certain 
 
 | Prerequisite Workflow Step                                   | Description                                                                   |
 | ------------------------------------------------------------ | ----------------------------------------------------------------------------- |
-| [**Android Unit Tests**](/workflows/android-specific-workflow-steps/android-unit-tests) | This step must be executed to obtain the test report output. |
+| [**Android Unit Tests**](/build-integrations/android-specific-integrations/android-unit-tests) | This step must be executed to obtain the test report output. |
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/android-workflow-components-test-report_1.png'/>
 

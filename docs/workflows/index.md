@@ -1,7 +1,8 @@
 ---
 title: What are Workflows and How to Use Workflows?
 description: Understand workflows in Appcircle. Learn how to use them for building, testing, and deploying your applications.
-tags: [workflow, step, build, test, deploy]
+slug: /build-integrations
+tags: [workflow, step, build, test, deploy, integration]
 sidebar_position: 1
 ---
 
@@ -66,48 +67,48 @@ import TabItem from '@theme/TabItem';
   </TabItem>
 </Tabs>
 
-A workflow is a ladder of steps taken to build your applications.
+A workflow is a ladder of integrations to build your applications.
 
-Each step has a different purpose and the workflow can be customized by modifying step parameters and inputs, running custom scripts, or re-ordering steps.
+Each integration has a different purpose and the workflow can be customized by modifying integrations and inputs, running custom scripts, or re-ordering them.
 
-Workflows allow you to have complete control on your build process and enhance it with third-party services and features.
+Workflows allow you to have complete control on your build process and enhance it with third-party integrations.
 
 :::caution
 
-Please note that modifying workflow steps may cause your builds to fail, so utmost care is recommended when editing workflows.
+Please note that modifying integrations may cause your builds to fail, so utmost care is recommended when editing workflows.
 
 :::
 
-## [How to Create an Integration](/workflows/how-to-create-an-integration)
+## [How to Create an Integration](/build-integrations/how-to-create-an-integration)
 
 This guide explains the process of creating a new integration, including defining its purpose, configuring inputs and outputs, writing the necessary scripts or code, and integrating it into existing workflows for automation.
 
-## [Common Integrations](/workflows/common-workflow-steps)
+## [Common Integrations](/build-integrations/common-integrations)
 
-These steps are common across all build profiles regardless of the target OS and platform.
+These integrations are common across all build profiles regardless of the target OS and platform.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [iOS Specific Integrations](/workflows/ios-specific-workflow-steps)
+## [iOS Specific Integrations](/build-integrations/ios-specific-integrations)
 
-These steps are specific to the iOS build profiles.
+These integrations are specific to the iOS build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Android Specific Integrations](/workflows/android-specific-workflow-steps)
+## [Android Specific Integrations](/build-integrations/android-specific-integrations)
 
-These steps are specific to the Android build profiles.
+These integrations are specific to the Android build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [React Native Specific Integrations](/workflows/react-native-specific-workflow-steps)
+## [React Native Specific Integrations](/build-integrations/react-native-specific-integrations)
 
-These steps are specific to the React Native build profiles.
+These integrations are specific to the React Native build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related step.
 
-## [Flutter Specific Integrations](/workflows/flutter-specific-workflow-steps)
+## [Flutter Specific Integrations](/build-integrations/flutter-specific-integrations)
 
-These steps are specific to the Flutter build profiles.
+These integrations are specific to the Flutter build profiles.
 
-You can find the full list of available workflow steps in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each workflow step in this document, you can find the related repository URL, which also includes the documentation for the related step.
+You can find the full list of available integrations in our [workflow marketplace](https://github.com/appcircleio/appcircle-workflow-components) and under each integration in this document, you can find the related repository URL, which also includes the documentation for the related step.

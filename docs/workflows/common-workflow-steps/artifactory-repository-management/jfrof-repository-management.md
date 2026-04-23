@@ -1,6 +1,7 @@
 ---
 title: JFrog Integration
 description: Enhance your development process with Cache Pull to quickly retrieve and reuse stored data, boosting efficiency and performance.
+slug: /build-integrations/common-integrations/artifactory-repository-management/jfrof-repository-management
 tags: [cache pull, efficiency, dependencies, cache structure]
 sidebar_position: 2
 ---
@@ -27,7 +28,7 @@ In the **CocoaPods Install** step, in order to pull dependencies from JFrog, you
 
 :::caution Configure JFrog Repository Authentication
 
-If authentication to the repository is required, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash script given below.
+If authentication to the repository is required, you need to authenticate to the repository with the [**Authenticate with Netrc**](/build-integrations/common-integrations/authenticate-with-netrc) step or by using a [**Custom Script**](/build-integrations/common-integrations/custom-script). If Custom Script is used, you can use the bash script given below.
 
 For more information, please visit the [**JFrog Authentication**](https://jfrog.com/help/r/jfrog-artifactory-documentation/connect-cocoapods-cdn-to-artifactory) documentation.
 

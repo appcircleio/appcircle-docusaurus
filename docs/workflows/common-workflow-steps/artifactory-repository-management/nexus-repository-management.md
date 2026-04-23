@@ -1,6 +1,7 @@
 ---
 title: Sonatype Nexus Integration
 description: Enhance your development process with Cache Pull to quickly retrieve and reuse stored data, boosting efficiency and performance.
+slug: /build-integrations/common-integrations/artifactory-repository-management/nexus-repository-management
 tags: [cache pull, efficiency, dependencies, cache structure]
 sidebar_position: 1
 ---
@@ -35,7 +36,7 @@ For users with a Nexus infrastructure, an alternative approach to centralize and
 
 :::caution Configure Sonatype Nexus Repository Authentication
 
-If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/workflows/common-workflow-steps/authenticate-with-netrc) step or by using a [**Custom Script**](/workflows/common-workflow-steps/custom-script). If Custom Script is used, you can use the bash script given below.
+If [anonymous access option](https://help.sonatype.com/en/anonymous-access.html) is turned off in Sonatype Nexus repository, you need to authenticate to the repository with the [**Authenticate with Netrc**](/build-integrations/common-integrations/authenticate-with-netrc) step or by using a [**Custom Script**](/build-integrations/common-integrations/custom-script). If Custom Script is used, you can use the bash script given below.
 
 For more information, please visit the [**Sonatype Nexus Authentication documentations**](https://help.sonatype.com/en/cocoapods-repositories.html#configure-nexus-repository-authentication).
 

@@ -41,8 +41,8 @@ The build cache limit shown on the screen is determined by your subscription pla
 :::
 
 For more detailed information on how to use **Cache Pull** and **Cache Push** in Appcircle builds, please refer to the following documentation:
-- [Cache Pull](/workflows/common-workflow-steps/build-cache/cache-pull)
-- [Cache Push](/workflows/common-workflow-steps/build-cache/cache-push)
+- [Cache Pull](/build-integrations/common-integrations/build-cache/cache-pull)
+- [Cache Push](/build-integrations/common-integrations/build-cache/cache-push)
 
 Regularly clearing your build cache can help maintain a healthy and efficient build environment.
 

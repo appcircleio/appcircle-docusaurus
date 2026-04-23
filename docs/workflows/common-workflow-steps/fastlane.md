@@ -1,6 +1,7 @@
 ---
 title: Fastlane
 description: Appcircle supports Fastlane for build automation as a supplementary feature to Appcircle's own build automation.
+slug: /build-integrations/common-integrations/fastlane
 tags: [fastlane, build, automation, workflow, step]
 ---
 
@@ -18,7 +19,7 @@ Before running the **Fastlane** step, you must complete certain prerequisites, a
 
 | Prerequisite Workflow Step                      | Description                                     |
 |-------------------------------------------------|-------------------------------------------------|
-| [**Git Clone**](/workflows/common-workflow-steps/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
+| [**Git Clone**](/build-integrations/common-integrations/git-clone) | The repo needs to be cloned in order to start the Fastlane process. After the clone, Fastlane will be installed. After this step works, the variable `$AC_REPOSITORY_DIR` will be created. |
 
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE3049-fastlaneOrder.png' />
@@ -55,9 +56,9 @@ https://github.com/appcircleio/appcircle-fastlane-component
 
 With Appcircle's Fastlane integration, you can easily run the [lane](https://docs.fastlane.tools/advanced/lanes/) you want with the Fastfile in your project. But you can also run a [Fastlane plugins](https://rubygems.org/search?query=fastlane-plugin-) directly in the pipeline without any Fastlane integration.
 
-You can easily add the [Fastlane plugins](https://rubygems.org/search?query=fastlane-plugin-) you want to run, which are not included in your Fastfile and are available on the Fastlane plugins, to the pipeline via a [**Custom Script**](/workflows/common-workflow-steps/custom-script) and run them easily. For all available plugins, please visit the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/) documentation.
+You can easily add the [Fastlane plugins](https://rubygems.org/search?query=fastlane-plugin-) you want to run, which are not included in your Fastfile and are available on the Fastlane plugins, to the pipeline via a [**Custom Script**](/build-integrations/common-integrations/custom-script) and run them easily. For all available plugins, please visit the [**Fastlane plugins**](https://docs.fastlane.tools/plugins/available-plugins/) documentation.
 
-The example `Bash` script below shows how to run the Fastlane plugin with a gem file.  In this example, `fastlane-plugin-json` is used as a Fastlane plugin. Add a **Custom Script** step to your [**Workflows**](/workflows) to run the following script.
+The example `Bash` script below shows how to run the Fastlane plugin with a gem file.  In this example, `fastlane-plugin-json` is used as a Fastlane plugin. Add a **Custom Script** step to your [**Workflows**](/build-integrations) to run the following script.
 
 
 ```bash

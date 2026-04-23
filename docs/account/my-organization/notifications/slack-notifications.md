@@ -57,7 +57,7 @@ Keep scrolling down on Appcircle to see the full list of events.
 
 :::info
 After completing the specified action in Appcircle, you have the option to share release notes via Slack.
-To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/workflows/common-workflow-steps/publish-release-notes/) step in your workflow.
+To enable this feature, ensure you include the [**Publish Release Notes**](https://docs.appcircle.io/build-integrations/common-integrations/publish-release-notes/) step in your workflow.
 
 Additionally, note that you can access download links for the release notes for a duration of 90 days.
 :::

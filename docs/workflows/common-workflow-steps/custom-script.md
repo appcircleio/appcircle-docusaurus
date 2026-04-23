@@ -1,6 +1,7 @@
 ---
 title: Custom Script
 description: Use Custom Script steps for additional functionalities in your builds.
+slug: /build-integrations/common-integrations/custom-script
 tags: [custom scripts, build, test, workflow, step]
 ---
 
@@ -64,11 +65,11 @@ https://github.com/appcircleio/appcircle-custom-script-component
 
 Appcircle currently has `OpenJDK 17` (default), `OpenJDK 8`, `OpenJDK 11` and `OpenJDK 21`.
 
-[Android Build](/workflows/android-specific-workflow-steps/android-build) step uses `OpenJDK 17` as default JDK version.
+[Android Build](/build-integrations/android-specific-integrations/android-build) step uses `OpenJDK 17` as default JDK version.
 
-To switch JDK versions, you can now use the dedicated [**Select Java Version**](/workflows/common-workflow-steps/select-java-version) component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
+To switch JDK versions, you can now use the dedicated [**Select Java Version**](/build-integrations/common-integrations/select-java-version) component, so there is no need to use **Custom Script** for this task. For further details on this component, refer to the documentation:
 
-- [Select Java Version](/workflows/common-workflow-steps/select-java-version)
+- [Select Java Version](/build-integrations/common-integrations/select-java-version)
 
 However, if you prefer to update or improve it manually on **Custom Script**, the source code is available here:
 
@@ -197,7 +198,7 @@ sudo -E printenv
 
 ### How can I send a custom email?
 
-Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary) and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the two modules. If desired, the user can customize this structure by using the [**Custom Script**](/workflows/common-workflow-steps/custom-script) below to send their own custom email.
+Appcircle provides a **ready-to-use email** structure in the [**Testing Distribution**](/testing-distribution/create-or-select-a-distribution-profile#share-binary) and [**Publish**](/publish-integrations/common-publish-integrations/get-approval-via-email) modules. This structure varies across the two modules. If desired, the user can customize this structure by using the [**Custom Script**](/build-integrations/common-integrations/custom-script) below to send their own custom email.
 
 The following Bash script is set to use a **Gmail SMTP Server**. For more information, please visit [**Gmail SMTP Server**](https://support.google.com/a/answer/176600?hl=en) documentation. 
 
@@ -291,7 +292,7 @@ $CS_EMAIL_BODY" | msmtp --debug --from=$CS_EMAIL -t $CS_EMAIL_TO
 
 :::info Script Execution
 
-This script is written in `Bash`. When running with **Custom Script**, you need to set the `Execute With` parameter as `Bash`. For more information, please visit the [**Custom Script Input Variables**](/workflows/common-workflow-steps/custom-script#input-variables) documentation section.
+This script is written in `Bash`. When running with **Custom Script**, you need to set the `Execute With` parameter as `Bash`. For more information, please visit the [**Custom Script Input Variables**](/build-integrations/common-integrations/custom-script#input-variables) documentation section.
 
 :::
 
@@ -394,7 +395,7 @@ This script generates a timestamped log file (e.g., `ac-log-2024-10-01-14-55.txt
 
 :::caution
 
-Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/workflows/common-workflow-steps/export-build-artifacts) step to capture the full log.
+Ensure that the **Custom Script** step runs after the [**Export Build Artifacts**](/build-integrations/common-integrations/export-build-artifacts) step to capture the full log.
 
 :::
 
