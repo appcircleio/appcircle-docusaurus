@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Enterprise App Store Plugin For Jenkins
+title: Appcircle Jenkins Enterprise App Store Plugin
 sidebar_label: Enterprise App Store
 description: Enhance powerful plugin to publish your builds to appcircle app store
 tags:

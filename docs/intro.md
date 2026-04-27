@@ -14,12 +14,23 @@ import PublishIcon from "@site/src/components/ModuleIcons/PublishIcon";
 import SigningIdentitiesIcon from "@site/src/components/ModuleIcons/SigningIdentitiesIcon";
 import BuildIcon from "@site/src/components/ModuleIcons/BuildIcon";
 import DistributeIcon from "@site/src/components/ModuleIcons/DistributeIcon";
+import Head from '@docusaurus/Head';
+
+<Head>
+  <title>Appcircle Documentation</title>
+  <meta
+    name="description"
+    content="Explore Appcircle Documentation, a comprehensive guide for building, testing, and deploying your mobile applications."
+  />
+</Head>
 
 <div class="intro-visual">
 
-<div class="intro-text"><h5 class="intro-visual-header">
+<div class="intro-text">
+<h1>Appcircle Documentation</h1>
+<h2 class="intro-visual-header">
 Build.<br/>Test.<br/>Distribute.
-</h5>
+</h2>
 <p>Make better, safer mobile app releases with Appcircle.</p>
 </div>
 <div className="intro-image"><img src="https://cdn.appcircle.io/docs/assets/docs-intro-header.png" alt="Intro Header" /></div>

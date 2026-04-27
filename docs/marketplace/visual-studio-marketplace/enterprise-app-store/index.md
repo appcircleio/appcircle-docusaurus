@@ -1,5 +1,5 @@
 ---
-title: Setting Up Appcircle Enterprise App Store in Azure DevOps Pipeline
+title: Appcircle Enterprise App Store Azure DevOps Pipeline Setup
 sidebar_label: Enterprise App Store
 description: Overview of Azure DevOps Enterprise Store Extension
 tags:
