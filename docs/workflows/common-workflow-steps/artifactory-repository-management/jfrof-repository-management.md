@@ -1,6 +1,6 @@
 ---
 title: JFrog Integration
-description: Enhance your development process with Cache Pull to quickly retrieve and reuse stored data, boosting efficiency and performance.
+description: Learn how to integrate JFrog Artifactory with Appcircle to manage dependencies, store artifacts, and streamline iOS and Android CI/CD workflows with secure and centralized repository management.
 tags: [cache pull, efficiency, dependencies, cache structure]
 sidebar_position: 2
 ---
