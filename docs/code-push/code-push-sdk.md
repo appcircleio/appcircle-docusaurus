@@ -94,10 +94,13 @@ The SDK installation and configuration steps for `iOS` and `Android` are detaile
 
 If you are using React Native version **0.75 or earlier**, you need to use the **Microsoft CodePush SDK** to enable Appcircle CodePush functionality. 
 
-| React Native Version(s)                    | SDK                                 |
-|--------------------------------------------|-------------------------------------|
-| Below 0.76 | Use [**Microsoft SDK**](https://github.com/microsoft/react-native-code-push)| 
-| 0.76 and above | Use [**Appcircle CodePush SDK**](https://www.npmjs.com/package/@appcircle/react-native-code-push) |
+| React Native Version(s) | SDK | Supporting CodePush Version(s) |
+| --- | --- | --- |
+| \<v0.76 | [`microsoft/code-push-react-native`](https://github.com/microsoft/react-native-code-push) | Use Microsoft SDK |
+| v0.76, v0.77, v0.78, v0.79 | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.0.3+ (Available for Old/New Architecture) |
+| v0.80 | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.0.4+ (Available for Old/New Architecture) |
+| v0.81 | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.1.0+ (Available for Old/New Architecture) |
+| v0.82+ | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.1.0+ (Available for New Architecture) |
 
 :::caution If Using Microsoft SDK
 
@@ -166,10 +169,35 @@ apply from: "../../node_modules/@appcircle/react-native-code-push/android/codepu
 
 Update the `MainApplication.kt`.
 
+- For React Native 0.82 and above:
+
 ```java
 // 1. Import the plugin class.
 import com.microsoft.codepush.react.CodePush
 
+class MainApplication : Application(), ReactApplication {
+
+    override val reactHost: ReactHost by lazy {
+        getDefaultReactHost(
+            context = applicationContext,
+            packageList =
+                PackageList(this).packages.apply {
+                    // Packages that cannot be autolinked yet can be added manually here, for example:
+                    // add(MyReactNativePackage())
+                },
+                // 2. Provide the JS bundle file path so CodePush can determine
+                // where to load the bundle from on each app start
+                jsBundleFilePath = CodePush.getJSBundleFile()
+        )
+    }
+}
+```
+
+- For React Native 0.81 and below:
+
+```java
+// 1. Import the plugin class.
+import com.microsoft.codepush.react.CodePush
 
 class MainApplication : Application(), ReactApplication {
 
