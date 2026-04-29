@@ -1,5 +1,6 @@
 ---
-title: Re-sign Binary
+title: Re-sign Binary (EAS)
+sidebar_label: Re-sign Binary
 description: Learn how to resign your iOS and Android application binaries within Appcircle Enterprise App Store to change provisioning profiles or app entitlements.
 tags: [ios, android, resigning, provisioning profiles, keystore, entitlements, faq]
 sidebar_position: 2
@@ -8,8 +9,6 @@ sidebar_position: 2
 import Screenshot from '@site/src/components/Screenshot';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
-
-# Re-sign Binary
 
 Enterprise App Store Re-Sign & Auto-Resign enables re-signing and automatic re-signing of iOS and Android applications distributed via the Enterprise App Store.
 

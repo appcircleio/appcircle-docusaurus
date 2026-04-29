@@ -1,5 +1,6 @@
 ---
-title: Build Cache
+title: Build Cache (Artifact Management)
+sidebar_label: Build Cache
 description: Learn how to manage the build cache in Appcircle
 tags: [cache, my organization, build cache]
 sidebar_position: 2

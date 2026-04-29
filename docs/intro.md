@@ -27,7 +27,7 @@ import Head from '@docusaurus/Head';
 <div class="intro-visual">
 
 <div class="intro-text">
-<h1>Appcircle Documentation</h1>
+<h1>Mobile CI/CD Documentation</h1>
 <h2 class="intro-visual-header">
 Build.<br/>Test.<br/>Distribute.
 </h2>

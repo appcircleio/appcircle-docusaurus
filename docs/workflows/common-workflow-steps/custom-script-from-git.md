@@ -1,13 +1,12 @@
 ---
-title: Custom Script from Git
+title: Custom Script from Git Workflow Step
+sidebar_label: Custom Script from Git
 description: Use Custom Script from Git to run your own scripts during the build. Easily add custom steps by cloning scripts from any Git repository, with support for authentication.
 tags: [custom script, custom scripts, data protection, build, git, git scripts, reuse]
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import SensitiveVariablesDanger from '@site/docs/\_sensitive-variables-danger.mdx';
-
-# Custom Script from Git
 
 You can use **Custom Script from Git** to clone and run your own scripts directly from a Git repository as part of your Appcircle build. This step supports authenticated cloning (via username and PAT).
 

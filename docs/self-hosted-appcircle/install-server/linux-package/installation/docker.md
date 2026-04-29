@@ -186,7 +186,7 @@ chmod +x install-docker.sh && \
 
 :::info
 
-Self-hosted Appcircle server is only compatible with [docker compose V2](https://docs.docker.com/compose/compose-v2/) and the new `docker compose` command.
+Self-hosted Appcircle server is only compatible with [docker compose V2](https://docs.docker.com/reference/cli/docker/compose/) and the new `docker compose` command.
 
 The new compose V2, which supports the compose command as part of the docker CLI, is available with latest docker versions.
 
