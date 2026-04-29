@@ -23,7 +23,7 @@ import Screenshot from '@site/src/components/Screenshot';
 You can discover more about this action and install it from:
 https://plugins.jenkins.io/appcircle-enterprise-store/
 
-# Setting Up Appcircle Enterprise App Store Plugin
+## Setting Up Appcircle Enterprise App Store Plugin
 
 The Appcircle Enterprise App Store plugin enables users to publish their apps to the Appcircle App Store.
 
