@@ -7,11 +7,9 @@ sidebar_position: 2
 
 import ContentRef from '@site/src/components/ContentRef';
 
-# Appcircle Onboarding
-
 To add your iOS or Android project to Appcircle, you must complete the following checklist, divided into sub-sections.
 
-# Prerequisite
+## Prerequisite
 
 Before building the project on Appcircle, ensure it builds properly on your local computer. Developers often do not commit changes, or their changes may not end up in the repo due to the `.gitignore` file. Follow these steps to ensure that the project builds without errors:
 
@@ -35,7 +33,7 @@ Once your project builds without error, complete the following sections:
 4. Integrations
 5. Extra suggestions
 
-# Repository
+## Repository
 
 ## Firewall
 
