@@ -47,6 +47,10 @@ Selecting this menu item displays detailed information about the application bin
 
 The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
 
+## [App Release Information](/publish-to-stores-module/publish-information/app-release-information)
+
+The App Release Information section allows you to configure how your application update will be released on the App Store after approval.
+
 ## [Resign Binary](/publish-to-stores-module/publish-information/resign-binary)
 
 The Resign Binary feature allows users to resign both iOS and Android application binaries. For iOS applications, users can change provisioning profiles or app entitlements, while for Android applications, users can resign binaries with a new keystore. This feature is essential for updating app distribution settings and security credentials without requiring a new build.
