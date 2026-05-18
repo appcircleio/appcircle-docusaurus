@@ -131,18 +131,22 @@ Root Organization users have the ability to share their saved credentials with S
 
 #### How to Share Credentials
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/FE1719-ss2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4.png' />
 
 **1.**	Navigate to the Credentials Section
+
 Go to My Organization > Security > Credentials.
 
 **2.** Open Manage Panel
+
 Click the respective credential type (e.g., App Store Connect API Keys) to view your saved credentials.
 
 **3.** Select the Credential
+
 Click the Share icon under the Actions column for the credential you want to share.
 
 **4.** Configure Sharing Settings
+
 In the Share Credentials panel:
 - Enter or confirm the Settings Name.
 - Toggle Share with all sub-organizations if you want to make the credential available to all sub-organizations automatically.
@@ -163,4 +167,9 @@ The shared credentials by the Root Organization will be marked with Root Tag on 
 
 :::tip Sharing with All Sub-Organizations
 When the “Share with all sub-organizations” toggle is enabled, the credential is shared with all existing sub-organizations and will automatically be available for newly created sub-organizations.
+:::
+
+:::info Editing Credential Name
+You can also edit the name of the credential setting by clicking the edit button
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8750-4.png' />
 :::

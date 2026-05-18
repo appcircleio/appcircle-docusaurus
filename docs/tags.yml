@@ -3182,3 +3182,17 @@ quay:
   label: "rollout information"
   description: "Documentation related to rollout information"
   permalink: "/rollout-information"
+"beta":
+  label: "beta"
+  description: "Documentation related to beta"
+  permalink: "/beta"
+
+"submit":
+  label: "submit"
+  description: "Documentation related to submit"
+  permalink: "/submit"
+
+"information":
+  label: "information"
+  description: "Documentation related to information"
+  permalink: "/information"
