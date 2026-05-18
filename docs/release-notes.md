@@ -16,6 +16,21 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.31.0 - 2026-05-18
+
+### 🆕 New Features
+
+
+
+### :muscle: Improvements
+
+### 🐞 Fixes
+
+
+### :warning: Breaking Changes
+
+
+
 ## 3.30.0 - 2026-04-15 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
 
 ### 🆕 New Features
