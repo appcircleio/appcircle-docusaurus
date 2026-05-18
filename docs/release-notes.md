@@ -16,20 +16,37 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.31.0 - 2026-05-18
+## 3.31.0 - 2026-05-18 Submit For Beta Testing, App Rollout Information, Bug Fixes and more
 
 ### 🆕 New Features
 
-
+- The [App Rollout Information](/publish-to-stores-module/publish-information/app-rollout-information) feature has been introduced for Android Publish profiles.It allows rollout strategies for Android releases published to Google Play Console to be configured and managed. Release distribution across users can now be controlled by selecting either a manual or automatic rollout strategy for the selected release track. <PublishBadge/> <CloudBadge/>
+- A [Testing Status](/publish-to-stores-module/publish-information/testflight-beta-information#testing-status) tab has been added within the TestFlight Beta Information section, providing visibility into binaries currently assigned to TestFlight testing groups. <PublishBadge/> <CloudBadge/>
+- The [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing) feature has been introduced. Uploaded binaries can now be distributed to Internal and External TestFlight groups directly from Appcircle. The beta distribution workflow has been simplified by enabling tester assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect. <PublishBadge/> <CloudBadge/>
+- A Check Store Status option has been added for Android Publish profiles connected to Google Play Console. <PublishBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
+- Google Play Console Store Status is now displayed on the UI for Android Publish profiles. <PublishBadge/> <CloudBadge/>
+- Improvements have been made to Android Publish profiles to better align terminology with Google Play Console-related areas. <PublishBadge/> <CloudBadge/>
+- [App Release Information](/publish-to-stores-module/publish-information/app-release-information) has been separated from Metadata Details. It can now be accessed from the Publish Binary action menu. <PublishBadge/> <CloudBadge/>
+- Support for “Latest” and Minor Pattern for Workflow Components has been added to the Build and Publish modules. <BuildIntegrationsBadge/> <PublishIntegrationsBadge/> <CloudBadge/>
+- A “You” tag has been added next to the user’s e-mail address on the Team List within the Organization module. <AccountBadge/> <CloudBadge/>
+- The Edit Name and Share options have been separated on the UI for API Credentials. <AccountBadge/> <CloudBadge/>
+- When a user is removed, their e-mail address will now be displayed in the relevant notification. <AccountBadge/> <CloudBadge/>
+- Various actions across multiple modules have been added to the relevant Activity Log. <AccountBadge/> <CloudBadge/>
+- A UI improvement has been made on the Apple Profiles list regarding an incorrect name. <SigningIdentitiesBadge/> <CloudBadge/>
+- Character limitations and validation checks have been implemented for Publish and Build Variable Group key values on the UI. <EnvironmentVariablesBadge/> <CloudBadge/>
+
 ### 🐞 Fixes
 
+- An issue where uploaded screenshots were not appearing during the Update Metadata publish step has been fixed. <PublishBadge/> <CloudBadge/>
+- An issue where Re-sign operations on profiles connected to Huawei AppGallery requested Google Play Console credentials has been fixed. <PublishBadge/> <CloudBadge/>
+- Several UI improvements have been made for cases where duplicated notifications were displayed on the screen. <CloudBadge/>
 
 ### :warning: Breaking Changes
 
-
+- The Reset iOS App Store Summary Rating option has been removed from the [App Release Information](/publish-to-stores-module/publish-information/app-release-information) section due to its retirement by Apple. <PublishBadge/> <CloudBadge/>
 
 ## 3.30.0 - 2026-04-15 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
 
