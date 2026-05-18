@@ -27,6 +27,12 @@ To open the App Rollout Information:
 App Rollout Information button is only available to edit when the store status for the selected app is set to **In Progress**.
 :::
 
+#### Prerequisite Publish Flow Steps
+
+- [Send to Google Play Console](/publish-integrations/android-publish-integrations/publish-to-google-play)
+
+- [Distribute to Track](/publish-integrations/android-publish-integrations/distribute-to-track)
+
 ## Track Selection
 
 Rollout settings are configured separately for each Google Play track.
@@ -76,6 +82,10 @@ The rollout progresses automatically according to the configured daily percentag
 - If any day is configured as `100%`, the following days are disabled automatically.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8725-2.png' />
+
+:::warning
+Please note that once he Rollout option is set to Automatic, the step for first day will trigger instantly.
+:::
 
 #### Switching from Manual to Automatic Rollout
 
