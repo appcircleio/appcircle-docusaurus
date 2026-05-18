@@ -8,6 +8,9 @@ sidebar_position: 12
 
 import Screenshot from '@site/src/components/Screenshot';
 
+# TestFlight Beta Information
+
+The **TestFlight Beta Information** allows you to manage and monitor your application's TestFlight-related metadata directly within Appcircle. From a single interface, you can review the current testing status of your binaries, manage beta app information shown to testers, and configure beta review details synchronized with App Store Connect.
 
 ## Testing Status
 

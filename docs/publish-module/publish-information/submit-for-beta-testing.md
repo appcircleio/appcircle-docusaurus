@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Submit for Beta Testing
 
-The **Submit for Beta Testing** action is available from the binary action menu.
+The **Submit for Beta Testing** feature allows users to distribute uploaded binaries to Internal and External TestFlight groups directly from Appcircle. It simplifies the beta distribution workflow by enabling testers assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect. This action is available from the binary action menu.
 
 :::info Submit for Beta Testing
 
