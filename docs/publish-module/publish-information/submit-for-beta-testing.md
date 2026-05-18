@@ -6,6 +6,8 @@ tags: [publish, publish details, publish flow, beta, submit]
 sidebar_position: 12
 ---
 
+import Screenshot from '@site/src/components/Screenshot';
+
 # Submit for Beta Testing
 
 The **Submit for Beta Testing** feature allows users to manage TestFlight beta distributions directly from the Publish Dashboard without running a new build pipeline.
@@ -29,9 +31,15 @@ This tab displays testing-related statuses such as:
 
 The information shown in this section is based on the TestFlight Beta Information available on App Store Connect.
 
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-3.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-4.png' />
+
 ## Submit for Beta Testing
 
 The **Submit for Beta Testing** action is available from the binary action menu.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-1.png' />
 
 This option is only visible for binaries that are in a status eligible for beta submission. Binaries that are not ready for beta testing will not display this action.
 
@@ -40,6 +48,8 @@ Using this screen, users can:
 - Assign a build to one or multiple Internal TestFlight groups
 - Assign a build to External TestFlight groups
 - Manage beta testing distributions without rebuilding the application
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-2.png' />
 
 ## Release Notes for External Testers
 
