@@ -3173,6 +3173,15 @@ quay:
   description: "Documentation related to release version"
   permalink: "/release-version"
 
+"rollout":
+  label: "rollout"
+  description: "Documentation related to rollout"
+  permalink: "/rollout"
+
+"rollout information":
+  label: "rollout information"
+  description: "Documentation related to rollout information"
+  permalink: "/rollout-information"
 "beta":
   label: "beta"
   description: "Documentation related to beta"
