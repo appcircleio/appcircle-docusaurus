@@ -83,6 +83,14 @@ Binary rejection on Appcircle can delay your app's launch. Discover the top reas
 
 The Delete option provides a way to remove a version from the system. It should be used with caution as it will permanently eliminate the selected version and all associated data from the Publish to Stores module. This feature helps in maintaining a clean and organized workspace by removing obsolete or unnecessary versions.
 
+## [TestFlight Beta Information](/publish-to-stores-module/publish-information/testflight-beta-information)
+
+The **TestFlight Beta Information** allows you to manage and monitor your application's TestFlight-related metadata directly within Appcircle. From a single interface, you can review the current testing status of your binaries, manage beta app information shown to testers, and configure beta review details synchronized with App Store Connect.
+
+## [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing)
+
+The **Submit for Beta Testing** feature allows users to distribute uploaded binaries to Internal and External TestFlight groups directly from Appcircle. It simplifies the beta distribution workflow by enabling testers assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect.
+
 ---
 
 Each menu item is an integral part of the Publish to Stores module, providing comprehensive tools for managing application versions from creation to deployment. Users should familiarize themselves with these options to fully leverage the capabilities of the Publish system.
