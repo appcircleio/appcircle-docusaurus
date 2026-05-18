@@ -10,38 +10,23 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Submit for Beta Testing
 
-The **Submit for Beta Testing** feature allows users to manage TestFlight beta distributions directly from the Publish Dashboard without running a new build pipeline.
-
-With this feature, Release Managers can:
-
-- View the current testing status of binaries in TestFlight
-- Submit builds to Internal and External TestFlight groups
-- Manage beta distributions directly from the Publish Dashboard
-- Track detailed submission results through Activity Logs and Reports
-
-## Testing Status
-
-The **Testing Status** tab provides visibility into binaries that are currently assigned to TestFlight testing groups.
-
-This tab displays testing-related statuses such as:
-
-- Ready to Submit
-- Approved
-- In Testing
-
-The information shown in this section is based on the TestFlight Beta Information available on App Store Connect.
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-3.png' />
-
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-4.png' />
-
-## Submit for Beta Testing
-
 The **Submit for Beta Testing** action is available from the binary action menu.
+
+:::info Submit for Beta Testing
+
+For this feature to be available, the relevant binary must have been submitted to TestFlight and have a “Ready to Beta Submission” status. Otherwise, this feature will not appear on the binary action button.
+
+:::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8766-1.png' />
 
 This option is only visible for binaries that are in a status eligible for beta submission. Binaries that are not ready for beta testing will not display this action.
+
+:::caution Assigning Build to Groups
+
+If the **Enable Automatic Distribution** option is enabled when creating an internal testing group on TestFlight, you cannot add or remove a binary from that group afterward. For this reason, groups with this feature enabled will appear as disabled.
+
+:::
 
 Using this screen, users can:
 
@@ -65,4 +50,5 @@ Beta submissions may complete partially successfully.
 For example, if a build is submitted to multiple beta groups and Apple rejects one of the groups due to validation or compliance requirements, the build can still be assigned successfully to the remaining groups.
 
 Failed group assignments are displayed in the Activity Logs with detailed error information.
+
 :::
