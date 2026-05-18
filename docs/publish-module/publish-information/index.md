@@ -47,6 +47,10 @@ Selecting this menu item displays detailed information about the application bin
 
 The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
 
+## [App Release Information](/publish-to-stores-module/publish-information/app-release-information)
+
+The App Release Information section allows you to configure how your application update will be released on the App Store after approval.
+
 ## [Resign Binary](/publish-to-stores-module/publish-information/resign-binary)
 
 The Resign Binary feature allows users to resign both iOS and Android application binaries. For iOS applications, users can change provisioning profiles or app entitlements, while for Android applications, users can resign binaries with a new keystore. This feature is essential for updating app distribution settings and security credentials without requiring a new build.
@@ -67,6 +71,10 @@ This functionality enables users to download the binary directly from the Publis
 
 Canceling a submission on the App Store can be crucial for developers who need to make last-minute changes or corrections. Learn how to efficiently cancel your app submission, understand common pitfalls, and ensure a smoother app review process.
 
+## [App Rollout Information](/publish-to-stores-module/publish-information/app-rollout-information)
+
+App Rollout Information allows you to configure and manage rollout strategies for Android releases published to Google Play Console.
+
 ## [Release This Version](/publish-to-stores-module/publish-information/release-this-version)
 
 Releasing a version on the App Store is a critical step for developers who want to make their approved app available to users. Learn how to efficiently release your app version, understand the available release options, and ensure a seamless delivery to your audience.
@@ -78,6 +86,14 @@ Binary rejection on Appcircle can delay your app's launch. Discover the top reas
 ## [Delete](/publish-to-stores-module/publish-information/delete)
 
 The Delete option provides a way to remove a version from the system. It should be used with caution as it will permanently eliminate the selected version and all associated data from the Publish to Stores module. This feature helps in maintaining a clean and organized workspace by removing obsolete or unnecessary versions.
+
+## [TestFlight Beta Information](/publish-to-stores-module/publish-information/testflight-beta-information)
+
+The **TestFlight Beta Information** allows you to manage and monitor your application's TestFlight-related metadata directly within Appcircle. From a single interface, you can review the current testing status of your binaries, manage beta app information shown to testers, and configure beta review details synchronized with App Store Connect.
+
+## [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing)
+
+The **Submit for Beta Testing** feature allows users to distribute uploaded binaries to Internal and External TestFlight groups directly from Appcircle. It simplifies the beta distribution workflow by enabling testers assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect.
 
 ---
 
