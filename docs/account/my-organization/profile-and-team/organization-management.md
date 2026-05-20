@@ -1,7 +1,7 @@
 ---
 title: Organization Management
 description: Organizations in Appcircle are separate units with separate "workspaces" that allow collaboration on the same apps with a team.
-tags: [organization, team, settings]
+tags: [organization, team, settings, multi-tenant, multi-tenancy]
 sidebar_position: 1
 ---
 
