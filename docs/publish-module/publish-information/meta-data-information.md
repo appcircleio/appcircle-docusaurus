@@ -3,7 +3,7 @@ title: Metadata Details
 description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
 slug: /publish-to-stores-module/publish-information/meta-data-information
 tags: [metadata, app distribution, appcircle dashboard]
-sidebar_position: 5
+sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

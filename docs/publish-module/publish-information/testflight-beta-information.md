@@ -3,7 +3,7 @@ title: TestFlight Beta Information
 description: Learn how to manage apps for beta informations on TestFlight in Appcircle
 slug: /publish-to-stores-module/publish-information/testflight-beta-information
 tags: [publish, publish details, publish flow, beta, information, testflight]
-sidebar_position: 12
+sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

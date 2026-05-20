@@ -3,7 +3,7 @@ title: Release This Version
 description: Learn how to release version on App Store Connect in Appcircle
 slug: /publish-to-stores-module/publish-information/release-this-version
 tags: [publish, publish details, publish flow, release, release version]
-sidebar_position: 10
+sidebar_position: 5
 ---
 
 # Release This Version
