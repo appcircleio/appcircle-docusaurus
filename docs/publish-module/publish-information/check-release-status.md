@@ -3,7 +3,7 @@ title: Check Release Status
 description: Learn how to check and update statuses in the Publish module of Appcircle
 slug: /publish-to-stores-module/publish-information/check-release-status
 tags: [publish, publish module, app information, app store connect, review]
-sidebar_position: 2
+sidebar_position: 4
 ---
 
 # Check Release Status

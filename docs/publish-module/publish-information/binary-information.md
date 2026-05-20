@@ -3,7 +3,7 @@ title: Binary Information
 description: Learn how to view and manage binary information in Appcircle
 slug: /publish-to-stores-module/publish-information/binary-information
 tags: [publish module, binary information]
-sidebar_position: 4
+sidebar_position: 10
 ---
 
 # Binary Information

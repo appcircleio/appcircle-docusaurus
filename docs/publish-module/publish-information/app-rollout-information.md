@@ -3,7 +3,7 @@ title: App Rollout Information
 description: Learn how to use App Rollout Information on Appcircle
 slug: /publish-to-stores-module/publish-information/app-rollout-information
 tags: [publish, publish details, rollout, rollout information]
-sidebar_position: 11
+sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
@@ -74,6 +74,10 @@ Automatic Rollout allows you to define rollout percentages for multiple days in 
 
 The rollout progresses automatically according to the configured daily percentages.
 
+:::info Switching to Automatic Rollout
+Switching from Manual Rollout to Automatic Rollout will increase the current rollout percentage by 1.
+:::
+
 #### Automatic Rollout Rules
 
 - Day percentages cannot be lower than the percentage of the previous day but they can be the same percentage.
@@ -84,7 +88,7 @@ The rollout progresses automatically according to the configured daily percentag
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE8725-2.png' />
 
 :::warning
-Please note that once he Rollout option is set to Automatic, the step for first day will trigger instantly.
+Please note that once the Rollout option is set to Automatic, the step for first day will trigger instantly.
 :::
 
 #### Switching from Manual to Automatic Rollout
