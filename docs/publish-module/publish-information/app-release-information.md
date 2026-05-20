@@ -3,7 +3,7 @@ title: App Release Information
 description: Detailed guide on filling out app release information for app distribution platforms within the Appcircle dashboard.
 slug: /publish-to-stores-module/publish-information/app-release-information
 tags: [metadata, app distribution, appcircle dashboard]
-sidebar_position: 6
+sidebar_position: 12
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

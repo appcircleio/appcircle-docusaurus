@@ -3,7 +3,7 @@ title: Auto Re-sign
 description: Learn how to automatically re-sign your binary in the Publish module of Appcircle
 slug: /publish-to-stores-module/publish-information/auto-resign-configuration
 tags: [publish, publish module, auto, re-sign, configuration]
-sidebar_position: 3
+sidebar_position: 8
 ---
 
 import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';

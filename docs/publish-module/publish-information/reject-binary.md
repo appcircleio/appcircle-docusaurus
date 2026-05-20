@@ -3,7 +3,7 @@ title: Reject Binary
 description: Learn how to reject binary in Appcircle
 slug: /publish-to-stores-module/publish-information/reject-binary
 tags: [publish, publish details, publish flow, reject binary]
-sidebar_position: 10
+sidebar_position: 17
 ---
 
 # Reject Binary

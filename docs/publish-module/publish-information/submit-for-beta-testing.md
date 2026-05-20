@@ -3,7 +3,7 @@ title: Submit for Beta Testing
 description: Learn how to submit apps for beta testing on App Store Connect in Appcircle
 slug: /publish-to-stores-module/publish-information/submit-for-beta-testing
 tags: [publish, publish details, publish flow, beta, submit]
-sidebar_position: 12
+sidebar_position: 6
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
