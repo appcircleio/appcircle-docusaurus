@@ -40,13 +40,6 @@ html[data-theme='dark'] {
   --ifm-heading-color: #47B2FF;
 }
 
-h1,
-.markdown h1:first-child {
-  --ifm-h1-font-size: 1.875rem;
-  letter-spacing: -0.04rem;
-  margin-top: 2rem;
-}
-
 label {
   user-select: none;
 }
