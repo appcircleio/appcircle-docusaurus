@@ -54,6 +54,7 @@ You can also check Docker/Podman architecture [version history](https://docs.app
 
         | Appcircle Server Version | Helm Chart Version | Release Date |
         | ------------------------ | ------------------ | ------------ |
+        | 3.29.4                   | (TBD)              | (TBD)        |
         | 3.27.3                   | 0.3.20             | 28/07/2025   |
         | 3.27.3                   | 0.3.19             | 28/05/2025   |
         | 3.25.1                   | 0.2.8              | 05/02/2025   |
@@ -78,6 +79,7 @@ The output should look like the following:
 
 ```txt
 NAME                    CHART VERSION   APP VERSION     DESCRIPTION
+appcircle/appcircle     0.3.21          3.29.4          Official Appcircle Chart | Enterprise-Grade Mob...
 appcircle/appcircle     0.3.19          3.27.3          Official Appcircle Chart | Enterprise-Grade Ful...
 appcircle/appcircle     0.2.8           3.25.1          A Helm chart for Kubernetes                       
 appcircle/appcircle     0.1.1           3.23.2          A Helm chart for Kubernetes                       
@@ -98,7 +100,7 @@ We strongly recommend you use `0.3.x` or later versions, which are actively main
 
 ```bash
 helm upgrade appcircle-server appcircle/appcircle \
-  --version 0.2.8 \
+  --version 0.3.21 \
   --timeout 1200s \
   -n appcircle \
   -f values.yaml

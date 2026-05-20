@@ -30,7 +30,7 @@ In this documentation, we will use `appcircle.spacetech.com` as an **example mai
 <details>
     <summary>Click to view more details about domain name prerequisite.</summary>
 
-By default, Appcircle uses seven subdomains. These subdomains are:
+By default, Appcircle uses eight subdomains. These subdomains are:
 
 1. api.appcircle.spacetech.com
 2. auth.appcircle.spacetech.com
@@ -39,6 +39,7 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 5. resource.appcircle.spacetech.com
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
+8. codepush.appcircle.spacetech.com
 
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in OpenShift.
 
@@ -248,6 +249,11 @@ auth:
 # Internal Ingress controller configuration
 ingress-nginx:
   enabled: false
+
+# Codepush Postgresql configuration
+codepush:
+  codepush-postgresql:
+    enabled: true
 ```
 
 </details>

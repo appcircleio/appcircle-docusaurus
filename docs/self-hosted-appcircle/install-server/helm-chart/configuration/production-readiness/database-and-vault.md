@@ -143,20 +143,6 @@ distribution:
         existingConnectionSecret: "appcircle-server-mongo-connections"
         existingConnectionSecretKey: "distribution"
       database: distributionStore
-  distribution-testerweb:
-    mongodb:
-      external:
-        enabled: true
-        existingConnectionSecret: "appcircle-server-mongo-connections"
-        existingConnectionSecretKey: "distribution"
-        database: distributionStore
-  distribution-web:
-    mongodb:
-      external:
-        enabled: true
-        existingConnectionSecret: "appcircle-server-mongo-connections"
-        existingConnectionSecretKey: "distribution"
-      database: distributionStore
 license:
   mongodb:
     external:
@@ -214,13 +200,6 @@ signingidentity:
       existingConnectionSecretKey: "signingidentity"
     database: signingIdentityStore
 store:
-  store-web:
-    mongodb:
-      external:
-        enabled: true
-        existingConnectionSecret: "appcircle-server-mongo-connections"
-        existingConnectionSecretKey: "store"
-      database: enterpriseStore
   store-admin:
     mongodb:
       external:
