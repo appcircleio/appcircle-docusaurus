@@ -97,6 +97,7 @@ You must add this component **after** running your tests so that it can parse te
 - [**JaCoCo**](https://www.jacoco.org)
 - [**Cobertura**](https://cobertura.github.io/cobertura)
 - [**lcov.info**](https://lcov-viewer.netlify.app)
+- [**Cucumber**](https://cucumber.io/)
 
 <AlwaysRunToggleDanger />
 
