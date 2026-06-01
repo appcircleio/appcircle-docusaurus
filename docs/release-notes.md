@@ -47,6 +47,13 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 ### :warning: Breaking Changes
 
 - The Reset iOS App Store Summary Rating option has been removed from the [App Release Information](/publish-to-stores-module/publish-information/app-release-information) section due to its retirement by Apple. <PublishBadge/> <CloudBadge/>
+- With the 3.31.0 release, Store Submit roles were migrated to the new Integrations & Connections module. As part of this migration, existing user roles were automatically updated as follows:
+
+  - Store Submit - Manager Android → **Integrations & Connections Manager**
+  - Store Submit - Manager iOS → **Integrations & Connections Manager**
+  - Store Submit - Viewer → **Integrations & Connections Viewer**
+
+Following this change, the related roles in the Store Submit module were removed, and authorization management started to be handled through the Integrations & Connections module.
 
 ## 3.30.0 - 2026-04-15 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
 
