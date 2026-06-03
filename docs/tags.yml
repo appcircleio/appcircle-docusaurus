@@ -3196,3 +3196,8 @@ quay:
   label: "information"
   description: "Documentation related to information"
   permalink: "/information"
+
+"supported browsers":
+  label: "supported browsers"
+  description: "Documentation related to supported browsers"
+  permalink: "/supported-browsers"
