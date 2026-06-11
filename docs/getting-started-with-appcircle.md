@@ -172,3 +172,7 @@ Appcircle supports modern desktop web browsers. The following browsers and minim
 :::info Browser Compatibility
 Internet Explorer and Opera Mini are outside the supported browser matrix and are not supported. Compatibility, functionality, and performance are not guaranteed when accessing Appcircle through unsupported browsers.
 :::
+
+:::tip Display Resolution
+Minimum recommended display resolution is **1280x720**
+:::
