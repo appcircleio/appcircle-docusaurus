@@ -10,6 +10,8 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # Binary Information
 
+This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs. Also you can compare the current binary with another one of your choice.
+
 1. Select the binary.
 
 You can select the files from the list.
