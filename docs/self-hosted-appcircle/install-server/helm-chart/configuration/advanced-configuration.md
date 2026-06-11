@@ -127,7 +127,7 @@ webhook:
 
 ## Installation Modes
 
-Starting from server version **3.30.0**, the Appcircle Helm chart supports deploying components across separate network zones using `global.tags.frontend` and `global.tags.backend` flags. Three modes are supported: Full (default), DMZ-LAN (backend-only), and DMZ-DMZ (frontend-only).
+Starting from server version **3.30.0**, the Appcircle Helm chart supports deploying components across separate network zones using `global.tags.frontend` and `global.tags.backend` flags. Three modes are supported: Full (default), Internal Zone, and External Zone.
 
 For detailed guidance on configuring each mode, see the [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes) documentation.
 
@@ -217,12 +217,12 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.imagePullSecrets`                                     | Secrets used to authenticate with private container registries.                                      | [ 'containerregistry' ]       |
 | `global.ingressClassName`                                     | Specifies the ingress class name used for all application ingresses.                                 | 'appcircle'                   |
 | `global.defaultStorageClass`                                  | The default storage class used for persistent volumes in the application.                            | -                             |
-| `global.tags.frontend`                                        | Deploys DMZ-DMZ facing components (`store-web`, `distribution-testerweb`, `codepush-proxy`). See [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes). | `true` |
-| `global.tags.backend`                                         | Deploys DMZ-LAN components (all backend microservices, `web-app`, infrastructure). See [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes). | `true` |
+| `global.tags.frontend`                                        | Deploys External Zone components (`store-web`, `distribution-testerweb`, `codepush-proxy`). See [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes). | `true` |
+| `global.tags.backend`                                         | Deploys Internal Zone components (all backend microservices, `web-app`, `web-event`, infrastructure). See [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes). | `true` |
 | `global.rbac.create`                                          | Creates RBAC resources (ClusterRoles, RoleBindings) required for the Appcircle services.            | `false`                       |
-| `global.authProxy.enabled`                                    | Enables the bundled Nginx auth-proxy for DMZ-DMZ deployments. Must not be enabled in Full or DMZ-LAN mode. | `false`                 |
-| `global.externalApiGateway.enabled`                           | Enables routing DMZ-DMZ service calls through a customer-owned API gateway. Applicable in DMZ-DMZ mode only. | `false`              |
-| `global.externalApiGateway.url`                               | URL of the customer-owned API gateway used in DMZ-DMZ mode.                                          | `""`                          |
+| `global.authProxy.enabled`                                    | Enables the bundled Nginx auth-proxy for External Zone deployments. Must not be enabled in Full or Internal Zone mode. | `false`          |
+| `global.externalApiGateway.enabled`                           | Enables routing External Zone service calls through a customer-owned API gateway. Applicable in External Zone mode only. | `false`      |
+| `global.externalApiGateway.url`                               | URL of the customer-owned API gateway used in External Zone mode.                                    | `""`                          |
 | `global.urls.domainName`                                      | The domain name used for the application (e.g., .example.com).                                       | -                             |
 | `global.urls.scheme`                                          | The URL scheme used for the application (e.g., http or https).                                       | 'http'                        |
 | `global.urls.auth.subdomain`                                  | Subdomain used for the authentication service.                                                       | 'auth'                        |
@@ -320,7 +320,7 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `auth.auth-postgresql.auth.username`                          | Username for the PostgreSQL database.                                                                | 'keycloak'                    |
 | `auth.auth-postgresql.auth.database`                          | The name of the PostgreSQL database to create.                                                       | 'keycloak'                    |
 | `kafka.heapOpts`                                              | JVM heap options for Kafka.                                                                          | '-Xmx1408m -Xms512m'          |
-| `kafka.kraftVersion`                                          | KRaft metadata version used by Kafka. Kafka 3.30+ uses KRaft (ZooKeeper-free) mode.                 | `0`                           |
+| `kafka.kraftVersion`                                          | KRaft metadata version used by Kafka. Starting from Appcircle server 3.30.0, Kafka runs in KRaft (ZooKeeper-free) mode. | `0`            |
 | `kafka.clusterId`                                             | Unique cluster identifier for Kafka KRaft mode.                                                      | `'appcircle-kafka'`           |
 | `kafka.controller.replicaCount`                               | Number of Kafka controller replicas.                                                                 | 3                             |
 | `kafka.controller.resourcesPreset`                            | Resource preset for the Kafka controller.                                                            | 'medium'                      |

@@ -1,7 +1,7 @@
 ---
 title: Installation Modes
-description: Learn about the different installation modes available for the Appcircle Helm chart, including Full, DMZ-LAN, and DMZ-DMZ deployments.
-tags: [self-hosted, helm, installation, configuration, kubernetes, openshift, dmz]
+description: Learn about the different installation modes for the Appcircle Helm chart — Full, Internal Zone, and External Zone — and how to configure split-cluster deployments.
+tags: [self-hosted, helm, installation, configuration, kubernetes, openshift]
 sidebar_position: 30
 ---
 
@@ -9,32 +9,30 @@ import NeedHelp from '@site/docs/\_need-help.mdx';
 
 ## Overview
 
-Starting from server version **3.30.0**, the Appcircle Helm chart supports three distinct installation modes. These modes allow you to deploy Appcircle components across different network zones, enabling architectures that separate externally-facing (DMZ-DMZ) services from internally-facing (DMZ-LAN) services.
+Starting from server version **3.30.0**, the Appcircle Helm chart supports three deployment modes. These modes let you place Appcircle components across separate network zones — an **Internal Zone** for backend services and infrastructure, and an **External Zone** for publicly accessible web portals.
 
-The installation mode is controlled by two global flags:
+The active mode is controlled by two global Helm flags:
 
-| Flag                   | Default | Description                                                                                                                   |
-| ---------------------- | ------- | ----------------------------------------------------------------------------------------------------------------------------- |
-| `global.tags.frontend` | `true`  | Deploys DMZ-DMZ facing components: `store-web`, `distribution-testerweb`, `codepush-proxy`, and optionally `auth-proxy`.     |
-| `global.tags.backend`  | `true`  | Deploys DMZ-LAN components: all backend microservices, `web-app`, `web-event`, `apigateway`, and all infrastructure services. |
+| Flag                   | Default | Zone          | Components deployed                                                                                                                                    |
+| ---------------------- | ------- | ------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `global.tags.backend`  | `true`  | Internal Zone | All backend microservices, `web-app`, `web-event`, `apigateway`, and infrastructure (MongoDB, Kafka, Vault, MinIO, Redis, Keycloak, PostgreSQL)         |
+| `global.tags.frontend` | `true`  | External Zone | Publicly accessible portals: `store-web`, `distribution-testerweb`, `codepush-proxy`, and optionally `auth-proxy`                                      |
 
 :::info
-The naming of these tags (`frontend`/`backend`) predates the current DMZ terminology and may be counterintuitive. Think of them as "DMZ-DMZ zone" and "DMZ-LAN zone" respectively, not as UI vs API tiers.
-
-Note that `web-app` (the Appcircle Dashboard at `my.<domain>`) is a UI application but it deploys under `global.tags.backend=true` because it resides in the DMZ-LAN zone.
+The flag names `global.tags.frontend` and `global.tags.backend` reflect the original component grouping and do not indicate a UI vs. API tier split. Notably, `web-app` (the Appcircle Dashboard at `my.<domain>`) is a web application but deploys under `global.tags.backend=true` because it resides in the Internal Zone.
 :::
 
 ## Mode Summary
 
-| Mode                         | `global.tags.frontend` | `global.tags.backend` | Use Case                                                                   |
-| ---------------------------- | :--------------------: | :-------------------: | -------------------------------------------------------------------------- |
-| **Full** (default)           | `true`                 | `true`                | Single-cluster deployment with all components in one namespace.            |
-| **DMZ-LAN** (backend-only)   | `false`                | `true`                | Secure zone with all backend services. Paired with a DMZ-DMZ install.     |
-| **DMZ-DMZ** (frontend-only)  | `true`                 | `false`               | Externally accessible zone with only public-facing services.               |
+| Mode                   | `global.tags.backend` | `global.tags.frontend` | Use Case                                                                   |
+| ---------------------- | :-------------------: | :--------------------: | -------------------------------------------------------------------------- |
+| **Full** (default)     | `true`                | `true`                 | All components in a single cluster and namespace.                          |
+| **Internal Zone**      | `true`                | `false`                | Internal services only. Paired with a separate External Zone installation. |
+| **External Zone**      | `false`               | `true`                 | Public-facing portals only. Requires an existing Internal Zone install.    |
 
 ## Mode 1 — Full Installation (Default)
 
-The default mode deploys all Appcircle components into a single cluster and namespace. This is suitable for trial deployments or environments where network zone separation is not required.
+The Full mode deploys all Appcircle components into a single cluster and namespace. This is the recommended starting point for trial deployments or environments where network zone separation is not required.
 
 ```yaml
 global:
@@ -49,19 +47,21 @@ global:
 ```
 
 :::tip
-The Full installation is the simplest deployment option and is described in the [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) and [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift) installation guides.
+The Full installation is described in detail in the [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes) and [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift) guides.
 :::
 
-## Mode 2 — DMZ-LAN Installation (Backend-Only)
+## Mode 2 — Internal Zone Installation
 
-The DMZ-LAN mode deploys all backend microservices, infrastructure (MongoDB, Kafka, Vault, MinIO, Redis, Keycloak, PostgreSQL), and the Appcircle Dashboard (`web-app`) into a secured internal zone. No externally-facing web portals are deployed.
+The Internal Zone mode deploys all backend microservices, infrastructure (MongoDB, Kafka, Vault, MinIO, Redis, Keycloak, PostgreSQL), the Appcircle Dashboard (`web-app`), and `web-event` into your secured internal network. No external-facing web portals are deployed in this cluster.
 
-### Step 1 — Install the Backend
+This mode is typically paired with a separate External Zone installation that handles public traffic.
+
+### Step 1 — Install Internal Zone Components
 
 Create a `values.yaml` with the following configuration:
 
 <details>
-    <summary>Click to view the DMZ-LAN <code>values.yaml</code> example (per-module Redis).</summary>
+    <summary>Click to view the Internal Zone <code>values.yaml</code> example (per-module Redis).</summary>
 
 ```yaml
 global:
@@ -93,7 +93,7 @@ ingress-nginx:
 </details>
 
 <details>
-    <summary>Click to view the DMZ-LAN <code>values.yaml</code> example (shared Redis).</summary>
+    <summary>Click to view the Internal Zone <code>values.yaml</code> example (shared Redis).</summary>
 
 ```yaml
 global:
@@ -124,7 +124,7 @@ ingress-nginx:
 
 </details>
 
-Install the Appcircle server in backend-only mode:
+Install the Appcircle server in Internal Zone mode:
 
 ```bash
 helm install appcircle-server appcircle/appcircle \
@@ -135,13 +135,13 @@ helm install appcircle-server appcircle/appcircle \
 
 ### Step 2 — Collect Output Values
 
-After the backend installation, collect the following values from the Helm install output. These are required for the DMZ-DMZ installation:
+After the Internal Zone installation completes, collect the following values from the Helm output. These are required for the External Zone installation:
 
 - **`initialOrganizationId`** — The initial organization ID printed in the Helm output.
-- **`distributionTesterWeb` client secret** — The Keycloak client secret for the distribution tester web.
-- **`storeWeb` client secret** — The Keycloak client secret for the store web.
+- **`distributionTesterWeb` client secret** — The Keycloak client secret for the distribution tester web portal.
+- **`storeWeb` client secret** — The Keycloak client secret for the store web portal.
 
-You can retrieve the client secrets from the generated Kubernetes secret:
+Retrieve the client secrets from the generated Kubernetes secret:
 
 ```bash
 kubectl get secret -n appcircle appcircle-server-auth-keycloak-clients-secret \
@@ -151,27 +151,27 @@ kubectl get secret -n appcircle appcircle-server-auth-keycloak-clients-secret \
   -o jsonpath='{.data.storeWeb}' | base64 --decode ; echo
 ```
 
-## Mode 3 — DMZ-DMZ Installation (Frontend-Only)
+## Mode 3 — External Zone Installation
 
-The DMZ-DMZ mode deploys only the externally-accessible web portals: `store-web`, `distribution-testerweb`, and `codepush-proxy`. This cluster must be able to reach the DMZ-LAN cluster's `auth.<domain>` endpoint.
+The External Zone mode deploys only the publicly accessible web portals: `store-web`, `distribution-testerweb`, and `codepush-proxy`. The External Zone cluster must be able to reach the Internal Zone cluster's `auth.<domain>` endpoint.
 
 ### Step 1 — Pre-create the Auth Client Secret
 
-Before installing, create the Keycloak client secrets secret using the values collected from the DMZ-LAN installation:
+Before installing, create the Keycloak client secrets secret using the values collected from the Internal Zone installation:
 
 ```bash
 kubectl create secret generic appcircle-server-auth-keycloak-clients-secret \
   -n appcircle \
-  --from-literal=distributionTesterWeb='<from-backend-install>' \
-  --from-literal=storeWeb='<from-backend-install>'
+  --from-literal=distributionTesterWeb='<from-internal-zone-install>' \
+  --from-literal=storeWeb='<from-internal-zone-install>'
 ```
 
-### Step 2 — Install the Frontend
+### Step 2 — Install External Zone Components
 
-Create a `values.yaml` for the DMZ-DMZ installation:
+Create a `values.yaml` for the External Zone installation:
 
 <details>
-    <summary>Click to view the DMZ-DMZ <code>values.yaml</code> example.</summary>
+    <summary>Click to view the External Zone <code>values.yaml</code> example.</summary>
 
 ```yaml
 global:
@@ -202,7 +202,7 @@ codepush:
 
 store:
   store-web:
-    defaultOrganizationId: '<initialOrganizationId-from-backend-install>'
+    defaultOrganizationId: '<initialOrganizationId-from-internal-zone-install>'
 
 ingress-nginx:
   enabled: true
@@ -210,25 +210,25 @@ ingress-nginx:
 
 </details>
 
-If the DMZ-DMZ cluster does not have DNS resolution for the backend's `auth.<domain>`, add `hostAliases` so the frontend pods can reach Keycloak:
+If the External Zone cluster does not have DNS resolution for the Internal Zone's `auth.<domain>`, add `hostAliases` so the External Zone pods can reach Keycloak. The `<internal-zone-ingress-ip>` is the IP address of the Internal Zone cluster's Ingress controller (retrieve it with `kubectl get svc -n appcircle`):
 
 ```yaml
 store:
   store-web:
     hostAliases:
-      - ip: <backend-ingress-ip>
+      - ip: <internal-zone-ingress-ip>
         hostnames:
           - auth.appcircle.spacetech.com
 
 distribution:
   distribution-testerweb:
     hostAliases:
-      - ip: <backend-ingress-ip>
+      - ip: <internal-zone-ingress-ip>
         hostnames:
           - auth.appcircle.spacetech.com
 ```
 
-Install the Appcircle server in frontend-only mode:
+Install the Appcircle server in External Zone mode:
 
 ```bash
 helm install appcircle-server appcircle/appcircle \
@@ -237,28 +237,28 @@ helm install appcircle-server appcircle/appcircle \
   -f values.yaml
 ```
 
-## Redis Configuration for DMZ Modes
+## Redis Configuration for Split Deployments
 
-Redis deployment is controlled by a combination of flags. You must choose exactly one Redis model per installation.
+In Internal Zone and External Zone modes, Redis deployment is controlled by a combination of flags. You must choose exactly one Redis model per installation.
 
 ### Redis Flags Reference
 
-| Flag                                  | Default | Mode         | Description                                                                   |
-| ------------------------------------- | ------- | ------------ | ----------------------------------------------------------------------------- |
-| `global.redis.enabled`                | `false` | Full         | Deploys a single shared Redis instance for all backend modules.               |
-| `global.redis.everyModule`            | `true`  | Full         | Deploys one Redis instance per backend module (default).                      |
-| `global.tags.singleRedisBackend`      | unset   | DMZ-LAN      | Equivalent to `redis.enabled` for backend-only installations.                 |
-| `global.tags.redisBackendEveryModule` | unset   | DMZ-LAN      | Equivalent to `redis.everyModule` for backend-only installations.             |
+| Flag                                  | Default | Mode          | Description                                                                    |
+| ------------------------------------- | ------- | ------------- | ------------------------------------------------------------------------------ |
+| `global.redis.enabled`                | `false` | Full          | Deploys a single shared Redis instance for all backend modules.                |
+| `global.redis.everyModule`            | `true`  | Full          | Deploys one Redis instance per backend module (default).                       |
+| `global.tags.singleRedisBackend`      | unset   | Internal Zone | Equivalent to `redis.enabled` for Internal Zone installations.                 |
+| `global.tags.redisBackendEveryModule` | unset   | Internal Zone | Equivalent to `redis.everyModule` for Internal Zone installations.             |
 
 :::caution
 The shared Redis model (`redis.enabled=true`) and per-module Redis model (`redis.everyModule=true`) are mutually exclusive. The Helm chart will fail at render time if both are enabled simultaneously.
 
-In DMZ-DMZ mode, all Redis flags must be set to `false` since no Redis instances are deployed in the frontend zone.
+In External Zone mode, all Redis flags must be set to `false` since no Redis instances are deployed in the External Zone.
 :::
 
-## External API Gateway (DMZ-DMZ Only)
+## External API Gateway (External Zone Only)
 
-In environments where traffic from the DMZ-DMZ cluster to the DMZ-LAN cluster is mediated by a customer-managed API gateway, you can configure the external gateway URL. When enabled, DMZ-DMZ frontend services route their `auth` and `privateApi` calls through the gateway instead of directly to the backend subdomains.
+In environments where traffic from the External Zone cluster to the Internal Zone cluster passes through a customer-managed API gateway, configure the gateway URL here. When enabled, External Zone services route their `auth` and `privateApi` calls through the gateway instead of directly to the Internal Zone subdomains.
 
 ```yaml
 global:
@@ -268,12 +268,12 @@ global:
 ```
 
 :::info
-This setting only takes effect when `global.tags.frontend=true` and `global.tags.backend=false` (DMZ-DMZ mode). It has no effect in Full or DMZ-LAN installations.
+This setting only takes effect in External Zone mode (`global.tags.frontend=true` and `global.tags.backend=false`). It has no effect in Full or Internal Zone installations.
 :::
 
-## Auth Proxy (DMZ-DMZ Only)
+## Auth Proxy (External Zone Only)
 
-When the DMZ-DMZ cluster must not have direct access to the authentication service, you can enable the bundled `auth-proxy` (an Nginx reverse proxy). This restricts DMZ-DMZ→auth access through a controlled proxy.
+When External Zone services must not have direct access to the authentication service, enable the bundled `auth-proxy` (an Nginx reverse proxy). This restricts External Zone → auth traffic through a controlled proxy.
 
 ```yaml
 global:
@@ -282,17 +282,19 @@ global:
 ```
 
 :::caution
-The `auth-proxy` must **not** be enabled in Full or DMZ-LAN installations. It is only applicable for DMZ-DMZ deployments.
+The `auth-proxy` must **not** be enabled in Full or Internal Zone installations. It is only applicable for External Zone deployments.
 :::
 
 ## Common Validation Errors
 
-| Error Message                                                                    | Cause                                                                                    |
-| -------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| `For backend-only installation, both ... must be defined`                        | `singleRedisBackend` and `redisBackendEveryModule` flags are missing from the values.    |
-| `For frontend-only installation, all '...' must be disabled`                     | A Redis, MongoDB, or CodePush PostgreSQL flag is still enabled in a DMZ-DMZ install.     |
-| `Secret '<release>-auth-keycloak-clients-secret' not found`                      | The client secrets secret was not pre-created before the DMZ-DMZ installation.           |
-| `'store.store-web.defaultOrganizationId' must be set`                            | The `defaultOrganizationId` from the DMZ-LAN install was not provided.                  |
-| `At least one Redis configuration must be enabled`                               | Neither `global.redis.everyModule` nor `global.redis.enabled` is set to `true` in Full mode. |
+The following errors are produced by the Helm chart's built-in validation (`check.yaml`) when the `values.yaml` configuration is inconsistent. The error messages reference the Helm flag names directly.
+
+| Error Message                                                                    | Cause                                                                                                             |
+| -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
+| `For backend-only installation, both ... must be defined`                        | `singleRedisBackend` and `redisBackendEveryModule` flags are missing from the Internal Zone `values.yaml`.        |
+| `For frontend-only installation, all '...' must be disabled`                     | A Redis, MongoDB, or CodePush PostgreSQL flag is still enabled in an External Zone install.                       |
+| `Secret '<release>-auth-keycloak-clients-secret' not found`                      | The client secrets secret was not pre-created before the External Zone installation.                              |
+| `'store.store-web.defaultOrganizationId' must be set`                            | The `defaultOrganizationId` from the Internal Zone install was not provided to the External Zone `values.yaml`.   |
+| `At least one Redis configuration must be enabled`                               | Neither `global.redis.everyModule` nor `global.redis.enabled` is set to `true` in Full mode.                     |
 
 <NeedHelp />
