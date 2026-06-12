@@ -370,6 +370,20 @@ LDAP Role Mapping allows you to assign specific roles to users based on their LD
 
 - Each role can have varied permissions across different modules such as Build, Deploy, and Admin settings. Configure these permissions to ensure users have appropriate access levels based on their role.
 
+
+:::info LDAP Mapping Different Role Assignment
+
+When mapping LDAP roles, a user may have different permissions in different modules. This means that the user can take action within the scope of the permissions granted in both modules. For example,
+
+| LDAP Group Name                      | Permissions                                     |
+|-------------------------------------------------|-------------------------------------------------|
+| Build Module Viewer | Only has build module viewer permission |
+| Publish Module Viewer | Only has publish module viewer permission |
+
+When the same user is added to two different groups, as mentioned above, the LDAP mapping will grant viewer permissions for that user in both modules. This means that within the scope of viewer permissions, the user will be able to view both the Publish and Build modules.
+
+:::
+
 ### LDAP Synchronization
 
 You can synchronize users from LDAP groups to Appcircle organizations using LDAP Synchronization. This process involves adding new users and removing unnecessary ones.
