@@ -30,6 +30,12 @@ To share builds with testers, distribution profiles should be created and testin
 
 <ContentRef url="/testing-distribution/create-or-select-a-distribution-profile">Distribution Profile</ContentRef>
 
+## [Binary Information](/testing-distribution/binary-information)
+
+This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs. Also you can compare the current binary with another one of your choice.
+
+<ContentRef url="/testing-distribution/binary-information">Binary Information</ContentRef>
+
 ## [Testing Groups](/testing-distribution/testing-groups)
 
 The testing group feature is used to manage and organize testers. Different versions of applications can be distributed to specific groups based on testing needs, such as OS versions, features, devices, and more.
