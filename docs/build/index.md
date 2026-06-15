@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # Build Module Overview
 
-The Build Module in Appcircle streamlines your Continuous Integration and Continuous Deployment (CI/CD) workflows for mobile app development. It covers everything from code integration to managing your build profiles and post-build artifacts.
+The Build Module in Appcircle streamlines your Continuous Integration (CI) workflows for mobile app development. It focuses on source code integration, automated builds, build configuration management, and post-build artifact handling. Generated build artifacts can be delivered manually or automatically to other Appcircle modules, such as Testing Distribution and Publish, where Continuous Deployment (CD) and release distribution workflows are managed.
 
 :::tip Learn More
 For a complete overview of the Build Module’s capabilities, check out the [Appcircle's Build Section](https://appcircle.io/build).
