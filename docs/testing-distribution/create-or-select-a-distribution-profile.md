@@ -9,6 +9,8 @@ import Screenshot from '@site/src/components/Screenshot';
 import ContentRef from '@site/src/components/ContentRef';
 import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 In order to share your builds with testers, you can create distribution profiles and assign testing groups to the distribution profiles.
 
@@ -39,6 +41,52 @@ As a best practice, we recommend using one single distribution profile for both 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-main1.png' />
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/BE-4163-update.png' />
+
+### Profile Listing
+
+You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same testing distribution profiles, allowing you to choose the layout that best fits their workflow.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td1.png' />
+
+<Tabs
+defaultValue="board"
+values={[
+{ label: 'Profile Board View', value: 'board' },
+{ label: 'Profile List View', value: 'list' },
+]}
+>
+  <TabItem value="board">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td2.png' />
+  </TabItem>
+  <TabItem value="list">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td3.png' />  </TabItem>
+</Tabs>
+
+In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific testing distribution profiles.
+
+#### Search Profiles
+
+Click the **Search** icon in the top right corner to open the profile search dialog. You can search for testing distribution profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td4.png' />
+
+#### Filter Profiles
+
+Use the **Filter** button to narrow down the profile list based on available criteria. Profiles can be filtered by:
+
+- Platform
+- Authentication Method
+- Has Active Testing Group
+
+Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td5.png' />
+
+#### Sort and Order Profiles
+
+The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Profile Name**, to customize how profiles are displayed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-td2.png' />
 
 ### Profile Actions
 
