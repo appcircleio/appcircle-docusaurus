@@ -20,34 +20,34 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- The [App Rollout Information](/publish-to-stores-module/publish-information/app-rollout-information) feature has been introduced for Android Publish profiles.It allows rollout strategies for Android releases published to Google Play Console to be configured and managed. Release distribution across users can now be controlled by selecting either a manual or automatic rollout strategy for the selected release track. <PublishBadge/> <CloudBadge/>
-- A [Testing Status](/publish-to-stores-module/publish-information/testflight-beta-information#testing-status) tab has been added within the TestFlight Beta Information section, providing visibility into binaries currently assigned to TestFlight testing groups. <PublishBadge/> <CloudBadge/>
-- The [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing) feature has been introduced. Uploaded binaries can now be distributed to Internal and External TestFlight groups directly from Appcircle. The beta distribution workflow has been simplified by enabling tester assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect. <PublishBadge/> <CloudBadge/>
-- A Check Store Status option has been added for Android Publish profiles connected to Google Play Console. <PublishBadge/> <CloudBadge/>
+- The [App Rollout Information](/publish-to-stores-module/publish-information/app-rollout-information) feature has been introduced for Android Publish profiles.It allows rollout strategies for Android releases published to Google Play Console to be configured and managed. Release distribution across users can now be controlled by selecting either a manual or automatic rollout strategy for the selected release track. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A [Testing Status](/publish-to-stores-module/publish-information/testflight-beta-information#testing-status) tab has been added within the TestFlight Beta Information section, providing visibility into binaries currently assigned to TestFlight testing groups. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing) feature has been introduced. Uploaded binaries can now be distributed to Internal and External TestFlight groups directly from Appcircle. The beta distribution workflow has been simplified by enabling tester assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A Check Store Status option has been added for Android Publish profiles connected to Google Play Console. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
-- Google Play Console Store Status is now displayed on the UI for Android Publish profiles. <PublishBadge/> <CloudBadge/>
-- Improvements have been made to Android Publish profiles to better align terminology with Google Play Console-related areas. <PublishBadge/> <CloudBadge/>
-- [App Release Information](/publish-to-stores-module/publish-information/app-release-information) has been separated from Metadata Details. It can now be accessed from the Publish Binary action menu. <PublishBadge/> <CloudBadge/>
-- Support for “Latest” and Minor Pattern for Workflow Components has been added to the Build and Publish modules. <BuildIntegrationsBadge/> <PublishIntegrationsBadge/> <CloudBadge/>
-- A “You” tag has been added next to the user’s e-mail address on the Team List within the Organization module. <AccountBadge/> <CloudBadge/>
-- The Edit Name and Share options have been separated on the UI for API Credentials. <AccountBadge/> <CloudBadge/>
-- When a user is removed, their e-mail address will now be displayed in the relevant notification. <AccountBadge/> <CloudBadge/>
-- Various actions across multiple modules have been added to the relevant Activity Log. <AccountBadge/> <CloudBadge/>
-- A UI improvement has been made on the Apple Profiles list regarding an incorrect name. <SigningIdentitiesBadge/> <CloudBadge/>
-- Character limitations and validation checks have been implemented for Publish and Build Variable Group key values on the UI. <EnvironmentVariablesBadge/> <CloudBadge/>
+- Google Play Console Store Status is now displayed on the UI for Android Publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements have been made to Android Publish profiles to better align terminology with Google Play Console-related areas. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [App Release Information](/publish-to-stores-module/publish-information/app-release-information) has been separated from Metadata Details. It can now be accessed from the Publish Binary action menu. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Support for “Latest” and Minor Pattern for Workflow Components has been added to the Build and Publish modules. <BuildIntegrationsBadge/> <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A “You” tag has been added next to the user’s e-mail address on the Team List within the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Edit Name and Share options have been separated on the UI for API Credentials. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When a user is removed, their e-mail address will now be displayed in the relevant notification. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Various actions across multiple modules have been added to the relevant Activity Log. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI improvement has been made on the Apple Profiles list regarding an incorrect name. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Character limitations and validation checks have been implemented for Publish and Build Variable Group key values on the UI. <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest RC release of Xcode 26.6 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 
 ### 🐞 Fixes
 
-- An issue where uploaded screenshots were not appearing during the Update Metadata publish step has been fixed. <PublishBadge/> <CloudBadge/>
-- An issue where Re-sign operations on profiles connected to Huawei AppGallery requested Google Play Console credentials has been fixed. <PublishBadge/> <CloudBadge/>
-- Several UI improvements have been made for cases where duplicated notifications were displayed on the screen. <CloudBadge/>
+- An issue where uploaded screenshots were not appearing during the Update Metadata publish step has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where Re-sign operations on profiles connected to Huawei AppGallery requested Google Play Console credentials has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Several UI improvements have been made for cases where duplicated notifications were displayed on the screen. <CloudBadge/> <SelfHostedBadge/>
 
 ### :warning: Breaking Changes
 
-- The Reset iOS App Store Summary Rating option has been removed from the [App Release Information](/publish-to-stores-module/publish-information/app-release-information) section due to its retirement by Apple. <PublishBadge/> <CloudBadge/>
+- The Reset iOS App Store Summary Rating option has been removed from the [App Release Information](/publish-to-stores-module/publish-information/app-release-information) section due to its retirement by Apple. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - With the 3.31.0 release, Store Submit roles were migrated to the new Integrations & Connections module. As part of this migration, existing user roles were automatically updated as follows:
 
   - Store Submit - Manager Android → **Integrations & Connections Manager**
