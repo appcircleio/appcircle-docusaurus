@@ -3172,3 +3172,32 @@ quay:
   label: "release version"
   description: "Documentation related to release version"
   permalink: "/release-version"
+
+"rollout":
+  label: "rollout"
+  description: "Documentation related to rollout"
+  permalink: "/rollout"
+
+"rollout information":
+  label: "rollout information"
+  description: "Documentation related to rollout information"
+  permalink: "/rollout-information"
+"beta":
+  label: "beta"
+  description: "Documentation related to beta"
+  permalink: "/beta"
+
+"submit":
+  label: "submit"
+  description: "Documentation related to submit"
+  permalink: "/submit"
+
+"information":
+  label: "information"
+  description: "Documentation related to information"
+  permalink: "/information"
+
+"supported browsers":
+  label: "supported browsers"
+  description: "Documentation related to supported browsers"
+  permalink: "/supported-browsers"

@@ -3,7 +3,7 @@ title: Delete
 description: Learn how to delete a build version in the Publish module of Appcircle
 slug: /publish-to-stores-module/publish-information/delete
 tags: [publish, publish module, delete]
-sidebar_position: 11
+sidebar_position: 18
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

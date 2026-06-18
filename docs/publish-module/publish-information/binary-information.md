@@ -3,8 +3,10 @@ title: Binary Information
 description: Learn how to view and manage binary information in Appcircle
 slug: /publish-to-stores-module/publish-information/binary-information
 tags: [publish module, binary information]
-sidebar_position: 4
+sidebar_position: 10
 ---
+
+import Screenshot from '@site/src/components/Screenshot';
 
 # Binary Information
 
@@ -20,6 +22,8 @@ To access the binary details for a specific version of your app:
 
 2. **Open Binary Information:**
    - Click on the "Binary Information" option to display the binary details.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub.png' />
 
 ## Contents of Binary Information
 
@@ -163,5 +167,5 @@ Binaries generated through the Appcircle Build Module include associated build d
 
 :::
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-binaryComp.png' />
-<Screenshot url='https://cdn.appcircle.io/docs/assets/BE6562-binaryCompDetails.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/QA-48-pub2.png' />

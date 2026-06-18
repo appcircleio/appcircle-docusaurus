@@ -3,7 +3,7 @@ title: Re-sign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
 slug: /publish-to-stores-module/publish-information/resign-binary
 tags: [ios, resigning, provisioning profiles]
-sidebar_position: 6
+sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';

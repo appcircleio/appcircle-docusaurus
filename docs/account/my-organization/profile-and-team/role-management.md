@@ -245,8 +245,14 @@ The following table details the roles and restrictions for the [**Publish**](/pu
 | TestFlight Beta Info       | List/Update TestFlight Beta Information   | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Auto Re-sign Configuration | List/Update Auto Re-sign Configuration    | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Check Release Status       | Get Relese Status                         | ✅     | ✅       | ✅        | ✅             | ✅      |
-| Metadata                   | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
-| Metadata                   | View Metadata Details                     | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Metadata Details           | Update Metadata Details                   | ✅     | ✅       | ✅        | ✅             | ⛔      |
+| Submit for Beta Testing    | View Submit for Beta Testing              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| Submit for Beta Testing    | Beta Submission                           | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| App Rollout Information    | View App Rollout Information              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Rollout Information    | Update App Rollout Information            | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| App Rollout Information    | Update Rollout Status                     | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
+| App Release Information    | View App Release Information              | ✅     | ✅       | ✅        | ✅             | ✅      |
+| App Release Information    | Update App Release Information            | ✅     | ✅       | ⛔        | ⛔             | ⛔      |
 | Mark as RC                 | Marking RC a version                      | ✅     | ✅       | ✅        | ⛔             | ⛔      |
 | Binary Information         | List Binary Information                   | ✅     | ✅       | ✅        | ✅             | ✅      |
 | Binary Comparison          | List Binary Comparison                    | ✅     | ✅       | ✅        | ✅             | ✅      |

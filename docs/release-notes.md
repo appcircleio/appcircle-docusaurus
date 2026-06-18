@@ -16,6 +16,46 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.31.0 - 2026-05-18 Submit For Beta Testing, App Rollout Information, Bug Fixes and more
+
+### 🆕 New Features
+
+- The [App Rollout Information](/publish-to-stores-module/publish-information/app-rollout-information) feature has been introduced for Android Publish profiles.It allows rollout strategies for Android releases published to Google Play Console to be configured and managed. Release distribution across users can now be controlled by selecting either a manual or automatic rollout strategy for the selected release track. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A [Testing Status](/publish-to-stores-module/publish-information/testflight-beta-information#testing-status) tab has been added within the TestFlight Beta Information section, providing visibility into binaries currently assigned to TestFlight testing groups. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing) feature has been introduced. Uploaded binaries can now be distributed to Internal and External TestFlight groups directly from Appcircle. The beta distribution workflow has been simplified by enabling tester assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A Check Store Status option has been added for Android Publish profiles connected to Google Play Console. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+
+### :muscle: Improvements
+
+- Google Play Console Store Status is now displayed on the UI for Android Publish profiles. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Improvements have been made to Android Publish profiles to better align terminology with Google Play Console-related areas. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- [App Release Information](/publish-to-stores-module/publish-information/app-release-information) has been separated from Metadata Details. It can now be accessed from the Publish Binary action menu. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Support for “Latest” and Minor Pattern for Workflow Components has been added to the Build and Publish modules. <BuildIntegrationsBadge/> <PublishIntegrationsBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A “You” tag has been added next to the user’s e-mail address on the Team List within the Organization module. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Edit Name and Share options have been separated on the UI for API Credentials. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- When a user is removed, their e-mail address will now be displayed in the relevant notification. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Various actions across multiple modules have been added to the relevant Activity Log. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A UI improvement has been made on the Apple Profiles list regarding an incorrect name. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Character limitations and validation checks have been implemented for Publish and Build Variable Group key values on the UI. <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest RC release of Xcode 26.6 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue where uploaded screenshots were not appearing during the Update Metadata publish step has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- An issue where Re-sign operations on profiles connected to Huawei AppGallery requested Google Play Console credentials has been fixed. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- Several UI improvements have been made for cases where duplicated notifications were displayed on the screen. <CloudBadge/> <SelfHostedBadge/>
+
+### :warning: Breaking Changes
+
+- The Reset iOS App Store Summary Rating option has been removed from the [App Release Information](/publish-to-stores-module/publish-information/app-release-information) section due to its retirement by Apple. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
+- With the 3.31.0 release, Store Submit roles were migrated to the new Integrations & Connections module. As part of this migration, existing user roles were automatically updated as follows:
+
+  - Store Submit - Manager Android → **Integrations & Connections Manager**
+  - Store Submit - Manager iOS → **Integrations & Connections Manager**
+  - Store Submit - Viewer → **Integrations & Connections Viewer**
+
+Following this change, the related roles in the Store Submit module were removed, and authorization management started to be handled through the Integrations & Connections module.
+
 ## 3.30.0 - 2026-04-15 Improved Binary Expiration Handling, Environment Variable Group Management, Notification Enhancements, Bug Fixes and more
 
 ### 🆕 New Features
@@ -44,6 +84,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The tab order in the Apple Devices section has been updated to Invited Users, Non-Registered Devices, and Registered Devices, with the page defaulting to the Registered Devices tab on load. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Notifications have been added to inform users when provisioning profiles are deleted by Fastlane during iOS re-sign processes with “Create New Provisioning Profile” enabled, including warnings for any affected build configurations. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Android keystore handling has been improved by supporting separate alias (key) passwords from the keystore password and enabling alias selection for [multi-alias keystores](/signing-identities/android-keystores#uploading-a-multi-alias-keystore), allowing more flexible and secure signing configurations. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest release of the Xcode 26.4.1 (`17E202`) installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest release of the Xcode 26.5 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- A new macOS-based build stack (Tahoe `26.3.2`) is released for the self-hosted Appcircle environments, which has the latest GA release of [Xcode 26.5](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_5-release-notes) (`17F42`) and [Xcode 26.4](https://developer.apple.com/documentation/xcode-release-notes/xcode-26_4_1-release-notes) (`26.4.1` `17E202`) installed along with Xcode 26.3 version and up-to-date build tools for iOS and Android builds. Follow the [setup guide](/self-hosted-appcircle/self-hosted-runner/runner-vm-setup#download-macos-vm) for installation instructions. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
@@ -477,7 +520,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 ### 🆕 New Features
 
 - [API keys](/account/my-organization/security/api-keys) can now be used for accessing and utilizing the Appcircle API. These tokens are generated and scoped to align with organizational requirements and specific role scopes. API Keys can be created and managed from Organization's module Security section. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The binary comparison feature introduced in the Publish module can now also be used within the [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-comparison) and [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#binary-comparison) modules. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The binary comparison feature introduced in the Publish module can now also be used within the [Testing Distribution](/testing-distribution/binary-information#binary-comparison) and [Enterprise App Store](/enterprise-app-store/binary-information#binary-comparison) modules. <EnterpriseStoreBadge/> <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -663,7 +706,7 @@ You cannot upgrade directly from `3.28.3` or an older version to `3.29.3` or lat
 ### 🆕 New Features
 
 - Downloaded Variable Group JSON files can now be uploaded to existing or newly created variable groups for easier transmission. Alternatively, users can create their own JSON files and upload them, provided they follow the correct format. <BuildBadge/> <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The Binary Details sections of the [Enterprise App Store](/enterprise-app-store/enterprise-app-store-profile#binary-information) and [Testing Distribution](/testing-distribution/create-or-select-a-distribution-profile#binary-information) profiles will now display build metadata details, including trigger type, workflow name, source branch and more. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The Binary Details sections of the [Enterprise App Store](/enterprise-app-store/binary-information) and [Testing Distribution](/testing-distribution/binary-information) profiles will now display build metadata details, including trigger type, workflow name, source branch and more. <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 
 ### :muscle: Improvements
 
@@ -896,7 +939,7 @@ Thank you for your cooperation and support in ensuring uninterrupted service.
 
 - The billing page will now display a warning for licenses set to expire within a week and an error for licenses that have already expired. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Screenshot previews have been enhanced to allow zooming for a better view of the metadata in the Publish module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
-- The [Binary Details](/testing-distribution/create-or-select-a-distribution-profile#binary-information) option within the Testing Distribution module has been improved to include build and extended provisioning profile and certificate information <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
+- The [Binary Details](/testing-distribution/binary-information) option within the Testing Distribution module has been improved to include build and extended provisioning profile and certificate information <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The build logs of a binary deployed to the Publish module can now be accessed from the [Build History](/publish-to-stores-module/publish-information/history#accessing-build-history) tab, even if the build artifact has been deleted in the Build module. <PublishBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The usage of Testing Distribution for the license is now based on the application download count from the Testing Portal, rather than the number of emails shared via Testing Distribution. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The redirection of Testing Distribution email URLs was improved for use in external browsers. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>

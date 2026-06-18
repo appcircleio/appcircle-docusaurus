@@ -3,14 +3,14 @@ title: Metadata Details
 description: Detailed guide on filling out metadata for app distribution platforms within the Appcircle dashboard.
 slug: /publish-to-stores-module/publish-information/meta-data-information
 tags: [metadata, app distribution, appcircle dashboard]
-sidebar_position: 5
+sidebar_position: 11
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 
 # Metadata Details
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/7140-23.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/BE8751-3.png' />
 
 ## Overview
 
@@ -84,19 +84,6 @@ Please note, this field is constantly visible on Appcircle. However, on App Stor
 - **Sign-In Information**: If your app requires a sign-in, provide credentials that will be used by the review team.
 - **Contact Information**: Provide the name, phone number, and email of the contact person for the App Review team.
 - **Notes**: Include any additional information that you want to share with the App Review team.
-
-#### App Release Information
-
-- **App Store Version Release**: Choose how you want to release your app on the App Store:
-  - Manually release this version
-  - Automatically release this version
-  - Automatically release this version after App Review, no earlier than a specified date and time
-- **Phased Release for App Store Automatic Updates**: Opt in to gradually release updates over a 7-day period to users.
-- **Reset iOS App Store Summary Rating**: Decide if you want to reset the app's rating when the new version is released.
-
-:::danger Reset iOS App Store Summary Rating
-Please note, this comes with **Keep Existing Rating** selected by default. If you choose to **Reset rating when this version released** option, it will reset all past **reviews and ratings** of your app in **App Store**.
-:::
 
 ## Android Metadata Information
 

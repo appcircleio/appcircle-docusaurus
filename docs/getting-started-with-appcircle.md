@@ -1,7 +1,7 @@
 ---
 title: Getting Started With Appcircle
 description: Appcircle is a mobile CI/CD platform which makes it easy for you to manage the lifecycle of your mobile applications.
-tags: [getting started, mobile, ci/cd, platform]
+tags: [getting started, mobile, ci/cd, platform, supported browsers]
 sidebar_position: 2
 ---
 
@@ -157,3 +157,22 @@ If you use the Enterprise App Store module, this section lists your enterprise-d
 - The application name
 - The binary version
 - A link to the Enterprise App Store detail page
+
+### Supported Browsers
+
+Appcircle supports modern desktop web browsers. The following browsers and minimum versions are supported:
+
+| Browser | Minimum Version | Support Level |
+| --- | --- | --- |
+| Chrome | 87+ | Strongly recommended and officially supported |
+| Safari | 14+ | Strongly recommended and officially supported |
+| Edge | 88+ | Supported |
+| Firefox | 78+ | Supported |
+
+:::info Browser Compatibility
+Internet Explorer and Opera Mini are outside the supported browser matrix and are not supported. Compatibility, functionality, and performance are not guaranteed when accessing Appcircle through unsupported browsers.
+:::
+
+:::tip Display Resolution
+Minimum recommended display resolution is **1280x720**
+:::

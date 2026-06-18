@@ -3,7 +3,7 @@ title: History
 description: Learn how to access and review the History for Publish History and Resign History in Appcircle
 slug: /publish-to-stores-module/publish-information/history
 tags: [publish history, publish module, publish information, resign history, history]
-sidebar_position: 7
+sidebar_position: 14
 ---
 
 # History
