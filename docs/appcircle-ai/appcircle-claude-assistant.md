@@ -9,7 +9,7 @@ sidebar_position: 4
 
 Appcircle provides an **Appcircle Claude Plugin** that connects Claude to the Appcircle platform, bundling the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server) with Appcircle-aware skills so you can ask Claude about your Appcircle organization or about how to use Appcircle.
 
-https://github.com/appcircleio/appcircle-claude-plugin
+The plugin is open source: [appcircle-claude-plugin on GitHub](https://github.com/appcircleio/appcircle-claude-plugin).
 
 ## What's Included
 
