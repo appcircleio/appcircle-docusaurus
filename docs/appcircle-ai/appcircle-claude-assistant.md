@@ -47,7 +47,7 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
 
 ### In claude.ai
 
-You can install this plugin's skills in claude.ai too — MCP tools remain Claude Code-only for now.
+You can install this plugin's skills in claude.ai too. MCP tools remain Claude Code-only for now.
 
 1. Open **Customize**.
 2. Click **Add plugin**.
