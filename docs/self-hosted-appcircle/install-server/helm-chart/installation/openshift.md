@@ -30,7 +30,7 @@ In this documentation, we will use `appcircle.spacetech.com` as an **example mai
 <details>
     <summary>Click to view more details about domain name prerequisite.</summary>
 
-By default, Appcircle uses seven subdomains. These subdomains are:
+By default, Appcircle uses nine subdomains. These subdomains are:
 
 1. api.appcircle.spacetech.com
 2. auth.appcircle.spacetech.com
@@ -39,6 +39,8 @@ By default, Appcircle uses seven subdomains. These subdomains are:
 5. resource.appcircle.spacetech.com
 6. my.appcircle.spacetech.com
 7. kvs.appcircle.spacetech.com
+8. codepush.appcircle.spacetech.com
+9. mcp.appcircle.spacetech.com
 
 **Upon completing the deployment** of the Appcircle server, you will need to create DNS records based on the routes created in OpenShift.
 
@@ -221,6 +223,9 @@ global:
   urls:
     # Main domain configuration - All Appcircle services will be subdomains of this domain
     domainName: .appcircle.spacetech.com
+  # RBAC resource creation
+  rbac:
+    create: true
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
   mail:
     smtp:
@@ -268,6 +273,10 @@ global:
     domainName: .appcircle.spacetech.com
     # Protocol to be used for connections
     scheme: https
+
+  # RBAC resource creation
+  rbac:
+    create: true
 
   # SMTP server configuration for sending emails (Authentication, Notifications, Testing Distribution)
   mail:
@@ -459,6 +468,8 @@ router-default   LoadBalancer  10.217.4.108   10.45.140.78  80/TCP,443/TCP,1936/
    - `my.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `hook.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
    - `kvs.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `codepush.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
+   - `mcp.appcircle.spacetech.com` → **api.appcircle.spacetech.com**
 
 ### 2. Login to the Appcircle Dashboard
 

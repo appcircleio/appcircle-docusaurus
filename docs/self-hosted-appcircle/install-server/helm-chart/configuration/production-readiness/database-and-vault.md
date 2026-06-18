@@ -32,7 +32,11 @@ The Appcircle chart, by default, includes an in-cluster PostgreSQL deployment pr
 
 If you are deploying the Appcircle server for testing purposes, you may use the built-in PostgreSQL deployment.
 
-For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `12.x`, with a disk size of 40GB.
+For a production-ready setup, it is recommended to configure an external PostgreSQL instance. The recommended version is PostgreSQL `14.x` or higher, with a disk size of 40GB.
+
+:::warning
+Starting with Appcircle server v3.30.0, the bundled Keycloak was upgraded to a version that no longer supports PostgreSQL 13 or earlier. If you are running PostgreSQL 13 or below, upgrade your database to PostgreSQL `14.x` or higher before upgrading to v3.30.0.
+:::
 
 To use an external PostgreSQL database, you can follow the steps below:
 

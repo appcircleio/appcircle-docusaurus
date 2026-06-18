@@ -11,5 +11,6 @@ Current headlines are listed below:
 
 - [Kubernetes](/self-hosted-appcircle/install-server/helm-chart/installation/kubernetes)
 - [OpenShift](/self-hosted-appcircle/install-server/helm-chart/installation/openshift)
+- [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes)
 
 In order to see the details, check the submenu of this documentation page.
