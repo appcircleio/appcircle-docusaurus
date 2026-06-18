@@ -3201,3 +3201,13 @@ quay:
   label: "supported browsers"
   description: "Documentation related to supported browsers"
   permalink: "/supported-browsers"
+
+"claude":
+  label: "claude"
+  description: "Documentation related to Claude"
+  permalink: "/claude"
+
+"assistant":
+  label: "assistant"
+  description: "Documentation related to AI assistants"
+  permalink: "/assistant"
