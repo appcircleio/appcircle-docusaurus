@@ -34,8 +34,8 @@ The script makes two kinds of changes: settings it can safely apply on its own, 
 - Turns on the macOS application firewall and stealth mode, so the host does not respond to unsolicited network probes.
 - Disables sharing services a build host does not need: Remote Management, File Sharing, Printer Sharing, Remote Apple Events, Internet Sharing, and Bluetooth.
 - Hardens the login window: disables the guest account, hides the user list (asks for a name and password), removes password hints, and requires a password immediately after sleep.
-- Adjusts power settings for a server role by disabling Power Nap and wake-on-network.
-- Turns off sending analytics and crash reports to Apple.
+- Reduces telemetry and tracking: turns off sending analytics and crash reports to Apple, disables the system analytics and diagnostics daemons, limits ad tracking and personalized ads, and disables the Siri, Apple Intelligence, and suggestion agents.
+- Blocks known Apple telemetry and analytics domains in `/etc/hosts`. The list is analytics-only and deliberately leaves signing and notarization endpoints untouched, so code signing keeps working.
 - Keeps automatic security responses and security data updates enabled, so the host still receives critical protections.
 
 **Checked and reported only:**
@@ -102,6 +102,12 @@ sudo ./harden-host.sh --disable-ssh
 Run `--audit-only` first and review the report. If SIP, FileVault, or Gatekeeper is reported as off, enable it before relying on the host for production builds.
 
 :::
+
+Some changes (limiting ad tracking and disabling the Siri, Apple Intelligence, and suggestion agents) apply to a specific user account. The script uses the account that invoked `sudo`, falling back to the current console user. To target a different account, set `ADMIN_USER`:
+
+```bash
+sudo ADMIN_USER=ci-admin ./harden-host.sh
+```
 
 ## What You Still Need to Do Manually
 
