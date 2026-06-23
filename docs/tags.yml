@@ -3201,3 +3201,8 @@ quay:
   label: "supported browsers"
   description: "Documentation related to supported browsers"
   permalink: "/supported-browsers"
+
+"download reports":
+  label: "download reports"
+  description: "Documentation related to download reports"
+  permalink: "/download-reports"
