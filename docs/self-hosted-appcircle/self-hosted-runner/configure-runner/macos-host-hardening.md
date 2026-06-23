@@ -32,7 +32,7 @@ The script makes two kinds of changes: settings it can safely apply on its own, 
 **Applied automatically:**
 
 - Turns on the macOS application firewall and stealth mode, so the host does not respond to unsolicited network probes.
-- Disables sharing services a build host does not need: Screen Sharing, Remote Management, File Sharing, Printer Sharing, Remote Apple Events, Internet Sharing, and Bluetooth.
+- Disables sharing services a build host does not need: Remote Management, File Sharing, Printer Sharing, Remote Apple Events, Internet Sharing, and Bluetooth.
 - Hardens the login window: disables the guest account, hides the user list (asks for a name and password), removes password hints, and requires a password immediately after sleep.
 - Adjusts power settings for a server role by disabling Power Nap and wake-on-network.
 - Turns off sending analytics and crash reports to Apple.
@@ -53,6 +53,21 @@ Secure SSH separately instead of turning it off:
 - Restrict access to the specific administrator account with `AllowUsers` in `/etc/ssh/sshd_config`.
 
 If your setup does not orchestrate the host over SSH, you can pass `--disable-ssh` to turn Remote Login off.
+
+## Why Screen Sharing Stays Enabled
+
+The script leaves Screen Sharing enabled so you can administer the host remotely. Disabling it would cut off graphical remote access, which is often needed to manage a headless or rack-mounted host.
+
+Restrict it instead of turning it off: limit access to trusted users and reach the host only over a trusted network or VPN. If you do not need remote graphical access, you can disable Screen Sharing manually from System Settings.
+
+## Download the Script
+
+On the host, download `harden-host.sh` from the Appcircle CDN and make it executable:
+
+```bash
+curl -fsSL https://cdn.appcircle.io/self-hosted/harden-macos-host.sh -o harden-host.sh && \
+  chmod +x harden-host.sh
+```
 
 ## How to Use It
 
