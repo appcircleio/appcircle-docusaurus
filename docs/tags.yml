@@ -3182,6 +3182,7 @@ quay:
   label: "rollout information"
   description: "Documentation related to rollout information"
   permalink: "/rollout-information"
+
 "beta":
   label: "beta"
   description: "Documentation related to beta"
@@ -3206,3 +3207,13 @@ quay:
   label: "download reports"
   description: "Documentation related to download reports"
   permalink: "/download-reports"
+
+"claude":
+  label: "claude"
+  description: "Documentation related to Claude"
+  permalink: "/claude"
+
+"assistant":
+  label: "assistant"
+  description: "Documentation related to AI assistants"
+  permalink: "/assistant"

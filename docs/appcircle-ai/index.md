@@ -22,3 +22,9 @@ The Appcircle MCP Server exposes Appcircle platform capabilities through the Mod
 Use the Appcircle GPT Assistant in the OpenAI Marketplace for quick answers, step-by-step guidance, and troubleshooting support.
 
 <ContentRef url="/appcircle-ai/appcircle-gpt-assistant">Appcircle GPT Assistant</ContentRef>
+
+## [Appcircle Claude Assistant](/appcircle-ai/appcircle-claude-assistant)
+
+Use the Appcircle Claude Plugin to connect Claude to the Appcircle platform with MCP tools and Appcircle-aware skills for quick answers, step-by-step guidance, and troubleshooting support.
+
+<ContentRef url="/appcircle-ai/appcircle-claude-assistant">Appcircle Claude Assistant</ContentRef>
