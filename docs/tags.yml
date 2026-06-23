@@ -3211,3 +3211,8 @@ quay:
   label: "assistant"
   description: "Documentation related to AI assistants"
   permalink: "/assistant"
+
+"auth activity":
+  label: "auth activity"
+  description: "Documentation related to auth activity"
+  permalink: "/auth-activity"
