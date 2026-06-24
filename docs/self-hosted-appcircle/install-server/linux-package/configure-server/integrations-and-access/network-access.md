@@ -127,6 +127,7 @@ archive.ubuntu.com
 cdn.appcircle.io
 storage.googleapis.com/storage/v1/b/appcircle-self-hosted
 www.googleapis.com/oauth2/v4/token
+oauth2.googleapis.com/token
 ```
 
 ##### If you don't have a proxy registry like `Harbor` or `Nexus`, and want to use container images directly from Appcircle:
@@ -148,6 +149,7 @@ europe-west1-docker.pkg.dev/appcircle/docker-registry
 ```access_list
 storage.googleapis.com/appcircle-self-hosted
 www.googleapis.com/oauth2/v4/token
+oauth2.googleapis.com/token
 ```
 
 ## Appcircle Runner Install as Ready-to-Use MacOS Virtual Machine
