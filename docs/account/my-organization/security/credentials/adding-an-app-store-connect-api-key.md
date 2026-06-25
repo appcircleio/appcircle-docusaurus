@@ -51,10 +51,32 @@ A modal popup will ask you to enter a name and add roles for this key:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/api-keys-new-modal-low.jpg' />
 
+### Choosing the API Key Role
+
+The role you assign to the key determines which Appcircle features it can support. An App Store Connect API key is limited to the permissions of the role it is given, and on Apple's side **Certificates, Identifiers & Profiles** (signing) is a separate permission area that is only available to the **Admin** role over the API.
+
+| Appcircle feature | Admin | App Manager | Developer |
+| --- | --- | --- | --- |
+| Upload a binary to TestFlight | Yes | Yes | Yes |
+| Manage TestFlight builds and testers | Yes | Yes | No (upload only) |
+| Update App Store metadata | Yes | Yes | No |
+| Submit to App Store (Add for Review) | Yes | Yes | No |
+| Create / download certificates | Yes | No | Limited (development only) |
+| Create / download provisioning profiles | Yes | No | Limited (development only) |
+| Register / edit Bundle IDs | Yes | No | Limited (no delete) |
+
 :::caution
 
-The Admin access is required to create new and download certificates or provisioning profiles. You can also give access to certain users, and on per app basis, but they require additional configuration from Apple Developer Portal.\
-\
+**Admin** access is required to create and download certificates or provisioning profiles. Select **Admin** if you want Appcircle to manage your full Apple workflow automatically (certificates, provisioning profiles, Bundle IDs, TestFlight, metadata and App Store submission) with a single key. This is the recommended setup.
+
+:::
+
+:::info Using a lower-privilege role
+
+If signing is managed outside Appcircle (you create certificates, provisioning profiles and Bundle IDs yourself and add them manually under **Signing Identities**), an **App Manager** key is sufficient for the upload-focused flow: it can upload binaries to TestFlight, manage builds and testers, update metadata and submit to the App Store. An App Manager key **cannot** access Certificates, Identifiers & Profiles, so Appcircle's automatic signing will fail with that key. A **Developer** key can only upload builds.
+
+You can also grant access to certain users on a per-app basis, but this requires additional configuration from the Apple Developer Portal.
+
 To see a list of permissions each role has, visit: [https://developer.apple.com/support/roles/](https://developer.apple.com/support/roles/)
 
 :::
