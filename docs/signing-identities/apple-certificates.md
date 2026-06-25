@@ -167,6 +167,12 @@ Please remember that the CSR file must be generated on Appcircle in order to suc
 
 :::
 
+:::warning Apple Certificate Generate Limit
+
+There are limits on the number of certificates that can be generated on Apple. These limits are restricted to 3 for **Distribution** and 2 for **Development** types. However, these limits may vary for create operations performed via the API. If Apple does not allow a create or renew operation via the API, a notification will appear on Appcircle.
+
+:::
+
 - Appcircle requires certain inputs for the certificate you wish to renew. The purposes of these inputs are explained below.
 
    - **Revoke This Certificate Before Renew**: If you want to first revoke the certificate you wish to renew on the Apple Developer Portal and then create a new certificate, you must enable this toggle.
