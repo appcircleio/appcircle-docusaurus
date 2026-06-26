@@ -39,6 +39,10 @@ Set up and manage Android emulators for testing purposes. Ensure your Android ap
 
 Learn how to use self-signed certificates with your runners. This section provides steps to secure your runner communication within your private network.
 
+## [Hardening the macOS Host](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-host-hardening)
+
+Apply a safe security baseline to the physical macOS machine that runs your build VMs. Learn what the `harden-host.sh` script changes, why Remote Login stays enabled, and how to run it.
+
 ## [Upgrading Runner](/self-hosted-appcircle/self-hosted-runner/update)
 
 Keep your runners up-to-date with the latest features and improvements. Find out how to upgrade your runners to the latest version with minimal downtime.
