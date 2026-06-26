@@ -151,7 +151,7 @@ You will be notified when an Apple Certificate is about to expire. You can see t
 
 Apple Certificates have a limited validity period and must be renewed before they expire to avoid interruptions in your build and distribution workflows. Appcircle allows you to manually renew an existing Apple Certificate directly from the **Signing Identities** module, so you can generate an up-to-date certificate without having to remove and reconfigure your current one.
 
-- To able to renew manually Apple Certificate, navigate to the action button of related certificate and click the renew button.
+- In order to manually renew Apple Certificate, navigate to the action button of related certificate and click the renew button.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/actionCert.png' />
 
