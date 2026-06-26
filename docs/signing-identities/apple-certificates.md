@@ -147,7 +147,7 @@ You will be notified when an Apple Certificate is about to expire. You can see t
 
 :::
 
-### Manuel Renew Certificate
+### Manual Renew Certificate
 
 Apple Certificates have a limited validity period and must be renewed before they expire to avoid interruptions in your build and distribution workflows. Appcircle allows you to manually renew an existing Apple Certificate directly from the **Signing Identities** module, so you can generate an up-to-date certificate without having to remove and reconfigure your current one.
 
@@ -175,20 +175,20 @@ There are limits on the number of certificates that can be generated on Apple. T
 
 - Appcircle requires certain inputs for the certificate you wish to renew. The purposes of these inputs are explained below.
 
-   - **Revoke This Certificate Before Renew**: If you want to first revoke the certificate you wish to renew on the Apple Developer Portal and then create a new certificate, you must enable this toggle.
+   - **Revoke This Certificate Before Renew**: If you want to revoke the certificate you wish to renew on the Apple Developer Portal first, and then create a new certificate, you will need to enable this toggle.
    - **CSR File**: Apple will not allow a certificate to be generated without a CSR file. Therefore, a CSR file must be selected.
-   - **Automatically Generate Password**: Appcircle will automatically generate random password if toggle is enabled.
+   - **Automatically Generate Password**: Appcircle will automatically generate a random password if this toggle is enabled.
    - **Password(Optional)**: When generating a certificate, you are prompted to set a password. This password is entirely optional, and the certificate will be generated without any issues even if you do not set one.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/certCsr.png' />
 
 #### Renew Preview 
 
-Before performing the Appcircle renewal process, it provides the user with a preview and displays all the necessary information.
+Before performing the Appcircle renewal process, this panel provides the user with a preview and displays all the necessary information.
 
  - **Existing Certificate**: This is the certificate currently in use. Once the renewal is confirmed, it will be permanently revoked and replaced by the new certificate. All associated provisioning profiles will be affected.
  - **Replacement Certificate**: This certificate will replace the existing one once the renewal is confirmed. The current certificate will be revoked and all associated provisioning profiles will be regenerated automatically.
- - **Affected Profiles Details**: The profiles listed below will be affected after the renew operation. This may cause build failures and errors in automatic re-signing processes.
+ - **Affected Profiles Details**: The profiles listed below will be affected after the renew operation. This may cause build failures and errors in automatic re-sign processes.
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/certPreview.png' />
 
@@ -206,7 +206,7 @@ On Appcircle, you can revoke your certificates directly without having to go to 
 
 :::danger Revoke Certificate
 
-Please keep in mind that if a certificate is revoked, this does not mean it will be automatically renewed. The revocation process is **irreversible** and **permanently deletes** the existing certificate from your Apple Developer account. Binaries signed with the revoked certificate will become **unusable** and will need to be signed with a new certificate. Before revoking your certificates, make absolutely sure that this **will not affect your workflows**.
+Please keep in mind that if a certificate is revoked, this does not mean it will be automatically renewed. The revocation process is **irreversible** and **permanently deletes** the existing certificate from your Apple Developer account. Binaries signed with the revoked certificate will **no longer be valid** and will need to be signed with a new certificate. Before revoking your certificates, make absolutely sure that this **will not affect your workflows**.
 
 :::
 
