@@ -96,7 +96,7 @@ If you are using React Native version **0.75 or earlier**, you need to use the *
 
 | React Native Version(s) | SDK | Supporting CodePush Version(s) |
 | --- | --- | --- |
-| \<v0.76 | [`microsoft/code-push-react-native`](https://github.com/microsoft/react-native-code-push) | Use Microsoft SDK |
+| \<v0.76 | [`microsoft/react-native-code-push`](https://github.com/microsoft/react-native-code-push) | Use Microsoft SDK |
 | v0.76, v0.77, v0.78, v0.79 | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.0.3+ (Available for Old/New Architecture) |
 | v0.80 | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.0.4+ (Available for Old/New Architecture) |
 | v0.81 | [`@appcircle/react-native-code-push`](https://www.npmjs.com/package/@appcircle/react-native-code-push) | v0.1.0+ (Available for Old/New Architecture) |
