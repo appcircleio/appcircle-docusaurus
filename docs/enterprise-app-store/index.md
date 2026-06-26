@@ -33,6 +33,10 @@ There are several ways to create an Enterprise App Store Profile. You can either
 
 <ContentRef url="/enterprise-app-store/enterprise-app-store-profile">Enterprise App Store Profile</ContentRef>
 
+## [Binary Information](/enterprise-app-store/binary-information)
+
+This window provides information about your binary, including the provisioning profile type, certificate name, and build details, such as the branch and logs. Also you can compare the current binary with another one of your choice.
+
 ## [Re-sign Binary](/enterprise-app-store/resign-binary)
 
 Enterprise App Store Re-Sign & Auto-Resign enables re-signing and automatic re-signing of iOS and Android applications distributed via the Enterprise App Store.

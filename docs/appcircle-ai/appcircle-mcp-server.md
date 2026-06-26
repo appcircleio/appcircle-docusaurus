@@ -143,6 +143,13 @@ No. Read-only access is enough for listing builds, profiles, and reports. Grant 
 
 No. You can connect to the **remote host** at `https://mcp.appcircle.io` and send your Appcircle token with each request; no local install is required. If you prefer to run the server locally (stdio, streamable-http, or Docker), see the [documentation](https://github.com/appcircleio/appcircle-mcp?tab=readme-ov-file#appcircle-mcp-server) for running modes and client configuration.
 
+### Is the Appcircle MCP server available in public registries?
+
+Yes. The Appcircle MCP server is listed in public MCP directories, including:
+
+- [Official MCP Registry](https://registry.modelcontextprotocol.io/?q=appcircle) (search for Appcircle)
+- [Community-driven registry (mcpservers.org)](https://mcpservers.org/servers/appcircleio/appcircle-mcp)
+
 ### Where do I find installation steps for my Appcircle MCP client?
 
 Client-specific installation and setup guides are in the [Installation Guides](https://github.com/appcircleio/appcircle-mcp#installation). Follow the guide for your client (Claude, Cursor, Codex, VS Code, etc.) to add the Appcircle MCP Server and configure your token.

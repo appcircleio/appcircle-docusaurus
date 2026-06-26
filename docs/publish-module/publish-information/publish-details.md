@@ -3,7 +3,7 @@ title: Publish Details
 description: Learn how to view the details of the publish flow in Appcircle
 slug: /publish-to-stores-module/publish-information/publish-details
 tags: [publish, publish details, publish flow]
-sidebar_position: 2
+sidebar_position: 7
 ---
 
 # Publish Details

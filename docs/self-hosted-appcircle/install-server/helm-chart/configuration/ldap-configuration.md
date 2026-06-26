@@ -100,17 +100,27 @@ If you don't define it or it has an unknown value, it is assumed to be `decisive
 
 #### Affirmative
 
-When `userLookupDecisionStrategy` is set to "affirmative", the LDAP authentication process will check all LDAP settings, even if the user is found on a particular LDAP configuration. This means that if a user has multiple accounts on different LDAP configurations with different passwords, they will be able to login successfully. The authentication system will search across all LDAP configurations to find a matching username or email and validate the user's password, allowing the user to access the system.
+:::info
+
+Starting with Appcircle server version **3.30.0**, the behavior of the `affirmative` strategy has changed. Previously, an unreachable or erroring LDAP provider would cause authentication to fail immediately. As of 3.30.0, such providers are skipped and the process continues with the remaining providers — the same behavior as `tolerant`. Because of this change, `tolerant` is now deprecated.
+
+:::
+
+When `userLookupDecisionStrategy` is set to `affirmative`, the LDAP authentication process will check all LDAP settings, even if the user is found on a particular LDAP configuration. This means that if a user has multiple accounts on different LDAP configurations with different passwords, they will be able to login successfully. The authentication system will search across all LDAP configurations to find a matching username or email and validate the user's password. If an LDAP provider is unreachable or returns an error, it is skipped and the remaining providers are still checked.
 
 #### Decisive
 
-On the other hand, when `userLookupDecisionStrategy` is set to "decisive", the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
+When `userLookupDecisionStrategy` is set to `decisive`, the LDAP authentication process will check a specific LDAP configuration for the user's username or email. If the authentication system finds the username on a particular LDAP, it will verify the user's password only on that specific LDAP configuration. If the provided password is incorrect, the authentication system will not check other LDAP configurations and will immediately return invalid credentials, denying access to the user.
 
 #### Tolerant
 
-When `userLookupDecisionStrategy` is set to "tolerant", similar to the "affirmative" strategy, it retrieves the list of LDAP providers where the user is found and checks the password sequentially. If the password is correct, the process ends. If it is incorrect, the search continues until the last LDAP provider. Unlike "affirmative", if an LDAP provider is unreachable or an error occurs, the process continues, and the faulty provider is ignored.
+:::caution
+
+The `tolerant` strategy is deprecated as of Appcircle server version **3.30.0**. The `affirmative` strategy now provides the same behavior. Use `affirmative` instead.
 
 :::
+
+When `userLookupDecisionStrategy` is set to `tolerant`, the authentication process retrieves all LDAP providers where the user is found and checks the password sequentially. If the password is correct on any provider, authentication succeeds and the process ends. If the password is incorrect, the search continues to the next provider. If an LDAP provider is unreachable or an error occurs during the check, that provider is skipped and the process continues with the remaining providers.
 
 ## Appcircle Login with LDAP
 
@@ -296,6 +306,20 @@ LDAP Role Mapping allows you to assign specific roles to users based on their LD
 #### Role and Permissions Management
 
 - Each role can have varied permissions across different modules such as Build, Deploy, and Admin settings. Configure these permissions to ensure users have appropriate access levels based on their role.
+
+
+:::info LDAP Mapping Different Role Assignment
+
+When mapping LDAP roles, a user may have different permissions in different modules. This means that the user can take action within the scope of the permissions granted in both modules. For example,
+
+| LDAP Group Name                      | Permissions                                     |
+|-------------------------------------------------|-------------------------------------------------|
+| Build Module Viewer | Only has build module viewer permission |
+| Publish Module Viewer | Only has publish module viewer permission |
+
+When the same user is added to two different groups, as mentioned above, the LDAP mapping will grant viewer permissions for that user in both modules. This means that within the scope of viewer permissions, the user will be able to view both the Publish and Build modules.
+
+:::
 
 ### LDAP Synchronization
 

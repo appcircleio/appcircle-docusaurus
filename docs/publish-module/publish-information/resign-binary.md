@@ -3,14 +3,12 @@ title: Re-sign Binary
 description: Learn how to resign your iOS application binaries within Appcircle to change provisioning profiles or app entitlements.
 slug: /publish-to-stores-module/publish-information/resign-binary
 tags: [ios, resigning, provisioning profiles]
-sidebar_position: 6
+sidebar_position: 13
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
 import RunnerUsage from '@site/docs/\_publish-steps-runner-usage-caution.mdx';
 import BillingInfoForResign from '@site/docs/\_re-sign-billing-rule.mdx';
-
-# Re-sign Binary
 
 The **Re-sign Binary** feature in Appcircle allows you to re-sign both iOS and Android application binaries. For iOS applications, you can use new provisioning profiles or modify the app's entitlements, which is useful for adjusting the app’s capabilities or updating its distribution settings without requiring a new build. For Android applications, you can re-sign your binaries with a new keystore, allowing you to update the app's signing credentials crucial for app distribution and updates.
 

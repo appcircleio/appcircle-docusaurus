@@ -19,9 +19,25 @@ The Publish to Stores module provides users with several key actions to manage t
 
 For a binary to be successfully sent for review, certain information must be completed. By using Appcircle's App Information feature, you can update the required information for binary submission.
 
+## [TestFlight Beta Information](/publish-to-stores-module/publish-information/testflight-beta-information)
+
+The **TestFlight Beta Information** allows you to manage and monitor your application's TestFlight-related metadata directly within Appcircle. From a single interface, you can review the current testing status of your binaries, manage beta app information shown to testers, and configure beta review details synchronized with App Store Connect.
+
+## [Google Play Console Information](/publish-to-stores-module/publish-information/google-play-information)
+
+For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.
+
 ## [Check Release Status](/publish-to-stores-module/publish-information/check-release-status)
 
 With the Check Release Status function, you can instantly update the status information of the version marked as Release Candidate. Make sure that one of the versions is marked as Release Candidate so that you can do a status check.
+
+## [Release This Version](/publish-to-stores-module/publish-information/release-this-version)
+
+Releasing a version on the App Store is a critical step for developers who want to make their approved app available to users. Learn how to efficiently release your app version, understand the available release options, and ensure a seamless delivery to your audience.
+
+## [Submit for Beta Testing](/publish-to-stores-module/publish-information/submit-for-beta-testing)
+
+The **Submit for Beta Testing** feature allows users to distribute uploaded binaries to Internal and External TestFlight groups directly from Appcircle. It simplifies the beta distribution workflow by enabling testers assignment, release note management, and TestFlight submission actions from a single interface without requiring a rebuild or manual navigation to App Store Connect.
 
 ## [Publish Details](/publish-to-stores-module/publish-information/publish-details)
 
@@ -30,10 +46,6 @@ This option provides an in-depth view of the selected version's publish process.
 ## [Auto Re-sign](/publish-to-stores-module/publish-information/auto-resign-configuration)
 
 The **Auto Re-sign** feature in Appcircle’s Publish to Stores module allows users to automatically re-sign their iOS (`.ipa`) and Android (`.apk`/`.aab`) applications with a different keystore, provisioning profile, or certificate before distribution.
-
-## [Google Play Console Information](/publish-to-stores-module/publish-information/google-play-information)
-
-For Android binaries, by using Appcircle's Google Play Console Information feature, you can update the required information for binary submission.
 
 ## [Marking Release Candidates](/publish-to-stores-module/publish-information/marking-release-candidates)
 
@@ -46,6 +58,14 @@ Selecting this menu item displays detailed information about the application bin
 ## [Metadata Details](/publish-to-stores-module/publish-information/meta-data-information)
 
 The Meta Data Information option provides a comprehensive overview of the version's metadata. This includes details such as the application name, version, build number, and other relevant information. Users can review and edit metadata to ensure accurate and consistent versioning across the application.
+
+## [App Release Information](/publish-to-stores-module/publish-information/app-release-information)
+
+The App Release Information section allows you to configure how your application update will be released on the App Store after approval.
+
+## [App Rollout Information](/publish-to-stores-module/publish-information/app-rollout-information)
+
+App Rollout Information allows you to configure and manage rollout strategies for Android releases published to Google Play Console.
 
 ## [Resign Binary](/publish-to-stores-module/publish-information/resign-binary)
 
@@ -66,10 +86,6 @@ This functionality enables users to download the binary directly from the Publis
 ## [Cancel Submission](/publish-to-stores-module/publish-information/cancel-submission)
 
 Canceling a submission on the App Store can be crucial for developers who need to make last-minute changes or corrections. Learn how to efficiently cancel your app submission, understand common pitfalls, and ensure a smoother app review process.
-
-## [Release This Version](/publish-to-stores-module/publish-information/release-this-version)
-
-Releasing a version on the App Store is a critical step for developers who want to make their approved app available to users. Learn how to efficiently release your app version, understand the available release options, and ensure a seamless delivery to your audience.
 
 ## [Reject Binary](/publish-to-stores-module/publish-information/reject-binary)
 
