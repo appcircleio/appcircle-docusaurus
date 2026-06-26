@@ -9,7 +9,7 @@ import ContentRef from '@site/src/components/ContentRef';
 
 # AI Assistants
 
-Appcircle provides AI assistants on both ChatGPT and Claude so you can get quick answers, step-by-step guidance, and troubleshooting support wherever you already work.
+Appcircle provides AI assistants on both ChatGPT and Claude so you can get quick answers, step-by-step guidance, and troubleshooting support wherever you already work. 
 
 ## [Appcircle GPT Assistant](/appcircle-ai/ai-assistants/appcircle-gpt-assistant)
 
