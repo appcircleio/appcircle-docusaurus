@@ -16,6 +16,38 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
+## 3.32.0 - 2026-06-29 Manual Certificate Renewal, External Webhooks, Auth Activity Log, Bug Fixes and more
+
+### 🆕 New Features
+
+- External Webhooks have been introduced for Build profiles, enabling incoming webhook connections to be monitored from the Appcircle UI. <BuildBadge/> <CloudBadge/>
+- App Review Attachment upload support has been added for iOS Publish metadata, allowing review assets to be uploaded and managed as part of the publish flow. <PublishBadge/> <CloudBadge/>
+- Manual certificate renewal support has been added for Apple certificates in Signing Identities. <SigningIdentitiesBadge/> <CloudBadge/>
+- Auth Activity Log support has been added to the Organization module, providing visibility into user login, logout, and organization switch events. <AccountBadge/> <CloudBadge/>
+- Dynamic log viewing has been added for binary re-sign processes, allowing users to access re-sign logs from supported modules while re-sign operations are in progress. <PublishBadge/> <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+
+### :muscle: Improvements
+
+- Sorting and filter options have been improved across modules that use profile lists, including Build, Publish, Testing Distribution, and Enterprise App Store profiles. <BuildBadge/> <PublishBadge/> <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- The Build History filter now includes Warning as a status option, making builds with warnings easier to find. <BuildBadge/> <CloudBadge/>
+- Report export columns and values have been improved for Testing Distribution app download reports to provide clearer and more consistent exported data. <DistributionBadge/> <ReportsBadge/> <CloudBadge/>
+- Store status check actions are now displayed in the Publish Activity Log for both Android and iOS publish profiles. <PublishBadge/> <CloudBadge/>
+- Android track information is now included in Publish Activity Log entries for store status checks. <PublishBadge/> <CloudBadge/>
+- Credential validation feedback has been improved with more consistent error handling across supported credential types. <AccountBadge/> <CloudBadge/>
+- Store credential terminology has been updated in the UI for better clarity. <AccountBadge/> <CloudBadge/>
+- Organization Activity Log action texts have been improved for clearer grammar and readability. <AccountBadge/> <CloudBadge/>
+- The Team Management UI now displays member tags more clearly, including `Member` and `You` tag placement improvements. <AccountBadge/> <CloudBadge/>
+- The role display in report views has been improved for clearer and more consistent role information. <ReportsBadge/> <CloudBadge/>
+- Users are now warned when deleting the last owner account of an organization, including information about the organizations that will be affected. <AccountBadge/> <CloudBadge/>
+- The Billing page now displays artifact storage usage in `GiB` instead of `MB` for improved consistency with storage standards. <AccountBadge/> <CloudBadge/>
+
+### 🐞 Fixes
+
+- An issue has been fixed where the refresh action could become unavailable when a selected Build branch was outside the current pagination range. <BuildBadge/> <CloudBadge/>
+- An issue has been fixed where deleting an SSO configuration could temporarily hide the LDAP option from Testing Distribution authentication settings <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where users could not remove accepted invitations from the Team Members page. <AccountBadge/> <CloudBadge/>
+- An issue has been fixed where Google Play and Huawei credential errors were not always displayed correctly on the UI. <AccountBadge/> <CloudBadge/>
+
 ## 3.31.0 - 2026-05-18 Submit For Beta Testing, App Rollout Information, Bug Fixes and more
 
 ### 🆕 New Features
