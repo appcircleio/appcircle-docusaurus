@@ -23,7 +23,7 @@ You can access Download Reports from the **Testing Distribution > Download Repor
 
 The Download Reports page lists download events for applications distributed through the Testing Portal.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa47-2.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new.png' />
 
 Each record includes:
 
@@ -48,12 +48,12 @@ Download records can be filtered by date range to help you analyze download acti
 
 The report is automatically updated when filters are applied.
 
-<Screenshot url='https://cdn.appcircle.io/docs/assets/qa47-1.png' />
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa55-new2.png' />
 
 :::info Public Link Downloads
 When an application is downloaded through an email invitation, the user information is associated with the recipient and displayed in the **User** column.
 
-If the application is downloaded using a **Public Link**, the downloader cannot be identified individually. In such cases, the **User** column displays: anonymous@appcircle.io
+If the application is downloaded using a **Public Link**, the downloader cannot be identified individually. In such cases, the **User** column displays: N/A
 :::
 
 <CSVExport />

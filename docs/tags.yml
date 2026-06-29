@@ -3232,3 +3232,8 @@ quay:
   label: "host hardening"
   description: "Documentation related to host hardening"
   permalink: "/host-hardening"
+
+"auth activity":
+  label: "auth activity"
+  description: "Documentation related to auth activity"
+  permalink: "/auth-activity"
