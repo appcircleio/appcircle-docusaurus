@@ -875,7 +875,7 @@ status = 301
 
 [[redirects]]
 from = "/marketplace/open-ai"
-to = "/appcircle-ai/appcircle-gpt-assistant"
+to = "/appcircle-ai/ai-assistants/appcircle-gpt-assistant"
 status = 301
 
 [[redirects]]
@@ -1547,4 +1547,14 @@ status = 301
 [[redirects]]
 from = "/workflows/how-to-create-a-new-workflow-step"
 to = "/workflows/how-to-create-an-integration"
+status = 301
+
+[[redirects]]
+from = "/appcircle-ai/appcircle-gpt-assistant"
+to = "/appcircle-ai/ai-assistants/appcircle-gpt-assistant"
+status = 301
+
+[[redirects]]
+from = "/appcircle-ai/appcircle-claude-assistant"
+to = "/appcircle-ai/ai-assistants/appcircle-claude-assistant"
 status = 301

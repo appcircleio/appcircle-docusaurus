@@ -3217,3 +3217,18 @@ quay:
   label: "assistant"
   description: "Documentation related to AI assistants"
   permalink: "/assistant"
+
+"external webhooks":
+  label: "external webhooks"
+  description: "Documentation related to external webhooks"
+  permalink: "/external-webhooks"
+
+"macos":
+  label: "macos"
+  description: "Documentation related to macos"
+  permalink: "/macos"
+
+"host hardening":
+  label: "host hardening"
+  description: "Documentation related to host hardening"
+  permalink: "/host-hardening"
