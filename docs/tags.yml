@@ -3217,7 +3217,12 @@ quay:
   description: "Documentation related to external webhooks"
   permalink: "/external-webhooks"
 
-"auth activity":
-  label: "auth activity"
-  description: "Documentation related to auth activity"
-  permalink: "/auth-activity"
+"macos":
+  label: "macos"
+  description: "Documentation related to macos"
+  permalink: "/macos"
+
+"host hardening":
+  label: "host hardening"
+  description: "Documentation related to host hardening"
+  permalink: "/host-hardening"

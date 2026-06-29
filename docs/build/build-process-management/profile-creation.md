@@ -89,6 +89,10 @@ Click the **Search** icon in the top right corner to open the profile search dia
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/QA45-build4.png' />
 
+:::info
+The search feature looks for matches in both Build Profile names and the associated full repository URLs. Any profile matching the entered keyword in either field will appear in the search results.
+:::
+
 #### Filter Profiles
 
 Use the **Filter** button to narrow down the profile list based on available criteria. Profiles can be filtered by:
