@@ -1,7 +1,7 @@
 ---
 title: Connection Management
 description: Learn how to manage connections in Appcircle
-tags: [build, manage, connections]
+tags: [build, manage, connections, external webhooks]
 sidebar_position: 2
 ---
 
@@ -250,3 +250,56 @@ For more information about disconnecting a build profile please refer to the rel
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/be-3112-deletepat3.png' />
+
+## External Webhooks
+
+External Webhooks can be accessed from the **Connections** page by clicking the three-dot menu in the top-right corner and selecting **External Webhooks**.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa44-1.png' />
+
+The External Webhooks page provides visibility into webhook events received from connected Git providers. It helps track webhook processing status and review webhook payload details for troubleshooting purposes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa44-2.png' />
+
+The webhook list includes the following information:
+
+- **Webhook ID**: Unique identifier of the webhook event.
+- **Provider**: The Git provider that sent the webhook.
+- **Status**: Processing result of the webhook event.
+- **Event Type**: The type of webhook event, such as push or pull request.
+- **Date**: The date and time when the webhook was received.
+
+You can use the date filter at the top of the page to narrow down the displayed webhook events.
+
+### Viewing Webhook Details
+
+Clicking a webhook entry opens the webhook detail view.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa44-3.png' />
+
+The detail page contains information about the selected webhook event, including:
+
+#### Webhook Details
+
+- **Webhook ID**
+- **Provider**
+- **Event Type**
+- **Display Date**
+- **Processing Status**
+- **IP Address**
+
+#### Payload Details
+
+The payload section displays the size of the received webhook payload and allows reviewing the payload content associated with the event.
+
+#### Profile Details
+
+If the webhook is associated with a build profile, Appcircle displays:
+
+- **Profile ID**
+- **Profile Status**
+- **Profile Name**
+- **Trigger Type**
+- **Build Triggered**
+
+These details can be useful for verifying whether a webhook event was processed successfully and whether it resulted in a build trigger.
