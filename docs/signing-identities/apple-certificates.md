@@ -147,6 +147,70 @@ You will be notified when an Apple Certificate is about to expire. You can see t
 
 :::
 
+### Manual Renew Certificate
+
+Apple Certificates have a limited validity period and must be renewed before they expire to avoid interruptions in your build and distribution workflows. Appcircle allows you to manually renew an existing Apple Certificate directly from the **Signing Identities** module, so you can generate an up-to-date certificate without having to remove and reconfigure your current one.
+
+- In order to manually renew Apple Certificate, navigate to the action button of related certificate and click the renew button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/actionCert.png' />
+
+:::info App Store Connect API Key
+
+Renewing an Apple Certificate requires a valid **App Store Connect API Key** associated with your organization, just like creating a new certificate. If no API Key has been added to your Appcircle organization, the renewal process **cannot** be completed. For more information, please refer to the [**App Store Connect API Key**](/account/my-organization/security/credentials/adding-an-app-store-connect-api-key) documentation.
+
+:::
+
+:::warning CSR File
+
+Please remember that the CSR file must be generated on Appcircle in order to successfully renew the certificate. You can find detailed instructions on how to generate the CSR file in this [document](/signing-identities/apple-certificates#creating-certificate-signing-request-file).
+
+:::
+
+:::warning Apple Certificate Generate Limit
+
+There are limits on the number of certificates that can be generated on Apple. These limits are restricted to 3 for **Distribution** and 2 for **Development** types. However, these limits may vary for create operations performed via the API. If Apple does not allow a create or renew operation via the API, a notification will appear on Appcircle.
+
+:::
+
+- Appcircle requires certain inputs for the certificate you wish to renew. The purposes of these inputs are explained below.
+
+   - **Revoke This Certificate Before Renew**: If you want to revoke the certificate you wish to renew on the Apple Developer Portal first, and then create a new certificate, you will need to enable this toggle.
+   - **CSR File**: Apple will not allow a certificate to be generated without a CSR file. Therefore, a CSR file must be selected.
+   - **Automatically Generate Password**: Appcircle will automatically generate a random password if this toggle is enabled.
+   - **Password(Optional)**: When generating a certificate, you are prompted to set a password. This password is entirely optional, and the certificate will be generated without any issues even if you do not set one.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/certCsr.png' />
+
+#### Renew Preview 
+
+Before performing the Appcircle renewal process, this panel provides the user with a preview and displays all the necessary information.
+
+ - **Existing Certificate**: This is the certificate currently in use. Once the renewal is confirmed, it will be permanently revoked and replaced by the new certificate. All associated provisioning profiles will be affected.
+ - **Replacement Certificate**: This certificate will replace the existing one once the renewal is confirmed. The current certificate will be revoked and all associated provisioning profiles will be regenerated automatically.
+ - **Affected Profiles Details**: The profiles listed below will be affected after the renew operation. This may cause build failures and errors in automatic re-sign processes.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/certPreview.png' />
+
+:::warning Affected Provision, Build and Re-sign Profiles
+
+During the Appcircle certificate renewal process, it recreates all provisioning profiles associated with the certificates. Additionally, it directly replaces the old certificates used in the re-sign and build profiles with the new ones.
+
+:::
+
+### Revoke Certificate
+
+On Appcircle, you can revoke your certificates directly without having to go to the Apple Developer Portal. To do this, use the “Revoke” action found under the certificate's “Action” button.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/revokeCert.png' />
+
+:::danger Revoke Certificate
+
+Please keep in mind that if a certificate is revoked, this does not mean it will be automatically renewed. The revocation process is **irreversible** and **permanently deletes** the existing certificate from your Apple Developer account. Binaries signed with the revoked certificate will **no longer be valid** and will need to be signed with a new certificate. Before revoking your certificates, make absolutely sure that this **will not affect your workflows**.
+
+:::
+
+
 ### Deleting a Certificate
 
 To delete an Apple Certificate, click the ... button and select the **Delete** option.
