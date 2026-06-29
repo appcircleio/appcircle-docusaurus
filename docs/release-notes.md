@@ -16,37 +16,47 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 # Latest Release Notes
 
-## 3.32.0 - 2026-06-29 Manual Certificate Renewal, External Webhooks, Auth Activity Log, Bug Fixes and more
+## 3.32.0 - 2026-06-30 Manual Certificate Renewal, External Webhooks, Auth Activity Log, Bug Fixes and more
 
 ### 🆕 New Features
 
-- External Webhooks have been introduced for Build profiles, enabling incoming webhook connections to be monitored from the Appcircle UI. <BuildBadge/> <CloudBadge/>
+- [External Webhooks](/build/manage-the-connections/reconnect-change-provider#external-webhooks) have been introduced for Build profiles, enabling incoming webhook connections to be monitored from the Appcircle UI. <BuildBadge/> <CloudBadge/>
 - App Review Attachment upload support has been added for iOS Publish metadata, allowing review assets to be uploaded and managed as part of the publish flow. <PublishBadge/> <CloudBadge/>
-- Manual certificate renewal support has been added for Apple certificates in Signing Identities. <SigningIdentitiesBadge/> <CloudBadge/>
-- Auth Activity Log support has been added to the Organization module, providing visibility into user login, logout, and organization switch events. <AccountBadge/> <CloudBadge/>
-- Dynamic log viewing has been added for binary re-sign processes, allowing users to access re-sign logs from supported modules while re-sign operations are in progress. <PublishBadge/> <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
+- [Manual certificate renewal](/signing-identities/apple-certificates#manual-renew-certificate) support has been added for Apple certificates in Signing Identities. <SigningIdentitiesBadge/> <CloudBadge/>
+- [Auth Activity Log](/account/my-organization/profile-and-team/auth-activity-log) support has been added to the Organization module, providing visibility into user login, logout, and organization switch events. <AccountBadge/> <CloudBadge/>
 
 ### :muscle: Improvements
 
 - Sorting and filter options have been improved across modules that use profile lists, including Build, Publish, Testing Distribution, and Enterprise App Store profiles. <BuildBadge/> <PublishBadge/> <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - The Build History filter now includes Warning as a status option, making builds with warnings easier to find. <BuildBadge/> <CloudBadge/>
+- A new version of CodePush SDK is now available and is recommended for apps on React Native `0.81` and above. <BuildBadge/> <CloudBadge/>
+- Added the [Downloads Report](/testing-distribution/reports) to Testing Distribution module, providing visibility into application download activity. The report helps organizations track which app versions have been downloaded, when downloads occurred, and the devices and operating system versions used for each download. <DistributionBadge/> <CloudBadge/>
 - Report export columns and values have been improved for Testing Distribution app download reports to provide clearer and more consistent exported data. <DistributionBadge/> <ReportsBadge/> <CloudBadge/>
 - Store status check actions are now displayed in the Publish Activity Log for both Android and iOS publish profiles. <PublishBadge/> <CloudBadge/>
 - Android track information is now included in Publish Activity Log entries for store status checks. <PublishBadge/> <CloudBadge/>
+- Dynamic log viewing has been added for binary re-sign processes, allowing users to access re-sign logs from supported modules while re-sign operations are in progress. <PublishBadge/> <DistributionBadge/> <EnterpriseStoreBadge/> <CloudBadge/>
 - Credential validation feedback has been improved with more consistent error handling across supported credential types. <AccountBadge/> <CloudBadge/>
 - Store credential terminology has been updated in the UI for better clarity. <AccountBadge/> <CloudBadge/>
 - Organization Activity Log action texts have been improved for clearer grammar and readability. <AccountBadge/> <CloudBadge/>
 - The Team Management UI now displays member tags more clearly, including `Member` and `You` tag placement improvements. <AccountBadge/> <CloudBadge/>
 - The role display in report views has been improved for clearer and more consistent role information. <ReportsBadge/> <CloudBadge/>
 - Users are now warned when deleting the last owner account of an organization, including information about the organizations that will be affected. <AccountBadge/> <CloudBadge/>
-- The Billing page now displays artifact storage usage in `GiB` instead of `MB` for improved consistency with storage standards. <AccountBadge/> <CloudBadge/>
+- Credentials section within the Organization module has been renamed to 'Store Credentials'. <AccountBadge/> <CloudBadge/>
+- Introduced the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), a Claude plugin skill that provides answers about Appcircle, including step-by-step instructions and troubleshooting support, along with the new Build Insights Report skill and MCP tool, which generates a CI health report covering maturity, trends, root cause, workflow quality, artifact health, and queue time. <CloudBadge/>
 
 ### 🐞 Fixes
 
 - An issue has been fixed where the refresh action could become unavailable when a selected Build branch was outside the current pagination range. <BuildBadge/> <CloudBadge/>
-- An issue has been fixed where deleting an SSO configuration could temporarily hide the LDAP option from Testing Distribution authentication settings <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where deleting an SSO configuration could temporarily hide the LDAP option from Testing Distribution authentication settings. <DistributionBadge/> <CloudBadge/>
+- An issue has been fixed where typing `()` on search bar of Testing Portal caused a UI crash. <DistributionBadge/> <CloudBadge/>
 - An issue has been fixed where users could not remove accepted invitations from the Team Members page. <AccountBadge/> <CloudBadge/>
 - An issue has been fixed where Google Play and Huawei credential errors were not always displayed correctly on the UI. <AccountBadge/> <CloudBadge/>
+
+### :warning: Breaking Changes
+
+- The Billing page now displays artifact storage usage in `GiB` instead of `MB` for improved consistency with storage standards. <AccountBadge/> <CloudBadge/>
+- The App Versions Report and App Sharing Report tabs have been removed from the Reports section of Testing Distribution module. <DistributionBadge/> <ReportsBadge/> <CloudBadge/>
+
 
 ## 3.31.0 - 2026-05-18 Submit For Beta Testing, App Rollout Information, Bug Fixes and more
 
