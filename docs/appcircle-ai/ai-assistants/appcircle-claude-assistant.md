@@ -2,7 +2,7 @@
 title: Appcircle Claude Assistant
 description: Use the Appcircle Claude Plugin to connect Claude to the Appcircle platform with MCP tools and Appcircle-aware skills.
 tags: [appcircle ai, claude, assistant]
-sidebar_position: 4
+sidebar_position: 3
 ---
 
 # Appcircle Claude Assistant
