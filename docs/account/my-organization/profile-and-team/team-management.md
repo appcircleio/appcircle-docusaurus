@@ -2,7 +2,7 @@
 title: Team Management
 description: Manage team members and roles within Appcircle organizations, including ownership, adding/removing members, and assigning module-based roles to ensure effective collaboration.
 tags: [team, management, roles, permissions, organization]
-sidebar_position: 4
+sidebar_position: 2
 ---
 
 import ContentRef from '@site/src/components/ContentRef';

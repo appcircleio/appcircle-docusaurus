@@ -125,6 +125,78 @@ webhook:
   replicaCount: 2
 ```
 
+## Installation Modes
+
+Starting from server version **3.30.0**, the Appcircle Helm chart supports deploying components across separate network zones using `global.tags.frontend` and `global.tags.backend` flags. Three modes are supported: Full (default), Internal Zone, and External Zone.
+
+For detailed guidance on configuring each mode, see the [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes) documentation.
+
+## Vanilla Image Variants
+
+Appcircle images ship in two variants:
+
+- **Chiseled** (default) — distroless, smaller footprint.
+- **Vanilla** — full base OS, easier for debugging and `exec` access.
+
+To switch all eligible services to the vanilla variant, set the following in your `values.yaml`:
+
+```yaml
+global:
+  imageUseVanillaVariants: true
+```
+
+To override only a specific service:
+
+```yaml
+build:
+  image:
+    useVanillaVariants: true
+```
+
+:::info
+Not all images support vanilla variants. Eligible images include: `agentcacheservice`, `codepushservice`, `codepushproxyservice`, `dashboardserver`, `distributionserver`, `licenseserver`, `notificationserver`, `otpservice`, `privateapigateway`, `reportserver`, `resignservice`, `resourceserver`, `schedulemanagerservice`, `storeadminservice`, `storeapiservice`, `storereportservice`, `taskserver`, `testeradminservice`, `testerapiservice`, `uiserver`, and `webhookservice`. Infrastructure images (Keycloak, Redis, Kafka, MinIO, Vault, PostgreSQL) are not affected.
+:::
+
+## .NET Service Logging Configuration
+
+Starting from server version **3.30.0**, logging and health-check paths for all .NET-based microservices can be configured globally. These settings inject `ASPNETCORE_*` environment variables into every .NET service deployment.
+
+```yaml
+global:
+  dotnet:
+    logging:
+      minLevel: "Info"        # Trace | Debug | Info | Warn | Error | Fatal
+      ignoreHealthLogs: true  # Suppress health-check endpoint log lines
+      ignoreDeepHealthLogs: true
+    health:
+      path: "/health"
+      deepPath: "/health/deep"
+```
+
+To override settings for a specific service, add a `logging` and `health` block under that service's key:
+
+```yaml
+build:
+  logging:
+    minLevel: "Debug"
+  health:
+    deepPath: "/custom/deep-health"
+```
+
+The following environment variables are set on each eligible .NET service:
+
+| Environment Variable                   | Controlled By                           |
+| -------------------------------------- | --------------------------------------- |
+| `ASPNETCORE_LOG_MIN_LEVEL`             | `global.dotnet.logging.minLevel`        |
+| `ASPNETCORE_IGNORE_HEALTH_LOGS`        | `global.dotnet.logging.ignoreHealthLogs`|
+| `ASPNETCORE_IGNORE_DEEP_HEALTH_LOGS`   | `global.dotnet.logging.ignoreDeepHealthLogs` |
+| `ASPNETCORE_HEALTH_PATH`               | `global.dotnet.health.path`             |
+| `ASPNETCORE_DEEP_HEALTH_PATH`          | `global.dotnet.health.deepPath`         |
+
+:::note
+These settings apply to all .NET subcharts: `agentcache`, `apigateway`, `appparser`, `build`, `codepush-proxy`, `distribution-*`, `license`, `notification`, `otp`, `publish`, `reporting`, `resign`, `resource`, `schedulemanager`, `signingidentity`, `store-*`, `storesubmit`, `taskserver`, and `webhook`. The `codepush` server (Node.js), `web-app`, `web-event`, and Keycloak are not affected.
+:::
+
 ## Applying Configuration Changes
 
 <ApplyHelmConfigurationChanges />
@@ -140,10 +212,17 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.appEnvironment`                                       | Specifies the application environment (e.g., Development, Production).                               | 'Production'                  |
 | `global.imageRegistry`                                        | The Docker registry where container images are stored.                                               | 'europe-west1-docker.pkg.dev' |
 | `global.imageRepositoryPath`                                  | The path within the Docker registry for the application's images.                                    | 'appcircle/docker-registry'   |
-| `global.imageTag`                                             | The specific tag of the Docker image to use.                                                         | 'v3.23.2'                     |
+| `global.imageTag`                                             | The specific tag of the Docker image to use.                                                         | 'v3.30.0'                     |
+| `global.imageUseVanillaVariants`                              | When `true`, eligible service images use the full-OS vanilla variant instead of the default chiseled (distroless) variant. | `false`          |
 | `global.imagePullSecrets`                                     | Secrets used to authenticate with private container registries.                                      | [ 'containerregistry' ]       |
 | `global.ingressClassName`                                     | Specifies the ingress class name used for all application ingresses.                                 | 'appcircle'                   |
 | `global.defaultStorageClass`                                  | The default storage class used for persistent volumes in the application.                            | -                             |
+| `global.tags.frontend`                                        | Deploys External Zone components (`store-web`, `distribution-testerweb`, `codepush-proxy`). See [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes). | `true` |
+| `global.tags.backend`                                         | Deploys Internal Zone components (all backend microservices, `web-app`, `web-event`, infrastructure). See [Installation Modes](/self-hosted-appcircle/install-server/helm-chart/installation/installation-modes). | `true` |
+| `global.rbac.create`                                          | Creates RBAC resources (ClusterRoles, RoleBindings) required for the Appcircle services.            | `false`                       |
+| `global.authProxy.enabled`                                    | Enables the bundled Nginx auth-proxy for External Zone deployments. Must not be enabled in Full or Internal Zone mode. | `false`          |
+| `global.externalApiGateway.enabled`                           | Enables routing External Zone service calls through a customer-owned API gateway. Applicable in External Zone mode only. | `false`      |
+| `global.externalApiGateway.url`                               | URL of the customer-owned API gateway used in External Zone mode.                                    | `""`                          |
 | `global.urls.domainName`                                      | The domain name used for the application (e.g., .example.com).                                       | -                             |
 | `global.urls.scheme`                                          | The URL scheme used for the application (e.g., http or https).                                       | 'http'                        |
 | `global.urls.auth.subdomain`                                  | Subdomain used for the authentication service.                                                       | 'auth'                        |
@@ -154,6 +233,13 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `global.urls.store.subdomain`                                 | Subdomain used for the store service.                                                                | 'store'                       |
 | `global.urls.webEventRedis.subdomain`                         | Subdomain used for the web event Redis service.                                                      | 'kvs'                         |
 | `global.urls.resource.subdomain`                              | Subdomain used for the resource service.                                                             | 'resource'                    |
+| `global.urls.codepush.subdomain`                              | Subdomain used for the CodePush service.                                                             | 'codepush'                    |
+| `global.urls.mcp.subdomain`                                   | Subdomain used for the MCP service.                                                                  | 'mcp'                         |
+| `global.dotnet.logging.minLevel`                              | Minimum log level for all .NET services. One of: `Trace`, `Debug`, `Info`, `Warn`, `Error`, `Fatal`. | `"Info"`                     |
+| `global.dotnet.logging.ignoreHealthLogs`                      | When `true`, suppresses health-check endpoint log lines on .NET services.                            | `true`                        |
+| `global.dotnet.logging.ignoreDeepHealthLogs`                  | When `true`, suppresses deep health-check endpoint log lines on .NET services.                       | `true`                        |
+| `global.dotnet.health.path`                                   | Health-check endpoint path for .NET services.                                                        | `"/health"`                   |
+| `global.dotnet.health.deepPath`                               | Deep health-check endpoint path for .NET services.                                                   | `"/health/deep"`              |
 | `global.mail.provider`                                        | Mail provider to use (e.g., MailKitSMTP, SMTP ).                                                     | 'MailKitSMTP'                 |
 | `global.mail.smtp`                                            | SMTP configuration details.                                                                          | -                             |
 | `global.mail.smtp.host`                                       | SMTP server hostname.                                                                                | -                             |
@@ -234,6 +320,8 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `auth.auth-postgresql.auth.username`                          | Username for the PostgreSQL database.                                                                | 'keycloak'                    |
 | `auth.auth-postgresql.auth.database`                          | The name of the PostgreSQL database to create.                                                       | 'keycloak'                    |
 | `kafka.heapOpts`                                              | JVM heap options for Kafka.                                                                          | '-Xmx1408m -Xms512m'          |
+| `kafka.kraftVersion`                                          | KRaft metadata version used by Kafka. Starting from Appcircle server 3.30.0, Kafka runs in KRaft (ZooKeeper-free) mode. | `0`            |
+| `kafka.clusterId`                                             | Unique cluster identifier for Kafka KRaft mode.                                                      | `'appcircle-kafka'`           |
 | `kafka.controller.replicaCount`                               | Number of Kafka controller replicas.                                                                 | 3                             |
 | `kafka.controller.resourcesPreset`                            | Resource preset for the Kafka controller.                                                            | 'medium'                      |
 | `kafka.controller.persistence.enabled`                        | Enables persistence for Kafka controller.                                                            | true                          |
@@ -241,12 +329,8 @@ To deploy the Appcircle server with customized parameters, refer to the basic `v
 | `kafka.listeners.client.protocol`                             | Protocol used for Kafka client listener.                                                             | 'PLAINTEXT'                   |
 | `kafka.listeners.controller.protocol`                         | Protocol used for Kafka controller listener.                                                         | 'PLAINTEXT'                   |
 | `kafka.listeners.interbroker.protocol`                        | Protocol used for Kafka inter-broker communication.                                                  | 'PLAINTEXT'                   |
-| `kafka.metrics.kafka.enabled`                                 | Enables Kafka metrics.                                                                               | false                         |
-| `kafka.metrics.jmx.enabled`                                   | Enables JMX metrics for Kafka.                                                                       | false                         |
-| `kafka.zookeeper.auth.enabled`                                | Enables authentication for ZooKeeper.                                                                | false                         |
-| `kafka.zookeeper.metrics.enabled`                             | Enables metrics for ZooKeeper.                                                                       | false                         |
 | `kafka.client.protocol`                                       | Protocol used by Kafka clients.                                                                      | 'PLAINTEXT'                   |
-| `kafka.extraConfig`                                           | Additional configuration file for Kafka.                                                             | -                             |
+| `kafka.overrideConfiguration`                                 | Map of additional Kafka broker configuration properties (replaces the deprecated `kafka.extraConfig`). | -                           |
 | `webeventredis.enabled`                                       | Enables WebEventRedis.                                                                               | true                          |
 | `webeventredis.tls.enabled`                                   | Enables TLS for WebEventRedis.                                                                       | false                         |
 | `webeventredis.tls.existingSecret`                            | References an existing TLS secret for WebEventRedis.                                                 | 'appcircle-tls-wildcard'      |

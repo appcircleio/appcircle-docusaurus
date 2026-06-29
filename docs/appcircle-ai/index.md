@@ -17,8 +17,8 @@ The Appcircle MCP Server exposes Appcircle platform capabilities through the Mod
 
 <ContentRef url="/appcircle-ai/appcircle-mcp-server">Appcircle MCP Server</ContentRef>
 
-## [Appcircle GPT Assistant](/appcircle-ai/appcircle-gpt-assistant)
+## [AI Assistants](/appcircle-ai/ai-assistants)
 
-Use the Appcircle GPT Assistant in the OpenAI Marketplace for quick answers, step-by-step guidance, and troubleshooting support.
+Use the Appcircle GPT Assistant and Appcircle Claude Assistant for quick answers, step-by-step guidance, and troubleshooting support.
 
-<ContentRef url="/appcircle-ai/appcircle-gpt-assistant">Appcircle GPT Assistant</ContentRef>
+<ContentRef url="/appcircle-ai/ai-assistants">AI Assistants</ContentRef>

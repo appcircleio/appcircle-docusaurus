@@ -3201,3 +3201,23 @@ quay:
   label: "supported browsers"
   description: "Documentation related to supported browsers"
   permalink: "/supported-browsers"
+
+"claude":
+  label: "claude"
+  description: "Documentation related to Claude"
+  permalink: "/claude"
+
+"assistant":
+  label: "assistant"
+  description: "Documentation related to AI assistants"
+  permalink: "/assistant"
+
+"external webhooks":
+  label: "external webhooks"
+  description: "Documentation related to external webhooks"
+  permalink: "/external-webhooks"
+
+"auth activity":
+  label: "auth activity"
+  description: "Documentation related to auth activity"
+  permalink: "/auth-activity"
