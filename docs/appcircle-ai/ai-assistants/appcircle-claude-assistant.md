@@ -19,6 +19,7 @@ https://github.com/appcircleio/appcircle-claude-plugin
 | Skill | Purpose |
 |-------|---------|
 | `appcircle:doc-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
+| `appcircle:build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool |
 
 ## How to Use Appcircle Claude Assistant
 
