@@ -3216,3 +3216,8 @@ quay:
   label: "external webhooks"
   description: "Documentation related to external webhooks"
   permalink: "/external-webhooks"
+
+"auth activity":
+  label: "auth activity"
+  description: "Documentation related to auth activity"
+  permalink: "/auth-activity"
