@@ -23,5 +23,7 @@ Current headlines and the actions you can complete are listed below:
 - [**Organization Management**](/account/my-organization/profile-and-team/organization-management)
 - [**Team Management**](/account/my-organization/profile-and-team/team-management)
 - [**Role Management**](/account/my-organization/profile-and-team/role-management)
+- [**Organization Activity**](/account/my-organization/profile-and-team/organization-activity)
+- [**Auth Activity**](/account/my-organization/profile-and-team/auth-activity-log)
 
 In order to see the details, check the submenu of this documentation page.

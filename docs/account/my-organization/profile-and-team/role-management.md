@@ -17,7 +17,7 @@ tags:
     billing management,
     third-party connections,
   ]
-sidebar_position: 5
+sidebar_position: 3
 ---
 
 # Role Management
