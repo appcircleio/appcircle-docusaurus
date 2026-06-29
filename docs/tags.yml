@@ -3182,6 +3182,7 @@ quay:
   label: "rollout information"
   description: "Documentation related to rollout information"
   permalink: "/rollout-information"
+
 "beta":
   label: "beta"
   description: "Documentation related to beta"
@@ -3201,6 +3202,11 @@ quay:
   label: "supported browsers"
   description: "Documentation related to supported browsers"
   permalink: "/supported-browsers"
+
+"download reports":
+  label: "download reports"
+  description: "Documentation related to download reports"
+  permalink: "/download-reports"
 
 "claude":
   label: "claude"
@@ -3226,3 +3232,8 @@ quay:
   label: "host hardening"
   description: "Documentation related to host hardening"
   permalink: "/host-hardening"
+
+"auth activity":
+  label: "auth activity"
+  description: "Documentation related to auth activity"
+  permalink: "/auth-activity"
