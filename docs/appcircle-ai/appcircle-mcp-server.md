@@ -39,7 +39,7 @@ The server exposes the following toolsets. Each toolset groups related tools (fo
 | `testing_distribution` | Testing distribution profiles and distribution details |
 | `publish_to_stores` | Publish profiles and store publishing operations |
 | `enterprise_app_store` | Enterprise app store profiles and store details |
-| `report` | Reporting: build history, distribution, signing, publish status, and related reports |
+| `report` | Reporting: build history, build insights, distribution, signing, publish status, and related reports |
 
 You can exclude one or more toolsets when running the server (via environment variable or CLI) so that only the tools you need are exposed. See how you can [exclude toolsets](https://github.com/appcircleio/appcircle-mcp?tab=readme-ov-file#toolsets).
 
@@ -92,6 +92,7 @@ You can exclude one or more toolsets when running the server (via environment va
 | Tool | Description | Permission |
 |------|-------------|------------|
 | `get_build_history_report` | Get build history report with pagination and optional filters (date range, build profile, organization). | Viewer |
+| `get_build_insights_report` | Get an aggregated Build Insights Report over build history: health snapshot and trends, root cause, artifact health, workflow quality, queue time, and maturity assessment. Defaults to the last 30 days; supports optional date range, section filtering, and sub-organization scope. | Viewer |
 | `get_signing_report` | Get signing report with pagination and optional filters (date range, organization, OS, build status). | Viewer |
 | `get_distribution_app_version_report` | Get daily usage report for distributed app versions with pagination and filters (date range, profile, OS, organization). | Viewer |
 | `get_distribution_sent_report` | Get daily usage report for distributed app sharing with pagination and filters (date range, profile, OS, organization). | Viewer |
