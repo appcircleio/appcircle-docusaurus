@@ -43,6 +43,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - Users are now warned when deleting the last owner account of an organization, including information about the organizations that will be affected. <AccountBadge/> <CloudBadge/>
 - Credentials section within the Organization module has been renamed to 'Store Credentials'. <AccountBadge/> <CloudBadge/>
 - A Password visibility toggle has been added to Appcircle login screen. <AccountBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest RC release of Xcode `26.6` `(RC 2)` installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of Xcode `27.0` installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release.
 - Introduced the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), a Claude plugin skill that provides answers about Appcircle, including step-by-step instructions and troubleshooting support, along with the new Build Insights Report skill and MCP tool, which generates a CI health report covering maturity, trends, root cause, workflow quality, artifact health, and queue time. <CloudBadge/>
 
 ### 🐞 Fixes
