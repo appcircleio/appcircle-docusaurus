@@ -38,6 +38,8 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - A UI improvement has been made on the Apple Profiles list regarding an incorrect name. <SigningIdentitiesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - Character limitations and validation checks have been implemented for Publish and Build Variable Group key values on the UI. <EnvironmentVariablesBadge/> <CloudBadge/> <SelfHostedBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest RC release of Xcode 26.6 installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
+- Appcircle macOS build VM (guest) images are now hardened by default. The disposable runner VM images apply a SIP-safe security and debloat baseline that lowers idle CPU/RAM usage and outbound telemetry while keeping Xcode, code signing, and notarization fully functional. No action is required to benefit from this change. <InfrastructureBadge/> <CloudBadge/> <SelfHostedBadge/>
+- A [macOS host hardening](/self-hosted-appcircle/self-hosted-runner/configure-runner/macos-host-hardening) guide and `harden-macos-host.sh` script have been added for self-hosted users to apply a safe security baseline to the physical macOS machine that runs their build VMs. Based on a subset of the CIS macOS Level 1 benchmark, the script tightens the firewall, login window, sharing services, and telemetry without breaking runner connectivity or code signing. <InfrastructureBadge/> <SelfHostedBadge/>
 
 ### 🐞 Fixes
 
