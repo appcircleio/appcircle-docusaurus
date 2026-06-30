@@ -15,7 +15,8 @@ If your selected pool from config is "Appcircle macOS Pool (arm64)", there are s
 
 | Xcode Selection | macOS Version |
 | ------- | ----- |
-| 26.3.x or later | Tahoe `26.3.2` |
+| 27.0.x | Tahoe `26.5.1` |
+| 26.3.x - 26.6.x | Tahoe `26.3.2` |
 | 16.3.x - 26.3.x | Sequoia `15.6.1` / Sequoia `15.4.1` |
 | 16.0.x - 16.2.x | Sequoia `15.6.1` / Sequoia `15.4.1` / Sonoma `14.5` |
 | 14.3.x - 15.4.x | Sonoma `14.5` |
@@ -32,7 +33,7 @@ Please note that virtual machines are wiped off after a build is executed (no ma
 
 ## Available Xcode Versions
 
-Our macOS runners have Xcode versions 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
+Our macOS runners have Xcode versions 27.0.x, 26.6.x, 26.5.x, 26.4.x, 26.3.x, 26.2.x, 26.1.x, 26.0.x, 16.4.x, 16.3.x, 16.2.x, 16.1.x, 16.0.x, 15.4.x, 15.3.x, 15.2.x, 15.1.x, 15.0.x, 14.3.x available.
 
 The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcode versions below:
 
@@ -42,6 +43,14 @@ The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.3.2`) stack has the Xcod
 | 26.5 | `17F42` |
 | 26.4.1 | `17E202` |
 | 26.3 | `17C529` |
+
+The "Appcircle macOS Pool (arm64)" macOS **Tahoe** (`26.5.1`) stack has the Xcode versions below:
+
+| Version | Build |
+| ------- | ----- |
+| 27.0 | `27A5209h` |
+| 26.6 | `17F113` |
+| 26.5 | `17F42` |
 
 The "Appcircle macOS Pool (arm64)" macOS **Sequoia** (`15.6.1`) stack has the Xcode versions below:
 
@@ -87,38 +96,38 @@ There are many pre-installed packages on virtual machines. You can get a full li
 
 Here are some of the most important packages installed in our iOS build runners used for iOS builds:
 
-| Package            | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` | macOS Tahoe `26.3.2` |
-| ------------------ | -------------- | -------------- | -------------- | -------------- |
-| Bash               | 3.2.57         | 3.2.57 | 3.2.57 | 5.3.9 |
-| Bundle             | 2.4.19         | 2.4.19 | 2.7.2 | 2.4.19 |
-| Carthage           | 0.39.1         | 0.40.0 | 0.40.0 | 0.40.0 |
-| Curl               | 8.6.0          | 8.7.1 | 8.7.1 | 8.7.1 |
-| Homebrew           | 4.3.5          | 4.5.1 | 4.6.16 | 5.1.0 |
-| Java (OpenJDK)     | 17.0.9         | 17.0.9 | 17.0.9 | 17.0.12 |
-| Gem                | 3.4.19         | 3.4.19 | 3.4.19 | 3.4.19 |
-| Fastlane           | 2.220.0        | 2.227.2 | 2.228.0 | 2.232.2 |
-| Git                | 2.45.2         | 2.49.0 | 2.51.0 | 2.53.0 |
-| Git LFS            | 3.5.1          | 3.6.1 | 3.7.0 | 3.7.1 |
-| Gzip (Apple)       | 430.100.5      | 457.100.3 | 457.140.3 | 475 |
-| LibreSSL (OpenSSL) | 3.3.6          | 3.3.6 | 3.3.6 | 3.3.6 |
-| ImageMagick        | 7.1.1-33       | 7.1.1-47 | 7.1.2-5 | 7.1.2-17 |
-| Maven              | 3.9.7          | 3.9.9 | 3.9.11 | 3.9.14 |
-| N                  | 9.2.3          | 10.1.0 | 10.2.0 | 10.2.0 |
-| Node               | 18.20.3        | 18.20.8 | 18.20.8 | 22.22.1 |
-| Npm                | 10.7.0         | 10.8.2 | 10.8.2 | 10.9.4 |
-| Perl               | 5.34.1         | 5.34.1 | 5.34.1 | 5.34.1 |
-| Pod                | 1.15.2         | 1.16.2 | 1.16.2 | 1.16.2 |
-| Pip                | 24.0           | 25.0.1 | 25.2 | 26.0 |
-| Python             | 3.12.3         | 3.13.3 | 3.14.0 | 3.14.3 |
-| Rake               | 13.0.6         | 13.0.6 | 13.3.0 | 13.0.6 |
-| Ruby               | 3.2.3          | 3.2.3 | 3.2.3 | 3.2.3 |
-| Rbenv              | 1.2.0          | 1.3.2 | 1.3.2 | 1.3.2 |
-| Sdkman             | 5.18.2         | 5.19.0 | 5.20.0 | 5.21.0 |
-| Slather            | 2.8.0          | 2.8.5 | 2.8.5 | 2.8.5 |
-| Unzip              | 6.00           | 6.00 | 6.00 | 6.00 |
-| Xcodeproj          | 1.27.0         | 1.27.0 | 1.27.0 | 1.27.0 |
-| Yarn               | 1.22.22        | 1.22.22 | 1.22.22 | 1.22.22 |
-| Zip                | 3.0            | 3.0 | 3.0 | 3.0 |
+| Package            | macOS Sonoma | macOS Sequoia `15.4.1` | macOS Sequoia `15.6.1` | macOS Tahoe `26.3.2` | macOS Tahoe `26.5.1` |
+| ------------------ | -------------- | -------------- | -------------- | -------------- | -------------- |
+| Bash               | 3.2.57         | 3.2.57 | 3.2.57 | 5.3.9 | 5.3.15 |
+| Bundle             | 2.4.19         | 2.4.19 | 2.7.2 | 2.4.19 | 2.6.9 |
+| Carthage           | 0.39.1         | 0.40.0 | 0.40.0 | 0.40.0 | 0.40.0 |
+| Curl               | 8.6.0          | 8.7.1 | 8.7.1 | 8.7.1 | 8.7.1 |
+| Homebrew           | 4.3.5          | 4.5.1 | 4.6.16 | 5.1.0 | 6.0.2 |
+| Java (OpenJDK)     | 17.0.9         | 17.0.9 | 17.0.9 | 17.0.12 | 17.0.19 |
+| Gem                | 3.4.19         | 3.4.19 | 3.4.19 | 3.4.19 | 3.6.9 |
+| Fastlane           | 2.220.0        | 2.227.2 | 2.228.0 | 2.232.2 | 2.236.1 |
+| Git                | 2.45.2         | 2.49.0 | 2.51.0 | 2.53.0 | 2.54.0 |
+| Git LFS            | 3.5.1          | 3.6.1 | 3.7.0 | 3.7.1 | 3.7.1 |
+| Gzip (Apple)       | 430.100.5      | 457.100.3 | 457.140.3 | 475 | 479 |
+| LibreSSL (OpenSSL) | 3.3.6          | 3.3.6 | 3.3.6 | 3.3.6 | 3.3.6 |
+| ImageMagick        | 7.1.1-33       | 7.1.1-47 | 7.1.2-5 | 7.1.2-17 | 7.1.2-26 |
+| Maven              | 3.9.7          | 3.9.9 | 3.9.11 | 3.9.14 | 3.9.16 |
+| N                  | 9.2.3          | 10.1.0 | 10.2.0 | 10.2.0 | 10.2.0 |
+| Node               | 18.20.3        | 18.20.8 | 18.20.8 | 22.22.1 | 22.23.1 |
+| Npm                | 10.7.0         | 10.8.2 | 10.8.2 | 10.9.4 | 10.9.8 |
+| Perl               | 5.34.1         | 5.34.1 | 5.34.1 | 5.34.1 | 5.34.1 |
+| Pod                | 1.15.2         | 1.16.2 | 1.16.2 | 1.16.2 | 1.16.2 |
+| Pip                | 24.0           | 25.0.1 | 25.2 | 26.0 | 26.1.2 |
+| Python             | 3.12.3         | 3.13.3 | 3.14.0 | 3.14.3 | 3.14.6 |
+| Rake               | 13.0.6         | 13.0.6 | 13.3.0 | 13.0.6 | 13.2.1 |
+| Ruby               | 3.2.3          | 3.2.3 | 3.2.3 | 3.2.3 | 3.4.9 |
+| Rbenv              | 1.2.0          | 1.3.2 | 1.3.2 | 1.3.2 | 1.3.2 |
+| Sdkman             | 5.18.2         | 5.19.0 | 5.20.0 | 5.21.0 | 5.23.0 |
+| Slather            | 2.8.0          | 2.8.5 | 2.8.5 | 2.8.5 | 2.8.5 |
+| Unzip              | 6.00           | 6.00 | 6.00 | 6.00 | 6.00 |
+| Xcodeproj          | 1.27.0         | 1.27.0 | 1.27.0 | 1.27.0 | 1.27.0 |
+| Yarn               | 1.22.22        | 1.22.22 | 1.22.22 | 1.22.22 | 1.22.22 |
+| Zip                | 3.0            | 3.0 | 3.0 | 3.0 | 3.0 |
 
 ### Using your own computer for build
 

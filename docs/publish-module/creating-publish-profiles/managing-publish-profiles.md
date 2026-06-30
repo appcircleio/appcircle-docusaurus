@@ -7,6 +7,8 @@ sidebar_position: 2
 ---
 
 import Screenshot from '@site/src/components/Screenshot';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 # Managing Publish Profiles
 
@@ -41,3 +43,51 @@ By deleting the Publish profile, all the application versions and Publish action
 :::
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/7140-11.png' />
+
+### Profile Listing
+
+You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same publish profiles, allowing you to choose the layout that best fits their workflow.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub1.png' />
+
+<Tabs
+defaultValue="board"
+values={[
+{ label: 'Profile Board View', value: 'board' },
+{ label: 'Profile List View', value: 'list' },
+]}
+>
+  <TabItem value="board">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub2.png' />
+  </TabItem>
+  <TabItem value="list">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub3.png' />  </TabItem>
+</Tabs>
+
+In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific publish profiles.
+
+#### Search Profiles
+
+Click the **Search** icon in the top right corner to open the profile search dialog. You can search for publish profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub4.png' />
+
+#### Filter Profiles
+
+Use the **Filter** button to narrow down the profile list based on available criteria. Profiles can be filtered by:
+
+- Target Store
+- Has RC Binary
+- Store Status
+
+Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub5.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub6.png' />
+
+#### Sort and Order Profiles
+
+The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Profile Name**, to customize how profiles are displayed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-pub2.png' />

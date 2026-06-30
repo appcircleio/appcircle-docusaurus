@@ -10,6 +10,8 @@ import ContentRef from '@site/src/components/ContentRef';
 import PatDanger from '@site/docs/\_pat-usage-workflows-danger.mdx';
 import EnvGroupSetCaution from '@site/docs/\_env-group-set-on-config-caution.mdx';
 import NewerVersionCodeCaution from '@site/docs/\_newer-version-code-caution.mdx';
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
 
 The Enterprise App Store provides a centralized platform for managing an organization’s mobile applications. This guide will outline the essential steps involved in setting up the profile, uploading application binaries, configuring profile settings, and executing actions on the uploaded binaries.
 
@@ -64,6 +66,54 @@ The above tasks can also be initiated using the Appcircle CLI. The Appcircle CLI
 You can also upload binaries from other CI tools using ready-to-use plugins.
 
 <ContentRef url="/marketplace">Appcircle Marketplace</ContentRef>
+
+## Profile Listing
+
+You can switch between **Board View** and **List View** using the view selector located at the top right of the page. Both views display the same enterprise app store profiles, allowing you to choose the layout that best fits their workflow.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas1.png' />
+
+<Tabs
+defaultValue="board"
+values={[
+{ label: 'Profile Board View', value: 'board' },
+{ label: 'Profile List View', value: 'list' },
+]}
+>
+  <TabItem value="board">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas2.png' />
+  </TabItem>
+  <TabItem value="list">
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas3.png' />  </TabItem>
+</Tabs>
+
+In addition to view options, the profile list provides search, filtering, and ordering capabilities to help users quickly locate specific enterprise app store profiles.
+
+#### Search Profiles
+
+Click the **Search** icon in the top right corner to open the profile search dialog. You can search for enterprise app store profiles by name and quickly navigate to the desired profile from the search results. It will also bring your recent search results.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas4.png' />
+
+#### Filter Profiles
+
+Use the **Filter** button to narrow down the profile list based on available criteria. Profiles can be filtered by:
+
+- Platform
+- Channel Status
+- Visibility
+
+Applied filters are displayed at the top of the page and can be removed individually when no longer needed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas5.png' />
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas6.png' />
+
+#### Sort and Order Profiles
+
+The profile list can also be organized using the available ordering options. Users can change the sorting direction and select different ordering criteria, such as **Create Date**, to customize how profiles are displayed.
+
+<Screenshot url='https://cdn.appcircle.io/docs/assets/qa45-eas2.png' />
 
 ## Profile Actions
 
