@@ -65,7 +65,7 @@ Restrict it instead of turning it off: limit access to trusted users and reach t
 On the host, download `harden-macos-host.sh` from the Appcircle CDN and make it executable:
 
 ```bash
-curl -fsSL https://cdn.appcircle.io/self-hosted/harden-macos-host.sh -o harden-macos-host.sh && \
+curl -fsSL -O https://cdn.appcircle.io/self-hosted/harden-macos-host.sh  && \
   chmod +x harden-macos-host.sh
 ```
 
