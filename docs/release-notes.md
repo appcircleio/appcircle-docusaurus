@@ -42,6 +42,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - The role display in report views has been improved for clearer and more consistent role information. <ReportsBadge/> <CloudBadge/>
 - Users are now warned when deleting the last owner account of an organization, including information about the organizations that will be affected. <AccountBadge/> <CloudBadge/>
 - Credentials section within the Organization module has been renamed to 'Store Credentials'. <AccountBadge/> <CloudBadge/>
+- A Password visibility toggle has been added to Appcircle login screen. <AccountBadge/> <CloudBadge/>
 - Introduced the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), a Claude plugin skill that provides answers about Appcircle, including step-by-step instructions and troubleshooting support, along with the new Build Insights Report skill and MCP tool, which generates a CI health report covering maturity, trends, root cause, workflow quality, artifact health, and queue time. <CloudBadge/>
 
 ### 🐞 Fixes
