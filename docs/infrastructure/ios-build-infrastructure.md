@@ -129,6 +129,19 @@ Here are some of the most important packages installed in our iOS build runners 
 | Yarn               | 1.22.22        | 1.22.22 | 1.22.22 | 1.22.22 | 1.22.22 |
 | Zip                | 3.0            | 3.0 | 3.0 | 3.0 | 3.0 |
 
+:::caution Homebrew 6 on the macOS Tahoe `26.5` stack
+
+The upcoming macOS **Tahoe `26.5.1`** stack ships **Homebrew 6.x** (up from `5.1.0` on the Tahoe `26.3.2` stack). Starting with Homebrew `6.0`, `brew` no longer installs formulae from **untrusted third-party taps** until the tap is explicitly trusted. If a [custom script](/workflows/common-workflow-steps/custom-script) step installs from a third-party tap, add a trust step first:
+
+```bash
+brew trust <user>/<tap>
+brew install <user>/<tap>/<formula>
+```
+
+Formulae from the default Homebrew taps are not affected. Node also changes on this stack: the default stays **Node 22**, with **Node 24** available via the [Install Node](/workflows/react-native-specific-workflow-steps/node-install) step.
+
+:::
+
 ### Using your own computer for build
 
 Appcircle supports using a third-party computer to perform builds. You can create your own build environment by installing the operating system and other tools and dependencies you need to tell Appcircle to use that environment to perform builds.
