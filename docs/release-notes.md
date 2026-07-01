@@ -24,6 +24,7 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - App Review Attachment upload support has been added for iOS Publish metadata, allowing review assets to be uploaded and managed as part of the publish flow. <PublishBadge/> <CloudBadge/>
 - [Manual certificate renewal](/signing-identities/apple-certificates#manual-renew-certificate) support has been added for Apple certificates in Signing Identities. <SigningIdentitiesBadge/> <CloudBadge/>
 - [Auth Activity Log](/account/my-organization/profile-and-team/auth-activity-log) support has been added to the Organization module, providing visibility into user login, logout, and organization switch events. <AccountBadge/> <CloudBadge/>
+- Introduced the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), a Claude plugin skill that provides answers about Appcircle, including step-by-step instructions and troubleshooting support, along with the new [Build Insights Report](/appcircle-ai/ai-insights) skill and MCP tool, which generates a CI health report covering maturity, trends, root cause, workflow quality, artifact health, and queue time. <CloudBadge/>
 
 ### :muscle: Improvements
 
@@ -45,7 +46,6 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 - A Password visibility toggle has been added to Appcircle login screen. <AccountBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest RC release of Xcode `26.6` `(RC 2)` installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release. <InfrastructureBadge/> <CloudBadge/>
 - The [Appcircle Standard macOS Pool (arm64)](/infrastructure/ios-build-infrastructure) has the latest Beta release of Xcode `27.0` installed on runners. We strongly recommend extensive testing of your workflows to ensure compatibility and stability with this release.
-- Introduced the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), a Claude plugin skill that provides answers about Appcircle, including step-by-step instructions and troubleshooting support, along with the new [Build Insights Report](/appcircle-ai/ai-insights) skill and MCP tool, which generates a CI health report covering maturity, trends, root cause, workflow quality, artifact health, and queue time. <CloudBadge/>
 
 ### 🐞 Fixes
 
