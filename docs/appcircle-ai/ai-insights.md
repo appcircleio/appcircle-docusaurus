@@ -20,7 +20,7 @@ The **Build Insights Report** gives you a snapshot of your CI health: build tren
 
 **With the Appcircle Claude Assistant**
 
-- Ask in natural language, for example "give me a build insights report for last month" or "how is our CI maturity."
+- Ask in natural language, for example *give me a build insights report for last month* or *how is our CI maturity*.
 - The `appcircle:build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
 
 **With Any Other MCP Client**
