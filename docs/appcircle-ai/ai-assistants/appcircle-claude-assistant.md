@@ -63,6 +63,4 @@ You can install this plugin's skills in claude.ai too. MCP tools remain Claude C
 
 5. Ask Claude an Appcircle question, for example *How do I set up automatic code signing for my iOS builds*, and Claude will use the `doc-assistant` skill to answer.
 
-To access the source code of this plugin, please use the following link:
-
-https://github.com/appcircleio/appcircle-claude-plugin
+To access the source code of this plugin, please use [this link](https://github.com/appcircleio/appcircle-claude-plugin).
