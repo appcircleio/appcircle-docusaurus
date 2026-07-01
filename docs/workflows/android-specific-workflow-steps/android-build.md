@@ -75,6 +75,12 @@ So, in order to sign your app using the keystore selected in the build configura
 
 :::
 
+:::caution Two signed packages
+
+If your project has its own signing configuration in Gradle (a `signingConfig` / gradle sign) **and** the **Android Sign** step is enabled at the same time, the build produces two separate signed APK artifacts: one from your project's Gradle signing and one from the **Android Sign** step. Both are picked up on distribution, so you will see two packages. To distribute a single package, use only one signing path: disable gradle sign for the selected build variant, **or** do not use the **Android Sign** step. See [Why two Android packages are distributed](/testing-distribution/create-or-select-a-distribution-profile#why-two-android-packages-are-distributed).
+
+:::
+
 ---
 
 To access the source code of this component, please use the following link:
