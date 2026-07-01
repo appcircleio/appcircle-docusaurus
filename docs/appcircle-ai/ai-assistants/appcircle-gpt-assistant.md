@@ -7,9 +7,7 @@ sidebar_position: 2
 
 import Screenshot from '@site/src/components/Screenshot';
 
-Appcircle provides a custom **Appcircle GPT Assistant** designed to deliver quick and clear answers, offering step-by-step guidance and troubleshooting support for users.
-
-https://chatgpt.com/g/g-686e31aa891481919ef3603325b15ae0-appcircle-assistant
+Appcircle provides a custom [**Appcircle GPT Assistant**](https://chatgpt.com/g/g-686e31aa891481919ef3603325b15ae0-appcircle-assistant) designed to deliver quick and clear answers, offering step-by-step guidance and troubleshooting support for users.
 
 
 ### How to Use Appcircle GPT Assistant
