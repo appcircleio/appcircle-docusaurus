@@ -20,9 +20,9 @@ import RedisDomainCaution from '@site/docs/self-hosted-appcircle/install-server/
 
 ### 🆕 New Features
 
-- [External Webhooks](/build/manage-the-connections/reconnect-change-provider#external-webhooks) have been introduced for Build profiles, enabling incoming webhook connections to be monitored from the Appcircle UI. <BuildBadge/> <CloudBadge/>
-- App Review Attachment upload support has been added for iOS Publish metadata, allowing review assets to be uploaded and managed as part of the publish flow. <PublishBadge/> <CloudBadge/>
 - [Manual certificate renewal](/signing-identities/apple-certificates#manual-renew-certificate) support has been added for Apple certificates in Signing Identities. <SigningIdentitiesBadge/> <CloudBadge/>
+- App Review Attachment upload support has been added for iOS Publish metadata, allowing review assets to be uploaded and managed as part of the publish flow. <PublishBadge/> <CloudBadge/>
+- [External Webhooks](/build/manage-the-connections/reconnect-change-provider#external-webhooks) have been introduced for Build profiles, enabling incoming webhook connections to be monitored from the Appcircle UI. <BuildBadge/> <CloudBadge/>
 - [Auth Activity Log](/account/my-organization/profile-and-team/auth-activity-log) support has been added to the Organization module, providing visibility into user login, logout, and organization switch events. <AccountBadge/> <CloudBadge/>
 - Introduced the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant), a Claude plugin skill that provides answers about Appcircle, including step-by-step instructions and troubleshooting support, along with the new [Build Insights Report](/appcircle-ai/ai-insights) skill and MCP tool, which generates a CI health report covering maturity, trends, root cause, workflow quality, artifact health, and queue time. <CloudBadge/>
 
