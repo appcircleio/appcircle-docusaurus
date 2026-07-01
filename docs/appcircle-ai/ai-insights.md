@@ -10,7 +10,7 @@ import Screenshot from '@site/src/components/Screenshot';
 
 # AI Insights
 
-AI Insights covers Appcircle's AI-generated reports over your build history: the Build Insights Report.
+Turn your build history into answers. AI Insights reads your CI data and generates the Build Insights Report: trends, root causes, and a maturity score at a glance.
 
 ## Build Insights Report
 
