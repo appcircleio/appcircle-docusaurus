@@ -258,7 +258,6 @@ Following this change, the related roles in the Store Submit module were removed
 - An issue was fixed where Git tags were not pushed alongside commits, ensuring tags are now included when pushing multiple local operations together. <BuildBadge/> <CloudBadge/>  <SelfHostedBadge/>
 - An issue was fixed where tag-based build triggers did not run when tags were created on older existing branches. <BuildBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where deleting an SSO configuration for Testing Distribution caused UI inconsistencies that left it appearing active on the screen. <AccountBadge/> <CloudBadge/> <SelfHostedBadge/>
-- An issue has been fixed where EAS and Tester Distribution Portal UIs ignored the OTP server’s configured expiration time and always displayed a hardcoded 5-minute countdown, ensuring the UI now respects server-defined expiry with appropriate tolerance. <AccountBadge/> <SelfHostedBadge/>
 - An issue was fixed where certain version numbers were sorted incorrectly on the Enterprise Portal. <EnterpriseStoreBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where removing binaries from a Testing Distribution profile still left the latest version number displayed on the profile card. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
 - An issue was fixed where some users were unable to switch between Testing Distribution profiles within the Testing Portal. <DistributionBadge/> <CloudBadge/> <SelfHostedBadge/>
