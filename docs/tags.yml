@@ -288,6 +288,11 @@ appcircle ai:
   description: "Documentation related to Appcircle AI"
   permalink: /appcircle-ai
 
+"ai insights":
+  label: "ai insights"
+  description: "Description for ai insights"
+  permalink: /ai-insights
+
 "appcircle assistant":
   label: "appcircle assistant"
   description: "Description for appcircle assistant"
@@ -582,6 +587,11 @@ build:
   label: "build artifacts"
   description: "Description for build artifacts"
   permalink: /build-artifacts
+
+"build insights":
+  label: "build insights"
+  description: "Description for build insights"
+  permalink: /build-insights
 
 "build configuration":
   label: "build configuration"
