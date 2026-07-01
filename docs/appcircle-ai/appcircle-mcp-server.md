@@ -92,7 +92,7 @@ You can exclude one or more toolsets when running the server (via environment va
 | Tool | Description | Permission |
 |------|-------------|------------|
 | `get_build_history_report` | Get build history report with pagination and optional filters (date range, build profile, organization). | Viewer |
-| `get_build_insights_report` | Get an aggregated Build Insights Report over build history: health snapshot and trends, root cause, artifact health, workflow quality, queue time, and maturity assessment. Defaults to the last 30 days; supports optional date range, section filtering, and sub-organization scope. See [AI Insights](/appcircle-ai/ai-insights) for the full metric reference. | Viewer |
+| `get_build_insights_report` | Get an aggregated Build Insights Report over build history: health snapshot and trends, root cause, artifact health, workflow quality, queue time, and maturity assessment. Defaults to the last 30 days; supports optional date range, section filtering, and sub-organization scope. See [Build Insights](/appcircle-ai/ai-insights/build-insights) for the full metric reference. | Viewer |
 | `get_signing_report` | Get signing report with pagination and optional filters (date range, organization, OS, build status). | Viewer |
 | `get_distribution_app_version_report` | Get daily usage report for distributed app versions with pagination and filters (date range, profile, OS, organization). | Viewer |
 | `get_distribution_sent_report` | Get daily usage report for distributed app sharing with pagination and filters (date range, profile, OS, organization). | Viewer |
