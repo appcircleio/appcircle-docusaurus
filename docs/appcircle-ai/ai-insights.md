@@ -14,12 +14,19 @@ AI Insights covers Appcircle's AI-generated reports over your build history: the
 
 ## Build Insights Report
 
-The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) to get a visual report, or call `get_build_insights_report` from any [MCP client](/appcircle-ai/appcircle-mcp-server) to get the same data as JSON.
+The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/appcircle-mcp-server) directly.
 
-### Generating a Report
+### How to Generate a Report
 
-1. **With the Appcircle Claude Assistant**: Ask in natural language, for example "give me a build insights report for last month" or "how is our CI maturity." The `appcircle:build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
-2. **With Any Other MCP Client**: Call `get_build_insights_report` directly from any MCP-compatible client (Cursor, VS Code, Codex, and so on) to get the same metrics as structured JSON, which you can read, feed into another tool, or visualize yourself.
+**With the Appcircle Claude Assistant**
+
+- Ask in natural language, for example "give me a build insights report for last month" or "how is our CI maturity."
+- The `appcircle:build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
+
+**With Any Other MCP Client**
+
+- Call `get_build_insights_report` directly from any MCP-compatible client (Cursor, VS Code, Codex, and so on).
+- You get the same metrics as structured JSON, which you can read, feed into another tool, or visualize yourself.
 
 ### Report Sections
 
