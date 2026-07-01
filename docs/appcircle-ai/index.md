@@ -22,3 +22,9 @@ The Appcircle MCP Server exposes Appcircle platform capabilities through the Mod
 Use the Appcircle GPT Assistant and Appcircle Claude Assistant for quick answers, step-by-step guidance, and troubleshooting support.
 
 <ContentRef url="/appcircle-ai/ai-assistants">AI Assistants</ContentRef>
+
+## [AI Insights](/appcircle-ai/ai-insights)
+
+Understand the Build Insights Report: health and trends, root cause, workflow quality, artifact health, queue time, and CI maturity scoring from the `get_build_insights_report` MCP tool.
+
+<ContentRef url="/appcircle-ai/ai-insights">AI Insights</ContentRef>
