@@ -1,22 +1,18 @@
 ---
-title: AI Insights
+title: Build Insights
 description: Understand the Appcircle Build Insights Report - every section and metric returned by the get_build_insights_report MCP tool, and how to generate the visual report with the Appcircle Claude Assistant.
 tags: [appcircle ai, ai insights, build insights]
-sidebar_position: 4
+sidebar_position: 1
 ---
 
 import ContentRef from '@site/src/components/ContentRef';
 import Screenshot from '@site/src/components/Screenshot';
 
-# AI Insights
-
-Turn your build history into answers. AI Insights reads your CI data and generates the Build Insights Report: trends, root causes, and a maturity score at a glance.
-
-## Build Insights Report
+# Build Insights Report
 
 The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) to get a visual report, or use the [Appcircle MCP client](/appcircle-ai/appcircle-mcp-server) directly.
 
-### How to Generate a Report
+## How to Generate a Report
 
 **With the Appcircle Claude Assistant**
 
@@ -28,11 +24,11 @@ The **Build Insights Report** gives you a snapshot of your CI health: build tren
 - Call `get_build_insights_report` directly from any MCP-compatible client (Cursor, VS Code, Codex, and so on).
 - You get the same metrics as structured JSON, which you can read, feed into another tool, or visualize yourself.
 
-### Report Sections
+## Report Sections
 
 The report has six sections.
 
-#### Maturity Assessment
+### Maturity Assessment
 
 A single CI maturity score (0-100) for the period, with a label of **Developing**, **Practicing**, **Advancing**, or **Optimizing**, and the delta against the previous period. The overall score rolls up four weighted dimensions:
 
@@ -53,7 +49,7 @@ Below the scores, a ranked **Top Improvements** list surfaces the highest-impact
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/AI-110-Build-Insights-Maturity-Assessment.png'/>
 
-#### Health Snapshot & Trends
+### Health Snapshot & Trends
 
 **Health Snapshot** is a point-in-time view of the period:
 
@@ -74,7 +70,7 @@ Below the scores, a ranked **Top Improvements** list surfaces the highest-impact
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/AI-110-Build-Insights-Trends.png'/>
 
-#### Root Cause
+### Root Cause
 
 Failure analysis for the period:
 
@@ -86,7 +82,7 @@ Failure analysis for the period:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/AI-110-Build-Insights-Root-Cause.png'/>
 
-#### Workflow Quality
+### Workflow Quality
 
 How well each profile's workflows match Appcircle's recommended flow:
 
@@ -96,12 +92,12 @@ How well each profile's workflows match Appcircle's recommended flow:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/AI-110-Build-Insights-Trends-Workflow-Quality.png'/>
 
-#### Artifact Health
+### Artifact Health
 
 - Average primary artifact size per profile for the period, as a ranked bar chart.
 - Call-outs for the profile whose artifact grew the most and the one that shrank the most compared to the previous period (when a previous-period baseline exists).
 
-#### Queue Time
+### Queue Time
 
 How long builds waited before starting, tree-wide for the period:
 
@@ -111,24 +107,24 @@ How long builds waited before starting, tree-wide for the period:
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/AI-110-Build-Insights-Artifact-Queue.png'/>
 
-### FAQ
+## FAQ
 
-#### What's the Default Time Range?
+### What's the Default Time Range?
 
 The last 30 days, compared against the 30 days before that for deltas. Pass `start_date` and `end_date` to the tool to use a different window; the tool compares it against a preceding period of the same length.
 
-#### Can I Get This Report Outside the Appcircle Claude Assistant?
+### Can I Get This Report Outside the Appcircle Claude Assistant?
 
 Yes, for the underlying data. Any MCP client can call `get_build_insights_report` and get the same metrics as JSON. The visual HTML report rendering shown on this page is produced by the `appcircle:build-insights-report` skill, which is currently exclusive to the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant).
 
-#### Why Is a Section Missing From My Report?
+### Why Is a Section Missing From My Report?
 
 A section can be absent because there was not enough build activity to compute it for the requested period (for example, no builds, no queued builds, or no profiles with a comparable previous period), which is not an error and not a zero value. It can also be absent because your [access token](/appcircle-ai/appcircle-mcp-server#authentication) lacks the required permission for the data that section depends on. Generating the full report requires a token with at least the **Manager** role. Check your token's role permissions if a section you expect to see is consistently absent.
 
-#### Does the Report Include Builds From Sub-Organizations?
+### Does the Report Include Builds From Sub-Organizations?
 
 Only if you set `include_sub_orgs` to `true` when calling the tool. It defaults to `false`.
 
-#### Why Might Workflow Quality Section Be Missing?
+### Why Might Workflow Quality Section Be Missing?
 
 Workflow Quality is computed from profiles that have at least one Push or PR trigger configured. If no profiles in the organization have Push or PR triggers set up, the section is omitted from the report.

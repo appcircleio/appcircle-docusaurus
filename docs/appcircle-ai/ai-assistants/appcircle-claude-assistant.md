@@ -16,7 +16,7 @@ The plugin registers the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-serv
 | Skill | Purpose |
 |-------|---------|
 | `appcircle:doc-assistant` | Answers Appcircle questions using official sources (`docs.appcircle.io` and `appcircle.io`) |
-| `appcircle:build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool. See [AI Insights](/appcircle-ai/ai-insights) for the full metric reference |
+| `appcircle:build-insights-report` | Renders a visual Build Insights Report (health & trends, root cause, workflow quality, artifact health, queue time, and CI maturity) from the `get_build_insights_report` MCP tool. See [Build Insights](/appcircle-ai/ai-insights/build-insights) for the full metric reference |
 
 Claude Code and claude.ai install the plugin differently, so follow the steps for the surface you use. MCP tools are only available in Claude Code for now; installing the plugin in claude.ai gets you the `doc-assistant` skill, not the MCP tools.
 
