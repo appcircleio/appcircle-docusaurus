@@ -571,6 +571,24 @@ You can also check the list of the [generated build artifacts](/build/build-proc
 
 In Android, please also check if gradle sign is being used for the selected build variant. If gradle sign works alongside with Appcircle signing, you will receive multiple APKs.
 
+#### Why two Android packages are distributed
+
+If your Android project defines its own signing in Gradle (a `signingConfig` / gradle sign) **and** the Appcircle **Android Sign** build step is enabled at the same time, the build produces two separate signed APK artifacts:
+
+1. The APK produced by your project's own Gradle signing configuration.
+2. The APK produced by Appcircle's Android Sign step.
+
+AutoDistribute picks up both artifacts and sends them to the Testing Distribution profile, so each distribution shows two packages. This happens even when the binary is sent automatically via auto-send from the build configuration.
+
+To distribute a single package, use only one signing path:
+
+- Disable gradle sign for the selected build variant, **or**
+- Do not use the Appcircle Android Sign step.
+
+:::info AAB packages
+AAB is a store-only binary format and cannot be sent to Testing Distribution or test devices directly. Use the **convert** option in [Auto Re-sign](/testing-distribution/resigning-binaries#android-auto-re-sign-configurations) to convert the AAB to an APK before distributing it to test devices.
+:::
+
 ### Deleted versions still occupy storage space
 
 The master version of any artifact deployed from the Build to the Testing Distribution is stored within the build artifacts section. Once you delete such a version from the Testing Distribution, only the reference is removed and the binary is still available within the build artifacts of the related build. You also need to remove the binary from the build artifacts to save storage.
