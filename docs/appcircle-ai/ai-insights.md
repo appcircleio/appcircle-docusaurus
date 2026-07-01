@@ -14,27 +14,12 @@ AI Insights covers Appcircle's AI-generated reports over your build history: the
 
 ## Build Insights Report
 
-The **Build Insights Report** is an aggregated report over your build history: health and trends, root cause analysis, workflow quality, artifact health, queue time, and an overall CI maturity score. It is computed server-side by the `get_build_insights_report` tool on the [Appcircle MCP Server](/appcircle-ai/appcircle-mcp-server).
-
-Any MCP client can call `get_build_insights_report` directly and get this data back as structured JSON. The visual HTML report shown throughout this page is produced by the `appcircle:build-insights-report` skill, which is currently available through the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) only. Other clients (Cursor, VS Code, Codex, and so on) can call the same tool and read or visualize the metrics themselves.
+The **Build Insights Report** gives you a snapshot of your CI health: build trends, failure root causes, workflow quality, artifact health, queue time, and an overall maturity score. Use the [Appcircle Claude Assistant](/appcircle-ai/ai-assistants/appcircle-claude-assistant) to get a visual report, or call `get_build_insights_report` from any [MCP client](/appcircle-ai/appcircle-mcp-server) to get the same data as JSON.
 
 ### Generating a Report
 
-#### With the Appcircle Claude Assistant
-
-Ask in natural language, for example "give me a build insights report for last month" or "how is our CI maturity." The `appcircle:build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
-
-#### With Any Other MCP Client
-
-Call `get_build_insights_report` directly to get the same underlying metrics as JSON. This is useful if you want to read the numbers yourself, feed them into another tool, or build your own visualization. The response has three parts: `date_range` (the current period and the comparable previous period used for deltas), `sections` (the report data, grouped by the six sections below), and `meta` (which sections or parts of a section could not be computed, plus scope details such as excluded sub-organization builds).
-
-The parameters are:
-
-| Parameter | Description |
-|---|---|
-| `start_date`, `end_date` | The reporting window, as `YYYY-MM-DD`. Omit both to use the default last-30-days window. |
-| `sections` | A list of section keys to compute, matching the six sections below. Omit to get the full report (all six sections). |
-| `include_sub_orgs` | Set to `true` to fold build records from sub-organizations into the history-derived metrics. Defaults to `false`. |
+1. **With the Appcircle Claude Assistant**: Ask in natural language, for example "give me a build insights report for last month" or "how is our CI maturity." The `appcircle:build-insights-report` skill makes one call to `get_build_insights_report` and renders the response as a report.
+2. **With Any Other MCP Client**: Call `get_build_insights_report` directly from any MCP-compatible client (Cursor, VS Code, Codex, and so on) to get the same metrics as structured JSON, which you can read, feed into another tool, or visualize yourself.
 
 ### Report Sections
 
@@ -51,9 +36,13 @@ A single CI maturity score (0-100) for the period, with a label of **Developing*
 | Speed | How consistent build durations are (P95/P50 ratio) and an overall speed score across active profiles |
 | Security | Signing identity health, environment variable group usage, and certificates or provisioning profiles nearing expiry |
 
-Each dimension is shown with its own 0-100 score. Scores are colored qualitatively: green generally means healthy, amber means it needs attention, and red means it needs action soon.
+Below the scores, a ranked **Top Improvements** list surfaces the highest-impact actions for the period, each with the affected build profiles. Typical items include:
 
-Below the scores, a ranked **Top Improvements** list surfaces the highest-impact actions for the period (critical items before advisory ones), each with the affected build profiles. Typical items include resolving flaky profiles, migrating [custom scripts to Git](/workflows/common-workflow-steps/custom-script-from-git), configuring PR workflows, configuring [environment variable groups](/environment-variables), and renewing [signing identities](/signing-identities) that are close to expiring.
+- Resolving flaky profiles
+- Migrating [custom scripts to Git](/workflows/common-workflow-steps/custom-script-from-git)
+- Configuring PR workflows
+- Configuring [environment variable groups](/environment-variables)
+- Renewing [signing identities](/signing-identities) that are close to expiring
 
 <Screenshot url='https://cdn.appcircle.io/docs/assets/AI-110-Build-Insights-Maturity-Assessment.png'/>
 
@@ -102,7 +91,8 @@ How well each profile's workflows match Appcircle's recommended flow:
 
 #### Artifact Health
 
-Average primary artifact size per profile for the period, as a ranked bar chart, plus call-outs for the profile whose artifact grew the most and the one that shrank the most compared to the previous period (when a previous-period baseline exists).
+- Average primary artifact size per profile for the period, as a ranked bar chart.
+- Call-outs for the profile whose artifact grew the most and the one that shrank the most compared to the previous period (when a previous-period baseline exists).
 
 #### Queue Time
 
@@ -126,9 +116,7 @@ Yes, for the underlying data. Any MCP client can call `get_build_insights_report
 
 #### Why Is a Section Missing From My Report?
 
-The tool never fabricates data. If a section, or part of a section, is missing from the response, it means there was not enough data to compute it for the requested period, for example no builds, no queued builds, or no profiles with both a previous and a current measurement to compare. It is not an error and not a zero value.
-
-A section can also be missing because your [access token](/appcircle-ai/appcircle-mcp-server#authentication) lacks the required permission on the data that section depends on. Generating the full report requires a token with at least the **Manager** role. A less privileged token can still generate a report, but with fewer sections. Check your token's role permissions if a section you expect to see is consistently absent.
+A section can be absent because there was not enough build activity to compute it for the requested period (for example, no builds, no queued builds, or no profiles with a comparable previous period), which is not an error and not a zero value. It can also be absent because your [access token](/appcircle-ai/appcircle-mcp-server#authentication) lacks the required permission for the data that section depends on. Generating the full report requires a token with at least the **Manager** role. Check your token's role permissions if a section you expect to see is consistently absent.
 
 #### Does the Report Include Builds From Sub-Organizations?
 
