@@ -45,11 +45,23 @@ Claude Code and claude.ai install the plugin differently, so follow the steps fo
 
 You can install this plugin's skills in claude.ai too. MCP tools remain Claude Code-only for now.
 
-1. Open **Customize**.
-2. Click **Add plugin**.
-3. Choose **Create plugin**, then **Add marketplace**.
-4. Enter the repository URL: `https://github.com/appcircleio/appcircle-claude-plugin`.
-5. Ask Claude an Appcircle question, for example "How do I set up automatic code signing for my iOS builds," and Claude will use the `doc-assistant` skill to answer.
+1. Click **Customize > Create plugin > Add marketplace**.
+
+   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-1.png" alt="Create plugin, Add marketplace" width="480" />
+
+2. You will see the following screen.
+
+   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-2.png" alt="Add marketplace screen" width="480" />
+
+3. Enter the repository URL: `https://github.com/appcircleio/appcircle-claude-plugin`
+
+   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-3.png" alt="Enter the repository URL" width="480" />
+
+4. Click **Sync**.
+
+   <img src="https://cdn.appcircle.io/docs/assets/claude-assistant-4.png" alt="Click Sync" width="480" />
+
+5. Ask Claude an Appcircle question, for example *How do I set up automatic code signing for my iOS builds*, and Claude will use the `doc-assistant` skill to answer.
 
 To access the source code of this plugin, please use the following link:
 
